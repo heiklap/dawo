@@ -17,7 +17,7 @@ num dawoDevReadiness = 94;
 //TODO  teamInno   devTeam should be one instance of team class !!
 bool devTestPhase = true; // set this false in production. (newer)
 
-///  two members (persons) of devTest team
+///  two members (persons) of devTest team:
 //TODO  teamAdm team_members..  should they be in... team_staff..
 String devTestNight = 'Late Night Coder ';
 String devTestMorn = 'Earlymorn Coffeeman ';
@@ -51,11 +51,11 @@ var devTestStream = new Stream.fromIterable(devTestStreamData);
 ///   for simple:  "hello-I-am"  -tests
 /// TODO  name    can not be this name  it is already used ??
 class DevNote {
-  var notes = ['', '', '']; //OUTSCH!!  long name
+  var notes = ['', '', ''];
   void noteAdd() => print('addNewNote();');
 
   void notesShow() => print('Showing all notes..');
-//  add code
+//  add code:
 //  devTestStream.join('New one')         //  add some streams
 //    .join(String 'Second one')
 //    .add('we are shutting down!');
@@ -79,6 +79,7 @@ void devTestMapShow() {
 //         parameters: Test, Msg, Line, Begin, End, Return
 
 /// TODO  teamDev:   should this be named to devTestInfo ??  devInfo ??
+/// report testers info
 num devTest(String unit, String whoDoneThis) {
   if (devTestPhase) {
     DateTime now = new DateTime.now();
@@ -98,6 +99,7 @@ num devTest(String unit, String whoDoneThis) {
 }
 
 /// NOTE  team-team   developers can send messages to each others in test printings
+/// Simple message to track run and development
 devMsg(String unit, String whoDoneThis) {
   if (devTestPhase) {
     DateTime now = new DateTime.now();
@@ -134,7 +136,7 @@ void tfDyn(var rf) {
   //A value of type 'toString' cannot be assigned to a variable of type 'String'
   String _s = rf.toString;
 
-  //  can we get runtime type toString
+  //  can we get runtime type toString?
   String _sType = rf.runTimeType();
   //TODO
   //  There is no such getter 'runTimeType' in 'Function'
@@ -154,7 +156,7 @@ void devTestLine(String module) {
   print('');
 }
 
-///  present simple DONE message aafter all tests are done
+///  present simple DONE message after all tests are done
 void devTestsDone(String module) {
   print('----------  $module ----------------------------------------');
   print('All tests done  ');

@@ -3,7 +3,7 @@
 
 /// Support for doing something awesome.
 ///
-/// More dartdocs go here.
+/// Beginner Dart programmers kickoff to develop a glorious pub package; dawo
 library dawo;
 
 //  if using dawo right here:
