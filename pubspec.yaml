@@ -1,0 +1,15 @@
+name: dawo
+description: Mixed collection of simple data by start-up programmers.
+version: 0.0.1
+author: Heikki K Lappalainen <heikkiklappalainen@gmail.com.com>
+homepage: https://dawopack.blogspot.fi/
+
+
+environment:
+  sdk: '>=1.0.0 <2.1.1'
+
+#dependencies:
+#  lib_name: any
+
+dev_dependencies:
+  test: '>=0.12.0 <0.13.0'
