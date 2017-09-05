@@ -1,8 +1,8 @@
-///  hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
+///  ##  Home of dawo libraries
 ///   copyright  Heikki K. Lappalainen
-///  READY-STATE:  91%            // for 0.0.1 version
-
-//  CHECK  LOGIC
+/// * READY-STATE:  91%            // for 0.0.1 version
+/// * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
+///
 
 //TODO  teamEdu  ---------   notes are essential part of dawo package --------
 //      so they are left here.. and they show direction and serve as tools here
@@ -10,7 +10,7 @@
 
 library dawo_src; //  naming this to _src...
 
-//  unused
+//  unused import
 import 'dart:async';
 
 import 'aldente_func.dart';
@@ -41,12 +41,9 @@ import 'dawo_tools.dart';
 //  should make alphabetical .txt  list of suggestions & not-used things.
 
 //-------------------   (libraries/) parts of dawo package in ABC-order
-//
 
 part 'src/awesome.dart';
 part 'dawlib_base.dart';
-
-
 
 //TODO  teamNext   not yet :  part 'wrap_game_loop.dart';
 
@@ -66,28 +63,14 @@ num get dawoReadiness =>
 
         dawoDevReadiness +
         demoToolsReadiness
-//                         teamReadiness
-    ) /
-
-    11;
+    ) /  11;
 
 ///---------------------     initialization at the beginning
 //TODO  teamInno: Can it be done?:  special initialization process at the beginning
 num get dawoInit => aldenteFuncInit();
 
-// ignore: unused_field for those wondering
 
-//TODO  teamDev    ------     WHAT IS THIS ?     ------
-/*    {
-  ((aldenteFuncReadiness +
-  batLoopReadiness) / 2);
-*/
-
-
-///  creatibg instancxe of BLib class
-///
-///
-///
+// Need to create instance of BLib class here?
 
 ///  example of library usage: dawo_app can be accessed from here,
 ///  but users of package can access it only by importing it.
@@ -114,5 +97,3 @@ void renderDawo() {
   var dawoActive = dawoFlags.active;
   dawoActive;
 }
-
-//

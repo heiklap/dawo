@@ -1,8 +1,6 @@
-///  hkl  2014  0.0.1  dawo/lib   some small tools
-///  READY-STATE for version 0.0.1   90 %   in GIT
-
-//  library 'dawo_tools2.dart';
-//TODO error  why??
+///  ##  Some helper tools
+/// *  Hist:  hkl  2014  0.0.1  dawo/lib
+/// *  READY-STATE for version 0.0.1   90 %   in GIT
 
 
 library dawo_tools.dart;
@@ -20,6 +18,7 @@ void operationMapPrint(Map thisMap) {
 /// some class tests.. for coming use
 var strLin = '----------------------------------------         ';
 
+///  To print class, that is commonly used in dawo
 void printClass(var thisClass, String str1, String str2, String str3) {
   print(strLin + thisClass.runtimeType.toString());
   print('Class runtime type:  ' + thisClass.runtimeType.toString());
@@ -41,9 +40,10 @@ void printClass(var thisClass, String str1, String str2, String str3) {
 }
 
 //-------------------------------------------------------
-///  some functions for to print two values
+
 //   dawoMapApps.forEach((k,v) => print('Key:  $k  Value:  $v  '));
-//   That was how it is done legally....but it do not always work
+
+///  some functions for to print two values
 void printSS(String str, String str2) {
   print(str + '  ' + str2);
 }
@@ -89,6 +89,7 @@ Map<String, bool> toolsActive = {
   'middleActive': true
 };
 
+///  sample map
 Map<num, String> toolsSpeed = {
   1: 'Speed',
   2: 'Hurry',

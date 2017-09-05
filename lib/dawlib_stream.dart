@@ -1,8 +1,10 @@
-///   hkl  4.5.2014  0.0.1  dawo/lib    info with streams to dawo-staff
+///  ##  Dart Streams
+///
+/// *  NEXT:  modify these, connect to classes and lists. use stream_channel pack
+/// *  Hist: hkl  4.5.2014  0.0.1  dawo/lib    info with streams to dawo-staff
+/// *  READY-STATE:    90%            in GitHub :  yes
+///
 ///   examples wrapped from:   https://www.dartlang.org/docs/tutorials/streams/
-///   READY-STATE:    90%            in GitHub :  yes
-///   Ugly snapping examples inside to my functions..  thanks :)
-///   NEXT:  modify these, connect to classes and lists.
 ///   Copyright notice should not concern this file... since it's from dartlang
 
 library dawlib_stream;

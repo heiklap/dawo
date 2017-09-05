@@ -1,7 +1,9 @@
-///  hkl  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
+///  ##  App class
+///  Some information about app, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-///  ReadyState:   95 %  for version 0.0.1   in GitHub  yes
-///  Using parts, co's like them, more than libraries
+/// * ReadyState:   95 %  for version 0.0.1   in GitHub  yes
+/// * hkl  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
+///  Almost all parts changed to libraries
 
 library dawo_app.dart;
 
@@ -9,6 +11,7 @@ library dawo_app.dart;
 
 ///  getter practice
 num dawoAppReadiness = 95; //  changed: 2.5.2015
+
 ///
 String _privacyLibraryTest = 'Testing library / part privacy';
 

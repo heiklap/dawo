@@ -1,8 +1,11 @@
-///  hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
-///  ..
-///   READY-STATE  94%  for version 0.0.1     GitHub: yes  29.11.2014
+///  ##  Dev & team
+///  Some helper stuff for screen prints and notes.
+///  Team - for many developers working in same project
+/// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
+/// * READY-STATE  94%  for version 0.0.1     GitHub: yes  29.11.2014
 
 library dawo_dev.dart;
+
 import 'package:dawo/dawo_tools.dart';
 
 //TODO  name   PROBLEMS, when using too common names:
