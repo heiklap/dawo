@@ -4,7 +4,6 @@
 
 part of dawo_src;
 
-
 // TODO: Put public facing types in this file.
 
 /// This file is originally created by Dart tools

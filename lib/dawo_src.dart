@@ -22,7 +22,6 @@ import 'dawo_app.dart';
 import 'dawo_dev.dart';
 import 'dawo_tools.dart';
 
-
 //  *team* became independent. How to use team in future.. that's the question
 //  *team* was collaboration system to serve as tool for dawo development
 //  small elements of team are presented
@@ -60,15 +59,13 @@ num get dawoReadiness =>
         dawLibWorkReadiness +
         dawoDartReadiness +
         dawoAppReadiness +
-
         dawoDevReadiness +
-        demoToolsReadiness
-    ) /  11;
+        demoToolsReadiness) /
+    11;
 
 ///---------------------     initialization at the beginning
 //TODO  teamInno: Can it be done?:  special initialization process at the beginning
 num get dawoInit => aldenteFuncInit();
-
 
 // Need to create instance of BLib class here?
 

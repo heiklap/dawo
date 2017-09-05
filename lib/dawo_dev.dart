@@ -76,7 +76,7 @@ Map<String, String> devTestMap = {
 
 ///  function for to print devTestMap
 void devTestMapShow() {
-  devTestMap.forEach(printSS);  //  from dawo_tools.dart
+  devTestMap.forEach(printSS); //  from dawo_tools.dart
 }
 
 //TODO  teamDev: PLAN:  make all 6 tests use same name with

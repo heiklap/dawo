@@ -18,7 +18,7 @@ num dawLibStreamReadiness = 90; // readiness for version 0.0.1
 //------------------------------------------------functions
 
 ///  ugly hack: list here
-var sampleList = ['a', 'b', 'c'];  //  used here
+var sampleList = ['a', 'b', 'c']; //  used here
 
 //    new stream    13 pcs
 
@@ -130,7 +130,8 @@ void presentBroadcastStream() {
 void presentStreamTransform() {
 //TODO  teamHowTo    make roundWay
   //TODO  goals  error;  make list here
-  var thisEveningStream = new Stream.fromIterable(sampleList); // create the stream
+  var thisEveningStream =
+      new Stream.fromIterable(sampleList); // create the stream
 //  var thisEveningStream = new Stream.fromIterable(eveningStream);  // create the stream
 
   /// define a stream transformer

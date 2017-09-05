@@ -2,7 +2,6 @@
 /// *  Hist:  hkl  2014  0.0.1  dawo/lib
 /// *  READY-STATE for version 0.0.1   90 %   in GIT
 
-
 library dawo_tools.dart;
 
 ///
