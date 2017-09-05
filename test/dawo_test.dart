@@ -19,7 +19,9 @@ void main() {
     });
   });
   print('--  some variables  --');
-  devTestPhase;
+
+  //  error in library building; away temporarily
+  //  devTestPhase;
 
   print('--  test done  --');
 }

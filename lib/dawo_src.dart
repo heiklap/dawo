@@ -10,10 +10,16 @@
 
 library dawo_src; //  naming this to _src...
 
+//  unused
 import 'dart:async';
 
-///  own library
+import 'dawlib_chore.dart';
+import 'dawlib_stream.dart';
 import 'dawo_app.dart';
+
+import 'dawo_dev.dart';
+import 'dawo_tools.dart';
+
 
 //  *team* became independent. How to use team in future.. that's the question
 //  *team* was collaboration system to serve as tool for dawo development
@@ -36,23 +42,11 @@ import 'dawo_app.dart';
 //
 
 part 'src/awesome.dart';
-
 part 'aldente_func.dart';
-
 part 'bat_loop.dart';
-
 part 'dawlib_base.dart';
-
-part 'dawlib_chore.dart';
-
 part 'dawlib_coll.dart';
 
-part 'dawlib_stream.dart';
-
-//  part 'dawo_app.dart';   //  is now library
-part 'dawo_dev.dart';
-
-part 'dawo_tools.dart';
 
 //TODO  teamNext   not yet :  part 'wrap_game_loop.dart';
 
@@ -69,10 +63,12 @@ num get dawoReadiness =>
         dawLibWorkReadiness +
         dawoDartReadiness +
         dawoAppReadiness +
+
         dawoDevReadiness +
         demoToolsReadiness
 //                         teamReadiness
     ) /
+
     11;
 
 ///---------------------     initialization at the beginning

@@ -9,8 +9,6 @@ library dawo;
 //  if using dawo right here:
 //  import 'dawo_app.dart';
 
-export 'dawo_app.dart';
-
 export 'package:dawo/dawo_src.dart';
 
 // TODO: Export any libraries intended for clients of this package.

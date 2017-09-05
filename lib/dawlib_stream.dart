@@ -5,13 +5,19 @@
 ///   NEXT:  modify these, connect to classes and lists.
 ///   Copyright notice should not concern this file... since it's from dartlang
 
-part of dawo_src;
+library dawlib_stream;
+
+import 'dart:async';
 
 ///  getters..
 num dawLibStreamReadiness = 90; // readiness for version 0.0.1
 
 ///TODO  teamNext   PLAN:    Use futures for outPut
 //------------------------------------------------functions
+
+///  ugly hack: list here
+var sampleList = ['a', 'b', 'c'];  //  used here
+
 //    new stream    13 pcs
 
 ///   how to add new data into stream?? =>   use  streamController
@@ -121,7 +127,8 @@ void presentBroadcastStream() {
 ///   howToNote:   how to add to stream.. with streamController !!
 void presentStreamTransform() {
 //TODO  teamHowTo    make roundWay
-  var thisEveningStream = new Stream.fromIterable(goals); // create the stream
+  //TODO  goals  error;  make list here
+  var thisEveningStream = new Stream.fromIterable(sampleList); // create the stream
 //  var thisEveningStream = new Stream.fromIterable(eveningStream);  // create the stream
 
   /// define a stream transformer

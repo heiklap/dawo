@@ -1,7 +1,11 @@
 ///  hkl  2014  0.0.1  dawo/lib   some small tools
 ///  READY-STATE for version 0.0.1   90 %   in GIT
 
-part of dawo_src;
+//  library 'dawo_tools2.dart';
+//TODO error  why??
+
+
+library dawo_tools.dart;
 
 ///
 num demoToolsReadiness = 96;

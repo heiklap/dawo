@@ -2,6 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'package:dawo/dawo.dart';
+import 'package:dawo/dawo_app.dart';
 
 /*
 IntelliJ IDEA 2016.2.2
@@ -36,6 +37,7 @@ void main() {
 
 
   var ap = new DawoApp();
+
   print(ap.version);
   print(ap.motto);
 

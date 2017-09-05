@@ -11,7 +11,7 @@
 //TODO  chore  build simple plugin or usage-case for chore
 //TODO  chore  NEXT, make  Chr -class.??
 
-part of dawo_src;
+library dawlib_chore;
 
 ///  using - getters -example
 num dawLibWorkReadiness = 94; // for version  0.0.1

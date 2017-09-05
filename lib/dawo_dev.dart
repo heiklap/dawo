@@ -1,8 +1,9 @@
 ///  hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
 ///  ..
-//   READY-STATE  94%  for version 0.0.1     GitHub: yes  29.11.2014
+///   READY-STATE  94%  for version 0.0.1     GitHub: yes  29.11.2014
 
-part of dawo_src;
+library dawo_dev.dart;
+import 'package:dawo/dawo_tools.dart';
 
 //TODO  name   PROBLEMS, when using too common names:
 //   devTest   =   26  times     CHANGE:   test  ! ??
@@ -72,7 +73,7 @@ Map<String, String> devTestMap = {
 
 ///  function for to print devTestMap
 void devTestMapShow() {
-  devTestMap.forEach(printSS);
+  devTestMap.forEach(printSS);  //  from dawo_tools.dart
 }
 
 //TODO  teamDev: PLAN:  make all 6 tests use same name with

@@ -1,7 +1,7 @@
 ///  hkl  9.10.2013  0.0.1  dawo/lib    daw lib_base.dart
 ///  model of small app or operation
 ///  idea:   some base / flow  functionality, that is too small for packages,
-///  and too big for dawo_tools.dart.
+///  and too big for tools.dart.
 ///  Connections to packages, that we do not want to import fully.
 ///  Some extra control / flow variables for processes/events/jobs
 ///
@@ -74,7 +74,7 @@ class BLib {
   ///  make to present all info of this class / app
   void showInfo() {
     print('''idea:   some base / flow  functionality, that is too small 
-        for packages and too big for dawo_tools.dart''');
+        for packages and too big for tools.dart''');
   }
 
 //-------------------  -op-  variables and methods
