@@ -24,7 +24,7 @@ var shouts2 = messages.where((m) {
 }).toList();
   */
 
-part of dawo_src;
+library bat_loop.dart;
 
 //  example: howTo use getters to collect values from searate files
 //  xxxReadiness :  getters in dawo_src.dart collects sum of these variables

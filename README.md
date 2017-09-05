@@ -12,6 +12,10 @@ Learning Dart simple basic data for beginners, and howTo use it for building a p
  Leave room and time to resolve, what will be the direction of this package.
  Practise to use Dawo by finding it's keywords in editor.
  
+ First dawo version seems to be a mess, and, yes, it is intentional so.
+ dawo 0.0.1 shows starter programmers confusion, and records way and steps out of this mess 
+ to clarity and understanding.
+ 
  0.0.1  demonstrates how data is messy, when it is not inside classes.
    Check for pollution of public namespace!!
  

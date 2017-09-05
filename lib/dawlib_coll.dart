@@ -5,7 +5,7 @@
 
 //  CHECK  LOGIC
 
-part of dawo_src;
+library dawlib_coll;
 
 ///  mediating this value to getter, that counts sum of these
 num dawlibCollReadiness = 93;

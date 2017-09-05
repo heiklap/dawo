@@ -5,7 +5,8 @@
 //
 
 ///  naming library to _src, after all data is in src-directory
-part of dawo_src;
+///
+library aldente_func.dart;
 
 ///  from punch/tools/signal
 ///  simple  sleep method

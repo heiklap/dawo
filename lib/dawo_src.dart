@@ -13,7 +13,10 @@ library dawo_src; //  naming this to _src...
 //  unused
 import 'dart:async';
 
+import 'aldente_func.dart';
+import 'bat_loop.dart';
 import 'dawlib_chore.dart';
+import 'dawlib_coll.dart';
 import 'dawlib_stream.dart';
 import 'dawo_app.dart';
 
@@ -42,10 +45,10 @@ import 'dawo_tools.dart';
 //
 
 part 'src/awesome.dart';
-part 'aldente_func.dart';
-part 'bat_loop.dart';
+
+
 part 'dawlib_base.dart';
-part 'dawlib_coll.dart';
+
 
 
 //TODO  teamNext   not yet :  part 'wrap_game_loop.dart';
