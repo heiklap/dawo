@@ -1,11 +1,13 @@
-///  hkl  20.4.2014  0.0.1  dawo/lib  Collection of control-flow structures
-///  readyState for 0.0.1.  94%    in gitHub:   yes
-
-///  Very little useful stuff for now on.... but:
-///  Must put to GitHub, for to be able to modify while on-The-Road
+///  Some useful copy-paste stuff for learning simple functions.
+///  GOAL: find common, reusable elements for control-flow, and develop
+///  names, and ideas-
+///  In GitHub, for to be able to modify while on-The-Road.
+///
 ///  This serves as example:  What can you develop from these ideas..?
-
-//  batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
+///
+/// *  hkl  20.4.2014  0.0.1  dawo/lib  Collection of control-flow structures
+/// *  readyState for 0.0.1.  94%    in gitHub:   yes
+/// *  Words:  batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
 
 //NOTE   Function anonymous
 /* functions

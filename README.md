@@ -1,6 +1,7 @@
 # dawo 0.0.1
 
 Learning Dart simple basic data for beginners, and howTo use it for building a package.
+Beginner Dart programmers kickoff to develop a glorious package..
 
 ## Usage
 

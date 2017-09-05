@@ -19,7 +19,6 @@ import 'dawlib_chore.dart';
 import 'dawlib_coll.dart';
 import 'dawlib_stream.dart';
 import 'dawo_app.dart';
-
 import 'dawo_dev.dart';
 import 'dawo_tools.dart';
 
@@ -45,8 +44,6 @@ import 'dawo_tools.dart';
 //
 
 part 'src/awesome.dart';
-
-
 part 'dawlib_base.dart';
 
 
@@ -85,6 +82,12 @@ num get dawoInit => aldenteFuncInit();
   ((aldenteFuncReadiness +
   batLoopReadiness) / 2);
 */
+
+
+///  creatibg instancxe of BLib class
+///
+///
+///
 
 ///  example of library usage: dawo_app can be accessed from here,
 ///  but users of package can access it only by importing it.

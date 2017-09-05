@@ -41,6 +41,9 @@ void main() {
   print(ap.version);
   print(ap.motto);
 
+  ///  testing BLib class in dawlib-base
+  var bLib = new BLib();
+  bLib.blInfo;
 
 
 

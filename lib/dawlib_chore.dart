@@ -1,8 +1,13 @@
+///  ##  Chore for organizing work flow.
+///  Controlling work-flow and processes. Wrapper round of your small piece of
+///  code:  Put your actual code inside Chore.
+///
+///   ## *chore* became eventually its own, independent package, and it did fly
+///   out of dawo with it's own wings. Here will be small version of it.
+///
 ///  hkl  6.5.2014  0.0.1  dawo/lib   Common   "w o r k  flow"  methods for dawo
-///  Ready-state:   94%   in  GitHub:   yes   updated  22.04.2015
-///   Wrapper round of your small piece of code:  //put your actual code here..
-///   *chore* became eventually its own, independent package, so can not show
-///   it's code here, or use it for now.
+///  Ready-state:   94%   in  GitHub:   yes   updated  22.04.2015///
+///
 //TODO  chore; dawo can't use chore package. so make a simple plugin. But how?
 
 ///  Meant to:   place ALL common  W O R K  procedures here
@@ -66,7 +71,7 @@ class CommonChore extends ChoreBase {
 //---------------------------------------------------------------
 ///  some elementary: "execute-in-every-user-command-if-flagged" ideas
 ///  sometimes these X 10 objects are executed in EVERY occasion / keystroke..
-///  PLAN   smmall checks, updates, msg:s, notes aso.
+///  PLAN   small checks, updates, msg:s, notes aso.
 ///  But only, if marked in   "flow - chart"
 void topAll() {
   print('these   W O R K S   are executed in every cycle');
@@ -90,7 +95,7 @@ void startChore(var roller, var alog, var xList, var yChore, var zSignal) {
 
   ///  rollAble and signalAble are separate properties of chore.
   ///  roller(rollAble)   takes care of workFlow
-  ///  zSignal (signAlable)  makes log / list
+  ///  zSignal (signalAble)  makes log / list
   ///  yChore is actual  w o r k   code
 }
 

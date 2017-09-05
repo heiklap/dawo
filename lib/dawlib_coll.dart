@@ -1,9 +1,8 @@
-///  hkl  22.5.2014  0.0.1  dawo/lib    collections..  simple collections
-///  dawo : some collection data
+///  ##  dawo : some simple collection data
 ///  NEXT version: SplayTreeSet,  and  LinkedHashSet
-///  howTo  list print:   fort.obligations.forEach(print);
-
-//  CHECK  LOGIC
+///
+///  Hist: hkl  22.5.2014  0.0.1  dawo/lib
+//
 
 library dawlib_coll;
 

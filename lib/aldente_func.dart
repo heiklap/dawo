@@ -1,11 +1,12 @@
-///  hkl  15.5.2014  dawo/lib  0.0.1   AlDente-functions in dawo
-///  bunch of simple functions, acting variously, mostly boolean conditions..
-///  including some funny logical-naming-errors
-///  readyState for 0.0.1.  95%    in gitHub:  YES  22.04.2015
-//
-
-///  naming library to _src, after all data is in src-directory
+///  ##     AlDente-functions in dawo
+///  Bunch of simple functions, acting variously, mostly boolean conditions.
+///  Including some funny logical-naming-errors, where name do not correspond to
+///  functionality.  Seeking common, reusable functions.
 ///
+/// *  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
+/// *  readyState for 0.0.1.  95%    in gitHub:  YES  22.04.2015
+/// *  naming main-library to _src, after all data is in src-directory
+//
 library aldente_func.dart;
 
 ///  from punch/tools/signal
