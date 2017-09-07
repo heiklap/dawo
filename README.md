@@ -49,15 +49,34 @@ A simple usage example:
 
     import 'package:dawo/dawo.dart';
     
-    var dawoApp = new DawoApp();
-    //  var da = new DawoApp();  //  shorter way
-    da. xxx                      //  play with variables
+    // wanna import all of them?
+    import 'package:dawo/aldente_func.dart';
+    import 'package:dawo/bat_loop.dart';
+    import 'package:dawo/dawlib_chore.dart';
+    import 'package:dawo/dawlib_coll.dart';
+    import 'package:dawo/dawlib_stream.dart';
+    import 'package:dawo/dawo_app.dart';
+    import 'package:dawo/dawo_dev.dart';
+    import 'package:dawo/dawo_tools.dart';
     
-    var dd = new DawoDev();
-    dd. xxx
+       
+//  create classes::
+var da = new DawoApp();
+var df = new DawoFlag();
+var bLib = new BLib();
+var ch = new SuperChore();
 
     main() {
+      //  from Dart sample:
       var awesome = new Awesome();
+      
+      //  play with classes
+      //  da.
+      //  df.
+      //  bLib.
+      //  vh.
+      
+      //  code, play with other variables
     }
 
 ###  About variable names in Dawo

@@ -15,10 +15,10 @@ import 'package:dawo/dawo_src.dart';
 
 
 //  creating instances of classes in upper level
-var da = new DawoApp();
+var da = new DawoApp('dawoApp', 'testing in app_bLib_chore play.dart');
 var df = new DawoFlag();
-var bLib = new BLib();
-var ch = new SuperChore();
+var bLib = new BLib('bLib-class', 'test-in:de-test.dart');
+var ch = new CommonChore('chore-class', 'Testing in app-bLib-chore-play');
 
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {

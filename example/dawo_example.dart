@@ -16,9 +16,9 @@ import 'package:dawo/dawo_tools.dart';
 //
 
 //  create classes::
-var da = new DawoApp();
+var da = new DawoApp('exampleApp', 'Testing in dawo_example');
 var df = new DawoFlag();
-var bLib = new BLib();
+var bLib = new BLib('bLib-class', 'example:dawo_example');
 var ch = new SuperChore();
 
 main() {

@@ -27,6 +27,7 @@ class BLib {
 //  every class member and method begins with -bl.. to avoid mess, when class
 //  is used in mixin 's
 //  Throwing some variables and thinking their usage later.
+  String blName;
 
   /// some maps to give platform for ideas to future development. bl maps
   /// PLAN:    trying to develop some maps for dawLib..  bl...
@@ -44,9 +45,9 @@ class BLib {
 
   //  -state-  variables
   String blState = 'Functional';
-  bool blStDo = true;
+  bool blStDo = false;
   bool blStDone = false;
-  bool blStAware = true;
+  bool blStAware = false;
 
   ///   PLAN:  use flags maps to control something     blStFlags
   Map<String, bool> blStFlags = {
@@ -141,6 +142,9 @@ class BLib {
     //  code..
   }
 
+//constructor
+  BLib(this.blName, this.blState);
+
 //--------------------------------------------------   coming
 //TODO  teamNext    coming:    Base Isolate example
 //TODO  teamNext    Base future  sample
@@ -148,10 +152,11 @@ class BLib {
 
 } // ---------------------------------------   end class BLib
 
+
 ///  creating instance of BLib and using it's methods
 ///  all render__X functions are for test and presentation
 void renderBLib() {
-  var bLib = new BLib();
+  var bLib = new BLib('BLibRender', 'Testing<<inRender<<Lib');
   bLib.showInfo();
   bLib.blToChore();
 }

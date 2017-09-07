@@ -73,12 +73,12 @@ num get dawoInit => aldenteFuncInit();
 ///  but users of package can access it only by importing it.
 ///  all render.. functions are tests or example-like files.
 void renderDawo() {
-  var dawoApp = new DawoApp();
+  var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
   var dawoFlags = new DawoFlag();
   dawoApp.agenda; //  just naming it
 
   /// just another instance, shorter, for testing
-  var da = new DawoApp();
+  var da = new DawoApp('dawoApp', 'playing in renderDawo-function');
   var df = new DawoFlag();
   da.info;
   df.userChoice;

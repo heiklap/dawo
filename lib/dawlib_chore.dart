@@ -59,13 +59,15 @@ abstract class ChoreBase {
 class SuperChore extends ChoreBase {
   String name = 'Super Chore class  ';
   String info = 'Chore resolves  W O R K  flow and control ..';
+
 }
 
 ///
 class CommonChore extends ChoreBase {
-  //  String name = 'Common Chore class  ';
-  //  String info = 'Chore resolves  W O R K  flow and control ..';
-  //  do not initialize values; just study, whhat this class got..
+  String name = 'Common Chore class  ';
+  String info = 'Chore resolves  W O R K  flow and control ..';
+  //  do not initialize values; just study, what this class got..
+  CommonChore(this.name, this.info);
 }
 
 //---------------------------------------------------------------

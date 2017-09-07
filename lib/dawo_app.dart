@@ -12,11 +12,14 @@ library dawo_app.dart;
 ///  getter practice
 num dawoAppReadiness = 95; //  changed: 2.5.2015
 
+var appBuf = new StringBuffer();
+
 ///
 String _privacyLibraryTest = 'Testing library / part privacy';
 
 ///  base class for to extend
 abstract class DawoAppBase {
+  String name;
   String info = 'this is DawoBase class';
   String motto = 'Be a base to other dawo classes';
   String agenda = 'Basic fields for other dawo classes';
@@ -27,6 +30,7 @@ abstract class DawoAppBase {
 ///  class that holds 'soul' of THIS dawo app
 class DawoApp extends DawoAppBase {
   //  overrides DawoAppBase fields
+  String name;
   String info = 'giving global variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
   String agenda = '';
@@ -40,7 +44,7 @@ class DawoApp extends DawoAppBase {
   String thisVersion; //  users announce their version of dawo
 
   String latestChange = '23.3.2017. th.12.15';
-
+  DawoApp(this.name, this.agenda);
   void roll(){
     print('DawoApp::    $info   :: engaged ');
     //  code here

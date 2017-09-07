@@ -5,7 +5,7 @@ import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
 
 /*
-IntelliJ IDEA 2016.2.2
+Intellij IDEA 2016.2.2
 Build #IC-162.1628.40, built on August 16, 2016
 JRE: 1.8.0_76-release-b216 x86
 JVM: OpenJDK Server VM by JetBrains s.r.o
@@ -31,18 +31,18 @@ void main() {
 
   renderDawo();
 
-  var bl = new BLib();
+  var bl = new BLib('bL-class in de-test', 'testing');
   bl.blOpInit(4, dawoOperation);
   bl.showInfo();
 
 
-  var ap = new DawoApp();
+  var ap = new DawoApp('dawoApp', 'in de_test.dart testing');
 
   print(ap.version);
   print(ap.motto);
 
   ///  testing BLib class in dawlib-base
-  var bLib = new BLib();
+  var bLib = new BLib('bLIb-class', 'test>in-de-test.dart');
   bLib.blInfo;
 
 
