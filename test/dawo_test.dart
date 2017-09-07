@@ -2,6 +2,20 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'package:dawo/dawo.dart';
+
+/* wanna import all of them?
+import 'package:dawo/aldente_func.dart';
+import 'package:dawo/bat_loop.dart';
+import 'package:dawo/dawlib_chore.dart';
+import 'package:dawo/dawlib_coll.dart';
+import 'package:dawo/dawlib_stream.dart';
+import 'package:dawo/dawo_app.dart';
+import 'package:dawo/dawo_dev.dart';
+import 'package:dawo/dawo_tools.dart';
+
+*/
+
+
 import 'package:test/test.dart';
 
 

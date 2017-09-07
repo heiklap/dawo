@@ -71,7 +71,7 @@ void presentStreamBase() {
     //
     print("Received: $value"); // onData handler
   });
-  //NOTE: using name: stream, gives you too wide amount of values- Stydy this:
+  //NOTE: using name: stream, gives you too wide amount of values- Study this:
   // _psbStream.   contrary to using:   stream
 }
 
@@ -206,7 +206,7 @@ void presentUnsubscribeFromStream() {
 
 ///  ..
 void presentGenericStream() {
-  var data = [1, 2, 3, 4, 5]; // ints, valid
+  var data = [1, 2, 3, 4, 5]; // int's, valid
 // var data = ["1","2","3","4","5"]; // strings, not valid
   var stream = new Stream<int>.fromIterable(data); // Stream<int>
   stream.listen((value) {
@@ -264,5 +264,11 @@ main() {
         onDone: () => print("Finished reading data"));
 }
  */
+
+///  testing and playing with above streams, show output
+void renderDawoStreams() {
+  //  code here
+
+}
 
 //

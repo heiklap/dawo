@@ -21,7 +21,8 @@ part of dawo_src;
 final num dawLibBaseReadiness = 95; //  readiness for  version  0.0.1
 
 ///  base lib class... Some info/state/basic values of -this- "part".
-///  to control some extra/upper level state of apps or operations
+///  to control some extra/lower level state of apps or operations
+///  it plays clearly below -app level
 class BLib {
 //  every class member and method begins with -bl.. to avoid mess, when class
 //  is used in mixin 's
@@ -89,6 +90,8 @@ class BLib {
 
   /// devNote  function, that OPENS something.  so rename; init
   bool blOpInit(int openCount, var openThis) {
+    print('----  blOpInit ------');
+
     bool _initB = false;
     //  code to initialize variables in system
     return _initB;
@@ -96,23 +99,27 @@ class BLib {
 
   /// devNote  function, that OPENS something.  so rename; init
   bool blOpOpen(int openCount, var openThis) {
+    print('----  blOpOpen ------');
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
   }
 
   int blOpRoll(int rollCount, var autoRollFunc) {
+    print('----  blOpRoll ------');
     int _rollCount =
         rollCount; //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
       _rollCount++;
-      autoRollFunc();
+      autoRollFunc;
     }
     return _rollCount;
   }
 
   /// devNote  function, that OPENS something.  so rename; init
   int blOpClose(int openCount, var openThis) {
+    print('----  blOpClose ------');
+
     int _openCount = openCount;
     openThis; // is this how it goes??
     _openCount++;

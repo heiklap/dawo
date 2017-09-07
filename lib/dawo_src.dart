@@ -74,12 +74,12 @@ num get dawoInit => aldenteFuncInit();
 ///  all render.. functions are tests or example-like files.
 void renderDawo() {
   var dawoApp = new DawoApp();
-  var dawoFlags = new DawoFlags();
+  var dawoFlags = new DawoFlag();
   dawoApp.agenda; //  just naming it
 
   /// just another instance, shorter, for testing
   var da = new DawoApp();
-  var df = new DawoFlags();
+  var df = new DawoFlag();
   da.info;
   df.userChoice;
 

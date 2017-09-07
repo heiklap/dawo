@@ -40,11 +40,16 @@ class DawoApp extends DawoAppBase {
   String thisVersion; //  users announce their version of dawo
 
   String latestChange = '23.3.2017. th.12.15';
+
+  void roll(){
+    print('DawoApp::    $info   :: engaged ');
+    //  code here
+  }
 }
 
 //TODO  teamInno    -------- plan for controlling  this apps states and behaviour
 ///     low level work-flow "flags" are in dawlib.....
-class DawoFlags {
+class DawoFlag {
   int tempo = 6;
   int rounds = 1;
 
@@ -58,6 +63,11 @@ class DawoFlags {
 
   String userChoice = '-';
   String autoChoice = '1';
+
+  void roll(){
+    print('DawoFlag::  $tempo  $rounds    :: engaged ');
+    //  code here
+  }
 }
 
 /// models and sample maps ; for later usage and playing

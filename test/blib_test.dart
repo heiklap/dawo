@@ -8,8 +8,14 @@ import 'package:dawo/dawo.dart';
 
 ///  testing dawlib_base / class BLib
 void main() {
+  print('---  playing dawo BLib class  ----');
   var bLib = new BLib();
-  bLib.blOpCount;
+
+  print(bLib.toString());
+  print(bLib.blOpCount);
+  print(bLib.blInfo);
+
+
 
 
 

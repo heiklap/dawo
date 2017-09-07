@@ -71,6 +71,7 @@ class CommonChore extends ChoreBase {
 //---------------------------------------------------------------
 ///  some elementary: "execute-in-every-user-command-if-flagged" ideas
 ///  sometimes these X 10 objects are executed in EVERY occasion / keystroke..
+///    * * *   so they ARE outside of Chore class  * * *
 ///  PLAN   small checks, updates, msg:s, notes aso.
 ///  But only, if marked in   "flow - chart"
 void topAll() {
