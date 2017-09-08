@@ -154,7 +154,6 @@ class BLib {
 
 } // ---------------------------------------   end class BLib
 
-
 ///  creating instance of BLib and using it's methods
 ///  all render__X functions are for test and presentation
 void renderBLib() {

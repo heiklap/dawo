@@ -22,7 +22,6 @@ String _privacyLibraryTest = 'Testing library / part privacy';
 ///  This abstract class has wiped out
 //  abstract class DawoAppBase extends baseStruct {
 
-
 ///  class that holds 'soul' of THIS dawo app
 class DawoApp extends BaseStruct {
   //  overrides DawoAppBase fields
@@ -48,25 +47,26 @@ class DawoApp extends BaseStruct {
   String thisVersion; //  users announce their version of dawo
   String latestChange = '23.3.2017. th.12.15';
 
-
   ///  initialize class values to beginning state
-  void init(){
+  void init() {
     //TODO  set some field values
     buf.writeln('---  DawoApp buffer output initialized  ---');
 
     //  set fields values
     buf.writeln('init done');
   }
+
   ///  method for setting class in working condition
-  void build(){
-    offB = false;   //  off-state ends
-    onB = true;     //   app is in on
+  void build() {
+    offB = false; //  off-state ends
+    onB = true; //   app is in on
     buf.writeln('build done');
   }
+
   ///  #run-like method
-  void roll(){
+  void roll() {
     buf.writeln('DawoApp::    $info   :: roll engaged ');
-    init();   //  calling init and build methods in this class
+    init(); //  calling init and build methods in this class
     build();
     //  code for roll
     //  rollMissions
@@ -81,16 +81,17 @@ class DawoApp extends BaseStruct {
     // roll all chores, that are in mission
   }
 
-  void show(){
+  void show() {
     print(buf);
   }
+
   ///  presentation method
-  void done(){
+  void done() {
     print('DawoApp::    $info   :: engaged ');
     //  code here
     buf.write('---  DawoApp buffer output app: done  ---');
     print(buf);
-    buf.clear();  //  empty buffer
+    buf.clear(); //  empty buffer
   }
 
   DawoApp(this.name, this.agenda);
@@ -113,11 +114,10 @@ class DawoFlag {
   bool paused = false;
   bool stopped = false;
 
-
   String userChoice = '-';
   String autoChoice = '1';
 
-  void roll(){
+  void roll() {
     print('DawoFlag::  $tempo  $rounds    :: engaged ');
     //  code here
   }

@@ -1,11 +1,12 @@
 ///  ##     AlDente-functions in dawo
+///  Do not produce to dawoApp.  Just sample code-snippets.
 ///  Bunch of simple functions, acting variously, mostly boolean conditions.
 ///  Including some funny logical-naming-errors, where name do not correspond to
 ///  functionality.  Seeking common, reusable functions.
 ///
 /// *  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
 /// *  readyState for 0.0.1.  95%    in gitHub:  YES  22.04.2015
-/// *  naming main-library to _src, after all data is in src-directory
+/// *
 //
 library aldente_func.dart;
 

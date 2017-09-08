@@ -75,6 +75,7 @@ class CommonChore extends BaseStruct {
   String motto;
 
   StringBuffer buf;
+
   ///  controlling app state
   bool offB;
   bool onB;
@@ -82,22 +83,24 @@ class CommonChore extends BaseStruct {
   bool doneB;
 
   ///  Method for setting class field values
-  void init(){
+  void init() {
     buf.writeln('---  Chore buffer output initialized  ---');
 
     //  set fields values
     buf.writeln('init done');
   }
+
   ///  method for setting class in working condition
-  void build(){
-    offB = false;   //  off-state ends
-    onB = true;     //   app is in on
+  void build() {
+    offB = false; //  off-state ends
+    onB = true; //   app is in on
     buf.writeln('build done');
   }
+
   ///  #run-like method
-  void roll(){
+  void roll() {
     buf.writeln('Chore::    $info   :: roll engaged ');
-    init();   //  calling init and build methods in this class
+    init(); //  calling init and build methods in this class
     build();
     //  code for roll
     show();
@@ -105,19 +108,20 @@ class CommonChore extends BaseStruct {
     //  code here
   }
 
-
   ///  presentation method
-  void show(){
+  void show() {
     print(buf);
   }
+
   ///  close method
-  void done(){
+  void done() {
     print('Chore::    $info   :: engaged ');
     //  code here
     buf.write('---  Chore buffer output app: done  ---');
     print(buf);
-    buf.clear();  //  empty buffer
+    buf.clear(); //  empty buffer
   }
+
   ///  constructor
   CommonChore(this.name, this.info);
 }
@@ -164,7 +168,6 @@ void doChore() {
 void endChore() {
   print('execution scheduled, when   W O R K   is done');
 }
-
 
 ///  example / testing chore
 void renderChore() {

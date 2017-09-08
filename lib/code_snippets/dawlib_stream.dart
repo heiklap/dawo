@@ -1,4 +1,5 @@
 ///  ##  Dart Streams
+///  ///  Do not produce to dawoApp.  Just sample code-snippets.
 ///
 /// *  NEXT:  modify these, connect to classes and lists. use stream_channel pack
 /// *  Hist: hkl  4.5.2014  0.0.1  dawo/lib    info with streams to dawo-staff
@@ -268,7 +269,6 @@ main() {
 ///  testing and playing with above streams, show output
 void renderDawoStreams() {
   //  code here
-
 }
 
 //

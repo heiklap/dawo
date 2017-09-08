@@ -9,11 +9,11 @@ import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_src.dart';
 
 // wanna import all of them?
-import 'package:dawo/aldente_func.dart';
-import 'package:dawo/bat_loop.dart';
+import 'package:dawo/code_snippets/aldente_func.dart';
+import 'package:dawo/code_snippets/bat_loop.dart';
 import 'package:dawo/dawlib_chore.dart';
 import 'package:dawo/dawlib_coll.dart';
-import 'package:dawo/dawlib_stream.dart';
+import 'package:dawo/code_snippets/dawlib_stream.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_tools.dart';

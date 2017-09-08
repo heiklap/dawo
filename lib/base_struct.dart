@@ -15,6 +15,7 @@ abstract class BaseStruct {
   String motto;
 
   StringBuffer buf;
+
   ///  controlling app state
   bool offB;
   bool onB;
@@ -23,13 +24,16 @@ abstract class BaseStruct {
 
   ///  Method for setting class field values
   void init();
+
   ///  method for setting class in working condition
   void build();
+
   ///  #run-like method
   void roll();
+
   ///  presentation method
   void show();
+
   ///  close method
   void done();
-
 }
