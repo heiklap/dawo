@@ -1,39 +1,23 @@
-///  ## Modeling control of small app or operation.
-///
-///  idea:   some base / flow  functionality, that is too small for packages,
-///  and too big for tools.dart or dawo_app.dart.
-///  Connections to packages, that we do not want to import fully.
-///  Some extra control / flow variables for processes/events/jobs
-///
-///  Hist:  hkl  9.10.2013  0.0.1  dawo/lib    daw lib_base.dart
-///
-///  READY-STATE for version 0.0.1   95 %   in GIT  Upd. 22.04.2015
-///  Open for all ideas, when seeking common functionality between app / lib /
-///  classes / process aso.  Name is little funny, for historical reasons.
-///  includes  10   teamXxx notes
+///  mission is something between app and chore, process
+///  HIST:  hkl  8.9.2017
+//
 
-//  NOTE:  to-do's are now ELEMENTARY part of dawo's idea & work-flow
-//TODO  teamDev  use "scrollable", "signalAble" properties developed elsewhere
-//TODO  teamDev  use   and maybe  eventAble package...
-
-part of dawo_src;
-
-final num dawLibBaseReadiness = 95; //  readiness for  version  0.0.1
+library dawo_mission;
 
 ///  base lib class... Some info/state/basic values of -this- "part".
 ///  to control some extra/lower level state of apps or operations
 ///  it plays clearly below -app level
 ///  name may be changed to: #mission, it is between app and chore
 ///  and mission can include many chores
-class BLib {
+class Mission {
 //  every class member and method begins with -bl.. to avoid mess, when class
 //  is used in mixin 's
 //  Throwing some variables and thinking their usage later.
-  String blName;
+  String name;
 
-  /// some maps to give platform for ideas to future development. bl maps
-  /// PLAN:    trying to develop some maps for dawLib..  bl...
-  Map<String, String> blInfo = {
+  /// some maps to give platform for ideas to future development.  maps
+  /// PLAN:    trying to develop some maps for dawLib..  ...
+  Map<String, String> info = {
     'name': 'My App',
     'info': 'dartlang application',
     'creator': 'me',
@@ -46,13 +30,13 @@ class BLib {
   };
 
   //  -state-  variables
-  String blState = 'Functional';
-  bool blStDo = false;
-  bool blStDone = false;
-  bool blStAware = false;
+  String state = 'Functional';
+  bool stDo = false;
+  bool sDone = false;
+  bool stAware = false;
 
-  ///   PLAN:  use flags maps to control something     blStFlags
-  Map<String, bool> blStFlags = {
+  ///   PLAN:  use flags maps to control something     stFlags
+  Map<String, bool> stFlags = {
     'real': 'no',
     'accepted': 'no',
     'aborted': 'me',
@@ -66,11 +50,11 @@ class BLib {
 
   //  -roll  and  -op   are different level of operations
   //  -roll-  variables
-  bool blRollDone = false;
-  int blRollCount = 0;
+  bool rollDone = false;
+  int rollCount = 0;
 
   ///  chore map to give names to  W O R K    states
-  Map<int, String> blRollSchedule = {
+  Map<int, String> rollSchedule = {
     1: 'Speed!',
     2: 'Hurry',
     3: 'Schedule',
@@ -87,13 +71,13 @@ class BLib {
 //-------------------  -op-  variables and methods
 
   //  'open'  variables
-  bool blOpOn = false;
-  bool blOpDone = false;
-  int blOpCount = 0;
+  bool opOn = false;
+  bool opDone = false;
+  int opCount = 0;
 
   /// devNote  function, that OPENS something.  so rename; init
-  bool blOpInit(int openCount, var openThis) {
-    print('----  blOpInit ------');
+  bool opInit(int openCount, var openThis) {
+    print('----  oInit ------');
 
     bool _initB = false;
     //  code to initialize variables in system
@@ -101,15 +85,15 @@ class BLib {
   }
 
   /// devNote  function, that OPENS something.  so rename; init
-  bool blOpOpen(int openCount, var openThis) {
-    print('----  blOpOpen ------');
+  bool oOpen(int openCount, var openThis) {
+    print('----  oOpen ------');
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
   }
 
-  int blOpRoll(int rollCount, var autoRollFunc) {
-    print('----  blOpRoll ------');
+  int oRoll(int rollCount, var autoRollFunc) {
+    print('----  oRoll ------');
     int _rollCount =
         rollCount; //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
@@ -120,8 +104,8 @@ class BLib {
   }
 
   /// devNote  function, that OPENS something.  so rename; init
-  int blOpClose(int openCount, var openThis) {
-    print('----  blOpClose ------');
+  int oClose(int openCount, var openThis) {
+    print('----  oClose ------');
 
     int _openCount = openCount;
     openThis; // is this how it goes??
@@ -138,28 +122,27 @@ class BLib {
   ///  base lib's connection to chore (package)
   ///  *chore* is separate package, which controls *job* :s
   ///  mediating calls to outside executor process
-  void blToChore() {
+  void toChore() {
     String motto = 'mediating process to chore..';
     assert(motto.substring(10, 17) == 'process');
     //  code..
   }
 
 //constructor
-  BLib(this.blName, this.blState);
+  Mission(this.name, this.state);
 
 //--------------------------------------------------   coming
 //TODO  teamNext    coming:    Base Isolate example
 //TODO  teamNext    Base future  sample
 //TODO  teamNext    Base Mixin   sample
 
-} // ---------------------------------------   end class BLib
+} // ---------------------------------------   end class Mission
 
-///  creating instance of BLib and using it's methods
+///  creating instance of Mission and using it's methods
 ///  all render__X functions are for test and presentation
-void renderBLib() {
-  var bLib = new BLib('BLibRender', 'Testing<<inRender<<Lib');
-  bLib.showInfo();
-  bLib.blToChore();
+void renderMission() {
+  var mission = new Mission('MissionRender', 'Testing<<inRender<<Lib');
+  mission.showInfo();
+  mission.toChore();
+  mission.rollCount;
 }
-
-//

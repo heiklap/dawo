@@ -14,6 +14,7 @@ library dawo_src; //  naming this to _src...
 import 'dart:async';
 
 import 'package:dawo/code_snippets/aldente_func.dart';
+import 'base_lib.dart';
 import 'base_struct.dart';
 import 'package:dawo/code_snippets/bat_loop.dart';
 import 'dawlib_chore.dart';
@@ -22,6 +23,7 @@ import 'package:dawo/code_snippets/dawlib_stream.dart';
 import 'dawo_app.dart';
 import 'dawo_dev.dart';
 import 'dawo_mill.dart';
+import 'dawo_mission.dart';
 import 'dawo_tools.dart';
 
 //  *team* became independent. How to use team in future.. that's the question
@@ -44,7 +46,6 @@ import 'dawo_tools.dart';
 //-------------------   (libraries/) parts of dawo package in ABC-order
 
 part 'src/awesome.dart';
-part 'dawlib_base.dart';
 
 //TODO  teamNext   not yet :  part 'wrap_game_loop.dart';
 
@@ -95,4 +96,7 @@ void renderDawo() {
   dawoOn; //  just naming it
   var dawoActive = dawoFlags.active;
   dawoActive;
+
+  var mission = new Mission('mission in dawo_src-render', 'test-mission');
+  mission.opCount;
 }

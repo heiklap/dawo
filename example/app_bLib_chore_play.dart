@@ -5,6 +5,7 @@ import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
+import 'package:dawo/dawo_mission.dart';
 
 import 'package:dawo/dawlib_chore.dart';
 
@@ -18,7 +19,9 @@ import 'package:dawo/dawo_src.dart';
 //  creating instances of classes in upper level
 var da = new DawoApp('dawoApp', 'testing in app_bLib_chore play.dart');
 var df = new DawoMill();
-var bLib = new BLib('bLib-class', 'test-in:de-test.dart');
+
+var mission = new Mission('mission-class', 'test-in:de-test.dart');
+
 var ch = new CommonChore('chore-class', 'Testing in app-bLib-chore-play');
 
 ///  use and show App, dawoFlag, BLib-class and Chore
@@ -28,7 +31,7 @@ main() {
   //  getting something from classes
   print('da-Info::   $da.info');
   print('df-active::  $df.active');
-  print('bLibInfo::  $bLib.blInfo');
+  print('bLibInfo::  $Mission.blInfo');
   print('ch-info::   $ch.info');
 
 
@@ -66,13 +69,13 @@ void rumba(){
 
   devTestLine('bLib');
 
-  renderBLib();
+  renderMission();
 
-  bLib.blOpOpen(1, 'X');
+  mission.opOpen(1, 'X');
 
-  bLib.blOpRoll(4, print('x'));
+  mission.opRoll(4, print('x'));
 
-  bLib.blOpClose(2, print('hello'));
+  mission.opClose(2, print('hello'));
 
   //  ch.render();
   devTestLine('render Chore');

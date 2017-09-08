@@ -95,8 +95,7 @@ class DawoApp extends BaseStruct {
   }
 
   DawoApp(this.name, this.agenda);
-}  //  ----------  class DawoApp
-
+} //  ----------  class DawoApp
 
 /// models and sample maps ; for later usage and playing
 Map<String, String> appMap = {
@@ -110,8 +109,6 @@ Map<String, String> appMap = {
   'userChoise': '-',
   'autoChoise': '1'
 };
-
-
 
 /// TODO  teamInno    this map is for testing work-flow routines
 Map<String, String> appPhase = {

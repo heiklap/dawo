@@ -17,6 +17,7 @@ import 'package:dawo/code_snippets/dawlib_stream.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
+import 'package:dawo/dawo_mission.dart';
 import 'package:dawo/dawo_tools.dart';
 
 //
@@ -24,7 +25,8 @@ import 'package:dawo/dawo_tools.dart';
 //  create classes::
 var da = new DawoApp('exampleApp', 'Testing in dawo_example');
 var df = new DawoMill();
-var bLib = new BLib('bLib-class', 'example:dawo_example');
+
+var mission = new Misssion('Mission-class', 'example:dawo_example');
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {

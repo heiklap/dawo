@@ -5,7 +5,6 @@
 
 library dawo_mill;
 
-
 //TODO  teamInno    -------- plan for controlling  this apps states and behaviour
 ///     low level work-flow "flags" are in dawlib.....
 ///  will eventually be some kind of #mill, that controls all #job's
@@ -45,6 +44,3 @@ Map<int, String> millMap = {
   '8': 'X',
   '9': 'X'
 };
-
-
-

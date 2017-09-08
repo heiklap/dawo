@@ -3,6 +3,7 @@
 
 import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
+import 'package:dawo/dawo_mission.dart';
 
 /*
 Intellij IDEA 2016.2.2
@@ -31,19 +32,17 @@ void main() {
 
   renderDawo();
 
-  var bl = new BLib('bL-class in de-test', 'testing');
-  bl.blOpInit(4, dawoOperation);
-  bl.showInfo();
-
+  var mission = new Mission('mission-class in de-test', 'testing');
+  mission.opInit(4, dawoOperation);
+  mission.showInfo();
+  mission.info;
 
   var ap = new DawoApp('dawoApp', 'in de_test.dart testing');
 
   print(ap.version);
   print(ap.motto);
 
-  ///  testing BLib class in dawlib-base
-  var bLib = new BLib('bLIb-class', 'test>in-de-test.dart');
-  bLib.blInfo;
+
 
 
 
