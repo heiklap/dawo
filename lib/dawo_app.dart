@@ -7,6 +7,8 @@
 
 library dawo_app.dart;
 
+import 'base_struct.dart';
+
 // ignore: unused_field for those wondering
 
 ///  getter practice
@@ -17,42 +19,89 @@ var appBuf = new StringBuffer();
 ///
 String _privacyLibraryTest = 'Testing library / part privacy';
 
-///  base class for to extend
-abstract class DawoAppBase {
-  String name;
-  String info = 'this is DawoBase class';
-  String motto = 'Be a base to other dawo classes';
-  String agenda = 'Basic fields for other dawo classes';
-  String msg = '---';
-  String develop = '---';
-}
+///  This abstract class has wiped out
+//  abstract class DawoAppBase extends baseStruct {
+
 
 ///  class that holds 'soul' of THIS dawo app
-class DawoApp extends DawoAppBase {
+class DawoApp extends baseStruct {
   //  overrides DawoAppBase fields
-  String name;
+  String name = 'dawo app';
   String info = 'giving global variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
-  String agenda = '';
+
+  ///  must initialize StringBuffer here
+  StringBuffer buf = new StringBuffer();
+
+  bool offB = true;
+  bool onB = false;
+  bool pauseB;
+  bool doneB = false;
+
+  ///  app-specified fields
+  String agenda = 'using app in dawo package';
   String msg = 'Message..';
   String develop = 'Under development.. 30% to:  0.0.2';
-
   String version = '0.0.1';
-
 //  Old marking to find usage of this version in test apps.
   final String version_0_0_02 = 'dawo 0.0.02 - 12 / 2013 hkl';
   String thisVersion; //  users announce their version of dawo
-
   String latestChange = '23.3.2017. th.12.15';
-  DawoApp(this.name, this.agenda);
+
+
+  ///  initialize class values to beginning state
+  void init(){
+    //TODO  set some field values
+    buf.writeln('---  DawoApp buffer output initialized  ---');
+
+    //  set fields values
+    buf.writeln('init done');
+  }
+  ///  method for setting class in working condition
+  void build(){
+    offB = false;   //  off-state ends
+    onB = true;     //   app is in on
+    buf.writeln('build done');
+  }
+  ///  #run-like method
   void roll(){
-    print('DawoApp::    $info   :: engaged ');
+    buf.writeln('DawoApp::    $info   :: roll engaged ');
+    init();   //  calling init and build methods in this class
+    build();
+    //  code for roll
+    //  rollMissions
+    show();
+    done();
     //  code here
   }
+
+  ///  roll missions in missionL AND every chore in them
+  void rollMissions() {
+    // roll BLib-class (mission) actually List of missions!
+    // roll all chores, that are in mission
+  }
+
+
+  void show(){
+    print(buf);
+  }
+  ///  presentation method
+  void done(){
+    print('DawoApp::    $info   :: engaged ');
+    //  code here
+    buf.write('---  DawoApp buffer output app: done  ---');
+    print(buf);
+    buf.clear();  //  empty buffer
+  }
+
+  DawoApp(this.name, this.agenda);
 }
 
 //TODO  teamInno    -------- plan for controlling  this apps states and behaviour
 ///     low level work-flow "flags" are in dawlib.....
+///  will eventually be some kind of #mill, that controls all #job's
+///  keeps track of the privileges and performance of the assignments.
+///  names might be:  millRoll  and millFlag
 class DawoFlag {
   int tempo = 6;
   int rounds = 1;
@@ -62,8 +111,9 @@ class DawoFlag {
 
   bool on = false;
   bool active = false;
-  bool stopped = false;
   bool paused = false;
+  bool stopped = false;
+
 
   String userChoice = '-';
   String autoChoice = '1';

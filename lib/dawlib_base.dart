@@ -23,6 +23,8 @@ final num dawLibBaseReadiness = 95; //  readiness for  version  0.0.1
 ///  base lib class... Some info/state/basic values of -this- "part".
 ///  to control some extra/lower level state of apps or operations
 ///  it plays clearly below -app level
+///  name may be changed to: #mission, it is between app and chore
+///  and mission can include many chores
 class BLib {
 //  every class member and method begins with -bl.. to avoid mess, when class
 //  is used in mixin 's

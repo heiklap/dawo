@@ -80,7 +80,7 @@ void topAll() {
   print('these   W O R K S   are executed in every cycle');
 }
 
-/// USAGE:    these are meant to be avoided.. as long as possible
+/// USAGE:    execution is meant to be avoided.. as long as possible
 void underAll() {
   // not nice name..
   print('These are executed ONLY in last occasion');

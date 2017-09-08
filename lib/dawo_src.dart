@@ -14,6 +14,7 @@ library dawo_src; //  naming this to _src...
 import 'dart:async';
 
 import 'aldente_func.dart';
+import 'base_struct.dart';
 import 'bat_loop.dart';
 import 'dawlib_chore.dart';
 import 'dawlib_coll.dart';

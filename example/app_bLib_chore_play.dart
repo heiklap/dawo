@@ -32,7 +32,13 @@ main() {
 
 
   //  building all functionality in function::
-  rumba();
+  //  rumba();
+
+  //  testing dawoAppRoll
+  print('========  dawo app roll =================');
+
+  da.roll();
+  print('========  dawo app roll   done=================');
 }
 
 //  all happens here, just presentation

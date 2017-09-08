@@ -3,6 +3,11 @@
 
 import 'package:dawo/dawo.dart';
 
+///  watch difference, when importing dawo/dawo_src.dart
+///  dawo_src only #imports all dawo files except dawo.dart
+///  dawo.dart exports: export 'package:dawo/dawo_src.dart';
+import 'package:dawo/dawo_src.dart';
+
 // wanna import all of them?
 import 'package:dawo/aldente_func.dart';
 import 'package:dawo/bat_loop.dart';
@@ -35,4 +40,10 @@ main() {
 
   ///  testing dawo
   //  daw... ok
+}
+
+
+void playDawoSrcDart() {
+
+
 }
