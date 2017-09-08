@@ -24,7 +24,7 @@ String _privacyLibraryTest = 'Testing library / part privacy';
 
 
 ///  class that holds 'soul' of THIS dawo app
-class DawoApp extends baseStruct {
+class DawoApp extends BaseStruct {
   //  overrides DawoAppBase fields
   String name = 'dawo app';
   String info = 'giving global variables to dawo_src.dart';
@@ -80,7 +80,6 @@ class DawoApp extends baseStruct {
     // roll BLib-class (mission) actually List of missions!
     // roll all chores, that are in mission
   }
-
 
   void show(){
     print(buf);

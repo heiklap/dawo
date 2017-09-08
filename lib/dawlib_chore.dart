@@ -18,6 +18,8 @@
 
 library dawlib_chore;
 
+import 'base_struct.dart';
+
 ///  using - getters -example
 num dawLibWorkReadiness = 94; // for version  0.0.1
 
@@ -44,33 +46,84 @@ void initChore() {
 //---------------------------------------------------------
 //TODO  chore :   nice  chore class is already in separate team_work
 
+/*  away
 //--------------------------------------------------------------------
 /// temporary added here, from my chore-package (path based) to solve errors.
-abstract class ChoreBase {
+  abstract class ChoreBase {
   String name = 'ChoreBase class';
   String info = 'Building chore s do-library';
 
   showInfo() => print('$name    :        $info');
 }
+*/
 
+/*
 //--------------------------------------------------------------------
 ///  PLAN:   organize   W O R K
 /// TODO  chore  ERROR:  PROBLEM:  can't use baseClass from  team_chore-chore
 class SuperChore extends ChoreBase {
   String name = 'Super Chore class  ';
   String info = 'Chore resolves  W O R K  flow and control ..';
-
 }
+*/
 
-///
-class CommonChore extends ChoreBase {
+///  every important dawo class extending now base struct class
+class CommonChore extends BaseStruct {
   String name = 'Common Chore class  ';
   String info = 'Chore resolves  W O R K  flow and control ..';
   //  do not initialize values; just study, what this class got..
+  String motto;
+
+  StringBuffer buf;
+  ///  controlling app state
+  bool offB;
+  bool onB;
+  bool pauseB;
+  bool doneB;
+
+  ///  Method for setting class field values
+  void init(){
+    buf.writeln('---  Chore buffer output initialized  ---');
+
+    //  set fields values
+    buf.writeln('init done');
+  }
+  ///  method for setting class in working condition
+  void build(){
+    offB = false;   //  off-state ends
+    onB = true;     //   app is in on
+    buf.writeln('build done');
+  }
+  ///  #run-like method
+  void roll(){
+    buf.writeln('Chore::    $info   :: roll engaged ');
+    init();   //  calling init and build methods in this class
+    build();
+    //  code for roll
+    show();
+    done();
+    //  code here
+  }
+
+
+  ///  presentation method
+  void show(){
+    print(buf);
+  }
+  ///  close method
+  void done(){
+    print('Chore::    $info   :: engaged ');
+    //  code here
+    buf.write('---  Chore buffer output app: done  ---');
+    print(buf);
+    buf.clear();  //  empty buffer
+  }
+  ///  constructor
   CommonChore(this.name, this.info);
 }
 
 //---------------------------------------------------------------
+///  assume that Chore needs outside-activity to organize all-Chore's
 ///  some elementary: "execute-in-every-user-command-if-flagged" ideas
 ///  sometimes these X 10 objects are executed in EVERY occasion / keystroke..
 ///    * * *   so they ARE outside of Chore class  * * *
@@ -93,7 +146,7 @@ void sideAll() {
 
 //------------------------------------------------------------------------
 ///  flow of chore might be like this... Functions to execute W O R K   flow
-void startChore(var roller, var alog, var xList, var yChore, var zSignal) {
+void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
   print('these are executed in beginning of W O R K  ');
 
   ///  rollAble and signalAble are separate properties of chore.
@@ -112,24 +165,25 @@ void endChore() {
   print('execution scheduled, when   W O R K   is done');
 }
 
+
 ///  example / testing chore
 void renderChore() {
 //TODO  temporary variables for to get this to work
   var _roller;
-  var _alog;
+  var _aLog;
   var _xList;
   var _yChore;
   var _zSignal;
 
 //  var superChore = new SuperChore();
-  var sc = new SuperChore();
-  sc.showInfo();
+  var sc = new CommonChore('ChoreInRenderChore', 'Testing-Chore');
+  print(sc.info);
 
   topAll();
   underAll();
   sideAll();
 
-  startChore(_roller, _alog, _xList, _yChore, _zSignal);
+  startChore(_roller, _aLog, _xList, _yChore, _zSignal);
   doChore();
   endChore();
 

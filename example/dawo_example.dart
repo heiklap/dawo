@@ -24,7 +24,7 @@ import 'package:dawo/dawo_tools.dart';
 var da = new DawoApp('exampleApp', 'Testing in dawo_example');
 var df = new DawoFlag();
 var bLib = new BLib('bLib-class', 'example:dawo_example');
-var ch = new SuperChore();
+var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {
   var awesome = new Awesome();
