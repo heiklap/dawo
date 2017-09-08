@@ -4,6 +4,7 @@
 import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
+import 'package:dawo/dawo_mill.dart';
 
 import 'package:dawo/dawlib_chore.dart';
 
@@ -16,7 +17,7 @@ import 'package:dawo/dawo_src.dart';
 
 //  creating instances of classes in upper level
 var da = new DawoApp('dawoApp', 'testing in app_bLib_chore play.dart');
-var df = new DawoFlag();
+var df = new DawoMill();
 var bLib = new BLib('bLib-class', 'test-in:de-test.dart');
 var ch = new CommonChore('chore-class', 'Testing in app-bLib-chore-play');
 
@@ -52,7 +53,7 @@ void rumba(){
   //  get something out of these??
   devTestLine('appMap, flagMap, appPhase,dawo001');
   appMap;
-  flagMap;
+  millMap;
   appPhase;
   dawo001;
 

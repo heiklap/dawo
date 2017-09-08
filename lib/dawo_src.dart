@@ -21,6 +21,7 @@ import 'dawlib_coll.dart';
 import 'package:dawo/code_snippets/dawlib_stream.dart';
 import 'dawo_app.dart';
 import 'dawo_dev.dart';
+import 'dawo_mill.dart';
 import 'dawo_tools.dart';
 
 //  *team* became independent. How to use team in future.. that's the question
@@ -75,12 +76,12 @@ num get dawoInit => aldenteFuncInit();
 ///  all render.. functions are tests or example-like files.
 void renderDawo() {
   var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
-  var dawoFlags = new DawoFlag();
+  var dawoFlags = new DawoMill();
   dawoApp.agenda; //  just naming it
 
   /// just another instance, shorter, for testing
   var da = new DawoApp('dawoApp', 'playing in renderDawo-function');
-  var df = new DawoFlag();
+  var df = new DawoMill();
   da.info;
   df.userChoice;
 
