@@ -13,10 +13,11 @@ Way to version 0.0.2, possible fixes:
 4. __e_   Import / export usage unclear. Get all files in one command.
           - is analyzer acting weird? do not show variables (fast enough)
 
-5. __b_   Make Stream-play / explore file.  ( BOORING! )
+5. DONE   Make Stream-play (sync) / explore file.  ( BOORING! ) no, it was interesting :)
+          in code_snippets:  learn_stream_sync 
 
 6. DONE   Base structure class that important classes extend
-          - includes: - INIT-BUILD-ROLL-SHOW-DONE cycle 
+          - includes: - INIT-BUILD-ROLL-SHOW-DONE cycle
 
 7. DONE  StringBuffers to every important class and file for output.
           - this also adds visibility for variable-name
@@ -34,24 +35,41 @@ Way to version 0.0.2, possible fixes:
 _____________________________________________________________________________
 
 
-Version NEXT
+Version NEXT:  0.0.3 aso.
 
-____  Fill generic lists with members
+3.1 ____  Active "Rumba" -example
+
+3.2 ____  Fill generic lists with members
       Use generic lists inside classes for to control their "sub-ordinates"
               dawoApp has: missionL<Mission>
               mission has choreL<Chore>
               Roll methods for them
 
-____  roll counters to app, mission, chore, mill
+3.3 ____  roll counters to app, mission, chore, mill
 
-____  render (test and note function) to every file
+3.4 ____  render (test and note function) to every file
 
-____  dev class. dev tester person
+3,5 ____  dev class. dev tester person
       -every file imports dev, and can add dev-notes
 
-____  incoming data in clay-folder
+3.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
+      * not yet clear idea, how this must be done
+
+3.7 ____  incoming data in clay-folder
       * dev data
       * political-data  (test-case)
 
-____  Team notes (List and maps) maybe: in clay_in folder = incoming data
-      * not yet clear idea, how this must be done
+3.8 ____
+
+3.9 ____
+
+3.10 ____
+
+
+_________________________________________________________________________
+
+Version NEXT:  0.0.4 aso
+
+Working rumba  is mark for  0.1.0  version
+
+_________________________________________________________________________

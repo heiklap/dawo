@@ -19,7 +19,7 @@ import 'base_struct.dart';
 import 'package:dawo/code_snippets/bat_loop.dart';
 import 'dawlib_chore.dart';
 import 'dawlib_coll.dart';
-import 'package:dawo/code_snippets/dawlib_stream.dart';
+import 'package:dawo/code_snippets/learn_stream_sync.dart';
 import 'dawo_app.dart';
 import 'dawo_dev.dart';
 import 'dawo_mill.dart';
