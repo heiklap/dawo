@@ -14,19 +14,23 @@ Way to version 0.0.2, possible fixes:
           - is analyzer acting weird? do not show variables (fast enough)
 
 5. __b_   Make Stream-play / explore file.  ( BOORING! )
+
 6. DONE   Base structure class that important classes extend
-          - includes: - INIT-BUILD-ROLL-SHOW-DONE syckle
+          - includes: - INIT-BUILD-ROLL-SHOW-DONE cycle 
 
 7. DONE  StringBuffers to every important class and file for output.
           - this also adds visibility for variable-name
 
 8. _h__  Start: Connector-class; Connect App-Mission-Chore classes functionality in mill-process
-         - this is fine-graded and long development plan. ( DIFFICULT :( )
+         - in this phase this is gonna be very elementary, schematic
+         - At the end this is fine-graded and long development plan. ( DIFFICULT :( )
 
-9. ____ Team notes (List and maps) maybe: in clay_in folder
+9. DONE created DawoDewTest  class in dawo_dew
 
 10. DONE Add generic lists for every meaningful member
+    * like: List<CommonChore> choreL = []
     * add usage later
+
 _____________________________________________________________________________
 
 
@@ -42,4 +46,12 @@ ____  roll counters to app, mission, chore, mill
 
 ____  render (test and note function) to every file
 
-____
+____  dev class. dev tester person
+      -every file imports dev, and can add dev-notes
+
+____  incoming data in clay-folder
+      * dev data
+      * political-data  (test-case)
+
+____  Team notes (List and maps) maybe: in clay_in folder = incoming data
+      * not yet clear idea, how this must be done

@@ -8,14 +8,16 @@ import 'package:dawo/dawo.dart';
 ///  dawo.dart exports: export 'package:dawo/dawo_src.dart';
 //  import 'package:dawo/dawo_src.dart';
 
-import 'package:dawo/dawo_mission.dart';
 
 // wanna import all of them?
 import 'package:dawo/code_snippets/aldente_func.dart';
 import 'package:dawo/code_snippets/bat_loop.dart';
+import 'package:dawo/code_snippets/dawlib_stream.dart';
+
+import 'package:dawo/base_lib.dart';
+import 'package:dawo/base_struct.dart';
 import 'package:dawo/dawlib_chore.dart';
 import 'package:dawo/dawlib_coll.dart';
-import 'package:dawo/code_snippets/dawlib_stream.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
@@ -40,13 +42,29 @@ main() {
 
   //  watch something from every file
   //  base
-  //  choreBuf
+  // baseLibMotto
+
+  //  baseStructMotto;
+
+  //  chore
+  // choreBuf
+
   //  dawo
+  // dawoBuf
+
   //  app
-  //  dev
+  // appMap;
+
+  //  dev  17 variables
+  //  devBlame;
+
   //  mill
+  //  DawoMill
+
   //  mission
   //  Mission  class
+
+  //  toolsActive;
 
   //  play with classes
   /*
@@ -57,6 +75,8 @@ main() {
 
   ///  testing dawo
   //  daw... ok
+
+  //  render   //  there are 5 render-functions
 }
 
 

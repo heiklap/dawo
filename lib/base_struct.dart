@@ -7,6 +7,8 @@
 
 library base_struct;
 
+String baseStructMotto = 'Base rules for building classes';
+
 ///  base class for most dawo classes
 ///  DawoApp, BLib, Chore, Flag  use this
 abstract class BaseStruct {

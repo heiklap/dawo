@@ -24,6 +24,9 @@ var mission = new Mission('mission-class', 'test-in:de-test.dart');
 
 var ch = new CommonChore('chore-class', 'Testing in app-bLib-chore-play');
 
+///  create instance of DevTest class
+var dt = new DevTest();
+
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
 
@@ -50,24 +53,24 @@ main() {
 void rumba(){
 
 
-  devTestLine('dawoAppRoll');
+  dt.devTestLine('dawoAppRoll');
   da.roll();
 
   //  get something out of these??
-  devTestLine('appMap, flagMap, appPhase,dawo001');
+  dt.devTestLine('appMap, flagMap, appPhase,dawo001');
   appMap;
   millMap;
   appPhase;
   dawo001;
 
   //  df.render();
-  devTestLine('dawoFlags');
+  dt.devTestLine('dawoFlags');
   df.roll();
 
   //  wanna more: play them
   //  df.
 
-  devTestLine('bLib');
+  dt.devTestLine('bLib');
 
   renderMission();
 
@@ -78,10 +81,10 @@ void rumba(){
   mission.opClose(2, print('hello'));
 
   //  ch.render();
-  devTestLine('render Chore');
+  dt.devTestLine('render Chore');
   renderChore();
 
-  devTestEnd('app-flag-bLib-chore-play');
+  dt.devTestEnd('app-flag-bLib-chore-play');
 }
 
 //

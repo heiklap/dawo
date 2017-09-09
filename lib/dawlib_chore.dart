@@ -29,7 +29,6 @@ var choreBuf = new StringBuffer();
 ///  generic List to keep all Chores
 List<CommonChore> choreL = [];
 
-
 //--------------------------------------------------------------
 // Temporary added variables from team package here, to solve lib visibility.
 List<String> innoNotes = ['Team inno notes:  ', '1', '2', '3'];

@@ -4,7 +4,7 @@
 import 'package:dawo/dawo.dart';
 
 import 'package:dawo/dawo_mission.dart';
-import 'package:dawo/mis.dart';
+
 import 'package:dawo/dawo_app.dart';
 
 /* wanna import all of them?
@@ -28,8 +28,10 @@ import 'package:test/test.dart';
 void main() {
   //TODO  error
     var missionH = new Mission('mission inDT', 'test');
-    var misJ = new Mis();
+    print(missionH.name);
+
   var appX = new DawoApp('d-app', 'test');
+  appX.info;
 
 
   group('A group of tests', () {

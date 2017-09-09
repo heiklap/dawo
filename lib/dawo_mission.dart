@@ -4,16 +4,11 @@
 
 library dawo_mission;
 
-
-
-
 ///  buffer also outside class, for testing and adding visibility
 var missionBuf = new StringBuffer();
 
 ///  generic list to keep all missions
 List<Mission> missionL = [];
-
-
 
 void helloMission() {
   print('-- hello this is mission file and library  ---');
@@ -146,15 +141,12 @@ class Mission {
     //  code..
   }
 
-
-
 //--------------------------------------------------   coming
 //TODO  teamNext    coming:    Base Isolate example
 //TODO  teamNext    Base future  sample
 //TODO  teamNext    Base Mixin   sample
 
 } // ---------------------------------------   end class Mission
-
 
 ///  creating instance of Mission and using it's methods
 ///  all render__X functions are for test and presentation
