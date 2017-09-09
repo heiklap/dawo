@@ -55,6 +55,9 @@ var devTestStreamData = ['devTestStream, for notes and testing',
 var devTestStream = new Stream.fromIterable(devTestStreamData);
 */
 
+///  Generic list to keep and handle all devNotes
+List<DevNote> devNoteL = [];
+
 ///   for simple:  "hello-I-am"  -tests
 /// TODO  name    can not be this name  it is already used ??
 class DevNote {
@@ -68,6 +71,7 @@ class DevNote {
 //    .add('we are shutting down!');
 // ('New note joined to devStream');
 } //--------------------------------------------------  class end DevNote
+
 
 /// for future use:  map for testing  dev
 Map<String, String> devTestMap = {

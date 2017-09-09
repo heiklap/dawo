@@ -7,6 +7,9 @@ library dawo_mission;
 ///  buffer also outside class, for testing and adding visibility
 var missionBuf = new StringBuffer();
 
+///  generic list to keep all missions
+List<Mission> missionL = [];
+
 ///  base lib class... Some info/state/basic values of -this- "part".
 ///  to control some extra/lower level state of apps or operations
 ///  it plays clearly below -app level

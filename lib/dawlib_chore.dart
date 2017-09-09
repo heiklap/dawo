@@ -26,6 +26,10 @@ num dawLibWorkReadiness = 94; // for version  0.0.1
 ///  buffer also outside class, for testing and adding visibility
 var choreBuf = new StringBuffer();
 
+///  generic List to keep all Chores
+List<CommonChore> choreL = [];
+
+
 //--------------------------------------------------------------
 // Temporary added variables from team package here, to solve lib visibility.
 List<String> innoNotes = ['Team inno notes:  ', '1', '2', '3'];
