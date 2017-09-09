@@ -1,14 +1,23 @@
-///  mission is something between app and chore, process
+///  mis-sion is something between app and chore, process
 ///  HIST:  hkl  8.9.2017
 //
 
 library dawo_mission;
+
+
+
 
 ///  buffer also outside class, for testing and adding visibility
 var missionBuf = new StringBuffer();
 
 ///  generic list to keep all missions
 List<Mission> missionL = [];
+
+
+
+void helloMission() {
+  print('-- hello this is mission file and library  ---');
+}
 
 ///  base lib class... Some info/state/basic values of -this- "part".
 ///  to control some extra/lower level state of apps or operations
@@ -81,6 +90,9 @@ class Mission {
   bool opDone = false;
   int opCount = 0;
 
+  //constructor
+  Mission(this.name, this.state);
+
   /// devNote  function, that OPENS something.  so rename; init
   bool opInit(int openCount, var openThis) {
     print('----  oInit ------');
@@ -134,8 +146,7 @@ class Mission {
     //  code..
   }
 
-//constructor
-  Mission(this.name, this.state);
+
 
 //--------------------------------------------------   coming
 //TODO  teamNext    coming:    Base Isolate example
@@ -144,6 +155,7 @@ class Mission {
 
 } // ---------------------------------------   end class Mission
 
+
 ///  creating instance of Mission and using it's methods
 ///  all render__X functions are for test and presentation
 void renderMission() {
@@ -151,4 +163,5 @@ void renderMission() {
   missionR.showInfo();
   missionR.toChore();
   missionR.rollCount;
+  print('--  mission render done  --');
 }

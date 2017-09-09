@@ -6,7 +6,9 @@ import 'package:dawo/dawo.dart';
 ///  watch difference, when importing dawo/dawo_src.dart
 ///  dawo_src only #imports all dawo files except dawo.dart
 ///  dawo.dart exports: export 'package:dawo/dawo_src.dart';
-import 'package:dawo/dawo_src.dart';
+//  import 'package:dawo/dawo_src.dart';
+
+import 'package:dawo/dawo_mission.dart';
 
 // wanna import all of them?
 import 'package:dawo/code_snippets/aldente_func.dart';
@@ -26,7 +28,9 @@ import 'package:dawo/dawo_tools.dart';
 var da = new DawoApp('exampleApp', 'Testing in dawo_example');
 var df = new DawoMill();
 
-var missionX = new Misssion('Mission-class', 'example:dawo_example');
+var missionX = new Mission('Mission-class', 'example:dawo_example');
+
+
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {
@@ -34,11 +38,20 @@ main() {
   var awesome = new Awesome();
   print('awesome: ${awesome.isAwesome}');
 
+  //  watch something from every file
+  //  base
+  //  choreBuf
+  //  dawo
+  //  app
+  //  dev
+  //  mill
+  //  mission
+  //  Mission  class
+
   //  play with classes
   /*
   da.
   df.
-  bLib.
   ch.
   */
 

@@ -25,6 +25,7 @@ import 'dawo_dev.dart';
 import 'dawo_mill.dart';
 import 'dawo_mission.dart';
 import 'dawo_tools.dart';
+import 'mis.dart';
 
 //  *team* became independent. How to use team in future.. that's the question
 //  *team* was collaboration system to serve as tool for dawo development
@@ -51,6 +52,8 @@ part 'src/awesome.dart';
 
 ///---------------------  count how long way to 0.0.1 version
 num dawoDartReadiness = 92;
+
+String missionError = 'Yes there is mission error';
 
 //using getters to collect sums of variables from dawo-part files
 num get dawoReadiness =>

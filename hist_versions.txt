@@ -10,10 +10,10 @@ Way to version 0.0.2, possible fixes:
 2. DONE   Readme file modified
 3. DONE   Class constructors to every class
 
-4. eeee   Import / export usage unclear. Get all files in one command.
+4. __e_   Import / export usage unclear. Get all files in one command.
           - is analyzer acting weird? do not show variables (fast enough)
 
-5. bbbb   Make Stream-play / explore file.  ( BOORING! )
+5. __b_   Make Stream-play / explore file.  ( BOORING! )
 6. DONE   Base structure class that important classes extend
           - includes: - INIT-BUILD-ROLL-SHOW-DONE syckle
 
@@ -37,3 +37,9 @@ ____  Fill generic lists with members
               dawoApp has: missionL<Mission>
               mission has choreL<Chore>
               Roll methods for them
+
+____  roll counters to app, mission, chore, mill
+
+____  render (test and note function) to every file
+
+____
