@@ -97,6 +97,6 @@ void renderDawo() {
   var dawoActive = dawoFlags.active;
   dawoActive;
 
-  var mission = new Mission('mission in dawo_src-render', 'test-mission');
-  mission.opCount;
+  var missionY = new Mission('mission in dawo_src-render', 'test-mission');
+  missionY.opCount;
 }

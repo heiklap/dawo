@@ -26,7 +26,7 @@ import 'package:dawo/dawo_tools.dart';
 var da = new DawoApp('exampleApp', 'Testing in dawo_example');
 var df = new DawoMill();
 
-var mission = new Misssion('Mission-class', 'example:dawo_example');
+var missionX = new Misssion('Mission-class', 'example:dawo_example');
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {

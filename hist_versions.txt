@@ -1,0 +1,31 @@
+
+
+
+Development of dawo package 2017
+
+_____________________________________________________________________________
+Way to version 0.0.2, possible fixes:
+
+1. DONE:  Little roll / render example
+2. DONE   Readme file modified
+3. DONE   Class constructors to every class
+
+4. ____   Import / export usage unclear. Get all files in one command.
+          - is analyzer acting weird? do not show variables (fast enough)
+
+5. ____   Make Stream-play / explore file.  ( BOORING! )
+6. DONE   Base structure class that important classes extend
+          - includes: - INIT-BUILD-ROLL-SHOW-DONE cyckle
+
+7. DONE-1  1----0  StringBuffers to every important class for output
+
+8. ____  Start: Connector-class; Connect App-Mission-Chore classes functionality in mill-process
+         - this is fine-graded and long development plan. ( DIFFICULT :( )
+
+9. ____ Team notes (List and maps) maybe: in clay_in folder
+
+10. ____  Generic lists inside classes for to control their "sub-ordinates"
+        dawoApp has: missionL<Mission>
+        mission has choreL<Chore>
+        Roll methods for them
+_____________________________________________________________________________
