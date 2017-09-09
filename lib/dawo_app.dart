@@ -14,6 +14,7 @@ import 'base_struct.dart';
 ///  getter practice
 num dawoAppReadiness = 95; //  changed: 2.5.2015
 
+///  buffer also outside class, for testing and adding visibility
 var appBuf = new StringBuffer();
 
 ///

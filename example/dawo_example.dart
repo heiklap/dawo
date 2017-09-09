@@ -30,6 +30,7 @@ var missionX = new Misssion('Mission-class', 'example:dawo_example');
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {
+
   var awesome = new Awesome();
   print('awesome: ${awesome.isAwesome}');
 

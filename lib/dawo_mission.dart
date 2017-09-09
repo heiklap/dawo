@@ -4,6 +4,9 @@
 
 library dawo_mission;
 
+///  buffer also outside class, for testing and adding visibility
+var missionBuf = new StringBuffer();
+
 ///  base lib class... Some info/state/basic values of -this- "part".
 ///  to control some extra/lower level state of apps or operations
 ///  it plays clearly below -app level
@@ -141,8 +144,8 @@ class Mission {
 ///  creating instance of Mission and using it's methods
 ///  all render__X functions are for test and presentation
 void renderMission() {
-  var mission = new Mission('MissionRender', 'Testing<<inRender<<Lib');
-  mission.showInfo();
-  mission.toChore();
-  mission.rollCount;
+  var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
+  missionR.showInfo();
+  missionR.toChore();
+  missionR.rollCount;
 }

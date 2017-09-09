@@ -7,6 +7,9 @@ library dawo_tools.dart;
 ///
 num demoToolsReadiness = 96;
 
+///  buffer also outside class, for testing and adding visibility
+var toolsBuf = new StringBuffer();
+
 ///  just a note, howTo print a map
 void operationMapPrint(Map thisMap) {
   thisMap.forEach((k, v) {

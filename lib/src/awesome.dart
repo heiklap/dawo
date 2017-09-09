@@ -6,6 +6,9 @@ part of dawo_src;
 
 // TODO: Put public facing types in this file.
 
+///  buffer also outside class, for testing and adding visibility
+var awesomeBuf = new StringBuffer();
+
 /// This file is originally created by Dart tools
 /// Checks if you are awesome. Spoiler: you are.
 class Awesome {

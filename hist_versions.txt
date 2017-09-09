@@ -15,9 +15,10 @@ Way to version 0.0.2, possible fixes:
 
 5. ____   Make Stream-play / explore file.  ( BOORING! )
 6. DONE   Base structure class that important classes extend
-          - includes: - INIT-BUILD-ROLL-SHOW-DONE cyckle
+          - includes: - INIT-BUILD-ROLL-SHOW-DONE syckle
 
-7. DONE-1  1----0  StringBuffers to every important class for output
+7. DONE  StringBuffers to every important class and file for output.
+          - this also adds visibility for variable-name
 
 8. ____  Start: Connector-class; Connect App-Mission-Chore classes functionality in mill-process
          - this is fine-graded and long development plan. ( DIFFICULT :( )

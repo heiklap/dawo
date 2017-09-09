@@ -20,6 +20,9 @@ library base_lib;
 
 final num dawLibBaseReadiness = 5; //  readiness for  version  0.0.1
 
+///  buffer also outside class, for testing and adding visibility
+var baseLibBuf = new StringBuffer();
+
 String baseLibMotto = 'Serving some common functionality to all files';
 
 //

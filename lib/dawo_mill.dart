@@ -5,6 +5,9 @@
 
 library dawo_mill;
 
+///  buffer also outside class, for testing and adding visibility
+var millBuf = new StringBuffer();
+
 //TODO  teamInno    -------- plan for controlling  this apps states and behaviour
 ///     low level work-flow "flags" are in dawlib.....
 ///  will eventually be some kind of #mill, that controls all #job's

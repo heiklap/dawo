@@ -18,6 +18,9 @@ import 'package:dawo/dawo_tools.dart';
 
 num dawoDevReadiness = 94;
 
+///  buffer also outside class, for testing and adding visibility
+var devBuf = new StringBuffer();
+
 //TODO  teamInno   devTeam should be one instance of team class !!
 bool devTestPhase = true; // set this false in production. (newer)
 
