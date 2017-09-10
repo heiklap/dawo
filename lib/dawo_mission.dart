@@ -40,7 +40,7 @@ class Mission {
     'autoWork': 'no'
   };
 
-  //  -state-  variables
+  ///  controlling missions state, working-condition-state values
   String state = 'Functional';
   bool stDo = false;
   bool sDone = false;

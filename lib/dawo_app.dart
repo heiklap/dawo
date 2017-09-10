@@ -34,6 +34,7 @@ class DawoApp extends BaseStruct {
   ///  must initialize StringBuffer here
   StringBuffer buf = new StringBuffer();
 
+  ///  controlling app state, working-condition-state values
   bool offB = true;
   bool onB = false;
   bool pauseB;

@@ -77,18 +77,19 @@ A simple usage example:
     import 'package:dawo/dawo_src.dart';
     import 'package:dawo/dawo_tools.dart';
     
+And creating variables
 
+    //  create classes::
+    var dap = new DawoApp('exampleApp', 'Testing in dawo_example');
 
-//  create classes::
-var dap = new DawoApp('exampleApp', 'Testing in dawo_example');
+    //  deleted!!  var df = new DawoFlag();
+    deleted var bLib = new BLib('bLib-class', 'example:dawo_example');
 
-//  deleted!!  var df = new DawoFlag();
-//  deleted var bLib = new BLib('bLib-class', 'example:dawo_example');
+    var mission = new Mission('#name','#state');  //  #state  ? :)
+    var ch = new Chore('#name','info');
+    var connector = new Connector('name','info');
 
-
-var mission = new Mission('#name','#state');  //  #state  ? :)
-var ch = new Chore('#name','info');
-var connector = new Connector('name','info');
+// and main: 
 
     main() {
       //  from Dart sample:

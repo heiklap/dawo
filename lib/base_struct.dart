@@ -18,7 +18,7 @@ abstract class BaseStruct {
 
   StringBuffer buf;
 
-  ///  controlling app state
+  ///  controlling objects state, working-condition-state values
   bool offB;
   bool onB;
   bool pauseB;

@@ -1,11 +1,11 @@
-///  ##  connecting app - mission - chore together, ( #client's) mediating them
+///  ##  connecting  ( as #client's) app - mission - chore together,  mediating them
 ///   copyright  Heikki K. Lappalainen
 /// * READY-STATE:  4%            // for 0.0.2 version
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  dawo_connector.dart
-/// #name:  connector ..is not nice
-/// Connector in deeply imaginary level of construction. We know, that app -
-/// mission - chore work in same sphere, and there must be something, that
-/// they have kin common, abstraction layer, in which they must work together.
+/// #name:  connector ..is not nice. change to: ______
+/// Connector is in deeply imaginary level of construction. We know, that app -
+/// mission - chore work together in same sphere, and there must be something, that
+/// they have in common; abstraction layer, in which they must work together.
 ///
 /// * Sending messages between objects
 //
@@ -21,22 +21,23 @@ StringBuffer connectorBuf = new StringBuffer();
 String connectorMotto =
     'connecting app - mission - chore together, mediating them';
 
+
 ///  ***********************************************************************
 /*      connector:  very weak idea, how to accomplish this. 10 %
         Not much of this functionality is yet done
         
         Name:   #connector is not the right one. Not nice.
-        #clients: = app's - mission's - chore's
+        #clients: = app - mission's - chore's
 
 * Gather "service calls" from  app - mission - chore; and mediate them.
 * Have rules of privilege for precedence of missions - chores.
 * Give TO > mill commands, "work-orders".
 * Should have access to class-buffers to seek data.
 * Special language #Lang, to force commands to certain shape.
-* #baton  to carry only-one-can-have-at-a-same-time magic thing
+* #baton : to carry only-one-can-have-at-a-same-time magic thing.
 *
 * COMMAND ROLL:
-* 1. get command, handle parameters
+* 1. get command, handle parameters.
 * 2. Check command against rules. Take - return - reject.
 * 3. Full-fill command;  void obey(sender, receiver, baton, msg, flags)
 * 4. Get answer, serve back.
@@ -53,8 +54,8 @@ String connectorMotto =
 * IDEA:  #serviceKey #baton, that only one client can have at a time.
 * IDEA:  Privilege key.
 *
-* MAYBE: Incoming commands have certain form. Classes?
-* MAYBE: Access to #GOAL variables.
+* MAYBE: Incoming commands have certain form. Classes?  Strings?
+* MAYBE: Access to #GOAL aso. variables.
 * MAYBE:
 * MAYBE:
 *
@@ -67,8 +68,8 @@ String connectorMotto =
  */
 ///  ***********************************************************************
 
-///  This class gets same structure base as other important classes.
-///  Connecting clients (app-mission-chore) to work together
+///  This class gets same structure base, as other important classes.
+///  Connecting clients (app-mission-chore) to work together.
 class Connector extends BaseStruct {
   String name = 'connector class';
   String info = 'connecting app - mission - chore together, mediating them';
@@ -76,7 +77,7 @@ class Connector extends BaseStruct {
   // buffer inside class for output
   StringBuffer buf = new StringBuffer();
 
-  ///  controlling app state, off-line values
+  ///  controlling connectors state, working-condition-state values
   bool offB = true;
   bool onB = false;
   bool pauseB;
@@ -98,8 +99,7 @@ class Connector extends BaseStruct {
     buf.writeln('build done');
   }
 
-  ///  #run-like method,
-  ///  TODO:  connector one-time calls must have parameters;
+  ///  #run / roll method
   void roll() {
     buf.writeln('Connector::    $info   :: roll engaged ');
     init(); //  calling init and build methods in this class
@@ -112,6 +112,7 @@ class Connector extends BaseStruct {
     //  code here
   }
 
+  ///  TODO:  connector one-time calls must have parameters;
   ///  sketching one-time commands, coming from clients
   void obey(String sender, receiver, baton, msg) {
     /// #baton  to carry only-one-can-have-at-a-same-time magic thing
