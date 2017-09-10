@@ -2,12 +2,12 @@
 
 Learning Dart simple basic data for beginners, and howTo use it for building a package.
 Beginner Dart programmers kickoff to develop a glorious package..
-Read: hist_versions.txt to see full changes to this, and coming versions.
+- Read: hist_versions.txt to see full changes to this, and coming versions.
 ## Usage
     // watch code below and example file.
     // eventually usage is planned;
     var dawoApp = new DawoApp(clayIn);
-    dawoapp.roll();
+    dawoApp.roll();
 
 ### Brainstorming
 
@@ -41,28 +41,25 @@ Read: hist_versions.txt to see full changes to this, and coming versions.
  
 
 ### Files;
-code_snippets:
-aldente_func :  Simple functions, including some logical errors. Find them!
-bat_loop :  control structures.
-learn_stream_sync : examples of simple Streams.
+####code_snippets, learn / copy-paste stuff:
+- aldente_func :  Simple functions, including some logical errors. Find them!
+- bat_loop :  control structures.
+- learn_stream_sync : examples of simple Streams.
 
-app files
-base_lib : common properties that other libraries use.
-base_struct : structures of base classes.
-
-dawlib_chore : start of bigger "job" / "chore" for real-world-work. Imitating function
+####app files
+- base_lib : common properties that other libraries use.
+- base_struct : structures of base classes.
+- dawlib_chore : start of bigger "job" / "chore" for real-world-work. Imitating function
       of other, bigger, same kind of idea.
-dawlib_coll : examples and hacking material of collections.
-
-dawo.dart : main file
-dawo_app : dawoApp class, that has mission - and chore under it.
-dawo_connector.dart connecting  ( as #client's) app - mission - chore together,  mediating them
-dawo_dew : Helper functions for cl (command line)and screen testing.
-
-dawo_mill : Processing commands, all they in row, by privileges.
-dawo_mission : chunk of command-processing between app and chore.
-dawo_src  file created by stagehand plugin app
-dawo_tools : helper tools, sleep, stamps aso.
+- dawlib_coll : examples and hacking material of collections.
+- dawo.dart : main file
+- dawo_app : dawoApp class, that has mission - and chore under it.
+- dawo_connector.dart connecting  ( as #client's) app - mission - chore together,  mediating them
+- dawo_dew : Helper functions for cl (command line)and screen testing.
+- dawo_mill : Processing commands, all they in row, by privileges.
+- dawo_mission : chunk of command-processing between app and chore.
+- dawo_src  file created by stagehand plugin app
+- dawo_tools : helper tools, sleep, stamps aso.
 
 
 

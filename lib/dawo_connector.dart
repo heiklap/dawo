@@ -29,7 +29,7 @@ String connectorMotto =
         Name:   #connector is not the right one. Not nice.
         #clients: = app - mission's - chore's
 
-* Gather "service calls" from  app - mission - chore; and mediate them.
+* Get "service calls" from #members:  app - mission - chore; and solve them.
 * Have rules of privilege for precedence of missions - chores.
 * Give TO > mill commands, "work-orders".
 * Should have access to class-buffers to seek data.
