@@ -30,52 +30,76 @@ Beginner Dart programmers kickoff to develop a glorious package..
  
 
 ### Files;
+code_snippets:
 aldente_func :  Simple functions, including some logical errors. Find them!
 bat_loop :  control structures.
-dawlib_phase :  idea of keeping some of this stuff inside of "mini-library".
+learn_stream_sync : examples of simple Streams.
 
-dawlib_chore : start of bigger "job" / "chore" for real-world-work. This should
-quite soon to be moved to it's own library, co's it will grow too big and important.
-dawlib_base : 
+app files
+base_lib : common properties that other libraries use.
+base_struct : structures of base classes.
+
+dawlib_chore : start of bigger "job" / "chore" for real-world-work. Imitating function
+      of other, bigger, same kind of idea.
 dawlib_coll : examples and hacking material of collections.
-dawlib_stream : examples of simple Streams.
-dawo.dart : 
-dawo_app : dawoApp class
-dawo_dew : small helper functions for cl (command line) testing.
+
+dawo.dart : main file
+dawo_app : dawoApp class, that has mission - and chore under it.
+dawo_dew : Helper functions for cl (command line)and screen testing.
+
+dawo_mill : Processing commands
+dawo_mission : chunk of command-processing between app and chore.
 dawo_src  file created by stagehand plugin app
 dawo_tools : helper tools, stamps aso.
+
+Dunno what was this?
+dawlib_phase :  idea of keeping some of this stuff inside of "mini-library".
+
 
 A simple usage example:
 
     import 'package:dawo/dawo.dart';
     
     // wanna import all of them?
-    import 'package:dawo/aldente_func.dart';
-    import 'package:dawo/bat_loop.dart';
+    import 'package:dawo/code_snippets/aldente_func.dart';
+    import 'package:dawo/code_snippets/bat_loop.dart';
+    import 'package:dawo/code_snippets/learn_stream_sync.dart';
+    
+    import 'package:dawo/base_lib.dart';
+    import 'package:dawo/base_struct.dart';
     import 'package:dawo/dawlib_chore.dart';
     import 'package:dawo/dawlib_coll.dart';
-    import 'package:dawo/dawlib_stream.dart';
     import 'package:dawo/dawo_app.dart';
+    import 'package:dawo/dawo_connector.dart';
     import 'package:dawo/dawo_dev.dart';
+    import 'package:dawo/dawo_mill.dart';
+    import 'package:dawo/dawo_mission.dart';
+    import 'package:dawo/dawo_src.dart';
     import 'package:dawo/dawo_tools.dart';
     
 
 
 //  create classes::
-var da = new DawoApp('exampleApp', 'Testing in dawo_example');
-var df = new DawoFlag();
-var bLib = new BLib('bLib-class', 'example:dawo_example');
-var ch = new SuperChore();
+var dap = new DawoApp('exampleApp', 'Testing in dawo_example');
+
+//  deleted!!  var df = new DawoFlag();
+//  deleted var bLib = new BLib('bLib-class', 'example:dawo_example');
+
+
+var mission = new Mission('#name','#state');  //  #state  ? :)
+var ch = new Chore('#name','info');
+var connector = new Connector('name','info');
 
     main() {
       //  from Dart sample:
       var awesome = new Awesome();
       
       //  play with classes
-      //  da.
-      //  df.
-      //  bLib.
-      //  vh.
+      //  dap.
+   
+      //  mission.
+      //  ch.
+      //  connector.   
       
       //  code, play with other variables
     }

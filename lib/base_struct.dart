@@ -24,7 +24,12 @@ abstract class BaseStruct {
   bool pauseB;
   bool doneB;
 
+  //  TODO  add fields for incoming and outgoing data
+  //  var clayIn;
+  //  var clayOut;  //  like screen part;  topLeft aso.
+
   ///  Method for setting class field values
+  ///  TODO  add parameters
   void init();
 
   ///  method for setting class in working condition

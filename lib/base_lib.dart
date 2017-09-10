@@ -25,4 +25,16 @@ var baseLibBuf = new StringBuffer();
 
 String baseLibMotto = 'Serving some common functionality to all files';
 
+///  TODO   Global variables
+class GlobalVariables {
+  // aka, you have some property StringSink output. All of your code writes
+  // to that - output?.writeln(“some message”). Depending on the context,
+  // output = new StringBuffer() or output = stdout
+  var output;
+  var input;
+}
+
+/// and instance;
+var glb = new GlobalVariables();
+
 //

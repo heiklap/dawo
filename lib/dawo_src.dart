@@ -14,13 +14,16 @@ library dawo_src; //  naming this to _src...
 import 'dart:async';
 
 import 'package:dawo/code_snippets/aldente_func.dart';
+import 'package:dawo/code_snippets/bat_loop.dart';
+import 'package:dawo/code_snippets/learn_stream_sync.dart';
+
 import 'base_lib.dart';
 import 'base_struct.dart';
-import 'package:dawo/code_snippets/bat_loop.dart';
 import 'dawlib_chore.dart';
 import 'dawlib_coll.dart';
-import 'package:dawo/code_snippets/learn_stream_sync.dart';
+
 import 'dawo_app.dart';
+import 'dawo_connector.dart';
 import 'dawo_dev.dart';
 import 'dawo_mill.dart';
 import 'dawo_mission.dart';

@@ -1,4 +1,6 @@
 ///  ##  Chore for organizing work flow.
+///  Primary functionality: get notes-list aso data from input/clay
+///  incoming data (clayIn) comes from customer. coders OR sample aso.
 ///  Controlling work-flow and processes. Wrapper round of your small piece of
 ///  code:  Put your actual code inside Chore.
 ///

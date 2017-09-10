@@ -17,7 +17,6 @@ import 'dart:async';
 ///  getters..
 num dawLibStreamReadiness = 90; // readiness for version 0.0.1
 
-
 ///TODO  every stream-function adds own message to batonMsg and ++ batonCount
 ///  So we can at the end see, what had happened
 StringBuffer batonMsg = new StringBuffer();
@@ -43,14 +42,11 @@ void addToStream(Stream thisStream, var SenderListener) {
   print('***  nothing to see here  ***');
 }
 
-
 ///  PLAN:  some functions with long names..
 void presentStreamCreate() {}
 
-
 ///
 void presentStreamListen() {}
-
 
 ///  ..
 //TODO  aSync stream   is there something special in "superStream"   ??
@@ -66,7 +62,6 @@ void presentSuperStream(var streamData, var streamListen) {
     print('---           OK           --- \n');
   });
 }
-
 
 ///  String?  streamReceiver  "hyperStream"  makes it better
 void presentHyperStream(var sData, var sListen, String sReceiver) {
@@ -84,7 +79,6 @@ void presentHyperStream(var sData, var sListen, String sReceiver) {
   //Study it here:    stream.
 }
 
-
 ///    basic stream example...
 void presentStreamBase() {
   var _data = intList; // some sample data
@@ -101,10 +95,8 @@ void presentStreamBase() {
   // _psbStream.   contrary to using:   stream
 }
 
-
 //  stream = new Stream.fromIterable([1,2,3,4,5]);
 //  stream.first.then((value) => print("stream.first: $value"));  // 1
-
 
 ///    another basic stream example
 void presentStreamExmpl() {
@@ -113,14 +105,14 @@ void presentStreamExmpl() {
   var broadcastStream = stream.asBroadcastStream();
 
   broadcastStream //   using   method   cascades...
-  //TODO  Test:  can we NOT use shorthand function?
+    //TODO  Test:  can we NOT use shorthand function?
     ..listen((value) => print("SUCCESS_1_:: stream.listen: $value"))
     ..first.then((value) => print("SUCCESS_2_:: stream.first: $value")) // 1
     ..last.then((value) => print("SUCCESS_3_:: stream.last: $value")) // 5
-    ..isEmpty.then((value) => print("SUCCESS_4_:: stream.isEmpty: $value")) // false
+    ..isEmpty
+        .then((value) => print("SUCCESS_4_:: stream.isEmpty: $value")) // false
     ..length.then((value) => print("SUCCESS_5_:: stream.length: $value")); // 5
 }
-
 
 ///    samples of broadcast stream
 void presentBroadcastStream() {
@@ -156,7 +148,6 @@ void presentBroadcastStream() {
   // skipWhile: 5
 }
 
-
 ///   howToNote:   how to add to stream.. with streamController !!
 void presentStreamTransform() {
 //TODO  teamHowTo    make roundWay
@@ -178,7 +169,6 @@ void presentStreamTransform() {
       .listen((value) => print("listen: $value"));
 }
 
-
 //TODO  bin  note   no io-operations allowed in HTML
 void presentFileStream() {
 /* ERROR   The class 'File' does not have a default constructor
@@ -192,26 +182,22 @@ void presentFileStream() {
   print('***   nothing hyet here  *** \n');
 }
 
-
 ///  ..
 void presentStreamValidate() {
   var data = intList;
   var stream = new Stream.fromIterable(data);
   var broadcastStream = stream.asBroadcastStream();
 
-  broadcastStream
-      .any((value) => value < 5)
-      .then((result) => print("\n  ***  resentStreamValidate  *** \n  Any less than 5?: $result")); // true
+  broadcastStream.any((value) => value < 5).then((result) => print(
+      "\n  ***  resentStreamValidate  *** \n  Any less than 5?: $result")); // true
 
   broadcastStream
       .every((value) => value < 5)
       .then((result) => print("All less than 5?: $result")); // false
 
-  broadcastStream
-      .contains(4)
-      .then((result) => print("Contains 4?: $result  \n  --  OK  --  \n")); // true
+  broadcastStream.contains(4).then(
+      (result) => print("Contains 4?: $result  \n  --  OK  --  \n")); // true
 }
-
 
 ///
 void presentSingleValueStream() {
@@ -221,10 +207,10 @@ void presentSingleValueStream() {
 
   broadcastStream
       .singleWhere((value) => value < 2) // there is only one value less than 2
-      .then((value) => print("\n  single value: $value  \n ---    OK  ----  \n "));
+      .then((value) =>
+          print("\n  single value: $value  \n ---    OK  ----  \n "));
   // outputs: single value: 1
 }
-
 
 ///   more stream methods
 void presentUnsubscribeFromStream() {
@@ -240,7 +226,6 @@ void presentUnsubscribeFromStream() {
   subscription.onDone(() => print("done"));
 }
 
-
 ///  ..
 void presentGenericStream() {
   var data = intList; // int's, valid
@@ -251,7 +236,6 @@ void presentGenericStream() {
     print("listen: $value  \n  ---   OK  --- \n");
   });
 }
-
 
 ///  TODO  HTML  not allowed in VM
 ///

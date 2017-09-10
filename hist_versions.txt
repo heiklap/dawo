@@ -4,17 +4,17 @@
 Development of dawo package 2017
 
 _____________________________________________________________________________
-Way to version 0.0.2, possible fixes:
+Way to version 0.0.2, possible fixes:  Publish to Pub: 10.9.-15.9.2017
 
 1. DONE:  Little roll / render example
-2. DONE   Readme file modified
+2. DONE   Readme file, README.md, modified
 3. DONE   Class constructors to every class
 
 4. __e_   Import / export usage unclear. Get all files in one command.
           - is analyzer acting weird? do not show variables (fast enough)
 
 5. DONE   Make Stream-play (sync) / explore file.  ( BOORING! ) no, it was interesting :)
-          in code_snippets:  learn_stream_sync 
+          in code_snippets:  learn_stream_sync
 
 6. DONE   Base structure class that important classes extend
           - includes: - INIT-BUILD-ROLL-SHOW-DONE cycle
@@ -22,7 +22,7 @@ Way to version 0.0.2, possible fixes:
 7. DONE  StringBuffers to every important class and file for output.
           - this also adds visibility for variable-name
 
-8. _h__  Start: Connector-class; Connect App-Mission-Chore classes functionality in mill-process
+8. DONE  Start: Connector-class; Connect App-Mission-Chore classes functionality in mill-process
          - in this phase this is gonna be very elementary, schematic
          - At the end this is fine-graded and long development plan. ( DIFFICULT :( )
 
@@ -37,38 +37,41 @@ _____________________________________________________________________________
 
 Version NEXT:  0.0.3 aso.
 
-3.1 ____  Active "Rumba" -example
+3.1 ____  Active "Rumba" flow / -example
+          - app / mission / chore all working together
 
 3.2 ____  Fill generic lists with members
-      Use generic lists inside classes for to control their "sub-ordinates"
-              dawoApp has: missionL<Mission>
-              mission has choreL<Chore>
-              Roll methods for them
+            Use generic lists inside classes for to control their "sub-ordinates"
+            dawoApp has: missionL<Mission>
+            mission has choreL<Chore>
+            Roll methods for them
 
 3.3 ____  roll counters to app, mission, chore, mill
 
-3.4 ____  render (test and note function) to every file
+3.4 ____  render ( = test, presentation and quick-note function) to every file
 
 3,5 ____  dev class. dev tester person
-      -every file imports dev, and can add dev-notes
+            -every file imports dev, and can add dev-notes
 
 3.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
-      * not yet clear idea, how this must be done
+            * not yet clear idea, how this must be done
 
 3.7 ____  incoming data in clay-folder
-      * dev data
-      * political-data  (test-case)
+            * dev data
+            * political-data  (test-case)
 
-3.8 ____
+3.8 ____  outGoing data methods in clayOut-folder
 
-3.9 ____
+3.9 ____  sketch  base_lib functionality
 
-3.10 ____
+3.10 ____ separate learnLib with 3 files.
 
 
 _________________________________________________________________________
 
 Version NEXT:  0.0.4 aso
+
+class.init / done  should #deactivate #clients in <chore> aso. lists
 
 Working rumba  is mark for  0.1.0  version
 

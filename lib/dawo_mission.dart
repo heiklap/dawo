@@ -1,4 +1,5 @@
-///  mis-sion is something between app and chore, process
+///  mission is something between app and chore, process
+///  Primary functionality: engage chores
 ///  HIST:  hkl  8.9.2017
 //
 

@@ -1,4 +1,5 @@
 ///  ##  App class
+///  Primary functionality:  engage missions.
 ///  Some information about app, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
 /// * ReadyState:   95 %  for version 0.0.1   in GitHub  yes
