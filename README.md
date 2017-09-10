@@ -40,13 +40,13 @@ Beginner Dart programmers kickoff to develop a glorious package..
         Maybe  chore  and  team
  
 
-### Files;
-####code_snippets, learn / copy-paste stuff:
+## Files;
+###code_snippets, learn / copy-paste stuff:
 - aldente_func :  Simple functions, including some logical errors. Find them!
 - bat_loop :  control structures.
 - learn_stream_sync : examples of simple Streams.
 
-####app files
+###app files
 - base_lib : common properties that other libraries use.
 - base_struct : structures of base classes.
 - dawlib_chore : start of bigger "job" / "chore" for real-world-work. Imitating function
