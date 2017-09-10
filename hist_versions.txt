@@ -4,72 +4,125 @@
 Development of dawo package 2017
 
 _____________________________________________________________________________
-Way to version 0.0.2, possible fixes:  Publish to Pub: 10.9.-15.9.2017
+Way to version 0.0.2, planned fixes.
+Theme : baseStructure, base_lib, dawo_mill, connector, learn/code_snippets
+Publish to Pub: 10.9.-15.9.2017
 
-1. DONE:  Little roll / render example
-2. DONE   Readme file, README.md, modified
-3. DONE   Class constructors to every class
+2.1. DONE:  Little roll / render example
+2.2. DONE   Readme file, README.md, modified
+2.3. DONE   Class constructors to every class
 
-4. __e_   Import / export usage unclear. Get all files in one command.
-          - is analyzer acting weird? do not show variables (fast enough)
+2.4. __e_   Import / export usage unclear. Get all files in one command.
 
-5. DONE   Make Stream-play (sync) / explore file.  ( BOORING! ) no, it was interesting :)
+
+2.5. DONE   Make Stream-play (sync) / explore file.  ( BOORING! ) no, it was interesting :)
           in code_snippets:  learn_stream_sync
 
-6. DONE   Base structure class that important classes extend
+2.6. DONE   Base structure class that important classes extend
           - includes: - INIT-BUILD-ROLL-SHOW-DONE cycle
 
-7. DONE  StringBuffers to every important class and file for output.
+2.7. DONE  StringBuffers to every important class and file for output.
           - this also adds visibility for variable-name
 
-8. DONE  Start: Connector-class; Connect App-Mission-Chore classes functionality in mill-process
+2.8. DONE  Start: Connector-class; Connect App-Mission-Chore classes functionality in mill-process
          - in this phase this is gonna be very elementary, schematic
          - At the end this is fine-graded and long development plan. ( DIFFICULT :( )
 
-9. DONE created DawoDewTest  class in dawo_dew
+2.9. DONE created DawoDewTest  class in dawo_dew
 
-10. DONE Add generic lists for every meaningful member
+2.10. DONE Add generic lists for every meaningful member
     * like: List<CommonChore> choreL = []
     * add usage later
 
+Overall problems:
+- Is analyzer acting weird? It do not show variables (fast enough).
+- Small uncertainty in libraries. When to import and export.
+  * Import all in tests, for to be sure. And analyzer finds them quick.
 _____________________________________________________________________________
 
 
-Version NEXT:  0.0.3 aso.
+Way to version NEXT:  0.0.3 aso.
+Theme:  Choose different Client / customer data and small, playing work-flow
+To be published:  ~25.9.2017
 
-3.1 ____  Active "Rumba" flow / -example
-          - app / mission / chore all working together
+3.1 ____   Other customers data; politic, Helsinki (dawo/dev is original, always there)
 
-3.2 ____  Fill generic lists with members
+
+3.2 ____   Choose customer in parameters
+
+
+
+3.3 ____   Active "Rumba" flow / -example
+           - app / mission / chore : all working together
+
+3,5 ____  incoming data in clay-folder
+            * dev data
+            * political-data  (test-case)
+
+
+3.4 ____  Fill generic lists with members
             Use generic lists inside classes for to control their "sub-ordinates"
             dawoApp has: missionL<Mission>
             mission has choreL<Chore>
             Roll methods for them
 
-3.3 ____  roll counters to app, mission, chore, mill
 
-3.4 ____  render ( = test, presentation and quick-note function) to every file
 
-3,5 ____  dev class. dev tester person
+3.6 ____  Connector, more ideas
+
+
+3.7 ____
+
+
+
+3.8 ____
+
+3.9 ____
+
+3.10 ____
+
+
+
+_____________________________________________________________________________
+
+
+Way to version:  0.0.4 aso.
+Theme:  Statistics, output, variation, versatility
+To be published:  ? 10.10.2017 ?
+
+4.1 ____  reasonable output.
+
+
+4.2 ____  Solving Clients problems
+
+
+
+
+
+4.3 ____  roll counters to app, mission, chore, mill
+
+4.4 ____  render ( = test, presentation and quick-note function) to every file
+
+4,5 ____  dev class. dev tester person
             -every file imports dev, and can add dev-notes
 
-3.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
+4.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
             * not yet clear idea, how this must be done
 
-3.7 ____  incoming data in clay-folder
-            * dev data
-            * political-data  (test-case)
+4.7 ____  Use enums, set, Map, queues. Just for to sho that you can.
 
-3.8 ____  outGoing data methods in clayOut-folder
 
-3.9 ____  sketch  base_lib functionality
 
-3.10 ____ separate learnLib with 3 files.
+4.8 ____  outGoing data methods in clayOut-folder
+
+4.9 ____  sketch more base_lib functionality
+
+4.10 ____ separate learnLib with its 3 files.
 
 
 _________________________________________________________________________
 
-Version NEXT:  0.0.4 aso
+Version NEXT:  0.0.5 aso
 
 class.init / done  should #deactivate #clients in <chore> aso. lists
 

@@ -3,23 +3,19 @@
 
 import 'package:dawo/dawo.dart';
 
-import 'package:dawo/dawo_mission.dart';
+import 'package:dawo/code_snippets/aldente_func.dart';
+import 'package:dawo/code_snippets/bat_loop.dart';
+import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
-import 'package:dawo/dawo_app.dart';
-
-/* wanna import all of them?
-import 'package:dawo/aldente_func.dart';
-import 'package:dawo/bat_loop.dart';
+import 'package:dawo/base_lib.dart';
+import 'package:dawo/base_struct.dart';
 import 'package:dawo/dawlib_chore.dart';
 import 'package:dawo/dawlib_coll.dart';
-import 'package:dawo/dawlib_stream.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
+import 'package:dawo/dawo_mill.dart';
+import 'package:dawo/dawo_mission.dart';
 import 'package:dawo/dawo_tools.dart';
-
-
-*/
-
 
 import 'package:test/test.dart';
 
@@ -30,12 +26,16 @@ void main() {
     var missionH = new Mission('mission inDT', 'test');
     print(missionH.name);
 
+
+
   var appX = new DawoApp('d-app', 'test');
   appX.info;
 
 
   group('A group of tests', () {
     Awesome awesome;
+
+
 
     setUp(() {
       awesome = new Awesome();
