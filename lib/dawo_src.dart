@@ -80,7 +80,11 @@ num get dawoInit => aldenteFuncInit();
 ///  example of library usage: dawo_app can be accessed from here,
 ///  but users of package can access it only by importing it.
 ///  all render.. functions are tests or example-like files.
-void renderDawo() {
+StringBuffer renderDawo() {
+  print('\n ---------------  renderDawo rolling -------------------------------------------');
+  var renderBuffer = new StringBuffer();
+  renderBuffer.writeln('\n ------ renderBuffer starting--------------------------- \n');
+
   var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
   var dawoFlags = new DawoMill();
   dawoApp.agenda; //  just naming it
@@ -88,7 +92,7 @@ void renderDawo() {
   /// just another instance, shorter, for testing
   var da = new DawoApp('dawoApp', 'playing in renderDawo-function');
   var df = new DawoMill();
-  da.info;
+  renderBuffer.writeln(da.info);
   df.userChoice;
 
   /// -------------------------------- testing  getters and setters
@@ -101,7 +105,13 @@ void renderDawo() {
   dawoOn; //  just naming it
   var dawoActive = dawoFlags.active;
   dawoActive;
-
+  renderBuffer.writeln('------- renderBuffer data-------------------------- \n');
   var missionY = new Mission('mission in dawo_src-render', 'test-mission');
   missionY.opCount;
+
+  renderBuffer.writeln('--------renderBuffer done -------------------------  \n');
+  print(renderBuffer);
+  print('---------------  renderDawo * done *  ------------------------------------------- \n');
+
+  return renderBuffer;
 }

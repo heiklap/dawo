@@ -99,14 +99,14 @@ class Mission {
   }
 
   /// devNote  function, that OPENS something.  so rename; init
-  bool oOpen(int openCount, var openThis) {
+  bool opOpen(int openCount, var openThis) {
     print('----  oOpen ------');
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
   }
 
-  int oRoll(int rollCount, var autoRollFunc) {
+  int opRoll(int rollCount, var autoRollFunc) {
     print('----  oRoll ------');
     int _rollCount =
         rollCount; //  now this just rolls func rollCount time,  lol
@@ -118,7 +118,7 @@ class Mission {
   }
 
   /// devNote  function, that OPENS something.  so rename; init
-  int oClose(int openCount, var openThis) {
+  int opClose(int openCount, var openThis) {
     print('----  oClose ------');
 
     int _openCount = openCount;

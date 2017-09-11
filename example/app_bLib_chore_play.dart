@@ -34,12 +34,12 @@ main() {
   //  getting something from classes
   print('da-Info::   $da.info');
   print('df-active::  $df.active');
-  print('bLibInfo::  $Mission.blInfo');
+  print('bLibInfo::  $mission.blInfo');
   print('ch-info::   $ch.info');
 
 
   //  building all functionality in function::
-  //  rumba();
+    rumba();
 
   //  testing dawoAppRoll
   print('========  dawo app roll =================');

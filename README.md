@@ -143,4 +143,4 @@ These files are best, when copy-pasted and studied in computer.
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/heiklap/dawo/issues
