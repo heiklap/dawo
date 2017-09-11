@@ -1,5 +1,5 @@
 ///  mission is something between app and chore, process
-/// -  Primary functionality: engage chores
+/// -  Primary functionality: engage chores. Version 0.0.2
 /// -  HIST:  hkl  8.9.2017
 //
 
