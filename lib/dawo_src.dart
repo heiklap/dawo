@@ -1,6 +1,6 @@
 ///  ##  Home of dawo libraries
 ///   copyright  Heikki K. Lappalainen
-/// * READY-STATE:  91%            // for 0.0.1 version
+/// * READY-STATE:  99%            // for 0.0.2 version
 /// * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
 ///
 

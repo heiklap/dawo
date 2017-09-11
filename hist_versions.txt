@@ -1,10 +1,10 @@
 
 
-
-Development of dawo package 2017
+By Heikki K Lappalainen
+Development of dawo dartlang package 2017 from 0.0.1 >
 
 _____________________________________________________________________________
-Way to version 0.0.2, planned fixes.
+Ready to version 0.0.2, completed fixes.
 Theme : baseStructure, base_lib, dawo_mill, connector, learn/code_snippets
 Publish to Pub: 10.9.-15.9.2017
 

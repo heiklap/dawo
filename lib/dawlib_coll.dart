@@ -1,4 +1,5 @@
-///  ##  dawo : some simple collection data
+///  ##  dawo : some simple collection data, mainly Sets. Version 0.0.2
+///  No connection to dawo-app for now.
 ///  NEXT version: SplayTreeSet,  and  LinkedHashSet
 ///
 ///  Hist: hkl  22.5.2014  0.0.1  dawo/lib
@@ -9,6 +10,7 @@ library dawlib_coll;
 ///  mediating this value to getter, that counts sum of these
 num dawlibCollReadiness = 93;
 
+///  method to print a map
 void dawLibCollOperationMapPrint(Map thisMap) {
   thisMap.forEach((k, v) {
     print('$k, $v');
@@ -22,53 +24,53 @@ void dawLibCollOperationMapPrint(Map thisMap) {
 //  dartMap.forEach((k, v) { myValuesList.add(v); });
 
 ///  initializing some sets
-var goals = new Set();
-var plans = new Set();
-var teams = new Set();
-var temps = new Set(); // adminNote   not nice name
+var goalsS = new Set();
+var plansS = new Set();
+var teamsS = new Set();
+var tempsS = new Set(); // adminNote   not nice name
 
-//  testing... difference between  .  and ..
+///  testing... difference between  .  and ..
 void makeGoals() {
-  goals
+  goalsS
     ..add('Project 0.0.1 Plan')
     ..add('Github  clean')
     ..add('HTML  Pages')
     ..add('TO-DOs check');
-  goals.forEach(print);
+  goalsS.forEach(print);
 }
 
-/// ..
+/// adding data to Set
 void makePlans() {
-  plans
+  plansS
     ..add('Plain idea')
     ..add('Accepted schema')
     ..add('W o r k  scheduled')
     ..add('W o r k  started');
-  plans.forEach(print);
+  plansS.forEach(print);
 }
 
-/// ..
+/// Filling teamS Set
 void makeTeams() {
-  teams
+  teamsS
     ..add('teamAdm')
     ..add('teamDev')
     ..add('teamEdu')
     ..add('teamHowTo')
     ..add('teamInno')
     ..add('teamNext');
-  teams.forEach(print);
+  teamsS.forEach(print);
 }
 
-///  ..
+///  Function for adding data to this Set.
 void makeTemps() {
-  temps
+  tempsS
     ..add('Largo     leveästi')
     ..add('Lento     hitaasti ')
     ..add('Grave     raskaasti ')
     ..add('Adagio    hitaasti ')
     ..add('Andante   käyden ')
     ..add('Allegro   nopeasti');
-  temps.forEach(print);
+  tempsS.forEach(print);
 }
 
 ///  rendering and presenting sets

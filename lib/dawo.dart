@@ -2,6 +2,7 @@
 /// is governed by a BSD-style license that can be found in the LICENSE file.
 ///
 /// Beginner Dart programmers kickoff to develop a glorious pub package; dawo
+/// Version 0.0.2
 
 library dawo;
 

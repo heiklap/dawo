@@ -1,4 +1,5 @@
 ///  ## Modeling common, reusable controls and operations for libraries.
+///  dawo/base_lib,  version 0.0.2
 ///
 ///  Time to start thinking 6.th floor's furniture, when you are only just
 ///  laying base foundations for your 20-floor building.

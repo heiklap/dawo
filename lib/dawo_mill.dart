@@ -1,6 +1,6 @@
-///
-/// hist:  hkl  8.9.2017 created
-/// work-scheduling system, got flag class from dawo_app
+/// dawo_mill
+/// - hist:  hkl  8.9.2017 created
+/// - work-scheduling system, got flag class from dawo_app
 //
 
 library dawo_mill;

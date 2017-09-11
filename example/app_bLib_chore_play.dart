@@ -1,5 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///  app_lib_chore_play.dart   version 0.0.2  11.9.2017
 
 import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
@@ -60,8 +61,8 @@ void rumba(){
   dt.devTestLine('appMap, flagMap, appPhase,dawo001');
   appMap;
   millMap;
-  appPhase;
-  dawo001;
+  appPhaseM;
+  dawo002M;
 
   //  df.render();
   dt.devTestLine('dawoFlags');

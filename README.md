@@ -1,11 +1,12 @@
-# dawo 0.0.1
+# dawo 0.0.2
 
 Learning Dart simple basic data for beginners, and howTo use it for building a package.
 Beginner Dart programmers kickoff to develop a glorious package..
 - Read: hist_versions.txt to see full changes to this, and coming versions.
 ## Usage
-    // watch code below and example file.
-    // eventually usage is planned;
+    // Classes are separated, without connecting run method.
+    // Watch code below and example file.
+    // Eventually usage is planned;
     var dawoApp = new DawoApp(clayIn);
     dawoApp.roll();
 
@@ -41,12 +42,12 @@ Beginner Dart programmers kickoff to develop a glorious package..
  
 
 ## Files;
-###code_snippets, learn / copy-paste stuff:
+### code_snippets, learn / copy-paste stuff:
 - aldente_func :  Simple functions, including some logical errors. Find them!
 - bat_loop :  control structures.
 - learn_stream_sync : examples of simple Streams.
 
-###app files
+### app files
 - base_lib : common properties that other libraries use.
 - base_struct : structures of base classes.
 - dawlib_chore : start of bigger "job" / "chore" for real-world-work. Imitating function

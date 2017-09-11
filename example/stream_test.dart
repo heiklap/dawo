@@ -1,6 +1,7 @@
 ///  testing streams in dawo stream_test
 ///  These streams are executed kind of in "sync" order.
 //    So usually only some of them "complete. After main.
+///  dawo_stream_test   dawo version 0.0.2  11.9.2017
 
 import 'dart:async';
 

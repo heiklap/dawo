@@ -1,6 +1,6 @@
 ///  mission is something between app and chore, process
-///  Primary functionality: engage chores
-///  HIST:  hkl  8.9.2017
+/// -  Primary functionality: engage chores
+/// -  HIST:  hkl  8.9.2017
 //
 
 library dawo_mission;
@@ -11,6 +11,7 @@ var missionBuf = new StringBuffer();
 ///  generic list to keep all missions
 List<Mission> missionL = [];
 
+///  to publish name in scope for testing
 void helloMission() {
   print('-- hello this is mission file and library  ---');
 }
@@ -59,8 +60,8 @@ class Mission {
     'autoWork': 'no'
   };
 
-  //  -roll  and  -op   are different level of operations
-  //  -roll-  variables
+  ///  -roll  and  -op   are different level of operations
+  ///  -roll-  variables
   bool rollDone = false;
   int rollCount = 0;
 
@@ -81,12 +82,12 @@ class Mission {
 
 //-------------------  -op-  variables and methods
 
-  //  'open'  variables
+  ///  'open'  variables
   bool opOn = false;
   bool opDone = false;
   int opCount = 0;
 
-  //constructor
+  ///  constructor
   Mission(this.name, this.state);
 
   /// devNote  function, that OPENS something.  so rename; init
@@ -106,6 +107,7 @@ class Mission {
     return _openB;
   }
 
+  ///  Start developing operation roll function
   int opRoll(int rollCount, var autoRollFunc) {
     print('----  oRoll ------');
     int _rollCount =

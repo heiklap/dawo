@@ -2,7 +2,7 @@
 ///  Primary functionality:  engage missions.
 ///  Some information about app, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * ReadyState:   95 %  for version 0.0.1   in GitHub  yes
+/// * ReadyState:   99 %  for version 0.0.2   in GitHub  yes
 /// * hkl  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
 ///  Almost all parts changed to libraries
 
@@ -18,15 +18,12 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 ///  buffer also outside class, for testing and adding visibility
 var appBuf = new StringBuffer();
 
-///
+///  Just for testing private variable inside a library.
 String _privacyLibraryTest = 'Testing library / part privacy';
 
-///  This abstract class has wiped out
-//  abstract class DawoAppBase extends baseStruct {
-
-///  class that holds 'soul' of THIS dawo app
+///  Every important dawo Class extends BaseStruct abstract class.
+///  Class that holds 'soul' of THIS dawo app.
 class DawoApp extends BaseStruct {
-  //  overrides DawoAppBase fields
   String name = 'dawo app';
   String info = 'giving global variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
@@ -43,9 +40,9 @@ class DawoApp extends BaseStruct {
   ///  app-specified fields
   String agenda = 'using app in dawo package';
   String msg = 'Message..';
-  String develop = 'Under development.. 30% to:  0.0.2';
-  String version = '0.0.1';
-//  Old marking to find usage of this version in test apps.
+  String develop = 'Under development.. 30% to:  0.0.3';
+  String version = '0.0.2';
+///  Old marking to find usage of this version in test apps.
   final String version_0_0_02 = 'dawo 0.0.02 - 12 / 2013 hkl';
   String thisVersion; //  users announce their version of dawo
   String latestChange = '23.3.2017. th.12.15';
@@ -84,6 +81,7 @@ class DawoApp extends BaseStruct {
     // roll all chores, that are in mission
   }
 
+  ///  Show method to be developed further.
   void show() {
     print(buf);
   }
@@ -105,7 +103,7 @@ Map<String, String> appMap = {
   'name': 'dawo App',
   'info': 'dartang pub package for education',
   'creator': 'me',
-  'version': '0.0.1',
+  'version': '0.0.2',
   'active': '0',
   'stopped': '0',
   'paused': '0',
@@ -114,7 +112,7 @@ Map<String, String> appMap = {
 };
 
 /// TODO  teamInno    this map is for testing work-flow routines
-Map<String, String> appPhase = {
+Map<String, String> appPhaseM = {
   'closed': '',
   'dance': 'galop',
   'dancer': 'LateNightCoder',
@@ -128,21 +126,21 @@ Map<String, String> appPhase = {
 };
 
 /// map to hold development status of this app / version
-Map<String, String> dawo001 = {
-  'devStateNum': '94% to  0.0.1',
-  'devSituation': 'Under development',
+Map<String, String> dawo002M = {
+  'devStateNum': '99% to  0.0.2',
+  'devSituation': 'Ready to Publish',
 
   ///  Find, where in my test-folders is THIS  version used?
-  'version': '0.0.01',
+  'version': '0.0.2',
   'published': 'Yes, Pub',
 
   ///  next-version-info might be useful for my different tests and devNotes
-  'next version': '0.0.2. ~ 20.09.2015',
+  'next version': '0.0.3. ~25.9.2017',
 
   'author': 'Heikki Lappalainen',
   'webPage': 'https://github.com/heiklap/dawo',
   'started': '15.7.2013   hkl  ',
-  'purpose': 'Education  '
+  'purpose': 'Education, Learning  '
 };
 
 //

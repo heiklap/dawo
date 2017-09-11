@@ -2,7 +2,7 @@
 ///  Some helper stuff for screen prints and notes.
 ///  Team - for many developers working in same project
 /// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
-/// * READY-STATE  94%  for version 0.0.1     GitHub: yes  29.11.2014
+/// * READY-STATE  99%  for version 0.0.2     GitHub: yes  29.11.2014
 
 library dawo_dev.dart;
 
@@ -18,6 +18,7 @@ import 'package:dawo/dawo_tools.dart';
 //   note          23            CHANGE:   note  !!!
 //   test          54            CHANGE    test  !!!
 
+///  Not working now; to track readyness
 num dawoDevReadiness = 94;
 
 ///  buffer also outside class, for testing and adding visibility
@@ -28,10 +29,14 @@ bool devTestPhase = true; // set this false in production. (newer)
 
 ///  two members (persons) of devTest team:
 //TODO  teamAdm team_members..  should they be in... team_staff..
+///  First coder name
 String devTestNight = 'Late Night Coder ';
+///  Second coder name
 String devTestMorn = 'Earlymorn Coffeeman ';
 
+/// count.. something
 num devTestCount = 0;
+///  msg named in dev
 String devBlame = '';
 
 //TODO  teamHowTo lists: add:   automatize adding notes to lists?
@@ -197,5 +202,6 @@ class DevTest {
 ///  howTo do these?
 void addDawoDevNotes() {
   print('--  empty addDevNotes function  --');
+  //  code here.
   print('--  not clear yet, how this must be done  -- \n');
 }

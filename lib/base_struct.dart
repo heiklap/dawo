@@ -1,6 +1,6 @@
 ///  ##  base structures, classes in dawo
 ///   copyright  Heikki K. Lappalainen
-/// * READY-STATE:  10%            // for 0.0.2 version
+/// * READY-STATE:  80%            // for 0.0.2 version
 /// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  base_struct.dart
 ///
 //
