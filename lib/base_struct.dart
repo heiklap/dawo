@@ -13,7 +13,7 @@ String baseStructMotto = 'Base rules for building classes';
 ///  DawoApp, BLib, Chore, Flag  use this
 abstract class BaseStruct {
   String name;
-  String info;
+  String infoS;
   String motto;
 
   StringBuffer buf;
@@ -44,3 +44,17 @@ abstract class BaseStruct {
   ///  close method
   void done();
 }
+
+
+///  every app-mission-chore creates new Placard for EVERY new operation (?)
+///  or at-least gives it as parameter, to functions
+abstract class BasePlacard{
+  //  Order: #actor #sender #receiver #command #msg
+  String actor;
+  String sender;
+  String receiver;
+  String command;
+  String msg;
+}
+
+//

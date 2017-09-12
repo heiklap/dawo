@@ -21,6 +21,7 @@
 library dawlib_chore;
 
 import 'base_struct.dart';
+import 'base_lib.dart';
 
 ///  using - getters -example
 num dawLibWorkReadiness = 94; // for version  0.0.1
@@ -59,9 +60,9 @@ void initChore() {
 /// temporary added here, from my chore-package (path based) to solve errors.
   abstract class ChoreBase {
   String name = 'ChoreBase class';
-  String info = 'Building chore s do-library';
+  String infoS = 'Building chore s do-library';
 
-  showInfo() => print('$name    :        $info');
+  showInfo() => print('$name    :        $infoS');
 }
 */
 
@@ -71,24 +72,33 @@ void initChore() {
 /// TODO  chore  ERROR:  PROBLEM:  can't use baseClass from  team_chore-chore
 class SuperChore extends ChoreBase {
   String name = 'Super Chore class  ';
-  String info = 'Chore resolves  W O R K  flow and control ..';
+  String infoS = 'Chore resolves  W O R K  flow and control ..';
 }
 */
 
 ///  every important dawo class extending now base struct class
 class CommonChore extends BaseStruct {
   String name = 'Common Chore class  ';
-  String info = 'Chore resolves  W O R K  flow and control ..';
+  String infoS = 'Chore resolves  W O R K  flow and control ..';
   //  do not initialize values; just study, what this class got..
-  String motto;
+  String motto= 'chore handling small jobs';
 
-  StringBuffer buf;
+  StringBuffer buf = new StringBuffer();
 
   ///  controlling chores state, working-condition-state values
   bool offB;
   bool onB;
   bool pauseB;
   bool doneB;
+
+  ///  testing placardM inside chore
+  Map<String,String> placardM = {
+    'actor' : 'Chore',
+    'sender' : 'Chore instance',
+    'receiver' : '',
+    'command' : 'Ch-cmd:',
+    'msg' : 'Ch-msg:',
+  };
 
   ///  Method for setting class field values
   void init() {
@@ -107,13 +117,42 @@ class CommonChore extends BaseStruct {
 
   ///  #run-like method
   void roll() {
-    buf.writeln('Chore::    $info   :: roll engaged ');
+    print('---  ch roll  -----');
+
+    ///TODO  error:  whi infoS is not accessible?
+    String _s = 'Chore::    $infoS   :: roll engaged ';
+    buf.writeln(_s);
+
+
     init(); //  calling init and build methods in this class
     build();
     //  code for roll
+    //  run #op, for single operation
+    op(placardM);  //  actually map is not yet used there
+    //  loop
     show();
     done();
     //  code here
+    print('---  ch roll  done -----');
+  }
+
+  ///  individual operations are done here.
+  ///  common operation with placard-Map  is in base_lib
+  String op(Map<String, String> _pcM){
+    ///NOTE  placardM is not used TODO
+    String _retStr;
+    // make placard in shape
+    ///  calls commonProcess with #placard
+    ///  TODO  operation class instance
+    ///  TODO  add eventually constructor
+    ///  order: #actor #sender #receiver #command #msg
+    var chOpClass = new GlobalOpClass(name, 'chore', 'rec:test', helloChore, 'all ok');
+
+    StringBuffer _retBuf = new StringBuffer();
+    ///  mediate command to common process (in base_lib) with info from chore
+    commonProcess(chOpClass, helloChore);  //  with actual command
+
+    return _retStr;
   }
 
   ///  presentation method
@@ -123,15 +162,20 @@ class CommonChore extends BaseStruct {
 
   ///  close method
   void done() {
-    print('Chore::    $info   :: engaged ');
+    print('Chore::    $infoS   :: engaged ');
     //  code here
     buf.write('---  Chore buffer output app: done  ---');
     print(buf);
     buf.clear(); //  empty buffer
   }
 
+  ///  for to test global command in #op
+  void helloChore() {
+    print('   **  hello from command Chore    ***');
+  }
+
   ///  constructor
-  CommonChore(this.name, this.info);
+  CommonChore(this.name, this.infoS);
 }
 
 //---------------------------------------------------------------
@@ -178,7 +222,8 @@ void endChore() {
 }
 
 ///  example / testing chore
-void renderChore() {
+StringBuffer renderChore() {
+  StringBuffer _retBuf;
 //TODO  temporary variables for to get this to work
   var _roller;
   var _aLog;
@@ -187,8 +232,8 @@ void renderChore() {
   var _zSignal;
 
 //  var superChore = new SuperChore();
-  var sc = new CommonChore('ChoreInRenderChore', 'Testing-Chore');
-  print(sc.info);
+  var ch = new CommonChore('ChoreInRenderChore', 'Testing-Chore');
+  print(ch.infoS);
 
   topAll();
   underAll();
@@ -198,7 +243,8 @@ void renderChore() {
   doChore();
   endChore();
 
-  print(sc.info);
+  print(ch.infoS);
+  return _retBuf;
 } //----------------------------------------------   end renderChore
 
 //

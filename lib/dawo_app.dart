@@ -25,7 +25,7 @@ String _privacyLibraryTest = 'Testing library / part privacy';
 ///  Class that holds 'soul' of THIS dawo app.
 class DawoApp extends BaseStruct {
   String name = 'dawo app';
-  String info = 'giving global variables to dawo_src.dart';
+  String infoS = 'giving global variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
 
   ///  must initialize StringBuffer here
@@ -65,7 +65,7 @@ class DawoApp extends BaseStruct {
 
   ///  #run-like method
   void roll() {
-    buf.writeln('DawoApp::    $info   :: roll engaged ');
+    buf.writeln('DawoApp::    $infoS   :: roll engaged ');
     init(); //  calling init and build methods in this class
     build();
     //  code for roll
@@ -88,7 +88,7 @@ class DawoApp extends BaseStruct {
 
   ///  presentation method
   void done() {
-    print('DawoApp::    $info   :: engaged ');
+    print('DawoApp::    $infoS   :: engaged ');
     //  code here
     buf.write('---  DawoApp buffer output app: done  ---');
     print(buf);
@@ -101,7 +101,7 @@ class DawoApp extends BaseStruct {
 /// models and sample maps ; for later usage and playing
 Map<String, String> appMap = {
   'name': 'dawo App',
-  'info': 'dartang pub package for education',
+  'infoS': 'dartang pub package for education',
   'creator': 'me',
   'version': '0.0.2',
   'active': '0',

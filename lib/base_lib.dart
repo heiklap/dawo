@@ -33,6 +33,32 @@ var baseLibBuf = new StringBuffer();
 
 String baseLibMotto = 'Serving common reusable functionality to all files';
 
+///  for testing
+void helloDawo() {
+  print('   **  hello from dawo app /base_lib    ***');
+}
+
+//  common, joint, shared, communal, mutual, concerted
+//  yhteis- common, joint, concerted, shared, collective, coed
+
+//  yleinen : general, common, overall, public, universal, generic
+//  tavallinen : usual, ordinary, plain, normal, common, regular
+//
+
+
+/// ..  or is it class BasePlacard ?
+///  common information, that is in hand for every operation
+///  model for id-data in common handshake method
+Map<String,String> placardM = {
+  'actor' : '',
+  'sender' : '',
+  'receiver' : '',
+  'command' : '',
+  'msg' : '',
+};
+
+
+
 ///  TODO   Global variables
 ///  Try to imagine, what we will need
 class GlobalVariables {
@@ -50,11 +76,32 @@ class GlobalVariables {
 
 ///  TODO  Global operations
 ///  Every dawo #operation could relay on these
-class GlobalOperation{
-  var operation;
-  var sender;
-  var receiver;
+///  order: #actor #sender #receiver #command #msg
+class GlobalOpClass{
+  //  BaseStruct is known here
+  //  BasePlacard is known also
+
+  String actor;
+  String sender;
+  String receiver;
+  /// can it be a function?
+  Function cmd;
+  String msg;
+
+  var operation;  //  not used
+
+  //TODO  constructor add
+  GlobalOpClass(this.actor, this.sender, this.receiver, this.cmd, this.msg);
+
   void showInfo() {
+    print('\n***************  global op class-showInfo  ********************');
+    print('** actor: $actor ');
+    print('** sender: $sender   receiver: $receiver ');
+    print('** cmd: $cmd.toString() ');
+    cmd();
+    print('** msg:   $msg');
+    print('** ');
+    print('***************  global op class-showInfo  done *************** n');
     print('\n ***  no code in GlobalOperations yet :)  *** \n');
   }
 }
@@ -64,6 +111,25 @@ class GlobalOperation{
 /// Instead use: flow !!
 void flow() {
   // code here
+}
+
+///  Change "Automatic messages" to buf messages
+String commonParamToStr(var sender, receiver, op, msg){
+//  or return List
+  String s = sender.toString();
+  String r = receiver.toString();
+  String o = op.toString();
+  String _rStr = "$s $r $o $msg";
+  return _rStr;
+}
+
+
+///  Automatic messages to buf, in operations
+///  Formulate String for buffer message
+String commonBufMsg(String sender, receiver, op, msg){
+  String _s = "s: $sender  r: $receiver oop: $op msg: $msg";
+  //  code here
+  return _s;
 }
 
 ///  shaping common functionality for  series of commands
@@ -78,9 +144,24 @@ void commonMsg(){
 }
 
 
-///  shaping common functionality for
-void commonProcess(){
+///  caller:  chore-op
+///  shaping common functionality for..
+///  TODO
+StringBuffer commonProcess(GlobalOpClass glOpC, Function _command){
+  print('--------------  commonProcess -------------------------------------');
+  //TODO  start info and statistics
+  StringBuffer _retBuf;
   //  code here
+
+  // actual command.
+  _command();
+
+  glOpC.showInfo();
+  glOpC.operation;  //  no operation, just show info now.
+
+  //TODO  end info and statistics
+  print('--------------  commonProcess done---------------------------------');
+  return _retBuf;
 }
 
 
@@ -91,15 +172,19 @@ void commonShow(){
 
 
 ///  usual presentation / play function
-void renderBaseLib() {
+StringBuffer renderBaseLib() {
+  StringBuffer _retBuf;
   /// and instance;
   var glbVar = new GlobalVariables();
   glbVar.showInfo();
 
   /// and instance;
-  var glbOp = new GlobalOperation();
-  glbOp.showInfo();
+  var renderBaeLibClass = new GlobalOpClass('n:name', 'renderBaseLib', 'rec:test', helloDawo(), 'all ok');
+  commonProcess(renderBaeLibClass);
 
+  renderBaeLibClass.showInfo();
+
+return _retBuf;
 }
 
 //
