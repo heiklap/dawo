@@ -38,6 +38,7 @@ void main() {
   print(ch.infoS);
   print('............ t_common_process  done ..................................');
 
+  renderBaseLib();
 }
 
 //

@@ -29,6 +29,9 @@ import 'dawo_mill.dart';
 import 'dawo_mission.dart';
 import 'dawo_tools.dart';
 
+///  data library can not use lib/clay ???  OK: can now.
+import 'package:dawo/clay/clay_roll.dart';
+
 //  *team* became independent. How to use team in future.. that's the question
 //  *team* was collaboration system to serve as tool for dawo development
 //  small elements of team are presented
@@ -74,6 +77,12 @@ num get dawoReadiness =>
 ///---------------------     initialization at the beginning
 //TODO  teamInno: Can it be done?:  special initialization process at the beginning
 num get dawoInit => aldenteFuncInit();
+
+///  high-level function to get Map data
+Map getClay(String _mapS){
+  Map _retM = getClayMap(_mapS);
+  return _retM;
+}
 
 // Need to create instance of BLib class here?
 

@@ -68,7 +68,9 @@ List<DevNote> devNoteL = [];
 ///   for simple:  "hello-I-am"  -tests
 /// TODO  name    can not be this name  it is already used ??
 class DevNote {
-  var notes = ['', '', ''];
+  var noteL= ['* * *  DevNotes   * * *', '', ''];
+  ///  Map for devNotes
+  Map<String, String> noteM= {'' : ''};
   void noteAdd() => print('addNewNote();');
 
   void notesShow() => print('Showing all notes..');

@@ -34,10 +34,11 @@ List<CommonChore> choreL = [];
 
 //--------------------------------------------------------------
 // Temporary added variables from team package here, to solve lib visibility.
-List<String> innoNotes = ['Team inno notes:  ', '1', '2', '3'];
-List<String> admNotes = ['Team Admin notes:  ', 'AdiminA', 'AdminB'];
-List<String> howToNotes = ['Team HowTo notes:  ', 'How', 'To', 'Do'];
-List<String> devNotes = ['Team dev notes:  ', 'DevA', 'DevB', 'DevC'];
+List<String> admNotes = ['* *  Team Admin notes:  * *'];
+List<String> devNotes = ['* * Team dev notes: * * '];
+List<String> innoNotes = ['* *  Team inno notes: * * '];
+List<String> howToNotes = ['* * Team HowTo notes: * * '];
+List<String> secNotes = ['* * Team sec notes: * * '];
 //--------------------------------------------------------------
 
 ///  PLAN:     this is meant to.... ??   initialize some start-values
@@ -127,6 +128,11 @@ class CommonChore extends BaseStruct {
     init(); //  calling init and build methods in this class
     build();
     //  code for roll
+
+    //TODO  testing clay map
+    //TODO  scope;  where to lay:: getClay() - function??
+    //  getClay  NO
+
     //  run #op, for single operation
     op(placardM);  //  actually map is not yet used there
     //  loop

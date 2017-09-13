@@ -173,16 +173,20 @@ void commonShow(){
 
 ///  usual presentation / play function
 StringBuffer renderBaseLib() {
+  print('\n ===================== render base llib ============================');
   StringBuffer _retBuf;
   /// and instance;
+  void greetFromRender() {
+    print(' greetings from render base_lib');
+  }
   var glbVar = new GlobalVariables();
   glbVar.showInfo();
 
   /// and instance;
-  var renderBaeLibClass = new GlobalOpClass('n:name', 'renderBaseLib', 'rec:test', helloDawo(), 'all ok');
-  commonProcess(renderBaeLibClass);
+  var renderBaseLibClass = new GlobalOpClass('n:name', 'renderBaseLib', 'rec:test', helloDawo, 'all ok');
+  commonProcess(renderBaseLibClass, greetFromRender);
 
-  renderBaeLibClass.showInfo();
+  renderBaseLibClass.showInfo();
 
 return _retBuf;
 }
