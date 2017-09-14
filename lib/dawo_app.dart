@@ -9,6 +9,7 @@
 library dawo_app.dart;
 
 import 'base_struct.dart';
+import 'dawo_mission.dart';
 
 // ignore: unused_field for those wondering
 
@@ -42,7 +43,8 @@ class DawoApp extends BaseStruct {
   String msg = 'Message..';
   String develop = 'Under development.. 30% to:  0.0.3';
   String version = '0.0.2';
-///  Old marking to find usage of this version in test apps.
+
+  ///  Old marking to find usage of this version in test apps.
   final String version_0_0_02 = 'dawo 0.0.02 - 12 / 2013 hkl';
   String thisVersion; //  users announce their version of dawo
   String latestChange = '23.3.2017. th.12.15';
@@ -69,7 +71,9 @@ class DawoApp extends BaseStruct {
     init(); //  calling init and build methods in this class
     build();
     //  code for roll
-    //  rollMissions
+
+    rollMissions();
+
     show();
     done();
     //  code here
@@ -77,8 +81,19 @@ class DawoApp extends BaseStruct {
 
   ///  roll missions in missionL AND every chore in them
   void rollMissions() {
+    print(
+        '\n *********************** app rollMissions  **************************');
     // roll BLib-class (mission) actually List of missions!
     print('\n  ***  DAWO-APP  MISSIONS   ***  \n');
+    buildMissions();
+    helsinkiMission.report();
+    dartlangMission.report();
+    myMusicMission.report();
+    myWeekMission.report();
+    nationalParksMission.report();
+
+    print(
+        '\n **********************   app rollMissions  **************************');
     // roll all chores, that are in mission
   }
 

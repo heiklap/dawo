@@ -19,7 +19,6 @@
 ///  Open for all ideas, when seeking common functionality between app / lib /
 ///  classes / process aso.
 
-
 //TODO  Global variables
 //TODO  Global operations
 
@@ -45,19 +44,16 @@ void helloDawo() {
 //  tavallinen : usual, ordinary, plain, normal, common, regular
 //
 
-
 /// ..  or is it class BasePlacard ?
 ///  common information, that is in hand for every operation
 ///  model for id-data in common handshake method
-Map<String,String> placardM = {
-  'actor' : '',
-  'sender' : '',
-  'receiver' : '',
-  'command' : '',
-  'msg' : '',
+Map<String, String> placardM = {
+  'actor': '',
+  'sender': '',
+  'receiver': '',
+  'command': '',
+  'msg': '',
 };
-
-
 
 ///  TODO   Global variables
 ///  Try to imagine, what we will need
@@ -73,22 +69,22 @@ class GlobalVariables {
   }
 }
 
-
 ///  TODO  Global operations
 ///  Every dawo #operation could relay on these
 ///  order: #actor #sender #receiver #command #msg
-class GlobalOpClass{
+class GlobalOpClass {
   //  BaseStruct is known here
   //  BasePlacard is known also
 
   String actor;
   String sender;
   String receiver;
+
   /// can it be a function?
   Function cmd;
   String msg;
 
-  var operation;  //  not used
+  var operation; //  not used
 
   //TODO  constructor add
   GlobalOpClass(this.actor, this.sender, this.receiver, this.cmd, this.msg);
@@ -106,7 +102,6 @@ class GlobalOpClass{
   }
 }
 
-
 /// do not look out unprofessionally and spam your code with print-clauses!
 /// Instead use: flow !!
 void flow() {
@@ -114,7 +109,7 @@ void flow() {
 }
 
 ///  Change "Automatic messages" to buf messages
-String commonParamToStr(var sender, receiver, op, msg){
+String commonParamToStr(var sender, receiver, op, msg) {
 //  or return List
   String s = sender.toString();
   String r = receiver.toString();
@@ -123,31 +118,28 @@ String commonParamToStr(var sender, receiver, op, msg){
   return _rStr;
 }
 
-
 ///  Automatic messages to buf, in operations
 ///  Formulate String for buffer message
-String commonBufMsg(String sender, receiver, op, msg){
+String commonBufMsg(String sender, receiver, op, msg) {
   String _s = "s: $sender  r: $receiver oop: $op msg: $msg";
   //  code here
   return _s;
 }
 
 ///  shaping common functionality for  series of commands
-void commonRoll(){
+void commonRoll() {
   //  code here
 }
-
 
 ///  shaping common functionality for messages
-void commonMsg(){
+void commonMsg() {
   //  code here
 }
-
 
 ///  caller:  chore-op
 ///  shaping common functionality for..
 ///  TODO
-StringBuffer commonProcess(GlobalOpClass glOpC, Function _command){
+StringBuffer commonProcess(GlobalOpClass glOpC, Function _command) {
   print('--------------  commonProcess -------------------------------------');
   //TODO  start info and statistics
   StringBuffer _retBuf;
@@ -157,38 +149,40 @@ StringBuffer commonProcess(GlobalOpClass glOpC, Function _command){
   _command();
 
   glOpC.showInfo();
-  glOpC.operation;  //  no operation, just show info now.
+  glOpC.operation; //  no operation, just show info now.
 
   //TODO  end info and statistics
   print('--------------  commonProcess done---------------------------------');
   return _retBuf;
 }
 
-
 ///  shaping common functionality for presentation
-void commonShow(){
+void commonShow() {
   //  code here
 }
 
-
 ///  usual presentation / play function
 StringBuffer renderBaseLib() {
-  print('\n ===================== render base llib ============================');
+  print(
+      '\n ===================== render base llib ============================');
   StringBuffer _retBuf;
+
   /// and instance;
   void greetFromRender() {
     print(' greetings from render base_lib');
   }
+
   var glbVar = new GlobalVariables();
   glbVar.showInfo();
 
   /// and instance;
-  var renderBaseLibClass = new GlobalOpClass('n:name', 'renderBaseLib', 'rec:test', helloDawo, 'all ok');
+  var renderBaseLibClass = new GlobalOpClass(
+      'n:name', 'renderBaseLib', 'rec:test', helloDawo, 'all ok');
   commonProcess(renderBaseLibClass, greetFromRender);
 
   renderBaseLibClass.showInfo();
 
-return _retBuf;
+  return _retBuf;
 }
 
 //

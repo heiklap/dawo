@@ -21,7 +21,6 @@ StringBuffer connectorBuf = new StringBuffer();
 String connectorMotto =
     'connecting app - mission - chore together, mediating them';
 
-
 ///  ***********************************************************************
 /*      connector:  very weak idea, how to accomplish this. 10 %
         Not much of this functionality is yet done

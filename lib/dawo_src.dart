@@ -80,7 +80,7 @@ num get dawoReadiness =>
 num get dawoInit => aldenteFuncInit();
 
 ///  high-level function to get Map data
-Map getClay(String _mapS){
+Map getClay(String _mapS) {
   Map _retM = getClayMap(_mapS);
   return _retM;
 }
@@ -91,9 +91,11 @@ Map getClay(String _mapS){
 ///  but users of package can access it only by importing it.
 ///  all render.. functions are tests or example-like files.
 StringBuffer renderDawo() {
-  print('\n ---------------  renderDawo rolling -------------------------------------------');
+  print(
+      '\n ---------------  renderDawo rolling -------------------------------------------');
   var renderBuffer = new StringBuffer();
-  renderBuffer.writeln('\n ------ renderBuffer starting--------------------------- \n');
+  renderBuffer
+      .writeln('\n ------ renderBuffer starting--------------------------- \n');
 
   var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
   var dawoFlags = new DawoMill();
@@ -115,13 +117,16 @@ StringBuffer renderDawo() {
   dawoOn; //  just naming it
   var dawoActive = dawoFlags.active;
   dawoActive;
-  renderBuffer.writeln('------- renderBuffer data-------------------------- \n');
+  renderBuffer
+      .writeln('------- renderBuffer data-------------------------- \n');
   var missionY = new Mission('mission in dawo_src-render', 'test-mission');
   missionY.opCount;
 
-  renderBuffer.writeln('--------renderBuffer done -------------------------  \n');
+  renderBuffer
+      .writeln('--------renderBuffer done -------------------------  \n');
   print(renderBuffer);
-  print('---------------  renderDawo * done *  ------------------------------------------- \n');
+  print(
+      '---------------  renderDawo * done *  ------------------------------------------- \n');
 
   return renderBuffer;
 }
@@ -129,7 +134,4 @@ StringBuffer renderDawo() {
 ///  temporary test for rumba
 void renderRumba() {
   //  rumba  //  7 variables
-
-
 }
-

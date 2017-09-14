@@ -4,6 +4,53 @@ By Heikki K Lappalainen
 Development of dawo dartlang package 2017 from 0.0.1 >
 
 _____________________________________________________________________________
+
+
+Way to version NEXT:  0.0.3 aso.
+Theme:  Choose different Client / customer data and small, playing work-flow
+To be published:  ~25.9.2017
+
+#Questions:  1. Use JSON or #serialization
+             2.
+             3.
+ #Waiting complications and hardships?  Yes.
+ Value-effort values from 1-10:
+
+3.1 _-__*7*7  5 missions, 12 chores:  ['helsinkiGuide','learnDartlang', 'myMusic',
+                                     'myWeek', 'nationalParks'];
+            *
+            * Other customers data;  Helsinki, dartlang, music, wee, park. (dawo/dev is original, always there)
+            * dev data
+            * political-data  (test-case)
+
+3.2 ____*5*2   Choose customer in parameters
+
+
+3.3 _-__7*4   Active "Rumba" flow / -example
+           - app / mission / chore : all working together
+
+3,5 _--_*2*2  incoming data in clay-folder, clay as synonym for data
+
+
+3.4 _-__7*2  Fill generic lists with members (objects)
+            Use generic lists inside classes for to control their "sub-ordinates"
+            dawoApp has: missionL<Mission>
+            mission has choreL<Chore>
+            Roll methods for them
+
+3.6 ____*5*9  Connector, more ideas.
+
+
+3.7 ____*6*6  base_lib more ideas.
+
+3.8 ____      Fill / create mission Classes; Helsinki, Dartlang, Music, Time/Week, Nature
+3.9 ____      ADD elements / boxes to web / HTML.
+3.10 ____
+
+#Overall ____*9*7
+
+
+_____________________________________________________________________________
 Ready to version 0.0.2, completed fixes.
 Theme : baseStructure, base_lib, dawo_mill(schema), connector(schema), learn/code_snippets
 Publish to Pub: 10.9.-15.9.2017.  Release 0.0.2 in GitHub.
@@ -40,56 +87,6 @@ Overall problems:
 - Is analyzer acting weird? It do not show variables (fast enough).
 - Small uncertainty in libraries. When to import and export.
   * Import all in tests, for to be sure. And analyzer finds them quick.
-_____________________________________________________________________________
-
-
-Way to version NEXT:  0.0.3 aso.
-Theme:  Choose different Client / customer data and small, playing work-flow
-To be published:  ~25.9.2017
-
-#Questions:  1. Use JSON or #serialization
-             2.
-             3.
- #Waiting complications and hardships?  Yes.
- Value-effort values from 1-10:
-
-3.1 ____*7*4   Other customers data; politic, Helsinki (dawo/dev is original, always there)
-            * dev data
-            * political-data  (test-case)
-
-3.2 ____*5*2   Choose customer in parameters
-
-
-
-3.3 ____7*4   Active "Rumba" flow / -example
-           - app / mission / chore : all working together
-
-3,5 ____*2*2  incoming data in clay-folder, clay as syonym for data
-
-
-
-3.4 ____7*2  Fill generic lists with members (objects)
-            Use generic lists inside classes for to control their "sub-ordinates"
-            dawoApp has: missionL<Mission>
-            mission has choreL<Chore>
-            Roll methods for them
-
-
-
-3.6 ____*5*9  Connector, more ideas.
-
-
-3.7 ____*6*6  base_lib more ideas.
-
-
-
-3.8 ____
-
-3.9 ____
-
-3.10 ____
-
-#Overall ____*9*7
 
 
 _____________________________________________________________________________
@@ -131,7 +128,7 @@ To be published:  ? 10.10.2017 ?
 
 _________________________________________________________________________
 
-Version NEXT:  0.0.5 aso
+Version coming:  0.0.5 aso
 
 class.init / done  should #deactivate #clients in <chore> aso. lists
 

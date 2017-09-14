@@ -45,10 +45,9 @@ abstract class BaseStruct {
   void done();
 }
 
-
 ///  every app-mission-chore creates new Placard for EVERY new operation (?)
 ///  or at-least gives it as parameter, to functions
-abstract class BasePlacard{
+abstract class BasePlacard {
   //  Order: #actor #sender #receiver #command #msg
   String actor;
   String sender;

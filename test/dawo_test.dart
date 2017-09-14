@@ -29,7 +29,7 @@ void main() {
 
 
   var appX = new DawoApp('d-app', 'test');
-  appX.info;
+  appX.infoS;  //  string
 
 
   group('A group of tests', () {

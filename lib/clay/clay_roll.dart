@@ -12,8 +12,13 @@ import 'package:dawo/clay/my_week.dart';
 import 'package:dawo/clay/my_music.dart';
 import 'package:dawo/clay/national_parks.dart';
 
-List<String> clayMapL = ['helsinkiGuide','learnDartlang', 'myMusic',
-'myWeek', 'nationalParks'];
+List<String> clayMapL = [
+  'helsinkiGuide',
+  'learnDartlang',
+  'myMusic',
+  'myWeek',
+  'nationalParks'
+];
 
 ///  return asked Map
 Map getClayMap(String _command) {

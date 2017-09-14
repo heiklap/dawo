@@ -31,11 +31,13 @@ bool devTestPhase = true; // set this false in production. (newer)
 //TODO  teamAdm team_members..  should they be in... team_staff..
 ///  First coder name
 String devTestNight = 'Late Night Coder ';
+
 ///  Second coder name
 String devTestMorn = 'Earlymorn Coffeeman ';
 
 /// count.. something
 num devTestCount = 0;
+
 ///  msg named in dev
 String devBlame = '';
 
@@ -68,9 +70,10 @@ List<DevNote> devNoteL = [];
 ///   for simple:  "hello-I-am"  -tests
 /// TODO  name    can not be this name  it is already used ??
 class DevNote {
-  var noteL= ['* * *  DevNotes   * * *', '', ''];
+  var noteL = ['* * *  DevNotes   * * *', '', ''];
+
   ///  Map for devNotes
-  Map<String, String> noteM= {'' : ''};
+  Map<String, String> noteM = {'': ''};
   void noteAdd() => print('addNewNote();');
 
   void notesShow() => print('Showing all notes..');

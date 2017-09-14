@@ -10,7 +10,8 @@ library nationalParksFinland;
 class NationalParks {
   ///  Map of Finlands national parks for Chore
   Map<String, String> parksM = {
-    'Archipelago': 'The labyrinthine Archipelago Sea, off Southwestern Finland, has more islands than any other archipelago in the world.   http://www.nationalparks.fi/archipelagonp ',
+    'Archipelago':
+        'The labyrinthine Archipelago Sea, off Southwestern Finland, has more islands than any other archipelago in the world.   http://www.nationalparks.fi/archipelagonp ',
     'Bothnian Bay': '',
     'Bothnian Sea': '',
     'Ekenäs Archipelago': '',
@@ -22,7 +23,8 @@ class NationalParks {
     'Kauhaneva-Pohjan kangas': '',
     'Koli': '',
     'Kolovesi': '',
-    'Kurjenrahka': 'The forests and marshes of Kurjenrahka are home to many wild animals and birds, including stately long-legged cranes and curious woodland owls.     http://www.nationalparks.fi/en/kurjenrahkanp',
+    'Kurjenrahka':
+        'The forests and marshes of Kurjenrahka are home to many wild animals and birds, including stately long-legged cranes and curious woodland owls.     http://www.nationalparks.fi/en/kurjenrahkanp',
     'Lauhanvuori': '',
     'Leivonmäki': '',
     'Lemmenjoki': '',
@@ -37,7 +39,8 @@ class NationalParks {
     'Pyhä-Häkki': '',
     'Pyhä-Luosto': '',
     'Päijänne': '',
-    'Repovesi': 'The forests of Repovesi National Park vary from old-growth pine to young sapling stands     http://www.nationalparks.fi/repovesinp',
+    'Repovesi':
+        'The forests of Repovesi National Park vary from old-growth pine to young sapling stands     http://www.nationalparks.fi/repovesinp',
     'Riisitunturi': '',
     'Rokua': '',
     'Salamajärvi': '',
@@ -49,6 +52,7 @@ class NationalParks {
     'Tiilikkajärvi': '',
     'Torronsuo': '',
     'Urho Kekkonen National Park': '',
-    'Valkmusa': 'Valkmusa s extensive natural open bogs give visitors a chance to wind down and see, hear, smell and even taste nature all around.     http://www.nationalparks.fi/valkmusanp'
+    'Valkmusa':
+        'Valkmusa s extensive natural open bogs give visitors a chance to wind down and see, hear, smell and even taste nature all around.     http://www.nationalparks.fi/valkmusanp'
   };
 }

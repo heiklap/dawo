@@ -53,13 +53,12 @@ void initChore() {
   admNotes.add('NO: for  big   W O R K -lists');
 }
 
-
 ///  every important dawo class extending now base struct class
 class CommonChore extends BaseStruct {
   String name = 'Common Chore class  ';
   String infoS = 'Chore resolves  W O R K  flow and control ..';
   //  do not initialize values; just study, what this class got..
-  String motto= 'chore handling small jobs';
+  String motto = 'chore handling small jobs';
 
   StringBuffer buf = new StringBuffer();
 
@@ -70,12 +69,12 @@ class CommonChore extends BaseStruct {
   bool doneB;
 
   ///  testing placardM inside chore
-  Map<String,String> placardM = {
-    'actor' : 'Chore',
-    'sender' : 'Chore instance',
-    'receiver' : '',
-    'command' : 'Ch-cmd:',
-    'msg' : 'Ch-msg:',
+  Map<String, String> placardM = {
+    'actor': 'Chore',
+    'sender': 'Chore instance',
+    'receiver': '',
+    'command': 'Ch-cmd:',
+    'msg': 'Ch-msg:',
   };
 
   ///  Method for setting class field values
@@ -103,17 +102,19 @@ class CommonChore extends BaseStruct {
     build();
     //  code for roll
     //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
-    print('------------------  clay maps --------------------------------------');
+    print(
+        '------------------  clay maps --------------------------------------');
     print(clayMapL);
-    print('------------------  clay maps --------------------------------------');
-    for (var f in clayMapL ) {
+    print(
+        '------------------  clay maps --------------------------------------');
+    for (var f in clayMapL) {
       Map _m = getClayMap(f);
       print('\n  map/chore::   $f   ------ ');
-      _m.forEach((k,v) => print('$k ,$v') );
+      _m.forEach((k, v) => print('$k ,$v'));
     }
 
     //  run #op, for single operation
-    op(placardM);  //  actually map is not yet used there
+    op(placardM); //  actually map is not yet used there
     //  loop
     show();
     done();
@@ -123,7 +124,7 @@ class CommonChore extends BaseStruct {
 
   ///  individual operations are done here.
   ///  common operation with placard-Map  is in base_lib
-  String op(Map<String, String> _pcM){
+  String op(Map<String, String> _pcM) {
     ///NOTE  placardM is not used TODO
     String _retStr;
     // make placard in shape
@@ -131,11 +132,13 @@ class CommonChore extends BaseStruct {
     ///  TODO  operation class instance
     ///  TODO  add eventually constructor
     ///  order: #actor #sender #receiver #command #msg
-    var chOpClass = new GlobalOpClass(name, 'chore', 'rec:test', helloChore, 'all ok');
+    var chOpClass =
+        new GlobalOpClass(name, 'chore', 'rec:test', helloChore, 'all ok');
 
     StringBuffer _retBuf = new StringBuffer();
+
     ///  mediate command to common process (in base_lib) with info from chore
-    commonProcess(chOpClass, helloChore);  //  with actual command
+    commonProcess(chOpClass, helloChore); //  with actual command
 
     return _retStr;
   }

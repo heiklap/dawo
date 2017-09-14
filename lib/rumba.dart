@@ -60,6 +60,8 @@ class Rumba {
   }
 
   ///  is class better than function?  better looking/finding in editor?
+  ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope. Constructor?
+  ///  Now it is just a methods parameter.
   StringBuffer dance(var dawoApp) {
     dt.devTestLine('rumba');
 

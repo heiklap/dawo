@@ -26,8 +26,8 @@ import 'package:test/test.dart';
 void main() {
 
   //  choose test:  chore or rumba
-    testChore();
- //   testRumba();
+  //  testChore();
+   testRumba();
 
 }
 void testChore() {
@@ -42,6 +42,8 @@ void testChore() {
 
   print(ch.buf);
 }
+
+
 
 void testRumba() {
 

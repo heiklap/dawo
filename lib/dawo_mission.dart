@@ -5,6 +5,8 @@
 
 library dawo_mission;
 
+import 'clay/clay_roll.dart';
+
 ///  buffer also outside class, for testing and adding visibility
 var missionBuf = new StringBuffer();
 
@@ -26,6 +28,9 @@ class Mission {
 //  is used in mixin 's
 //  Throwing some variables and thinking their usage later.
   String name;
+  String motto;
+
+  Map<String, String> clayMap = {};
 
   /// some maps to give platform for ideas to future development.  maps
   /// PLAN:    trying to develop some maps for dawLib..  ...
@@ -44,7 +49,7 @@ class Mission {
   ///  controlling missions state, working-condition-state values
   String state = 'Functional';
   bool stDo = false;
-  bool sDone = false;
+  bool stDone = false;
   bool stAware = false;
 
   ///   PLAN:  use flags maps to control something     stFlags
@@ -87,8 +92,9 @@ class Mission {
   bool opDone = false;
   int opCount = 0;
 
-  ///  constructor
-  Mission(this.name, this.state);
+  ///  add later map to constructor
+  //  Mission(this.name, this.motto, Map<String,String> _clayM);
+  Mission(this.name, this.motto);
 
   /// devNote  function, that OPENS something.  so rename; init
   bool opInit(int openCount, var openThis) {
@@ -130,6 +136,22 @@ class Mission {
     return _openCount;
   }
 
+  ///  report of mission data
+  void report() {
+    print('\n ***************************************************************');
+    print('**  Mission:  $name  Motto: $motto');
+    print('**  State:  $state ');
+    print('**  stDo:  $stDo     stDone: $stDone  ');
+    print('**  rollDone:   $rollDone     rollCount:  $rollCount');
+    print('**  ');
+    print('**  opOn: $opOn    opDone: $opDone     opCount:  $opCount');
+    print('**  ');
+    print('****************  clayMap   **********************************  ');
+    clayMap.forEach((k, v) => print('$k, $v'));
+    print(
+        '***************************************************************  \n ');
+  }
+
 //TODO  teamNext   coming?:   returning some finnish day names aso.
   /// Should include some international values from other languages
 
@@ -151,9 +173,30 @@ class Mission {
 
 } // ---------------------------------------   end class Mission
 
+///  create Mission instances
+var helsinkiMission = new Mission('Helsinki-mission', 'Presenting Helsinki');
+var dartlangMission = new Mission('Dartlang mission', 'Learn dartlang');
+var myMusicMission =
+    new Mission('My-Music mission', 'Play and share good music');
+var myWeekMission = new Mission(
+    'My-Week mission', 'Spend at least one hour in a week with reasonable way');
+var nationalParksMission = new Mission(
+    'Finlands national parik mission', 'Present beautiful finish nature');
+
+///  add clay maps to missions
+void buildMissions() {
+  helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
+  dartlangMission.clayMap.addAll(getClayMap('learnDartlang'));
+  myMusicMission.clayMap.addAll(getClayMap('myMusic'));
+  myWeekMission.clayMap.addAll(getClayMap('myWeek'));
+  nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
+}
+
 ///  creating instance of Mission and using it's methods
 ///  all render__X functions are for test and presentation
 void renderMission() {
+  //  helsinkiMission.  //  NOTE    #analyzer  is slow
+
   var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
   missionR.showInfo();
   missionR.toChore();
