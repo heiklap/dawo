@@ -65,7 +65,7 @@ class DawoApp extends BaseStruct {
 
   ///  #run-like method
   void roll() {
-    buf.writeln('DawoApp::    $infoS   :: roll engaged ');
+    buf.writeln('DawoApp::roll    $infoS   :: roll engaged ');
     init(); //  calling init and build methods in this class
     build();
     //  code for roll
@@ -78,6 +78,7 @@ class DawoApp extends BaseStruct {
   ///  roll missions in missionL AND every chore in them
   void rollMissions() {
     // roll BLib-class (mission) actually List of missions!
+    print('\n  ***  DAWO-APP  MISSIONS   ***  \n');
     // roll all chores, that are in mission
   }
 
@@ -88,7 +89,7 @@ class DawoApp extends BaseStruct {
 
   ///  presentation method
   void done() {
-    print('DawoApp::    $infoS   :: engaged ');
+    print('DawoApp::done    $infoS   :: engaged ');
     //  code here
     buf.write('---  DawoApp buffer output app: done  ---');
     print(buf);

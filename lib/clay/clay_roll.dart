@@ -12,6 +12,9 @@ import 'package:dawo/clay/my_week.dart';
 import 'package:dawo/clay/my_music.dart';
 import 'package:dawo/clay/national_parks.dart';
 
+List<String> clayMapL = ['helsinkiGuide','learnDartlang', 'myMusic',
+'myWeek', 'nationalParks'];
+
 ///  return asked Map
 Map getClayMap(String _command) {
   String command = _command;
@@ -26,8 +29,8 @@ Map getClayMap(String _command) {
     case 'myMusic':
       _retM = myMusicClay();
       break;
-    case 'myMusic':
-      _retM = myMusicClay();
+    case 'myWeek':
+      _retM = myWeekClay();
       break;
     case 'nationalParks':
       _retM = nationalParksClay();
@@ -42,6 +45,7 @@ Map getClayMap(String _command) {
 ///
 Map helsinkiGuideClay() {
   var helsinkiGuide = new HelsinkiGuide();
+
   Map _retM = helsinkiGuide.attractionM;
   // do something with it?
   return _retM;

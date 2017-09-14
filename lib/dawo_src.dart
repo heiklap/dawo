@@ -28,6 +28,7 @@ import 'dawo_dev.dart';
 import 'dawo_mill.dart';
 import 'dawo_mission.dart';
 import 'dawo_tools.dart';
+import 'rumba.dart';
 
 ///  data library can not use lib/clay ???  OK: can now.
 import 'package:dawo/clay/clay_roll.dart';
@@ -101,7 +102,7 @@ StringBuffer renderDawo() {
   /// just another instance, shorter, for testing
   var da = new DawoApp('dawoApp', 'playing in renderDawo-function');
   var df = new DawoMill();
-  renderBuffer.writeln(da.info);
+  renderBuffer.writeln(da.infoS);
   df.userChoice;
 
   /// -------------------------------- testing  getters and setters
@@ -124,3 +125,11 @@ StringBuffer renderDawo() {
 
   return renderBuffer;
 }
+
+///  temporary test for rumba
+void renderRumba() {
+  //  rumba  //  7 variables
+
+
+}
+

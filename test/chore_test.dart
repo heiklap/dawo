@@ -17,19 +17,38 @@ import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
 import 'package:dawo/dawo_mission.dart';
 import 'package:dawo/dawo_tools.dart';
+import 'package:dawo/rumba.dart';
 
 import 'package:test/test.dart';
 
 
 
 void main() {
-  print('............ t_common_process  ..................................');
+
+  //  choose test:  chore or rumba
+    testChore();
+ //   testRumba();
+
+}
+void testChore() {
+  print(
+      '............ ch_chore test common process  ..................................');
   var ch = new CommonChore('test-chore', 'test-chore-info');
   ch.buf.writeln('hello world');
 
+  print('\n -----------  clay List test  ----------------------');
+
+  ch.roll();
+
   print(ch.buf);
+}
 
+void testRumba() {
 
+  print('\n -----------  rumba test  ----------------------');
+  var dawoApp = new DawoApp('dawoApp-test-Rumba', 'Just choreTest.dart');
 
+  var rumba = new Rumba();
+  rumba.dance(dawoApp);
 
 }

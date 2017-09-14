@@ -22,6 +22,7 @@ library dawlib_chore;
 
 import 'base_struct.dart';
 import 'base_lib.dart';
+import 'clay/clay_roll.dart';
 
 ///  using - getters -example
 num dawLibWorkReadiness = 94; // for version  0.0.1
@@ -40,12 +41,11 @@ List<String> innoNotes = ['* *  Team inno notes: * * '];
 List<String> howToNotes = ['* * Team HowTo notes: * * '];
 List<String> secNotes = ['* * Team sec notes: * * '];
 //--------------------------------------------------------------
+///  TODO  devNotes ==   #chore, that is always in dawoApp
+//
 
-///  PLAN:     this is meant to.... ??   initialize some start-values
-/// TODO  collection-list  add  ..  is there control for these lists and adds?
+///   initializing of chore system
 void initChore() {
-  //   initializing of chore system
-
   devNotes
     ..add('make COMMON  init-module to EVVVERY  lib part')
     ..add('This could be for NOTES like W O R K s to be done');
@@ -53,29 +53,6 @@ void initChore() {
   admNotes.add('NO: for  big   W O R K -lists');
 }
 
-//---------------------------------------------------------
-//TODO  chore :   nice  chore class is already in separate team_work
-
-/*  away
-//--------------------------------------------------------------------
-/// temporary added here, from my chore-package (path based) to solve errors.
-  abstract class ChoreBase {
-  String name = 'ChoreBase class';
-  String infoS = 'Building chore s do-library';
-
-  showInfo() => print('$name    :        $infoS');
-}
-*/
-
-/*
-//--------------------------------------------------------------------
-///  PLAN:   organize   W O R K
-/// TODO  chore  ERROR:  PROBLEM:  can't use baseClass from  team_chore-chore
-class SuperChore extends ChoreBase {
-  String name = 'Super Chore class  ';
-  String infoS = 'Chore resolves  W O R K  flow and control ..';
-}
-*/
 
 ///  every important dawo class extending now base struct class
 class CommonChore extends BaseStruct {
@@ -119,19 +96,21 @@ class CommonChore extends BaseStruct {
   ///  #run-like method
   void roll() {
     print('---  ch roll  -----');
-
-    ///TODO  error:  whi infoS is not accessible?
     String _s = 'Chore::    $infoS   :: roll engaged ';
     buf.writeln(_s);
-
 
     init(); //  calling init and build methods in this class
     build();
     //  code for roll
-
-    //TODO  testing clay map
-    //TODO  scope;  where to lay:: getClay() - function??
-    //  getClay  NO
+    //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
+    print('------------------  clay maps --------------------------------------');
+    print(clayMapL);
+    print('------------------  clay maps --------------------------------------');
+    for (var f in clayMapL ) {
+      Map _m = getClayMap(f);
+      print('\n  map/chore::   $f   ------ ');
+      _m.forEach((k,v) => print('$k ,$v') );
+    }
 
     //  run #op, for single operation
     op(placardM);  //  actually map is not yet used there
