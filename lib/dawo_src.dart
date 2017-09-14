@@ -91,11 +91,9 @@ Map getClay(String _mapS) {
 ///  but users of package can access it only by importing it.
 ///  all render.. functions are tests or example-like files.
 StringBuffer renderDawo() {
-  print(
-      '\n ---------------  renderDawo rolling -------------------------------------------');
+  print('\n ---------------  renderDawo rolling -------------------------');
   var renderBuffer = new StringBuffer();
-  renderBuffer
-      .writeln('\n ------ renderBuffer starting--------------------------- \n');
+  renderBuffer.writeln('\n ------ renderBuffer starting  ------------ \n');
 
   var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
   var dawoFlags = new DawoMill();
@@ -125,8 +123,7 @@ StringBuffer renderDawo() {
   renderBuffer
       .writeln('--------renderBuffer done -------------------------  \n');
   print(renderBuffer);
-  print(
-      '---------------  renderDawo * done *  ------------------------------------------- \n');
+  print('---------------  renderDawo * done *  --------------------- \n');
 
   return renderBuffer;
 }

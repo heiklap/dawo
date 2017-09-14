@@ -32,7 +32,7 @@ void main() {
 }
 void testChore() {
   print(
-      '............ ch_chore test common process  ..................................');
+      '............ ch_chore test common process  ........................');
   var ch = new CommonChore('test-chore', 'test-chore-info');
   ch.buf.writeln('hello world');
 

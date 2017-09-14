@@ -102,11 +102,9 @@ class CommonChore extends BaseStruct {
     build();
     //  code for roll
     //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
-    print(
-        '------------------  clay maps --------------------------------------');
+    print('------------------  clay maps ---------------------------------');
     print(clayMapL);
-    print(
-        '------------------  clay maps --------------------------------------');
+    print('------------------  clay maps ---------------------------------');
     for (var f in clayMapL) {
       Map _m = getClayMap(f);
       print('\n  map/chore::   $f   ------ ');

@@ -81,8 +81,7 @@ class DawoApp extends BaseStruct {
 
   ///  roll missions in missionL AND every chore in them
   void rollMissions() {
-    print(
-        '\n *********************** app rollMissions  **************************');
+    print('\n *********************** app rollMissions  *****************');
     // roll BLib-class (mission) actually List of missions!
     print('\n  ***  DAWO-APP  MISSIONS   ***  \n');
     buildMissions();
@@ -92,8 +91,7 @@ class DawoApp extends BaseStruct {
     myWeekMission.report();
     nationalParksMission.report();
 
-    print(
-        '\n **********************   app rollMissions  **************************');
+    print('\n **********************   app rollMissions  ****************');
     // roll all chores, that are in mission
   }
 

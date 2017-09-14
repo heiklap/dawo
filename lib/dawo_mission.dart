@@ -138,7 +138,7 @@ class Mission {
 
   ///  report of mission data
   void report() {
-    print('\n ***************************************************************');
+    print('\n *************************************************************');
     print('**  Mission:  $name  Motto: $motto');
     print('**  State:  $state ');
     print('**  stDo:  $stDo     stDone: $stDone  ');
@@ -148,8 +148,7 @@ class Mission {
     print('**  ');
     print('****************  clayMap   **********************************  ');
     clayMap.forEach((k, v) => print('$k, $v'));
-    print(
-        '***************************************************************  \n ');
+    print('*************************************************************  \n ');
   }
 
 //TODO  teamNext   coming?:   returning some finnish day names aso.

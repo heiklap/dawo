@@ -73,17 +73,17 @@ class Rumba {
     ///  --  rumbaLoop
     dt.devTestLine('rumba');
     do {
-      /// -----------------------  rumbaB loop code   ---------------------------
+      /// -----------------------  rumbaB loop code   -------------------
 
       dt.devTestLine('usher');
 
       ///  --  usher loop
       do {
-        /// ----------------------  usher loop code  ----------------------------
+        /// ----------------------  usher loop code  ---------------------
 
         ///  --  dawoApp loop
         do {
-          //  ---------------------  dawo app loop code ------------------------------
+          //  ---------------------  dawo app loop code ------------------
           dt.devTestLine('dawoApp');
           dawoApp.roll();
 

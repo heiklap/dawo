@@ -112,8 +112,7 @@ class DevTest {
       DateTime now = new DateTime.now();
 
       String _s30 = '                              ';
-      print(
-          '$_s30  DEVELOPMENT TEST ------------------------------------------------');
+      print('$_s30  DEVELOPMENT TEST --------------------------------------');
       print('$_s30  Testing $unit  Test n:o:  $devTestCount');
       print('$_s30  Tester:  $whoDoneThis');
       print('$_s30  dev test ended    Time: $now ');
@@ -132,8 +131,7 @@ class DevTest {
       DateTime now = new DateTime.now();
 
       String _s30 = '                              ';
-      print(
-          '$_s30  Developers message ---------------------------------------');
+      print('$_s30  Developers message -----------------------------------');
       print('$_s30  Testing:  $unit Tester:  $whoDoneThis  ');
       print('$_s30  dev msg over:    Time: $now ');
       print('');
