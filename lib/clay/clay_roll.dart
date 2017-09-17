@@ -1,6 +1,6 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  dawo clay  main library
-///  presenting data for dawo-chore system
+///  presenting data for dawo-chore / mission system
 ///
 
 //
@@ -8,18 +8,20 @@ library clayRoll;
 
 import 'package:dawo/clay/helsinki_guide.dart';
 import 'package:dawo/clay/learn_dartlang.dart';
-import 'package:dawo/clay/my_week.dart';
+import 'package:dawo/clay/my_time.dart';
 import 'package:dawo/clay/my_music.dart';
 import 'package:dawo/clay/national_parks.dart';
 
+//  TODO : add all maps in list: List<Map<String,String>>
 List<String> clayMapL = [
   'helsinkiGuide',
   'learnDartlang',
   'myMusic',
-  'myWeek',
+  'myTime',
   'nationalParks'
 ];
 
+//  TODO : start using all maps: in list: List<Map<String,String>>
 ///  return asked Map
 Map getClayMap(String _command) {
   String command = _command;
@@ -34,14 +36,14 @@ Map getClayMap(String _command) {
     case 'myMusic':
       _retM = myMusicClay();
       break;
-    case 'myWeek':
-      _retM = myWeekClay();
+    case 'myTime':
+      _retM = myTimeClay();
       break;
     case 'nationalParks':
       _retM = nationalParksClay();
       break;
     default:
-      executeUnknown();
+      executeUnknownClay();
   }
   return _retM;
 }
@@ -71,9 +73,9 @@ Map myMusicClay() {
 }
 
 ///
-Map myWeekClay() {
-  var myWeek = new WorkingWeek();
-  Map _retM = myWeek.dayM;
+Map myTimeClay() {
+  var myTime = new WorkingWeek();
+  Map _retM = myTime.dayM;
   return _retM;
 }
 
@@ -85,4 +87,6 @@ Map nationalParksClay() {
 }
 
 ///  in case ?
-executeUnknown() {}
+executeUnknownClay() {
+  print('Nothing to see here.. executeUnknownClay..');
+}

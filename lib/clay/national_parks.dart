@@ -8,6 +8,9 @@ library nationalParksFinland;
 
 ///
 class NationalParks {
+
+  String name = 'National Parks of Finland class';
+
   ///  Map of Finlands national parks for Chore
   Map<String, String> parksM = {
     'Archipelago':

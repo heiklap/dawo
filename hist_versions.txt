@@ -16,21 +16,18 @@ To be published:  ~25.9.2017
  #Waiting complications and hardships?  Yes.
  Value-effort values from 1-10:
 
-3.1 _-__*7*7  5 missions, 12 chores:  ['helsinkiGuide','learnDartlang', 'myMusic',
-                                     'myWeek', 'nationalParks'];
-            *
+3.1 DONE*7*7  incoming data in clay-folder, clay as synonym for data
+            5 missions, 12 chores:  ['helsinkiGuide3-5','learnDartlang 4-6', 'myMusic 5',
+                                     'myTime 3', 'nationalParks 1'];
+            * Fill / create mission Classes; Helsinki, Dartlang, Music, myTime, Nature
             * Other customers data;  Helsinki, dartlang, music, wee, park. (dawo/dev is original, always there)
             * dev data
-            * political-data  (test-case)
 
-3.2 ____*5*2   Choose customer in parameters
+3.2 ____*5*2   Choose customer in parameters. Add political-data  (test-case)
 
 
 3.3 _-__7*4   Active "Rumba" flow / -example
            - app / mission / chore : all working together
-
-3,5 _--_*2*2  incoming data in clay-folder, clay as synonym for data
-
 
 3.4 _-__7*2  Fill generic lists with members (objects)
             Use generic lists inside classes for to control their "sub-ordinates"
@@ -38,12 +35,15 @@ To be published:  ~25.9.2017
             mission has choreL<Chore>
             Roll methods for them
 
+3,5 _--_*2*2
+
+
 3.6 ____*5*9  Connector, more ideas.
 
 
 3.7 ____*6*6  base_lib more ideas.
 
-3.8 ____      Fill / create mission Classes; Helsinki, Dartlang, Music, Time/Week, Nature
+3.8 ____
 3.9 ____      ADD elements / boxes to web / HTML.
 3.10 ____
 
