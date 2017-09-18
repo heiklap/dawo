@@ -8,8 +8,9 @@ library myMusic;
 
 ///
 class MyMusic {
-
   String name = 'My Music class';
+
+  Map<String, Map<String, String>> myMusicClayM = {};
 
   Map<String, String> myMusicM = {
     'Ukraine National Anthem': 'https://www.youtube.com/watch?v=bHzHlSLhtmM',
@@ -80,10 +81,20 @@ class MyMusic {
     '15	': 'R&B and soul',
     '16	': 'Rock'
   };
-}
+
+  void buildMaps() {
+    myMusicClayM.addAll({
+      'myMusic': myMusicM,
+      'myInstruments': myInstrumentM,
+      'myArtist': myArtistM,
+      'myGenre': myGenreM,
+      'musicGenre': musicGenreM
+    });
+  }
+} //  -----  MyMusic Class
 
 ///
 void renderWorkingMusic() {
   var myMusic = new MyMusic();
-  myMusic.myArtistM.forEach((k,v) => print('$k, $v'));
+  myMusic.myArtistM.forEach((k, v) => print('$k, $v'));
 }

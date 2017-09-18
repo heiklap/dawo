@@ -9,6 +9,9 @@ library learnDartlang;
 class LearnDartlang {
   String name = 'Learn Dartlang class';
 
+  ///  forming new kind of map, to keep more information
+  Map<String, Map<String, String>> dartlangClayM = {};
+
   ///  Dartlang learning subjects to Chore
   Map<String, String> dartlangSubjectsM = {
     'Basics': 'Dart is object-oriented, structured web programming language',
@@ -47,7 +50,7 @@ class LearnDartlang {
   };
 
   ///  dartlang API libraries
-  Map<String, String> dartlangApi = {
+  Map<String, String> dartlangApiM = {
     'dart:async':
         'https://api.dartlang.org/stable/1.24.2/dart-async/dart-async-library.html',
     'dart:collection':
@@ -88,28 +91,42 @@ class LearnDartlang {
 
   ///  dartlang tools map
   Map<String, String> dartToolM = {
-    'DartPad': 'great way to learn Dart syntax and to experiment with Dart language features and core libraries (except for dart:io and libraries that depend on dart:io).',
-    'Pub': 'Manages Dart packages, making it easy for you to install, use, and share Dart libraries, command-line tools, and other assets.',
-    'DartDoc': 'Use dartdoc to generate HTML documentaton for your Dart package. https://github.com/dart-lang/dartdoc',
-    'DartFormat': 'Formats your code, following the recommendations of the Dart Style Guide. IDEs that support Dart generally allow you to format the code within the IDE.',
-    'VM': 'The Standalone VM. You can use the dart tool (bin/dart) to run Dart command-line apps such as server-side scripts, programs, and servers.',
-    'Observatory': 'Observatory is a tool for profiling and debugging your apps. You can use .. flags to enable Observatory and to instruct the VM to delay the start up, or the exit, of an isolate',
-    'IDE s': 'Dart plugins exist for many commonly used IDEs. If you’re writing web apps and don’t already have a favorite IDE, try WebStorm, which comes with Dart support.',
-    'Static Analyzer': 'Evaluates and reports any errors or warnings in your code. The Dart plugin for your IDE should make use of Dart’s analysis engine ..',
-    'Web': 'Google builds many critical web apps using the Dart programming language, often with AngularDart.',
-    'Flutter': '.. lowers the bar to entry for building mobile apps. It speeds up development of mobile apps and reduces the cost and complexity of app production across iOS and Android.',
-    'AngularDart': 'AngularDart is a web app framework that focuses on productivity, performance, and stability. Hundreds of Google engineers use AngularDart..',
-    'Polymer': 'Polymer.dart is a new type of library for the web, built on top of Web Components, and designed to leverage the evolving web platform on modern browsers.  ..Polymer is just one of several web libraries available for Dart.',
+    'DartPad':
+        'great way to learn Dart syntax and to experiment with Dart language features and core libraries (except for dart:io and libraries that depend on dart:io).',
+    'Pub':
+        'Manages Dart packages, making it easy for you to install, use, and share Dart libraries, command-line tools, and other assets.',
+    'DartDoc':
+        'Use dartdoc to generate HTML documentaton for your Dart package. https://github.com/dart-lang/dartdoc',
+    'DartFormat':
+        'Formats your code, following the recommendations of the Dart Style Guide. IDEs that support Dart generally allow you to format the code within the IDE.',
+    'VM':
+        'The Standalone VM. You can use the dart tool (bin/dart) to run Dart command-line apps such as server-side scripts, programs, and servers.',
+    'Observatory':
+        'Observatory is a tool for profiling and debugging your apps. You can use .. flags to enable Observatory and to instruct the VM to delay the start up, or the exit, of an isolate',
+    'IDE s':
+        'Dart plugins exist for many commonly used IDEs. If you’re writing web apps and don’t already have a favorite IDE, try WebStorm, which comes with Dart support.',
+    'Static Analyzer':
+        'Evaluates and reports any errors or warnings in your code. The Dart plugin for your IDE should make use of Dart’s analysis engine ..',
+    'Web':
+        'Google builds many critical web apps using the Dart programming language, often with AngularDart.',
+    'Flutter':
+        '.. lowers the bar to entry for building mobile apps. It speeds up development of mobile apps and reduces the cost and complexity of app production across iOS and Android.',
+    'AngularDart':
+        'AngularDart is a web app framework that focuses on productivity, performance, and stability. Hundreds of Google engineers use AngularDart..',
+    'Polymer':
+        'Polymer.dart is a new type of library for the web, built on top of Web Components, and designed to leverage the evolving web platform on modern browsers.  ..Polymer is just one of several web libraries available for Dart.',
     'b': ' '
   };
 
   ///  separate phrases picked from net and dartlang.org
   Map<String, String> phrasesM = {
     'ABS': ' ',
-    'Angular Dart': 'AngularDart has a reputation as a framework that produces streamlined and blazing-fast code.',
+    'Angular Dart':
+        'AngularDart has a reputation as a framework that produces streamlined and blazing-fast code.',
     'a': ' ',
     'b': ' ',
-    'Call method': 'Given all the complications the call method, the language team intends to eventually remove this feature from the language.',
+    'Call method':
+        'Given all the complications the call method, the language team intends to eventually remove this feature from the language.',
     'c': ' ',
     'Class': ' ',
     'd': ' ',
@@ -117,7 +134,8 @@ class LearnDartlang {
     'Function': ' ',
     'Fail': ' ',
     'Type Generic': 'Because Darts generic types are covariant... ',
-    'Type Subtyping': 'Usually, subtyping is written using the "<:" operator: Apple <: Fruit.',
+    'Type Subtyping':
+        'Usually, subtyping is written using the "<:" operator: Apple <: Fruit.',
     'h': ' ',
     'i': ' ',
     'Instance': ' ',
@@ -131,7 +149,8 @@ class LearnDartlang {
     'Publish': ' ',
     'Queue': ' ',
     'R': ' ',
-    'Strong mode': '..optional in the first version of the language. Integrated part of the second.',
+    'Strong mode':
+        '..optional in the first version of the language. Integrated part of the second.',
     'T': ' ',
     'U': ' ',
     'V': ' ',
@@ -176,23 +195,33 @@ class LearnDartlang {
     'k': ' ',
     'l': ' ',
   };
-}
 
+  ///  some links to no-comprendo stuff in Dart. lol
+  Map<String, String> hardSpotsDartM = {
+    ' ': ' ',
+    'a': ' ',
+    'b': ' ',
+    'c': ' ',
+    'd': ' ',
+    'e': ' ',
+    'f': ' ',
+    'g': ' ',
+    'h': ' ',
+    'i': ' ',
+    'j': ' ',
+    'k': ' ',
+    'l': ' ',
+  };
 
-///  some links to no-comprendo stuff in Dart. lol
-Map<String, String> hardSpotsDartM = {
-  ' ': ' ',
-  'a': ' ',
-  'b': ' ',
-  'c': ' ',
-  'd': ' ',
-  'e': ' ',
-  'f': ' ',
-  'g': ' ',
-  'h': ' ',
-  'i': ' ',
-  'j': ' ',
-  'k': ' ',
-  'l': ' ',
-};
-}
+  void buildMaps() {
+    dartlangClayM.addAll({
+      'dartlangSubjects': dartlangSubjectsM,
+      'dartlangApi': dartlangApiM,
+      'dartTool': dartToolM,
+      'phrases': phrasesM,
+      'fagDart': faqDartM,
+      'whuDart': whyDartM,
+      'hardSpots': hardSpotsDartM
+    });
+  }
+} //  -----  class LearnDartlang

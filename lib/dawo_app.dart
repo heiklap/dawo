@@ -72,7 +72,7 @@ class DawoApp extends BaseStruct {
     build();
     //  code for roll
 
-    rollMissions();
+    rollMissions('C:DawoApp-roll ');
 
     show();
     done();
@@ -80,18 +80,19 @@ class DawoApp extends BaseStruct {
   }
 
   ///  roll missions in missionL AND every chore in them
-  void rollMissions() {
-    print('\n *********************** app rollMissions  *****************');
+  void rollMissions(String caller) {
+    print('\n ************ app rollMissions  C: $caller *****************');
     // roll BLib-class (mission) actually List of missions!
     print('\n  ***  DAWO-APP  MISSIONS   ***  \n');
-    buildMissions();
-    helsinkiMission.report();
-    dartlangMission.report();
-    myMusicMission.report();
-    myWeekMission.report();
-    nationalParksMission.report();
+    buildMissions('C:dawoApp ');
 
-    print('\n **********************   app rollMissions  ****************');
+    helsinkiMission.report('C:dawoApp-RM');
+    dartlangMission.report('C:dawoApp-RM');
+    myMusicMission.report('C:dawoApp-RM');
+    myTimeMission.report('C:dawoApp-RM');
+    nationalParksMission.report('C:dawoApp-RM');
+
+    print('\n **************   app rollMissions  C: $caller *************');
     // roll all chores, that are in mission
   }
 

@@ -17,6 +17,41 @@ void operationMapPrint(Map thisMap) {
   });
 }
 
+
+///  print Map<String, Map<String, String>>  map nicely
+void printStringMapMap(Map<String, Map<String, String>> _map) {
+  int _length = _map.length;
+  print('length:  $_length  ');
+  List<String> nameL = _map.keys.toList();
+  for (var x = 0; x < _length; x++) {
+
+    String name = nameL[x];
+    print(' name:  $name  ');
+    int _l = _map[name].length;
+    print('mapName: $name -------------- length: $_l -----------------');
+    _map[name].forEach((k, v) => print('$k, $v'));
+
+  }
+}
+
+///  TODO  did it go right
+///  print Map<String, Map<String, String>>  map nicely
+void printStringMapMapFail(Map<String, Map<String, String>> _map) {
+  int _length = _map.length;
+  List<String> nameL = _map.keys.toList();
+  for (var x = 0; x < _length; x++) {
+
+    String name = nameL[x];
+    int _l = _map[name].length;
+    print('mapName: $name -------------------------------');
+    for (var z = 0; z < _l; z++) {
+      print(_map[name][z]);
+    }
+
+    print(_map[x]);
+  }
+}
+
 /// some class tests.. for coming use
 var strLin = '----------------------------------------         ';
 

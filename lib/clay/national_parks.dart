@@ -8,8 +8,9 @@ library nationalParksFinland;
 
 ///
 class NationalParks {
-
   String name = 'National Parks of Finland class';
+
+  Map<String, Map<String, String>> nationalParksClayM = {};
 
   ///  Map of Finlands national parks for Chore
   Map<String, String> parksM = {
@@ -58,4 +59,8 @@ class NationalParks {
     'Valkmusa':
         'Valkmusa s extensive natural open bogs give visitors a chance to wind down and see, hear, smell and even taste nature all around.     http://www.nationalparks.fi/valkmusanp'
   };
-}
+
+  void buildMaps() {
+    nationalParksClayM.addAll({'Finlands National Parks': parksM});
+  }
+} //  -----  class nationalParks

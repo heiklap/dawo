@@ -34,7 +34,7 @@ To be published:  ~25.9.2017
             mission has choreL<Chore>
             Roll methods for them
 
-3,5 _--_*2*2
+3,5 ____*2*2
 
 
 3.6 ____*2*2 Collect Dev / team notes.

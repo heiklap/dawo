@@ -48,44 +48,50 @@ Map getClayMap(String _command) {
   return _retM;
 }
 
-///  Series of functions that return a list > toChore
-///
-Map helsinkiGuideClay() {
+///  use new, complicated Map
+Map<String, Map<String, String>> helsinkiGuideClay() {
+  Map<String, Map<String, String>> _retM = {};
   var helsinkiGuide = new HelsinkiGuide();
-
-  Map _retM = helsinkiGuide.attractionM;
-  // do something with it?
+  helsinkiGuide.buildMaps(); //  get all maps..
+  _retM.addAll(helsinkiGuide.helsinkiClayM);
   return _retM;
 }
 
-///
-Map learnDartlangClay() {
+///  function returns Map from clay folder
+Map<String, Map<String, String>> learnDartlangClay() {
+  Map<String, Map<String, String>> _retM = {};
   var learnDartlang = new LearnDartlang();
-  Map _retM = learnDartlang.dartlangSubjectsM;
+  learnDartlang.buildMaps();
+  _retM.addAll(learnDartlang.dartlangClayM);
   return _retM;
 }
 
 ///
-Map myMusicClay() {
+Map<String, Map<String, String>> myMusicClay() {
+  Map<String, Map<String, String>> _retM = {};
   var myMusic = new MyMusic();
-  Map _retM = myMusic.myMusicM;
+  myMusic.buildMaps();
+  _retM.addAll(myMusic.myMusicClayM);
   return _retM;
 }
 
 ///
-Map myTimeClay() {
-  var myTime = new WorkingWeek();
-  Map _retM = myTime.dayM;
+Map<String, Map<String, String>> myTimeClay() {
+  Map<String, Map<String, String>> _retM = {};
+  var myTime = new MyTime();
+  myTime.buildMaps();
+  _retM.addAll(myTime.myTimeClayM);
   return _retM;
 }
 
 ///
-Map nationalParksClay() {
+Map<String, Map<String, String>> nationalParksClay() {
+  Map<String, Map<String, String>> _retM = {};
   var nationalParks = new NationalParks();
-  Map _retM = nationalParks.parksM;
+  nationalParks.buildMaps();
+  _retM.addAll(nationalParks.nationalParksClayM);
   return _retM;
 }
-
 
 ///  ..to present do-this-initiatives and spur-ons
 void urge() {

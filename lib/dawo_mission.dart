@@ -6,6 +6,7 @@
 library dawo_mission;
 
 import 'clay/clay_roll.dart';
+import 'package:dawo/dawo_tools.dart';
 
 ///  buffer also outside class, for testing and adding visibility
 var missionBuf = new StringBuffer();
@@ -30,7 +31,8 @@ class Mission {
   String name;
   String motto;
 
-  Map<String, String> clayMap = {};
+  /// change map to more complicated:
+  Map<String, Map<String, String>> clayMap = {};
 
   /// some maps to give platform for ideas to future development.  maps
   /// PLAN:    trying to develop some maps for dawLib..  ...
@@ -137,8 +139,8 @@ class Mission {
   }
 
   ///  report of mission data
-  void report() {
-    print('\n *************************************************************');
+  void report(String caller) {
+    print('\n ****************** caller: $caller *************************');
     print('**  Mission:  $name  Motto: $motto');
     print('**  State:  $state ');
     print('**  stDo:  $stDo     stDone: $stDone  ');
@@ -147,7 +149,8 @@ class Mission {
     print('**  opOn: $opOn    opDone: $opDone     opCount:  $opCount');
     print('**  ');
     print('****************  clayMap   **********************************  ');
-    clayMap.forEach((k, v) => print('$k, $v'));
+    //  clayMap.forEach((k, v) => print('$k, $v'));
+    printStringMapMap(clayMap);
     print('*************************************************************  \n ');
   }
 
@@ -177,17 +180,22 @@ var helsinkiMission = new Mission('Helsinki-mission', 'Presenting Helsinki');
 var dartlangMission = new Mission('Dartlang mission', 'Learn dartlang');
 var myMusicMission =
     new Mission('My-Music mission', 'Play and share good music');
-var myWeekMission = new Mission(
+var myTimeMission = new Mission(
     'My-Week mission', 'Spend at least one hour in a week with reasonable way');
 var nationalParksMission = new Mission(
-    'Finlands national parik mission', 'Present beautiful finish nature');
+    'Finlands national park mission', 'Present beautiful finish nature');
 
 ///  add clay maps to missions
-void buildMissions() {
+void buildMissions(String caller) {
+  print('----------build Missions, caller: $caller -------------');
   helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
+
   dartlangMission.clayMap.addAll(getClayMap('learnDartlang'));
+
   myMusicMission.clayMap.addAll(getClayMap('myMusic'));
-  myWeekMission.clayMap.addAll(getClayMap('myWeek'));
+
+  myTimeMission.clayMap.addAll(getClayMap('myTime'));
+
   nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
 }
 

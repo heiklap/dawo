@@ -9,6 +9,9 @@ library helsinkiGuide;
 class HelsinkiGuide {
   String name = 'Helsinki Guide class';
 
+  ///  forming new kind of map, to keep more information
+  Map<String, Map<String, String>> helsinkiClayM = {};
+
   Map<String, String> attractionM = {
     'Ateneum Art Museum':
         'http://www.visithelsinki.fi/en/see-and-experience/sights-and-attractions/ateneum-art-museum',
@@ -67,7 +70,7 @@ class HelsinkiGuide {
 
   ///  source:  http://helka.net/helka/palvelut/vinkkejayhdistystoimintaan/kotikaupunkipolut
   ///  Helsinki city paths map
-  Map<String, String> helsinkiPaths = {
+  Map<String, String> helsinkiPathsM = {
     'Arabia': 'www.artova.fi/arabian-kotikaupunkipolut',
     'Haaga': 'www.kaupunginosat.net/pohjoishaaga/pohjois-haaga-2',
     'Herttoniemi': 'www.herttoniemi.fi/kotikaupunkipolut',
@@ -102,7 +105,17 @@ class HelsinkiGuide {
   };
 
   Map<String, String> eventM = {' ': ' ', 'a': ' ', 'b': ' '};
-}
+
+  void buildMaps() {
+    helsinkiClayM.addAll({
+      'Attractions': attractionM,
+      'outdoor': outdoorM,
+      'helsinkiPaths': helsinkiPathsM,
+      'seasons': seasonM,
+      'events': eventM
+    });
+  }
+} //  -----  class HelsinkiGuide
 
 ///  instance
 var helsinkiGuide = new HelsinkiGuide();

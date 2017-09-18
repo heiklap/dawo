@@ -93,7 +93,9 @@ class Rumba {
           ///  --  mission loop
           do {
             //  ************  call mission from inside dawoApp
-            dawoApp.rollMissions();
+            //  roll already includes rollMissions
+            //  NO!! dawoApp.rollMissions();
+
             dt.devTestLine('mission');
             // -- chore
 
