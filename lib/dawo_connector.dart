@@ -7,8 +7,8 @@
 /// mission - chore work together in same sphere, and there must be something, that
 /// they have in common; abstraction layer, in which they must work together.
 ///
-/// * Sending messages between objects
-//
+/// * Sending messages between objects. Stance, approach
+//  * Find common interests, i've been here.. follow-me, give-take
 
 library connector;
 
@@ -81,6 +81,8 @@ class Connector extends BaseStruct {
   bool onB = false;
   bool pauseB;
   bool doneB = false;
+  ///  something turns around this
+  var pivot;
 
   ///  Just copy methods body from other class.  lol
   ///  Method for setting class field values to their run-time-values

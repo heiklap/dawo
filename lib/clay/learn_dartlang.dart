@@ -93,6 +93,7 @@ class LearnDartlang {
     'DartDoc': 'Use dartdoc to generate HTML documentaton for your Dart package. https://github.com/dart-lang/dartdoc',
     'DartFormat': 'Formats your code, following the recommendations of the Dart Style Guide. IDEs that support Dart generally allow you to format the code within the IDE.',
     'VM': 'The Standalone VM. You can use the dart tool (bin/dart) to run Dart command-line apps such as server-side scripts, programs, and servers.',
+    'Observatory': 'Observatory is a tool for profiling and debugging your apps. You can use .. flags to enable Observatory and to instruct the VM to delay the start up, or the exit, of an isolate',
     'IDE s': 'Dart plugins exist for many commonly used IDEs. If you’re writing web apps and don’t already have a favorite IDE, try WebStorm, which comes with Dart support.',
     'Static Analyzer': 'Evaluates and reports any errors or warnings in your code. The Dart plugin for your IDE should make use of Dart’s analysis engine ..',
     'Web': 'Google builds many critical web apps using the Dart programming language, often with AngularDart.',
@@ -102,21 +103,38 @@ class LearnDartlang {
     'b': ' '
   };
 
-  ///
+  ///  separate phrases picked from net and dartlang.org
   Map<String, String> phrasesM = {
-    ' ': ' ',
+    'ABS': ' ',
+    'Angular Dart': 'AngularDart has a reputation as a framework that produces streamlined and blazing-fast code.',
     'a': ' ',
     'b': ' ',
+    'Call method': 'Given all the complications the call method, the language team intends to eventually remove this feature from the language.',
     'c': ' ',
+    'Class': ' ',
     'd': ' ',
     'e': ' ',
-    'f': ' ',
-    'g': ' ',
+    'Function': ' ',
+    'Fail': ' ',
+    'Type Generic': 'Because Darts generic types are covariant... ',
+    'Type Subtyping': 'Usually, subtyping is written using the "<:" operator: Apple <: Fruit.',
     'h': ' ',
     'i': ' ',
+    'Instance': ' ',
+    'int': ' ',
     'j': ' ',
     'k': ' ',
     'l': ' ',
+    'Match': ' ',
+    'num': ' ',
+    'Object': ' ',
+    'Publish': ' ',
+    'Queue': ' ',
+    'R': ' ',
+    'Strong mode': '..optional in the first version of the language. Integrated part of the second.',
+    'T': ' ',
+    'U': ' ',
+    'V': ' ',
   };
 
   ///  data from:  https://www.dartlang.org/faq
@@ -158,4 +176,23 @@ class LearnDartlang {
     'k': ' ',
     'l': ' ',
   };
+}
+
+
+///  some links to no-comprendo stuff in Dart. lol
+Map<String, String> hardSpotsDartM = {
+  ' ': ' ',
+  'a': ' ',
+  'b': ' ',
+  'c': ' ',
+  'd': ' ',
+  'e': ' ',
+  'f': ' ',
+  'g': ' ',
+  'h': ' ',
+  'i': ' ',
+  'j': ' ',
+  'k': ' ',
+  'l': ' ',
+};
 }

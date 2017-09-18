@@ -70,6 +70,9 @@ class Rumba {
     ///  --  rumba loop
     initRumba();
 
+    //  test #word ; is clay here?
+    //  Clay  clay ??
+
     ///  --  rumbaLoop
     dt.devTestLine('rumba');
     do {

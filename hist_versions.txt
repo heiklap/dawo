@@ -20,11 +20,10 @@ To be published:  ~25.9.2017
             5 missions, 12 chores:  ['helsinkiGuide3-5','learnDartlang 4-6', 'myMusic 5',
                                      'myTime 3', 'nationalParks 1'];
             * Fill / create mission Classes; Helsinki, Dartlang, Music, myTime, Nature
-            * Other customers data;  Helsinki, dartlang, music, wee, park. (dawo/dev is original, always there)
+            * Other customers data;  Helsinki, dartlang, music, time, park. (dawo/dev is original, always there)
             * dev data
 
 3.2 ____*5*2   Choose customer in parameters. Add political-data  (test-case)
-
 
 3.3 _-__7*4   Active "Rumba" flow / -example
            - app / mission / chore : all working together
@@ -38,14 +37,15 @@ To be published:  ~25.9.2017
 3,5 _--_*2*2
 
 
-3.6 ____*5*9  Connector, more ideas.
+3.6 ____*2*2 Collect Dev / team notes.
 
+3.7 ____*3*3 Join one-happy-stream to dawo-rumba, for to get used to streams.
+        *8*5    Add typedef, queue, enum, set, duration; just to showcase them
 
-3.7 ____*6*6  base_lib more ideas.
-
-3.8 ____
-3.9 ____      ADD elements / boxes to web / HTML.
-3.10 ____
+     ongoing::
+3.8 ____*5*9  Connector, more ideas
+3.9 ____*6*6  base_lib more ideas.
+3.10 ____   ADD elements / boxes to web / HTML.
 
 #Overall ____*9*7
 
@@ -115,7 +115,7 @@ To be published:  ? 10.10.2017 ?
 4.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
             * not yet clear idea, how this must be done.
 
-4.7 ____  Use enums, set, Map, queues. Just for to show that you can.
+4.7 ____  Use JSON, enums, set, Map, queues. Just for to show that you can.
 
 
 
