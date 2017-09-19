@@ -10,7 +10,7 @@ Way to version NEXT:  0.0.3 aso.
 Theme:  Choose different Client / customer data and small, playing work-flow
 To be published:  ~25.9.2017
 
-#Questions:  1. Use JSON or #serialization
+#Questions:  1. Use JSON or #serialization?
              2.
              3.
  #Waiting complications and hardships?  Yes.
@@ -133,5 +133,13 @@ Version coming:  0.0.5 aso
 class.init / done  should #deactivate #clients in <chore> aso. lists
 
 Working rumba  is mark for  0.1.0  version
+
+Make Rumba be a Chore
+
+Make x (dev?) be a Chore
+
+Master Chore can have subChores
+
+Chore marked as a "slave" to other Chore
 
 _________________________________________________________________________

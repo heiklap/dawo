@@ -9,6 +9,7 @@
 library dawo_app.dart;
 
 import 'base_struct.dart';
+import 'dawo_dev.dart';
 import 'dawo_mission.dart';
 
 // ignore: unused_field for those wondering
@@ -67,6 +68,8 @@ class DawoApp extends BaseStruct {
 
   ///  #run-like method
   void roll() {
+    dev.admNotes.add('>>  dawo_app is rolling  >>');
+    dev.buildNotes();
     buf.writeln('DawoApp::roll    $infoS   :: roll engaged ');
     init(); //  calling init and build methods in this class
     build();

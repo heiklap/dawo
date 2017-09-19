@@ -1,14 +1,12 @@
-///  ##  Dev & team
-///  Some helper stuff for screen prints and notes.
-///  Team - for many developers working in same project
+///  ##  Dev (& team)
+///  dev, msg classes and some helper stuff for screen prints and notes.
+///  (Team - for many developers working in same project)
 /// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
 /// * READY-STATE  99%  for version 0.0.2     GitHub: yes  29.11.2014
 
 library dawo_dev.dart;
 
 import 'package:dawo/dawo_tools.dart';
-
-//  No idea yet, how and where notes are added, leaving that to 0.0.3
 
 //TODO  name   PROBLEMS, when using too common names:
 //   devTest   =   26  times     CHANGE:   test  ! ??
@@ -24,22 +22,72 @@ num dawoDevReadiness = 94;
 ///  buffer also outside class, for testing and adding visibility
 var devBuf = new StringBuffer();
 
-//TODO  teamInno   devTeam should be one instance of team class !!
-bool devTestPhase = true; // set this false in production. (newer)
+///  collect dev stuff to Dev class
+class Dev {
+  ///  small mess with variable names
+  int devTestCount = 0;
+  //TODO  teamInno   devTeam should be one instance of team class !!
+  bool devTestPhase = true; // set this false in production. (newer)
 
-///  two members (persons) of devTest team:
+  ///  two members (persons) of devTest team:
 //TODO  teamAdm team_members..  should they be in... team_staff..
-///  First coder name
-String devTestNight = 'Late Night Coder ';
+  String coderNight = 'Late Night Coder ';
+  String coderMorn = 'Earlymorn Coffeeman ';
 
-///  Second coder name
-String devTestMorn = 'Earlymorn Coffeeman ';
+  /// count.. something
+  num coderCount = 0;
 
-/// count.. something
-num devTestCount = 0;
+  ///  msg named in dev
+  String coderBlame = '';
 
-///  msg named in dev
-String devBlame = '';
+  ///  Generic list to keep and handle all devNotes
+  ///  To keep Class DevMessages instances
+  List<DevMessage> devMessageL = [];
+
+  //--------------------------------------------------------------
+// moved list from chore back to dev.. put first, header values there
+  List<String> admNotes = ['* *  Team Admin notes:  * *'];
+  List<String> devNotes = ['* * Team dev notes: * * '];
+  List<String> innoNotes = ['* *  Team inno notes: * * '];
+  List<String> howToNotes = ['* * Team HowTo notes: * * '];
+  List<String> secNotes = ['* * Team sec notes: * * '];
+//--------------------------------------------------------------
+
+  ///  to add developer notes
+  void addNote(List l, String s) {
+    l.add(s);
+  }
+
+  void buildNotes() {
+    admNotes.addAll(['adm: principle: do not mess, keep it simple']);
+    devNotes.addAll(
+        ['priority : rumba and web', 'Create all instances in theri lib.']);
+    innoNotes.addAll(['-Counters?', 'Mongo-DB', 'Indexed-DB', 'User-class']);
+    howToNotes
+        .addAll(['Web-html?', 'typedef?', 'connector?', 'Streams?', 'Async?']);
+    howToNotes
+        .addAll(['base-lib?', 'user-action?', 'print-output-variables-logos']);
+    secNotes.addAll(
+        ['Restrict use of certainn methdos', 'Create up-level pass-word']);
+  }
+
+  void showNotes() {
+    print(' ');
+    admNotes.forEach(print);
+    print(' ');
+    devNotes.forEach(print);
+    print(' ');
+    innoNotes.forEach(print);
+    print(' ');
+    howToNotes.forEach(print);
+    print(' ');
+    secNotes.forEach(print);
+    print(' ');
+  }
+} //  -----  class dev
+
+///  create instance of class Dev
+var dev = new Dev();
 
 //TODO  teamHowTo lists: add:   automatize adding notes to lists?
 //TODO  teamInno  notes:  automatic roll of createNotes.? no; events..?
@@ -64,19 +112,16 @@ var devTestStreamData = ['devTestStream, for notes and testing',
 var devTestStream = new Stream.fromIterable(devTestStreamData);
 */
 
-///  Generic list to keep and handle all devNotes
-List<DevNote> devNoteL = [];
+///  Messages might be something that demand immediately action.
+///  For more complicated cases of note-message-handling.
+class DevMessage {
+  var messageL = ['* * *  DevMessages   * * *', '', ''];
 
-///   for simple:  "hello-I-am"  -tests
-/// TODO  name    can not be this name  it is already used ??
-class DevNote {
-  var noteL = ['* * *  DevNotes   * * *', '', ''];
+  ///  Map for devMessages
+  Map<String, String> messageM = {'': ''};
+  void messageAdd() => print('addNewMessage();');
 
-  ///  Map for devNotes
-  Map<String, String> noteM = {'': ''};
-  void noteAdd() => print('addNewNote();');
-
-  void notesShow() => print('Showing all notes..');
+  void show() => print('Showing all Dev-messages..');
 //  add code:
 //  devTestStream.join('New one')         //  add some streams
 //    .join(String 'Second one')
@@ -86,6 +131,7 @@ class DevNote {
 
 ///  creating Glorious :) DevTest class; implement it as:  new dt()
 ///  collect all my own devTests under a class
+///  howTo avoid calling it devTest.devTest  lol
 class DevTest {
   //  TODO  add constructor: (String user, String x)
 
@@ -108,26 +154,26 @@ class DevTest {
   /// TODO  teamDev:   should this be named to devTestInfo ??  devInfo ??
   /// report testers info
   num devTest(String unit, String whoDoneThis) {
-    if (devTestPhase) {
+    if (dev.devTestPhase) {
       DateTime now = new DateTime.now();
 
       String _s30 = '                              ';
       print('$_s30  DEVELOPMENT TEST --------------------------------------');
-      print('$_s30  Testing $unit  Test n:o:  $devTestCount');
+      print('$_s30  Testing $unit  Test n:o:  $dev.devTestCount');
       print('$_s30  Tester:  $whoDoneThis');
       print('$_s30  dev test ended    Time: $now ');
       print('');
 
 //TODO  aSync stream     devTestStream.
-      devTestCount++;
+      dev.devTestCount++;
     }
-    return devTestCount;
+    return dev.devTestCount;
   }
 
   /// NOTE  team-team   developers can send messages to each others in test printings
   /// Simple message to track run and development
   devMsg(String unit, String whoDoneThis) {
-    if (devTestPhase) {
+    if (dev.devTestPhase) {
       DateTime now = new DateTime.now();
 
       String _s30 = '                              ';
@@ -201,6 +247,8 @@ class DevTest {
   }
 } //  --------  end of class DawoDevTest
 //
+
+var devTest = new DevTest();
 
 ///  howTo do these?
 void addDawoDevNotes() {

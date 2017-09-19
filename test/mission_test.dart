@@ -10,13 +10,20 @@ import 'package:dawo/dawo_mission.dart';
 
 
 
-  var mission = new Mission('ToDo glorious stuff', 'test');
+  var myMission = new Mission('ToDo glorious stuff', 'test');
+
+  String msg = 'greetings from mission_test.dart';
+
+  void greetings(){
+    print(msg);
+  }
 
 
 void main() {
 
+  myMission.opRoll(3, greetings);
 
-  missionBuf.print('hello mission buffer');
+
 
 
   //  print(missionError);

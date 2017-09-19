@@ -22,6 +22,7 @@ library dawlib_chore;
 
 import 'base_struct.dart';
 import 'base_lib.dart';
+import 'dawo_dev.dart';
 import 'clay/clay_roll.dart';
 
 ///  using - getters -example
@@ -33,24 +34,17 @@ var choreBuf = new StringBuffer();
 ///  generic List to keep all Chores
 List<CommonChore> choreL = [];
 
-//--------------------------------------------------------------
-// Temporary added variables from team package here, to solve lib visibility.
-List<String> admNotes = ['* *  Team Admin notes:  * *'];
-List<String> devNotes = ['* * Team dev notes: * * '];
-List<String> innoNotes = ['* *  Team inno notes: * * '];
-List<String> howToNotes = ['* * Team HowTo notes: * * '];
-List<String> secNotes = ['* * Team sec notes: * * '];
-//--------------------------------------------------------------
+
 ///  TODO  devNotes ==   #chore, that is always in dawoApp
 //
 
-///   initializing of chore system
+///   initializing of chore system. Update dev-class
 void initChore() {
-  devNotes
+  dev.devNotes
     ..add('make COMMON  init-module to EVVVERY  lib part')
     ..add('This could be for NOTES like W O R K s to be done');
 
-  admNotes.add('NO: for  big   W O R K -lists');
+  dev.admNotes.add('NO: for  big   W O R K -lists');
 }
 
 ///  every important dawo class extending now base struct class
@@ -132,7 +126,7 @@ class CommonChore extends BaseStruct {
     ///  order: #actor #sender #receiver #command #msg
     var chOpClass =
         new GlobalOpClass(name, 'chore', 'rec:test', helloChore, 'all ok');
-
+    //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
 
     ///  mediate command to common process (in base_lib) with info from chore

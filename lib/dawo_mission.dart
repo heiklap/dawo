@@ -116,15 +116,16 @@ class Mission {
   }
 
   ///  Start developing operation roll function
-  int opRoll(int rollCount, var autoRollFunc) {
+  int opRoll(int rollCount, Function autoRollFunc) {
     print('----  oRoll ------');
-    int _rollCount =
-        rollCount; //  now this just rolls func rollCount time,  lol
+    int done = 0;
+    //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
-      _rollCount++;
-      autoRollFunc;
+      done++;
+      autoRollFunc();
     }
-    return _rollCount;
+    print('----  oRoll done c: $done ------');
+    return done;
   }
 
   /// devNote  function, that OPENS something.  so rename; init
@@ -181,7 +182,7 @@ var dartlangMission = new Mission('Dartlang mission', 'Learn dartlang');
 var myMusicMission =
     new Mission('My-Music mission', 'Play and share good music');
 var myTimeMission = new Mission(
-    'My-Week mission', 'Spend at least one hour in a week with reasonable way');
+    'My-Time mission', 'Spend at least one hour in a week with reasonable way');
 var nationalParksMission = new Mission(
     'Finlands national park mission', 'Present beautiful finish nature');
 

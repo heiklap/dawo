@@ -8,6 +8,10 @@ homepage: https://dawopack.blogspot.fi/
 environment:
   sdk: '>=1.20.1 <2.0.0'
 
+web:
+  compiler:
+    debug: dartdevc
+
 dependencies:
   browser: "^0.10.0+2"
 

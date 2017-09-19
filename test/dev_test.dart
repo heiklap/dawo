@@ -1,9 +1,13 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-import 'package:dawo/dawo.dart';
+//  import 'package:dawo/dawo.dart';
+
 import 'package:dawo/dawo_app.dart';
-import 'package:dawo/dawo_mission.dart';
+import 'package:dawo/dawo_dev.dart';
+import 'package:dawo/rumba.dart';
+
+//  import 'package:dawo/dawlib_chore.dart';
 
 /*
 Intellij IDEA 2016.2.2
@@ -26,27 +30,15 @@ var dawoOperation;
 
 
 void main() {
-  print('------  de_test  dawo  ------------');
+  print('------ testing dev class and variables  ------------');
+    print('\n -----------  play rumba test  ----------------------');
+    var dawoApp = new DawoApp(':play-rumba-test', 'Just rumbaTest.dart');
 
-  dawoInit;
+    var rumba = new Rumba();
 
-  renderDawo();
-
-  var mission = new Mission('mission-class in de-test', 'testing');
-  mission.opInit(4, dawoOperation);
-  mission.showInfo();
-  mission.info;
-
-  var ap = new DawoApp('dawoApp', 'in de_test.dart testing');
-
-  print(ap.version);
-  print(ap.motto);
+    //  lol  you can put two commands in same row
+    rumba.dance(dawoApp);dev.showNotes();
 
 
-
-
-
-
-  print('------  de_test  dawo  done --------');
+  print('------  testing dev class and variables::  done --------');
 }
-

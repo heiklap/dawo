@@ -97,6 +97,7 @@ class LearnDartlang {
         'Manages Dart packages, making it easy for you to install, use, and share Dart libraries, command-line tools, and other assets.',
     'DartDoc':
         'Use dartdoc to generate HTML documentaton for your Dart package. https://github.com/dart-lang/dartdoc',
+    'DartDevCompiler': 'The Dart development compiler (dartdevc, also known as DDC) lets you run and debug your Dart web app in Chrome.',
     'DartFormat':
         'Formats your code, following the recommendations of the Dart Style Guide. IDEs that support Dart generally allow you to format the code within the IDE.',
     'VM':
@@ -220,7 +221,7 @@ class LearnDartlang {
       'dartTool': dartToolM,
       'phrases': phrasesM,
       'fagDart': faqDartM,
-      'whuDart': whyDartM,
+      'whyDart': whyDartM,
       'hardSpots': hardSpotsDartM
     });
   }

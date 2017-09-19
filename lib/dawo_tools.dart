@@ -26,9 +26,8 @@ void printStringMapMap(Map<String, Map<String, String>> _map) {
   for (var x = 0; x < _length; x++) {
 
     String name = nameL[x];
-    print(' name:  $name  ');
     int _l = _map[name].length;
-    print('mapName: $name -------------- length: $_l -----------------');
+    print('\n mapName: $name -------------- length: $_l -----------------');
     _map[name].forEach((k, v) => print('$k, $v'));
 
   }
@@ -43,7 +42,7 @@ void printStringMapMapFail(Map<String, Map<String, String>> _map) {
 
     String name = nameL[x];
     int _l = _map[name].length;
-    print('mapName: $name -------------------------------');
+    print('\n mapName: $name -------------------------------');
     for (var z = 0; z < _l; z++) {
       print(_map[name][z]);
     }

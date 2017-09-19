@@ -25,12 +25,11 @@ var dawoApp = new DawoApp('dap in rumba', 'rumbaPlay');
 
 */
 
-///  creating instance of DevTest class. New for every library (?)
-var dt = new DevTest();
-
 ///
 class Rumba {
   ///  boolean values for controlling loop
+  ///  Eventually these values are triggered to false-state by sub-programs,
+  ///  or some value / event in subprograms, but for now, this (fake)-done
   bool rumbaB = false;
   bool usherB = false;
   bool dawoAppB = false;
@@ -50,7 +49,7 @@ class Rumba {
     missionB = true;
   }
 
-  ///  setting loop variables to beginning state
+  ///  setting loop variables to (fake-) force-stop state
   void doneRumba() {
     print('-------------------  done Rumba -----------------------');
     rumbaB = false;
@@ -63,7 +62,7 @@ class Rumba {
   ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope. Constructor?
   ///  Now it is just a methods parameter.
   StringBuffer dance(var dawoApp) {
-    dt.devTestLine('rumba');
+    devTest.devTestLine('rumba');
 
     ///TODO  rumbaLoop is executed for now only 1-3 times
     ///  primary rumba Loops, over it is usher loop
@@ -74,29 +73,33 @@ class Rumba {
     //  Clay  clay ??
 
     ///  --  rumbaLoop
-    dt.devTestLine('rumba');
+    devTest.devTestLine('rumba');
     do {
       /// -----------------------  rumbaB loop code   -------------------
-
-      dt.devTestLine('usher');
+      /// some loopS variables to test visibility
+      String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
+      devTest.devTestLine('usher');
 
       ///  --  usher loop
       do {
+        String rumbaLoopUsherS = '**  usherLoop is rolling  **';
         /// ----------------------  usher loop code  ---------------------
 
         ///  --  dawoApp loop
         do {
+          String rumbaLoopDawoAppS = '**  dawoAppLoop is rolling  **';
           //  ---------------------  dawo app loop code ------------------
-          dt.devTestLine('dawoApp');
+          devTest.devTestLine('dawoApp');
           dawoApp.roll();
 
           ///  --  mission loop
           do {
+            String rumbaLoopMissionS = '**  missionLoop is rolling  **';
             //  ************  call mission from inside dawoApp
             //  roll already includes rollMissions
             //  NO!! dawoApp.rollMissions();
 
-            dt.devTestLine('mission');
+            devTest.devTestLine('mission');
             // -- chore
 
             missionB = false; //  emergency exit, while testing

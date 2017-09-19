@@ -52,5 +52,6 @@ void testRumba() {
 
   var rumba = new Rumba();
   rumba.dance(dawoApp);
+  dev.showNotes();
 
 }
