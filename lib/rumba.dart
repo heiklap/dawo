@@ -62,7 +62,7 @@ class Rumba {
   ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope. Constructor?
   ///  Now it is just a methods parameter.
   StringBuffer dance(var dawoApp) {
-    devTest.devTestLine('rumba');
+    devHelp.line('rumba');
 
     ///TODO  rumbaLoop is executed for now only 1-3 times
     ///  primary rumba Loops, over it is usher loop
@@ -73,12 +73,12 @@ class Rumba {
     //  Clay  clay ??
 
     ///  --  rumbaLoop
-    devTest.devTestLine('rumba');
+    devHelp.line('rumba');
     do {
       /// -----------------------  rumbaB loop code   -------------------
       /// some loopS variables to test visibility
       String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
-      devTest.devTestLine('usher');
+      devHelp.line('usher');
 
       ///  --  usher loop
       do {
@@ -89,7 +89,7 @@ class Rumba {
         do {
           String rumbaLoopDawoAppS = '**  dawoAppLoop is rolling  **';
           //  ---------------------  dawo app loop code ------------------
-          devTest.devTestLine('dawoApp');
+          devHelp.line('dawoApp');
           dawoApp.roll();
 
           ///  --  mission loop
@@ -99,7 +99,7 @@ class Rumba {
             //  roll already includes rollMissions
             //  NO!! dawoApp.rollMissions();
 
-            devTest.devTestLine('mission');
+            devHelp.line('mission');
             // -- chore
 
             missionB = false; //  emergency exit, while testing

@@ -11,11 +11,11 @@ import 'package:dawo/dawo_dev.dart';
 
 
 ///  create instance of DevTest class
-var dt = new DevTest();
+var dt = new DevHelp();
 String thisModule = 'dawo_stream_test';
 
 void main() {
-  dt.devTestLine('main begin  $thisModule');
+  dt.line('main begin  $thisModule');
   //  stream  16  functions
 
 
@@ -28,40 +28,40 @@ void main() {
   /// hklTry:
    presentHyperStream(stringList, 'hklListening:', 'hkl-receiver');
 
-  dt.devTestLine('***  Stream: presentStreamBase  $thisModule');
+  dt.line('***  Stream: presentStreamBase  $thisModule');
   ///  OK
     presentStreamBase();
 
-  dt.devTestLine('***  Stream: presentStreamExmpl  $thisModule');
+  dt.line('***  Stream: presentStreamExmpl  $thisModule');
   ///
     presentStreamExmpl();
 
-  dt.devTestLine('***  Stream: presentBroadcastStream  $thisModule');
+  dt.line('***  Stream: presentBroadcastStream  $thisModule');
   ///
     presentBroadcastStream();
 
-  dt.devTestLine('***  Stream: presentStreamTransform  $thisModule');
+  dt.line('***  Stream: presentStreamTransform  $thisModule');
  ///
   /// error:  this seems to fail.  Or is it just too many streams?
   //  presentStreamTransform();
 
-  dt.devTestLine('***  Stream: presentFileStream  $thisModule');
+  dt.line('***  Stream: presentFileStream  $thisModule');
   ///
   //  presentFileStream();
 
-  dt.devTestLine('***  Stream: presentStreamValidate  $thisModule');
+  dt.line('***  Stream: presentStreamValidate  $thisModule');
   ///  nothing here
   // NO!!   presentStreamValidate();
 
-  dt.devTestLine('***  Stream: presentSingleValueStream  $thisModule');
+  dt.line('***  Stream: presentSingleValueStream  $thisModule');
   ///
     presentSingleValueStream();
 
-  dt.devTestLine('***  Stream: presentUnsubscribeFromStream  $thisModule');
+  dt.line('***  Stream: presentUnsubscribeFromStream  $thisModule');
   ///
     presentUnsubscribeFromStream();
 
-  dt.devTestLine('***  Stream: presentGenericStream  $thisModule');
+  dt.line('***  Stream: presentGenericStream  $thisModule');
   ///
     presentGenericStream();
 
@@ -69,7 +69,7 @@ void main() {
 
 
   print('   * * *    Streams are not my frends    * * * \n');
-  dt.devTestEnd('main ends  $thisModule');
+  dt.end('main ends  $thisModule');
 }
 
 

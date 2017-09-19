@@ -72,7 +72,7 @@ class Dev {
   }
 
   void showNotes() {
-    print(' ');
+    print('\n ------  dev.showNotes  ------------------   ');
     admNotes.forEach(print);
     print(' ');
     devNotes.forEach(print);
@@ -132,11 +132,11 @@ class DevMessage {
 ///  creating Glorious :) DevTest class; implement it as:  new dt()
 ///  collect all my own devTests under a class
 ///  howTo avoid calling it devTest.devTest  lol
-class DevTest {
+class DevHelp {
   //  TODO  add constructor: (String user, String x)
 
   /// for future use:  map for testing  dev
-  Map<String, String> devTestMap = {
+  Map<String, String> normMap = {
     'dawo': 'coding dawo',
     'rest': 'coffee Time',
     'dawoColl': 'W O R K..ing hours',
@@ -144,8 +144,9 @@ class DevTest {
   };
 
   ///  function for to print devTestMap
-  void devTestMapShow() {
-    devTestMap.forEach(printSS); //  from dawo_tools.dart
+  void normMapShow() {
+    print(' \n ------- devHelp norms  ------------------------');
+    normMap.forEach(printSS); //  from dawo_tools.dart
   }
 
 //TODO  teamDev: PLAN:  make all 6 tests use same name with
@@ -165,6 +166,7 @@ class DevTest {
       print('');
 
 //TODO  aSync stream     devTestStream.
+      //  dubious to use dev-class here?
       dev.devTestCount++;
     }
     return dev.devTestCount;
@@ -200,6 +202,7 @@ class DevTest {
     print('e  e  e  e  e  e  e  e  e  e  e  e  e  e   End of +   $_s');
     print('');
   }
+
 //TODO  teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
   ///  Dynamic-parameter-function, that is used to run other function in tests
@@ -223,32 +226,33 @@ class DevTest {
   /// TODO  teamDev Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
   ///  present simple message while testing
-  void devTestLine(String module) {
+  void line(String module) {
     print('---------------------------------------- Beginning:  $module ');
     print('');
   }
 
   ///  present simple DONE message after all tests are done
-  void devTestsDone(String module) {
+  void done(String module) {
     print('----------  $module ----------------------------------------');
     print('All tests done  ');
   }
 
   ///  notate single test end
-  void devTestEnd(String module) {
+  void end(String module) {
     print('---------------------------------------- End of The:  $module  ');
     print(' ');
   }
 
   ///  notate all tests ended
-  void devTestsEnd(String module) {
+  void endAll(String module) {
     print('----------  $module ----------------------------------------');
     print('All tests ended, back to main.dart   ');
   }
 } //  --------  end of class DawoDevTest
 //
 
-var devTest = new DevTest();
+///  renamed class to: devHelp
+var devHelp = new DevHelp();
 
 ///  howTo do these?
 void addDawoDevNotes() {

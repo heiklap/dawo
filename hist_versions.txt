@@ -37,7 +37,7 @@ To be published:  ~25.9.2017
 3,5 ____*2*2
 
 
-3.6 ____*2*2 Collect Dev / team notes.
+3.6 DONE*2*2 Collect Dev / team notes. create Dev and DevMessage class
 
 3.7 ____*3*3 Join one-happy-stream to dawo-rumba, for to get used to streams.
         *8*5    Add typedef, queue, enum, set, duration; just to showcase them

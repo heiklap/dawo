@@ -4,6 +4,7 @@
 
 import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
+import 'package:dawo/rumba.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
 import 'package:dawo/dawo_mission.dart';
@@ -18,60 +19,65 @@ import 'package:dawo/dawo_src.dart';
 
 
 //  creating instances of classes in upper level
-var da = new DawoApp('dawoApp', 'testing in app_bLib_chore play.dart');
+
 var df = new DawoMill();
 
 var mission = new Mission('mission-class', 'test-in:de-test.dart');
 
 var ch = new CommonChore('chore-class', 'Testing in app-bLib-chore-play');
 
-///  create instance of DevTest class
-var dt = new DevTest();
+var dawoApp = new DawoApp(':example ', 'Just rumbaTest.dart');
+var rumba = new Rumba();
 
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
+  print('\n ---------  app_blib_chore example  ----------------------');
 
+
+
+  rumba.dance(dawoApp);
 
   //  getting something from classes
-  print('da-Info::   $da.info');
+  print('da-Info::   $dawoApp.info');
   print('df-active::  $df.active');
   print('bLibInfo::  $mission.blInfo');
   print('ch-info::   $ch.info');
 
 
   //  building all functionality in function::
-    rumba();
+  //  otherStuff();
 
   //  testing dawoAppRoll
   print('========  dawo app roll =================');
 
-  da.roll();
+  dawoApp.roll();
+  dev.showNotes();
   print('========  dawo app roll   done=================');
 }
 
 //  all happens here, just presentation
 //  classes are not interacting aso.
-void rumba(){
+void otherStuff(){
 
 
-  dt.devTestLine('dawoAppRoll');
-  da.roll();
+  devHelp..line('dawoAppRoll');
+  dawoApp.roll();
 
   //  get something out of these??
-  dt.devTestLine('appMap, flagMap, appPhase,dawo001');
+  devHelp.line('appMap, flagMap, appPhase,dawo001');
   appMap;
   millMap;
   appPhaseM;
   dawo002M;
 
   //  df.render();
-  dt.devTestLine('dawoFlags');
+  devHelp.line('dawoFlags');
   df.roll();
 
   //  wanna more: play them
   //  df.
 
-  dt.devTestLine('bLib');
+  devHelp.line('bLib');
 
   renderMission();
 
@@ -82,10 +88,10 @@ void rumba(){
   mission.opClose(2, print('hello'));
 
   //  ch.render();
-  dt.devTestLine('render Chore');
+  devHelp.line('render Chore');
   renderChore();
 
-  dt.devTestEnd('app-flag-bLib-chore-play');
+  devHelp.end('app-flag-bLib-chore-play');
 }
 
 //
