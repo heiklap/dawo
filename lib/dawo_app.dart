@@ -20,6 +20,18 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 ///  buffer also outside class, for testing and adding visibility
 var appBuf = new StringBuffer();
 
+///  10 StringBuffers named for output to screen areas
+StringBuffer outHeader = new StringBuffer();
+StringBuffer outTl = new StringBuffer();    //  rumba
+StringBuffer outTMid = new StringBuffer();
+StringBuffer outTr = new StringBuffer();    //  appRoll
+StringBuffer outMTop = new StringBuffer();  //  helsinki
+StringBuffer outMid = new StringBuffer();   //  dartlang
+StringBuffer outMBot = new StringBuffer();  //  n-parks
+StringBuffer outBl = new StringBuffer();
+StringBuffer outBr = new StringBuffer();
+StringBuffer outFooter = new StringBuffer();
+
 ///  Just for testing private variable inside a library.
 String _privacyLibraryTest = 'Testing library / part privacy';
 
@@ -38,6 +50,25 @@ class DawoApp extends BaseStruct {
   bool onB = false;
   bool pauseB;
   bool doneB = false;
+
+
+
+  ///  organize out-buffers to Map for return
+  Map<String, StringBuffer> outMapBuffers = {
+           'outHeader':  'outHeader',
+           'outTl':  'outTl',
+           'outTMid':  'outTMid',
+           'outTr':  'outTr',
+           'outMTop':  'outMTop',
+           'outMid':  'outMid',
+           'outMBot':  'outMBot',
+           'outBl':  'outBl',
+           'outBr':  'outBr',
+           'outFooter':  'outFooter'
+  };
+
+
+
 
   ///  app-specified fields
   String agenda = 'using app in dawo package';
@@ -63,11 +94,24 @@ class DawoApp extends BaseStruct {
   void build() {
     offB = false; //  off-state ends
     onB = true; //   app is in on
+    /// write something to all out-buffers
+     outHeader.writeln('outHeader-dawoApp-build:');
+     outTl.writeln('outTl-dawoApp-build:');
+     outTMid.writeln('outMid-dawoApp-build:');
+     outTr.writeln('outTr-dawoApp-build:');
+     outMTop.writeln('outtop-dawoApp-build:');
+     outMid.writeln('outMid-dawoApp-build:');
+     outMBot.writeln('outBot-dawoApp-build:');
+     outBl.writeln('outBl-dawoApp-build:');
+     outBr.writeln('outBr-dawoApp-build:');
+     outFooter.writeln('outFooter-dawoApp-build:');
+
     buf.writeln('build done');
   }
 
   ///  #run-like method
-  void roll() {
+  ///  return:  Map<String, StringBuffer> outMapBuffers
+  Map roll() {
     dev.admNotes.add('>>  dawo_app is rolling  >>');
     dev.buildNotes();
     buf.writeln('DawoApp::roll    $infoS   :: roll engaged ');
@@ -80,6 +124,7 @@ class DawoApp extends BaseStruct {
     show();
     done();
     //  code here
+    return outMapBuffers;
   }
 
   ///  roll missions in missionL AND every chore in them
@@ -107,10 +152,19 @@ class DawoApp extends BaseStruct {
   ///  presentation method
   void done() {
     print('DawoApp::done    $infoS   :: engaged ');
+    outTl.writeln('outTl-dawoApp-done:');
+    outTMid.writeln('outMid-dawoApp-done:');
+    outTr.writeln('outTr-dawoApp-done:');
+    outMTop.writeln('outtop-dawoApp-done:');
+    outMid.writeln('outMid-dawoApp-done:');
+    outMBot.writeln('outBot-dawoApp-done:');
+    outBl.writeln('outBl-dawoApp-done:');
+    outBr.writeln('outBr-dawoApp-done:');
+    outFooter.writeln('outFooter-dawoApp-done:');
     //  code here
     buf.write('---  DawoApp buffer output app: done  ---');
     print(buf);
-    buf.clear(); //  empty buffer
+    //  buf.clear(); //  empty buffer
   }
 
   DawoApp(this.name, this.agenda);

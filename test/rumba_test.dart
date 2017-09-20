@@ -17,6 +17,8 @@ void playRumbaTest() {
   var dawoApp = new DawoApp(':play-rumba-test', 'Just rumbaTest.dart');
 
   var rumba = new Rumba();
+
+  // we got buffer here
   rumba.dance(dawoApp);
 }
 

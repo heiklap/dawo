@@ -24,6 +24,7 @@ import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
 import 'package:dawo/dawo_mission.dart';
 import 'package:dawo/dawo_tools.dart';
+import 'package:dawo/rumba.dart';
 
 //
 
@@ -40,6 +41,12 @@ main() {
 
   var awesome = new Awesome();
   print('awesome: ${awesome.isAwesome}');
+
+  var dawoApp = new DawoApp(':play-rumba-test', 'By: dawo_example.dart');
+  var rumba = new Rumba();
+
+  // we got buffer here
+  rumba.dance(dawoApp);
 
   //  Play with variables: watch something from every file
   //  base

@@ -2,6 +2,9 @@
 ///  These streams are executed kind of in "sync" order.
 //    So usually only some of them "complete. After main.
 ///  dawo_stream_test   dawo version 0.0.2  11.9.2017
+/// streams, stream controllers, and stream subscriptions?
+/// simple code example using them by; Gitter Jacob MacDonald
+/// https://gist.github.com/jakemac53/68d006b31dd1d62e0109fbe04bab226b
 
 import 'dart:async';
 

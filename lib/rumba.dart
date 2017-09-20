@@ -43,6 +43,7 @@ class Rumba {
   ///  setting loop variables to beginning state
   void initRumba() {
     print('-------------------  init Rumba  -----------------------');
+    rumbaBuf.writeln('-------------------  init Rumba  --------------------');
     rumbaB = true;
     usherB = true;
     dawoAppB = true;
@@ -90,6 +91,9 @@ class Rumba {
           String rumbaLoopDawoAppS = '**  dawoAppLoop is rolling  **';
           //  ---------------------  dawo app loop code ------------------
           devHelp.line('dawoApp');
+
+          ///TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
+
           dawoApp.roll();
 
           ///  --  mission loop

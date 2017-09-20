@@ -7,6 +7,7 @@ library dawo_mission;
 
 import 'clay/clay_roll.dart';
 import 'package:dawo/dawo_tools.dart';
+import 'package:dawo/dawo_app.dart';
 
 ///  buffer also outside class, for testing and adding visibility
 var missionBuf = new StringBuffer();
@@ -190,14 +191,17 @@ var nationalParksMission = new Mission(
 void buildMissions(String caller) {
   print('----------build Missions, caller: $caller -------------');
   helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
+  outMTop.writeln('outMtop-buildMissions:helsinki');
 
   dartlangMission.clayMap.addAll(getClayMap('learnDartlang'));
+  outMid.writeln('outMid-buildMissions:dartlang');
 
   myMusicMission.clayMap.addAll(getClayMap('myMusic'));
 
   myTimeMission.clayMap.addAll(getClayMap('myTime'));
 
   nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
+  outMBot.writeln('outBot-buildMissions:national-parks');
 }
 
 ///  creating instance of Mission and using it's methods

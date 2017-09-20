@@ -153,8 +153,10 @@ class LearnDartlang {
     'Strong mode':
         '..optional in the first version of the language. Integrated part of the second.',
     'T': ' ',
+    'Type': 'Typesystems help you scale. The type system gives us guarantees.',
     'U': ' ',
     'V': ' ',
+    'Work': '..write more explicit code and eliminating the potential for a runtime error is the right tradeoff every day of the week.',
   };
 
   ///  data from:  https://www.dartlang.org/faq

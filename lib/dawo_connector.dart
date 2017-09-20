@@ -84,6 +84,11 @@ class Connector extends BaseStruct {
   ///  something turns around this
   var pivot;
 
+  ///  just an idea.. PING
+  void ping() {
+    ///  code
+  }
+
   ///  Just copy methods body from other class.  lol
   ///  Method for setting class field values to their run-time-values
   void init() {

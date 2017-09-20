@@ -25,7 +25,7 @@ To be published:  ~25.9.2017
 
 3.2 ____*5*2   Choose customer in parameters. Add political-data  (test-case)
 
-3.3 _-__7*4   Active "Rumba" flow / -example
+3.3 _--_7*4   Active "Rumba" flow / -example
            - app / mission / chore : all working together
 
 3.4 _-__7*2  Fill generic lists with members (objects)
@@ -34,10 +34,10 @@ To be published:  ~25.9.2017
             mission has choreL<Chore>
             Roll methods for them
 
-3,5 ____*2*2
+3,5 ____*2*2 Hack-Dirty to get rumba-app-mission output to => top-level-buffers
+             Next: clever way to base_struct output from every class to output-buffers
 
-
-3.6 DONE*2*2 Collect Dev / team notes. create Dev and DevMessage class
+3.6 DONE*2*2 Collect Dev / team notes. create Dev, DevHelp and DevMessage class
 
 3.7 ____*3*3 Join one-happy-stream to dawo-rumba, for to get used to streams.
         *8*5    Add typedef, queue, enum, set, duration; just to showcase them
