@@ -9,15 +9,18 @@
 ///
 ///  idea:   some base / flow  functionality, that is too small for packages,
 ///  and too big for tools.dart or dawo_app.dart.
-///  Connections to packages, that we do not want to import fully.
-///  Some extra control / flow variables for processes/events/jobs
+///  Connections to packages, that we do not want to import fully. (?)
+///  Extra control / flow / actor variables for processes/events/jobs
 ///
 ///  Hist:  hkl  9.10.2013  0.0.1  dawo/lib    daw lib_base.dart
 ///  Returned 10.9.2017 to same idea with empty hands.
 ///
-///  READY-STATE for version 0.0.2   1 %   in GIT  Yes
+///  READY-STATE for version 0.0.3   12 %   in GIT  Yes
 ///  Open for all ideas, when seeking common functionality between app / lib /
 ///  classes / process aso.
+///  NOTE: Problem:  #actor / glbActor; how to handle in sub-processes
+///  RULE:  #actor  every #actor deletes it's own name when op-done, and
+///  --- returns previous actor, if it,s operation is not done. #clorious.
 
 //TODO  Global variables
 //TODO  Global operations
@@ -55,7 +58,7 @@ Map<String, String> placardM = {
   'msg': '',
 };
 
-///  TODO   Global variables
+///  TODO   Global variables. What is best way to send this kind of data?
 ///  Try to imagine, what we will need
 class GlobalVariables {
   // aka, you have some property StringSink output. All of your code writes
@@ -69,6 +72,8 @@ class GlobalVariables {
   }
 }
 
+// create instance as:  glb
+
 ///  TODO  Global operations
 ///  Every dawo #operation could relay on these
 ///  order: #actor #sender #receiver #command #msg
@@ -76,9 +81,18 @@ class GlobalOpClass {
   //  BaseStruct is known here
   //  BasePlacard is known also
 
-  String actor;
+
+  //  String actor;  //  too important to be a String
+  var actor;  //  too important to be a String
+  var actorState;
+  Map<dynamic, dynamic> actorM = {};
+
   String sender;
   String receiver;
+
+  ///  operation levels
+  var opLevel;  //  is it changed during operation?
+  var opChange;  //  handle actual change.
 
   /// can it be a function?
   Function cmd;
@@ -88,7 +102,7 @@ class GlobalOpClass {
 
   //TODO  constructor add
   GlobalOpClass(this.actor, this.sender, this.receiver, this.cmd, this.msg);
-
+  //TODO : used in: ?  //  only in render here.
   void showInfo() {
     print('\n***************  global op class-showInfo  ********************');
     print('** actor: $actor ');
@@ -102,10 +116,43 @@ class GlobalOpClass {
   }
 }
 
+//  create instance as glbOp
+
+///  form a String that describes operation-sender-activity-time for log-entries
+String clause(var placard) {
+  ///  placard is operation #signature, that describes it clearly
+  //  #CODE  form a String
+  return 'clauseStr';
+}
+
+///  handling #global #actor
+///  Who is in "charge" of operation, when it is routed through subroutines?
+///  Problem: how to handle #glbActor change, when subroutines occur?
+void changeActor() {
+
+  //  #CODE
+}
+
+///  Method to run actual actor-change procedure
+void actorMill() {
+  ///  RULE:  #actor  every #actor deletes it's own name when op-done, and
+  ///  --- returns previous actor, if it,s operation is not done. #clorious.
+  // #CODE
+}
+
+///  IDEA: flow command through function, that records it's info for op-system
+///  Name for this heart of big-clocking-system ?
+void getOperationInfoOnParameters() {
+
+  ///
+}
+
 /// do not look out unprofessionally and spam your code with print-clauses!
 /// Instead use: flow !!
+///
 void flow() {
   // code here
+  //  form nice String (for print and/or buf) that describes ongoing operation
 }
 
 ///  Change "Automatic messages" to buf messages

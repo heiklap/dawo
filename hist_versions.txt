@@ -25,16 +25,16 @@ To be published:  ~25.9.2017
 
 3.2 ____*5*2   Choose customer in parameters. Add political-data  (test-case)
 
-3.3 _--_7*4   Active "Rumba" flow / -example
+3.3 _ON_7*4   Active "Rumba" flow / -example
            - app / mission / chore : all working together
 
-3.4 _-__7*2  Fill generic lists with members (objects)
+3.4 _O__7*2 Fill #app's & #Mission's aso. generic lists with members (objects)
             Use generic lists inside classes for to control their "sub-ordinates"
             dawoApp has: missionL<Mission>
             mission has choreL<Chore>
-            Roll methods for them
+            Roll methods for# them
 
-3,5 ____*2*2 Hack-Dirty to get rumba-app-mission output to => top-level-buffers
+3,5 DONE*2*2 Hack-Dirty to get rumba-app-mission output to => top-level-buffers
              Next: clever way to base_struct output from every class to output-buffers
 
 3.6 DONE*2*2 Collect Dev / team notes. create Dev, DevHelp and DevMessage class
@@ -43,11 +43,12 @@ To be published:  ~25.9.2017
         *8*5    Add typedef, queue, enum, set, duration; just to showcase them
 
      ongoing::
-3.8 ____*5*9  Connector, more ideas
-3.9 ____*6*6  base_lib more ideas.
-3.10 ____   ADD elements / boxes to web / HTML.
+3.8 DONE*5*9  Connector, more ideas
+3.9 DONE*6*6  base_lib more ideas.
+3.10 ___E   ADD elements / boxes to web / HTML.
+DONE: 40 => 24, not 16
 
-#Overall ____*9*7
+#Overall _ON_*9*7
 
 
 _____________________________________________________________________________

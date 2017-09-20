@@ -1,14 +1,15 @@
 ///  ##  connecting  ( as #client's) app - mission - chore together,  mediating them
 ///   copyright  Heikki K. Lappalainen
-/// * READY-STATE:  4%            // for 0.0.2 version
+/// * READY-STATE:  8%            // Next:  0.0.3 version
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  dawo_connector.dart
-/// #name:  connector ..is not nice. change to: ______
+/// #name:  connector ..is not nice. change to: ______ ??
 /// Connector is in deeply imaginary level of construction. We know, that app -
 /// mission - chore work together in same sphere, and there must be something, that
 /// they have in common; abstraction layer, in which they must work together.
 ///
 /// * Sending messages between objects. Stance, approach
 //  * Find common interests, i've been here.. follow-me, give-take
+//  NOTE:  intentional error here now in class (constructor); how doe's it look?
 
 library connector;
 
@@ -81,12 +82,23 @@ class Connector extends BaseStruct {
   bool onB = false;
   bool pauseB;
   bool doneB = false;
+
   ///  something turns around this
   var pivot;
 
   ///  just an idea.. PING
-  void ping() {
+  void ping(var sender, var receiver, var key) {
     ///  code
+  }
+
+  ///  get / collect bindings
+  Map <String, Map <dynamic, dynamic>> bindingM = {};
+
+  //  connect something to other. One more empty idea
+  String binding(var customer, var thing) {
+    //  have some ideas?
+    //  add / find from bindingM Map
+    return 'tie: #one to #second';
   }
 
   ///  Just copy methods body from other class.  lol
@@ -118,6 +130,21 @@ class Connector extends BaseStruct {
     //  code here
   }
 
+  ///  Solve one unambiguous textual find-decide problem
+  String touche(String sender, String key, String source) {
+    //  TODO problem
+    return 'solved:toucheStr: ';
+  }
+
+
+  ///  Search big amount of #clay data for #customer:s hey / order
+  ///  .. solve textual problems based on keywords / search in textual data
+  String solver(String sender, String key, String source){
+    //  TODO problem
+    return 'solved: solveString';
+  }
+
+
   ///  TODO:  connector one-time calls must have parameters;
   ///  sketching one-time commands, coming from clients
   void obey(String sender, receiver, baton, msg) {
@@ -143,6 +170,12 @@ class Connector extends BaseStruct {
 
   ///  constructor
   Connector(this.name, this.info);
+}
+
+///  form almost same class: but for collecting data
+class Collector extends Connector{
+  ///  wanna easy-extend this, but can not :(
+  /// Error: the superclass Collector does'nt have a zero argument constructor
 }
 
 ///  usual render, presentation, function

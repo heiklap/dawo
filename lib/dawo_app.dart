@@ -55,16 +55,16 @@ class DawoApp extends BaseStruct {
 
   ///  organize out-buffers to Map for return
   Map<String, StringBuffer> outMapBuffers = {
-           'outHeader':  'outHeader',
-           'outTl':  'outTl',
-           'outTMid':  'outTMid',
-           'outTr':  'outTr',
-           'outMTop':  'outMTop',
-           'outMid':  'outMid',
-           'outMBot':  'outMBot',
-           'outBl':  'outBl',
-           'outBr':  'outBr',
-           'outFooter':  'outFooter'
+           'outHeader':  outHeader,
+           'outTl':  outTl,
+           'outTMid':  outTMid,
+           'outTr':  outTr,
+           'outMTop':  outMTop,
+           'outMid':  outMid,
+           'outMBot':  outMBot,
+           'outBl':  outBl,
+           'outBr':  outBr,
+           'outFooter':  outFooter
   };
 
 
