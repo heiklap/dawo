@@ -10,6 +10,7 @@
 /// * Sending messages between objects. Stance, approach
 //  * Find common interests, i've been here.. follow-me, give-take
 //  NOTE:  intentional error here now in class (constructor); how doe's it look?
+//          Analyzer / dartdoc do not allow this, so correct it.
 
 library connector;
 
@@ -92,13 +93,13 @@ class Connector extends BaseStruct {
   }
 
   ///  get / collect bindings
-  Map <String, Map <dynamic, dynamic>> bindingM = {};
+  Map<String, Map<dynamic, dynamic>> bindingM = {};
 
   //  connect something to other. One more empty idea
   String binding(var customer, var thing) {
     //  have some ideas?
     //  add / find from bindingM Map
-    return 'tie: #one to #second';
+    return 'binding: #one to #second';
   }
 
   ///  Just copy methods body from other class.  lol
@@ -136,14 +137,12 @@ class Connector extends BaseStruct {
     return 'solved:toucheStr: ';
   }
 
-
-  ///  Search big amount of #clay data for #customer:s hey / order
+  ///  Search big amount of #clay data for #customer:s key / order
   ///  .. solve textual problems based on keywords / search in textual data
-  String solver(String sender, String key, String source){
+  String solver(String sender, String key, String source) {
     //  TODO problem
     return 'solved: solveString';
   }
-
 
   ///  TODO:  connector one-time calls must have parameters;
   ///  sketching one-time commands, coming from clients
@@ -173,13 +172,21 @@ class Connector extends BaseStruct {
 }
 
 ///  form almost same class: but for collecting data
-class Collector extends Connector{
+///  would like to extend this from Connector: class, but it do not have
+///  a none argument constructor.
+///  but Connector do not have
+///  NOTE  howTo extend class that have constructor with arguments?
+class Collector  {
+  String name;
+  String info;
+
+  Collector(this.name, this.info);
   ///  wanna easy-extend this, but can not :(
   /// Error: the superclass Collector does'nt have a zero argument constructor
 }
 
 ///  usual render, presentation, function
-void renderConstructor() {
+void renderConnector() {
   //  var connector = new Connector();
   //  or: shorthand
   var c = new Connector('render-test-connector', 'just for testing');

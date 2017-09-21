@@ -1,7 +1,7 @@
 # dawo 0.0.2
 
 Learning Dart simple basic data for beginners, and howTo use it for building a package.
-Beginner Dart programmers kickoff to develop a glorious package..
+Beginner Dart programmers kickoff to develop a glorious package.. Latest code in GitHub: https://github.com/heiklap/dawo
 - Read: hist_versions.txt to see full changes to this, and coming versions.
 ## Usage
     // Classes are separated, without connecting run method.
@@ -22,7 +22,7 @@ Beginner Dart programmers kickoff to develop a glorious package..
  
  First dawo version seems to be a mess, and, yes, it is intentional so.
  dawo 0.0.1 shows starter programmers confusion, and records way and steps out of this mess 
- to clarity and understanding.
+ to clarity and understanding. Latest code in GitHub: https://github.com/heiklap/dawo
  
  0.0.1  demonstrates how data is messy, when it is not inside classes.
      Check for pollution of public namespace!!

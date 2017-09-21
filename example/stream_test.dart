@@ -18,12 +18,32 @@ var dt = new DevHelp();
 String thisModule = 'dawo_stream_test';
 
 void main() {
+  testSuperStream();
+
+  testAllStreams();
+}
+
+///  test only superStream
+void testSuperStream() {
+  //TODO  what is StreamListener??
+  //  just any value
+  print(':stream: calling');
+
+  var hklTryListen = "hklTryListen";
+  presentSuperStream(letterList, hklTryListen);
+  print(':stream: call done');
+}
+
+
+///  To test all streams
+void testAllStreams(){
+
   dt.line('main begin  $thisModule');
   //  stream  16  functions
 
 
   //TODO  what is StreamListener??
-    //just any value
+    //  just any value
     var hklTryListen = "hklTryListen";
     presentSuperStream(letterList, hklTryListen);
 

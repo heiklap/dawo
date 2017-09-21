@@ -42,7 +42,7 @@ main() {
   var awesome = new Awesome();
   print('awesome: ${awesome.isAwesome}');
 
-  var dawoApp = new DawoApp(':play-rumba-test', 'By: dawo_example.dart');
+  var dawoApp = new DawoApp(':play-rumba-test:dawoApp', 'By: dawo_example.dart: dawoApp rolls missioms');
   var rumba = new Rumba();
 
   // we got buffer here

@@ -9,6 +9,7 @@
 library dawo_app.dart;
 
 import 'base_struct.dart';
+import 'base_lib.dart';
 import 'dawo_dev.dart';
 import 'dawo_mission.dart';
 
@@ -22,12 +23,12 @@ var appBuf = new StringBuffer();
 
 ///  10 StringBuffers named for output to screen areas
 StringBuffer outHeader = new StringBuffer();
-StringBuffer outTl = new StringBuffer();    //  rumba
+StringBuffer outTl = new StringBuffer(); //  rumba
 StringBuffer outTMid = new StringBuffer();
-StringBuffer outTr = new StringBuffer();    //  appRoll
-StringBuffer outMTop = new StringBuffer();  //  helsinki
-StringBuffer outMid = new StringBuffer();   //  dartlang
-StringBuffer outMBot = new StringBuffer();  //  n-parks
+StringBuffer outTr = new StringBuffer(); //  appRoll
+StringBuffer outMTop = new StringBuffer(); //  helsinki
+StringBuffer outMid = new StringBuffer(); //  dartlang
+StringBuffer outMBot = new StringBuffer(); //  n-parks
 StringBuffer outBl = new StringBuffer();
 StringBuffer outBr = new StringBuffer();
 StringBuffer outFooter = new StringBuffer();
@@ -51,29 +52,24 @@ class DawoApp extends BaseStruct {
   bool pauseB;
   bool doneB = false;
 
-
-
   ///  organize out-buffers to Map for return
   Map<String, StringBuffer> outMapBuffers = {
-           'outHeader':  outHeader,
-           'outTl':  outTl,
-           'outTMid':  outTMid,
-           'outTr':  outTr,
-           'outMTop':  outMTop,
-           'outMid':  outMid,
-           'outMBot':  outMBot,
-           'outBl':  outBl,
-           'outBr':  outBr,
-           'outFooter':  outFooter
+    'outHeader': outHeader,
+    'outTl': outTl,
+    'outTMid': outTMid,
+    'outTr': outTr,
+    'outMTop': outMTop,
+    'outMid': outMid,
+    'outMBot': outMBot,
+    'outBl': outBl,
+    'outBr': outBr,
+    'outFooter': outFooter
   };
 
-
-
-
   ///  app-specified fields
-  String agenda = 'using app in dawo package';
-  String msg = 'Message..';
-  String develop = 'Under development.. 30% to:  0.0.3';
+  String agenda = 'dawoApp rolls missioms';
+  String msg = 'dawoApp-Message..';
+  String develop = 'Under development.. 80% to:  0.0.3';
   String version = '0.0.2';
 
   ///  Old marking to find usage of this version in test apps.
@@ -95,16 +91,16 @@ class DawoApp extends BaseStruct {
     offB = false; //  off-state ends
     onB = true; //   app is in on
     /// write something to all out-buffers
-     outHeader.writeln('outHeader-dawoApp-build:');
-     outTl.writeln('outTl-dawoApp-build:');
-     outTMid.writeln('outMid-dawoApp-build:');
-     outTr.writeln('outTr-dawoApp-build:');
-     outMTop.writeln('outtop-dawoApp-build:');
-     outMid.writeln('outMid-dawoApp-build:');
-     outMBot.writeln('outBot-dawoApp-build:');
-     outBl.writeln('outBl-dawoApp-build:');
-     outBr.writeln('outBr-dawoApp-build:');
-     outFooter.writeln('outFooter-dawoApp-build:');
+    outHeader.writeln('outHeader-dawoApp-build:');
+    outTl.writeln('outTl-dawoApp-build:');
+    outTMid.writeln('outMid-dawoApp-build:');
+    outTr.writeln('outTr-dawoApp-build:');
+    outMTop.writeln('outtop-dawoApp-build:');
+    outMid.writeln('outMid-dawoApp-build:');
+    outMBot.writeln('outBot-dawoApp-build:');
+    outBl.writeln('outBl-dawoApp-build:');
+    outBr.writeln('outBr-dawoApp-build:');
+    outFooter.writeln('outFooter-dawoApp-build:');
 
     buf.writeln('build done');
   }
@@ -120,7 +116,7 @@ class DawoApp extends BaseStruct {
     //  code for roll
 
     rollMissions('C:DawoApp-roll ');
-
+    rollStream();
     show();
     done();
     //  code here
@@ -142,6 +138,15 @@ class DawoApp extends BaseStruct {
 
     print('\n **************   app rollMissions  C: $caller *************');
     // roll all chores, that are in mission
+  }
+
+  ///  calling base>_lib commonStream, elementary Stream example
+  void rollStream() {
+    print('\n--- :stream:beg dawoApp rollStream started     ---');
+    // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
+    //  calling it with dawoApp class properties
+    commonStream('dawoApp', [agenda, msg, develop, version], 'appListener');
+    print('\n--- :stream:end dawoApp rollStream done     ---');
   }
 
   ///  Show method to be developed further.

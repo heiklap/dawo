@@ -39,18 +39,21 @@ To be published:  ~25.9.2017
 
 3.6 DONE*2*2 Collect Dev / team notes. create Dev, DevHelp and DevMessage class
 
-3.7 ____*3*3 Join one-happy-stream to dawo-rumba, for to get used to streams.
-        *8*5    Add typedef, queue, enum, set, duration; just to showcase them
+3.7 DONE*3*3 Join one-happy-stream to dawo-rumba/ dawoApp, for to get used to streams.
+
 
      ongoing::
 3.8 DONE*5*9  Connector, more ideas
 3.9 DONE*6*6  base_lib more ideas.
 3.10 ___E   ADD elements / boxes to web / HTML.
+
+< Value-effort values from 1-10
 DONE: 40 => 24, not 16
 
-#Overall _ON_*9*7
+#Overall _ONE*9*7  ready : 70 % to 0.0.3
 
-
+Later:
+     ____ *8*5    Add typedef, queue, enum, set, duration; just to showcase them
 _____________________________________________________________________________
 Ready to version 0.0.2, completed fixes.
 Theme : baseStructure, base_lib, dawo_mill(schema), connector(schema), learn/code_snippets
@@ -77,7 +80,7 @@ Value-effort values from 1-10:
          - in this phase this is gonna be very elementary, schematic
          - At the end this is fine-graded and long development plan. ( DIFFICULT :( )
 
-2.9. DONE*5*3 created DawoDewTest  class in dawo_dew
+2.9. DONE*5*3 created DawoDewTest  class in dawo_dev
 
 2.10. DONE*4*3 Add generic lists for every meaningful member
     * like: List<CommonChore> choreL = []
@@ -144,3 +147,7 @@ Master Chore can have subChores
 Chore marked as a "slave" to other Chore
 
 _________________________________________________________________________
+Endless Flow of ideas: Adding anything is blocked for  now. 21.9.2017, waiting 0.0.3
+* Growth. sprout
+* icon
+*

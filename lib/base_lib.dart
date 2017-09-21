@@ -20,12 +20,14 @@
 ///  classes / process aso.
 ///  NOTE: Problem:  #actor / glbActor; how to handle in sub-processes
 ///  RULE:  #actor  every #actor deletes it's own name when op-done, and
-///  --- returns previous actor, if it,s operation is not done. #clorious.
+///  --- returns previous actor, if it,s operation is not done. #Glorious.
 
 //TODO  Global variables
 //TODO  Global operations
 
 library base_lib;
+
+import 'dart:async';
 
 //TODO  this is not
 final num dawLibBaseReadiness = 2; //  readiness for  version  0.0.1
@@ -77,6 +79,7 @@ class GlobalVariables {
 ///  TODO  Global operations
 ///  Every dawo #operation could relay on these
 ///  order: #actor #sender #receiver #command #msg
+///  Very early development state, idea: 10%
 class GlobalOpClass {
   //  BaseStruct is known here
   //  BasePlacard is known also
@@ -118,6 +121,10 @@ class GlobalOpClass {
 
 //  create instance as glbOp
 
+//TODO  create some "technical" base_classes for below variables and functions.
+
+///  Some variables that have not yet find their places inside classes
+
 ///  form a String that describes operation-sender-activity-time for log-entries
 String clause(var placard) {
   ///  placard is operation #signature, that describes it clearly
@@ -136,7 +143,7 @@ void changeActor() {
 ///  Method to run actual actor-change procedure
 void actorMill() {
   ///  RULE:  #actor  every #actor deletes it's own name when op-done, and
-  ///  --- returns previous actor, if it,s operation is not done. #clorious.
+  ///  --- returns previous actor, if it,s operation is not done. #Glorious.
   // #CODE
 }
 
@@ -153,6 +160,42 @@ void getOperationInfoOnParameters() {
 void flow() {
   // code here
   //  form nice String (for print and/or buf) that describes ongoing operation
+}
+
+///  TODO  some ideas
+var decision;
+var decisionChain;
+
+//  Elementary stream example, not yet used here in reasonable way
+//  dawoApp.roll drives this.
+void commonStream(String caller, var streamData, var streamListen) {
+//  var data = streamData; // some sample data
+  var stream = new Stream.fromIterable(streamData); // create the stream
+
+  // subscribe to the streams events
+  stream.listen((value) {
+    //
+    print('\n--- :stream:1 commonStream Listened     ---');
+    print("   :stream: value:  $value"); // onData handler
+    print('---  :stream:2 caller: $caller        OK         --- \n');
+  });
+}
+
+///    another basic stream example, grabbed from dartlang.org
+///    Not used yet here
+void commonStreamBroad(String caller, Iterable streamData, var streamListen) {
+  //  var data = intList;
+  var stream = new Stream.fromIterable(streamData);
+  var broadcastStream = stream.asBroadcastStream();
+
+  broadcastStream //   using   method   cascades...
+  //TODO  Test:  can we NOT use shorthand function?
+    ..listen((value) => print("SUCCESS_1_:: stream.listen: $value"))
+    ..first.then((value) => print("SUCCESS_2_:: stream.first: $value")) // 1
+    ..last.then((value) => print("SUCCESS_3_:: stream.last: $value")) // 5
+    ..isEmpty
+        .then((value) => print("SUCCESS_4_:: stream.isEmpty: $value")) // false
+    ..length.then((value) => print("SUCCESS_5_:: stream.length: $value")); // 5
 }
 
 ///  Change "Automatic messages" to buf messages
