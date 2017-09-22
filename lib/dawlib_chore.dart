@@ -81,9 +81,12 @@ class CommonChore extends BaseStruct {
 
   ///  method for setting class in working condition
   void build() {
+    print('----------------------  chore $name build  ----------------------');
+
     offB = false; //  off-state ends
     onB = true; //   app is in on
-    buf.writeln('build done');
+    buf.writeln('build for chore:  $name  : done');
+    print('-----------------    chore build  done --------------------');
   }
 
   ///  #run-like method
@@ -138,6 +141,12 @@ class CommonChore extends BaseStruct {
   ///  presentation method
   void show() {
     print(buf);
+  }
+
+  ///  get
+  String rowInfo (){
+    String _s = '$name  m: $motto on: $onB off: $offB p: $pauseB d: $doneB ';
+    return _s;
   }
 
   ///  close method

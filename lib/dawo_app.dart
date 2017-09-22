@@ -115,7 +115,7 @@ class DawoApp extends BaseStruct {
     build();
     //  code for roll
 
-    rollMissions('C:DawoApp-roll ');
+    appRollMissions('C:DawoApp-roll ');
     rollStream();
     show();
     done();
@@ -124,7 +124,7 @@ class DawoApp extends BaseStruct {
   }
 
   ///  roll missions in missionL AND every chore in them
-  void rollMissions(String caller) {
+  void appRollMissions(String caller) {
     print('\n ************ app rollMissions  C: $caller *****************');
     // roll BLib-class (mission) actually List of missions!
     print('\n  ***  DAWO-APP  MISSIONS   ***  \n');

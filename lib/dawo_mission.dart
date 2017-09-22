@@ -5,15 +5,20 @@
 
 library dawo_mission;
 
-import 'clay/clay_roll.dart';
-import 'package:dawo/dawo_tools.dart';
 import 'package:dawo/dawo_app.dart';
+import 'package:dawo/dawlib_chore.dart';
+import 'package:dawo/dawo_tools.dart';
+import 'clay/clay_roll.dart';
 
 ///  buffer also outside class, for testing and adding visibility
 var missionBuf = new StringBuffer();
 
-///  generic list to keep all missions
+///  Generic list to keep all missions.
+///  In case for handling other, super or sub-missions, code something more.
+///  buildMissions() fills this list. Is it outside of the Class.
 List<Mission> missionL = [];
+
+/// NOTE:  Chore-list is inside class.
 
 ///  to publish name in scope for testing
 void helloMission() {
@@ -26,17 +31,28 @@ void helloMission() {
 ///  name may be changed to: #mission, it is between app and chore
 ///  and mission can include many chores
 class Mission {
-//  every class member and method begins with -bl.. to avoid mess, when class
-//  is used in mixin 's
-//  Throwing some variables and thinking their usage later.
+// #TIP: When class members begins with certain letter combination, like-bl..
+// you avoid mess, that occurs, when class is used in mixin's.
+
   String name;
   String motto;
 
-  /// change map to more complicated:
+  List<CommonChore> choreL = [];
+
+  ///  default CommonChores for every Mission
+  ///  We have plenty of these, so let's add them!
+  CommonChore learnChr = new CommonChore('LearnChr', 'Yes, I learn');
+  CommonChore joyChr = new CommonChore('JoyChr', 'Yes, I am happy');
+  CommonChore actChr = new CommonChore('ActChr', 'Yes, I act');
+  CommonChore peopleChr = new CommonChore('PeopleChr', 'Get social!');
+  CommonChore placeChr = new CommonChore('PlaceChr', 'Places I will remember');
+  CommonChore seasonChr = new CommonChore('SeasonChr', 'Seasons difer!');
+  CommonChore showChr = new CommonChore('ShowChr', 'Yes, I show');
+
+  /// Changed clayMap to be more complicated:
   Map<String, Map<String, String>> clayMap = {};
 
-  /// some maps to give platform for ideas to future development.  maps
-  /// PLAN:    trying to develop some maps for dawLib..  ...
+  /// #innoTeam Some maps to give platform for ideas to future development.
   Map<String, String> info = {
     'name': 'My App',
     'info': 'dartlang application',
@@ -49,13 +65,13 @@ class Mission {
     'autoWork': 'no'
   };
 
-  ///  controlling missions state, working-condition-state values
+  /// #Idea?  Control missions state, working-condition / state.
   String state = 'Functional';
   bool stDo = false;
   bool stDone = false;
   bool stAware = false;
 
-  ///   PLAN:  use flags maps to control something     stFlags
+  ///  #Idea:  use flags maps to control something     stFlags
   Map<String, bool> stFlags = {
     'real': 'no',
     'accepted': 'no',
@@ -68,12 +84,13 @@ class Mission {
     'autoWork': 'no'
   };
 
-  ///  -roll  and  -op   are different level of operations
-  ///  -roll-  variables
+  /// #Idea? -roll  and  -op : are different level of operations.
+  ///  -roll-  variables.
   bool rollDone = false;
   int rollCount = 0;
 
-  ///  chore map to give names to  W O R K    states
+  /// #Idea?  chore map to give names to  W O R K  -states.
+  /// #Name: Do not want to use "work". Instead: #job.
   Map<int, String> rollSchedule = {
     1: 'Speed!',
     2: 'Hurry',
@@ -82,24 +99,49 @@ class Mission {
     5: 'Delayed'
   };
 
-  ///  make to present all info of this class / app
+  ///  Present all info of this class / app.
+  ///  #Tip: String can be in many lines with '''.
   void showInfo() {
     print('''idea:   some base / flow  functionality, that is too small 
         for packages and too big for tools.dart''');
   }
 
-//-------------------  -op-  variables and methods
+//----op-  variables and methods to handle Mission operations
 
   ///  'open'  variables
   bool opOn = false;
   bool opDone = false;
   int opCount = 0;
 
-  ///  add later map to constructor
-  //  Mission(this.name, this.motto, Map<String,String> _clayM);
+  /// Add later map to constructor:
+  ///  Mission(this.name, this.motto, Map<String,String> _clayM);
   Mission(this.name, this.motto);
 
-  /// devNote  function, that OPENS something.  so rename; init
+  void build() {
+    ///  Create default Chore's for everyMission: done in Class!
+    ///  build default Chores:
+    //
+    print('----------  building mission:  $name   --------------------');
+    print('------  construct default Chores. For: $name   ---------------');
+
+    ///  Should use instance, that is created inside THIS mission instance.
+    learnChr.build();
+    joyChr.build();
+    actChr.build();
+    peopleChr.build();
+    placeChr.build();
+    seasonChr.build();
+    showChr.build();
+
+    ///  add default chores to choreL and #TODO  forEach.build
+    //  Short way:   choreL.forEach(build);
+    choreL.addAll(
+        [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
+
+    //  CODE
+  }
+
+  /// devNote:  function, that OPENS something.  so rename; init
   bool opInit(int openCount, var openThis) {
     print('----  oInit ------');
 
@@ -108,7 +150,7 @@ class Mission {
     return _initB;
   }
 
-  /// devNote  function, that OPENS something.  so rename; init
+  /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
     print('----  oOpen ------');
     bool _openB = false;
@@ -129,12 +171,13 @@ class Mission {
     return done;
   }
 
-  /// devNote  function, that OPENS something.  so rename; init
-  int opClose(int openCount, var openThis) {
+  /// devNote:  function, that OPENS something.  so rename; init
+  /// idea?
+  int opClose(int openCount, Function openThis) {
     print('----  oClose ------');
 
     int _openCount = openCount;
-    openThis; // is this how it goes??
+    openThis(); // As I recall, parameter-function goes like this.
     _openCount++;
 
     return _openCount;
@@ -150,11 +193,17 @@ class Mission {
     print('**  ');
     print('**  opOn: $opOn    opDone: $opDone     opCount:  $opCount');
     print('**  ');
+    print('***********  chores   For mission: $name  *******************  ');
+
+    ///  glorious coding. Once again;  choreL and default chores
+    choreL.forEach((x) => print(x.rowInfo()));
     print('****************  clayMap   **********************************  ');
     //  clayMap.forEach((k, v) => print('$k, $v'));
     printStringMapMap(clayMap);
     print('*************************************************************  \n ');
   }
+
+  //  TODO  clean
 
 //TODO  teamNext   coming?:   returning some finnish day names aso.
   /// Should include some international values from other languages
@@ -164,7 +213,7 @@ class Mission {
   ///  base lib's connection to chore (package)
   ///  *chore* is separate package, which controls *job* :s
   ///  mediating calls to outside executor process
-  void toChore() {
+  void toChore(CommonChore _chore) {
     String motto = 'mediating process to chore..';
     assert(motto.substring(10, 17) == 'process');
     //  code..
@@ -201,17 +250,58 @@ void buildMissions(String caller) {
   myTimeMission.clayMap.addAll(getClayMap('myTime'));
 
   nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
+
+  ///  Write String to buffer for notification.
   outMBot.writeln('outBot-buildMissions:national-parks');
-}
+
+  ///  Add Mission-objects to upper-level missionL List.
+  missionL.addAll([
+    helsinkiMission,
+    dartlangMission,
+    myMusicMission,
+    myTimeMission,
+    nationalParksMission
+  ]);
+
+  /// .build adds default Chore's to missions
+  print('------  missionL forEach print-choreL    ----------');
+//  hklTry   missionL.forEach((x) => x.build);
+  //  missionL.forEach(print);  //  =>  Instance of 'Mission'
+  for (var x in missionL) {
+    print(x.name);
+    print(x.choreL);
+  }
+  print('------  missionL forEach print-choreL   done ----------');
+
+  print('-------------  missionL.forEach.build  ------------------');
+//  for (var x in missionL  ) {   //  NOT NOW !!!
+  helsinkiMission.build();
+  dartlangMission.build();
+  myMusicMission.build();
+  myTimeMission.build();
+  nationalParksMission.build();
+//  };
+  print('-------------  missionL.forEach.build done ---------------');
+  for (var x in missionL) {
+    String _misName = x.name;
+    print('mis-name:  $_misName ');
+      for (var z in x.choreL){
+        String _chrName = z.name;
+        print('choreName:   $_chrName');
+      }
+  }
+  print('------  missionL forEach print-choreL done AGAIN  ----------');
+} //  -----  buildMissions
 
 ///  creating instance of Mission and using it's methods
-///  all render__X functions are for test and presentation
+///  All render_X functions are for test and presentation.
 void renderMission() {
   //  helsinkiMission.  //  NOTE    #analyzer  is slow
-
+  //  Testing some imaginary mission.
   var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
   missionR.showInfo();
-  missionR.toChore();
+  missionR.opOn = true;
+  helsinkiMission.missionR.toChore();
   missionR.rollCount;
-  print('--  mission render done  --');
+  print('--  mission: $missionR.name : render done  --');
 }

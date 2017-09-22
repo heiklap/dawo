@@ -23,16 +23,16 @@ To be published:  ~25.9.2017
             * Other customers data;  Helsinki, dartlang, music, time, park. (dawo/dev is original, always there)
             * dev data
 
-3.2 ____*5*2   Choose customer in parameters. Add political-data  (test-case)
+3.2 ____*3*3 check all TODO:s and NOTE:s. Check README.md to 0.0.3
 
-3.3 _ON_7*4   Active "Rumba" flow / -example
+3.3 _ON_7*4  Active "Rumba" flow / -example
            - app / mission / chore : all working together
 
-3.4 _O__7*2 Fill #app's & #Mission's aso. generic lists with members (objects)
+3.4 DONE7*2 Fill #app's & #Mission's aso. generic lists with members (objects)
             Use generic lists inside classes for to control their "sub-ordinates"
             dawoApp has: missionL<Mission>
             mission has choreL<Chore>
-            Roll methods for# them
+            Roll methods for them.
 
 3,5 DONE*2*2 Hack-Dirty to get rumba-app-mission output to => top-level-buffers
              Next: clever way to base_struct output from every class to output-buffers
@@ -50,10 +50,11 @@ To be published:  ~25.9.2017
 < Value-effort values from 1-10
 DONE: 40 => 24, not 16
 
-#Overall _ONE*9*7  ready : 70 % to 0.0.3
+#Overall _ONE*9*7  ready : 77 % to 0.0.3
 
 Later:
-     ____ *8*5    Add typedef, queue, enum, set, duration; just to showcase them
+    ____ *8*5    Add typedef, queue, enum, set, duration; just to showcase them
+         *5*2   Choose customer in parameters. Add political-data  (test-case)
 _____________________________________________________________________________
 Ready to version 0.0.2, completed fixes.
 Theme : baseStructure, base_lib, dawo_mill(schema), connector(schema), learn/code_snippets
