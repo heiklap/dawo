@@ -9,7 +9,6 @@ import 'package:dawo/dawo.dart';
 ///  dawo.dart exports: export 'package:dawo/dawo_src.dart';
 //  import 'package:dawo/dawo_src.dart';
 
-
 // wanna import all of them?
 import 'package:dawo/code_snippets/aldente_func.dart';
 import 'package:dawo/code_snippets/bat_loop.dart';
@@ -34,18 +33,18 @@ var df = new DawoMill();
 
 var missionX = new Mission('Mission-class', 'example:dawo_example');
 
-
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {
-
+  //  By Google Stagehand example
   var awesome = new Awesome();
   print('awesome: ${awesome.isAwesome}');
 
-  var dawoApp = new DawoApp(':play-rumba-test:dawoApp', 'By: dawo_example.dart: dawoApp rolls missioms');
+  var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
+      'By: dawo_example.dart: dawoApp rolls missioms');
   var rumba = new Rumba();
 
-  // we got buffer here
+  // This also returns a StringBuffer.
   rumba.dance(dawoApp);
 
   //  Play with variables: watch something from every file
@@ -56,7 +55,6 @@ main() {
 
   //  chore
   // choreBuf
-
 
   //  dawo
   // dawoBuf
@@ -82,16 +80,10 @@ main() {
   ch.
   */
 
-
-
   ///  testing dawo
   //  daw... ok
 
   //  render   //  there are 5 render-functions
 }
 
-
-void playDawoSrcDart() {
-
-
-}
+void playDawoSrcDart() {}

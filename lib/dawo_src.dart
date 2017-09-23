@@ -18,19 +18,19 @@ import 'package:dawo/code_snippets/bat_loop.dart';
 import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
 import 'base_lib.dart';
-import 'base_struct.dart';
+import 'base_struct.dart'; //  unused
 import 'dawlib_chore.dart';
 import 'dawlib_coll.dart';
 
 import 'dawo_app.dart';
-import 'dawo_connector.dart';
+import 'dawo_connector.dart'; //  unused
 import 'dawo_dev.dart';
 import 'dawo_mill.dart';
 import 'dawo_mission.dart';
 import 'dawo_tools.dart';
-import 'rumba.dart';
+import 'rumba.dart'; //  unused
 
-///  data library can not use lib/clay ???  OK: can now.
+///  Data (clay) is in clay-folder.
 import 'package:dawo/clay/clay_roll.dart';
 
 //  *team* became independent. How to use team in future.. that's the question

@@ -23,7 +23,8 @@ To be published:  ~25.9.2017
             * Other customers data;  Helsinki, dartlang, music, time, park. (dawo/dev is original, always there)
             * dev data
 
-3.2 ____*3*3 Check all TODO:s and NOTE:s. Check README.md to 0.0.3
+3.2 D___*3*3 Modified hist_versions.txt to present version 0.0.3
+             Check all TODO:s and NOTE:s. Check README.md to 0.0.3
              ??  DO  NOT TRY.  WASTE OF TIME. TAKE SOME REST AND DEEP THINKING.
              Documentation is NOW only third in importance.  Documentation can not be
              line-in-line with code, it describes just one phase in past dawo building.
@@ -52,7 +53,7 @@ To be published:  ~25.9.2017
 3.10 ___E   ADD elements / boxes to web / HTML.
 
 < Value-effort values from 1-10
-DONE: 40 => 31, not: 9
+DONE: 40 => 32, not: 8
 
 #Overall _ONE*9*7  ready : 77 % to 0.0.3
 
