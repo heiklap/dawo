@@ -145,6 +145,7 @@ class LearnDartlang {
     'k': ' ',
     'l': ' ',
     'Match': ' ',
+    'Method Overloading': 'method overloading. I think this is also considered for the future. Wasn not possible in Dart 1.x because of optional types',
     'num': ' ',
     'Object': ' ',
     'Publish': ' ',
@@ -155,7 +156,7 @@ class LearnDartlang {
     'T': ' ',
     'Type': 'Typesystems help you scale. The type system gives us guarantees.',
     'U': ' ',
-    'V': ' ',
+    'Void': 'void is not a user-accessible Type (yet) .. isnt that 2.0',
     'Work': '..write more explicit code and eliminating the potential for a runtime error is the right tradeoff every day of the week.',
   };
 

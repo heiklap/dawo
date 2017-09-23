@@ -16,16 +16,20 @@ To be published:  ~25.9.2017
  #Waiting complications and hardships?  Yes.
  Value-effort values from 1-10:
 
-3.1 DONE*7*7  incoming data in clay-folder, clay as synonym for data
+3.1 DONE*7*7 Incoming data in clay-folder, clay as synonym for #data.
             5 missions, 12 chores:  ['helsinkiGuide3-5','learnDartlang 4-6', 'myMusic 5',
                                      'myTime 3', 'nationalParks 1'];
             * Fill / create mission Classes; Helsinki, Dartlang, Music, myTime, Nature
             * Other customers data;  Helsinki, dartlang, music, time, park. (dawo/dev is original, always there)
             * dev data
 
-3.2 ____*3*3 check all TODO:s and NOTE:s. Check README.md to 0.0.3
+3.2 ____*3*3 Check all TODO:s and NOTE:s. Check README.md to 0.0.3
+             ??  DO  NOT TRY.  WASTE OF TIME. TAKE SOME REST AND DEEP THINKING.
+             Documentation is NOW only third in importance.  Documentation can not be
+             line-in-line with code, it describes just one phase in past dawo building.
+             Messed too much time in dev of some property, no time left for this now.
 
-3.3 _ON_7*4  Active "Rumba" flow / -example
+3.3 _ON_7*4  Better "Rumba" flow / method and example.
            - app / mission / chore : all working together
 
 3.4 DONE7*2 Fill #app's & #Mission's aso. generic lists with members (objects)
@@ -48,7 +52,7 @@ To be published:  ~25.9.2017
 3.10 ___E   ADD elements / boxes to web / HTML.
 
 < Value-effort values from 1-10
-DONE: 40 => 24, not 16
+DONE: 40 => 31, not: 9
 
 #Overall _ONE*9*7  ready : 77 % to 0.0.3
 
@@ -101,21 +105,29 @@ Way to version:  0.0.4 aso.
 Theme:  Statistics, output, variation, versatility.
 To be published:  ? 10.10.2017 ?
 
+          *  *  *   HEAD   *  *  *
+4. ____  doc/
+             api/ ***
+             getting_started.md, dictionary.MD, history.txt, versions_dev.txt
+
 4.1 ____  reasonable output.
 
 
-4.2 ____  Solving Clients problems.
+4.2 ____  Solving Clients problems. = Missions?
 
 
 
 
 
-4.3 ____  roll counters to app, mission, chore, mill.
+4.3 ____  Roll counters to app, mission, chore, mill. LATER?
+          Only If it is naturally part of #Flow method.
 
-4.4 ____  render ( = test, presentation and quick-note function) to every file
+4.4 ____  Render ( = test, presentation and quick-note function) to every file.
+
+          *  *  *   TAIL   *  *  *
 
 4,5 ____  dev class. dev tester person.
-            -every file imports dev, and can add dev-notes.
+            -every library imports dev, and can add dev-notes.
 
 4.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
             * not yet clear idea, how this must be done.
@@ -123,13 +135,21 @@ To be published:  ? 10.10.2017 ?
 4.7 ____  Use JSON, enums, set, Map, queues. Just for to show that you can.
 
 
+          *  *  *   OTHER   *  *  *
+4.8 ____  OutGoing data in clayOut-folder: construct common methods.
 
-4.8 ____  outGoing data methods in clayOut-folder.
+4.9 ____
 
-4.9 ____  sketch more base_lib functionality.
+4.10 ____ Separate learnLib with its 3 files and collect it to one #learn-library.
+          Systematic methods for learning. Terminology.
 
-4.10 ____ separate learnLib with its 3 files and collect it to one #learn-library.
-
+     Ongoing::
+    ____ *5*9  Connector, more ideas
+    ____ *6*6  base_lib more ideas.
+      Web::
+    ____   ADD elements / boxes to web / HTML.
+      Server / Client::
+           First simple HTTP-server, then Angel package.
 
 _________________________________________________________________________
 
@@ -149,6 +169,17 @@ Chore marked as a "slave" to other Chore
 
 _________________________________________________________________________
 Endless Flow of ideas: Adding anything is blocked for  now. 21.9.2017, waiting 0.0.3
-* Growth. sprout
-* icon
+teamInno:
+  * Growth. sprout
+  * Words:  Pole,
+teamDev:
+  * icon
+
+teamSec:
+  *  Key, to get access to some methods
+  *  howTo hide access to some class
+
+* Class: Glad
+* Int opFull100 = 79;   #Opera operation fullfill-state (max100) is now 79.
+* NotAccessMethod - InThisState -field
 *

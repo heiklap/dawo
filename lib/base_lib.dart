@@ -1,8 +1,8 @@
 ///  ## Modeling common, reusable controls and operations for libraries.
 ///  dawo/base_lib,  version 0.0.2
 ///
-///  Time to start thinking 6.th floor's furniture, when you are only just
-///  laying base foundations for your 20-floor building.
+///  Time to start thinking 6.th floor's machinery, when you are only just
+///  laying base foundations for your 20-floor factory.
 ///
 ///  All dawo code-constructing should depend on code, that is here, and all
 ///  thinking about dawo should concentrate on collecting reusable code here.
@@ -50,8 +50,8 @@ void helloDawo() {
 //
 
 /// ..  or is it class BasePlacard ?
-///  common information, that is in hand for every operation
-///  model for id-data in common handshake method
+///  Common form of information, that is in hand for every operation.
+///  Model for #id-data in common handshake method.
 Map<String, String> placardM = {
   'actor': '',
   'sender': '',
@@ -74,11 +74,11 @@ class GlobalVariables {
   }
 }
 
-// create instance as:  glb
+// Create instance as:  glb
 
 ///  TODO  Global operations
-///  Every dawo #operation could relay on these
-///  order: #actor #sender #receiver #command #msg
+///  Every dawo #operation could relay on these.
+///  Order: #actor #sender #receiver #command #msg
 ///  Very early development state, idea: 10%
 class GlobalOpClass {
   //  BaseStruct is known here
@@ -119,7 +119,7 @@ class GlobalOpClass {
   }
 }
 
-//  create instance as glbOp
+//  Create instance as glbOp.
 
 //TODO  create some "technical" base_classes for below variables and functions.
 
