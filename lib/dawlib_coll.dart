@@ -1,8 +1,11 @@
-///  ##  dawo : some simple collection data, mainly Sets. Version 0.0.2
-///  No connection to dawo-app for now.
-///  NEXT version: SplayTreeSet,  and  LinkedHashSet
-///
+///  ##  dawo : some simple collection data, mainly Sets.
+///  dawo version:  0.0.3  25.9.2017
+///  ready-state for 0.0.4  0 %
 ///  Hist: hkl  22.5.2014  0.0.1  dawo/lib
+///  No connection to dawo-app for now, but keeping ideas and data for them.
+///  NEXT version: Add SplayTreeSet,  and  LinkedHashSet
+///
+
 //
 
 library dawlib_coll;

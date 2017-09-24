@@ -1,12 +1,73 @@
 
-
 By Heikki K Lappalainen
-Development of dawo dartlang package 2017 from 0.0.1 >
+Development of dawo dartlang package 2017 from 0.0.1 >  to  0.0.3 25.9.2017
+_________________________________________________________________________
+Tracking possible bigger steps in dawo:
+0.1.0  Decent console output ready.          |  connector wake.
+0.2.0  Flow procedure with automatic #actor. |  base_lib in use.
+0.3.0  Simple web_app, in gitHub.            |  separate dawo_continuum package
+0.4.0  Local storage, HTTP_server, JSON.     |  dawo_mill operative
+0.5.0  Angel server and MongoDB.             |  User input in web_app
+0.6.0  Client / users.                       |  *
+_________________________________________________________________________
+
+Way to NEXT version:  0.0.4 aso.
+Theme:  Statistics, output, variation, versatility.
+To be published:  appr. 15.10.2017
+
+          *  *  *   HEAD   *  *  *
+4.0 ____  Flow-method to regulate events / output in every control-flow operation.
+
+4.b ____  Use async to catch some Stream / future to normal flow.
+          Use async, to gather devNotes, and present them at the end of test_output.
+
+4.1 ____  Reasonable output; regulated form for for every classes original-looking output.
+          Use top-level StringBuffers to save every classes output.
+
+4.2 ____  Mission - chore; operations and smaller entities; placardM aso.
+
+4.3 ____  Statistics: Roll counters to app, mission, chore, mill. LATER?
+          Only If it is naturally part of #Flow method.
+
+4.3b____  dawo_mill giving privileges and orderly run for smaller operations.
+
+          *  *  *   TAIL   *  *  *
+4.4 ____  Render ( = test, presentation and quick-note function) to every file.
+
+4,5 ____  dev class. dev tester person.
+            -every library imports dev, and can add dev-notes.
+
+4.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
+            * not yet clear idea, how this must be done.
+
+4.7 ____  Use JSON, enums, set, Map, queues. Just for to show that you can.
+          Get used to #typeDef
+
+          *  *  *   OTHER   *  *  *
+4.8 ____  OutGoing data in clayOut-folder: construct common methods.
+
+4.9 ____
+
+4.10 ____ Separate learnLib with its 3 files and collect it to one #learn-library.
+          Systematic methods for learning. Terminology.
+
+          *  *  *  Document, comments, notes, TODO's  *  *  *
+4.11 ____  doc/
+              api/ ***
+                 getting_started.md, dictionary.MD, history.txt, versions_dev.txt
+
+     Ongoing::
+    ____ *5*9  Connector, more ideas
+    ____ *6*6  base_lib more ideas.
+      Web::
+    ____   ADD elements / boxes to web / HTML. ( code in gitHub )
+      Server / Client::
+           First: simple HTTP-server, then Angel package.
 
 _____________________________________________________________________________
 
 
-Way to version NEXT:  0.0.3 aso.
+Development in version:  0.0.3.
 Theme:  Choose different Client / customer data and small, playing work-flow
 To be published:  ~25.9.2017
 
@@ -23,8 +84,9 @@ To be published:  ~25.9.2017
             * Other customers data;  Helsinki, dartlang, music, time, park. (dawo/dev is original, always there)
             * dev data
 
-3.2 D___*3*3 Modified hist_versions.txt to present version 0.0.3
-             Check all TODO:s and NOTE:s. Check README.md to 0.0.3
+3.2 DO__*3*3 Modified hist_versions.txt to present version 0.0.3
+             NO TIME FOR:    Check all TODO:s and NOTE:s.
+             Check README.md to 0.0.3  OK. and plan 0.0.4
              ??  DO  NOT TRY.  WASTE OF TIME. TAKE SOME REST AND DEEP THINKING.
              Documentation is NOW only third in importance.  Documentation can not be
              line-in-line with code, it describes just one phase in past dawo building.
@@ -53,7 +115,7 @@ To be published:  ~25.9.2017
 3.10 ___E   ADD elements / boxes to web / HTML.
 
 < Value-effort values from 1-10
-DONE: 40 => 32, not: 8
+DONE: 40 => 33, not: 7
 
 #Overall _ONE*9*7  ready : 77 % to 0.0.3
 
@@ -99,58 +161,8 @@ Overall problems:
   * Import all in tests, for to be sure. And analyzer finds them quick.
 
 
-_____________________________________________________________________________
 
 
-Way to version:  0.0.4 aso.
-Theme:  Statistics, output, variation, versatility.
-To be published:  ? 10.10.2017 ?
-
-          *  *  *   HEAD   *  *  *
-4. ____  doc/
-             api/ ***
-             getting_started.md, dictionary.MD, history.txt, versions_dev.txt
-
-4.1 ____  reasonable output.
-
-
-4.2 ____  Solving Clients problems. = Missions?
-
-
-
-
-
-4.3 ____  Roll counters to app, mission, chore, mill. LATER?
-          Only If it is naturally part of #Flow method.
-
-4.4 ____  Render ( = test, presentation and quick-note function) to every file.
-
-          *  *  *   TAIL   *  *  *
-
-4,5 ____  dev class. dev tester person.
-            -every library imports dev, and can add dev-notes.
-
-4.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
-            * not yet clear idea, how this must be done.
-
-4.7 ____  Use JSON, enums, set, Map, queues. Just for to show that you can.
-
-
-          *  *  *   OTHER   *  *  *
-4.8 ____  OutGoing data in clayOut-folder: construct common methods.
-
-4.9 ____
-
-4.10 ____ Separate learnLib with its 3 files and collect it to one #learn-library.
-          Systematic methods for learning. Terminology.
-
-     Ongoing::
-    ____ *5*9  Connector, more ideas
-    ____ *6*6  base_lib more ideas.
-      Web::
-    ____   ADD elements / boxes to web / HTML.
-      Server / Client::
-           First simple HTTP-server, then Angel package.
 
 _________________________________________________________________________
 

@@ -1,9 +1,10 @@
 ///  ##  Rumba : maintaining main loops of app - mission
 ///  Primary functionality:  loop
-///
+///  dawo version:  0.0.3  25.9.2017
+/// * ReadyState:   0 %  for version 0.0.4   in GitHub  no
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * ReadyState:   1 %  in version 0.0.3   in GitHub  no
-/// * hkl  14.9.2017  0.0.3  dawo/lib  rumba.dart   main loop of dawoApp
+///
+/// * hkl  14.9.2017  dawo/lib  rumba.dart   main loop of dawoApp
 ///
 /// Visibility:  only dawo_src.dart sees this class
 

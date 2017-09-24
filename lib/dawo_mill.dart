@@ -1,4 +1,5 @@
-/// dawo_mill
+/// dawo_mill, in very early development state.
+/// dawo version:  0.0.3  25.9.2017   ready-state:  0 %  for 0.0.4
 /// - hist:  hkl  8.9.2017 created
 /// - work-scheduling system, got flag class from dawo_app
 //
@@ -17,6 +18,10 @@ class DawoMill {
   int tempo = 6;
   int rounds = 1;
 
+  ///  to keep menu-choice values
+  ///  Like: {'1' : chore1, '2' : chore2}
+  Map<String, Object> jobM = new Map();
+
   int jobInQueue = 0;
   int jobsDone = 0;
 
@@ -34,8 +39,13 @@ class DawoMill {
   }
 }
 
+///  create instance
+var mill = new DawoMill();  //  add Object - map to constructor
+
 /// TODO  teamNext  for to use in next versions
 /// NOTE:  int '1'  do not give error...  how about int?
+///  Or:  Map<String, Object> jobM = new Map();
+///  Like: {'1' : chore1, '2' : chore2}
 Map<int, String> millMap = {
   '1': 'M',
   '2': 'T',

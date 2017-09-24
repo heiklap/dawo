@@ -74,7 +74,7 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
 
 
 
-  src.dart imports files:
+src.dart imports files:
 
     import 'package:dawo/code_snippets/aldente_func.dart';
     import 'package:dawo/code_snippets/bat_loop.dart';
@@ -112,7 +112,7 @@ Creating Dawo variables in new file:
     var connector = new Connector('name','info');
     connector.
 
-// Using Dawo in your web app:  
+// Using Dawo in your web app: (Dawo do not include HTML-code) 
     
     Add to your pubspec.yaml:
     dependencies:
@@ -129,7 +129,12 @@ Creating Dawo variables in new file:
     import 'package:dawo/dawo_app.dart';    
       
     main() {
-      //  Create classes as above.
+      //  Create classes as above. Or copy code from: Usage:
+      
+      var dawoApp = new DawoApp('Pplay-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
+      var rumba = new Rumba();
+      rumba.dance(dawoApp);
+      
       //  play with classes:
       //  Dot-notaion ( . ) gives you editor hints.
       //  dap.    //  choose property, that you want to use.
@@ -140,6 +145,7 @@ Creating Dawo variables in new file:
       
       //  code, play with other variables
     }
+    // run code in browser and check console output: Ctrl-Shift-i 
 
 ###  About variable names and Classes in Dawo
 Play in IDE editor with alphabet: a..z to see, what variables are available.

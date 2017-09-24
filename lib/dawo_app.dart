@@ -2,7 +2,8 @@
 ///  Primary functionality:  engage missions.
 ///  Some information about app, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * ReadyState:   99 %  for version 0.0.2   in GitHub  yes
+///  dawo version:  0.0.3  25.9.2017
+/// * ReadyState:   0 %  for version 0.0.4   in GitHub  yes
 /// * hkl  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
 ///  Almost all parts changed to libraries
 
@@ -69,8 +70,8 @@ class DawoApp extends BaseStruct {
   ///  app-specified fields
   String agenda = 'dawoApp rolls missioms';
   String msg = 'dawoApp-Message..';
-  String develop = 'Under development.. 80% to:  0.0.3';
-  String version = '0.0.2';
+  String develop = 'Under development.. 0 % to:  0.0.4';
+  String version = '0.0.3';
 
   ///  Old marking to find usage of this version in test apps.
   final String version_0_0_02 = 'dawo 0.0.02 - 12 / 2013 hkl';
@@ -180,7 +181,7 @@ Map<String, String> appMap = {
   'name': 'dawo App',
   'infoS': 'dartang pub package for education',
   'creator': 'me',
-  'version': '0.0.2',
+  'version': '0.0.3',
   'active': '0',
   'stopped': '0',
   'paused': '0',
@@ -203,16 +204,16 @@ Map<String, String> appPhaseM = {
 };
 
 /// map to hold development status of this app / version
-Map<String, String> dawo002M = {
-  'devStateNum': '99% to  0.0.2',
+Map<String, String> dawo003 = {
+  'devStateNum': '99% to  0.0.3',
   'devSituation': 'Ready to Publish',
 
   ///  Find, where in my test-folders is THIS  version used?
-  'version': '0.0.2',
+  'version': '0.0.3',
   'published': 'Yes, Pub',
 
   ///  next-version-info might be useful for my different tests and devNotes
-  'next version': '0.0.3. ~25.9.2017',
+  'next version': '0.0.4. ~15.10.2017',
 
   'author': 'Heikki Lappalainen',
   'webPage': 'https://github.com/heiklap/dawo',

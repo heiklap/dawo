@@ -1,6 +1,7 @@
 ///  ##  connecting  ( as #client's) app - mission - chore together,  mediating them
 ///   copyright  Heikki K. Lappalainen
-/// * READY-STATE:  8%            // Next:  0.0.3 version
+///   dawo version:  0.0.3  25.9.2017
+/// * READY-STATE:  0 %  for  0.0.4 version
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  dawo_connector.dart
 /// #name:  connector ..is not nice. change to: ______ ??
 /// Connector is in deeply imaginary level of construction. We know, that app -

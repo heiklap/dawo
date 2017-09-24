@@ -1,5 +1,6 @@
-///  mission is something between app and chore, process
-/// -  Primary functionality: engage chores. Version 0.0.2
+/// *  mission is something between app and chore, process
+/// -  Primary functionality: engage chores. Version 0.0.3
+/// -  ready_state for 0.0.4  0 %
 /// -  HIST:  hkl  8.9.2017
 //
 
@@ -25,11 +26,10 @@ void helloMission() {
   print('-- hello this is mission file and library  ---');
 }
 
-///  base lib class... Some info/state/basic values of -this- "part".
-///  to control some extra/lower level state of apps or operations
-///  it plays clearly below -app level
-///  name may be changed to: #mission, it is between app and chore
-///  and mission can include many chores
+///  Mission avoids consciously using Chores clear and handy structure, for to
+///  leave space for innovation and to find different solutions for operations.
+///  Mission acts clearly below -app level, but above chore.
+///  Mission can include many chores. 7 Chores are build by default.
 class Mission {
 // #TIP: When class members begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.

@@ -1,8 +1,10 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
+///  dawo version:  0.0.3  25.9.2017
+/// * READY-STATE  0 %  for version 0.0.4     GitHub: yes  29.11.2014
 /// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
-/// * READY-STATE  99%  for version 0.0.2     GitHub: yes  29.11.2014
+///
 
 library dawo_dev.dart;
 

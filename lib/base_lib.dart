@@ -1,5 +1,5 @@
 ///  ## Modeling common, reusable controls and operations for libraries.
-///  dawo/base_lib,  version 0.0.2
+///  dawo/base_lib,  dawo version:  0.0.3  25.9.2017
 ///
 ///  Time to start thinking 6.th floor's machinery, when you are only just
 ///  laying base foundations for your 20-floor factory.
@@ -15,7 +15,7 @@
 ///  Hist:  hkl  9.10.2013  0.0.1  dawo/lib    daw lib_base.dart
 ///  Returned 10.9.2017 to same idea with empty hands.
 ///
-///  READY-STATE for version 0.0.3   12 %   in GIT  Yes
+///  READY-STATE for version 0.0.4   0 %   in GIT  Yes
 ///  Open for all ideas, when seeking common functionality between app / lib /
 ///  classes / process aso.
 ///  NOTE: Problem:  #actor / glbActor; how to handle in sub-processes

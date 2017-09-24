@@ -4,8 +4,9 @@
 ///  Including some funny logical-naming-errors, where name do not correspond to
 ///  functionality.  Seeking common, reusable functions.
 ///
+/// *  dawo version:  0.0.3  25.9.2017
 /// *  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
-/// *  readyState for 0.0.1.  95%    in gitHub:  YES  22.04.2015
+/// *  readyState for 0.0.4.  0%    in gitHub:  YES  22.04.2015
 /// *
 //
 library aldente_func.dart;

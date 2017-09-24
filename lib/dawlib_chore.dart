@@ -1,4 +1,4 @@
-///  ##  Chore for organizing work flow.  Version 0.0.2
+///  ##  Chore for organizing work flow.  dawo version:  0.0.3  25.9.2017
 ///  Primary functionality: get notes-list aso data from input/clay
 ///  incoming data (clayIn) comes from customer. coders OR sample aso.
 ///  Controlling work-flow and processes. Wrapper round of your small piece of
@@ -8,7 +8,7 @@
 ///   out of dawo with it's own wings. Here will be small version of it.
 ///
 ///  hkl  6.5.2014  0.0.1  dawo/lib   Common   "w o r k  flow"  methods for dawo
-///  Ready-state:   94%   in  GitHub:   yes   updated  22.04.2015///
+///  Ready-state:   0%  for 0.0.4 In  GitHub:   yes   updated  22.04.2015///
 ///
 //TODO  chore; dawo can't use chore package. so make a simple plugin. But how?
 

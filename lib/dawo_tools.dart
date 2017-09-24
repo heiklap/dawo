@@ -1,6 +1,8 @@
 ///  ##  Some helper tools
+/// *  dawo version:  0.0.3  25.9.2017
+/// *  READY-STATE for version 0.0.4   0 %   in GIT
 /// *  Hist:  hkl  2014  0.0.1  dawo/lib
-/// *  READY-STATE for version 0.0.2   90 %   in GIT
+///
 
 library dawo_tools.dart;
 

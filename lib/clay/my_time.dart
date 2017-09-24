@@ -1,7 +1,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  dawo clay  myWeek
 ///  presenting data for dawo-chore system
-///
+///  dawo version:  0.0.3  25.9.2017
 
 //
 library myTime;
