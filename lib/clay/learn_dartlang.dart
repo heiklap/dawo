@@ -97,7 +97,8 @@ class LearnDartlang {
         'Manages Dart packages, making it easy for you to install, use, and share Dart libraries, command-line tools, and other assets.',
     'DartDoc':
         'Use dartdoc to generate HTML documentaton for your Dart package. https://github.com/dart-lang/dartdoc',
-    'DartDevCompiler': 'The Dart development compiler (dartdevc, also known as DDC) lets you run and debug your Dart web app in Chrome.',
+    'DartDevCompiler':
+        'The Dart development compiler (dartdevc, also known as DDC) lets you run and debug your Dart web app in Chrome.',
     'DartFormat':
         'Formats your code, following the recommendations of the Dart Style Guide. IDEs that support Dart generally allow you to format the code within the IDE.',
     'VM':
@@ -145,7 +146,8 @@ class LearnDartlang {
     'k': ' ',
     'l': ' ',
     'Match': ' ',
-    'Method Overloading': 'method overloading. I think this is also considered for the future. Wasn not possible in Dart 1.x because of optional types',
+    'Method Overloading':
+        'method overloading. I think this is also considered for the future. Wasn not possible in Dart 1.x because of optional types',
     'num': ' ',
     'Object': ' ',
     'Publish': ' ',
@@ -157,7 +159,8 @@ class LearnDartlang {
     'Type': 'Typesystems help you scale. The type system gives us guarantees.',
     'U': ' ',
     'Void': 'void is not a user-accessible Type (yet) .. isnt that 2.0',
-    'Work': '..write more explicit code and eliminating the potential for a runtime error is the right tradeoff every day of the week.',
+    'Work':
+        '..write more explicit code and eliminating the potential for a runtime error is the right tradeoff every day of the week.',
   };
 
   ///  data from:  https://www.dartlang.org/faq

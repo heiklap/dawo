@@ -19,23 +19,16 @@ import 'package:dawo/dawo_tools.dart';
 
 import 'package:test/test.dart';
 
-
-
 void main() {
   //TODO  error
-    var missionH = new Mission('mission inDT', 'test');
-    print(missionH.name);
-
-
+  var missionH = new Mission('mission inDT', 'test');
+  print(missionH.name);
 
   var appX = new DawoApp('d-app', 'test');
-  appX.infoS;  //  string
-
+  appX.infoS; //  string
 
   group('A group of tests', () {
     Awesome awesome;
-
-
 
     setUp(() {
       awesome = new Awesome();

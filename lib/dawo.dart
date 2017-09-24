@@ -6,7 +6,6 @@
 ///
 /// Hist: hkl  22.5.2014  0.0.1  dawo/lib, in pub and GitHub
 
-
 library dawo;
 
 //  if using dawo right here:

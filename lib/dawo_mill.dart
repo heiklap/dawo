@@ -40,7 +40,7 @@ class DawoMill {
 }
 
 ///  create instance
-var mill = new DawoMill();  //  add Object - map to constructor
+var mill = new DawoMill(); //  add Object - map to constructor
 
 /// TODO  teamNext  for to use in next versions
 /// NOTE:  int '1'  do not give error...  how about int?

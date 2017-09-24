@@ -285,10 +285,10 @@ void buildMissions(String caller) {
   for (var x in missionL) {
     String _misName = x.name;
     print('mis-name:  $_misName ');
-      for (var z in x.choreL){
-        String _chrName = z.name;
-        print('choreName:   $_chrName');
-      }
+    for (var z in x.choreL) {
+      String _chrName = z.name;
+      print('choreName:   $_chrName');
+    }
   }
   print('------  missionL forEach print-choreL done AGAIN  ----------');
 } //  -----  buildMissions

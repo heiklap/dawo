@@ -17,7 +17,6 @@ import 'package:dawo/dawo_src.dart';
 //  THIS DO NOT BRING ALL LIBS WITH IT
 //import 'package:dawo/dawo_src.dart';
 
-
 //  creating instances of classes in upper level
 
 var df = new DawoMill();
@@ -33,8 +32,6 @@ var rumba = new Rumba();
 main() {
   print('\n ---------  app_blib_chore example  ----------------------');
 
-
-
   rumba.dance(dawoApp);
 
   //  getting something from classes
@@ -42,7 +39,6 @@ main() {
   print('df-active::  $df.active');
   print('bLibInfo::  $mission.blInfo');
   print('ch-info::   $ch.info');
-
 
   //  building all functionality in function::
   //  otherStuff();
@@ -57,9 +53,7 @@ main() {
 
 //  all happens here, just presentation
 //  classes are not interacting aso.
-void otherStuff(){
-
-
+void otherStuff() {
   devHelp..line('dawoAppRoll');
   dawoApp.roll();
 
@@ -68,7 +62,7 @@ void otherStuff(){
   appMap;
   millMap;
   appPhaseM;
-  dawo002M;
+  dawo003;
 
   //  df.render();
   devHelp.line('dawoFlags');
@@ -95,6 +89,3 @@ void otherStuff(){
 }
 
 //
-
-
-

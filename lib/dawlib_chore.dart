@@ -34,7 +34,6 @@ var choreBuf = new StringBuffer();
 ///  generic List to keep all Chores
 List<CommonChore> choreL = [];
 
-
 ///  TODO  devNotes ==   #chore, that is always in dawoApp
 //
 
@@ -144,7 +143,7 @@ class CommonChore extends BaseStruct {
   }
 
   ///  get
-  String rowInfo (){
+  String rowInfo() {
     String _s = '$name  m: $motto on: $onB off: $offB p: $pauseB d: $doneB ';
     return _s;
   }

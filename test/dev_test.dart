@@ -28,17 +28,16 @@ Dart Plugin 15.3.2017.    162.1469    Uninstall. !!
 
 var dawoOperation;
 
-
 void main() {
   print('------ testing dev class and variables  ------------');
-    print('\n -----------  play rumba test  ----------------------');
-    var dawoApp = new DawoApp(':play-rumba-test', 'Just rumbaTest.dart');
+  print('\n -----------  play rumba test  ----------------------');
+  var dawoApp = new DawoApp(':play-rumba-test', 'Just rumbaTest.dart');
 
-    var rumba = new Rumba();
+  var rumba = new Rumba();
 
-    //  lol  you can put two commands in same row
-    rumba.dance(dawoApp);dev.showNotes();
-
+  //  lol  you can put two commands in same row
+  rumba.dance(dawoApp);
+  dev.showNotes();
 
   print('------  testing dev class and variables::  done --------');
 }

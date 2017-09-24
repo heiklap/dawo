@@ -53,6 +53,7 @@ class Rumba {
 
   ///  setting loop variables to (fake-) force-stop state
   void doneRumba() {
+    rumbaBuf.writeln('-------------------  done Rumba  --------------------');
     print('-------------------  done Rumba -----------------------');
     rumbaB = false;
     usherB = false;
@@ -85,6 +86,7 @@ class Rumba {
       ///  --  usher loop
       do {
         String rumbaLoopUsherS = '**  usherLoop is rolling  **';
+
         /// ----------------------  usher loop code  ---------------------
 
         ///  --  dawoApp loop
@@ -121,6 +123,7 @@ class Rumba {
     } while (rumbaB);
 
     /// --  usher loop
+    rumbaBuf.writeln('--------------  Rumba.dance  done --------------------');
 
     return rumbaBuf;
   } //  ----------   StringBuffer rumba

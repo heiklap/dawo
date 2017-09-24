@@ -177,11 +177,12 @@ class Connector extends BaseStruct {
 ///  a none argument constructor.
 ///  but Connector do not have
 ///  NOTE  howTo extend class that have constructor with arguments?
-class Collector  {
+class Collector {
   String name;
   String info;
 
   Collector(this.name, this.info);
+
   ///  wanna easy-extend this, but can not :(
   /// Error: the superclass Collector does'nt have a zero argument constructor
 }

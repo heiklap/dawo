@@ -84,9 +84,8 @@ class GlobalOpClass {
   //  BaseStruct is known here
   //  BasePlacard is known also
 
-
   //  String actor;  //  too important to be a String
-  var actor;  //  too important to be a String
+  var actor; //  too important to be a String
   var actorState;
   Map<dynamic, dynamic> actorM = {};
 
@@ -94,8 +93,8 @@ class GlobalOpClass {
   String receiver;
 
   ///  operation levels
-  var opLevel;  //  is it changed during operation?
-  var opChange;  //  handle actual change.
+  var opLevel; //  is it changed during operation?
+  var opChange; //  handle actual change.
 
   /// can it be a function?
   Function cmd;
@@ -136,7 +135,6 @@ String clause(var placard) {
 ///  Who is in "charge" of operation, when it is routed through subroutines?
 ///  Problem: how to handle #glbActor change, when subroutines occur?
 void changeActor() {
-
   //  #CODE
 }
 
@@ -150,7 +148,6 @@ void actorMill() {
 ///  IDEA: flow command through function, that records it's info for op-system
 ///  Name for this heart of big-clocking-system ?
 void getOperationInfoOnParameters() {
-
   ///
 }
 
@@ -189,7 +186,7 @@ void commonStreamBroad(String caller, Iterable streamData, var streamListen) {
   var broadcastStream = stream.asBroadcastStream();
 
   broadcastStream //   using   method   cascades...
-  //TODO  Test:  can we NOT use shorthand function?
+    //TODO  Test:  can we NOT use shorthand function?
     ..listen((value) => print("SUCCESS_1_:: stream.listen: $value"))
     ..first.then((value) => print("SUCCESS_2_:: stream.first: $value")) // 1
     ..last.then((value) => print("SUCCESS_3_:: stream.last: $value")) // 5

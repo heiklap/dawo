@@ -7,11 +7,11 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
     // Some instances of Mission Class are created with simple Map data.
     // Mission classes have instances of Chore classes inside them.
     
-    // Eventually usage is planned;
+    // Roll once, without loops usage;
     var dawoApp = new DawoApp('Pplay-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
     var rumba = new Rumba();
 
-    // This also returns a StringBuffer:
+    // This returns in addition a StringBuffer. Not used here.
     rumba.dance(dawoApp);
     // Example app presents sample data on windows console.
 
