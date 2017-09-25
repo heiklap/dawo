@@ -130,7 +130,7 @@ class CommonChore extends BaseStruct {
         new GlobalOpClass(name, 'chore', 'rec:test', helloChore, 'all ok');
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
-
+    _retBuf.writeln('_retBuf in op method is ready...');
     ///  mediate command to common process (in base_lib) with info from chore
     commonProcess(chOpClass, helloChore); //  with actual command
 

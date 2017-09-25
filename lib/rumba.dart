@@ -79,7 +79,8 @@ class Rumba {
     devHelp.line('rumba');
     do {
       /// -----------------------  rumbaB loop code   -------------------
-      /// some loopS variables to test visibility
+      /// some loopS variables to test visibility, and carry msg.
+      /// TODO  add some functionality to rumbaLoop____  messages.
       String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
       devHelp.line('usher');
 
@@ -106,7 +107,13 @@ class Rumba {
             //  roll already includes rollMissions
             //  NO!! dawoApp.rollMissions();
 
+            //  Handle rumbaLoop___ messages.
+            //  Save rumbaLoop__ messages to buffer.
+            rumbaBuf.writeAll([rumbaLoopRumbaS, rumbaLoopUsherS]);
+            rumbaBuf.writeAll([rumbaLoopDawoAppS, rumbaLoopMissionS]);
+
             devHelp.line('mission');
+
             // -- chore
 
             missionB = false; //  emergency exit, while testing

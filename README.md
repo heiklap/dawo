@@ -1,4 +1,4 @@
-# dawo 0.0.2
+# dawo 0.0.3
 
 Learning Dart; simple basic data for beginners, and howTo use it for building a package.
 Beginner Dart programmers kickoff to develop a glorious package.. Latest code in GitHub: https://github.com/heiklap/dawo
@@ -8,7 +8,7 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
     // Mission classes have instances of Chore classes inside them.
     
     // Roll once, without loops usage;
-    var dawoApp = new DawoApp('Pplay-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
+    var dawoApp = new DawoApp('Play-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
     var rumba = new Rumba();
 
     // This returns in addition a StringBuffer. Not used here.
