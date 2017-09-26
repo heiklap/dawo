@@ -60,6 +60,22 @@ Map<String, String> placardM = {
   'msg': '',
 };
 
+
+///  Global class. in early dev state
+class GlobalClass {
+
+  //  String actor;  //  too important to be a String
+  //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
+  String actor = ':UNKNOWN: - :UNUSED:'; //  too important to be a String
+  void changeActor(String act){
+    actor = act;
+  }
+    //  code
+  }
+
+
+var glb = new GlobalClass();
+
 ///  TODO   Global variables. What is best way to send this kind of data?
 ///  Try to imagine, what we will need
 class GlobalVariables {
@@ -85,7 +101,7 @@ class GlobalOpClass {
   //  BasePlacard is known also
 
   //  String actor;  //  too important to be a String
-  var actor; //  too important to be a String
+  String actor = ':No usage yet:'; //  too important to be a String
   var actorState;
   Map<dynamic, dynamic> actorM = {};
 
@@ -118,7 +134,8 @@ class GlobalOpClass {
   }
 }
 
-//  Create instance as glbOp.
+//  Just testing Create instance as glbOp.
+var glbOp = new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', helloDawo , 'msg');
 
 //TODO  create some "technical" base_classes for below variables and functions.
 
@@ -153,8 +170,22 @@ void getOperationInfoOnParameters() {
 
 /// do not look out unprofessionally and spam your code with print-clauses!
 /// Instead use: flow !!
-///
-void flow() {
+//  Actor and buf are not needed in parameter !!  they get from Global
+// void flow(String actor, StringBuffer buf, String msg, bool pr) {
+///  TODO  To avoid messing with buffer and actor HOORAY: use local fl()
+///  local: fl calls this Flow()
+void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
+  //TODO  Watch, who is #actor at a time, and use its buffer
+  ///  ********************************************************************
+  ///  TO GET  ACTOR AND BUFFER RIGHT, USE LOCAL fl()
+  /// **********************************************************************
+
+  String _actor = actor;
+  //  _buf = getGlbBuf();
+  if (pr) print(msg);
+  // TODO  in this phase _buf must be in parameters.
+
+  buf.writeln('$_actor $msg');
   // code here
   //  form nice String (for print and/or buf) that describes ongoing operation
 }

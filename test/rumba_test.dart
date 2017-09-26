@@ -20,6 +20,8 @@ void playRumbaTest() {
 
   // we got buffer here
   rumba.dance(dawoApp);
+
+
 }
 
 void testWordsVisibility() {}

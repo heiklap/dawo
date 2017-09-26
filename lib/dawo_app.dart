@@ -22,17 +22,7 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 ///  buffer also outside class, for testing and adding visibility
 var appBuf = new StringBuffer();
 
-///  10 StringBuffers named for output to screen areas
-StringBuffer outHeader = new StringBuffer();
-StringBuffer outTl = new StringBuffer(); //  rumba
-StringBuffer outTMid = new StringBuffer();
-StringBuffer outTr = new StringBuffer(); //  appRoll
-StringBuffer outMTop = new StringBuffer(); //  helsinki
-StringBuffer outMid = new StringBuffer(); //  dartlang
-StringBuffer outMBot = new StringBuffer(); //  n-parks
-StringBuffer outBl = new StringBuffer();
-StringBuffer outBr = new StringBuffer();
-StringBuffer outFooter = new StringBuffer();
+
 
 ///  Just for testing private variable inside a library.
 String _privacyLibraryTest = 'Testing library / part privacy';
@@ -41,8 +31,10 @@ String _privacyLibraryTest = 'Testing library / part privacy';
 ///  Class that holds 'soul' of THIS dawo app.
 class DawoApp extends BaseStruct {
   String name = 'dawo app';
+  String actor = ':DAWO-APP:';
   String infoS = 'giving global variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
+
 
   ///  must initialize StringBuffer here
   StringBuffer buf = new StringBuffer();
@@ -80,6 +72,8 @@ class DawoApp extends BaseStruct {
 
   ///  initialize class values to beginning state
   void init() {
+    //  TODO  Actor:  only one actor for now...
+    glb.changeActor(':DAWO-APP:');
     //TODO  set some field values
     buf.writeln('---  DawoApp buffer output initialized  ---');
 
@@ -108,7 +102,7 @@ class DawoApp extends BaseStruct {
 
   ///  #run-like method
   ///  return:  Map<String, StringBuffer> outMapBuffers
-  Map roll() {
+  Map<String, StringBuffer> roll() {
     dev.admNotes.add('>>  dawo_app is rolling  >>');
     dev.buildNotes();
     buf.writeln('DawoApp::roll    $infoS   :: roll engaged ');
@@ -126,9 +120,10 @@ class DawoApp extends BaseStruct {
 
   ///  roll missions in missionL AND every chore in them
   void appRollMissions(String caller) {
-    print('\n ************ app rollMissions  C: $caller *****************');
+    String _msg = '\n ************ app rollMissions  C: $caller ***************';
+    flowC('$_msg', true);
     // roll BLib-class (mission) actually List of missions!
-    print('\n  ***  DAWO-APP  MISSIONS   ***  \n');
+    flowC('\n  ***  DAWO-APP  MISSIONS   ***  \n', true);
     buildMissions('C:dawoApp ');
 
     helsinkiMission.report('C:dawoApp-RM');
@@ -143,7 +138,7 @@ class DawoApp extends BaseStruct {
 
   ///  calling base>_lib commonStream, elementary Stream example
   void rollStream() {
-    print('\n--- :stream:beg dawoApp rollStream started     ---');
+    flowC('\n--- :stream:beg dawoApp rollStream started     ---', true);
     // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     commonStream('dawoApp', [agenda, msg, develop, version], 'appListener');
@@ -153,6 +148,9 @@ class DawoApp extends BaseStruct {
   ///  Show method to be developed further.
   void show() {
     print(buf);
+    print('------------------------');
+    print(outTr);
+
   }
 
   ///  presentation method
@@ -220,5 +218,47 @@ Map<String, String> dawo003 = {
   'started': '15.7.2013   hkl  ',
   'purpose': 'Education, Learning  '
 };
+
+///  Calling print/print-to-buffer method.
+///  Getting local variables; Actor and Buffer right,
+void flowC(String msg, bool p){
+  ///  call flowServe with #LOCAL variables
+  flowServe(':DAWO-APP:', outTr  , msg, p);
+}
+
+///  to print outPutBuffers
+void printBuffers() {
+  print('\n .......  dawoApp outBuffers  ............................');
+  print(outHeader);
+  print('.. outHeader  .................................');
+
+  print(outTl);
+  print('.. outTl .................................');
+
+  print(outTMid);
+  print('.. outTMid .................................');
+
+  print(outTr);
+  print('..  outTr  .................................');
+
+  print(outMTop);
+  print('.. outMTop  .................................');
+
+  print(outMid);
+  print('..  outMid  .................................');
+
+  print(outMBot);
+  print('..  outMBot  .................................');
+
+  print(outBl);
+  print('..  outBl  .................................');
+
+  print(outBr);
+  print('..  outBr  .................................');
+
+  print(outFooter);
+  print('..  outFooter  .................................');
+  print('.......  dawoApp outBuffers  done  ...................... \n');
+}
 
 //

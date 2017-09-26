@@ -72,6 +72,9 @@ class CommonChore extends BaseStruct {
 
   ///  Method for setting class field values
   void init() {
+    String __name = name.toUpperCase();
+    String _name = ':$__name :';
+    glb.changeActor(_name);
     buf.writeln('---  Chore buffer output initialized  ---');
 
     //  set fields values
@@ -80,17 +83,18 @@ class CommonChore extends BaseStruct {
 
   ///  method for setting class in working condition
   void build() {
-    print('----------------------  chore $name build  ----------------------');
+    String msg = '-------------------  chore $name build  ------------------';
+    flowC(msg, true);  //  call to print / buffer function
 
     offB = false; //  off-state ends
     onB = true; //   app is in on
     buf.writeln('build for chore:  $name  : done');
-    print('-----------------    chore build  done --------------------');
+    flowC('-----------------    chore build  done --------------------', true);
   }
 
   ///  #run-like method
   void roll() {
-    print('---  ch roll  -----');
+    flowC('---  ch roll  -----', true);
     String _s = 'Chore::    $infoS   :: roll engaged ';
     buf.writeln(_s);
 
@@ -113,7 +117,7 @@ class CommonChore extends BaseStruct {
     show();
     done();
     //  code here
-    print('---  ch roll  done -----');
+    flowC('---  ch roll  done -----', true);
   }
 
   ///  individual operations are done here.
@@ -154,7 +158,8 @@ class CommonChore extends BaseStruct {
     //  code here
     buf.write('---  Chore buffer output app: done  ---');
     print(buf);
-    buf.clear(); //  empty buffer
+    buf.clear(); //  empty
+    flowC('----  chore.done    ok   -------  ', false);
   }
 
   ///  for to test global command in #op
@@ -166,6 +171,13 @@ class CommonChore extends BaseStruct {
   CommonChore(this.name, this.infoS);
 }
 
+///  Calling print/print-to-buffer method.
+///  Getting local variables; Actor and Buffer right,
+void flowC(String msg, bool p){
+  ///  call flowServe with #LOCAL variables
+  flowServe(':CHORE:', outBr  , msg, p);
+}
+
 //---------------------------------------------------------------
 ///  assume that Chore needs outside-activity to organize all-Chore's
 ///  some elementary: "execute-in-every-user-command-if-flagged" ideas
@@ -174,18 +186,18 @@ class CommonChore extends BaseStruct {
 ///  PLAN   small checks, updates, msg:s, notes aso.
 ///  But only, if marked in   "flow - chart"
 void topAll() {
-  print('these   W O R K S   are executed in every cycle');
+  flowC('these   W O R K S   are executed in every cycle', true);
 }
 
 /// USAGE:    execution is meant to be avoided.. as long as possible
 void underAll() {
   // not nice name..
-  print('These are executed ONLY in last occasion');
+  flowC('These are executed ONLY in last occasion', true);
 }
 
 ///  USAGE:    run   occasionally / timely, in sidebar
 void sideAll() {
-  print('executed occasionally in sidebar..');
+  flowC('executed occasionally in sidebar..', true);
 }
 
 //------------------------------------------------------------------------

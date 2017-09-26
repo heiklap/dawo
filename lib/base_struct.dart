@@ -10,6 +10,19 @@ library base_struct;
 
 String baseStructMotto = 'Base rules for building classes';
 
+///  10 StringBuffers named for output to screen areas
+StringBuffer outHeader = new StringBuffer();
+StringBuffer outTl = new StringBuffer(); //  rumba
+StringBuffer outTMid = new StringBuffer();
+StringBuffer outTr = new StringBuffer(); //  appRoll
+StringBuffer outMTop = new StringBuffer(); //  helsinki
+StringBuffer outMid = new StringBuffer(); //  dartlang
+StringBuffer outMBot = new StringBuffer(); //  n-parks
+StringBuffer outBl = new StringBuffer();
+StringBuffer outBr = new StringBuffer();  //  chore
+StringBuffer outFooter = new StringBuffer();
+
+
 ///  base class for most dawo classes
 ///  DawoApp, BLib, Chore, Flag  use this
 abstract class BaseStruct {

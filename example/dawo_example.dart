@@ -84,6 +84,8 @@ main() {
   //  daw... ok
 
   //  render   //  there are 5 render-functions
+
+  printBuffers();
 }
 
 void playDawoSrcDart() {}

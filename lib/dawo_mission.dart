@@ -6,7 +6,9 @@
 
 library dawo_mission;
 
-import 'package:dawo/dawo_app.dart';
+//  import 'package:dawo/dawo_app.dart';  //  not used
+import 'package:dawo/base_struct.dart';
+import 'package:dawo/base_lib.dart';
 import 'package:dawo/dawlib_chore.dart';
 import 'package:dawo/dawo_tools.dart';
 import 'clay/clay_roll.dart';
@@ -23,7 +25,7 @@ List<Mission> missionL = [];
 
 ///  to publish name in scope for testing
 void helloMission() {
-  print('-- hello this is mission file and library  ---');
+  flowC('-- Somebody call: hello this is mission file and library  ---', true);
 }
 
 ///  Mission avoids consciously using Chores clear and handy structure, for to
@@ -46,7 +48,7 @@ class Mission {
   CommonChore actChr = new CommonChore('ActChr', 'Yes, I act');
   CommonChore peopleChr = new CommonChore('PeopleChr', 'Get social!');
   CommonChore placeChr = new CommonChore('PlaceChr', 'Places I will remember');
-  CommonChore seasonChr = new CommonChore('SeasonChr', 'Seasons difer!');
+  CommonChore seasonChr = new CommonChore('SeasonChr', 'Seasons differ!');
   CommonChore showChr = new CommonChore('ShowChr', 'Yes, I show');
 
   /// Changed clayMap to be more complicated:
@@ -121,8 +123,8 @@ class Mission {
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
     //
-    print('----------  building mission:  $name   --------------------');
-    print('------  construct default Chores. For: $name   ---------------');
+    flowC('----------  building mission:  $name   --------------------', true);
+    flowC('------  construct default Chores. For: $name   -----------', true);
 
     ///  Should use instance, that is created inside THIS mission instance.
     learnChr.build();
@@ -226,6 +228,14 @@ class Mission {
 
 } // ---------------------------------------   end class Mission
 
+///  Calling print/print-to-buffer method.
+///  Getting local variables; Actor and Buffer right,
+///  Every library / actor has its own flowC function
+void flowC(String msg, bool p){
+  ///  call flowServe with #LOCAL variables
+  flowServe(':MISSION:', outTMid  , msg, p);
+}
+
 ///  create Mission instances
 var helsinkiMission = new Mission('Helsinki-mission', 'Presenting Helsinki');
 var dartlangMission = new Mission('Dartlang mission', 'Learn dartlang');
@@ -238,7 +248,7 @@ var nationalParksMission = new Mission(
 
 ///  add clay maps to missions
 void buildMissions(String caller) {
-  print('----------build Missions, caller: $caller -------------');
+  flowC('----------build Missions, caller: $caller -------------', true );
   helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
   outMTop.writeln('outMtop-buildMissions:helsinki');
 
@@ -273,7 +283,7 @@ void buildMissions(String caller) {
   }
   print('------  missionL forEach print-choreL   done ----------');
 
-  print('-------------  missionL.forEach.build  ------------------');
+  flowC('-------------  missionL.forEach.build  ------------------', true);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
   helsinkiMission.build();
   dartlangMission.build();
@@ -281,7 +291,7 @@ void buildMissions(String caller) {
   myTimeMission.build();
   nationalParksMission.build();
 //  };
-  print('-------------  missionL.forEach.build done ---------------');
+  flowC('-------------  missionL.forEach.build done ---------------', true);
   for (var x in missionL) {
     String _misName = x.name;
     print('mis-name:  $_misName ');
@@ -303,5 +313,5 @@ void renderMission() {
   missionR.opOn = true;
   helsinkiMission.missionR.toChore();
   missionR.rollCount;
-  print('--  mission: $missionR.name : render done  --');
+  flowC('--  mission: $missionR.name : render done  --', true);
 }
