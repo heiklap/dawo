@@ -1,19 +1,19 @@
 ///  ##  dawo : some simple collection data, mainly Sets.
-///  dawo version:  0.0.3  25.9.2017
-///  ready-state for 0.0.4  0 %
+///  dawo version:  0.0.3  25.9.2017.    ready-state for 0.0.4  0 %
+///
 ///  Hist: hkl  22.5.2014  0.0.1  dawo/lib
 ///  No connection to dawo-app for now, but keeping ideas and data for them.
 ///  NEXT version: Add SplayTreeSet,  and  LinkedHashSet
-///
+///  devNote:  Connect something from these to dawo.
 
 //
 
 library dawlib_coll;
 
-///  mediating this value to getter, that counts sum of these
+///  Mediating this value to getter, that counts sum of these.
 num dawlibCollReadiness = 93;
 
-///  method to print a map
+///  howTo: howToMap:  Common method to print a map.  HowToPrintMap:
 void dawLibCollOperationMapPrint(Map thisMap) {
   thisMap.forEach((k, v) {
     print('$k, $v');
@@ -26,7 +26,7 @@ void dawLibCollOperationMapPrint(Map thisMap) {
 //  info('next: adding map values to list:  ');
 //  dartMap.forEach((k, v) { myValuesList.add(v); });
 
-///  initializing some sets
+///  Initializing some sets.
 var goalsS = new Set();
 var plansS = new Set();
 var teamsS = new Set();
@@ -76,7 +76,7 @@ void makeTemps() {
   tempsS.forEach(print);
 }
 
-///  rendering and presenting sets
+///  Rendering and presenting sets.
 void makeAllSets() {
   print('---------------------------------------- dawo sets, goals:');
   makeGoals();

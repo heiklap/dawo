@@ -5,15 +5,17 @@
 /// dawo version:  0.0.3  25.9.2017  :  Ready-state for 0.0.4  0 %
 ///
 /// Hist: hkl  22.5.2014  0.0.1  dawo/lib, in pub and GitHub
+// devNote: Dawo, started dev,  nothing special.
 
 library dawo;
 
-//  if using dawo right here:
+//  If you are using dawo right here:
 //  import 'dawo_app.dart';
 
 export 'package:dawo/dawo_src.dart';
 
-///  buffer also outside class, for testing and adding visibility
+///  Buffer also outside class, for testing and adding visibility.
 var dawoBuf = new StringBuffer();
 
 // TODO: Export any libraries intended for clients of this package.
+

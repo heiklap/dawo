@@ -3,14 +3,14 @@
 ///   dawo version:  0.0.3  25.9.2017
 /// * READY-STATE:  0%            // for 0.0.4 version
 /// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  base_struct.dart
-///
+///  devNote:  No notes.
 //
 
 library base_struct;
 
 String baseStructMotto = 'Base rules for building classes';
 
-///  10 StringBuffers named for output to screen areas
+///  10 StringBuffers named for output to screen areas.
 StringBuffer outHeader = new StringBuffer();
 StringBuffer outTl = new StringBuffer(); //  rumba
 StringBuffer outTMid = new StringBuffer();
@@ -38,29 +38,29 @@ abstract class BaseStruct {
   bool pauseB;
   bool doneB;
 
-  //  TODO  add fields for incoming and outgoing data
+  //  TODO  Add fields for incoming and outgoing data.
   //  var clayIn;
   //  var clayOut;  //  like screen part;  topLeft aso.
 
-  ///  Method for setting class field values
+  ///  Method for setting class field values.
   ///  TODO  add parameters
   void init();
 
-  ///  method for setting class in working condition
+  ///  Method for setting class in working condition.
   void build();
 
-  ///  #run-like method
+  ///  #run-like method, it my have sub-methods; do, run.
   void roll();
 
-  ///  presentation method
+  ///  Presentation method.
   void show();
 
-  ///  close method
+  ///  Close method.
   void done();
 }
 
-///  every app-mission-chore creates new Placard for EVERY new operation (?)
-///  or at-least gives it as parameter, to functions
+///  Every app-mission-chore creates new Placard for EVERY new operation (?)
+///  or at-least gives it as parameter, to functions.
 abstract class BasePlacard {
   //  Order: #actor #sender #receiver #command #msg
   String actor;

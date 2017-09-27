@@ -1,7 +1,7 @@
 ///  ##  connecting  ( as #client's) app - mission - chore together,  mediating them
 ///   copyright  Heikki K. Lappalainen
-///   dawo version:  0.0.3  25.9.2017
-/// * READY-STATE:  0 %  for  0.0.4 version
+///   dawo version:  0.0.3  25.9.2017  * READY-STATE:  0 %  for  0.0.4 version
+///
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  dawo_connector.dart
 /// #name:  connector ..is not nice. change to: ______ ??
 /// Connector is in deeply imaginary level of construction. We know, that app -
@@ -12,21 +12,22 @@
 //  * Find common interests, i've been here.. follow-me, give-take
 //  NOTE:  intentional error here now in class (constructor); how doe's it look?
 //          Analyzer / dartdoc do not allow this, so correct it.
+//  devNote: tracking begins.
 
 library connector;
 
 import 'package:dawo/base_struct.dart';
 
-///  buffering out-data ( #clayOut )
+///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = new StringBuffer();
 
-///  this other motto is just for to get more visibility to word: connector
+///  This other motto is just for to get more visibility to word: connector.
 String connectorMotto =
     'connecting app - mission - chore together, mediating them';
 
 ///  ***********************************************************************
 /*      connector:  very weak idea, how to accomplish this. 10 %
-        Not much of this functionality is yet done
+        Not much of this functionality is yet done.
         
         Name:   #connector is not the right one. Not nice.
         #clients: = app - mission's - chore's
@@ -76,16 +77,16 @@ class Connector extends BaseStruct {
   String name = 'connector class';
   String info = 'connecting app - mission - chore together, mediating them';
   String motto = 'do my job, connector, mediates';
-  // buffer inside class for output
+  // Buffer inside class for output.
   StringBuffer buf = new StringBuffer();
 
-  ///  controlling connectors state, working-condition-state values
+  ///  Controlling connectors state, working-condition-state values.
   bool offB = true;
   bool onB = false;
   bool pauseB;
   bool doneB = false;
 
-  ///  something turns around this
+  ///  #New: #Gear Something turns around this.
   var pivot;
 
   ///  just an idea.. PING
@@ -96,33 +97,33 @@ class Connector extends BaseStruct {
   ///  get / collect bindings
   Map<String, Map<dynamic, dynamic>> bindingM = {};
 
-  //  connect something to other. One more empty idea
+  //  Connect something to other. One more empty idea:
   String binding(var customer, var thing) {
-    //  have some ideas?
+    //  Idea: Have some ideas?
     //  add / find from bindingM Map
     return 'binding: #one to #second';
   }
 
   ///  Just copy methods body from other class.  lol
-  ///  Method for setting class field values to their run-time-values
+  ///  Method for setting class field values to their run-time-values.
   void init() {
     buf.writeln('---  Connector buffer output initialized  ---');
 
-    //  set fields values
+    //  Set fields values.
     buf.writeln('init done');
   }
 
-  ///  method for setting class in working condition
+  ///  Method for setting class in working condition.
   void build() {
     offB = false; //  off-state ends
-    onB = true; //   Connector is in on
+    onB = true; //   Connector is in on-state.
     buf.writeln('build done');
   }
 
   ///  #run / roll method
   void roll() {
     buf.writeln('Connector::    $info   :: roll engaged ');
-    init(); //  calling init and build methods in this class
+    init(); //  calling init and build methods in this class.
     build();
     //  code for roll
     //  ***   code missing, see on top of this file
@@ -132,13 +133,13 @@ class Connector extends BaseStruct {
     //  code here
   }
 
-  ///  Solve one unambiguous textual find-decide problem
+  ///  Solve one unambiguous textual find-decide problem.
   String touche(String sender, String key, String source) {
     //  TODO problem
     return 'solved:toucheStr: ';
   }
 
-  ///  Search big amount of #clay data for #customer:s key / order
+  ///  Search big amount of #clay data for #customer:s key / order.
   ///  .. solve textual problems based on keywords / search in textual data
   String solver(String sender, String key, String source) {
     //  TODO problem
@@ -146,7 +147,7 @@ class Connector extends BaseStruct {
   }
 
   ///  TODO:  connector one-time calls must have parameters;
-  ///  sketching one-time commands, coming from clients
+  ///  Sketching one-time commands, coming from clients.
   void obey(String sender, receiver, baton, msg) {
     /// #baton  to carry only-one-can-have-at-a-same-time magic thing
     //  TODO  code, badly missing
@@ -154,7 +155,7 @@ class Connector extends BaseStruct {
   }
   //  *****************************************************************
 
-  ///  presentation method
+  ///  Presentation method.
   void show() {
     print(buf);
   }
@@ -172,10 +173,10 @@ class Connector extends BaseStruct {
   Connector(this.name, this.info);
 }
 
-///  form almost same class: but for collecting data
-///  would like to extend this from Connector: class, but it do not have
+///  Construct almost same class: but for collecting data.
+///  Would like to extend this from Connector: class, but it do not have
 ///  a none argument constructor.
-///  but Connector do not have
+///  ..  but Connector do not have  ..
 ///  NOTE  howTo extend class that have constructor with arguments?
 class Collector {
   String name;
@@ -183,11 +184,11 @@ class Collector {
 
   Collector(this.name, this.info);
 
-  ///  wanna easy-extend this, but can not :(
+  ///  howTo: constructor:  Wanna easy-extend this, but can not :(
   /// Error: the superclass Collector does'nt have a zero argument constructor
 }
 
-///  usual render, presentation, function
+///  Usual render, presentation, function.
 void renderConnector() {
   //  var connector = new Connector();
   //  or: shorthand

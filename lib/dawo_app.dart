@@ -5,7 +5,7 @@
 ///  dawo version:  0.0.3  25.9.2017
 /// * ReadyState:   0 %  for version 0.0.4   in GitHub  yes
 /// * hkl  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
-///  Almost all parts changed to libraries
+///  devNote: starting.
 
 library dawo_app.dart;
 
@@ -14,17 +14,16 @@ import 'base_lib.dart';
 import 'dawo_dev.dart';
 import 'dawo_mission.dart';
 
-// ignore: unused_field for those wondering
+// ignore: unused_field for those wondering.
 
-///  getter practice
+///  Getter practice.
 num dawoAppReadiness = 95; //  changed: 2.5.2015
 
-///  buffer also outside class, for testing and adding visibility
+///  Buffer also outside class, for testing and adding visibility.
 var appBuf = new StringBuffer();
 
 
-
-///  Just for testing private variable inside a library.
+///  Test: Just for testing private variable inside a library.
 String _privacyLibraryTest = 'Testing library / part privacy';
 
 ///  Every important dawo Class extends BaseStruct abstract class.
@@ -39,13 +38,13 @@ class DawoApp extends BaseStruct {
   ///  must initialize StringBuffer here
   StringBuffer buf = new StringBuffer();
 
-  ///  controlling app state, working-condition-state values
+  ///  Controlling app state, working-condition-state values.
   bool offB = true;
   bool onB = false;
   bool pauseB;
   bool doneB = false;
 
-  ///  organize out-buffers to Map for return
+  ///  Organize out-buffers to Map for return to package users.
   Map<String, StringBuffer> outMapBuffers = {
     'outHeader': outHeader,
     'outTl': outTl,
@@ -59,7 +58,7 @@ class DawoApp extends BaseStruct {
     'outFooter': outFooter
   };
 
-  ///  app-specified fields
+  ///  App-specified fields.
   String agenda = 'dawoApp rolls missioms';
   String msg = 'dawoApp-Message..';
   String develop = 'Under development.. 0 % to:  0.0.4';
@@ -70,22 +69,22 @@ class DawoApp extends BaseStruct {
   String thisVersion; //  users announce their version of dawo
   String latestChange = '23.3.2017. th.12.15';
 
-  ///  initialize class values to beginning state
+  ///  Initialize class values to beginning state.
   void init() {
     //  TODO  Actor:  only one actor for now...
     glb.changeActor(':DAWO-APP:');
-    //TODO  set some field values
+    //  TODO  Set some field values.
     buf.writeln('---  DawoApp buffer output initialized  ---');
 
-    //  set fields values
+    //  Set fields values.
     buf.writeln('init done');
   }
 
-  ///  method for setting class in working condition
+  ///  Method for setting class in working condition.
   void build() {
     offB = false; //  off-state ends
     onB = true; //   app is in on
-    /// write something to all out-buffers
+    /// Write something #WakeUpSleepyHead to all out-buffers.
     outHeader.writeln('outHeader-dawoApp-build:');
     outTl.writeln('outTl-dawoApp-build:');
     outTMid.writeln('outMid-dawoApp-build:');
@@ -108,7 +107,7 @@ class DawoApp extends BaseStruct {
     buf.writeln('DawoApp::roll    $infoS   :: roll engaged ');
     init(); //  calling init and build methods in this class
     build();
-    //  code for roll
+    //  Add code for roll.
 
     appRollMissions('C:DawoApp-roll ');
     rollStream();
@@ -118,7 +117,7 @@ class DawoApp extends BaseStruct {
     return outMapBuffers;
   }
 
-  ///  roll missions in missionL AND every chore in them
+  ///  Roll missions in missionL AND every chore in them.
   void appRollMissions(String caller) {
     String _msg = '\n ************ app rollMissions  C: $caller ***************';
     flowC('$_msg', true);
@@ -145,7 +144,7 @@ class DawoApp extends BaseStruct {
     print('\n--- :stream:end dawoApp rollStream done     ---');
   }
 
-  ///  Show method to be developed further.
+  ///  Show-method to be developed further.
   void show() {
     print(buf);
     print('------------------------');
@@ -153,7 +152,7 @@ class DawoApp extends BaseStruct {
 
   }
 
-  ///  presentation method
+  ///  After presentation method; done, if #doneB.
   void done() {
     print('DawoApp::done    $infoS   :: engaged ');
     outTl.writeln('outTl-dawoApp-done:');
@@ -174,7 +173,7 @@ class DawoApp extends BaseStruct {
   DawoApp(this.name, this.agenda);
 } //  ----------  class DawoApp
 
-/// models and sample maps ; for later usage and playing
+/// Models and sample maps ; for later usage and playing.
 Map<String, String> appMap = {
   'name': 'dawo App',
   'infoS': 'dartang pub package for education',
@@ -201,7 +200,7 @@ Map<String, String> appPhaseM = {
   'stopped': '0'
 };
 
-/// map to hold development status of this app / version
+/// Map to hold development status of this app / version.
 Map<String, String> dawo003 = {
   'devStateNum': '99% to  0.0.3',
   'devSituation': 'Ready to Publish',
@@ -220,13 +219,13 @@ Map<String, String> dawo003 = {
 };
 
 ///  Calling print/print-to-buffer method.
-///  Getting local variables; Actor and Buffer right,
+///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p){
   ///  call flowServe with #LOCAL variables
   flowServe(':DAWO-APP:', outTr  , msg, p);
 }
 
-///  to print outPutBuffers
+///  To print outPutBuffers.
 void printBuffers() {
   print('\n .......  dawoApp outBuffers  ............................');
   print(outHeader);

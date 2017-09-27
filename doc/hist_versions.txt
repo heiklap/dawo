@@ -16,7 +16,7 @@ Theme:  Statistics, output, variation, versatility.
 To be published:  appr. 15.10.2017
 
           *  *  *   HEAD   *  *  *
-4.0 ____  Flow-method to regulate events / output in every control-flow operation.
+4.0 DON_  Flow-method to regulate events / output in every control-flow operation.
 
 4.b ____  Use async to catch some Stream / future to normal flow.
           Use async, to gather devNotes, and present them at the end of test_output.

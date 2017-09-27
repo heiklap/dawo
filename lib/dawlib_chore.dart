@@ -1,4 +1,6 @@
 ///  ##  Chore for organizing work flow.  dawo version:  0.0.3  25.9.2017
+///  Ready-state:   0%  for 0.0.4 In  GitHub:   yes   updated  22.04.2015
+///
 ///  Primary functionality: get notes-list aso data from input/clay
 ///  incoming data (clayIn) comes from customer. coders OR sample aso.
 ///  Controlling work-flow and processes. Wrapper round of your small piece of
@@ -8,15 +10,15 @@
 ///   out of dawo with it's own wings. Here will be small version of it.
 ///
 ///  hkl  6.5.2014  0.0.1  dawo/lib   Common   "w o r k  flow"  methods for dawo
-///  Ready-state:   0%  for 0.0.4 In  GitHub:   yes   updated  22.04.2015///
 ///
-//TODO  chore; dawo can't use chore package. so make a simple plugin. But how?
+///
+//  TODO  chore; dawo can't use chore package. Make a simple plugin. But how?
 
-///  Meant to:   place ALL common  W O R K  procedures here
-///  Automatic-  life-cycle / W O R K / messages and rolling
+///  idea:   Place ALL common  W O R K  procedures here.
+///  Automatic-  life-cycle / W O R K / messages and rolling.
 
-//TODO  chore  build simple plugin or usage-case for chore
-//TODO  chore  NEXT, make  Chr -class.??
+//  TODO  chore  Build simple plugin or usage-case for chore.
+//  TODO  chore  NEXT, make  Chr -class.??
 
 library dawlib_chore;
 
@@ -28,40 +30,40 @@ import 'clay/clay_roll.dart';
 ///  using - getters -example
 num dawLibWorkReadiness = 94; // for version  0.0.1
 
-///  buffer also outside class, for testing and adding visibility
+///  Buffer also outside class, for testing and adding visibility.
 var choreBuf = new StringBuffer();
 
-///  generic List to keep all Chores
+///  Generic List to keep all Chores.
 List<CommonChore> choreL = [];
 
-///  TODO  devNotes ==   #chore, that is always in dawoApp
-//
+///  TODO  devNote: ==   #chore, that is always in dawoApp
+///  So dawoApp uses chore to maintain it's work-projects.
 
-///   initializing of chore system. Update dev-class
+///   Initializing of chore system. Update dev-class.
 void initChore() {
   dev.devNotes
     ..add('make COMMON  init-module to EVVVERY  lib part')
     ..add('This could be for NOTES like W O R K s to be done');
-
+  //  devNote:
   dev.admNotes.add('NO: for  big   W O R K -lists');
 }
 
-///  every important dawo class extending now base struct class
+///  Every important dawo class is extending BaseStruct class.
 class CommonChore extends BaseStruct {
   String name = 'Common Chore class  ';
   String infoS = 'Chore resolves  W O R K  flow and control ..';
-  //  do not initialize values; just study, what this class got..
+  //  Do not initialize values; just study, what this class got.
   String motto = 'chore handling small jobs';
 
   StringBuffer buf = new StringBuffer();
 
-  ///  controlling chores state, working-condition-state values
+  ///  Controlling chores state, working-condition-state values.
   bool offB;
   bool onB;
   bool pauseB;
   bool doneB;
 
-  ///  testing placardM inside chore
+  ///  Testing placardM inside chore.
   Map<String, String> placardM = {
     'actor': 'Chore',
     'sender': 'Chore instance',
@@ -70,21 +72,21 @@ class CommonChore extends BaseStruct {
     'msg': 'Ch-msg:',
   };
 
-  ///  Method for setting class field values
+  ///  Method for setting class field values.
   void init() {
     String __name = name.toUpperCase();
     String _name = ':$__name :';
     glb.changeActor(_name);
     buf.writeln('---  Chore buffer output initialized  ---');
 
-    //  set fields values
+    //  Set-fields values done.
     buf.writeln('init done');
   }
 
-  ///  method for setting class in working condition
+  ///  Method for setting class in working condition.
   void build() {
     String msg = '-------------------  chore $name build  ------------------';
-    flowC(msg, true);  //  call to print / buffer function
+    flowC(msg, true);  //  Call to print / buffer function.
 
     offB = false; //  off-state ends
     onB = true; //   app is in on
@@ -98,7 +100,7 @@ class CommonChore extends BaseStruct {
     String _s = 'Chore::    $infoS   :: roll engaged ';
     buf.writeln(_s);
 
-    init(); //  calling init and build methods in this class
+    init(); //  Calling init and build methods in this class.
     build();
     //  code for roll
     //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
@@ -112,7 +114,7 @@ class CommonChore extends BaseStruct {
     }
 
     //  run #op, for single operation
-    op(placardM); //  actually map is not yet used there
+    op(placardM); //  Actually map is yet not used there.
     //  loop
     show();
     done();
@@ -120,28 +122,28 @@ class CommonChore extends BaseStruct {
     flowC('---  ch roll  done -----', true);
   }
 
-  ///  individual operations are done here.
-  ///  common operation with placard-Map  is in base_lib
+  ///  Individual operations are done here.
+  ///  Common operation with placard-Map  is in base_lib.
   String op(Map<String, String> _pcM) {
-    ///NOTE  placardM is not used TODO
+    ///  NOTE  placardM is not used.  TODO
     String _retStr;
-    // make placard in shape
+    ///  Make placard in shape.
     ///  calls commonProcess with #placard
     ///  TODO  operation class instance
-    ///  TODO  add eventually constructor
+    ///  TODO  Constructor: add eventually constructor
     ///  order: #actor #sender #receiver #command #msg
     var chOpClass =
         new GlobalOpClass(name, 'chore', 'rec:test', helloChore, 'all ok');
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
     _retBuf.writeln('_retBuf in op method is ready...');
-    ///  mediate command to common process (in base_lib) with info from chore
+    ///  Mediate command to common process (in base_lib) with info from chore.
     commonProcess(chOpClass, helloChore); //  with actual command
 
     return _retStr;
   }
 
-  ///  presentation method
+  ///  Usual presentation method.
   void show() {
     print(buf);
   }
@@ -162,7 +164,7 @@ class CommonChore extends BaseStruct {
     flowC('----  chore.done    ok   -------  ', false);
   }
 
-  ///  for to test global command in #op
+  ///  For to test global command in #op
   void helloChore() {
     print('   **  hello from command Chore    ***');
   }
@@ -172,16 +174,16 @@ class CommonChore extends BaseStruct {
 }
 
 ///  Calling print/print-to-buffer method.
-///  Getting local variables; Actor and Buffer right,
+///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p){
-  ///  call flowServe with #LOCAL variables
+  ///  Call flowServe with #LOCAL variables.
   flowServe(':CHORE:', outBr  , msg, p);
 }
 
 //---------------------------------------------------------------
-///  assume that Chore needs outside-activity to organize all-Chore's
-///  some elementary: "execute-in-every-user-command-if-flagged" ideas
-///  sometimes these X 10 objects are executed in EVERY occasion / keystroke..
+///  Assume that Chore needs outside-activity to organize all-Chore's.
+///  Some elementary: "execute-in-every-user-command-if-flagged" ideas.
+///  Sometimes these X 10 objects are executed in EVERY occasion / keystroke..
 ///    * * *   so they ARE outside of Chore class  * * *
 ///  PLAN   small checks, updates, msg:s, notes aso.
 ///  But only, if marked in   "flow - chart"
@@ -189,13 +191,13 @@ void topAll() {
   flowC('these   W O R K S   are executed in every cycle', true);
 }
 
-/// USAGE:    execution is meant to be avoided.. as long as possible
+/// USAGE:    Execution is meant to be avoided.. as long as possible.
 void underAll() {
-  // not nice name..
+  // Name: not nice name..
   flowC('These are executed ONLY in last occasion', true);
 }
 
-///  USAGE:    run   occasionally / timely, in sidebar
+///  USAGE:    Run occasionally / timely, in sidebar.
 void sideAll() {
   flowC('executed occasionally in sidebar..', true);
 }
@@ -205,8 +207,8 @@ void sideAll() {
 void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
   print('these are executed in beginning of W O R K  ');
 
-  ///  rollAble and signalAble are separate properties of chore.
-  ///  roller(rollAble)   takes care of workFlow
+  ///  ABLE: rollAble and signalAble are separate properties of chore.
+  ///  roller(rollAble)   takes care of workFlow.
   ///  zSignal (signalAble)  makes log / list
   ///  yChore is actual  w o r k   code
 }
