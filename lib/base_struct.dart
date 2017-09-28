@@ -19,9 +19,8 @@ StringBuffer outMTop = new StringBuffer(); //  helsinki
 StringBuffer outMid = new StringBuffer(); //  dartlang
 StringBuffer outMBot = new StringBuffer(); //  n-parks
 StringBuffer outBl = new StringBuffer();
-StringBuffer outBr = new StringBuffer();  //  chore
+StringBuffer outBr = new StringBuffer(); //  chore
 StringBuffer outFooter = new StringBuffer();
-
 
 ///  base class for most dawo classes
 ///  DawoApp, BLib, Chore, Flag  use this
@@ -31,8 +30,8 @@ abstract class BaseStruct {
   String motto;
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal;  //  like:  ":DAWO-APP:";
-  String indent;  // like:  "      ";  3-5-7 empty marks or something visible.
+  String seal; //  like:  ":DAWO-APP:";
+  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
   StringBuffer buf;
 

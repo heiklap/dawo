@@ -44,8 +44,6 @@ void helloDawo() {
   print('   **  hello from dawo app /base_lib    ***');
 }
 
-
-
 /// ..  or is it class BasePlacard ?
 ///  Placard: Common form of information, that is in hand for every operation.
 ///  Model for #id-data in common handshake method.
@@ -57,19 +55,16 @@ Map<String, String> placardM = {
   'msg': '',
 };
 
-
 ///  Global class. in early dev state
 class GlobalClass {
-
   //  Actor: String actor;  //  too important to be a String
   //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
   String actor = ':UNKNOWN: - :UNUSED:'; //  too important to be a String
-  void changeActor(String act){
+  void changeActor(String act) {
     actor = act;
   }
-    //  code
-  }
-
+  //  code
+}
 
 var glb = new GlobalClass();
 
@@ -134,7 +129,8 @@ class GlobalOpClass {
 }
 
 //  Just testing Create instance as glbOp.
-var glbOp = new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', helloDawo , 'msg');
+var glbOp =
+    new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', helloDawo, 'msg');
 
 //  TODO  create some "technical" base_classes for below vars and functions.
 
@@ -280,9 +276,8 @@ void commonShow() {
 }
 
 ///  Usual presentation / play function.
-StringBuffer  renderBaseLib() {
-  print(
-      '\n ================= render base llib ========================');
+StringBuffer renderBaseLib() {
+  print('\n ================= render base llib ========================');
   StringBuffer _retBuf;
 
   /// And instance;

@@ -152,7 +152,7 @@ class Mission {
 
   /// devNote:  function, that OPENS something.  so rename; init
   bool opInit(int openCount, var openThis) {
-    print('-->---->--  oInit -->---->--');
+    print('-->---->--  opInit -->---->--');
 
     bool _initB = false;
     //  code to initialize variables in system
@@ -161,7 +161,7 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    print('-->---->--  oOpen -->---->--');
+    print('-->---->--  opOpen -->---->--');
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
@@ -169,21 +169,21 @@ class Mission {
 
   ///  Start developing operation roll function
   int opRoll(int rollCount, Function autoRollFunc) {
-    print('-->---->--  oRoll -->---->--');
+    print('-->---->--  opRoll -->---->--');
     int done = 0;
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
       done++;
       autoRollFunc();
     }
-    print('--<----<--  oRoll done c: $done --<----<--');
+    print('--<----<--  opRoll done c: $done --<----<--');
     return done;
   }
 
   /// devNote:  function, that OPENS something.  so rename; init
   /// idea?
   int opClose(int openCount, Function openThis) {
-    print('--<----<-  oClose --<----<-');
+    print('--<----<-  opClose --<----<-');
 
     int _openCount = openCount;
     openThis(); // As I recall, parameter-function goes like this.

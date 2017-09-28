@@ -56,9 +56,8 @@ class CommonChore extends BaseStruct {
   String motto = 'chore handling small jobs';
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal;  //  like:  ":DAWO-APP:";
-  String indent;  // like:  "      ";  3-5-7 empty marks or something visible.
-
+  String seal; //  like:  ":DAWO-APP:";
+  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
   StringBuffer buf = new StringBuffer();
 
@@ -79,19 +78,20 @@ class CommonChore extends BaseStruct {
 
   ///  Method for setting class field values.
   void init() {
+    buf.writeln('-->---->--  init  -->---->--');
     String __name = name.toUpperCase();
     String _name = ':$__name :';
     glb.changeActor(_name);
     buf.writeln('-->---->--  Chore buffer output initialized  -->---->--');
 
     //  Set-fields values done.
-    buf.writeln('-->---->--  init done  -->---->--');
+    buf.writeln('   --<----<--  init done  --<----<--');
   }
 
   ///  Method for setting class in working condition.
   void build() {
     String msg = '-->---->--  chore $name build  -->---->--';
-    flowC(msg, true);  //  Call to print / buffer function.
+    flowC(msg, true); //  Call to print / buffer function.
 
     offB = false; //  off-state ends
     onB = true; //   app is in on
@@ -132,6 +132,7 @@ class CommonChore extends BaseStruct {
   String op(Map<String, String> _pcM) {
     ///  NOTE  placardM is not used.  TODO
     String _retStr;
+
     ///  Make placard in shape.
     ///  calls commonProcess with #placard
     ///  TODO  operation class instance
@@ -142,6 +143,7 @@ class CommonChore extends BaseStruct {
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
     _retBuf.writeln('_retBuf in op method is ready...');
+
     ///  Mediate command to common process (in base_lib) with info from chore.
     commonProcess(chOpClass, helloChore); //  with actual command
 
@@ -180,9 +182,9 @@ class CommonChore extends BaseStruct {
 
 ///  Calling print/print-to-buffer method.
 ///  Getting local variables; Actor and Buffer right.
-void flowC(String msg, bool p){
+void flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
-  flowServe(':CHORE:', outBr  , msg, p);
+  flowServe(':CHORE:', outBr, msg, p);
 }
 
 //---------------------------------------------------------------

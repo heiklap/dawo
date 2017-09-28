@@ -22,7 +22,6 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 ///  Buffer also outside class, for testing and adding visibility.
 var appBuf = new StringBuffer();
 
-
 ///  Test: Just for testing private variable inside a library.
 String _privacyLibraryTest = 'Testing library / part privacy';
 
@@ -33,7 +32,6 @@ class DawoApp extends BaseStruct {
   String actor = ':DAWO-APP:';
   String infoS = 'giving global variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
-
 
   ///  must initialize StringBuffer here
   StringBuffer buf = new StringBuffer();
@@ -119,7 +117,8 @@ class DawoApp extends BaseStruct {
 
   ///  Roll missions in missionL AND every chore in them.
   void appRollMissions(String caller) {
-    String _msg = '\n ************ app rollMissions  C: $caller ***************';
+    String _msg =
+        '\n ************ app rollMissions  C: $caller ***************';
     flowC('$_msg', true);
     // roll BLib-class (mission) actually List of missions!
     flowC('\n  ***  DAWO-APP  MISSIONS   ***  \n', true);
@@ -149,7 +148,6 @@ class DawoApp extends BaseStruct {
     print(buf);
     print('------------------------');
     print(outTr);
-
   }
 
   ///  After presentation method; done, if #doneB.
@@ -220,9 +218,9 @@ Map<String, String> dawo003 = {
 
 ///  Calling print/print-to-buffer method.
 ///  Getting local variables; Actor and Buffer right.
-void flowC(String msg, bool p){
+void flowC(String msg, bool p) {
   ///  call flowServe with #LOCAL variables
-  flowServe(':DAWO-APP:', outTr  , msg, p);
+  flowServe(':DAWO-APP:', outTr, msg, p);
 }
 
 ///  To print outPutBuffers.
