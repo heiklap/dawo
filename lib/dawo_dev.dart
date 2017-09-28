@@ -74,7 +74,7 @@ class Dev {
   }
 
   void showNotes() {
-    print('\n ------  dev.showNotes  ------------------   ');
+    print('\n ------------>>-->>--  dev.showNotes  ------------>>-->>--   ');
     admNotes.forEach(print);
     print(' ');
     devNotes.forEach(print);
@@ -84,7 +84,7 @@ class Dev {
     howToNotes.forEach(print);
     print(' ');
     secNotes.forEach(print);
-    print(' ');
+    print('\n --<<--<<------------  dev.showNotes  --<<--<<------------   ');
   }
 } //  -----  class dev
 
@@ -147,8 +147,9 @@ class DevHelp {
 
   ///  function for to print devTestMap
   void normMapShow() {
-    print(' \n ------- devHelp norms  ------------------------');
+    print(' \n ------------>>-->>-- devHelp norms  ------------>>-->>--');
     normMap.forEach(printSS); //  from dawo_tools.dart
+    print(' \n --<<--<<------------ devHelp norms  --<<--<<------------');
   }
 
 //TODO  teamDev: PLAN:  make all 6 tests use same name with
@@ -218,37 +219,36 @@ class DevHelp {
     //TODO
     //  There is no such getter 'runTimeType' in 'Function'
     //  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
-    print('--------------------------------- Beginning:   $_s');
+    print('------------>>-->>--    Beginning:   $_s');
     print(_sType);
     rf();
-    print('---------------------------------------- End of test');
-    print('');
+    print('--<<--<<------------    End of test  \n');
   }
 
   /// TODO  teamDev Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
   ///  present simple message while testing
   void line(String module) {
-    print('---------------------------------------- Beginning:  $module ');
+    print('------------>>-->>--     Beginning:  $module ');
     print('');
   }
 
   ///  present simple DONE message after all tests are done
   void done(String module) {
-    print('----------  $module ----------------------------------------');
-    print('All tests done  ');
+    print('--<<--<<------------    $module --<<--<<------------');
+    print('All tests done  \n');
   }
 
   ///  notate single test end
   void end(String module) {
-    print('---------------------------------------- End of The:  $module  ');
+    print('--<<--<<------------    End of The:  $module  ');
     print(' ');
   }
 
   ///  notate all tests ended
   void endAll(String module) {
-    print('----------  $module ----------------------------------------');
-    print('All tests ended, back to main.dart   ');
+    print('--<<--<<------------  $module endAll  --<<--<<------------');
+    print('All tests ended, back to main.dart  \n ');
   }
 } //  --------  end of class DawoDevTest
 //

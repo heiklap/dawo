@@ -85,16 +85,16 @@ class DawoApp extends BaseStruct {
     offB = false; //  off-state ends
     onB = true; //   app is in on
     /// Write something #WakeUpSleepyHead to all out-buffers.
-    outHeader.writeln('outHeader-dawoApp-build:');
-    outTl.writeln('outTl-dawoApp-build:');
-    outTMid.writeln('outMid-dawoApp-build:');
-    outTr.writeln('outTr-dawoApp-build:');
-    outMTop.writeln('outtop-dawoApp-build:');
-    outMid.writeln('outMid-dawoApp-build:');
-    outMBot.writeln('outBot-dawoApp-build:');
-    outBl.writeln('outBl-dawoApp-build:');
-    outBr.writeln('outBr-dawoApp-build:');
-    outFooter.writeln('outFooter-dawoApp-build:');
+    outHeader.writeln('* * * :outHeader:buf:   -dawoApp-build:  * * * ');
+    outTl.writeln('* * * :outTl:buf:  -dawoApp-build:  * * * ');
+    outTMid.writeln('* * * :outMid:buf:  -dawoApp-build:  * * * ');
+    outTr.writeln('* * * :outTr:buf:   -dawoApp-build:  * * * ');
+    outMTop.writeln('* * * :outtop:buf  -dawoApp-build:  * * * ');
+    outMid.writeln('* * * :outMid:buf:  -dawoApp-build:  * * * ');
+    outMBot.writeln('* * * :outBot:buf:  -dawoApp-build:  * * * ');
+    outBl.writeln('* * * :outBl:buf  -dawoApp-build:  * * * ');
+    outBr.writeln('* * * :outBr:buf:  -dawoApp-build:  * * * ');
+    outFooter.writeln('* * * :outFooter:buf:  -dawoApp-build:  * * * ');
 
     buf.writeln('build done');
   }
@@ -227,36 +227,47 @@ void flowC(String msg, bool p){
 
 ///  To print outPutBuffers.
 void printBuffers() {
-  print('\n .......  dawoApp outBuffers  ............................');
+  print('\n -->>-->>------------  :dawoApp: outBuffers  -->>-->>------------');
+  print('\n * * * * * * * * * *    outHeader   * * * * * * * * * *  ');
   print(outHeader);
-  print('.. outHeader  .................................');
+  print('* * * * * * * * * *    outHeader   * * * * * * * * * *  ');
 
+  print('\n * * * * * * * * * *    outTl   * * * * * * * * * *  ');
   print(outTl);
-  print('.. outTl .................................');
+  print(' * * * * * * * * * *    outTl   * * * * * * * * * *  \n');
 
+  print('\n * * * * * * * * * *    outTMid   * * * * * * * * * *  ');
   print(outTMid);
-  print('.. outTMid .................................');
+  print(' * * * * * * * * * *    outTMid   * * * * * * * * * *  \n');
 
+  print('\n * * * * * * * * * *    outTr   * * * * * * * * * *  ');
   print(outTr);
-  print('..  outTr  .................................');
+  print(' * * * * * * * * * *    outTr   * * * * * * * * * *  \n');
 
+  print('\n * * * * * * * * * *    outMTop   * * * * * * * * * *  ');
   print(outMTop);
-  print('.. outMTop  .................................');
+  print('\n * * * * * * * * * *    outMTop   * * * * * * * * * *  ');
 
+  print('\n * * * * * * * * * *    outMMid   * * * * * * * * * *  ');
   print(outMid);
-  print('..  outMid  .................................');
+  print(' * * * * * * * * * *    outMMid   * * * * * * * * * *  \n');
 
+  print('\n * * * * * * * * * *    outMBot   * * * * * * * * * *  ');
   print(outMBot);
-  print('..  outMBot  .................................');
+  print('* * * * * * * * * *    outMBot   * * * * * * * * * *  \n ');
 
+  print('\n * * * * * * * * * *    outBl   * * * * * * * * * *  ');
   print(outBl);
-  print('..  outBl  .................................');
+  print('\* * * * * * * * * *    outBl   * * * * * * * * * *  \n');
 
+  print('\n * * * * * * * * * *    outBr   * * * * * * * * * * ');
   print(outBr);
-  print('..  outBr  .................................');
+  print(' * * * * * * * * * *    outBr   * * * * * * * * * *  \n');
 
+  print('\n * * * * * * * * * *    outFooter   * * * * * * * * * *  ');
   print(outFooter);
-  print('..  outFooter  .................................');
+  print(' * * * * * * * * * *    outFooter   * * * * * * * * * *  \n');
+
   print('.......  dawoApp outBuffers  done  ...................... \n');
 }
 

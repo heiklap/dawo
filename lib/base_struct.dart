@@ -30,6 +30,10 @@ abstract class BaseStruct {
   String infoS;
   String motto;
 
+  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  String seal;  //  like:  ":DAWO-APP:";
+  String indent;  // like:  "      ";  3-5-7 empty marks or something visible.
+
   StringBuffer buf;
 
   ///  controlling objects state, working-condition-state values

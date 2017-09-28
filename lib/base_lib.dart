@@ -118,6 +118,8 @@ class GlobalOpClass {
   //  TODO  constructor add
   GlobalOpClass(this.actor, this.sender, this.receiver, this.cmd, this.msg);
   //TODO : used in: ?  //  Only in render here.
+
+  ///
   void showInfo() {
     print('\n***************  global op class-showInfo  ********************');
     print('** actor: $actor ');
@@ -177,7 +179,7 @@ void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   ///  ********************************************************************
   ///  TO GET  ACTOR AND BUFFER RIGHT, USE LOCAL fl()
   /// **********************************************************************
-
+  //  TODO : is flow pushing empty rows to buffers?
   String _actor = actor;
   //  _buf = getGlbBuf();
   if (pr) print(msg);
@@ -198,7 +200,7 @@ void commonStream(String caller, var streamData, var streamListen) {
 //  var data = streamData; // some sample data
   var stream = new Stream.fromIterable(streamData); // Create the stream.
 
-  // SAubscribe to the streams events.
+  // Subscribe to the streams events.
   stream.listen((value) {
     //
     print('\n--- :stream:1 commonStream Listened     ---');
@@ -278,7 +280,7 @@ void commonShow() {
 }
 
 ///  Usual presentation / play function.
-StringBuffer renderBaseLib() {
+StringBuffer  renderBaseLib() {
   print(
       '\n ================= render base llib ========================');
   StringBuffer _retBuf;

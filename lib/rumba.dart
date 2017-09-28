@@ -43,8 +43,8 @@ class Rumba {
 
   ///  setting loop variables to beginning state
   void initRumba() {
-    print('-------------------  init Rumba  -----------------------');
-    rumbaBuf.writeln('-------------------  init Rumba  --------------------');
+    print('------------>>-->>--  init Rumba  ------------>>-->>--');
+    rumbaBuf.writeln('------------>>-->>--  init Rumba  ------------>>-->>--');
     rumbaB = true;
     usherB = true;
     dawoAppB = true;
@@ -53,8 +53,8 @@ class Rumba {
 
   ///  setting loop variables to (fake-) force-stop state
   void doneRumba() {
-    rumbaBuf.writeln('-------------------  done Rumba  --------------------');
-    print('-------------------  done Rumba -----------------------');
+    rumbaBuf.writeln('--<<--<<------------ done Rumba  --<<--<<------------');
+    print('--<<--<<------------  done Rumba --<<--<<------------');
     rumbaB = false;
     usherB = false;
     dawoAppB = false;
@@ -65,7 +65,7 @@ class Rumba {
   ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope. Constructor?
   ///  Now it is just a methods parameter.
   StringBuffer dance(var dawoApp) {
-    devHelp.line('rumba');
+    devHelp.line('rumba-dance');
 
     ///TODO  rumbaLoop is executed for now only 1-3 times
     ///  primary rumba Loops, over it is usher loop
@@ -76,13 +76,13 @@ class Rumba {
     //  Clay  clay ??
 
     ///  --  rumbaLoop
-    devHelp.line('rumba');
+    devHelp.line('rumba-loop');
     do {
       /// -----------------------  rumbaB loop code   -------------------
       /// some loopS variables to test visibility, and carry msg.
       /// TODO  add some functionality to rumbaLoop____  messages.
       String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
-      devHelp.line('usher');
+      devHelp.line('rumba-loop-usher');
 
       ///  --  usher loop
       do {
@@ -94,7 +94,7 @@ class Rumba {
         do {
           String rumbaLoopDawoAppS = '**  dawoAppLoop is rolling  **';
           //  ---------------------  dawo app loop code ------------------
-          devHelp.line('dawoApp');
+          devHelp.line('rumba-loop-dawoApp');
 
           ///TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
 
@@ -112,7 +112,7 @@ class Rumba {
             rumbaBuf.writeAll([rumbaLoopRumbaS, rumbaLoopUsherS]);
             rumbaBuf.writeAll([rumbaLoopDawoAppS, rumbaLoopMissionS]);
 
-            devHelp.line('mission');
+            devHelp.line('rumba-loop-mission');
 
             // -- chore
 
@@ -130,7 +130,7 @@ class Rumba {
     } while (rumbaB);
 
     /// --  usher loop
-    rumbaBuf.writeln('--------------  Rumba.dance  done --------------------');
+    rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
 
     return rumbaBuf;
   } //  ----------   StringBuffer rumba

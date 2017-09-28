@@ -38,7 +38,7 @@ var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 main() {
   //  By Google Stagehand example
   var awesome = new Awesome();
-  print('awesome: ${awesome.isAwesome}');
+  print(':DAWO:EXAMPLE:  awesome: ${awesome.isAwesome}');
 
   var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
       'By: dawo_example.dart: dawoApp rolls missioms');

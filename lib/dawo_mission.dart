@@ -39,6 +39,11 @@ class Mission {
   String name;
   String motto;
 
+  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  String seal;  //  like:  ":DAWO-APP:";
+  String indent;  // like:  "      ";  3-5-7 empty marks or something visible.
+
+
   List<CommonChore> choreL = [];
 
   ///  default CommonChores for every Mission
@@ -123,8 +128,8 @@ class Mission {
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
     //
-    flowC('----------  building mission:  $name   --------------------', true);
-    flowC('------  construct default Chores. For: $name   -----------', true);
+    flowC('-->---->--  building mission:  $name   -->---->--', true);
+    flowC('-->---->--  construct default Chores. For: $name -->---->--', true);
 
     ///  Should use instance, that is created inside THIS mission instance.
     learnChr.build();
@@ -137,15 +142,17 @@ class Mission {
 
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
+    flowC('-->---->--  choreL add-all:  $name   -->---->--', true);
     choreL.addAll(
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
 
     //  CODE
+    flowC('   --<----<--  building mission: done  $name   --<----<-- \n', true);
   }
 
   /// devNote:  function, that OPENS something.  so rename; init
   bool opInit(int openCount, var openThis) {
-    print('----  oInit ------');
+    print('-->---->--  oInit -->---->--');
 
     bool _initB = false;
     //  code to initialize variables in system
@@ -154,7 +161,7 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    print('----  oOpen ------');
+    print('-->---->--  oOpen -->---->--');
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
@@ -162,21 +169,21 @@ class Mission {
 
   ///  Start developing operation roll function
   int opRoll(int rollCount, Function autoRollFunc) {
-    print('----  oRoll ------');
+    print('-->---->--  oRoll -->---->--');
     int done = 0;
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
       done++;
       autoRollFunc();
     }
-    print('----  oRoll done c: $done ------');
+    print('--<----<--  oRoll done c: $done --<----<--');
     return done;
   }
 
   /// devNote:  function, that OPENS something.  so rename; init
   /// idea?
   int opClose(int openCount, Function openThis) {
-    print('----  oClose ------');
+    print('--<----<-  oClose --<----<-');
 
     int _openCount = openCount;
     openThis(); // As I recall, parameter-function goes like this.
@@ -274,16 +281,16 @@ void buildMissions(String caller) {
   ]);
 
   /// .build adds default Chore's to missions
-  print('------  missionL forEach print-choreL    ----------');
+  print('-->---->--  missionL forEach print-choreL   -->---->--');
 //  hklTry   missionL.forEach((x) => x.build);
   //  missionL.forEach(print);  //  =>  Instance of 'Mission'
   for (var x in missionL) {
     print(x.name);
     print(x.choreL);
   }
-  print('------  missionL forEach print-choreL   done ----------');
+  print('--<----<--  missionL forEach print-choreL   done --<----<--');
 
-  flowC('-------------  missionL.forEach.build  ------------------', true);
+  flowC('-->---->--    missionL.forEach.build    -->---->--', true);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
   helsinkiMission.build();
   dartlangMission.build();
@@ -291,7 +298,7 @@ void buildMissions(String caller) {
   myTimeMission.build();
   nationalParksMission.build();
 //  };
-  flowC('-------------  missionL.forEach.build done ---------------', true);
+  flowC('--<----<--  missionL-forEach-build done --<----<-- \n', true);
   for (var x in missionL) {
     String _misName = x.name;
     print('mis-name:  $_misName ');
@@ -300,7 +307,7 @@ void buildMissions(String caller) {
       print('choreName:   $_chrName');
     }
   }
-  print('------  missionL forEach print-choreL done AGAIN  ----------');
+  print('--<----<--  missionL forEach print-choreL done AGAIN  --<----<-- \n');
 } //  -----  buildMissions
 
 ///  creating instance of Mission and using it's methods

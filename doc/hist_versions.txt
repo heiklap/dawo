@@ -21,7 +21,7 @@ To be published:  appr. 15.10.2017
 4.b ____  Use async to catch some Stream / future to normal flow.
           Use async, to gather devNotes, and present them at the end of test_output.
 
-4.1 ____  Reasonable output; regulated form for every classes original-looking output.
+4.1 DO__  Reasonable output; regulated form for every classes original-looking output.
           Use top-level StringBuffers to save every classes output.
 
 4.2 ____  Mission - chore; operations and smaller entities; placardM aso.
@@ -52,8 +52,9 @@ To be published:  appr. 15.10.2017
           Systematic methods for learning. Terminology.
 
           *  *  *  Document, comments, notes, TODO's  *  *  *
-4.11 ____  doc/
+4.11 D___  doc/
               api/ ***
+              Clean writing style, for own devNote term collection.
               getting_started.md, dictionary.MD, history.txt, versions_dev.txt
 
      Ongoing::

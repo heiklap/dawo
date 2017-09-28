@@ -10,8 +10,7 @@
 ///
 /// * Sending messages between objects. Stance, approach
 //  * Find common interests, i've been here.. follow-me, give-take
-//  NOTE:  intentional error here now in class (constructor); how doe's it look?
-//          Analyzer / dartdoc do not allow this, so correct it.
+//  NOTE:
 //  devNote: tracking begins.
 
 library connector;
@@ -22,8 +21,7 @@ import 'package:dawo/base_struct.dart';
 StringBuffer connectorBuf = new StringBuffer();
 
 ///  This other motto is just for to get more visibility to word: connector.
-String connectorMotto =
-    'connecting app - mission - chore together, mediating them';
+String connectorMotto = 'connecting app, mission, chore; mediating them';
 
 ///  ***********************************************************************
 /*      connector:  very weak idea, how to accomplish this. 10 %

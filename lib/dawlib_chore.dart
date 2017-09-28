@@ -55,6 +55,11 @@ class CommonChore extends BaseStruct {
   //  Do not initialize values; just study, what this class got.
   String motto = 'chore handling small jobs';
 
+  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  String seal;  //  like:  ":DAWO-APP:";
+  String indent;  // like:  "      ";  3-5-7 empty marks or something visible.
+
+
   StringBuffer buf = new StringBuffer();
 
   ///  Controlling chores state, working-condition-state values.
@@ -77,26 +82,26 @@ class CommonChore extends BaseStruct {
     String __name = name.toUpperCase();
     String _name = ':$__name :';
     glb.changeActor(_name);
-    buf.writeln('---  Chore buffer output initialized  ---');
+    buf.writeln('-->---->--  Chore buffer output initialized  -->---->--');
 
     //  Set-fields values done.
-    buf.writeln('init done');
+    buf.writeln('-->---->--  init done  -->---->--');
   }
 
   ///  Method for setting class in working condition.
   void build() {
-    String msg = '-------------------  chore $name build  ------------------';
+    String msg = '-->---->--  chore $name build  -->---->--';
     flowC(msg, true);  //  Call to print / buffer function.
 
     offB = false; //  off-state ends
     onB = true; //   app is in on
     buf.writeln('build for chore:  $name  : done');
-    flowC('-----------------    chore build  done --------------------', true);
+    flowC('     --<----<--    chore build  done --<----<-- \n', true);
   }
 
   ///  #run-like method
   void roll() {
-    flowC('---  ch roll  -----', true);
+    flowC('-->---->--  ch roll  -->---->--', true);
     String _s = 'Chore::    $infoS   :: roll engaged ';
     buf.writeln(_s);
 
@@ -119,7 +124,7 @@ class CommonChore extends BaseStruct {
     show();
     done();
     //  code here
-    flowC('---  ch roll  done -----', true);
+    flowC('     --<----<--  ch roll  done --<----<--', true);
   }
 
   ///  Individual operations are done here.
@@ -158,10 +163,10 @@ class CommonChore extends BaseStruct {
   void done() {
     print('Chore::    $infoS   :: engaged ');
     //  code here
-    buf.write('---  Chore buffer output app: done  ---');
+    buf.write('--<----<--  Chore buffer output app: done  --<----<--');
     print(buf);
     buf.clear(); //  empty
-    flowC('----  chore.done    ok   -------  ', false);
+    flowC('     --<----<--  chore.done    ok   --<----<--', false);
   }
 
   ///  For to test global command in #op
@@ -205,7 +210,7 @@ void sideAll() {
 //------------------------------------------------------------------------
 ///  flow of chore might be like this... Functions to execute W O R K   flow
 void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
-  print('these are executed in beginning of W O R K  ');
+  print(' -->---->--  these are executed in beginning of W O R K  ');
 
   ///  ABLE: rollAble and signalAble are separate properties of chore.
   ///  roller(rollAble)   takes care of workFlow.
@@ -215,12 +220,12 @@ void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
 
 ///  main   W O R K   routines
 void doChore() {
-  print('Actual  W O R K   code here...');
+  print(' -->---->--  Actual  W O R K   code here...');
 }
 
 ///   routines, after W O R K   is done
 void endChore() {
-  print('execution scheduled, when   W O R K   is done');
+  print('     --<----<--   execution scheduled, when   W O R K   is done');
 }
 
 ///  example / testing chore
