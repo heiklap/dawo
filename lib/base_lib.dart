@@ -88,6 +88,9 @@ class GlobalVariables {
 ///  Every dawo #operation could relay on these.
 ///  Order: #actor #sender #receiver #command #msg
 ///  Very early development state, idea: 10%
+///  This can be #sub-process, that normal rollOp uses. #Connector may give
+///  this extra power and connect to other operations.
+///  For that, here should be added fields.
 class GlobalOpClass {
   //  BaseStruct is known here.
   //  BasePlacard is known also.

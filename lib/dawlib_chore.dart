@@ -100,6 +100,8 @@ class CommonChore extends BaseStruct {
   }
 
   ///  #run-like method
+  ///  If this or one of it's sub-operations conduct #connector-operations,
+  ///  it might be annotated in function parameter.
   void roll() {
     flowC('-->---->--  ch roll  -->---->--', true);
     String _s = 'Chore::    $infoS   :: roll engaged ';

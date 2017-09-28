@@ -1,14 +1,21 @@
 ///  ##  connecting  ( as #client's) app - mission - chore together,  mediating them
 ///   copyright  Heikki K. Lappalainen
-///   dawo version:  0.0.3  25.9.2017  * READY-STATE:  0 %  for  0.0.4 version
+///   dawo version:  0.0.3  25.9.2017  * READY-STATE:  1 %  for  0.0.4 version
 ///
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  dawo_connector.dart
 /// #name:  connector ..is not nice. change to: ______ ??
-/// Connector is in deeply imaginary level of construction. We know, that app -
+/// Connector is in deeply planning state. We know, that app -
 /// mission - chore work together in same sphere, and there must be something, that
 /// they have in common; abstraction layer, in which they must work together.
 ///
+/// * Every #little operation is "connector-operation", and connector has
+/// * knowledge for all of them and can interact with them.
 /// * Sending messages between objects. Stance, approach
+/// * "Connector-operations" have access to certain up-level variables.
+/// * Using GlobalOpClass might be too heavy.!!
+/// * ADD IS-GLOBAL bool field to Operation-classes.
+/// * Connector classes might have precedence in Mill-op.
+/// * Might trig some action in their connected sister-operations.
 //  * Find common interests, i've been here.. follow-me, give-take
 //  NOTE:
 //  devNote: tracking begins.
@@ -16,6 +23,7 @@
 library connector;
 
 import 'package:dawo/base_struct.dart';
+import 'package:dawo/base_lib.dart';
 
 ///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = new StringBuffer();
@@ -75,6 +83,11 @@ class Connector extends BaseStruct {
   String name = 'connector class';
   String info = 'connecting app - mission - chore together, mediating them';
   String motto = 'do my job, connector, mediates';
+
+  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  String seal; //  like:  ":CONNECTOR:";
+  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+
   // Buffer inside class for output.
   StringBuffer buf = new StringBuffer();
 
@@ -131,6 +144,18 @@ class Connector extends BaseStruct {
     //  code here
   }
 
+  ///  Connector base activity, keep list of clients.
+  ///  devNote: Or should it be something smaller?  abstract class BasePlacard?
+  List<GlobalOpClass> opL = new List();
+
+  ///  Join "clients" to opList.
+  void opJoin(){
+    ///  Operations register to Connector.
+    ///  code:
+  }
+
+
+  ///  TODO  Name for next 3 fields might be opTouche aso.
   ///  Solve one unambiguous textual find-decide problem.
   String touche(String sender, String key, String source) {
     //  TODO problem
@@ -170,6 +195,9 @@ class Connector extends BaseStruct {
   ///  constructor
   Connector(this.name, this.info);
 }
+
+///  Create instance of Connector.
+var cn = new Connector('DawoAppconnector', 'Connection operations');
 
 ///  Construct almost same class: but for collecting data.
 ///  Would like to extend this from Connector: class, but it do not have
