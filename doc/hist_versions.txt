@@ -34,7 +34,7 @@ To be published:  appr. 15.10.2017
           *  *  *   TAIL   *  *  *
 4.4 ____  Render ( = test, presentation and quick-note function) to every file.
 
-4,5 ____  dev class. dev tester person.
+4,5 D___  dev class. dev tester person.
             -every library imports dev, and can add dev-notes.
 
 4.6 ____  Team notes (List and maps) maybe: in clay_in folder = incoming data
@@ -46,7 +46,7 @@ To be published:  appr. 15.10.2017
           *  *  *   OTHER   *  *  *
 4.8 ____  OutGoing data in clayOut-folder: construct common methods.
 
-4.9 ____
+4.9 DONE  dev : box / matrix outPut for devNotes in console screen.
 
 4.10 ____ Separate learnLib with its 3 files and collect it to one #learn-library.
           Systematic methods for learning. Terminology.

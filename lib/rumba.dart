@@ -20,7 +20,7 @@ import 'dawo_dev.dart';
 StringBuffer rumbaBuf = new StringBuffer();
 //  TODO  get some fill to rumbaBuf
 
-/// TODO create classes but where
+/// TODO create classes, but where?
 /* hardly here
 var dawoApp = new DawoApp('dap in rumba', 'rumbaPlay');
 
@@ -44,7 +44,7 @@ class Rumba {
   ///  setting loop variables to beginning state
   void initRumba() {
     print('------------>>-->>--  init Rumba  ------------>>-->>--');
-    dev.howToNotes.add(':initRumba:  hosTo : Keep track that ALL notes get marked ');
+    dev.howToNotes.add(':initRumba:  howTo : Keep track that ALL notes get marked ');
     dev.innoNotes.add(':init:Rumba: CHECK-IN-NUMBER for every NOTE, that all notes are in count.');
     rumbaBuf.writeln('------------>>-->>--  init Rumba  ------------>>-->>--');
     rumbaB = true;
@@ -67,10 +67,11 @@ class Rumba {
     missionB = false;
   }
 
-  ///  is class better than function?  better looking/finding in editor?
+  ///  Is class better than function?  Better looking/finding in editor?
   ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope. Constructor?
   ///  Now it is just a methods parameter.
   StringBuffer dance(var dawoApp) {
+    //  TODO  Parameters for screen-output wanted.
     devHelp.line('rumba-dance');
     dev.admNotes.add('>>ADM:CHECK-IN  rumba-dance  >>');
 
@@ -137,7 +138,7 @@ class Rumba {
     } while (rumbaB);
 
     /// --  usher loop
-    dev.showNotes();
+    //  No need, it is in next:  dev.showNotes(':RUMBA:');
     devBox('By:RUMBA-DANCE');
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
 

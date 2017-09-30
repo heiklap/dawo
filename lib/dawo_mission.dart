@@ -257,7 +257,7 @@ var nationalParksMission = new Mission(
 
 ///  add clay maps to missions
 void buildMissions(String caller) {
-  flowC('----------build Missions, caller: $caller -------------', true );
+  flowC('-->>-->>-- build Missions, caller: $caller -->>-->>-->>--', true );
   dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
 
   helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));

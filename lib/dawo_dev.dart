@@ -12,12 +12,12 @@ import 'dart:math';
 import 'package:dawo/dawo_tools.dart';
 
 //TODO  name   PROBLEMS, when using too common names:
-//   devTest   =   26  times     CHANGE:   test  ! ??
-//   devNote   =    6 times
-//   cod            3 times
+//   devTest   =   22  times     CHANGE:   test  ! ??
+//   devNote   = 2/16 times
+//   cod*          10 times
 //   phase          3
-//   note          23            CHANGE:   note  !!!
-//   test          54            CHANGE    test  !!!
+//   note          23 ??         CHANGE:   note  !!!
+//   test        10/50            CHANGE    test  !!!
 
 ///  Not working now; to track readyness
 num dawoDevReadiness = 94;
@@ -64,12 +64,15 @@ class Dev {
   ///  Fill devNote lists with data. dawo_app calls this in it's build-method!
   void buildNotes(String caller, msg) {
     admNotes.addAll(['adm: #Principle: do not mess, keep it simple.']);
-    admNotes.addAll(['adm: Must be strict all the time.', 'Kee good care of people.']);
-    admNotes.add('adm: Week schedule must include total check at least 3 times in a week.  System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.');
+    admNotes.addAll(
+        ['adm: Must be strict all the time.', 'Keep good care of people.']);
+    admNotes.add(
+        'adm: Week schedule must include total check at least 3 times in a week.  System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.');
 
-
-    devNotes.addAll(
-        ['priority : rumba and web', 'Create all instances in theri lib.']);
+    devNotes.addAll([
+      'priority : rumba and web',
+      'Create all instances in the  ?? ri? lib.'
+    ]);
     innoNotes.addAll(['-Counters?', 'Mongo-DB', 'Indexed-DB', 'User-class']);
     howToNotes
         .addAll(['Web-html?', 'typedef?', 'connector?', 'Streams?', 'Async?']);
@@ -79,8 +82,8 @@ class Dev {
         ['Restrict use of certainn methdos', 'Create up-level pass-word']);
   }
 
-  void showNotes() {
-    print('\n ------------>>-->>--  dev.showNotes  ------------>>-->>--   ');
+  void showNotes(String caller) {
+    print('\n ------->>-->>--  dev.showNotes  by: $caller ------->>-->>--   ');
     dev.howToNotes.add('dev-Show-Notes:  How to add 8-indent in show?  ');
     dev.secNotes.add('dev-Show-Notes:  howTo keep some notes secret?  Sec? ');
     admNotes.forEach(print);
@@ -104,30 +107,28 @@ void devBox(String caller) {
   print('>>>>>>>>>>>>>>>>>>>    tBox  calledBy: $caller >>>>>>>>>>>>>>');
   final int sW = 210;
   int rows = 12;
-  int columnTopWidth = ((sW ~/ 2) - 10);  //  when 2 notes in a row
+  int columnTopWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
   ///  not used yet
-  int columnMidWidth = ((sW ~/ 3) - 10);  //  when 3 notes in a row
+  int columnMidWidth = ((sW ~/ 3) - 10); //  when 3 notes in a row
 
   String padRightHelperS = '';
-  String blankS = padRightHelperS.padRight(columnTopWidth, ' ');  //  for what?
+  String blankS = padRightHelperS.padRight(columnTopWidth, ' '); //  for what?
 
-  List<String> tBoxL = [];  //  Top area of console screen.
-  List<String> mBoxL = [];  //  Mid area of console screen.
+  List<String> tBoxL = []; //  Top area of console screen.
+  List<String> mBoxL = []; //  Mid area of console screen.
 
   String borderS = ' | ';
 
-  String markRow = '____';  //  Gonna make this screen width.
+  String markRow = '____'; //  Gonna make this screen-width.
   String padMarkRow = markRow.padRight(sW, '_');
   markRow = padMarkRow;
   markRow.padRight(sW, '-'); //  (sW, '_');
 
-  tBoxL.add(markRow);
-
   ///  build top box;  admNotes, devNotes.
   final int tBoxHeight = 15; //  max(dev.admNotes.length, dev.devNotes.length);
-  final int mBoxHeight = 13; //  max(dev.admNotes.length, dev.devNotes.length);
+  final int mBoxHeight = 17; //  max(dev.admNotes.length, dev.devNotes.length);
 
-  int admNotesLength = dev.admNotes.length;  //  not used.
+  int admNotesLength = dev.admNotes.length; //  not used.
   int devNotesLength = dev.devNotes.length;
 
   //  Create 2 temp List to be able to modify data.
@@ -149,66 +150,50 @@ void devBox(String caller) {
   */
 
   List<String> cColonList = [];
-  cColonList.add('  **  c WHAT IS GOING HERE ***');
   cColonList.addAll(dev.innoNotes);
 
   List<String> dColonList = [];
-  dColonList.add('  ** d  WHAT IS GOING HERE ***');
   dColonList.addAll(dev.howToNotes);
 
   List<String> eColonList = [];
-  eColonList.add('  ** e  WHAT IS GOING HERE ***');
   eColonList.addAll(dev.secNotes);
 
   //  print('hello mid List!!');
-  cColonList.forEach(print);
-  dColonList.forEach(print);
-  eColonList.forEach(print);
+  //  Printing lists only if with parameters
+  //  cColonList.forEach(print);
+  //  dColonList.forEach(print);
+  //  eColonList.forEach(print);
 
   //  print('============= mid area lists ===================================');
-
-
 
   //  ***********  GLORIOUS CODING    ****************
   //  Make sure that list is certain length.
   void addEmpty(List _list, int _height, String _note) {
     while (_list.length < _height) {
       _list.add(_note);
-    }; //  while
+    }
+    ; //  while
   }
 
   addEmpty(aColonList, tBoxHeight, ' * empty new * ');
   addEmpty(bColonList, tBoxHeight, ' * empty new * ');
-
 
   ///  Add mid-area Lists to certain length.
   addEmpty(cColonList, mBoxHeight, ' * empty mc new * ');
   addEmpty(dColonList, mBoxHeight, ' * empty md new * ');
   addEmpty(eColonList, mBoxHeight, ' * empty me new * ');
 
-  /*
-
-  while (aColonList.length < tBoxHeight) {
-    aColonList.add(' * empty new * ');
-  }; //  while
-
-  while (bColonList.length < tBoxHeight) {
-    bColonList.add(' * empty new * ');
-  }; //  while
-  */
-
-
   ///  TODO  Build one function for all these 2 X 2 functions.
   ///  PadRight both Colon-Lists items to certain length.
   ///  aColonList and bColonList, int columnTopWidth
-  void tuneColumnList(List<String> cL, int width ){
-    for (var x = 0; x < cL.length; x ++ ) {
-      if ( cL[x].length < width){
-        String s =  cL[x].padRight(width, '-');
+  void tuneColumnList(List<String> cL, int width) {
+    for (var x = 0; x < cL.length; x++) {
+      if (cL[x].length < width) {
+        String s = cL[x].padRight(width, '-');
         cL[x] = s;
       }
-      if (cL[x].length > width){
-        String s  = cL[x].substring(0, width);
+      if (cL[x].length > width) {
+        String s = cL[x].substring(0, width);
         //  TODO  add " >>" for last marks.
         cL[x] = s;
       }
@@ -223,25 +208,19 @@ void devBox(String caller) {
   tuneColumnList(dColonList, columnMidWidth);
   tuneColumnList(eColonList, columnMidWidth);
 
-  ///  for mid area:
-  //  tuneColumnList(cColonList, columnMidWidth);
-  //  tuneColumnList(dColonList, columnMidWidth);
-  //  tuneColumnList(eColonList, columnMidWidth);
-
-
-  /// Build #Long-String List of top-area lists and mafrk borders.
+  /// Build #Long-String List of top-area lists and mark borders.
+  tBoxL.add(markRow);
   for (var c = 0; c < tBoxHeight; c++) {
     String firstData = aColonList[c];
     String secondData = bColonList[c];
     String longS = '$borderS $firstData  $borderS $secondData $borderS ';
     tBoxL.add(longS);
   }
+  tBoxL.add(markRow);
 
   ///  Build mid-area List.
   mBoxL.add(markRow);
-
   for (var c = 0; c < mBoxHeight; c++) {
-
     String fData = cColonList[c];
     String sData = dColonList[c];
     String tData = eColonList[c];
@@ -250,42 +229,10 @@ void devBox(String caller) {
   }
   mBoxL.add(markRow);
 
-  tBoxL.add(markRow);
-  print('<<<<<<<<<<<<<<<<<<<<<    tBoxL print  <<<<<<<<<<<<<<<<<<<');
-  //  print(tBoxL.length);
-  //  print(tBoxL[0].length);
-  //  print(tBoxL[1].length);
-  //  print(tBoxL[2].length);
-  //  print(tBoxL[0]);
-  //  print(tBoxL[1]);
-  //  print(tBoxL[2]);
-  //  print(tBoxL[3]);
-  //  print('-----------------------------------');
   tBoxL.forEach(print);
-  //   print('<<<<<<<<<<<<<<<<<<<<<    tBox done  <<<<<<<<<<<<<<<<<<<');
-
-  mBoxL.add(markRow);
-  //  print('<<<<<<<<<<<<<<<<<<<<<    mBoxL print  <<<<<<<<<<<<<<<<<<<');
-  //  print(mBoxL.length);
-  //  print(mBoxL[0].length);
-  //  print(mBoxL[1].length);
-  //  print(mBoxL[2].length);
-  //  print(mBoxL[0]);
-  //  print(mBoxL[1]);
-  //  print(mBoxL[2]);
-  //  print(mBoxL[3]);
-  //  print('-----------------------------------');
+  print(' ');
   mBoxL.forEach(print);
-  print('<<<<<<<<<<<<<<<<<<<<<    tBox done  <<<<<<<<<<<<<<<<<<<');
-
-
-}  //  ----------  devBox
-
-
-
-
-
-
+} //  ----------  devBox
 
 //TODO  teamHowTo lists: add:   automatize adding notes to lists?
 //TODO  teamInno  notes:  automatic roll of createNotes.? no; events..?
