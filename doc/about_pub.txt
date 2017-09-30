@@ -1,0 +1,31 @@
+
+
+
+From:  https://www.dartlang.org/tools/pub/package-layout:
+
+Public tools.  NOT TOOL-FOLDER.
+Dart scripts placed inside of the bin directory are public.
+Any package that depends on your package can run scripts from your
+package’s bin directory using pub run.
+Any package can run scripts from your package’s bin directory using pub global.
+
+
+If you intend for your package to be depended on, and you want your scripts
+to be private to your package, place them in the top-level tool directory.
+If you do not intend for your package to be depended on, you can leave your
+scripts in bin.
+
+
+Internal tools and scripts
+enchilada/
+  tool/
+    generate_docs.dart
+Mature packages often have little helper scripts and programs that people run
+while developing the package itself. Think things like test runners, documentation
+generators, or other bits of automation.
+
+Unlike the scripts in bin, these are not for external users of the package.
+If you have any of these, place them in a directory called tool.
+
+
+

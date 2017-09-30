@@ -2,6 +2,7 @@
 /// -  Primary functionality: engage chores. Version 0.0.3
 /// -  ready_state for 0.0.4  0 %
 /// -  HIST:  hkl  8.9.2017
+/// -  devNote: 4 pc.
 //
 
 library dawo_mission;
@@ -10,6 +11,7 @@ library dawo_mission;
 import 'package:dawo/base_struct.dart';
 import 'package:dawo/base_lib.dart';
 import 'package:dawo/dawlib_chore.dart';
+import 'dawo_dev.dart';
 import 'package:dawo/dawo_tools.dart';
 import 'clay/clay_roll.dart';
 
@@ -256,6 +258,8 @@ var nationalParksMission = new Mission(
 ///  add clay maps to missions
 void buildMissions(String caller) {
   flowC('----------build Missions, caller: $caller -------------', true );
+  dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
+
   helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
   outMTop.writeln('outMtop-buildMissions:helsinki');
 

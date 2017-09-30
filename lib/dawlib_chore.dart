@@ -40,12 +40,16 @@ List<CommonChore> choreL = [];
 ///  So dawoApp uses chore to maintain it's work-projects.
 
 ///   Initializing of chore system. Update dev-class.
-void initChore() {
+///   CalledBy: dawo_app build.
+void initChoreSystem() {
   dev.devNotes
     ..add('make COMMON  init-module to EVVVERY  lib part')
     ..add('This could be for NOTES like W O R K s to be done');
   //  devNote:
-  dev.admNotes.add('NO: for  big   W O R K -lists');
+  dev.admNotes.add(':INIT-CHORE: NO: for  big   W O R K -lists');
+  dev.innoNotes.add(':INIT-CHORE: :CHECK-IN: testing ');
+  dev.howToNotes.add(':INIT-CHORE: :CHECK-IN: testing ');
+  dev.secNotes.add(':INIT-CHORE: :CHECK-IN: testing ');
 }
 
 ///  Every important dawo class is extending BaseStruct class.
@@ -90,6 +94,7 @@ class CommonChore extends BaseStruct {
 
   ///  Method for setting class in working condition.
   void build() {
+    //  TODO  Chore Build Too much printing
     String msg = '-->---->--  chore $name build  -->---->--';
     flowC(msg, true); //  Call to print / buffer function.
 

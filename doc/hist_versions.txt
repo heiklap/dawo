@@ -182,6 +182,11 @@ Master Chore can have subChores
 Chore marked as a "slave" to other Chore
 
 _________________________________________________________________________
+Dawo Idea:
+  *  Dawo might not eventually be interested in, about what kind of activity
+  #user :s perform with their data. Dawo only gives frames for operations.
+
+_________________________________________________________________________
 Endless Flow of ideas: Adding anything is blocked for  now. 21.9.2017, waiting 0.0.3
 teamInno:
   * Growth. sprout
@@ -190,10 +195,22 @@ teamDev:
   * icon
 
 teamSec:
-  *  Key, to get access to some methods
-  *  howTo hide access to some class
+  *  Key, to get access to some methods.
+  *  HowTo hide access to some class.
+  - - - - - - - - - - - - - - - - - - - -
+
+Connector / Operation
+  *  OperationTree<Operation>
+
+Frame #Word,  phases of operation or screen activity.
 
 * Class: Glad
 * Int opFull100 = 79;   #Opera operation fullfill-state (max100) is now 79.
-* NotAccessMethod - InThisState -field
+* NotAccessMethod - InThisState -field.
 *
+
+
+
+Mounted #word
+
+

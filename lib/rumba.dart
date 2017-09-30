@@ -44,6 +44,8 @@ class Rumba {
   ///  setting loop variables to beginning state
   void initRumba() {
     print('------------>>-->>--  init Rumba  ------------>>-->>--');
+    dev.howToNotes.add(':initRumba:  hosTo : Keep track that ALL notes get marked ');
+    dev.innoNotes.add(':init:Rumba: CHECK-IN-NUMBER for every NOTE, that all notes are in count.');
     rumbaBuf.writeln('------------>>-->>--  init Rumba  ------------>>-->>--');
     rumbaB = true;
     usherB = true;
@@ -54,6 +56,10 @@ class Rumba {
   ///  setting loop variables to (fake-) force-stop state
   void doneRumba() {
     rumbaBuf.writeln('--<<--<<------------ done Rumba  --<<--<<------------');
+    dev.admNotes.add('>>ADM:CHECK-IN  doneRumba  >>');
+    dev.innoNotes.add(':doneRumba:  innovative: testing  ');
+
+
     print('--<<--<<------------  done Rumba --<<--<<------------');
     rumbaB = false;
     usherB = false;
@@ -66,6 +72,7 @@ class Rumba {
   ///  Now it is just a methods parameter.
   StringBuffer dance(var dawoApp) {
     devHelp.line('rumba-dance');
+    dev.admNotes.add('>>ADM:CHECK-IN  rumba-dance  >>');
 
     ///TODO  rumbaLoop is executed for now only 1-3 times
     ///  primary rumba Loops, over it is usher loop
@@ -130,6 +137,8 @@ class Rumba {
     } while (rumbaB);
 
     /// --  usher loop
+    dev.showNotes();
+    devBox('By:RUMBA-DANCE');
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
 
     return rumbaBuf;

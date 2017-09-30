@@ -11,6 +11,7 @@ library dawo_app.dart;
 
 import 'base_struct.dart';
 import 'base_lib.dart';
+import 'dawlib_chore.dart';
 import 'dawo_dev.dart';
 import 'dawo_mission.dart';
 
@@ -82,6 +83,12 @@ class DawoApp extends BaseStruct {
   void build() {
     offB = false; //  off-state ends
     onB = true; //   app is in on
+
+    ///  Build DevNotes.
+    dev.buildNotes('By: :DAWO-APP:', 'In Dawo-App-Build');
+    initChoreSystem();
+
+
     /// Write something #WakeUpSleepyHead to all out-buffers.
     outHeader.writeln('* * * :outHeader:buf:   -dawoApp-build:  * * * ');
     outTl.writeln('* * * :outTl:buf:  -dawoApp-build:  * * * ');
@@ -100,8 +107,9 @@ class DawoApp extends BaseStruct {
   ///  #run-like method
   ///  return:  Map<String, StringBuffer> outMapBuffers
   Map<String, StringBuffer> roll() {
-    dev.admNotes.add('>>  dawo_app is rolling  >>');
-    dev.buildNotes();
+    dev.admNotes.add('>>ADM:CHECK-IN  dawo_app-roll  >>');
+
+    //  build already does this  dev.buildNotes();
     buf.writeln('DawoApp::roll    $infoS   :: roll engaged ');
     init(); //  calling init and build methods in this class
     build();

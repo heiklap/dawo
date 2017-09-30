@@ -125,6 +125,7 @@ class Connector extends BaseStruct {
   }
 
   ///  Method for setting class in working condition.
+  ///  CalledBy:  No calls.
   void build() {
     offB = false; //  off-state ends
     onB = true; //   Connector is in on-state.
