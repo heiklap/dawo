@@ -66,11 +66,14 @@ main() {
   //  dev  17 variables
   //  devBlame;
 
+  //  flow*  2 variables
+
   //  mill
   //  DawoMill
 
   //  mission
   //  Mission  class
+  //  placard* : 1
 
   //  toolsActive;
 
@@ -86,7 +89,8 @@ main() {
 
   //  render   //  there are 5 render-functions
 
-  printBuffers();
+  //  No, too much noise.
+  //  printBuffers();
 }
 
 void playDawoSrcDart() {}

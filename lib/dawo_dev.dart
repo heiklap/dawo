@@ -2,13 +2,13 @@
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
 ///  dawo version:  0.0.3  25.9.2017
-/// * READY-STATE  0 %  for version 0.0.4     GitHub: yes  29.11.2014
+/// * READY-STATE  40 %  for version 0.0.4     GitHub: yes  29.11.2014
 /// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
 ///
 
 library dawo_dev.dart;
 
-import 'dart:math';
+import 'dart:math';  //  No need for in-max?
 import 'package:dawo/dawo_tools.dart';
 
 //TODO  name   PROBLEMS, when using too common names:
@@ -19,7 +19,7 @@ import 'package:dawo/dawo_tools.dart';
 //   note          23 ??         CHANGE:   note  !!!
 //   test        10/50            CHANGE    test  !!!
 
-///  Not working now; to track readyness
+///  Not working now; to track readiness
 num dawoDevReadiness = 94;
 
 ///  buffer also outside class, for testing and adding visibility
@@ -56,7 +56,7 @@ class Dev {
   List<String> secNotes = ['* * Team sec notes: * * '];
 //--------------------------------------------------------------
 
-  ///  to add developer notes
+  ///  To add developer notes.
   void addNote(List l, String s) {
     l.add(s);
   }
@@ -102,69 +102,16 @@ class Dev {
 ///  create instance of class Dev
 var dev = new Dev();
 
-///  Show devNotes in nice box in console.
-void devBox(String caller) {
-  print('>>>>>>>>>>>>>>>>>>>    tBox  calledBy: $caller >>>>>>>>>>>>>>');
+///  Show Lists, like devNotes in nice column-box in console.
+///  Can now handle 2 and 3 column cases, and is common-usage function.
+///  TODO  Add better row / height decision.
+void devBox(String caller, List<List<String>> inList) {
   final int sW = 210;
-  int rows = 12;
-  int columnTopWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
-  ///  not used yet
-  int columnMidWidth = ((sW ~/ 3) - 10); //  when 3 notes in a row
-
-  String padRightHelperS = '';
-  String blankS = padRightHelperS.padRight(columnTopWidth, ' '); //  for what?
-
-  List<String> tBoxL = []; //  Top area of console screen.
-  List<String> mBoxL = []; //  Mid area of console screen.
-
   String borderS = ' | ';
 
-  String markRow = '____'; //  Gonna make this screen-width.
-  String padMarkRow = markRow.padRight(sW, '_');
-  markRow = padMarkRow;
-  markRow.padRight(sW, '-'); //  (sW, '_');
-
-  ///  build top box;  admNotes, devNotes.
-  final int tBoxHeight = 15; //  max(dev.admNotes.length, dev.devNotes.length);
-  final int mBoxHeight = 17; //  max(dev.admNotes.length, dev.devNotes.length);
-
-  int admNotesLength = dev.admNotes.length; //  not used.
-  int devNotesLength = dev.devNotes.length;
-
-  //  Create 2 temp List to be able to modify data.
-  List<String> aColonList = [];
-  aColonList.addAll(dev.admNotes);
-  List<String> bColonList = [];
-  bColonList.addAll(dev.devNotes);
-
-  ///  Add all mid-area Lists.
-  /*
-  print('============= mid area lists ===================================');
-  dev.innoNotes.forEach(print);
-  dev.howToNotes.forEach(print);
-  dev.secNotes.forEach(print);
-  print('==<<<<<< ==== mid area lists ===================================');
-  print(dev.innoNotes.length);
-  print(dev.howToNotes.length);
-  print(dev.secNotes.length);
-  */
-
-  List<String> cColonList = [];
-  cColonList.addAll(dev.innoNotes);
-
-  List<String> dColonList = [];
-  dColonList.addAll(dev.howToNotes);
-
-  List<String> eColonList = [];
-  eColonList.addAll(dev.secNotes);
-
-  //  print('hello mid List!!');
-  //  Printing lists only if with parameters
-  //  cColonList.forEach(print);
-  //  dColonList.forEach(print);
-  //  eColonList.forEach(print);
-
-  //  print('============= mid area lists ===================================');
+  List<String> twoBoxL = []; //  For two columns in console screen.
+  List<String> threeBoxL = []; //  For three columns in console screen.
+  List<String> fourBoxL = []; //  For four columns in console screen.
 
   //  ***********  GLORIOUS CODING    ****************
   //  Make sure that list is certain length.
@@ -173,19 +120,11 @@ void devBox(String caller) {
       _list.add(_note);
     }
     ; //  while
-  }
-
-  addEmpty(aColonList, tBoxHeight, ' * empty new * ');
-  addEmpty(bColonList, tBoxHeight, ' * empty new * ');
-
-  ///  Add mid-area Lists to certain length.
-  addEmpty(cColonList, mBoxHeight, ' * empty mc new * ');
-  addEmpty(dColonList, mBoxHeight, ' * empty md new * ');
-  addEmpty(eColonList, mBoxHeight, ' * empty me new * ');
+  } //  addEmpty
 
   ///  TODO  Build one function for all these 2 X 2 functions.
   ///  PadRight both Colon-Lists items to certain length.
-  ///  aColonList and bColonList, int columnTopWidth
+  ///  aColonList and bColonList, int columnTwoWidth
   void tuneColumnList(List<String> cL, int width) {
     for (var x = 0; x < cL.length; x++) {
       if (cL[x].length < width) {
@@ -198,40 +137,92 @@ void devBox(String caller) {
         cL[x] = s;
       }
     }
-  }
+  } //  ---------  tuneColumnList
 
-  tuneColumnList(aColonList, columnTopWidth);
-  tuneColumnList(bColonList, columnTopWidth);
+  void devBoxBuild() {
+    print('>>>>>>>>>>>>>>>>>>>    tBox  calledBy: $caller >>>>>>>>>>>>>>');
+    //  int rows = 12;
+    int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
 
-  ///  tune Mid-area Lists Strings to certain length.
-  tuneColumnList(cColonList, columnMidWidth);
-  tuneColumnList(dColonList, columnMidWidth);
-  tuneColumnList(eColonList, columnMidWidth);
+    String markRow = '____'; //  Gonna make this screen-width.
+    String padMarkRow = markRow.padRight(sW, '_');
+    markRow = padMarkRow;
+    markRow.padRight(sW, '-'); //  (sW, '_');
 
-  /// Build #Long-String List of top-area lists and mark borders.
-  tBoxL.add(markRow);
-  for (var c = 0; c < tBoxHeight; c++) {
-    String firstData = aColonList[c];
-    String secondData = bColonList[c];
-    String longS = '$borderS $firstData  $borderS $secondData $borderS ';
-    tBoxL.add(longS);
-  }
-  tBoxL.add(markRow);
+    ///  build two / three-List in parameter -case box;
+    final int twoBoxHeight =
+        15; //  Should be decided by Lists length.
+    final int threeBoxHeight = 17;
 
-  ///  Build mid-area List.
-  mBoxL.add(markRow);
-  for (var c = 0; c < mBoxHeight; c++) {
-    String fData = cColonList[c];
-    String sData = dColonList[c];
-    String tData = eColonList[c];
-    String longS = '$borderS $fData $borderS $sData $borderS $tData $borderS';
-    mBoxL.add(longS);
-  }
-  mBoxL.add(markRow);
 
-  tBoxL.forEach(print);
-  print(' ');
-  mBoxL.forEach(print);
+    ///  Build two-column-area List.  -----------   2 columns.
+    if (inList.length == 2) {
+      //  Create 2 temp List to be able to modify data.
+      List<String> aColonList = [];
+      aColonList.addAll(inList[0]);
+
+      List<String> bColonList = [];
+      bColonList.addAll(inList[1]);
+
+      addEmpty(aColonList, twoBoxHeight, ' * empty new * ');
+      addEmpty(bColonList, twoBoxHeight, ' * empty new * ');
+
+      tuneColumnList(aColonList, columnTwoWidth);
+      tuneColumnList(bColonList, columnTwoWidth);
+
+      /// Build #Long-String List of top-area lists and mark borders.
+      twoBoxL.add(markRow);
+      for (var c = 0; c < twoBoxHeight; c++) {
+        String firstData = aColonList[c];
+        String secondData = bColonList[c];
+        String longS = '$borderS $firstData  $borderS $secondData $borderS ';
+        twoBoxL.add(longS);
+      }
+      twoBoxL.add(markRow);
+      twoBoxL.forEach(print);
+      print(' ');
+    } //  --------------  inList length == 2
+
+    ///  Build three-column-area List.  -----------   3 columns.
+    if (inList.length == 3) {
+      int columnThreeWidth = ((sW ~/ 3) - 10); //  when 3 notes in a row
+
+      ///  in three List parameter -case:
+      List<String> cColonList = [];
+      cColonList.addAll(inList[0]);
+
+      List<String> dColonList = [];
+      dColonList.addAll(inList[1]);
+
+      List<String> eColonList = [];
+      eColonList.addAll(inList[2]);
+
+      ///  Add three-List-case -area Lists to certain length.
+      addEmpty(cColonList, threeBoxHeight, ' * empty mc new * ');
+      addEmpty(dColonList, threeBoxHeight, ' * empty md new * ');
+      addEmpty(eColonList, threeBoxHeight, ' * empty me new * ');
+
+      ///  tune Three-columns-area Lists Strings to certain length.
+      tuneColumnList(cColonList, columnThreeWidth);
+      tuneColumnList(dColonList, columnThreeWidth);
+      tuneColumnList(eColonList, columnThreeWidth);
+
+      threeBoxL.add(markRow);
+      for (var c = 0; c < threeBoxHeight; c++) {
+        String fData = cColonList[c];
+        String sData = dColonList[c];
+        String tData = eColonList[c];
+        String longS =
+            '$borderS $fData $borderS $sData $borderS $tData $borderS';
+        threeBoxL.add(longS);
+      }
+      threeBoxL.add(markRow);
+      threeBoxL.forEach(print);
+    } // ----------  length inList = 3
+  } //  -------------  devBoxBuild
+
+  ///  Give parameters for 2-3- or 4  column boxes-
+  devBoxBuild();
 } //  ----------  devBox
 
 //TODO  teamHowTo lists: add:   automatize adding notes to lists?

@@ -224,6 +224,7 @@ Map<String, String> dawo003 = {
   'purpose': 'Education, Learning  '
 };
 
+///  Every important library has it's own flowC function. #Library #Privacy!!
 ///  Calling print/print-to-buffer method.
 ///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p) {

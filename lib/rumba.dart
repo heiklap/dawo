@@ -21,7 +21,7 @@ StringBuffer rumbaBuf = new StringBuffer();
 //  TODO  get some fill to rumbaBuf
 
 /// TODO create classes, but where?
-/* hardly here
+/* hardly here; but in example and user files.
 var dawoApp = new DawoApp('dap in rumba', 'rumbaPlay');
 
 */
@@ -139,7 +139,9 @@ class Rumba {
 
     /// --  usher loop
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
-    devBox('By:RUMBA-DANCE');
+    devBox('By:RUMBA-DANCE', [dev.admNotes, dev.devNotes]);
+    devBox('By:RUMBA-DANCE', [dev.innoNotes, dev.howToNotes, dev.secNotes]);
+
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
 
     return rumbaBuf;
