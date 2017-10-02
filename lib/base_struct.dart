@@ -22,6 +22,20 @@ StringBuffer outBl = new StringBuffer();
 StringBuffer outBr = new StringBuffer(); //  chore
 StringBuffer outFooter = new StringBuffer();
 
+///  List containing all outBuffers.
+List<StringBuffer> outBufL = [
+  outHeader,
+  outTl,
+  outTMid,
+  outTr,
+  outMTop,
+  outMid,
+  outMBot,
+  outBl,
+  outBr,
+  outFooter
+];
+
 ///  base class for most dawo classes
 ///  DawoApp, BLib, Chore, Flag  use this
 abstract class BaseStruct {

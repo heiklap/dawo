@@ -47,7 +47,11 @@ main() {
 
   // This also returns a StringBuffer.
   rumba.dance(dawoApp);
+  print('==================  dawo_example done =========================');
+}
 
+///
+void wordPlay(){
   //  Play with variables: watch something from every file
   //  base
   // baseLibMotto

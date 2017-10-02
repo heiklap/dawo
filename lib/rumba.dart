@@ -14,11 +14,14 @@ library rumba.dart;
 ///  TODO  import all necessary ?? here
 //  import 'dawo_app.dart'; //  no need to import dawoApp
 
+import 'base_lib.dart';
+import 'base_struct.dart';
 import 'dawo_dev.dart';
 
 ///  collecting Rumba output
 StringBuffer rumbaBuf = new StringBuffer();
 //  TODO  get some fill to rumbaBuf
+bool pB = false;
 
 /// TODO create classes, but where?
 /* hardly here; but in example and user files.
@@ -44,8 +47,10 @@ class Rumba {
   ///  setting loop variables to beginning state
   void initRumba() {
     print('------------>>-->>--  init Rumba  ------------>>-->>--');
-    dev.howToNotes.add(':initRumba:  howTo : Keep track that ALL notes get marked ');
-    dev.innoNotes.add(':init:Rumba: CHECK-IN-NUMBER for every NOTE, that all notes are in count.');
+    dev.howToNotes
+        .add(':initRumba:  howTo : Keep track that ALL notes get marked ');
+    dev.innoNotes.add(
+        ':init:Rumba: CHECK-IN-NUMBER for every NOTE, that all notes are in count.');
     rumbaBuf.writeln('------------>>-->>--  init Rumba  ------------>>-->>--');
     rumbaB = true;
     usherB = true;
@@ -59,7 +64,6 @@ class Rumba {
     dev.admNotes.add('>>ADM:CHECK-IN  doneRumba  >>');
     dev.innoNotes.add(':doneRumba:  innovative: testing  ');
 
-
     print('--<<--<<------------  done Rumba --<<--<<------------');
     rumbaB = false;
     usherB = false;
@@ -72,7 +76,7 @@ class Rumba {
   ///  Now it is just a methods parameter.
   StringBuffer dance(var dawoApp) {
     //  TODO  Parameters for screen-output wanted.
-    devHelp.line('rumba-dance');
+    flowC('-->---->--  rumba-dance', true);
     dev.admNotes.add('>>ADM:CHECK-IN  rumba-dance  >>');
 
     ///TODO  rumbaLoop is executed for now only 1-3 times
@@ -84,13 +88,13 @@ class Rumba {
     //  Clay  clay ??
 
     ///  --  rumbaLoop
-    devHelp.line('rumba-loop');
+    flowC('  -->---->--  rumba-loop', true);
     do {
       /// -----------------------  rumbaB loop code   -------------------
       /// some loopS variables to test visibility, and carry msg.
       /// TODO  add some functionality to rumbaLoop____  messages.
       String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
-      devHelp.line('rumba-loop-usher');
+      flowC('   -->---->--  rumba-loop-usher', true);
 
       ///  --  usher loop
       do {
@@ -102,7 +106,7 @@ class Rumba {
         do {
           String rumbaLoopDawoAppS = '**  dawoAppLoop is rolling  **';
           //  ---------------------  dawo app loop code ------------------
-          devHelp.line('rumba-loop-dawoApp');
+          flowC('      -->---->--  rumba-loop-dawoApp', true);
 
           ///TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
 
@@ -120,27 +124,35 @@ class Rumba {
             rumbaBuf.writeAll([rumbaLoopRumbaS, rumbaLoopUsherS]);
             rumbaBuf.writeAll([rumbaLoopDawoAppS, rumbaLoopMissionS]);
 
-            devHelp.line('rumba-loop-mission');
+            flowC('     --<----<--  rumba-loop-mission', true);
 
             // -- chore
 
             missionB = false; //  emergency exit, while testing
           } while (missionB);
+          flowC('        --<----<--  rumba-loop-mission: done', true);
 
           dawoAppB = false;
         } while (dawoAppB);
+        flowC('      --<----<--  rumba-dawo-app: done', true);
 
         usherB = false;
       } while (usherB);
+      flowC('    --<----<--  rumba-loop-usher: done', true);
 
       doneRumba(); //  --  do it only once now
       rumbaB = false;
     } while (rumbaB);
+    flowC('  --<----<--  rumba: done', true);
 
     /// --  usher loop
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
-    devBox('By:RUMBA-DANCE', [dev.admNotes, dev.devNotes]);
-    devBox('By:RUMBA-DANCE', [dev.innoNotes, dev.howToNotes, dev.secNotes]);
+    devBox('By:RUMBA-DANCE:', [dev.admNotes, dev.devNotes]);
+    devBox('By:RUMBA-DANCE:', [dev.innoNotes, dev.howToNotes, dev.secNotes]);
+
+    //  flowFind(':RUMBA-DANCE:', '->>-', 35);
+    //  flowFind(':RUMBA-DANCE:', 'build', 30);
+    if (pB) flowFind(':RUMBA-DANCE:', '-->---->--', 35);
 
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
 
@@ -148,3 +160,10 @@ class Rumba {
   } //  ----------   StringBuffer rumba
 
 } //  --   rumba class
+
+///  Calling print/print-to-buffer method.
+///  Getting local variables; Actor and Buffer right.
+void flowC(String msg, bool p) {
+  ///  Call flowServe with #LOCAL variables.
+  flowServe(':RUMBA:', outTl, msg, p);
+}

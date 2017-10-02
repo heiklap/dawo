@@ -22,6 +22,7 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 
 ///  Buffer also outside class, for testing and adding visibility.
 var appBuf = new StringBuffer();
+bool pB = false; //  No printing now.
 
 ///  Test: Just for testing private variable inside a library.
 String _privacyLibraryTest = 'Testing library / part privacy';
@@ -76,7 +77,7 @@ class DawoApp extends BaseStruct {
     buf.writeln('---  DawoApp buffer output initialized  ---');
 
     //  Set fields values.
-    buf.writeln('init done');
+    buf.writeln(':da:b: init done');
   }
 
   ///  Method for setting class in working condition.
@@ -88,20 +89,19 @@ class DawoApp extends BaseStruct {
     dev.buildNotes('By: :DAWO-APP:', 'In Dawo-App-Build');
     initChoreSystem();
 
-
     /// Write something #WakeUpSleepyHead to all out-buffers.
     outHeader.writeln('* * * :outHeader:buf:   -dawoApp-build:  * * * ');
     outTl.writeln('* * * :outTl:buf:  -dawoApp-build:  * * * ');
-    outTMid.writeln('* * * :outMid:buf:  -dawoApp-build:  * * * ');
+    outTMid.writeln('* * * :outTMid:buf:  -dawoApp-build:  * * * ');
     outTr.writeln('* * * :outTr:buf:   -dawoApp-build:  * * * ');
-    outMTop.writeln('* * * :outtop:buf  -dawoApp-build:  * * * ');
+    outMTop.writeln('* * * :outtMop:buf  -dawoApp-build:  * * * ');
     outMid.writeln('* * * :outMid:buf:  -dawoApp-build:  * * * ');
-    outMBot.writeln('* * * :outBot:buf:  -dawoApp-build:  * * * ');
+    outMBot.writeln('* * * :outMBot:buf:  -dawoApp-build:  * * * ');
     outBl.writeln('* * * :outBl:buf  -dawoApp-build:  * * * ');
     outBr.writeln('* * * :outBr:buf:  -dawoApp-build:  * * * ');
     outFooter.writeln('* * * :outFooter:buf:  -dawoApp-build:  * * * ');
 
-    buf.writeln('build done');
+    buf.writeln(':da:b:  build done');
   }
 
   ///  #run-like method
@@ -110,7 +110,7 @@ class DawoApp extends BaseStruct {
     dev.admNotes.add('>>ADM:CHECK-IN  dawo_app-roll  >>');
 
     //  build already does this  dev.buildNotes();
-    buf.writeln('DawoApp::roll    $infoS   :: roll engaged ');
+    buf.writeln(':da:b: DawoApp::roll    $infoS   :: roll engaged ');
     init(); //  calling init and build methods in this class
     build();
     //  Add code for roll.
@@ -125,42 +125,46 @@ class DawoApp extends BaseStruct {
 
   ///  Roll missions in missionL AND every chore in them.
   void appRollMissions(String caller) {
-    String _msg =
-        '\n ************ app rollMissions  C: $caller ***************';
-    flowC('$_msg', true);
+    String _msg = '\n -->>-->>---- app rollMissions  C: $caller -->>-->>----';
+    flowC('$_msg', pB);
     // roll BLib-class (mission) actually List of missions!
-    flowC('\n  ***  DAWO-APP  MISSIONS   ***  \n', true);
+    flowC('\n  ***  DAWO-APP  MISSIONS   ***  \n', pB);
     buildMissions('C:dawoApp ');
 
-    helsinkiMission.report('C:dawoApp-RM');
-    dartlangMission.report('C:dawoApp-RM');
-    myMusicMission.report('C:dawoApp-RM');
-    myTimeMission.report('C:dawoApp-RM');
-    nationalParksMission.report('C:dawoApp-RM');
+    ///  TODO Detail printing set false; make better, global solution.
+    ///  TODO  Make mission-report return list, for box-output.
+    helsinkiMission.report('C:dawoApp-RM', false);
+    dartlangMission.report('C:dawoApp-RM', false);
+    myMusicMission.report('C:dawoApp-RM', false);
+    myTimeMission.report('C:dawoApp-RM', false);
+    nationalParksMission.report('C:dawoApp-RM', false);
 
-    print('\n **************   app rollMissions  C: $caller *************');
+    flowC('\n      --<----<-- app rollMissions  C: $caller --<----<--', pB);
     // roll all chores, that are in mission
   }
 
   ///  calling base>_lib commonStream, elementary Stream example
   void rollStream() {
-    flowC('\n--- :stream:beg dawoApp rollStream started     ---', true);
+    flowC('\n--- :stream:beg dawoApp rollStream started     ---', pB);
     // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     commonStream('dawoApp', [agenda, msg, develop, version], 'appListener');
-    print('\n--- :stream:end dawoApp rollStream done     ---');
+    flowC('\n--- :stream:end dawoApp rollStream done     ---', pB);
   }
 
   ///  Show-method to be developed further.
   void show() {
-    print(buf);
-    print('------------------------');
-    print(outTr);
+    if (pB) {
+      print(buf);
+      print('-->>-->>----  dawoApp show -->>-->>----');
+      print(outTr);
+      print('--<<--<<----  dawoApp show done --<<--<<----');
+    }
   }
 
   ///  After presentation method; done, if #doneB.
   void done() {
-    print('DawoApp::done    $infoS   :: engaged ');
+    flowC('-->>-->>----  DawoApp.done    $infoS   :: engaged ', pB);
     outTl.writeln('outTl-dawoApp-done:');
     outTMid.writeln('outMid-dawoApp-done:');
     outTr.writeln('outTr-dawoApp-done:');
@@ -171,9 +175,10 @@ class DawoApp extends BaseStruct {
     outBr.writeln('outBr-dawoApp-done:');
     outFooter.writeln('outFooter-dawoApp-done:');
     //  code here
-    buf.write('---  DawoApp buffer output app: done  ---');
-    print(buf);
+    buf.write(':da:b: ---  DawoApp buffer output app: done  ---');
+    if (pB) print(buf);
     //  buf.clear(); //  empty buffer
+    flowC('     --<<--<<----  DawoApp.done  done  --<<--<<---- \n', pB);
   }
 
   DawoApp(this.name, this.agenda);
@@ -232,9 +237,9 @@ void flowC(String msg, bool p) {
   flowServe(':DAWO-APP:', outTr, msg, p);
 }
 
-///  To print outPutBuffers.
-void printBuffers() {
-  print('\n -->>-->>------------  :dawoApp: outBuffers  -->>-->>------------');
+///  To print outPutBuffers.  //  not called
+void printBuffers(String caller, String notCalled) {
+  print('\n -->>-->>----  :dawoApp: outBuffers  -->>-->>----');
   print('\n * * * * * * * * * *    outHeader   * * * * * * * * * *  ');
   print(outHeader);
   print('* * * * * * * * * *    outHeader   * * * * * * * * * *  ');
@@ -275,7 +280,7 @@ void printBuffers() {
   print(outFooter);
   print(' * * * * * * * * * *    outFooter   * * * * * * * * * *  \n');
 
-  print('.......  dawoApp outBuffers  done  ...................... \n');
+  print('     --<<--<<----  :dawoApp: outBuffers  done  --<<--<<----   \n');
 }
 
 //

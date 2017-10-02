@@ -32,6 +32,7 @@ num dawLibWorkReadiness = 94; // for version  0.0.1
 
 ///  Buffer also outside class, for testing and adding visibility.
 var choreBuf = new StringBuffer();
+bool pB = false; //  Not printing now.
 
 ///  Generic List to keep all Chores.
 List<CommonChore> choreL = [];
@@ -96,19 +97,19 @@ class CommonChore extends BaseStruct {
   void build() {
     //  TODO  Chore Build Too much printing
     String msg = '-->---->--  chore $name build  -->---->--';
-    flowC(msg, true); //  Call to print / buffer function.
+    flowC(msg, pB); //  Call to print / buffer function.
 
     offB = false; //  off-state ends
     onB = true; //   app is in on
     buf.writeln('build for chore:  $name  : done');
-    flowC('     --<----<--    chore build  done --<----<-- \n', true);
+    flowC('     --<----<--    chore build  done --<----<-- \n', pB);
   }
 
   ///  #run-like method
   ///  If this or one of it's sub-operations conduct #connector-operations,
   ///  it might be annotated in function parameter.
   void roll() {
-    flowC('-->---->--  ch roll  -->---->--', true);
+    flowC('-->---->--  ch roll  -->---->--', pB);
     String _s = 'Chore::    $infoS   :: roll engaged ';
     buf.writeln(_s);
 
@@ -131,7 +132,7 @@ class CommonChore extends BaseStruct {
     show();
     done();
     //  code here
-    flowC('     --<----<--  ch roll  done --<----<--', true);
+    flowC('     --<----<--  ch roll  done --<----<--', pB);
   }
 
   ///  Individual operations are done here.
@@ -202,18 +203,18 @@ void flowC(String msg, bool p) {
 ///  PLAN   small checks, updates, msg:s, notes aso.
 ///  But only, if marked in   "flow - chart"
 void topAll() {
-  flowC('these   W O R K S   are executed in every cycle', true);
+  flowC('these   W O R K S   are executed in every cycle', pB);
 }
 
 /// USAGE:    Execution is meant to be avoided.. as long as possible.
 void underAll() {
   // Name: not nice name..
-  flowC('These are executed ONLY in last occasion', true);
+  flowC('These are executed ONLY in last occasion', pB);
 }
 
 ///  USAGE:    Run occasionally / timely, in sidebar.
 void sideAll() {
-  flowC('executed occasionally in sidebar..', true);
+  flowC('executed occasionally in sidebar..', pB);
 }
 
 //------------------------------------------------------------------------

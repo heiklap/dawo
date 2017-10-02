@@ -8,7 +8,7 @@
 
 library dawo_dev.dart;
 
-import 'dart:math';  //  No need for in-max?
+import 'dart:math'; //  No need for in-max?
 import 'package:dawo/dawo_tools.dart';
 
 //TODO  name   PROBLEMS, when using too common names:
@@ -45,7 +45,7 @@ class Dev {
 
   ///  Generic list to keep and handle all devNotes
   ///  To keep Class DevMessages instances
-  List<DevMessage> devMessageL = [];
+  List<DevMessage> devMessageL = []; //  not used
 
   //--------------------------------------------------------------
 // moved list from chore back to dev.. put first, header values there
@@ -150,10 +150,8 @@ void devBox(String caller, List<List<String>> inList) {
     markRow.padRight(sW, '-'); //  (sW, '_');
 
     ///  build two / three-List in parameter -case box;
-    final int twoBoxHeight =
-        15; //  Should be decided by Lists length.
+    final int twoBoxHeight = 15; //  Should be decided by Lists length.
     final int threeBoxHeight = 17;
-
 
     ///  Build two-column-area List.  -----------   2 columns.
     if (inList.length == 2) {

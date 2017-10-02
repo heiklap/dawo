@@ -18,6 +18,8 @@ import 'clay/clay_roll.dart';
 ///  buffer also outside class, for testing and adding visibility
 var missionBuf = new StringBuffer();
 
+bool pB = false; //  Control printing, now:  false;
+
 ///  Generic list to keep all missions.
 ///  In case for handling other, super or sub-missions, code something more.
 ///  buildMissions() fills this list. Is it outside of the Class.
@@ -27,7 +29,7 @@ List<Mission> missionL = [];
 
 ///  to publish name in scope for testing
 void helloMission() {
-  flowC('-- Somebody call: hello this is mission file and library  ---', true);
+  flowC('-- Somebody call: hello this is mission file and library  ---', pB);
 }
 
 ///  Mission avoids consciously using Chores clear and handy structure, for to
@@ -42,9 +44,8 @@ class Mission {
   String motto;
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal;  //  like:  ":DAWO-APP:";
-  String indent;  // like:  "      ";  3-5-7 empty marks or something visible.
-
+  String seal; //  like:  ":DAWO-APP:";
+  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
   List<CommonChore> choreL = [];
 
@@ -130,8 +131,8 @@ class Mission {
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
     //
-    flowC('-->---->--  building mission:  $name   -->---->--', true);
-    flowC('-->---->--  construct default Chores. For: $name -->---->--', true);
+    flowC('-->---->--  building mission:  $name   -->---->--', pB);
+    flowC('-->---->--  construct default Chores. For: $name -->---->--', pB);
 
     ///  Should use instance, that is created inside THIS mission instance.
     learnChr.build();
@@ -144,17 +145,17 @@ class Mission {
 
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
-    flowC('-->---->--  choreL add-all:  $name   -->---->--', true);
+    flowC('-->---->--  choreL add-all:  $name   -->---->--', pB);
     choreL.addAll(
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
 
     //  CODE
-    flowC('   --<----<--  building mission: done  $name   --<----<-- \n', true);
+    flowC('   --<----<--  building mission: done  $name   --<----<-- \n', pB);
   }
 
   /// devNote:  function, that OPENS something.  so rename; init
   bool opInit(int openCount, var openThis) {
-    print('-->---->--  opInit -->---->--');
+    flowC('-->---->--  opInit -->---->--', pB);
 
     bool _initB = false;
     //  code to initialize variables in system
@@ -163,7 +164,7 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    print('-->---->--  opOpen -->---->--');
+    flowC('-->---->--  opOpen -->---->--', pB);
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
@@ -171,21 +172,21 @@ class Mission {
 
   ///  Start developing operation roll function
   int opRoll(int rollCount, Function autoRollFunc) {
-    print('-->---->--  opRoll -->---->--');
+    flowC('-->---->--  opRoll -->---->--', pB);
     int done = 0;
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
       done++;
       autoRollFunc();
     }
-    print('--<----<--  opRoll done c: $done --<----<--');
+    flowC('--<----<--  opRoll done c: $done --<----<--', pB);
     return done;
   }
 
   /// devNote:  function, that OPENS something.  so rename; init
   /// idea?
   int opClose(int openCount, Function openThis) {
-    print('--<----<-  opClose --<----<-');
+    flowC('--<----<-  opClose --<----<-', pB);
 
     int _openCount = openCount;
     openThis(); // As I recall, parameter-function goes like this.
@@ -194,8 +195,9 @@ class Mission {
     return _openCount;
   }
 
-  ///  report of mission data
-  void report(String caller) {
+  ///  Report of mission data.
+  ///  TODO  Make mission-report return list, for box-output.
+  void report(String caller, bool detailsB) {
     print('\n ****************** caller: $caller *************************');
     print('**  Mission:  $name  Motto: $motto');
     print('**  State:  $state ');
@@ -207,12 +209,16 @@ class Mission {
     print('***********  chores   For mission: $name  *******************  ');
 
     ///  glorious coding. Once again;  choreL and default chores
-    choreL.forEach((x) => print(x.rowInfo()));
-    print('****************  clayMap   **********************************  ');
-    //  clayMap.forEach((k, v) => print('$k, $v'));
-    printStringMapMap(clayMap);
-    print('*************************************************************  \n ');
-  }
+    if (detailsB) {
+      choreL.forEach((x) => print(x.rowInfo()));
+
+      print('****************  clayMap   **********************************  ');
+      //  clayMap.forEach((k, v) => print('$k, $v'));
+      printStringMapMap(clayMap);
+      print(
+          '*************************************************************  \n ');
+    }
+  } //  ----------  report
 
   //  TODO  clean
 
@@ -240,9 +246,9 @@ class Mission {
 ///  Calling print/print-to-buffer method.
 ///  Getting local variables; Actor and Buffer right,
 ///  Every library / actor has its own flowC function
-void flowC(String msg, bool p){
+void flowC(String msg, bool p) {
   ///  call flowServe with #LOCAL variables
-  flowServe(':MISSION:', outTMid  , msg, p);
+  flowServe(':MISSION:', outTMid, msg, p);
 }
 
 ///  create Mission instances
@@ -255,9 +261,19 @@ var myTimeMission = new Mission(
 var nationalParksMission = new Mission(
     'Finlands national park mission', 'Present beautiful finish nature');
 
+///  Show missions and their chores.
+void missionChoreReport(String caller) {
+  print('-->>-->>----  missionChoreReport  caller: $caller');
+  for (var x in missionL) {
+    print(x.name);
+    print(x.choreL);
+  }
+  print('--<<--<<----  missionChoreReport done caller: $caller');
+}
+
 ///  add clay maps to missions
 void buildMissions(String caller) {
-  flowC('-->>-->>-- build Missions, caller: $caller -->>-->>-->>--', true );
+  flowC('-->>-->>-- build Missions, caller: $caller -->>-->>-->>--', pB);
   dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
 
   helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
@@ -285,16 +301,16 @@ void buildMissions(String caller) {
   ]);
 
   /// .build adds default Chore's to missions
-  print('-->---->--  missionL forEach print-choreL   -->---->--');
+  flowC('-->---->--  missionL forEach print-choreL   -->---->--', pB);
 //  hklTry   missionL.forEach((x) => x.build);
   //  missionL.forEach(print);  //  =>  Instance of 'Mission'
-  for (var x in missionL) {
-    print(x.name);
-    print(x.choreL);
-  }
-  print('--<----<--  missionL forEach print-choreL   done --<----<--');
 
-  flowC('-->---->--    missionL.forEach.build    -->---->--', true);
+  ///  Calling mission-chore report
+  if (pB) missionChoreReport('By: MissionBuildMissions');
+
+  flowC('--<----<--  missionL forEach print-choreL   done --<----<--', pB);
+
+  flowC('-->---->--    missionL.forEach.build    -->---->--', pB);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
   helsinkiMission.build();
   dartlangMission.build();
@@ -302,16 +318,20 @@ void buildMissions(String caller) {
   myTimeMission.build();
   nationalParksMission.build();
 //  };
-  flowC('--<----<--  missionL-forEach-build done --<----<-- \n', true);
-  for (var x in missionL) {
-    String _misName = x.name;
-    print('mis-name:  $_misName ');
-    for (var z in x.choreL) {
-      String _chrName = z.name;
-      print('choreName:   $_chrName');
+  flowC('--<----<--  missionL-forEach-build done --<----<-- \n', pB);
+  //  TODO  make mission-chore report
+  if (pB) {
+    for (var x in missionL) {
+      String _misName = x.name;
+      print('mis-name:  $_misName ');
+      for (var z in x.choreL) {
+        String _chrName = z.name;
+        print('choreName:   $_chrName');
+      }
     }
   }
-  print('--<----<--  missionL forEach print-choreL done AGAIN  --<----<-- \n');
+
+  flowC('--<----<--  missionL forEach print-choreL done AGAIN <----<-- \n', pB);
 } //  -----  buildMissions
 
 ///  creating instance of Mission and using it's methods
@@ -324,5 +344,5 @@ void renderMission() {
   missionR.opOn = true;
   helsinkiMission.missionR.toChore();
   missionR.rollCount;
-  flowC('--  mission: $missionR.name : render done  --', true);
+  flowC('--  mission: $missionR.name : render done  --', pB);
 }

@@ -31,11 +31,15 @@ library base_lib;
 
 import 'dart:async';
 
+///  How base_lib manages so far NOT importing base_struct?
+import 'base_struct.dart';
+
 //  TODO  Final readiness.  this is not
 final num dawLibBaseReadiness = 2; //  readiness for  version  0.0.1
 
 ///  buffer also outside class, for testing and adding visibility
 var baseLibBuf = new StringBuffer();
+bool pB = false;
 
 String baseLibMotto = 'Serving common reusable functionality to all files';
 
@@ -171,22 +175,64 @@ void getOperationInfoOnParameters() {
 /// Instead use: flow !!
 //  Actor and buf are not needed in parameter !!  They are get from Global
 //  void flow(String actor, StringBuffer buf, String msg, bool pr)
-///  TODO  To avoid messing with buffer and actor HOORAY: use local fl()
+///  DONE:  To avoid messing with buffer and actor HOORAY: used local fl().
 ///  local: fl calls this Flow()
 void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
-  //  TODO  NOT: Watch, who is #actor at a time, and use its buffer.
   ///  ********************************************************************
-  ///  TO GET  ACTOR AND BUFFER RIGHT, USE LOCAL fl()
+  ///  GETTING NOW  ACTOR AND BUFFER RIGHT, WHEN USED LOCAL fl()
   /// **********************************************************************
   //  TODO : is flow pushing empty rows to buffers?
   String _actor = actor;
-  //  _buf = getGlbBuf();
   if (pr) print(msg);
-  // TODO  in this phase _buf must be in parameters.
+  // DONE:  Now _buf comes from caller in parameters.
 
   buf.writeln('$_actor $msg');
   //  Code here.
   //  Form nice String (for print and/or buf) that describes ongoing operation.
+}
+
+///  Find String in out-buffers;
+void flowFind(String caller, String _fs, int len) {
+  print('lllllllllllllllllllllllll  flowList  c: $caller  llllllllllll');
+  print(' Seeking: $_fs');
+  int foundC = 0;
+  List<String> flowList = new List();
+
+  ///  Find all "flow-process' Strings
+  int bufC = 0;
+  for (var x in outBufL) {
+    bufC++;
+    print('buffer n:o:  $bufC');
+    int _lng = x.length;
+    print('length: $_lng  ');
+
+    ///  change buffer to String.
+    String s = x.toString();
+    int current = 0;
+    flowList.add(s.substring(6, 42));
+    //  while(current < s.length){
+    //  Do we have find here?
+    int sInd;
+    sInd = s.indexOf(_fs, current);
+    print('sInd:  $sInd');
+    if ((sInd > 0) && ((sInd + len + 1) < s.length)) {
+      current = sInd;
+      flowList.add(s.substring(current, (current + len)));
+      foundC++;
+      print('found:  $foundC');
+    }
+    //  }  //  ----- s
+  } //  -----  outBufL
+
+  print('LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL');
+  print('FLOW-LIST:');
+  flowList.forEach(print);
+  print('LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL');
+  print('flowList-length: ');
+  print(flowList.length);
+  print('lllllllllllllllllllllllll  flowList  c: $caller  done lllllllllll');
+
+  if (pB) outBufL.forEach(print); //  Not output for now.
 }
 
 ///  TODO  Some idea: s.

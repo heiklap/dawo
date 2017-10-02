@@ -150,11 +150,10 @@ class Connector extends BaseStruct {
   List<GlobalOpClass> opL = new List();
 
   ///  Join "clients" to opList.
-  void opJoin(){
+  void opJoin() {
     ///  Operations register to Connector.
     ///  code:
   }
-
 
   ///  TODO  Name for next 3 fields might be opTouche aso.
   ///  Solve one unambiguous textual find-decide problem.
