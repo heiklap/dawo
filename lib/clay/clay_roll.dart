@@ -6,6 +6,7 @@
 //
 library clayRoll;
 
+import 'package:dawo/clay/pack_dawo.dart';
 import 'package:dawo/clay/helsinki_guide.dart';
 import 'package:dawo/clay/learn_dartlang.dart';
 import 'package:dawo/clay/my_time.dart';
@@ -15,6 +16,7 @@ import 'package:dawo/clay/national_parks.dart';
 //  TODO : add all maps in list: List<Map<String,String>>
 List<String> clayMapL = [
   'helsinkiGuide',
+  'packDawo',
   'learnDartlang',
   'myMusic',
   'myTime',
@@ -27,6 +29,9 @@ Map getClayMap(String _command) {
   String command = _command;
   Map _retM = {};
   switch (command) {
+    case 'packDawo':
+      _retM = packDawoClay();
+      break;
     case 'helsinkiGuide':
       _retM = helsinkiGuideClay();
       break;
@@ -45,6 +50,15 @@ Map getClayMap(String _command) {
     default:
       executeUnknownClay();
   }
+  return _retM;
+}
+
+///  use new, complicated Map
+Map<String, Map<String, String>> packDawoClay() {
+  Map<String, Map<String, String>> _retM = {};
+  var packDawo = new PackDawo();
+  packDawo.buildMaps(); //  get all maps..
+  _retM.addAll(packDawo.packDawoClayM);
   return _retM;
 }
 

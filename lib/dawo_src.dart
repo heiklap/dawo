@@ -27,7 +27,7 @@ import 'dawo_app.dart';
 import 'dawo_connector.dart'; //  unused
 import 'dawo_dev.dart';
 import 'dawo_mill.dart';
-import 'dawo_mission.dart';
+import 'missions.dart';
 import 'dawo_tools.dart';
 import 'rumba.dart'; //  unused
 

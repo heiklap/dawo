@@ -5,7 +5,8 @@
 /// -  devNote: 4 pc.
 //
 
-library dawo_mission;
+///  Renamed library to: missions.
+library missions;
 
 //  import 'package:dawo/dawo_app.dart';  //  not used
 import 'package:dawo/base_struct.dart';
@@ -197,27 +198,28 @@ class Mission {
 
   ///  Report of mission data.
   ///  TODO  Make mission-report return list, for box-output.
-  void report(String caller, bool detailsB) {
-    print('\n ****************** caller: $caller *************************');
-    print('**  Mission:  $name  Motto: $motto');
-    print('**  State:  $state ');
-    print('**  stDo:  $stDo     stDone: $stDone  ');
-    print('**  rollDone:   $rollDone     rollCount:  $rollCount');
-    print('**  ');
-    print('**  opOn: $opOn    opDone: $opDone     opCount:  $opCount');
-    print('**  ');
-    print('***********  chores   For mission: $name  *******************  ');
-
+  List report(String caller, bool detailsB) {
+    String ps1 = ('\n _________________ caller: $caller _____________________');
+    String ps2 = ('**  $name         Motto: $motto');
+    String ps3 = ('**  State:  $state ');
+    String ps4 = ('**  stDo:  $stDo     stDone: $stDone  ');
+    String ps5 = ('**  rollDone:   $rollDone     rollCount:  $rollCount');
+    String ps6 = ('**  ');
+    String ps7 = ('**  opOn: $opOn    opDone: $opDone     opCount:  $opCount');
+    String ps8 = ('**  ');
+    String ps9 = ('** ______________________________________________________');
+    var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9];
+    //  _l.forEach(print);
     ///  glorious coding. Once again;  choreL and default chores
     if (detailsB) {
       choreL.forEach((x) => print(x.rowInfo()));
 
-      print('****************  clayMap   **********************************  ');
+      print('***** clayMap chores   For mission: $name **********');
       //  clayMap.forEach((k, v) => print('$k, $v'));
       printStringMapMap(clayMap);
-      print(
-          '*************************************************************  \n ');
+      print('*********************************************************** \n ');
     }
+    return _l;
   } //  ----------  report
 
   //  TODO  clean
@@ -252,8 +254,10 @@ void flowC(String msg, bool p) {
 }
 
 ///  create Mission instances
+var packDawoMission = new Mission('pack Dawo mission', 'Build Dawo package');
 var helsinkiMission = new Mission('Helsinki-mission', 'Presenting Helsinki');
 var dartlangMission = new Mission('Dartlang mission', 'Learn dartlang');
+
 var myMusicMission =
     new Mission('My-Music mission', 'Play and share good music');
 var myTimeMission = new Mission(
@@ -276,11 +280,16 @@ void buildMissions(String caller) {
   flowC('-->>-->>-- build Missions, caller: $caller -->>-->>-->>--', pB);
   dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
 
+  packDawoMission.clayMap.addAll(getClayMap('buildDawo'));
+
   helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
   outMTop.writeln('outMtop-buildMissions:helsinki');
 
   dartlangMission.clayMap.addAll(getClayMap('learnDartlang'));
   outMid.writeln('outMid-buildMissions:dartlang');
+
+  ///  Start of new dawoMission
+  packDawoMission.clayMap.addAll(getClayMap('packDawo'));
 
   myMusicMission.clayMap.addAll(getClayMap('myMusic'));
 
@@ -293,6 +302,7 @@ void buildMissions(String caller) {
 
   ///  Add Mission-objects to upper-level missionL List.
   missionL.addAll([
+    packDawoMission,
     helsinkiMission,
     dartlangMission,
     myMusicMission,
@@ -312,6 +322,7 @@ void buildMissions(String caller) {
 
   flowC('-->---->--    missionL.forEach.build    -->---->--', pB);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
+  packDawoMission.build();
   helsinkiMission.build();
   dartlangMission.build();
   myMusicMission.build();

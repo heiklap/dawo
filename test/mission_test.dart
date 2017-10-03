@@ -3,7 +3,7 @@
 //
 
 import 'package:dawo/dawo.dart';
-import 'package:dawo/dawo_mission.dart';
+import 'package:dawo/missions.dart';
 
 var myMission = new Mission('ToDo glorious stuff', 'test');
 

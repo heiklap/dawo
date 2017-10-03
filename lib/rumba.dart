@@ -85,7 +85,7 @@ class Rumba {
     initRumba();
 
     //  test #word ; is clay here?
-    //  Clay  clay ??
+    //  Clay  clay ??  packDawo?
 
     ///  --  rumbaLoop
     flowC('  -->---->--  rumba-loop', true);
@@ -147,8 +147,8 @@ class Rumba {
 
     /// --  usher loop
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
-    devBox('By:RUMBA-DANCE:', [dev.admNotes, dev.devNotes]);
-    devBox('By:RUMBA-DANCE:', [dev.innoNotes, dev.howToNotes, dev.secNotes]);
+    devBox('By:RUMBA-DANCE:', [dev.admNotes, dev.devNotes], 0);
+    devBox('By:RUMBA-DANCE:', [dev.innoNotes, dev.howToNotes, dev.secNotes], 0);
 
     //  flowFind(':RUMBA-DANCE:', '->>-', 35);
     //  flowFind(':RUMBA-DANCE:', 'build', 30);

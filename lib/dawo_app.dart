@@ -13,7 +13,7 @@ import 'base_struct.dart';
 import 'base_lib.dart';
 import 'dawlib_chore.dart';
 import 'dawo_dev.dart';
-import 'dawo_mission.dart';
+import 'missions.dart';
 
 // ignore: unused_field for those wondering.
 
@@ -94,7 +94,7 @@ class DawoApp extends BaseStruct {
     outTl.writeln('* * * :outTl:buf:  -dawoApp-build:  * * * ');
     outTMid.writeln('* * * :outTMid:buf:  -dawoApp-build:  * * * ');
     outTr.writeln('* * * :outTr:buf:   -dawoApp-build:  * * * ');
-    outMTop.writeln('* * * :outtMop:buf  -dawoApp-build:  * * * ');
+    outMTop.writeln('* * * :outMTop:buf  -dawoApp-build:  * * * ');
     outMid.writeln('* * * :outMid:buf:  -dawoApp-build:  * * * ');
     outMBot.writeln('* * * :outMBot:buf:  -dawoApp-build:  * * * ');
     outBl.writeln('* * * :outBl:buf  -dawoApp-build:  * * * ');
@@ -131,13 +131,22 @@ class DawoApp extends BaseStruct {
     flowC('\n  ***  DAWO-APP  MISSIONS   ***  \n', pB);
     buildMissions('C:dawoApp ');
 
-    ///  TODO Detail printing set false; make better, global solution.
+    ///  TODO Detail printing set false: pB; make better, global solution.
     ///  TODO  Make mission-report return list, for box-output.
-    helsinkiMission.report('C:dawoApp-RM', false);
-    dartlangMission.report('C:dawoApp-RM', false);
-    myMusicMission.report('C:dawoApp-RM', false);
-    myTimeMission.report('C:dawoApp-RM', false);
-    nationalParksMission.report('C:dawoApp-RM', false);
+    ///  TODO  buildDawo mission
+    ///  Added 3. parameter, forceHeight
+    ///  NOTE packDawo gets map printed.
+    List list1 = packDawoMission.report('C:dawoApp-:RM:', true);
+    List list2 = helsinkiMission.report('C:dawoApp-:RM:', pB);
+    devBox('By; dawoApp-:RM:', [list1, list2], 9);
+
+    List list3 = dartlangMission.report('C:dawoApp-:RM:', pB);
+    List list4 = myMusicMission.report('C:dawoApp-:RM:', pB);
+    devBox('By; dawoApp-:RM:', [list3, list4], 9);
+
+    List list5 = myTimeMission.report('C:dawoApp-:RM:', pB);
+    List list6 = nationalParksMission.report('C:dawoApp-:RM:', pB);
+    devBox('By; dawoApp-:RM:', [list5, list6], 9);
 
     flowC('\n      --<----<-- app rollMissions  C: $caller --<----<--', pB);
     // roll all chores, that are in mission
@@ -238,6 +247,7 @@ void flowC(String msg, bool p) {
 }
 
 ///  To print outPutBuffers.  //  not called
+///  TODO  Prevent temporarily usage of this.
 void printBuffers(String caller, String notCalled) {
   print('\n -->>-->>----  :dawoApp: outBuffers  -->>-->>----');
   print('\n * * * * * * * * * *    outHeader   * * * * * * * * * *  ');

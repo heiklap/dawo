@@ -14,7 +14,7 @@ import 'package:dawo/dawlib_coll.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
-import 'package:dawo/dawo_mission.dart';
+import 'package:dawo/missions.dart';
 import 'package:dawo/dawo_tools.dart';
 
 import 'package:test/test.dart';

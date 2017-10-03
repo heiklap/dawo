@@ -7,7 +7,7 @@ import 'package:dawo/dawo_app.dart';
 import 'package:dawo/rumba.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
-import 'package:dawo/dawo_mission.dart';
+import 'package:dawo/missions.dart';
 
 import 'package:dawo/dawlib_chore.dart';
 

@@ -105,7 +105,7 @@ var dev = new Dev();
 ///  Show Lists, like devNotes in nice column-box in console.
 ///  Can now handle 2 and 3 column cases, and is common-usage function.
 ///  TODO  Add better row / height decision.
-void devBox(String caller, List<List<String>> inList) {
+void devBox(String caller, List<List<String>> inList, int forceHeight) {
   final int sW = 210;
   String borderS = ' | ';
 
@@ -150,8 +150,11 @@ void devBox(String caller, List<List<String>> inList) {
     markRow.padRight(sW, '-'); //  (sW, '_');
 
     ///  build two / three-List in parameter -case box;
-    final int twoBoxHeight = 15; //  Should be decided by Lists length.
-    final int threeBoxHeight = 17;
+    ///  Use forceHeight parameter:
+    int twoBoxHeight = 15; //  Should be decided by Lists length.
+    // Should force length of in-list.
+    if (forceHeight > 0) twoBoxHeight = forceHeight;
+    int threeBoxHeight = 17;
 
     ///  Build two-column-area List.  -----------   2 columns.
     if (inList.length == 2) {
