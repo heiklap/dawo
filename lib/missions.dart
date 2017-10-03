@@ -4,6 +4,7 @@
 /// -  HIST:  hkl  8.9.2017
 /// -  devNote: 4 pc.
 //
+//  word:  build  36 / 26  pc. Is it too much.
 
 ///  Renamed library to: missions.
 library missions;
@@ -20,6 +21,7 @@ import 'clay/clay_roll.dart';
 var missionBuf = new StringBuffer();
 
 bool pB = false; //  Control printing, now:  false;
+//  bool pB = true; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
 ///  In case for handling other, super or sub-missions, code something more.
@@ -196,28 +198,45 @@ class Mission {
     return _openCount;
   }
 
+  ///  To get Chore class names in String.
+  String getChoreNamesS() {
+    StringBuffer nBuf = new StringBuffer();
+    for (var x = 0; x < choreL.length; x++){
+      nBuf.write(choreL[x].name);
+      nBuf.write(' ');
+    }
+    return nBuf.toString();
+  }
+
+  ///  TODO  quick list.. is it gonna work??
   ///  Report of mission data.
   ///  TODO  Make mission-report return list, for box-output.
   List report(String caller, bool detailsB) {
-    String ps1 = ('\n _________________ caller: $caller _____________________');
+    //  NOTE  If more than 9 Chores, need something else.
+    String choreLengthS = choreL.length.toString();
+    String choreS = getChoreNamesS();
+
+        String ps1 = ('**.               caller: $caller                       .');
     String ps2 = ('**  $name         Motto: $motto');
     String ps3 = ('**  State:  $state ');
     String ps4 = ('**  stDo:  $stDo     stDone: $stDone  ');
     String ps5 = ('**  rollDone:   $rollDone     rollCount:  $rollCount');
     String ps6 = ('**  ');
     String ps7 = ('**  opOn: $opOn    opDone: $opDone     opCount:  $opCount');
-    String ps8 = ('**  ');
-    String ps9 = ('** ______________________________________________________');
-    var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9];
+    String ps8 = ('**  Chores:   $choreLengthS');
+    String ps9 = ('**  $choreS');
+    String ps10 = ('** ______________________________________________________');
+    var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
     //  _l.forEach(print);
     ///  glorious coding. Once again;  choreL and default chores
     if (detailsB) {
+      print('\n *** :M: report details : choreL : For mission: $name ***');
       choreL.forEach((x) => print(x.rowInfo()));
 
-      print('***** clayMap chores   For mission: $name **********');
+      print('\n *** :M: report details clayMap chores For mission: $name ***');
       //  clayMap.forEach((k, v) => print('$k, $v'));
       printStringMapMap(clayMap);
-      print('*********************************************************** \n ');
+      print('************************ :M: report details done   ******** \n ');
     }
     return _l;
   } //  ----------  report
@@ -280,22 +299,29 @@ void buildMissions(String caller) {
   flowC('-->>-->>-- build Missions, caller: $caller -->>-->>-->>--', pB);
   dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
 
-  packDawoMission.clayMap.addAll(getClayMap('buildDawo'));
-
   helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
-  outMTop.writeln('outMtop-buildMissions:helsinki');
+  outMTop.writeln('outMtop-buildMissions : helsinki');
 
   dartlangMission.clayMap.addAll(getClayMap('learnDartlang'));
-  outMid.writeln('outMid-buildMissions:dartlang');
-
-  ///  Start of new dawoMission
-  packDawoMission.clayMap.addAll(getClayMap('packDawo'));
+  outMid.writeln('outMid-buildMissions : dartlang');
 
   myMusicMission.clayMap.addAll(getClayMap('myMusic'));
+  outBl.writeln('outBl-buildMission : myMusic');
+
+
 
   myTimeMission.clayMap.addAll(getClayMap('myTime'));
+  outBr.writeln('outBr-buildMission : myTime');
+
 
   nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
+  outFooter.writeln('outFooter-buildMission : nationalParks');
+
+  ///  Start of new dawoMission
+  ///
+  packDawoMission.clayMap.addAll(getClayMap('packDawo'));
+  outMTop.writeln('outMTop-buildMission: packDawo');
+
 
   ///  Write String to buffer for notification.
   outMBot.writeln('outBot-buildMissions:national-parks');

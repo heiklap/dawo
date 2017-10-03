@@ -30,7 +30,7 @@ var rumba = new Rumba();
 
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
-  print('\n ---------  app_blib_chore example  ----------------------');
+  print('==>>==>>====  app_blib_chore example  ==>>==>>====');
 
   rumba.dance(dawoApp);
 
@@ -44,16 +44,17 @@ main() {
   //  otherStuff();
 
   //  testing dawoAppRoll
-  print('========  dawo app roll =================');
+  print('==>>==>>====  dawo app roll by: :app-lib-chore-play: ==>>==>>====');
 
   dawoApp.roll();
-  dev.showNotes();
-  print('========  dawo app roll   done=================');
+  dev.showNotes(':app-lib-chore-play:');
+  print('  ==<<==<<====  dawo app rol done :app-lib-chore-play: ==<<==<<====');
 }
 
 //  all happens here, just presentation
 //  classes are not interacting aso.
 void otherStuff() {
+  print('==>>==>>====  app_blib_chore example otherStuff ==>>==>>====');
   devHelp..line('dawoAppRoll');
   dawoApp.roll();
 
@@ -85,7 +86,7 @@ void otherStuff() {
   devHelp.line('render Chore');
   renderChore();
 
-  devHelp.end('app-flag-bLib-chore-play');
+  print('==<<==<<====  app_blib_chore example otherStuff ==<<==<<====');
 }
 
 //

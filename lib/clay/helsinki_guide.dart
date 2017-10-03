@@ -9,6 +9,8 @@ library helsinkiGuide;
 import 'package:dawo/base_struct.dart';
 import 'package:dawo/base_lib.dart';
 
+bool pB = false;
+
 ///
 class HelsinkiGuide {
   String name = 'Helsinki Guide class';
@@ -110,8 +112,8 @@ class HelsinkiGuide {
 
   Map<String, String> eventM = {' ': ' ', 'a': ' ', 'b': ' '};
 
-  void buildMaps() {
-    flowC('--  building Helsinki maps  --', true);
+  void buildMaps(String caller) {
+    flowC('--  building Helsinki maps  c: $caller --', pB);
     helsinkiClayM.addAll({
       'Attractions': attractionM,
       'outdoor': outdoorM,
@@ -119,15 +121,15 @@ class HelsinkiGuide {
       'seasons': seasonM,
       'events': eventM
     });
-    flowC('--  building Helsinki maps   done  --', true);
+    flowC('--  building Helsinki maps   done  --', pB);
   }
 } //  -----  class HelsinkiGuide
 
 ///  Calling print/print-to-buffer method.
 ///  Getting local variables; Actor and Buffer right,
-void flowC(String msg, bool p) {
+void flowC(String msg, bool pB) {
   ///  call flowServe with #LOCAL variables
-  flowServe(':HELSINKI:', outMTop, msg, p);
+  flowServe(':HELSINKI:', outMTop, msg, pB);
 }
 
 ///  instance

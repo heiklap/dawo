@@ -108,6 +108,47 @@ class DawoApp extends BaseStruct {
   ///  return:  Map<String, StringBuffer> outMapBuffers
   Map<String, StringBuffer> roll() {
     dev.admNotes.add('>>ADM:CHECK-IN  dawo_app-roll  >>');
+    dev.admNotes.add(':A-R: = in App-Roll. Mark value number: #7: ');
+    dev.admNotes.add(':A-R: :Word: Testing: #ALERT #NoAction.');
+    dev.admNotes.add(':A-R: :Word: Testing: #ALL #Action.');
+    dev.admNotes.add(':A-R: :Word: Testing: #ALL #NoAction.');
+    dev.admNotes.add(':A-R: :Word: Testing: #ALL #NoAction.');
+    dev.admNotes.add(':A-R: :#ORDER: Short names for coders to use.');
+
+    dev.devNotes.add(':A-R: :TDev: Habits: keep 3 day off before new version.');
+    dev.devNotes.add(':A-R: :TDev: Connect: Try to get :feedback: #Area.');
+    dev.devNotes.add(':A-R: :Placement in time and area for objects.');
+    dev.devNotes.add(':A-R: :Word: #Picker.');
+    dev.devNotes.add(':A-R: :Performance: #?  #CL Long time to render.');
+
+
+    dev.innoNotes.add(':A-R: Incremented usage-counter in old notes.');
+    dev.innoNotes.add(':A-R: Clean older notes or archive them.');
+    dev.innoNotes.add(':A-R: Not allowed messages if at least one Legal word.');
+    dev.innoNotes.add(':A-R: Words: ');
+    dev.innoNotes.add(':A-R: Words: ## To mark word for consideration as key');
+    dev.innoNotes.add(':A-R: Words: ##Carry in Rumba to medagte message.');
+    dev.innoNotes.add(':A-R: Phraseoloy');
+    dev.innoNotes.add(':A-R: #LowLevel talk for dev folks.');
+
+    dev.howToNotes.add(':A-R: howTo fetch data via HTTP.');
+    dev.howToNotes.add(':A-R: howTo   getfirst  changeable web pages.');
+    dev.howToNotes.add(':A-R: howTo Gather devNotes by type.');
+    dev.howToNotes.add(':A-R: howTo Classify devNotes by value.');
+    dev.howToNotes.add(':A-R: howTo Add notes last in to list?');
+    dev.howToNotes.add(':A-R: howTo Send #ALERT #ALL note to every List?');
+
+    dev.secNotes.add(':A-R: #Numbers for #Event:s and #Msg :s. ');
+    dev.secNotes.add(':A-R: #FlowC call check for extra innder calls.');
+    dev.secNotes.add(':A-R: #Password.');
+    dev.secNotes.add(':A-R: #Encrypt :ion.');
+    dev.secNotes.add(':A-R: #Force render methods to leave #Stamp or #Logo.');
+    dev.secNotes.add(':A-R:  #Force test methods to leave #Stamp or #Logo.');
+    dev.secNotes.add(':A-R:  #Prevent deleting notes without notice.');
+    dev.secNotes.add(':A-R:  Keep #Track of extra iterators in notes.');
+    dev.secNotes.add(':A-R:  #encrypt ed notes not allowed.');
+
+
 
     //  build already does this  dev.buildNotes();
     buf.writeln(':da:b: DawoApp::roll    $infoS   :: roll engaged ');

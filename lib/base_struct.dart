@@ -11,16 +11,20 @@ library base_struct;
 String baseStructMotto = 'Base rules for building classes';
 
 ///  10 StringBuffers named for output to screen areas.
-StringBuffer outHeader = new StringBuffer();
+StringBuffer outHeader = new StringBuffer(); //  app - roll
+
 StringBuffer outTl = new StringBuffer(); //  rumba
-StringBuffer outTMid = new StringBuffer();
-StringBuffer outTr = new StringBuffer(); //  appRoll
-StringBuffer outMTop = new StringBuffer(); //  helsinki
-StringBuffer outMid = new StringBuffer(); //  dartlang
-StringBuffer outMBot = new StringBuffer(); //  n-parks
-StringBuffer outBl = new StringBuffer();
-StringBuffer outBr = new StringBuffer(); //  chore
-StringBuffer outFooter = new StringBuffer();
+StringBuffer outTMid = new StringBuffer(); //  ?  mission
+StringBuffer outTr = new StringBuffer(); //  dev
+
+StringBuffer outMTop = new StringBuffer(); //  m - packDawo
+StringBuffer outMid = new StringBuffer(); //  m - dartlang
+StringBuffer outMBot = new StringBuffer(); //  m - helsinki
+
+StringBuffer outBl = new StringBuffer(); //  m - myMusic
+StringBuffer outBr = new StringBuffer(); //  m - myTime
+
+StringBuffer outFooter = new StringBuffer(); // m -  nParks
 
 ///  List containing all outBuffers.
 List<StringBuffer> outBufL = [

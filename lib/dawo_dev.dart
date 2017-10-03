@@ -82,8 +82,17 @@ class Dev {
         ['Restrict use of certainn methdos', 'Create up-level pass-word']);
   }
 
+  ///  More demonstrative presentation method.
   void showNotes(String caller) {
     print('\n ------->>-->>--  dev.showNotes  by: $caller ------->>-->>--   ');
+    devBox('By:dev:', [dev.admNotes, dev.devNotes], 0);
+    devBox('By:dev:', [dev.innoNotes, dev.howToNotes, dev.secNotes], 0);
+    print('\n --<<--<<------------  dev.showNotes  --<<--<<------------   ');
+  }
+
+  ///  Old-fashioned list print method.
+  void listNotes(String caller){
+    print('\n ------->>-->>--  dev.listNotes  by: $caller ------->>-->>--   ');
     dev.howToNotes.add('dev-Show-Notes:  How to add 8-indent in show?  ');
     dev.secNotes.add('dev-Show-Notes:  howTo keep some notes secret?  Sec? ');
     admNotes.forEach(print);
@@ -95,7 +104,7 @@ class Dev {
     howToNotes.forEach(print);
     print(' ');
     secNotes.forEach(print);
-    print('\n --<<--<<------------  dev.showNotes  --<<--<<------------   ');
+    print('\n --<<--<<------------  dev.listNotes  --<<--<<------------   ');
   }
 } //  -----  class dev
 
@@ -140,7 +149,7 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
   } //  ---------  tuneColumnList
 
   void devBoxBuild() {
-    print('>>>>>>>>>>>>>>>>>>>    tBox  calledBy: $caller >>>>>>>>>>>>>>');
+    //  print('>>>>>>>>>>>>>>>>>>>    tBox  calledBy: $caller >>>>>>>>>>>>>>');
     //  int rows = 12;
     int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
 

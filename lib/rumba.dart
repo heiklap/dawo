@@ -124,7 +124,7 @@ class Rumba {
             rumbaBuf.writeAll([rumbaLoopRumbaS, rumbaLoopUsherS]);
             rumbaBuf.writeAll([rumbaLoopDawoAppS, rumbaLoopMissionS]);
 
-            flowC('     --<----<--  rumba-loop-mission', true);
+            flowC('     -->---->--  rumba-loop-mission', true);
 
             // -- chore
 

@@ -33,6 +33,7 @@ num dawLibWorkReadiness = 94; // for version  0.0.1
 ///  Buffer also outside class, for testing and adding visibility.
 var choreBuf = new StringBuffer();
 bool pB = false; //  Not printing now.
+//  bool pB = true; //  Printing true for chore_test.dart  TODO
 
 ///  Generic List to keep all Chores.
 List<CommonChore> choreL = [];
@@ -109,6 +110,7 @@ class CommonChore extends BaseStruct {
   ///  If this or one of it's sub-operations conduct #connector-operations,
   ///  it might be annotated in function parameter.
   void roll() {
+    print('-->---->--  chore roll FOR TEST chore_test -->---->--');
     flowC('-->---->--  ch roll  -->---->--', pB);
     String _s = 'Chore::    $infoS   :: roll engaged ';
     buf.writeln(_s);
@@ -117,14 +119,18 @@ class CommonChore extends BaseStruct {
     build();
     //  code for roll
     //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
-    print('------------------  clay maps ---------------------------------');
+    print('------------ chore  clay maps ---------------------------------');
     print(clayMapL);
-    print('------------------  clay maps ---------------------------------');
-    for (var f in clayMapL) {
-      Map _m = getClayMap(f);
-      print('\n  map/chore::   $f   ------ ');
-      _m.forEach((k, v) => print('$k ,$v'));
-    }
+    print('------------ chore  clay maps ---------------------------------');
+    if(pB) {
+      for (var f in clayMapL) {
+        Map _m = getClayMap(f);
+        print('\n  map/chore::   $f   ------ ');
+        _m.forEach((k, v) => print('$k ,$v'));
+      }
+
+    }  //  --pB
+
 
     //  run #op, for single operation
     op(placardM); //  Actually map is yet not used there.

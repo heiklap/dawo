@@ -66,7 +66,7 @@ Map<String, Map<String, String>> packDawoClay() {
 Map<String, Map<String, String>> helsinkiGuideClay() {
   Map<String, Map<String, String>> _retM = {};
   var helsinkiGuide = new HelsinkiGuide();
-  helsinkiGuide.buildMaps(); //  get all maps..
+  helsinkiGuide.buildMaps('Clay-Roll - helsinkiGuideClay'); //  get all maps..
   _retM.addAll(helsinkiGuide.helsinkiClayM);
   return _retM;
 }

@@ -23,11 +23,14 @@ import 'package:test/test.dart';
 void main() {
   //  choose test:  chore or rumba
   //  testChore();
-  testRumba();
+  //  testRumba();
+
+
+  testPackDawoChore();
 }
 
 void testChore() {
-  print('............ ch_chore test common process  ........................');
+  print('==>>==>>==== ch_chore test commonChore roll ==>>==>>==== ');
   var ch = new CommonChore('test-chore', 'test-chore-info');
   ch.buf.writeln('hello world');
 
@@ -36,13 +39,36 @@ void testChore() {
   ch.roll();
 
   print(ch.buf);
+  print('  ==<<==<<==== ch_chore test commonChore roll done  ==<<==<<==== ');
+}
+
+///  Question: do we have access to PackDawo class without imports?
+void testPackDawoChore() {
+  print('==>>==>>==== ch_chore test packDawoChore roll ==>>==>>==== ');
+
+  //  PackDawo;  //  no access it all goes via: mission
+  //  print(packDawoMission.choreL); //  List is empty.
+
+
+  //  Should first run packDawoMission.build.
+
+  /// :ASK: for clause can not look inside Class.
+  /// for(var x in packDawoMission.choreL) {
+
+  ///  Must #build class, to get chores in place.
+  packDawoMission.build();
+  for (var x = 0; x < packDawoMission.choreL.length; x++) {
+    packDawoMission.choreL[x].roll();
+  }
+  print('  ==<<==<<==== ch_chore test packDawoChore roll done ==<<==<<==== ');
 }
 
 void testRumba() {
-  print('\n -----------  rumba test  ----------------------');
+  print('\n ==>>==>>==== ch_chore test test_rumba ==>>==>>==== ');
   var dawoApp = new DawoApp('dawoApp-test-Rumba', 'Just choreTest.dart');
 
   var rumba = new Rumba();
   rumba.dance(dawoApp);
-  dev.showNotes();
+  dev.showNotes(':chore-test:');
+  print('  ==<<==<<==== ch_chore test : testRumba done ==<<==<<==== ');
 }

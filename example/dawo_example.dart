@@ -37,6 +37,7 @@ var missionX = new Mission('Mission-class', 'example:dawo_example');
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {
+  print('==>>==>>====      dawo_example          ==>>==>>====');
   //  By Google Stagehand example
   var awesome = new Awesome();
   print(':DAWO:EXAMPLE:  awesome: ${awesome.isAwesome}');
@@ -47,7 +48,7 @@ main() {
 
   // This also returns a StringBuffer.
   rumba.dance(dawoApp);
-  print('==================  dawo_example done =========================');
+  print('==<<==<<====      dawo_example done     ==<<==<<====');
 }
 
 ///

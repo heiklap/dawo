@@ -22,7 +22,7 @@ To be published:  approximately: 15.10.2017
 4.b ____  Use async to catch some Stream / future to normal flow.
           Use async, to gather devNotes, and present them at the end of test_output.
 
-4.1 DON_  Reasonable output; regulated form for every classes original-looking output.
+4.1 DONE  Reasonable output; regulated form for every classes original-looking output.
           Use top-level StringBuffers to save every classes output.
 
 4.2 ____  Mission - chore; operations and smaller entities; placardM aso.
@@ -35,10 +35,10 @@ To be published:  approximately: 15.10.2017
           *  *  *   TAIL   *  *  *
 4.4 ____  Render ( = test, presentation and quick-note function) to every library.
 
-4,5 D___  dev class. dev tester person. Use actively in development.
+4,5 DO__  dev class. dev tester person. Use actively in development.
             -every library imports dev, and can add dev-notes.
 
-4.6 ____  Dev / Team notes (List and maps) maybe: in JSON or IndexedDB mode.
+4.6 DO__  Dev / Team notes (List and maps) maybe: in JSON or IndexedDB mode.
             * in clay_in folder = incoming data.
 
 4.7 ____  Use JSON, enums, set, Map, queues. Just for to show that you can.

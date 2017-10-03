@@ -12,6 +12,21 @@ num demoToolsReadiness = 96;
 ///  buffer also outside class, for testing and adding visibility
 var toolsBuf = new StringBuffer();
 
+///  Return String from List of Strings.
+String listToString(List<String> _l) {
+  print(_l);
+  print(_l[0]);
+  String s;
+  StringBuffer sBuf = new StringBuffer();
+  for (var x in _l){
+    print(_l[x]);
+    sBuf.write(_l[x]);
+    sBuf.write(' ');
+  }
+  s = sBuf.toString();
+  return s;
+}
+
 ///  just a note, howTo print a map
 void operationMapPrint(Map thisMap) {
   thisMap.forEach((k, v) {
@@ -22,7 +37,7 @@ void operationMapPrint(Map thisMap) {
 ///  print Map<String, Map<String, String>>  map nicely
 void printStringMapMap(Map<String, Map<String, String>> _map) {
   int _length = _map.length;
-  print('length:  $_length  ');
+  print('#printStringMapMap : length:  $_length  ');
   List<String> nameL = _map.keys.toList();
   for (var x = 0; x < _length; x++) {
     String name = nameL[x];
