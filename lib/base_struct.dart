@@ -49,7 +49,9 @@ abstract class BaseStruct {
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   String seal; //  like:  ":DAWO-APP:";
+  String emblem; //  or this emblem.
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String master; //  Object that owns this.
 
   StringBuffer buf;
 
@@ -68,7 +70,7 @@ abstract class BaseStruct {
   void init();
 
   ///  Method for setting class in working condition.
-  void build();
+  void build(String _emblem, String _master);
 
   ///  #run-like method, it my have sub-methods; do, run.
   void roll();

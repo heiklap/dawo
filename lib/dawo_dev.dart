@@ -91,7 +91,7 @@ class Dev {
   }
 
   ///  Old-fashioned list print method.
-  void listNotes(String caller){
+  void listNotes(String caller) {
     print('\n ------->>-->>--  dev.listNotes  by: $caller ------->>-->>--   ');
     dev.howToNotes.add('dev-Show-Notes:  How to add 8-indent in show?  ');
     dev.secNotes.add('dev-Show-Notes:  howTo keep some notes secret?  Sec? ');

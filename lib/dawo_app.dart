@@ -35,8 +35,14 @@ class DawoApp extends BaseStruct {
   String infoS = 'giving global variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
 
-  ///  must initialize StringBuffer here
-  StringBuffer buf = new StringBuffer();
+  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  String seal; //  like:  ":DAWO-APP:";///  must initialize StringBuffer here
+  String emblem =
+      ':D-A:'; //  or this emblem.StringBuffer buf = new StringBuffer();
+  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String master; //  Object that owns this.
+
+  StringBuffer buf;
 
   ///  Controlling app state, working-condition-state values.
   bool offB = true;
@@ -46,16 +52,20 @@ class DawoApp extends BaseStruct {
 
   ///  Organize out-buffers to Map for return to package users.
   Map<String, StringBuffer> outMapBuffers = {
-    'outHeader': outHeader,
-    'outTl': outTl,
-    'outTMid': outTMid,
-    'outTr': outTr,
-    'outMTop': outMTop,
-    'outMid': outMid,
-    'outMBot': outMBot,
-    'outBl': outBl,
-    'outBr': outBr,
-    'outFooter': outFooter
+    'outHeader': outHeader, //  app - roll
+
+    'outTl': outTl, //  rumba
+    'outTMid': outTMid, //   ?  mission
+    'outTr': outTr, //  dev
+
+    'outMTop': outMTop, //   m - packDawo
+    'outMid': outMid, //  m - dartlang
+    'outMBot': outMBot, //  m - helsinki
+
+    'outBl': outBl, //  m - myMusic
+    'outBr': outBr, //  m - myTime
+
+    'outFooter': outFooter // m -  nParks
   };
 
   ///  App-specified fields.
@@ -74,14 +84,15 @@ class DawoApp extends BaseStruct {
     //  TODO  Actor:  only one actor for now...
     glb.changeActor(':DAWO-APP:');
     //  TODO  Set some field values.
-    buf.writeln('---  DawoApp buffer output initialized  ---');
+    flowC('  -->-->>--  DawoApp buffer output initialized  ---', pB);
 
     //  Set fields values.
-    buf.writeln(':da:b: init done');
+    flowC('  --<<--<<--  :da:b: init done', pB);
   }
 
   ///  Method for setting class in working condition.
-  void build() {
+  void build(String emblem, String master) {
+    ///  NOTE empty parameter now, not used. For chore.build.
     offB = false; //  off-state ends
     onB = true; //   app is in on
 
@@ -101,59 +112,62 @@ class DawoApp extends BaseStruct {
     outBr.writeln('* * * :outBr:buf:  -dawoApp-build:  * * * ');
     outFooter.writeln('* * * :outFooter:buf:  -dawoApp-build:  * * * ');
 
-    buf.writeln(':da:b:  build done');
+    flowC('  --<<--<<--  :da:b:  build done', pB);
   }
 
   ///  #run-like method
   ///  return:  Map<String, StringBuffer> outMapBuffers
   Map<String, StringBuffer> roll() {
     dev.admNotes.add('>>ADM:CHECK-IN  dawo_app-roll  >>');
-    dev.admNotes.add(':A-R: = in App-Roll. Mark value number: #7: ');
-    dev.admNotes.add(':A-R: :Word: Testing: #ALERT #NoAction.');
-    dev.admNotes.add(':A-R: :Word: Testing: #ALL #Action.');
-    dev.admNotes.add(':A-R: :Word: Testing: #ALL #NoAction.');
-    dev.admNotes.add(':A-R: :Word: Testing: #ALL #NoAction.');
-    dev.admNotes.add(':A-R: :#ORDER: Short names for coders to use.');
+    dev.admNotes.add(':Ar: = in App-Roll. Mark value number: #7: ');
+    dev.admNotes.add(':Ar: :Word: Testing: #ALERT #NoAction.');
+    dev.admNotes.add(':Ar: :Word: Testing: #ALL #Action.');
+    dev.admNotes.add(':Ar: :Word: Testing: #ALL #NoAction.');
+    dev.admNotes.add(':Ar: :Word: Testing: #ALL #NoAction.');
+    dev.admNotes.add(':Ar: :#ORDER: Short names for coders to use.');
 
-    dev.devNotes.add(':A-R: :TDev: Habits: keep 3 day off before new version.');
-    dev.devNotes.add(':A-R: :TDev: Connect: Try to get :feedback: #Area.');
-    dev.devNotes.add(':A-R: :Placement in time and area for objects.');
-    dev.devNotes.add(':A-R: :Word: #Picker.');
-    dev.devNotes.add(':A-R: :Performance: #?  #CL Long time to render.');
+    dev.devNotes.add(':Ar: :TDev: Habits: keep 3 day off before new version.');
+    dev.devNotes.add(':Ar: :TDev: Connect: Try to get :feedback: #Area.');
+    dev.devNotes.add(':Ar: :Placement in time and area for objects.');
+    dev.devNotes.add(':Ar: :Word: #Picker.');
+    dev.devNotes.add(':Ar: :Performance: #?  #CL Long time to render.');
+    dev.devNotes.add(':Ar: :NO: list for prohibited #Words for team.');
+    dev.devNotes.add(':Ar: :YES: list for only-allowed #Words for team.');
+    dev.devNotes.add(':Ar: :SHOW: method; parameter to give #Find this.');
+    dev.devNotes.add(':Ar: :TEST:  Benchmark.');
 
+    dev.innoNotes.add(':Ar: Incremented usage-counter in old notes.');
+    dev.innoNotes.add(':Ar: Clean older notes or archive them.');
+    dev.innoNotes.add(':Ar: Not allowed messages if at least one Legal word.');
+    dev.innoNotes.add(':Ar: Words: ');
+    dev.innoNotes.add(':Ar: Words: ## To mark word for consideration as key');
+    dev.innoNotes.add(':Ar: Words: ##Carry in Rumba to medagte message.');
+    dev.innoNotes.add(':Ar: Phraseoloy');
+    dev.innoNotes.add(':Ar: #LowLevel talk for dev folks.');
 
-    dev.innoNotes.add(':A-R: Incremented usage-counter in old notes.');
-    dev.innoNotes.add(':A-R: Clean older notes or archive them.');
-    dev.innoNotes.add(':A-R: Not allowed messages if at least one Legal word.');
-    dev.innoNotes.add(':A-R: Words: ');
-    dev.innoNotes.add(':A-R: Words: ## To mark word for consideration as key');
-    dev.innoNotes.add(':A-R: Words: ##Carry in Rumba to medagte message.');
-    dev.innoNotes.add(':A-R: Phraseoloy');
-    dev.innoNotes.add(':A-R: #LowLevel talk for dev folks.');
+    dev.howToNotes.add(':Ar: howTo fetch data via HTTP.');
+    dev.howToNotes.add(':Ar: howTo   getfirst  changeable web pages.');
+    dev.howToNotes.add(':Ar: howTo Gather devNotes by type.');
+    dev.howToNotes.add(':Ar: howTo Classify devNotes by value.');
+    dev.howToNotes.add(':Ar: howTo Add notes last in to list?');
+    dev.howToNotes.add(':Ar: howTo Send #ALERT #ALL note to every List?');
 
-    dev.howToNotes.add(':A-R: howTo fetch data via HTTP.');
-    dev.howToNotes.add(':A-R: howTo   getfirst  changeable web pages.');
-    dev.howToNotes.add(':A-R: howTo Gather devNotes by type.');
-    dev.howToNotes.add(':A-R: howTo Classify devNotes by value.');
-    dev.howToNotes.add(':A-R: howTo Add notes last in to list?');
-    dev.howToNotes.add(':A-R: howTo Send #ALERT #ALL note to every List?');
-
-    dev.secNotes.add(':A-R: #Numbers for #Event:s and #Msg :s. ');
-    dev.secNotes.add(':A-R: #FlowC call check for extra innder calls.');
-    dev.secNotes.add(':A-R: #Password.');
-    dev.secNotes.add(':A-R: #Encrypt :ion.');
-    dev.secNotes.add(':A-R: #Force render methods to leave #Stamp or #Logo.');
-    dev.secNotes.add(':A-R:  #Force test methods to leave #Stamp or #Logo.');
-    dev.secNotes.add(':A-R:  #Prevent deleting notes without notice.');
-    dev.secNotes.add(':A-R:  Keep #Track of extra iterators in notes.');
-    dev.secNotes.add(':A-R:  #encrypt ed notes not allowed.');
-
-
+    dev.secNotes.add(':Ar: #Numbers for #Event:s and #Msg :s. ');
+    dev.secNotes.add(':Ar: #FlowC call check for extra innder calls.');
+    dev.secNotes.add(':Ar: #Password.');
+    dev.secNotes.add(':Ar: #Encrypt :ion.');
+    dev.secNotes.add(':Ar: #Force render methods to leave #Stamp or #Logo.');
+    dev.secNotes.add(':Ar:  #Force test methods to leave #Stamp or #Logo.');
+    dev.secNotes.add(':Ar:  #Prevent deleting notes without notice.');
+    dev.secNotes.add(':Ar:  Keep #Track of extra iterators in notes.');
+    dev.secNotes.add(':Ar:  #encrypt ed notes not allowed.');
 
     //  build already does this  dev.buildNotes();
-    buf.writeln(':da:b: DawoApp::roll    $infoS   :: roll engaged ');
+    flowC(':da:b: DawoApp::roll    $infoS   :: roll engaged ', pB);
+
     init(); //  calling init and build methods in this class
-    build();
+    build(':DAWO-APP:', 'DAWO-APP-MASTER:');
+
     //  Add code for roll.
 
     appRollMissions('C:DawoApp-roll ');
@@ -177,17 +191,17 @@ class DawoApp extends BaseStruct {
     ///  TODO  buildDawo mission
     ///  Added 3. parameter, forceHeight
     ///  NOTE packDawo gets map printed.
-    List list1 = packDawoMission.report('C:dawoApp-:RM:', true);
-    List list2 = helsinkiMission.report('C:dawoApp-:RM:', pB);
-    devBox('By; dawoApp-:RM:', [list1, list2], 9);
+    List list1 = packDawoMission.report('C:dawoApp-:rM:', true);
+    List list2 = helsinkiMission.report('C:dawoApp-:rM:', pB);
+    devBox('By; dawoApp-:rM:', [list1, list2], 9);
 
-    List list3 = dartlangMission.report('C:dawoApp-:RM:', pB);
-    List list4 = myMusicMission.report('C:dawoApp-:RM:', pB);
-    devBox('By; dawoApp-:RM:', [list3, list4], 9);
+    List list3 = dartlangMission.report('C:dawoApp-:rM:', pB);
+    List list4 = myMusicMission.report('C:dawoApp-:rM:', pB);
+    devBox('By; dawoApp-:rM:', [list3, list4], 9);
 
-    List list5 = myTimeMission.report('C:dawoApp-:RM:', pB);
-    List list6 = nationalParksMission.report('C:dawoApp-:RM:', pB);
-    devBox('By; dawoApp-:RM:', [list5, list6], 9);
+    List list5 = myTimeMission.report('C:dawoApp-:rM:', pB);
+    List list6 = nationalParksMission.report('C:dawoApp-:rM:', pB);
+    devBox('By; dawoApp-:rM:', [list5, list6], 9);
 
     flowC('\n      --<----<-- app rollMissions  C: $caller --<----<--', pB);
     // roll all chores, that are in mission
@@ -225,7 +239,7 @@ class DawoApp extends BaseStruct {
     outBr.writeln('outBr-dawoApp-done:');
     outFooter.writeln('outFooter-dawoApp-done:');
     //  code here
-    buf.write(':da:b: ---  DawoApp buffer output app: done  ---');
+    flowC('  --<<--<<--  :da:b: --  DawoApp buffer output app: done  --', pB);
     if (pB) print(buf);
     //  buf.clear(); //  empty buffer
     flowC('     --<<--<<----  DawoApp.done  done  --<<--<<---- \n', pB);
@@ -289,6 +303,7 @@ void flowC(String msg, bool p) {
 
 ///  To print outPutBuffers.  //  not called
 ///  TODO  Prevent temporarily usage of this.
+///  TODO  Make header to show Buffers sizes.
 void printBuffers(String caller, String notCalled) {
   print('\n -->>-->>----  :dawoApp: outBuffers  -->>-->>----');
   print('\n * * * * * * * * * *    outHeader   * * * * * * * * * *  ');

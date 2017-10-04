@@ -122,16 +122,16 @@ class GlobalOpClass {
   //TODO : used in: ?  //  Only in render here.
 
   ///
-  void showInfo() {
+  void showInfo(String caller) {
     print('\n***************  global op class-showInfo  ********************');
-    print('** actor: $actor ');
+    print('** actor: $actor      C:  $caller');
     print('** sender: $sender   receiver: $receiver ');
     print('** cmd: $cmd.toString() ');
     cmd();
     print('** msg:   $msg');
     print('** ');
-    print('***************  global op class-showInfo  done *************** n');
-    print('\n ***  no code in GlobalOperations yet :)  *** \n');
+    print('***************  global op class-showInfo  done *************** ');
+    print('  ***  no code in GlobalOperations yet :)  *** \n');
   }
 }
 
@@ -303,7 +303,7 @@ void commonMsg() {
 ///  Shaping common functionality for..
 ///  TODO  commonProcess
 StringBuffer commonProcess(GlobalOpClass glOpC, Function _command) {
-  print('--------------  commonProcess -------------------------------------');
+  print('\n --------------  commonProcess ----------------------------------');
   //  TODO  Start info and statistics.
   StringBuffer _retBuf;
   //  code here
@@ -311,11 +311,11 @@ StringBuffer commonProcess(GlobalOpClass glOpC, Function _command) {
   // actual command.
   _command();
 
-  glOpC.showInfo();
+  glOpC.showInfo(':commonProcess:');
   glOpC.operation; //  no operation, just show info now.
 
   //  TODO  CommonProcess end info and statistics.
-  print('--------------  commonProcess done---------------------------------');
+  print('--------------  commonProcess done-------------------------------\n');
   return _retBuf;
 }
 
@@ -342,7 +342,7 @@ StringBuffer renderBaseLib() {
       'n:name', 'renderBaseLib', 'rec:test', helloDawo, 'all ok');
   commonProcess(renderBaseLibClass, greetFromRender);
 
-  renderBaseLibClass.showInfo();
+  renderBaseLibClass.showInfo('By: renderBaseLib');
 
   return _retBuf;
 }

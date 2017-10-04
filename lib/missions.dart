@@ -47,7 +47,8 @@ class Mission {
   String motto;
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal; //  like:  ":DAWO-APP:";
+  //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
+  String emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
   List<CommonChore> choreL = [];
@@ -138,13 +139,13 @@ class Mission {
     flowC('-->---->--  construct default Chores. For: $name -->---->--', pB);
 
     ///  Should use instance, that is created inside THIS mission instance.
-    learnChr.build();
-    joyChr.build();
-    actChr.build();
-    peopleChr.build();
-    placeChr.build();
-    seasonChr.build();
-    showChr.build();
+    learnChr.build(emblem, name); //  new parameter in Chore.build
+    joyChr.build(emblem, name); //  emblem and master parameters to Chore.
+    actChr.build(emblem, name);
+    peopleChr.build(emblem, name);
+    placeChr.build(emblem, name);
+    seasonChr.build(emblem, name);
+    showChr.build(emblem, name);
 
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
@@ -154,7 +155,7 @@ class Mission {
 
     //  CODE
     flowC('   --<----<--  building mission: done  $name   --<----<-- \n', pB);
-  }
+  } //  -----  build
 
   /// devNote:  function, that OPENS something.  so rename; init
   bool opInit(int openCount, var openThis) {
@@ -201,7 +202,7 @@ class Mission {
   ///  To get Chore class names in String.
   String getChoreNamesS() {
     StringBuffer nBuf = new StringBuffer();
-    for (var x = 0; x < choreL.length; x++){
+    for (var x = 0; x < choreL.length; x++) {
       nBuf.write(choreL[x].name);
       nBuf.write(' ');
     }
@@ -216,7 +217,7 @@ class Mission {
     String choreLengthS = choreL.length.toString();
     String choreS = getChoreNamesS();
 
-        String ps1 = ('**.               caller: $caller                       .');
+    String ps1 = ('**.               caller: $caller                       .');
     String ps2 = ('**  $name         Motto: $motto');
     String ps3 = ('**  State:  $state ');
     String ps4 = ('**  stDo:  $stDo     stDone: $stDone  ');
@@ -308,11 +309,8 @@ void buildMissions(String caller) {
   myMusicMission.clayMap.addAll(getClayMap('myMusic'));
   outBl.writeln('outBl-buildMission : myMusic');
 
-
-
   myTimeMission.clayMap.addAll(getClayMap('myTime'));
   outBr.writeln('outBr-buildMission : myTime');
-
 
   nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
   outFooter.writeln('outFooter-buildMission : nationalParks');
@@ -321,7 +319,6 @@ void buildMissions(String caller) {
   ///
   packDawoMission.clayMap.addAll(getClayMap('packDawo'));
   outMTop.writeln('outMTop-buildMission: packDawo');
-
 
   ///  Write String to buffer for notification.
   outMBot.writeln('outBot-buildMissions:national-parks');

@@ -86,7 +86,11 @@ class Connector extends BaseStruct {
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   String seal; //  like:  ":CONNECTOR:";
+  /// emblem can be used in flowC
+  String emblem =
+      ':D-A:'; //  or this emblem.StringBuffer buf = new StringBuffer();
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String master; //  Object that owns this.
 
   // Buffer inside class for output.
   StringBuffer buf = new StringBuffer();
@@ -126,7 +130,7 @@ class Connector extends BaseStruct {
 
   ///  Method for setting class in working condition.
   ///  CalledBy:  No calls.
-  void build() {
+  void build(String _emblem, String _master) {
     offB = false; //  off-state ends
     onB = true; //   Connector is in on-state.
     buf.writeln('build done');
@@ -136,7 +140,8 @@ class Connector extends BaseStruct {
   void roll() {
     buf.writeln('Connector::    $info   :: roll engaged ');
     init(); //  calling init and build methods in this class.
-    build();
+    //  TODO  connector Build parameters.
+    build('*CONNECTOR:', 'CONNENCTORS-MASTER:');
     //  code for roll
     //  ***   code missing, see on top of this file
     //

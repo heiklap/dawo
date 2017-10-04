@@ -16,6 +16,7 @@
 
 ///  idea:   Place ALL common  W O R K  procedures here.
 ///  Automatic-  life-cycle / W O R K / messages and rolling.
+///  NOTE  chore do not have own named out-buffer
 
 //  TODO  chore  Build simple plugin or usage-case for chore.
 //  TODO  chore  NEXT, make  Chr -class.??
@@ -31,8 +32,14 @@ import 'clay/clay_roll.dart';
 num dawLibWorkReadiness = 94; // for version  0.0.1
 
 ///  Buffer also outside class, for testing and adding visibility.
+///  TODO  Chore buffer. Chore do not have #outBuffer.
+///  Little dumb: is this for ALL chores?
 var choreBuf = new StringBuffer();
+
 bool pB = false; //  Not printing now.
+///  TODO  Temporary hack.
+bool pBNotNow = false; //  Not printing now.
+
 //  bool pB = true; //  Printing true for chore_test.dart  TODO
 
 ///  Generic List to keep all Chores.
@@ -62,16 +69,18 @@ class CommonChore extends BaseStruct {
   String motto = 'chore handling small jobs';
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal; //  like:  ":DAWO-APP:";
+  String seal; //   No usage
+  String emblem; //  or this emblem.  like:  ":DAWO-APP:";
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String master; //  mission, that owns this chore. Like : 'packDawo'
 
   StringBuffer buf = new StringBuffer();
 
   ///  Controlling chores state, working-condition-state values.
-  bool offB;
-  bool onB;
+  bool offB = true;
+  bool onB = false;
   bool pauseB;
-  bool doneB;
+  bool doneB = false;
 
   ///  Testing placardM inside chore.
   Map<String, String> placardM = {
@@ -84,53 +93,51 @@ class CommonChore extends BaseStruct {
 
   ///  Method for setting class field values.
   void init() {
-    buf.writeln('-->---->--  init  -->---->--');
+    flowC('--> C-init $name  -->---->--', pB);
     String __name = name.toUpperCase();
     String _name = ':$__name :';
     glb.changeActor(_name);
-    buf.writeln('-->---->--  Chore buffer output initialized  -->---->--');
+    flowC('-->  Chore buffer output initialized  -->---->--', pB);
 
     //  Set-fields values done.
-    buf.writeln('   --<----<--  init done  --<----<--');
+    flowC('<-- ch init done  $name --<----<--', pB);
   }
 
+  ///  TODO  Chore gets emblem and master from mission in build. Are they right
   ///  Method for setting class in working condition.
-  void build() {
-    //  TODO  Chore Build Too much printing
-    String msg = '-->---->--  chore $name build  -->---->--';
-    flowC(msg, pB); //  Call to print / buffer function.
-
+  void build(String _emblem, String _master) {
+    flowC('--> chore $name build  -->---->--', pB);
+    emblem = _emblem; //  set master and emblem fields.
+    master = _master;
+    if (onB == true) print('\n ALREADY INITIALIZED BUILD CHORE  \n');
     offB = false; //  off-state ends
     onB = true; //   app is in on
-    buf.writeln('build for chore:  $name  : done');
-    flowC('     --<----<--    chore build  done --<----<-- \n', pB);
+    flowC('<--  chore build  $name done --<----<-- ', pB);
   }
 
   ///  #run-like method
   ///  If this or one of it's sub-operations conduct #connector-operations,
   ///  it might be annotated in function parameter.
   void roll() {
-    print('-->---->--  chore roll FOR TEST chore_test -->---->--');
-    flowC('-->---->--  ch roll  -->---->--', pB);
-    String _s = 'Chore::    $infoS   :: roll engaged ';
-    buf.writeln(_s);
+    flowC('--> ch roll:  $name -->---->--', pB);
+    flowC('Chore::  $infoS   :: roll engaged ', pB);
 
     init(); //  Calling init and build methods in this class.
-    build();
+    //  NOTE  Mission also calls this build.
+    //  How to get mission emblem here??  out now.  build();
     //  code for roll
     //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
     print('------------ chore  clay maps ---------------------------------');
     print(clayMapL);
-    print('------------ chore  clay maps ---------------------------------');
-    if(pB) {
+    print('------------ chore  clay maps printed Names---------------------');
+    if (pBNotNow) {
       for (var f in clayMapL) {
         Map _m = getClayMap(f);
         print('\n  map/chore::   $f   ------ ');
         _m.forEach((k, v) => print('$k ,$v'));
       }
-
-    }  //  --pB
-
+      print('------------ chore  clay maps details done ---------------------');
+    } //  --pB
 
     //  run #op, for single operation
     op(placardM); //  Actually map is yet not used there.
@@ -138,12 +145,14 @@ class CommonChore extends BaseStruct {
     show();
     done();
     //  code here
-    flowC('     --<----<--  ch roll  done --<----<--', pB);
+    flowC('<-- ch roll: $name  done --<----<--', pB);
   }
 
   ///  Individual operations are done here.
   ///  Common operation with placard-Map  is in base_lib.
   String op(Map<String, String> _pcM) {
+    flowC('-->  ch roll=>op:  $name -->---->', pB);
+
     ///  NOTE  placardM is not used.  TODO
     String _retStr;
 
@@ -160,13 +169,36 @@ class CommonChore extends BaseStruct {
 
     ///  Mediate command to common process (in base_lib) with info from chore.
     commonProcess(chOpClass, helloChore); //  with actual command
-
+    flowC('<-- ch roll-op: $name  done <----<--', pB);
     return _retStr;
   }
 
   ///  Usual presentation method.
   void show() {
-    print(buf);
+    flowC('--> ch show:  $name -->---->--', pB);
+    //  print(buf);
+    print('bbbbbbbbbbbbbbbbbbbbbb choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
+    print(choreBuf);
+    print('bbbbbbbbbbbbbbbbbbbbbb choreBuf done bbbbbbbbbbbbbbbbbbbbbb');
+    flowC('<-- ch show: $name  done --<----<--', pB);
+  }
+
+  ///  Report of chore.
+  List<String> report(String caller) {
+    String rowInfoS = rowInfo();
+    String _s1 = '** ------------------------------------------------------';
+    String _s2 = '** Nimi:  $name     C:  $caller';
+    String _s3 = '** $infoS';
+    String _s4 = '** $motto';
+    String _s5 = '** Master:   $master  Emblem: $emblem';
+    String _s6 = '** Off: $offB   On: $onB   Paused: $pauseB    Done: $doneB';
+    String _s7 = '** $rowInfoS';
+    String _s8 = '** ';
+    String _s9 = '** ';
+    String _s10 = '** -----------------------------------------------------';
+    List _l = [_s1, _s2, _s3, _s4, _s5, _s6, _s7, _s8, _s9, _s10];
+
+    return _l;
   }
 
   ///  get
@@ -177,12 +209,12 @@ class CommonChore extends BaseStruct {
 
   ///  close method
   void done() {
-    print('Chore::    $infoS   :: engaged ');
+    flowC('<-- Chore buffer $name output app: done  --<----<--', pB);
+    flowC('Chore::    $infoS   :: engaged ', pB);
     //  code here
-    buf.write('--<----<--  Chore buffer output app: done  --<----<--');
-    print(buf);
-    buf.clear(); //  empty
-    flowC('     --<----<--  chore.done    ok   --<----<--', false);
+    //  Too many times.  print(choreBuf);
+    //  choreBuf.clear(); //  empty
+    flowC('<-- chore.done    ok   --<----<--', pB);
   }
 
   ///  For to test global command in #op
@@ -191,6 +223,7 @@ class CommonChore extends BaseStruct {
   }
 
   ///  constructor
+  ///  TODO  should add #master field for mission, that ownd this chore?
   CommonChore(this.name, this.infoS);
 }
 
@@ -198,7 +231,8 @@ class CommonChore extends BaseStruct {
 ///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
-  flowServe(':CHORE:', outBr, msg, p);
+  //  flowServe(':CHORE:', choreBuf, msg, p);  //  verbose
+  flowServe('', choreBuf, msg, p);
 }
 
 //---------------------------------------------------------------
@@ -208,25 +242,27 @@ void flowC(String msg, bool p) {
 ///    * * *   so they ARE outside of Chore class  * * *
 ///  PLAN   small checks, updates, msg:s, notes aso.
 ///  But only, if marked in   "flow - chart"
+///  TODO  flowC DO NT HAVE ACCESS TO inside-class-name variable.'
+///  So it must be given in parameter. lol
 void topAll() {
   flowC('these   W O R K S   are executed in every cycle', pB);
 }
 
-/// USAGE:    Execution is meant to be avoided.. as long as possible.
+/// USAGE:    Execution of EVENT is meant to be avoided.. as long as possible.
 void underAll() {
   // Name: not nice name..
-  flowC('These are executed ONLY in last occasion', pB);
+  flowC('FLOW:UnderAll  These are executed ONLY in last occasion', pB);
 }
 
 ///  USAGE:    Run occasionally / timely, in sidebar.
 void sideAll() {
-  flowC('executed occasionally in sidebar..', pB);
+  flowC('FLOW:SideAll  executed occasionally in sidebar..', pB);
 }
 
 //------------------------------------------------------------------------
 ///  flow of chore might be like this... Functions to execute W O R K   flow
 void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
-  print(' -->---->--  these are executed in beginning of W O R K  ');
+  flowC('--> these are executed in beginning of W O R K  ', pB);
 
   ///  ABLE: rollAble and signalAble are separate properties of chore.
   ///  roller(rollAble)   takes care of workFlow.
@@ -236,12 +272,12 @@ void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
 
 ///  main   W O R K   routines
 void doChore() {
-  print(' -->---->--  Actual  W O R K   code here...');
+  flowC(' :FLOW:doChore -->  Actual  W O R K   code here...', pB);
 }
 
 ///   routines, after W O R K   is done
 void endChore() {
-  print('     --<----<--   execution scheduled, when   W O R K   is done');
+  flowC('<-- endChore  execution scheduled, when  WORK is done', pB);
 }
 
 ///  example / testing chore

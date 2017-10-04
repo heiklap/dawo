@@ -18,7 +18,7 @@ String listToString(List<String> _l) {
   print(_l[0]);
   String s;
   StringBuffer sBuf = new StringBuffer();
-  for (var x in _l){
+  for (var x in _l) {
     print(_l[x]);
     sBuf.write(_l[x]);
     sBuf.write(' ');
@@ -37,12 +37,13 @@ void operationMapPrint(Map thisMap) {
 ///  print Map<String, Map<String, String>>  map nicely
 void printStringMapMap(Map<String, Map<String, String>> _map) {
   int _length = _map.length;
-  print('#printStringMapMap : length:  $_length  ');
+  print(':D-T: #printStringMapMap : length:  $_length  ');
   List<String> nameL = _map.keys.toList();
   for (var x = 0; x < _length; x++) {
     String name = nameL[x];
     int _l = _map[name].length;
     print('\n mapName: $name -------------- length: $_l -----------------');
+    //  TODO  Return map in sort-order: value.
     _map[name].forEach((k, v) => print('$k, $v'));
   }
 }

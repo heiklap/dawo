@@ -13,7 +13,7 @@ _________________________________________________________________________
 
 Way to NEXT version:  0.0.4 aso.
 Theme:  Statistics, output, variation, versatility.
-To be published:  approximately: 15.10.2017
+To be published:  approximately: 16.10.2017
 
           *  *  *   HEAD   *  *  *
 4.0 DON_  Flow-method to regulate events / output in every control-flow operation.
@@ -213,5 +213,5 @@ Frame #Word,  phases of operation or screen activity.
 
 
 Mounted #word
-
+Freeze
 

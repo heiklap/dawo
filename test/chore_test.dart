@@ -42,6 +42,7 @@ void testChore() {
   print('  ==<<==<<==== ch_chore test commonChore roll done  ==<<==<<==== ');
 }
 
+
 ///  Question: do we have access to PackDawo class without imports?
 void testPackDawoChore() {
   print('==>>==>>==== ch_chore test packDawoChore roll ==>>==>>==== ');
@@ -56,12 +57,49 @@ void testPackDawoChore() {
   /// for(var x in packDawoMission.choreL) {
 
   ///  Must #build class, to get chores in place.
-  packDawoMission.build();
+    packDawoMission.build();
+  packDawoMission.choreL[0].roll();  //  roll one, first, chore.
+
+  // for (var x in packDawoMission.choreL){
+  //   x.roll();
+  // }
+
+
+  print('\n ----------  chore-test chores devBox  -------------------------');
+  List<String> _al = packDawoMission.choreL[0].report(':chore-test:');
+  List<String> _bl = packDawoMission.choreL[1].report(':chore-test:');
+  List<String> _cl = packDawoMission.choreL[2].report(':chore-test:');
+  List<String> _dl = packDawoMission.choreL[3].report(':chore-test:');
+  List<String> _el = packDawoMission.choreL[4].report(':chore-test:');
+  List<String> _fl = packDawoMission.choreL[5].report(':chore-test:');
+  List<String> _gl = packDawoMission.choreL[6].report(':chore-test:');
+
+  devBox('By:CHORE-TEST:', [_al,_bl ], 10);
+  devBox('By:CHORE-TEST:', [_cl,_dl ], 10);
+  devBox('By:CHORE-TEST:', [_el,_fl, _gl ], 0);
+  print('------------  chore-test chores devBox done -------------------- \n');
+  print('............. by test chore  ..........................');
+  print(choreBuf.length);
+  print(choreBuf);
+
+  print('............. by test chore 2 ..........................');
+  String s = choreBuf.toString();
+  List _l = [];
+  _l.addAll(s.split('\n'));
+  print('helloWorld: List coming: ');
+  _l.forEach(print);
+  print(_l.length);
+  print('............. by test chore 3 ..........................');
+
+  /*
   for (var x = 0; x < packDawoMission.choreL.length; x++) {
     packDawoMission.choreL[x].roll();
   }
+  */
+
   print('  ==<<==<<==== ch_chore test packDawoChore roll done ==<<==<<==== ');
 }
+
 
 void testRumba() {
   print('\n ==>>==>>==== ch_chore test test_rumba ==>>==>>==== ');
