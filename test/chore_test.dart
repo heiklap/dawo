@@ -66,18 +66,22 @@ void testPackDawoChore() {
 
 
   print('\n ----------  chore-test chores devBox  -------------------------');
-  List<String> _al = packDawoMission.choreL[0].report(':chore-test:');
-  List<String> _bl = packDawoMission.choreL[1].report(':chore-test:');
-  List<String> _cl = packDawoMission.choreL[2].report(':chore-test:');
-  List<String> _dl = packDawoMission.choreL[3].report(':chore-test:');
-  List<String> _el = packDawoMission.choreL[4].report(':chore-test:');
-  List<String> _fl = packDawoMission.choreL[5].report(':chore-test:');
-  List<String> _gl = packDawoMission.choreL[6].report(':chore-test:');
+  List<String> _al = packDawoMission.choreL[0].reportList(':chore-test:');
+  List<String> _bl = packDawoMission.choreL[1].reportList(':chore-test:');
+  List<String> _cl = packDawoMission.choreL[2].reportList(':chore-test:');
+  List<String> _dl = packDawoMission.choreL[3].reportList(':chore-test:');
+  List<String> _el = packDawoMission.choreL[4].reportList(':chore-test:');
+  List<String> _fl = packDawoMission.choreL[5].reportList(':chore-test:');
+  List<String> _gl = packDawoMission.choreL[6].reportList(':chore-test:');
 
   devBox('By:CHORE-TEST:', [_al,_bl ], 10);
   devBox('By:CHORE-TEST:', [_cl,_dl ], 10);
-  devBox('By:CHORE-TEST:', [_el,_fl, _gl ], 0);
+  devBox('By:CHORE-TEST:', [_el,_fl, _gl ], 10);
   print('------------  chore-test chores devBox done -------------------- \n');
+  devBox('By:CHORE-TEST:', [_cl, _dl, _al, _bl ], 10);
+
+
+  print('---- one more  chore-test chores devBox done -------------------- \n');
   print('............. by test chore  ..........................');
   print(choreBuf.length);
   print(choreBuf);

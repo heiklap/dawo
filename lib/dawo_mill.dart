@@ -6,19 +6,21 @@
 
 library dawo_mill;
 
-///  buffer also outside class, for testing and adding visibility
+///  Buffer also outside class, for testing and adding visibility.
 var millBuf = new StringBuffer();
 
-//TODO  teamInno    -------- plan for controlling  this apps states and behaviour
-///     low level work-flow "flags" are in dawlib.....
-///  will eventually be some kind of #mill, that controls all #job's
-///  keeps track of the privileges and performance of the assignments.
-///  names might be:  millRoll  and millFlag
+///  teamInno -- plan for controlling  this apps states and behaviour
+///  Low level work-flow "flags" are in dawlib.....
+///  Will eventually be some kind of #mill, that controls all #job's
+///  Keeps track of the privileges and performance of the assignments.
+///  Names might be:  millRoll  and millFlag
+
+///
 class DawoMill {
   int tempo = 6;
   int rounds = 1;
 
-  ///  to keep menu-choice values
+  ///  To keep menu-choice values.
   ///  Like: {'1' : chore1, '2' : chore2}
   Map<String, Object> jobM = new Map();
 
@@ -42,8 +44,8 @@ class DawoMill {
 ///  create instance
 var mill = new DawoMill(); //  add Object - map to constructor
 
-/// TODO  teamNext  for to use in next versions
-/// NOTE:  int '1'  do not give error...  how about int?
+///  TODO  teamNext  for to use in next versions
+///  NOTE:  int '1'  do not give error...  how about int?
 ///  Or:  Map<String, Object> jobM = new Map();
 ///  Like: {'1' : chore1, '2' : chore2}
 Map<int, String> millMap = {

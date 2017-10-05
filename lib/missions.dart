@@ -1,12 +1,12 @@
-/// *  mission is something between app and chore, process
+/// *  mission is something between app and chore, process.
 /// -  Primary functionality: engage chores. Version 0.0.3
 /// -  ready_state for 0.0.4  0 %
 /// -  HIST:  hkl  8.9.2017
 /// -  devNote: 4 pc.
 //
-//  word:  build  36 / 26  pc. Is it too much.
+//  word:  build  38 / 26  pc. Is it too much.
 
-///  Renamed library to: missions.
+///  Renamed library to: missions for 0.0.4.
 library missions;
 
 //  import 'package:dawo/dawo_app.dart';  //  not used
@@ -17,30 +17,31 @@ import 'dawo_dev.dart';
 import 'package:dawo/dawo_tools.dart';
 import 'clay/clay_roll.dart';
 
-///  buffer also outside class, for testing and adding visibility
+///  Buffer also outside class, for testing and adding visibility.
 var missionBuf = new StringBuffer();
 
 bool pB = false; //  Control printing, now:  false;
 //  bool pB = true; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
-///  In case for handling other, super or sub-missions, code something more.
-///  buildMissions() fills this list. Is it outside of the Class.
+///  In case for handling other, super- or sub-missions; code something more.
+///  buildMissions() fills this list. It is outside of the Class.
 List<Mission> missionL = [];
 
-/// NOTE:  Chore-list is inside class.
+/// NOTE:  Chore-list is inside this class.  Most outside activity to Chore, is
+/// accessed via Mission-class.
 
-///  to publish name in scope for testing
+///  To publish name in scope for testing visibility.
 void helloMission() {
   flowC('-- Somebody call: hello this is mission file and library  ---', pB);
 }
 
-///  Mission avoids consciously using Chores clear and handy structure, for to
-///  leave space for innovation and to find different solutions for operations.
-///  Mission acts clearly below -app level, but above chore.
+///  Mission avoids consciously using clear and handy structure of Chore class,
+///  for to leave space for innovation and to find different solutions for ops.
+///  Mission handles acts below -app level, but above chore.
 ///  Mission can include many chores. 7 Chores are build by default.
 class Mission {
-// #TIP: When class members begins with certain letter combination, like-bl..
+// #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
 
   String name;
@@ -53,7 +54,7 @@ class Mission {
 
   List<CommonChore> choreL = [];
 
-  ///  default CommonChores for every Mission
+  ///  Create default CommonChores for every Mission.
   ///  We have plenty of these, so let's add them!
   CommonChore learnChr = new CommonChore('LearnChr', 'Yes, I learn');
   CommonChore joyChr = new CommonChore('JoyChr', 'Yes, I am happy');
@@ -127,7 +128,7 @@ class Mission {
   bool opDone = false;
   int opCount = 0;
 
-  /// Add later map to constructor:
+  ///  Add #later map to constructor:
   ///  Mission(this.name, this.motto, Map<String,String> _clayM);
   Mission(this.name, this.motto);
 
@@ -152,7 +153,6 @@ class Mission {
     flowC('-->---->--  choreL add-all:  $name   -->---->--', pB);
     choreL.addAll(
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
-
     //  CODE
     flowC('   --<----<--  building mission: done  $name   --<----<-- \n', pB);
   } //  -----  build
@@ -211,7 +211,7 @@ class Mission {
 
   ///  TODO  quick list.. is it gonna work??
   ///  Report of mission data.
-  ///  TODO  Make mission-report return list, for box-output.
+  ///  DONE  Make mission-report return list, for box-output.
   List report(String caller, bool detailsB) {
     //  NOTE  If more than 9 Chores, need something else.
     String choreLengthS = choreL.length.toString();
@@ -242,12 +242,9 @@ class Mission {
     return _l;
   } //  ----------  report
 
-  //  TODO  clean
+//  TODO  teamNext   coming?:   returning some finnish day names aso.
+  /// Should include some international values from other languages.
 
-//TODO  teamNext   coming?:   returning some finnish day names aso.
-  /// Should include some international values from other languages
-
-  /// -----------------------------------------------   connect to chore
 //TODO  teamDev *chore*, if is toChore.. should there be  outChore,  lonChore ?
   ///  base lib's connection to chore (package)
   ///  *chore* is separate package, which controls *job* :s
@@ -258,12 +255,12 @@ class Mission {
     //  code..
   }
 
-//--------------------------------------------------   coming
-//TODO  teamNext    coming:    Base Isolate example
-//TODO  teamNext    Base future  sample
-//TODO  teamNext    Base Mixin   sample
+//  Coming.
+//  TODO  teamNext    coming:    Base Isolate example
+//  TODO  teamNext    Base future  sample
+//  TODO  teamNext    Base Mixin   sample
 
-} // ---------------------------------------   end class Mission
+} // --  end class Mission
 
 ///  Calling print/print-to-buffer method.
 ///  Getting local variables; Actor and Buffer right,
@@ -273,7 +270,7 @@ void flowC(String msg, bool p) {
   flowServe(':MISSION:', outTMid, msg, p);
 }
 
-///  create Mission instances
+///  Create Mission class instances.
 var packDawoMission = new Mission('pack Dawo mission', 'Build Dawo package');
 var helsinkiMission = new Mission('Helsinki-mission', 'Presenting Helsinki');
 var dartlangMission = new Mission('Dartlang mission', 'Learn dartlang');
@@ -295,7 +292,8 @@ void missionChoreReport(String caller) {
   print('--<<--<<----  missionChoreReport done caller: $caller');
 }
 
-///  add clay maps to missions
+///  Add clay ( data ) maps to missions.
+///  TODO  Messy function buildMissions.  Clean, organize it.
 void buildMissions(String caller) {
   flowC('-->>-->>-- build Missions, caller: $caller -->>-->>-->>--', pB);
   dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
@@ -315,8 +313,8 @@ void buildMissions(String caller) {
   nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
   outFooter.writeln('outFooter-buildMission : nationalParks');
 
-  ///  Start of new dawoMission
-  ///
+  ///  Start of new dawoMission.
+  ///  packDawo Mission.
   packDawoMission.clayMap.addAll(getClayMap('packDawo'));
   outMTop.writeln('outMTop-buildMission: packDawo');
 

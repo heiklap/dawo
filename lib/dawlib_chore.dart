@@ -184,7 +184,7 @@ class CommonChore extends BaseStruct {
   }
 
   ///  Report of chore.
-  List<String> report(String caller) {
+  List<String> reportList(String caller) {
     String rowInfoS = rowInfo();
     String _s1 = '** ------------------------------------------------------';
     String _s2 = '** Nimi:  $name     C:  $caller';
@@ -242,7 +242,7 @@ void flowC(String msg, bool p) {
 ///    * * *   so they ARE outside of Chore class  * * *
 ///  PLAN   small checks, updates, msg:s, notes aso.
 ///  But only, if marked in   "flow - chart"
-///  TODO  flowC DO NT HAVE ACCESS TO inside-class-name variable.'
+///  TODO  flowC DO NOT HAVE ACCESS TO inside-class-name variable.'
 ///  So it must be given in parameter. lol
 void topAll() {
   flowC('these   W O R K S   are executed in every cycle', pB);

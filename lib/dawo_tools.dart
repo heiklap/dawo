@@ -1,7 +1,6 @@
 ///  ##  Some helper tools
-/// *  dawo version:  0.0.3  25.9.2017
-/// *  READY-STATE for version 0.0.4   0 %   in GIT
-/// *  Hist:  hkl  2014  0.0.1  dawo/lib
+/// *  dawo version:  0.0.3  25.9.2017    READY-STATE for version 0.0.4   0 %
+/// *  in GIT:  yes           Hist:  hkl  2014  0.0.1  dawo/lib
 ///
 
 library dawo_tools.dart;
@@ -9,7 +8,7 @@ library dawo_tools.dart;
 ///
 num demoToolsReadiness = 96;
 
-///  buffer also outside class, for testing and adding visibility
+///  Buffer also outside class, for testing and adding visibility.
 var toolsBuf = new StringBuffer();
 
 ///  Return String from List of Strings.
@@ -27,7 +26,7 @@ String listToString(List<String> _l) {
   return s;
 }
 
-///  just a note, howTo print a map
+///  Just a note, howTo print a map.
 void operationMapPrint(Map thisMap) {
   thisMap.forEach((k, v) {
     print('$k, $v');
@@ -48,7 +47,7 @@ void printStringMapMap(Map<String, Map<String, String>> _map) {
   }
 }
 
-///  TODO  did it go right
+///  TODO  did it go right? No.
 ///  print Map<String, Map<String, String>>  map nicely
 void printStringMapMapFail(Map<String, Map<String, String>> _map) {
   int _length = _map.length;
@@ -60,12 +59,11 @@ void printStringMapMapFail(Map<String, Map<String, String>> _map) {
     for (var z = 0; z < _l; z++) {
       print(_map[name][z]);
     }
-
     print(_map[x]);
   }
 }
 
-/// some class tests.. for coming use
+/// some class tests.. for #teamNext use
 var strLin = '----------------------------------------         ';
 
 ///  To print class, that is commonly used in dawo
@@ -89,8 +87,6 @@ void printClass(var thisClass, String str1, String str2, String str3) {
   print(' ');
 }
 
-//-------------------------------------------------------
-
 //   dawoMapApps.forEach((k,v) => print('Key:  $k  Value:  $v  '));
 
 ///  some functions for to print two values
@@ -98,17 +94,17 @@ void printSS(String str, String str2) {
   print(str + '  ' + str2);
 }
 
-//  printing numeric and String values
+//  Printing numeric and String values.
 void printNS(num n, String str2) {
   print(n.toString() + '  ' + str2);
 }
 
-//  printing numeric value
+//  Printing numeric value.
 void printN(num n) {
   print(n.toString);
 }
 
-///   small sleep-methods, to get time, to see, what is happening in tests
+///  Small sleep-methods, to get time, to see, what is happening in tests.
 void sleepSimple(int waitingTime) {
   //  1000 =  one second
   //var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
@@ -117,7 +113,7 @@ void sleepSimple(int waitingTime) {
   do {} while (new DateTime.now().compareTo(goalTime) < 0);
 }
 
-///  sleep method with time and optional info
+///  Sleep method with time and optional info.
 void sleepMS(int waitingTime, [bool info]) {
 //var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
   var goalTime =
@@ -125,12 +121,12 @@ void sleepMS(int waitingTime, [bool info]) {
   bool _info = info;
   if (_info) (print('Waiting for  $waitingTime'));
   do {
-    //    var timeNow = new DateTime.now();
+    //  var timeNow = new DateTime.now();
   } while (new DateTime.now().compareTo(goalTime) < 0);
   if (_info) (print('waiting time over over'));
 }
 
-//  some sample maps for coming use
+//  Some sample maps for #teamNext use.
 Map<String, bool> toolsActive = {
   'leftActive': true,
   'rightActive': false,

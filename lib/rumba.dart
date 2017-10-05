@@ -1,7 +1,7 @@
 ///  ##  Rumba : maintaining main loops of app - mission
-///  Primary functionality:  loop
-///  dawo version:  0.0.3  25.9.2017
-/// * ReadyState:   0 %  for version 0.0.4   in GitHub  no
+///  Primary functionality:  loop, inside it: dawoApp
+///  dawo version:  0.0.3  25.9.2017   ReadyState:   0 %  for version 0.0.4
+///  in GitHub  yes
 ///  Program might have a certain amount of 'self consciousness'. This is start.
 ///
 /// * hkl  14.9.2017  dawo/lib  rumba.dart   main loop of dawoApp
@@ -10,7 +10,6 @@
 
 library rumba.dart;
 
-///  import 'base_struct.dart';
 ///  TODO  import all necessary ?? here
 //  import 'dawo_app.dart'; //  no need to import dawoApp
 
@@ -18,9 +17,9 @@ import 'base_lib.dart';
 import 'base_struct.dart';
 import 'dawo_dev.dart';
 
-///  collecting Rumba output
+///  Collecting Rumba output.
 StringBuffer rumbaBuf = new StringBuffer();
-//  TODO  get some fill to rumbaBuf
+//  TODO  Get some fill to rumbaBuf.
 bool pB = false;
 
 /// TODO create classes, but where?
@@ -31,7 +30,7 @@ var dawoApp = new DawoApp('dap in rumba', 'rumbaPlay');
 
 ///
 class Rumba {
-  ///  boolean values for controlling loop
+  ///  boolean values for controlling loop; run now only once.
   ///  Eventually these values are triggered to false-state by sub-programs,
   ///  or some value / event in subprograms, but for now, this (fake)-done
   bool rumbaB = false;
@@ -40,9 +39,6 @@ class Rumba {
   bool missionB = false;
 
   int rumbaCount = 0;
-
-  ///  primary rumba loop
-  ///
 
   ///  setting loop variables to beginning state
   void initRumba() {
@@ -58,7 +54,7 @@ class Rumba {
     missionB = true;
   }
 
-  ///  setting loop variables to (fake-) force-stop state
+  ///  Setting loop variables to (fake-) force-stop state.
   void doneRumba() {
     rumbaBuf.writeln('--<<--<<------------ done Rumba  --<<--<<------------');
     dev.admNotes.add('>>ADM:CHECK-IN  doneRumba  >>');
@@ -72,15 +68,16 @@ class Rumba {
   }
 
   ///  Is class better than function?  Better looking/finding in editor?
-  ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope. Constructor?
+  ///  Class prevents polluting nameSpace with variable names.
+  ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope?
   ///  Now it is just a methods parameter.
   StringBuffer dance(var dawoApp) {
     //  TODO  Parameters for screen-output wanted.
     flowC('-->---->--  rumba-dance', true);
     dev.admNotes.add('>>ADM:CHECK-IN  rumba-dance  >>');
 
-    ///TODO  rumbaLoop is executed for now only 1-3 times
-    ///  primary rumba Loops, over it is usher loop
+    ///  TODO  rumbaLoop is executed for now only 1-3 times
+    ///  primary rumba Loops, over / outside it is: usher loop
     ///  --  rumba loop
     initRumba();
 
@@ -108,14 +105,14 @@ class Rumba {
           //  ---------------------  dawo app loop code ------------------
           flowC('      -->---->--  rumba-loop-dawoApp', true);
 
-          ///TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
-
+          ///  TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
+          ///  Running base activity of dawo.
           dawoApp.roll();
 
           ///  --  mission loop
           do {
             String rumbaLoopMissionS = '**  missionLoop is rolling  **';
-            //  ************  call mission from inside dawoApp
+
             //  roll already includes rollMissions
             //  NO!! dawoApp.rollMissions();
 
@@ -126,21 +123,21 @@ class Rumba {
 
             flowC('     -->---->--  rumba-loop-mission', true);
 
-            // -- chore
+            // -- chore:  All chore ops go via: Mission
 
-            missionB = false; //  emergency exit, while testing
+            missionB = false; //  Emergency exit, while testing.
           } while (missionB);
           flowC('        --<----<--  rumba-loop-mission: done', true);
 
-          dawoAppB = false;
+          dawoAppB = false; //  force loop to run only once.
         } while (dawoAppB);
         flowC('      --<----<--  rumba-dawo-app: done', true);
 
-        usherB = false;
+        usherB = false; //  force loop to run only once.
       } while (usherB);
       flowC('    --<----<--  rumba-loop-usher: done', true);
 
-      doneRumba(); //  --  do it only once now
+      doneRumba(); //  --  Do it only once now.
       rumbaB = false;
     } while (rumbaB);
     flowC('  --<----<--  rumba: done', true);
@@ -149,6 +146,8 @@ class Rumba {
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
     devBox('By:RUMBA-DANCE:', [dev.admNotes, dev.devNotes], 0);
     devBox('By:RUMBA-DANCE:', [dev.innoNotes, dev.howToNotes, dev.secNotes], 0);
+    print('------  one more funny list test   ------');
+    devBox('T', [dev.innoNotes, dev.admNotes, dev.devNotes, dev.secNotes], 0);
 
     //  flowFind(':RUMBA-DANCE:', '->>-', 35);
     //  flowFind(':RUMBA-DANCE:', 'build', 30);
@@ -161,9 +160,9 @@ class Rumba {
 
 } //  --   rumba class
 
-///  Calling print/print-to-buffer method.
+///  Calling print / print-to-buffer function.
 ///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
-  flowServe(':RUMBA:', outTl, msg, p);
+  flowServe(':RUMBA:', outTl, msg, p); //  Location:  in base_lib
 }

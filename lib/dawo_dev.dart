@@ -1,10 +1,10 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
-///  dawo version:  0.0.3  25.9.2017
-/// * READY-STATE  40 %  for version 0.0.4     GitHub: yes  29.11.2014
+///  dawo version:  0.0.3  25.9.2017    READY-STATE  70 %  for version 0.0.4
+/// *      GitHub: yes  29.11.2014
 /// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
-///
+//
 
 library dawo_dev.dart;
 
@@ -22,18 +22,18 @@ import 'package:dawo/dawo_tools.dart';
 ///  Not working now; to track readiness
 num dawoDevReadiness = 94;
 
-///  buffer also outside class, for testing and adding visibility
+///  Buffer also outside class, for testing and adding visibility.
 var devBuf = new StringBuffer();
 
-///  collect dev stuff to Dev class
+///  Collect dev stuff to Dev class, to help in development of package.
 class Dev {
   ///  small mess with variable names
   int devTestCount = 0;
-  //TODO  teamInno   devTeam should be one instance of team class !!
+  //  TODO  teamInno   devTeam, should be also instance of #team? class ?
   bool devTestPhase = true; // set this false in production. (newer)
 
   ///  two members (persons) of devTest team:
-//TODO  teamAdm team_members..  should they be in... team_staff..
+//  TODO  teamAdm team_members..  should they be in... team_staff..
   String coderNight = 'Late Night Coder ';
   String coderMorn = 'Earlymorn Coffeeman ';
 
@@ -44,17 +44,14 @@ class Dev {
   String coderBlame = '';
 
   ///  Generic list to keep and handle all devNotes
-  ///  To keep Class DevMessages instances
   List<DevMessage> devMessageL = []; //  not used
 
-  //--------------------------------------------------------------
 // moved list from chore back to dev.. put first, header values there
   List<String> admNotes = ['* *  Team Admin notes:  * *'];
   List<String> devNotes = ['* * Team dev notes: * * '];
   List<String> innoNotes = ['* *  Team inno notes: * * '];
   List<String> howToNotes = ['* * Team HowTo notes: * * '];
   List<String> secNotes = ['* * Team sec notes: * * '];
-//--------------------------------------------------------------
 
   ///  To add developer notes.
   void addNote(List l, String s) {
@@ -82,12 +79,12 @@ class Dev {
         ['Restrict use of certainn methdos', 'Create up-level pass-word']);
   }
 
-  ///  More demonstrative presentation method.
+  ///  More demonstrative devBox presentation method.
   void showNotes(String caller) {
     print('\n ------->>-->>--  dev.showNotes  by: $caller ------->>-->>--   ');
     devBox('By:dev:', [dev.admNotes, dev.devNotes], 0);
     devBox('By:dev:', [dev.innoNotes, dev.howToNotes, dev.secNotes], 0);
-    print('\n --<<--<<------------  dev.showNotes  --<<--<<------------   ');
+    print('--<<--<<------------  dev.showNotes  --<<--<<------------ \n  ');
   }
 
   ///  Old-fashioned list print method.
@@ -104,36 +101,38 @@ class Dev {
     howToNotes.forEach(print);
     print(' ');
     secNotes.forEach(print);
-    print('\n --<<--<<------------  dev.listNotes  --<<--<<------------   ');
+    print('--<<--<<------------  dev.listNotes  --<<--<<------------ \n ');
   }
 } //  -----  class dev
 
-///  create instance of class Dev
+///  Create instance of class Dev.
 var dev = new Dev();
 
 ///  Show Lists, like devNotes in nice column-box in console.
-///  Can now handle 2 and 3 column cases, and is common-usage function.
+///  Can now handle 2, 3 and 4 column cases, and is common-usage function.
 ///  TODO  Add better row / height decision.
+///  #QUEST : Surely these 2-3-4 functions can be combined to one, and
+///  handle 2-3-4 with parameters. Did it once, but was ugly.
 void devBox(String caller, List<List<String>> inList, int forceHeight) {
   final int sW = 210;
-  String borderS = ' | ';
+  String borderS = ' | '; //  In 4 columns is smaller.
 
   List<String> twoBoxL = []; //  For two columns in console screen.
   List<String> threeBoxL = []; //  For three columns in console screen.
   List<String> fourBoxL = []; //  For four columns in console screen.
 
-  //  ***********  GLORIOUS CODING    ****************
+  //  ***********  GLORIOUS CODING  byMe :)  ****************
   //  Make sure that list is certain length.
   void addEmpty(List _list, int _height, String _note) {
     while (_list.length < _height) {
       _list.add(_note);
     }
-    ; //  while
-  } //  addEmpty
+    ; //  -- while
+  } //  -- addEmpty
 
   ///  TODO  Build one function for all these 2 X 2 functions.
   ///  PadRight both Colon-Lists items to certain length.
-  ///  aColonList and bColonList, int columnTwoWidth
+  ///  aColonList and bColonList, int columnTwoWidth.
   void tuneColumnList(List<String> cL, int width) {
     for (var x = 0; x < cL.length; x++) {
       if (cL[x].length < width) {
@@ -148,12 +147,11 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
     }
   } //  ---------  tuneColumnList
 
+  ///  Carry the actual List building.
   void devBoxBuild() {
-    //  print('>>>>>>>>>>>>>>>>>>>    tBox  calledBy: $caller >>>>>>>>>>>>>>');
-    //  int rows = 12;
     int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
 
-    String markRow = '____'; //  Gonna make this screen-width.
+    String markRow = '____'; //  Widen this later to screen-width.
     String padMarkRow = markRow.padRight(sW, '_');
     markRow = padMarkRow;
     markRow.padRight(sW, '-'); //  (sW, '_');
@@ -163,7 +161,12 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
     int twoBoxHeight = 15; //  Should be decided by Lists length.
     // Should force length of in-list.
     if (forceHeight > 0) twoBoxHeight = forceHeight;
+
     int threeBoxHeight = 17;
+    if (forceHeight > 0) threeBoxHeight = forceHeight;
+
+    int fourBoxHeight = 17;
+    if (forceHeight > 0) fourBoxHeight = forceHeight;
 
     ///  Build two-column-area List.  -----------   2 columns.
     if (inList.length == 2) {
@@ -180,7 +183,7 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       tuneColumnList(aColonList, columnTwoWidth);
       tuneColumnList(bColonList, columnTwoWidth);
 
-      /// Build #Long-String List of top-area lists and mark borders.
+      /// Combine short List-rows to #Long-String and add borderMarks.
       twoBoxL.add(markRow);
       for (var c = 0; c < twoBoxHeight; c++) {
         String firstData = aColonList[c];
@@ -191,13 +194,13 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       twoBoxL.add(markRow);
       twoBoxL.forEach(print);
       print(' ');
-    } //  --------------  inList length == 2
+    } //  --  inList length == 2
 
     ///  Build three-column-area List.  -----------   3 columns.
     if (inList.length == 3) {
       int columnThreeWidth = ((sW ~/ 3) - 10); //  when 3 notes in a row
 
-      ///  in three List parameter -case:
+      ///  3-case; Create 3 new List to modify data:
       List<String> cColonList = [];
       cColonList.addAll(inList[0]);
 
@@ -207,16 +210,17 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       List<String> eColonList = [];
       eColonList.addAll(inList[2]);
 
-      ///  Add three-List-case -area Lists to certain length.
+      ///  Add three-List-case -area Lists to certain length if needed.
       addEmpty(cColonList, threeBoxHeight, ' * empty mc new * ');
       addEmpty(dColonList, threeBoxHeight, ' * empty md new * ');
       addEmpty(eColonList, threeBoxHeight, ' * empty me new * ');
 
-      ///  tune Three-columns-area Lists Strings to certain length.
+      ///  Tune Three-columns-area Lists items to certain length.
       tuneColumnList(cColonList, columnThreeWidth);
       tuneColumnList(dColonList, columnThreeWidth);
       tuneColumnList(eColonList, columnThreeWidth);
 
+      ///  Form the actual matrix for printing.
       threeBoxL.add(markRow);
       for (var c = 0; c < threeBoxHeight; c++) {
         String fData = cColonList[c];
@@ -229,10 +233,54 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       threeBoxL.add(markRow);
       threeBoxL.forEach(print);
     } // ----------  length inList = 3
+
+    ///  Build four-column-area List.  -----------   4 columns.
+    if (inList.length == 4) {
+      int columnFourWidth = ((sW ~/ 4) - 4); //  when 4 notes in a row
+      String borderS = '|';
+
+      ///  in three List parameter -case:
+      List<String> fColonList = [];
+      fColonList.addAll(inList[0]);
+
+      List<String> gColonList = [];
+      gColonList.addAll(inList[1]);
+
+      List<String> hColonList = [];
+      hColonList.addAll(inList[2]);
+
+      List<String> iColonList = [];
+      iColonList.addAll(inList[3]);
+
+      ///  Add four-List-case -area Lists to certain length if needed.
+      addEmpty(fColonList, threeBoxHeight, ' * empty mc new * ');
+      addEmpty(gColonList, threeBoxHeight, ' * empty md new * ');
+      addEmpty(hColonList, threeBoxHeight, ' * empty me new * ');
+      addEmpty(iColonList, threeBoxHeight, ' * empty me new * ');
+
+      ///  Tune Four-columns-area Lists Items to certain length.
+      tuneColumnList(fColonList, columnFourWidth);
+      tuneColumnList(gColonList, columnFourWidth);
+      tuneColumnList(hColonList, columnFourWidth);
+      tuneColumnList(iColonList, columnFourWidth);
+
+      ///  Start forming this overly-tight mess of funny data.
+      fourBoxL.add(markRow);
+      for (var c = 0; c < fourBoxHeight; c++) {
+        String fData = fColonList[c];
+        String gData = gColonList[c];
+        String hData = hColonList[c];
+        String iData = iColonList[c];
+        String longS = '$fData  $gData  $hData  $iData $borderS';
+        //  '| $fData $borderS $gData $borderS $hData $borderS $iData $borderS';
+        fourBoxL.add(longS);
+      }
+      fourBoxL.add(markRow);
+      fourBoxL.forEach(print);
+    } // --  length inList = 4
   } //  -------------  devBoxBuild
 
-  ///  Give parameters for 2-3- or 4  column boxes-
-  devBoxBuild();
+  devBoxBuild(); //  Call function.
 } //  ----------  devBox
 
 //TODO  teamHowTo lists: add:   automatize adding notes to lists?
@@ -258,16 +306,17 @@ var devTestStreamData = ['devTestStream, for notes and testing',
 var devTestStream = new Stream.fromIterable(devTestStreamData);
 */
 
-///  Messages might be something that demand immediately action.
+///  NOTE: Messages might be something that demand immediately action.
 ///  For more complicated cases of note-message-handling.
 class DevMessage {
   var messageL = ['* * *  DevMessages   * * *', '', ''];
 
-  ///  Map for devMessages
+  ///  Map for devMessages.
   Map<String, String> messageM = {'': ''};
   void messageAdd() => print('addNewMessage();');
 
   void show() => print('Showing all Dev-messages..');
+//  #Code #Sample
 //  add code:
 //  devTestStream.join('New one')         //  add some streams
 //    .join(String 'Second one')
@@ -275,16 +324,16 @@ class DevMessage {
 // ('New note joined to devStream');
 } //--------------------------------------------------  class end DevMessage
 
-//  creating instance:
+//  Creating instance of (mostly unused) DevMessage class:
 var devM = new DevMessage();
 
-///  creating Glorious :) DevTest class; implement it as:  new dt()
-///  collect all my own devTests under a class
+///  Creating Glorious :) DevTest class; implement it as:  new dt()
+///  Collect all my own devTests inside a class.
 ///  howTo avoid calling it devTest.devTest  lol
 class DevHelp {
-  //  TODO  add constructor: (String user, String x)
+  //  TODO  DevHelp Constructor: add constructor: (String user, String x)
 
-  /// for future use:  map for testing  dev
+  /// For future use:  map for testing  dev. #NotUsed
   Map<String, String> normMap = {
     'dawo': 'coding dawo',
     'rest': 'coffee Time',
@@ -292,22 +341,21 @@ class DevHelp {
     'dawoEngine': 'riding home'
   };
 
-  ///  function for to print devTestMap
+  ///  Function for to print devTestMap.  Looks funny :)
   void normMapShow() {
     print(' \n ------------>>-->>-- devHelp norms  ------------>>-->>--');
     normMap.forEach(printSS); //  from dawo_tools.dart
     print(' \n --<<--<<------------ devHelp norms  --<<--<<------------');
   }
 
-//TODO  teamDev: PLAN:  make all 6 tests use same name with
+//  TODO  teamDev: PLAN:  make all 6 tests use same name with
 //         parameters: Test, Msg, Line, Begin, End, Return
 
-  /// TODO  teamDev:   should this be named to devTestInfo ??  devInfo ??
+  /// TODO  teamDev:   Should this be named to devTestInfo ??  devInfo ??
   /// report testers info
   num devTest(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
       DateTime now = new DateTime.now();
-
       String _s30 = '                              ';
       print('$_s30  DEVELOPMENT TEST --------------------------------------');
       print('$_s30  Testing $unit  Test n:o:  $dev.devTestCount');
@@ -315,8 +363,8 @@ class DevHelp {
       print('$_s30  dev test ended    Time: $now ');
       print('');
 
-//TODO  aSync stream     devTestStream.
-      //  dubious to use dev-class here?
+//  TODO  aSync stream     devTestStream.
+      //  NOTE: Dubious to use dev-class here?
       dev.devTestCount++;
     }
     return dev.devTestCount;
@@ -327,7 +375,6 @@ class DevHelp {
   devMsg(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
       DateTime now = new DateTime.now();
-
       String _s30 = '                              ';
       print('$_s30  Developers message -----------------------------------');
       print('$_s30  Testing:  $unit Tester:  $whoDoneThis  ');
@@ -353,15 +400,16 @@ class DevHelp {
     print('');
   }
 
-//TODO  teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
+//  TODO  teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
-  ///  Dynamic-parameter-function, that is used to run other function in tests
-  ///  it is  called:     tfDyn(testSomething);
+  ///  Dynamic-parameter-function, that is used to run other function in tests.
+  ///  It is  called:     tfDyn(testSomething);
+  ///  TODO  Check these String / type errors.
   void tfDyn(var rf) {
     //A value of type 'toString' cannot be assigned to a variable of type 'String'
     String _s = rf.toString;
 
-    //  can we get runtime type toString?
+    //  Can we get runtime type toString?
     String _sType = rf.runTimeType();
     //TODO
     //  There is no such getter 'runTimeType' in 'Function'
@@ -374,25 +422,24 @@ class DevHelp {
 
   /// TODO  teamDev Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
-  ///  present simple message while testing
+  ///  Present simple message while testing.
   void line(String module) {
     print('------------>>-->>--     Beginning:  $module ');
     print('');
   }
 
-  ///  present simple DONE message after all tests are done
+  ///  Present simple DONE message after all tests are done.
   void done(String module) {
     print('--<<--<<------------    $module --<<--<<------------');
     print('All tests done  \n');
   }
 
-  ///  notate single test end
+  ///  Notate single test end.
   void end(String module) {
-    print('--<<--<<------------    End of The:  $module  ');
-    print(' ');
+    print('--<<--<<------------    End of The:  $module  \n');
   }
 
-  ///  notate all tests ended
+  ///  Notate all tests ended.
   void endAll(String module) {
     print('--<<--<<------------  $module endAll  --<<--<<------------');
     print('All tests ended, back to main.dart  \n ');
@@ -400,10 +447,10 @@ class DevHelp {
 } //  --------  end of class DawoDevTest
 //
 
-///  renamed class to: devHelp
+///  Renamed class to: devHelp in 0.0.3.
 var devHelp = new DevHelp();
 
-///  howTo do these?
+///  #howTo do these?
 void addDawoDevNotes() {
   print('--  empty addDevNotes function  --');
   //  code here.
