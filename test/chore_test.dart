@@ -9,7 +9,7 @@ import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
 import 'package:dawo/base_lib.dart';
 import 'package:dawo/base_struct.dart';
-import 'package:dawo/dawlib_chore.dart';
+import 'package:dawo/chore.dart';
 import 'package:dawo/dawlib_coll.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
@@ -58,7 +58,7 @@ void testPackDawoChore() {
 
   ///  Must #build class, to get chores in place.
     packDawoMission.build();
-  packDawoMission.choreL[0].roll();  //  roll one, first, chore.
+  packDawoMission.choreL[0].roll();  //  roll one, first, chore: packDawo.
 
   // for (var x in packDawoMission.choreL){
   //   x.roll();
@@ -90,7 +90,7 @@ void testPackDawoChore() {
   String s = choreBuf.toString();
   List _l = [];
   _l.addAll(s.split('\n'));
-  print('helloWorld: List coming: ');
+  print('helloWorld: choreBuf splitted-by-lineChanges  List coming: ');
   _l.forEach(print);
   print(_l.length);
   print('............. by test chore 3 ..........................');

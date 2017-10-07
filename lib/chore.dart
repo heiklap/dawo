@@ -42,8 +42,8 @@ bool pBNotNow = false; //  Not printing now.
 
 //  bool pB = true; //  Printing true for chore_test.dart  TODO
 
-///  Generic List to keep all Chores.
-List<CommonChore> choreL = [];
+///  Chores that operate in common area, outside Mission class.
+List<CommonChore> choreComL = [];
 
 ///  TODO  devNote: ==   #chore, that is always in dawoApp
 ///  So dawoApp uses chore to maintain it's work-projects.
@@ -73,6 +73,11 @@ class CommonChore extends BaseStruct {
   String emblem; //  or this emblem.  like:  ":DAWO-APP:";
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
   String master; //  mission, that owns this chore. Like : 'packDawo'
+  var sister; //  get other same-group chores via master/Mission choreL
+  //  or via up-level choreL list.
+  ///
+  var circle; //  Other Chores, that we can join.
+  void join(circle) {}
 
   StringBuffer buf = new StringBuffer();
 
@@ -127,9 +132,10 @@ class CommonChore extends BaseStruct {
     //  How to get mission emblem here??  out now.  build();
     //  code for roll
     //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
-    print('------------ chore  clay maps ---------------------------------');
-    print(clayMapL);
-    print('------------ chore  clay maps printed Names---------------------');
+    //  print('------------ chore  clay maps ---------------------------------');
+    //  print(clayMapL);
+    //  [helsinkiGuide, packDawo, learnDartlang, myMusic, myTime, nationalParks]
+    //  print('------------ chore  clay maps printed Names---------------------');
     if (pBNotNow) {
       for (var f in clayMapL) {
         Map _m = getClayMap(f);
@@ -148,6 +154,12 @@ class CommonChore extends BaseStruct {
     flowC('<-- ch roll: $name  done --<----<--', pB);
   }
 
+  ///  Operations with other Chores in choreComL List.
+  opCom() {}
+
+  ///  Second version of above
+  void opJoint() {}
+
   ///  Individual operations are done here.
   ///  Common operation with placard-Map  is in base_lib.
   String op(Map<String, String> _pcM) {
@@ -165,10 +177,18 @@ class CommonChore extends BaseStruct {
         new GlobalOpClass(name, 'chore', 'rec:test', helloChore, 'all ok');
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
-    _retBuf.writeln('_retBuf in op method is ready...');
+    _retBuf.writeln('_retBuf in chore-op method is ready...');
 
     ///  Mediate command to common process (in base_lib) with info from chore.
-    commonProcess(chOpClass, helloChore); //  with actual command
+    ///  TODO  Mediate clay-stuff itemL to commonProcess
+    ///  With actual command:
+    ///  Add placardM to parameters
+    _retBuf.write(commonProcess(':Ch-Op:', chOpClass, placardM, helloChore));
+    print('\n ---------- chore-Op and common process  ----------------------');
+    print(_retBuf);
+
+    print('------------ chore-Op and common process  done  -------------- \n');
+
     flowC('<-- ch roll-op: $name  done <----<--', pB);
     return _retStr;
   }
@@ -218,8 +238,9 @@ class CommonChore extends BaseStruct {
   }
 
   ///  For to test global command in #op
-  void helloChore() {
-    print('   **  hello from command Chore    ***');
+  String helloChore() {
+    print('   **  hello from command Chore > CommonProcess    ***');
+    return ('   **  hello from command Chore > CommonProcess   ***');
   }
 
   ///  constructor
@@ -244,19 +265,19 @@ void flowC(String msg, bool p) {
 ///  But only, if marked in   "flow - chart"
 ///  TODO  flowC DO NOT HAVE ACCESS TO inside-class-name variable.'
 ///  So it must be given in parameter. lol
-void topAll() {
+void topGrant() {
   flowC('these   W O R K S   are executed in every cycle', pB);
 }
 
 /// USAGE:    Execution of EVENT is meant to be avoided.. as long as possible.
-void underAll() {
-  // Name: not nice name..
-  flowC('FLOW:UnderAll  These are executed ONLY in last occasion', pB);
+void lowGrant() {
+  ///
+  flowC('FLOW:lowGrant:  These are executed ONLY in last occasion', pB);
 }
 
 ///  USAGE:    Run occasionally / timely, in sidebar.
-void sideAll() {
-  flowC('FLOW:SideAll  executed occasionally in sidebar..', pB);
+void sideGrant() {
+  flowC('FLOW:SideGrant:  executed occasionally in sidebar..', pB);
 }
 
 //------------------------------------------------------------------------
@@ -275,12 +296,17 @@ void doChore() {
   flowC(' :FLOW:doChore -->  Actual  W O R K   code here...', pB);
 }
 
+/// United chore   W O R K   routines.
+void uniteChore() {
+  flowC(' :FLOW:uniteChore -->  Combined Chore  W O R K   code here...', pB);
+}
+
 ///   routines, after W O R K   is done
 void endChore() {
   flowC('<-- endChore  execution scheduled, when  WORK is done', pB);
 }
 
-///  example / testing chore
+///  example / testing chore ----------------------------------------------
 StringBuffer renderChore() {
   StringBuffer _retBuf;
 //TODO  temporary variables for to get this to work
@@ -294,12 +320,13 @@ StringBuffer renderChore() {
   var ch = new CommonChore('ChoreInRenderChore', 'Testing-Chore');
   print(ch.infoS);
 
-  topAll();
-  underAll();
-  sideAll();
+  topGrant();
+  lowGrant();
+  sideGrant();
 
   startChore(_roller, _aLog, _xList, _yChore, _zSignal);
   doChore();
+  uniteChore();
   endChore();
 
   print(ch.infoS);

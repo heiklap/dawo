@@ -56,7 +56,7 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
 ### app files
 - base_lib : Develop common properties, that other libraries should depend on.
 - base_struct : Structuring base classes. These two libraries do not depend other dawo files.
-- dawlib_chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
+- chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
       of other, bigger, same kind of library.
 - dawlib_coll : Examples and hacking material of Dart collections.
 - dawo.dart : main file, exports : dawo_src.dart.
@@ -82,7 +82,7 @@ src.dart imports files:
 
     import 'base_lib.dart';
     import 'base_struct.dart';  //  unused
-    import 'dawlib_chore.dart';
+    import 'chore.dart';
     import 'dawlib_coll.dart';
 
     import 'dawo_app.dart';

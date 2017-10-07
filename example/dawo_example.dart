@@ -17,7 +17,7 @@ import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
 import 'package:dawo/base_lib.dart';
 import 'package:dawo/base_struct.dart';
-import 'package:dawo/dawlib_chore.dart';
+import 'package:dawo/chore.dart';
 import 'package:dawo/dawlib_coll.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';

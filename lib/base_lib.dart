@@ -33,15 +33,16 @@ import 'dart:async';
 
 ///  How base_lib manages so far NOT importing base_struct?
 import 'base_struct.dart';
+import 'dawo_dev.dart';
 
 //  TODO  Final readiness.  this is not
 final num dawLibBaseReadiness = 2; //  readiness for  version  0.0.1
 
 ///  buffer also outside class, for testing and adding visibility
 var baseLibBuf = new StringBuffer();
-bool pB = false;
+bool pB = false; //  Control console-printing.
 
-String baseLibMotto = 'Serving common reusable functionality to all files';
+String baseLibMotto = 'Serving common reusable resources to users.';
 
 ///  test:  for testing
 void helloDawo() {
@@ -63,7 +64,8 @@ Map<String, String> placardM = {
 class GlobalClass {
   //  Actor: String actor;  //  too important to be a String
   //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
-  String actor = ':UNKNOWN: - :UNUSED:'; //  too important to be a String
+  String actor = ':UNKNOWN: - :UNUSED:'; //  too important to be a String.
+  ///  Not much use, #Actor is announced in function parameter.
   void changeActor(String act) {
     actor = act;
   }
@@ -122,16 +124,20 @@ class GlobalOpClass {
   //TODO : used in: ?  //  Only in render here.
 
   ///
-  void showInfo(String caller) {
-    print('\n***************  global op class-showInfo  ********************');
-    print('** actor: $actor      C:  $caller');
-    print('** sender: $sender   receiver: $receiver ');
-    print('** cmd: $cmd.toString() ');
-    cmd();
-    print('** msg:   $msg');
-    print('** ');
-    print('***************  global op class-showInfo  done *************** ');
-    print('  ***  no code in GlobalOperations yet :)  *** \n');
+  List showInfo(String caller) {
+    List<String> _l = [];
+    String i = '          ';
+    _l.add('\n $i ***************  global op class-showInfo  ****************');
+    _l.add('$i ** actor: $actor      C:  $caller');
+    _l.add('$i ** sender: $sender   receiver: $receiver ');
+    String _cmdS = cmd.toString();
+    _l.add('$i ** cmd: $_cmdS ');
+    cmd(); //  TODO  resolve this for List
+    _l.add('$i ** msg:   $msg');
+    _l.add('$i ** ');
+    _l.add('$i ***************  global op class-showInfo  done ************ ');
+    _l.add('$i  ***  no code in GlobalOperations yet :)  *** \n');
+    return _l;
   }
 }
 
@@ -139,9 +145,19 @@ class GlobalOpClass {
 var glbOp =
     new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', helloDawo, 'msg');
 
-//  TODO  create some "technical" base_classes for below vars and functions.
-
+//  TODO  create some "technic
 ///  Some variables that have not yet find their places inside classes.
+
+/// Chores are biggest users of this.
+/// Stock handles and shares common resources with participants.
+///  Resources are: people, places, jobs aso.
+class Stock {
+  /// al" base_classes for below vars and functions.
+  //  code;  give nice table with random-generator.
+  var supply;
+  var demand;
+  //  void passage, entry
+}
 
 ///  Form a String that describes operation-sender-activity-time for log-entry.
 String clause(var placard) {
@@ -302,21 +318,58 @@ void commonMsg() {
 ///  caller:  chore-op
 ///  Shaping common functionality for..
 ///  TODO  commonProcess
-StringBuffer commonProcess(GlobalOpClass glOpC, Function _command) {
-  print('\n --------------  commonProcess ----------------------------------');
+StringBuffer commonProcess(
+    String by, GlobalOpClass glOpC, Map placardM, Function _command) {
+  ///  NOTE  callers placardM is here now.
+  String infoS1 = '#Caller have accessed #CommonProrocess, where it will hava access in all common resources, ';
+  String infoS2 = 'and it can interact with other users.';
+  print(infoS1);
+  print(infoS2);
+  List<String> _li1 = [];
+  StringBuffer _cpBuf = new StringBuffer();
+  _li1.add(
+      '\n -->>-->  commonProcess  #caller: $by ccccccccccccccccccccccccccp');
+  _li1.add('glbOpsInUse:    ---------------');
+  _li1.add('  ------  commonStream  -----------');
+  _li1.add('   -----  commonStreamBoard  ----------');
+  _li1.add('   -----  commonParamToStr  ---------------   -->');
+  _li1.add('   -----  commonBufMsg  ---------------');
+  _li1.add('   -----  commonRoll  -------------');
+  _li1.add('   -----  commonMsg  ----------');
+  _li1.add('   -----  commonShow-------');
+  _cpBuf.writeln(':_cpBuf: -->>-->  commonProcess  #caller: $by  -------- \n');
   //  TODO  Start info and statistics.
-  StringBuffer _retBuf;
+  //  TODO  Make all these Lists for:  devBox
   //  code here
+  List<String> _li2 = [];
+  _li2.add('placardMap: ');
+  //  placardM.forEach((k,v)  => print('$k, $v'));
+  placardM.forEach((k, v) => _li2.add('$k, $v'));
+  _li2.add('-----------------------------------');
 
+  devBox('T', [_li1, _li2], 10);
+
+  List<String> _li3 = [];
   // actual command.
-  _command();
+  _li3.add('calling command:');
+  //  call to function that was get in parameter by caller.
+  String _comStr = _command();
+  _li3.add(_comStr); //  Returning String, from caller-object.
+  _li3.add('  3. part done in commonProcess. ');
 
-  glOpC.showInfo(':commonProcess:');
+  List<String> _li4 = [];
+  _li4.add('calling: glOpC.showInfo AND  glOpC.operation::');
+  _li4.addAll(glOpC.showInfo(':commonProcess:'));
+  _li4.add('  part 4 done in common process.  ');
+
   glOpC.operation; //  no operation, just show info now.
 
+  devBox('T', [_li3, _li4], 10);
+
   //  TODO  CommonProcess end info and statistics.
-  print('--------------  commonProcess done-------------------------------\n');
-  return _retBuf;
+  _cpBuf.writeln(':_cpBuf:  <--<<--  commonProcess done -------------------\n');
+  print('  <--<<--  commonProcess done ccccccccccccccccccccccccccccccccccp \n');
+  return _cpBuf;
 }
 
 ///  Shaping common functionality for presentation.
@@ -340,7 +393,9 @@ StringBuffer renderBaseLib() {
   /// and instance;
   var renderBaseLibClass = new GlobalOpClass(
       'n:name', 'renderBaseLib', 'rec:test', helloDawo, 'all ok');
-  commonProcess(renderBaseLibClass, greetFromRender);
+
+  ///  Using local placardM
+  commonProcess(':RenderBLib:', renderBaseLibClass, placardM, greetFromRender);
 
   renderBaseLibClass.showInfo('By: renderBaseLib');
 

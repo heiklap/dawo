@@ -20,7 +20,7 @@ import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
 import 'base_lib.dart';
 import 'base_struct.dart'; //  unused
-import 'dawlib_chore.dart';
+import 'chore.dart';
 import 'dawlib_coll.dart';
 
 import 'dawo_app.dart';
@@ -127,5 +127,5 @@ StringBuffer renderDawo() {
 
 ///  Fast test for rumba.
 void renderRumba() {
-  //  rumba  //   variables
+  //  rumba  //  2 variables
 }

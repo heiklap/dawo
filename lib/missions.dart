@@ -12,7 +12,7 @@ library missions;
 //  import 'package:dawo/dawo_app.dart';  //  not used
 import 'package:dawo/base_struct.dart';
 import 'package:dawo/base_lib.dart';
-import 'package:dawo/dawlib_chore.dart';
+import 'package:dawo/chore.dart';
 import 'dawo_dev.dart';
 import 'package:dawo/dawo_tools.dart';
 import 'clay/clay_roll.dart';

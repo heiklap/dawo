@@ -11,7 +11,7 @@ library dawo_app.dart;
 
 import 'base_struct.dart';
 import 'base_lib.dart';
-import 'dawlib_chore.dart';
+import 'chore.dart';
 import 'dawo_dev.dart';
 import 'missions.dart';
 

@@ -213,5 +213,5 @@ Frame #Word,  phases of operation or screen activity.
 
 
 Mounted #word
-Freeze
+Freeze, snack,
 
