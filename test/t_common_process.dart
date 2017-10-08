@@ -24,20 +24,24 @@ void main() {
   var ch = new CommonChore('testChoreProcess', 'text process');
   print('............ t_common_process  ..................................');
   ch.buf.writeln(' t_common_process rolling  ');
-  print(
-      '............ t_common_process  next: ch_roll..................................');
+  print('............ t_common_process  next: ch_roll.....................');
 
   ch.roll();
   print('............ t_common_process  ..................................');
 
   ch.op(ch.placardM);
-  print(
-      '............ t_common_process  done ..................................');
+  print('............ t_common_process  done ..............................');
   print(ch.infoS);
-  print(
-      '............ t_common_process  done ..................................');
+  print('............ t_common_process  done All:done  ....................');
 
+  testRenderBaseLib();
+}
+
+void testRenderBaseLib(){
+  print('............ _lib_test:   next: renderBaseLib................');
+  ///  NOTE: This fails, when run under main.
   renderBaseLib();
+  print('............ _lib_test:   next: renderBaseLib................');
 }
 
 //

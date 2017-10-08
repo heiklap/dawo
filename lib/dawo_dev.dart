@@ -136,7 +136,7 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
   void tuneColumnList(List<String> cL, int width) {
     for (var x = 0; x < cL.length; x++) {
       if (cL[x].length < width) {
-        String s = cL[x].padRight(width, '-');
+        String s = cL[x].padRight(width, '_');
         cL[x] = s;
       }
       if (cL[x].length > width) {
@@ -154,11 +154,11 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
     String markRow = '____'; //  Widen this later to screen-width.
     String padMarkRow = markRow.padRight(sW, '_');
     markRow = padMarkRow;
-    markRow.padRight(sW, '-'); //  (sW, '_');
+    markRow.padRight(sW, '_'); //  (sW, '_');
 
     ///  build two / three-List in parameter -case box;
     ///  Use forceHeight parameter:
-    int twoBoxHeight = 15; //  Should be decided by Lists length.
+    int twoBoxHeight = 15; //  TODO  Should be decided by Lists length.
     // Should force length of in-list.
     if (forceHeight > 0) twoBoxHeight = forceHeight;
 
@@ -177,8 +177,8 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       List<String> bColonList = [];
       bColonList.addAll(inList[1]);
 
-      addEmpty(aColonList, twoBoxHeight, ' * empty new * ');
-      addEmpty(bColonList, twoBoxHeight, ' * empty new * ');
+      addEmpty(aColonList, twoBoxHeight, '_');
+      addEmpty(bColonList, twoBoxHeight, '_');
 
       tuneColumnList(aColonList, columnTwoWidth);
       tuneColumnList(bColonList, columnTwoWidth);
@@ -211,9 +211,9 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       eColonList.addAll(inList[2]);
 
       ///  Add three-List-case -area Lists to certain length if needed.
-      addEmpty(cColonList, threeBoxHeight, ' * empty mc new * ');
-      addEmpty(dColonList, threeBoxHeight, ' * empty md new * ');
-      addEmpty(eColonList, threeBoxHeight, ' * empty me new * ');
+      addEmpty(cColonList, threeBoxHeight, '_');
+      addEmpty(dColonList, threeBoxHeight, '_');
+      addEmpty(eColonList, threeBoxHeight, '_');
 
       ///  Tune Three-columns-area Lists items to certain length.
       tuneColumnList(cColonList, columnThreeWidth);
@@ -253,10 +253,10 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       iColonList.addAll(inList[3]);
 
       ///  Add four-List-case -area Lists to certain length if needed.
-      addEmpty(fColonList, threeBoxHeight, ' * empty mc new * ');
-      addEmpty(gColonList, threeBoxHeight, ' * empty md new * ');
-      addEmpty(hColonList, threeBoxHeight, ' * empty me new * ');
-      addEmpty(iColonList, threeBoxHeight, ' * empty me new * ');
+      addEmpty(fColonList, threeBoxHeight, '_');
+      addEmpty(gColonList, threeBoxHeight, '_');
+      addEmpty(hColonList, threeBoxHeight, '_');
+      addEmpty(iColonList, threeBoxHeight, '_');
 
       ///  Tune Four-columns-area Lists Items to certain length.
       tuneColumnList(fColonList, columnFourWidth);

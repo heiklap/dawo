@@ -302,10 +302,33 @@ void flowC(String msg, bool p) {
 }
 
 ///  To print outPutBuffers.  //  not called
-///  TODO  Prevent temporarily usage of this.
+///  Using new outBufM Map
+///  TODO  Make this show in proper screen areas with devBox.
+void outBuffersPrint(String caller, String notCalled) {
+  print('\n -->>-->>----  :dawoApp: outBuffers  by: $caller  -->>-->>-- ');
+  int i = 0;
+  int mLength = outBufM.length;
+  for (var x = 0; x < mLength; x++) {
+    String _bufNameS = outBufM.keys.elementAt(i);
+    i++;
+    print('\n * * * * * * * * * *    $_bufNameS   * * * * * * * * * *  ');
+
+    print(outBufM[_bufNameS]); //  print
+
+    print('* * * * * * * * * *    $_bufNameS   done  * * * * * * *  ');
+  }
+
+  print('     --<<--<<----  :dawoApp: outBuffers  C: $caller  done    \n');
+}
+
+///  To print outPutBuffers.  //  not called
+///  TODO  Prevent temporarily usage of this with notCalled-parameter.
 ///  TODO  Make header to show Buffers sizes.
-void printBuffers(String caller, String notCalled) {
-  print('\n -->>-->>----  :dawoApp: outBuffers  -->>-->>----');
+///  TODO  Make decent upper-level function and serializer with outBufL.
+///  TODO  Make this show in proper screen areas with devBox.
+void outBuffersPrintOld(String caller, String notCalled) {
+  //&  parameter: notCalled ? ? : notUsed
+  print('\n -->>-->>----  :dawoApp: outBuffers  by: $caller  -->>-->>-- ');
   print('\n * * * * * * * * * *    outHeader   * * * * * * * * * *  ');
   print(outHeader);
   print('* * * * * * * * * *    outHeader   * * * * * * * * * *  ');
@@ -346,7 +369,7 @@ void printBuffers(String caller, String notCalled) {
   print(outFooter);
   print(' * * * * * * * * * *    outFooter   * * * * * * * * * *  \n');
 
-  print('     --<<--<<----  :dawoApp: outBuffers  done  --<<--<<----   \n');
+  print('     --<<--<<----  :dawoApp: outBuffers  C: $caller  done    \n');
 }
 
 //

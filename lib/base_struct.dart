@@ -26,19 +26,51 @@ StringBuffer outBr = new StringBuffer(); //  m - myTime
 
 StringBuffer outFooter = new StringBuffer(); // m -  nParks
 
-///  List containing all outBuffers.
-List<StringBuffer> outBufL = [
-  outHeader,
-  outTl,
-  outTMid,
-  outTr,
-  outMTop,
-  outMid,
-  outMBot,
-  outBl,
-  outBr,
-  outFooter
-];
+///  List containing all outBuffers for special browser screen areas.
+///  Change this to Map<String, StringBuffer> to get names.
+//  List<StringBuffer> outBufL = [
+Map<String, StringBuffer> outBufM = {
+  'outHeaderBuf': outHeader,
+  'outTlBuf': outTl,
+  'outTMidBuf': outTMid,
+  'outTrBuf': outTr,
+  'outMTopBuf': outMTop,
+  ' outMidBuf': outMid,
+  'outMBotBuf': outMBot,
+  'outBlBuf': outBl,
+  'outBrBuf': outBr,
+  'outFooterBuf': outFooter,
+};
+
+///  Sizes of out-buffers
+void outBuffersSizes(String caller) {
+  String outHeaderLS = outHeader.length.toString();
+  String outTlLS = outTl.length.toString();
+  String outTMidLS = outTMid.length.toString();
+  String outTrLS = outTr.length.toString();
+  String outMTopLS = outMTop.length.toString();
+  String outMidLS = outMid.length.toString();
+  String outMBotLS = outMBot.length.toString();
+  String outBlLS = outBl.length.toString();
+  String outBrLS = outBr.length.toString();
+  String outFooterLS = outFooter.length.toString();
+
+  //  NOTE  Will eventually be list.
+  print('\n --------------- outBuffersSizes  C: $caller  ----------------');
+  print(' outHeader::  $outHeaderLS');
+  print(' outTl::  $outTlLS ');
+  print(' outTMid::  $outTMidLS ');
+  print(' outTr::  $outTrLS ');
+  print(' outMTop::  $outMTopLS ');
+  print(' outMid:  $outMidLS ');
+  print(' outMBot::  $outMBotLS ');
+  print(' outBl::  $outBlLS ');
+  print(' outBr::   $outBrLS');
+  print(' outFooter::  $outFooterLS ');
+  print('--------------- outBuffersSizes  C: $caller   :done: ---------- \n');
+}
+
+//  TODO  bring here from dawoApp serialized outBuffersPrint - function
 
 ///  base class for most dawo classes
 ///  DawoApp, BLib, Chore, Flag  use this

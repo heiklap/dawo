@@ -44,9 +44,9 @@ bool pB = false; //  Control console-printing.
 
 String baseLibMotto = 'Serving common reusable resources to users.';
 
-///  test:  for testing
-void helloDawo() {
-  print('   **  hello from dawo app /base_lib    ***');
+///  test:  for testing, assign-functions are for sharing stuff.
+void assignDawo() {
+  print('   **  hello (share stuff) from dawo app /base_lib    ***');
 }
 
 /// ..  or is it class BasePlacard ?
@@ -127,7 +127,7 @@ class GlobalOpClass {
   List showInfo(String caller) {
     List<String> _l = [];
     String i = '          ';
-    _l.add('\n $i ***************  global op class-showInfo  ****************');
+    print('$i ***************  global op class-showInfo  ****************');
     _l.add('$i ** actor: $actor      C:  $caller');
     _l.add('$i ** sender: $sender   receiver: $receiver ');
     String _cmdS = cmd.toString();
@@ -135,15 +135,15 @@ class GlobalOpClass {
     cmd(); //  TODO  resolve this for List
     _l.add('$i ** msg:   $msg');
     _l.add('$i ** ');
-    _l.add('$i ***************  global op class-showInfo  done ************ ');
-    _l.add('$i  ***  no code in GlobalOperations yet :)  *** \n');
+    print('$i ***************  global op class-showInfo  done ************ ');
+    print('$i  ***  no code in GlobalOperations yet :)  *** \n');
     return _l;
   }
 }
 
 //  Just testing Create instance as glbOp.
 var glbOp =
-    new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', helloDawo, 'msg');
+    new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', assignDawo, 'msg');
 
 //  TODO  create some "technic
 ///  Some variables that have not yet find their places inside classes.
@@ -216,7 +216,9 @@ void flowFind(String caller, String _fs, int len) {
 
   ///  Find all "flow-process' Strings
   int bufC = 0;
-  for (var x in outBufL) {
+
+  ///  type Map in for loop must implement iterable.
+  for (var x in outBufM.keys) {
     bufC++;
     print('buffer n:o:  $bufC');
     int _lng = x.length;
@@ -248,7 +250,8 @@ void flowFind(String caller, String _fs, int len) {
   print(flowList.length);
   print('lllllllllllllllllllllllll  flowList  c: $caller  done lllllllllll');
 
-  if (pB) outBufL.forEach(print); //  Not output for now.
+  // No for Map   if (pB) outBufM.forEach(print); //  Not output for now.
+  if (pB) outBufM.forEach((k, v) => print('$k, $v')); //  Not output for now.
 }
 
 ///  TODO  Some idea: s.
@@ -319,9 +322,10 @@ void commonMsg() {
 ///  Shaping common functionality for..
 ///  TODO  commonProcess
 StringBuffer commonProcess(
-    String by, GlobalOpClass glOpC, Map placardM, Function _command) {
+    String by, GlobalOpClass glOpC, Map placardM, Function _assigned) {
   ///  NOTE  callers placardM is here now.
-  String infoS1 = '#Caller have accessed #CommonProrocess, where it will hava access in all common resources, ';
+  String infoS1 =
+      '#Caller have accessed #CommonProrocess, where it will hava access in all common resources, ';
   String infoS2 = 'and it can interact with other users.';
   print(infoS1);
   print(infoS2);
@@ -329,7 +333,7 @@ StringBuffer commonProcess(
   StringBuffer _cpBuf = new StringBuffer();
   _li1.add(
       '\n -->>-->  commonProcess  #caller: $by ccccccccccccccccccccccccccp');
-  _li1.add('glbOpsInUse:    ---------------');
+  _li1.add('glbOpsInUse: ___________________________________');
   _li1.add('  ------  commonStream  -----------');
   _li1.add('   -----  commonStreamBoard  ----------');
   _li1.add('   -----  commonParamToStr  ---------------   -->');
@@ -345,7 +349,7 @@ StringBuffer commonProcess(
   _li2.add('placardMap: ');
   //  placardM.forEach((k,v)  => print('$k, $v'));
   placardM.forEach((k, v) => _li2.add('$k, $v'));
-  _li2.add('-----------------------------------');
+  _li2.add('__________________________________');
 
   devBox('T', [_li1, _li2], 10);
 
@@ -353,7 +357,8 @@ StringBuffer commonProcess(
   // actual command.
   _li3.add('calling command:');
   //  call to function that was get in parameter by caller.
-  String _comStr = _command();
+  //  TODO Make this route more evident in in call,  and returned Strings.
+  String _comStr = _assigned();
   _li3.add(_comStr); //  Returning String, from caller-object.
   _li3.add('  3. part done in commonProcess. ');
 
@@ -380,11 +385,15 @@ void commonShow() {
 ///  Usual presentation / play function.
 StringBuffer renderBaseLib() {
   print('\n ================= render base llib ========================');
+
   StringBuffer _retBuf;
 
-  /// And instance;
-  void greetFromRender() {
-    print(' greetings from render base_lib');
+  ///  For to share stuff with global command in #op
+  ///  TODO  "Global-connect" function for to use in commonProcess / op.
+  ///  TODO  This should have same name in all libraries?
+  String assignBaseRender() {
+    print('   **  baseRender assignBaseRender > CommonProcess    ***');
+    return ('   **  baseRender assignBaseRender > CommonProcess   ***');
   }
 
   var glbVar = new GlobalVariables();
@@ -392,13 +401,16 @@ StringBuffer renderBaseLib() {
 
   /// and instance;
   var renderBaseLibClass = new GlobalOpClass(
-      'n:name', 'renderBaseLib', 'rec:test', helloDawo, 'all ok');
+      'n:name', 'renderBaseLib', 'rec:test', assignDawo, 'all ok');
+
+  print('-->-->--  calling commonProcess  -->-->--   ');
 
   ///  Using local placardM
-  commonProcess(':RenderBLib:', renderBaseLibClass, placardM, greetFromRender);
+  commonProcess(':RenderBLib:', renderBaseLibClass, placardM, assignBaseRender);
 
   renderBaseLibClass.showInfo('By: renderBaseLib');
 
+  print('================= render base llib : done ================= \n');
   return _retBuf;
 }
 

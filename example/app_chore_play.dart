@@ -48,7 +48,7 @@ main() {
 
   dawoApp.roll();
   dev.showNotes(':app-lib-chore-play:');
-  print('  ==<<==<<====  dawo app rol done :app-lib-chore-play: ==<<==<<====');
+  print('  ==<<==<<====  dawo app rol done :app-lib-chore-play: ==<<==<<===');
 }
 
 //  all happens here, just presentation

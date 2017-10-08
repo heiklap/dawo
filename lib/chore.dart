@@ -173,8 +173,8 @@ class CommonChore extends BaseStruct {
     ///  TODO  operation class instance
     ///  TODO  Constructor: add eventually constructor
     ///  order: #actor #sender #receiver #command #msg
-    var chOpClass =
-        new GlobalOpClass(name, 'chore', 'rec:test', helloChore, 'all ok');
+    var chOpClass = new GlobalOpClass(
+        name, 'chore', 'rec:test', assignComProChore, 'all ok');
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
     _retBuf.writeln('_retBuf in chore-op method is ready...');
@@ -183,7 +183,8 @@ class CommonChore extends BaseStruct {
     ///  TODO  Mediate clay-stuff itemL to commonProcess
     ///  With actual command:
     ///  Add placardM to parameters
-    _retBuf.write(commonProcess(':Ch-Op:', chOpClass, placardM, helloChore));
+    _retBuf.write(
+        commonProcess(':Ch-Op:', chOpClass, placardM, assignComProChore));
     print('\n ---------- chore-Op and common process  ----------------------');
     print(_retBuf);
 
@@ -197,16 +198,16 @@ class CommonChore extends BaseStruct {
   void show() {
     flowC('--> ch show:  $name -->---->--', pB);
     //  print(buf);
-    print('bbbbbbbbbbbbbbbbbbbbbb choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
+    print('bbbbbbbbbb chore.show  choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
     print(choreBuf);
-    print('bbbbbbbbbbbbbbbbbbbbbb choreBuf done bbbbbbbbbbbbbbbbbbbbbb');
+    print('bbbbbbbbbb chore.show  choreBuf done bbbbbbbbbbbbbbbbbbbbbb');
     flowC('<-- ch show: $name  done --<----<--', pB);
   }
 
   ///  Report of chore.
   List<String> reportList(String caller) {
     String rowInfoS = rowInfo();
-    String _s1 = '** ------------------------------------------------------';
+    String _s1 = '** _______________________________________________________';
     String _s2 = '** Nimi:  $name     C:  $caller';
     String _s3 = '** $infoS';
     String _s4 = '** $motto';
@@ -215,7 +216,7 @@ class CommonChore extends BaseStruct {
     String _s7 = '** $rowInfoS';
     String _s8 = '** ';
     String _s9 = '** ';
-    String _s10 = '** -----------------------------------------------------';
+    String _s10 = '** ______________________________________________________';
     List _l = [_s1, _s2, _s3, _s4, _s5, _s6, _s7, _s8, _s9, _s10];
 
     return _l;
@@ -237,14 +238,17 @@ class CommonChore extends BaseStruct {
     flowC('<-- chore.done    ok   --<----<--', pB);
   }
 
-  ///  For to test global command in #op
-  String helloChore() {
-    print('   **  hello from command Chore > CommonProcess    ***');
-    return ('   **  hello from command Chore > CommonProcess   ***');
+  ///  For to share stuff with  global command in #op
+  ///  TODO  "Global-connect" function for to use in commonProcess / op.
+  ///  TODO  This should have same name in all libraries?
+  ///  Renamed to show, that only commonProcess is meant to use this.
+  String assignComProChore() {
+    print('   **  resource sharer assignChore > CommonProcess    ***');
+    return ('   **  resource sharer assignChore > CommonProcess   ***');
   }
 
   ///  constructor
-  ///  TODO  should add #master field for mission, that ownd this chore?
+  ///  TODO  should add #master field for mission, that owns" this chore?
   CommonChore(this.name, this.infoS);
 }
 

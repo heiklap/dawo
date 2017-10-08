@@ -25,7 +25,7 @@ To be published:  approximately: 16.10.2017
 4.1 DONE  Reasonable output; regulated form for every classes original-looking output.
           Use top-level StringBuffers to save every classes output.
 
-4.2 ____  Mission - chore; operations and smaller entities; placardM aso.
+4.2 D___  Mission - chore; operations and smaller entities; placardM aso.
 
 4.3 ____  Statistics: Roll counters to app, mission, chore, mill. LATER?
           Only If it is naturally part of #Flow method.
@@ -60,7 +60,7 @@ To be published:  approximately: 16.10.2017
 
      Ongoing::
     D___ *5*9  Connector, more ideas
-    ____ *6*6  base_lib more ideas.
+    D___ *6*6  base_lib more ideas.
       Web::
     ____   ADD elements / boxes to web / HTML. ( code in gitHub )
       Server / Client::
@@ -214,4 +214,5 @@ Frame #Word,  phases of operation or screen activity.
 
 Mounted #word
 Freeze, snack,
+clout, impact
 

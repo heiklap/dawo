@@ -89,8 +89,9 @@ void testPackDawoChore() {
   print('............. by test chore 2 ..........................');
   String s = choreBuf.toString();
   List _l = [];
-  _l.addAll(s.split('\n'));
-  print('helloWorld: choreBuf splitted-by-lineChanges  List coming: ');
+  _l.addAll(s.split('build'));
+  //  TODO  Is split-method getting right output?  Try different schemas.
+  print('\n * * * helloWorld: choreBuf splitted-by-lineChanges  List coming:');
   _l.forEach(print);
   print(_l.length);
   print('............. by test chore 3 ..........................');

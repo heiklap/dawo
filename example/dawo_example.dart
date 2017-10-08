@@ -2,7 +2,6 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  dawo_example   dawo version 0.0.3  25.9.2017
 
-
 import 'package:dawo/dawo.dart';
 
 ///  watch difference, when importing dawo/dawo_src.dart
@@ -48,11 +47,16 @@ main() {
 
   // This also returns a StringBuffer.
   rumba.dance(dawoApp);
+  print('==<<==<<====      dawo_example buffers:     ==<<==<<====');
+
+  outBuffersSizes('dawo_example');
+  outBuffersPrint('dawo_example', 'no-prevent-printing');
+
   print('==<<==<<====      dawo_example done     ==<<==<<====');
 }
 
 ///
-void wordPlay(){
+void wordPlay() {
   //  Play with variables: watch something from every file
   //  base
   // baseLibMotto
