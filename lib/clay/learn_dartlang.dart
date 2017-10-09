@@ -14,6 +14,7 @@ class LearnDartlang {
 
   ///  Dartlang learning subjects to Chore
   Map<String, String> dartlangSubjectsM = {
+    'Async-new': '',
     'Basics': 'Dart is object-oriented, structured web programming language',
     'Boolean true':
         'Only two objects have type bool: the boolean literals true and false,',

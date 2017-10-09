@@ -267,7 +267,8 @@ class Mission {
 ///  Every library / actor has its own flowC function
 void flowC(String msg, bool p) {
   ///  call flowServe with #LOCAL variables
-  flowServe(':MISSION:', outTMid, msg, p);
+  ///  :MISSION: is too long.
+  flowServe(':M:', out.outTMid, msg, p);
 }
 
 ///  Create Mission class instances.
@@ -298,28 +299,25 @@ void buildMissions(String caller) {
   flowC('-->>-->>-- build Missions, caller: $caller -->>-->>-->>--', pB);
   dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
 
-  helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
-  outMTop.writeln('outMtop-buildMissions : helsinki');
-
-  dartlangMission.clayMap.addAll(getClayMap('learnDartlang'));
-  outMid.writeln('outMid-buildMissions : dartlang');
-
-  myMusicMission.clayMap.addAll(getClayMap('myMusic'));
-  outBl.writeln('outBl-buildMission : myMusic');
-
-  myTimeMission.clayMap.addAll(getClayMap('myTime'));
-  outBr.writeln('outBr-buildMission : myTime');
-
-  nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
-  outFooter.writeln('outFooter-buildMission : nationalParks');
-
   ///  Start of new dawoMission.
   ///  packDawo Mission.
   packDawoMission.clayMap.addAll(getClayMap('packDawo'));
-  outMTop.writeln('outMTop-buildMission: packDawo');
+  out.outMTop.writeln('out.outMTop-buildMission: packDawo');
 
-  ///  Write String to buffer for notification.
-  outMBot.writeln('outBot-buildMissions:national-parks');
+  dartlangMission.clayMap.addAll(getClayMap('learnDartlang'));
+  out.outMid.writeln('out.outMid-buildMissions : dartlang');
+
+  helsinkiMission.clayMap.addAll(getClayMap('helsinkiGuide'));
+  out.outMBot.writeln('out.outMBot-buildMissions : helsinki');
+
+  myMusicMission.clayMap.addAll(getClayMap('myMusic'));
+  out.outBl.writeln('out.outBl-buildMission : myMusic');
+
+  myTimeMission.clayMap.addAll(getClayMap('myTime'));
+  out.outBr.writeln('out.outBr-buildMission : myTime');
+
+  nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
+  out.outFooter.writeln('out.outFooter-buildMission : nationalParks');
 
   ///  Add Mission-objects to upper-level missionL List.
   missionL.addAll([

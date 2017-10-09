@@ -145,7 +145,7 @@ class GlobalOpClass {
 var glbOp =
     new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', assignDawo, 'msg');
 
-//  TODO  create some "technic
+//  TODO  create some "tech"
 ///  Some variables that have not yet find their places inside classes.
 
 /// Chores are biggest users of this.
@@ -218,7 +218,7 @@ void flowFind(String caller, String _fs, int len) {
   int bufC = 0;
 
   ///  type Map in for loop must implement iterable.
-  for (var x in outBufM.keys) {
+  for (var x in out.outBufM.keys) {
     bufC++;
     print('buffer n:o:  $bufC');
     int _lng = x.length;
@@ -251,7 +251,8 @@ void flowFind(String caller, String _fs, int len) {
   print('lllllllllllllllllllllllll  flowList  c: $caller  done lllllllllll');
 
   // No for Map   if (pB) outBufM.forEach(print); //  Not output for now.
-  if (pB) outBufM.forEach((k, v) => print('$k, $v')); //  Not output for now.
+  if (pB)
+    out.outBufM.forEach((k, v) => print('$k, $v')); //  Not output for now.
 }
 
 ///  TODO  Some idea: s.

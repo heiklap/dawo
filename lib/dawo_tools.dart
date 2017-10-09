@@ -11,6 +11,14 @@ num demoToolsReadiness = 96;
 ///  Buffer also outside class, for testing and adding visibility.
 var toolsBuf = new StringBuffer();
 
+///  Return iterable List from StringBuffer.
+List<String> bufToList(StringBuffer buf) {
+  List<String> _l = new List();
+  String _s = buf.toString();
+  _l.addAll(_s.split('\n'));
+  return _l;
+}
+
 ///  Return String from List of Strings.
 String listToString(List<String> _l) {
   print(_l);

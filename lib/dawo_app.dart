@@ -50,22 +50,22 @@ class DawoApp extends BaseStruct {
   bool pauseB;
   bool doneB = false;
 
-  ///  Organize out-buffers to Map for return to package users.
+  ///  Organize out.out-buffers to Map for return to package users.
   Map<String, StringBuffer> outMapBuffers = {
-    'outHeader': outHeader, //  app - roll
+    'outHeader': out.outHeader, //  app - roll
 
-    'outTl': outTl, //  rumba
-    'outTMid': outTMid, //   ?  mission
-    'outTr': outTr, //  dev
+    'outTl': out.outTl, //  rumba
+    'outTMid': out.outTMid, //   mission
+    'outTr': out.outTr, //  dawo-app  dev
 
-    'outMTop': outMTop, //   m - packDawo
-    'outMid': outMid, //  m - dartlang
-    'outMBot': outMBot, //  m - helsinki
+    'outMTop': out.outMTop, //   m - packDawo
+    'outMid': out.outMid, //  m - dartlang
+    'outMBot': out.outMBot, //  m - helsinki
 
-    'outBl': outBl, //  m - myMusic
-    'outBr': outBr, //  m - myTime
+    'outBl': out.outBl, //  m - myMusic
+    'outBr': out.outBr, //  m - myTime
 
-    'outFooter': outFooter // m -  nParks
+    'outFooter': out.outFooter // m -  nParks
   };
 
   ///  App-specified fields.
@@ -100,23 +100,37 @@ class DawoApp extends BaseStruct {
     dev.buildNotes('By: :DAWO-APP:', 'In Dawo-App-Build');
     initChoreSystem();
 
-    /// Write something #WakeUpSleepyHead to all out-buffers.
-    outHeader.writeln('* * * :outHeader:buf:   -dawoApp-build:  * * * ');
-    outTl.writeln('* * * :outTl:buf:  -dawoApp-build:  * * * ');
-    outTMid.writeln('* * * :outTMid:buf:  -dawoApp-build:  * * * ');
-    outTr.writeln('* * * :outTr:buf:   -dawoApp-build:  * * * ');
-    outMTop.writeln('* * * :outMTop:buf  -dawoApp-build:  * * * ');
-    outMid.writeln('* * * :outMid:buf:  -dawoApp-build:  * * * ');
-    outMBot.writeln('* * * :outMBot:buf:  -dawoApp-build:  * * * ');
-    outBl.writeln('* * * :outBl:buf  -dawoApp-build:  * * * ');
-    outBr.writeln('* * * :outBr:buf:  -dawoApp-build:  * * * ');
-    outFooter.writeln('* * * :outFooter:buf:  -dawoApp-build:  * * * ');
+    /// Write something #WakeUpSleepyHead to all out.out-buffers.
+    out.outHeader.writeln('* * * :out.outHeader:buf: -dawoApp-build:  * * * ');
+    out.outTl.writeln('* * * :out.outTl:buf:  -dawoApp-build:  * * * ');
+    out.outTMid.writeln('* * * :out.outTMid:buf:  -dawoApp-build:  * * * ');
+    out.outTr.writeln('* * * :out.outTr:buf:   -dawoApp-build:  * * * ');
 
+    out.outMTop.writeln('* * * :out.outMTop:buf  -dawoApp-build:  * * * ');
+    out.outMid.writeln('* * * :out.outMid:buf:  -dawoApp-build:  * * * ');
+    out.outMBot.writeln('* * * :out.outMBot:buf:  -dawoApp-build:  * * * ');
+
+    out.outBl.writeln('* * * :out.outBl:buf  -dawoApp-build:  * * * ');
+    out.outBr.writeln('* * * :out.outBr:buf:  -dawoApp-build:  * * * ');
+    out.outFooter.writeln('* * * :out.outFooter:buf: -dawoApp-build:  * * * ');
+
+    out.outHeader.writeln('* * * : app-roll stuff:  * * * ');
+    out.outTl.writeln('* * * : rumba stuff :  * * * ');
+    out.outTMid.writeln('* * * : mission stuff:  -dawoApp-build:  * * * ');
+    out.outTr.writeln('* * * : dawo-app stuff :  * * * ');
+
+    out.outMTop.writeln('* * * :pack-dawo stuff : -dawoApp-build:  * * * ');
+    out.outMid.writeln('* * * :dartlang stuff:  -dawoApp-build:  * * * ');
+    out.outMBot.writeln('* * * : helsinki stuff:  -dawoApp-build:  * * * ');
+
+    out.outBl.writeln('* * * : my-music-stuff :  -dawoApp-build:  * * * ');
+    out.outBr.writeln('* * * : my-time stuff :  -dawoApp-build:  * * * ');
+    out.outFooter.writeln('* * * :nat-parks stuff: -dawoApp-build:  * * * ');
     flowC('  --<<--<<--  :da:b:  build done', pB);
   }
 
   ///  #run-like method
-  ///  return:  Map<String, StringBuffer> outMapBuffers
+  ///  return:  Map<String, StringBuffer> out.outMapBuffers
   Map<String, StringBuffer> roll() {
     dev.admNotes.add('>>ADM:CHECK-IN  dawo_app-roll  >>');
     dev.admNotes.add(':Ar: = in App-Roll. Mark value number: #7: ');
@@ -221,7 +235,7 @@ class DawoApp extends BaseStruct {
     if (pB) {
       print(buf);
       print('-->>-->>----  dawoApp show -->>-->>----');
-      print(outTr);
+      print(out.outTr);
       print('--<<--<<----  dawoApp show done --<<--<<----');
     }
   }
@@ -229,15 +243,15 @@ class DawoApp extends BaseStruct {
   ///  After presentation method; done, if #doneB.
   void done() {
     flowC('-->>-->>----  DawoApp.done    $infoS   :: engaged ', pB);
-    outTl.writeln('outTl-dawoApp-done:');
-    outTMid.writeln('outMid-dawoApp-done:');
-    outTr.writeln('outTr-dawoApp-done:');
-    outMTop.writeln('outtop-dawoApp-done:');
-    outMid.writeln('outMid-dawoApp-done:');
-    outMBot.writeln('outBot-dawoApp-done:');
-    outBl.writeln('outBl-dawoApp-done:');
-    outBr.writeln('outBr-dawoApp-done:');
-    outFooter.writeln('outFooter-dawoApp-done:');
+    out.outTl.writeln('out.outTl-dawoApp-done:');
+    out.outTMid.writeln('out.outMid-dawoApp-done:');
+    out.outTr.writeln('out.outTr-dawoApp-done:');
+    out.outMTop.writeln('out.outtop-dawoApp-done:');
+    out.outMid.writeln('out.outMid-dawoApp-done:');
+    out.outMBot.writeln('out.outBot-dawoApp-done:');
+    out.outBl.writeln('out.outBl-dawoApp-done:');
+    out.outBr.writeln('out.outBr-dawoApp-done:');
+    out.outFooter.writeln('out.outFooter-dawoApp-done:');
     //  code here
     flowC('  --<<--<<--  :da:b: --  DawoApp buffer output app: done  --', pB);
     if (pB) print(buf);
@@ -298,78 +312,28 @@ Map<String, String> dawo003 = {
 ///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p) {
   ///  call flowServe with #LOCAL variables
-  flowServe(':DAWO-APP:', outTr, msg, p);
+  ///  :DAWO-APP:  is too long.
+  flowServe(':D-A:', out.outTr, msg, p);
 }
 
 ///  To print outPutBuffers.  //  not called
 ///  Using new outBufM Map
 ///  TODO  Make this show in proper screen areas with devBox.
 void outBuffersPrint(String caller, String notCalled) {
-  print('\n -->>-->>----  :dawoApp: outBuffers  by: $caller  -->>-->>-- ');
+  print('\n -->>-->>----  :dawoApp: out.outBuffers  by: $caller  -->>-->>-- ');
   int i = 0;
-  int mLength = outBufM.length;
+  int mLength = out.outBufM.length;
   for (var x = 0; x < mLength; x++) {
-    String _bufNameS = outBufM.keys.elementAt(i);
+    String _bufNameS = out.outBufM.keys.elementAt(i);
     i++;
     print('\n * * * * * * * * * *    $_bufNameS   * * * * * * * * * *  ');
 
-    print(outBufM[_bufNameS]); //  print
+    print(out.outBufM[_bufNameS]); //  print
 
     print('* * * * * * * * * *    $_bufNameS   done  * * * * * * *  ');
   }
 
-  print('     --<<--<<----  :dawoApp: outBuffers  C: $caller  done    \n');
-}
-
-///  To print outPutBuffers.  //  not called
-///  TODO  Prevent temporarily usage of this with notCalled-parameter.
-///  TODO  Make header to show Buffers sizes.
-///  TODO  Make decent upper-level function and serializer with outBufL.
-///  TODO  Make this show in proper screen areas with devBox.
-void outBuffersPrintOld(String caller, String notCalled) {
-  //&  parameter: notCalled ? ? : notUsed
-  print('\n -->>-->>----  :dawoApp: outBuffers  by: $caller  -->>-->>-- ');
-  print('\n * * * * * * * * * *    outHeader   * * * * * * * * * *  ');
-  print(outHeader);
-  print('* * * * * * * * * *    outHeader   * * * * * * * * * *  ');
-
-  print('\n * * * * * * * * * *    outTl   * * * * * * * * * *  ');
-  print(outTl);
-  print(' * * * * * * * * * *    outTl   * * * * * * * * * *  \n');
-
-  print('\n * * * * * * * * * *    outTMid   * * * * * * * * * *  ');
-  print(outTMid);
-  print(' * * * * * * * * * *    outTMid   * * * * * * * * * *  \n');
-
-  print('\n * * * * * * * * * *    outTr   * * * * * * * * * *  ');
-  print(outTr);
-  print(' * * * * * * * * * *    outTr   * * * * * * * * * *  \n');
-
-  print('\n * * * * * * * * * *    outMTop   * * * * * * * * * *  ');
-  print(outMTop);
-  print('\n * * * * * * * * * *    outMTop   * * * * * * * * * *  ');
-
-  print('\n * * * * * * * * * *    outMMid   * * * * * * * * * *  ');
-  print(outMid);
-  print(' * * * * * * * * * *    outMMid   * * * * * * * * * *  \n');
-
-  print('\n * * * * * * * * * *    outMBot   * * * * * * * * * *  ');
-  print(outMBot);
-  print('* * * * * * * * * *    outMBot   * * * * * * * * * *  \n ');
-
-  print('\n * * * * * * * * * *    outBl   * * * * * * * * * *  ');
-  print(outBl);
-  print('\* * * * * * * * * *    outBl   * * * * * * * * * *  \n');
-
-  print('\n * * * * * * * * * *    outBr   * * * * * * * * * * ');
-  print(outBr);
-  print(' * * * * * * * * * *    outBr   * * * * * * * * * *  \n');
-
-  print('\n * * * * * * * * * *    outFooter   * * * * * * * * * *  ');
-  print(outFooter);
-  print(' * * * * * * * * * *    outFooter   * * * * * * * * * *  \n');
-
-  print('     --<<--<<----  :dawoApp: outBuffers  C: $caller  done    \n');
+  print('     --<<--<<----  :dawoApp: out.outBuffers  C: $caller  done  \n');
 }
 
 //

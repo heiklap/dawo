@@ -49,7 +49,7 @@ main() {
   rumba.dance(dawoApp);
   print('==<<==<<====      dawo_example buffers:     ==<<==<<====');
 
-  outBuffersSizes('dawo_example');
+  out.outBuffersSizes('dawo_example');
   outBuffersPrint('dawo_example', 'no-prevent-printing');
 
   print('==<<==<<====      dawo_example done     ==<<==<<====');
@@ -69,7 +69,7 @@ void wordPlay() {
   //  dawo
   // dawoBuf
 
-  //  app
+  //  app  3 variables
   // appMap;
 
   //  dev  17 variables
@@ -77,11 +77,14 @@ void wordPlay() {
 
   //  flow*  2 variables
 
-  //  mill
+  //  mill  4 variables
+
   //  DawoMill
 
   //  mission
   //  Mission  class
+
+  //  out  15 variables
   //  placard* : 1
 
   //  toolsActive;

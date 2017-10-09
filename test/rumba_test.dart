@@ -25,8 +25,8 @@ void playRumbaTest() {
   // we got buffer here
   rumba.dance(dawoApp);
 
-  outBuffersSizes('rumba_test');
-  outBuffersPrint('rumba_test', 'Not-called-strange-parameter');
+  out.outBuffersSizes('rumba_test');
+  out.outBuffersPrint('rumba_test', 'Not-called-strange-parameter');
 
 }
 

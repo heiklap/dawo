@@ -149,6 +149,15 @@ class Rumba {
     print('------  one more funny list test   ------');
     devBox('T', [dev.innoNotes, dev.admNotes, dev.devNotes, dev.secNotes], 0);
 
+    var _ll = out.outBufListsForBox();
+    print('\n >>>>>>>>>>>>>>>>>>>>>>  outBuffers  <<<<<<<<<<<<<<<<<<<<<<<<<');
+    devBox('T', [_ll[1], _ll[2], _ll[3]], 32);
+    devBox('T', [_ll[4], _ll[5], _ll[6]], 0);
+    devBox('T', [_ll[7], _ll[8]], 0);
+
+    ///  Header and footer from out-buffers-
+    devBox('T', [_ll[0], _ll[9]], 0);
+    print('>>>>>>>>>>>>>>>>>>>>>>  outBuffers  done <<<<<<<<<<<<<<<<<<<< \n');
     //  flowFind(':RUMBA-DANCE:', '->>-', 35);
     //  flowFind(':RUMBA-DANCE:', 'build', 30);
     if (pB) flowFind(':RUMBA-DANCE:', '-->---->--', 35);
@@ -164,5 +173,5 @@ class Rumba {
 ///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
-  flowServe(':RUMBA:', outTl, msg, p); //  Location:  in base_lib
+  flowServe(':R:', out.outTl, msg, p); //  Location:  in base_lib
 }

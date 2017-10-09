@@ -21,7 +21,4 @@ void main() {
   print('............ _lib_test:   next: renderBaseLib................');
   renderBaseLib();
 
-
-  //  Failed to load "C:/Users/Public/IdeaDart/dawo/test/t_common_process.dart":
-  //  The getter 'length' was called on null.
 }

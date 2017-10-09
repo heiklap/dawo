@@ -83,7 +83,11 @@ class CommonChore extends BaseStruct {
 
   ///  Controlling chores state, working-condition-state values.
   bool offB = true;
+  //TODO  purpoted error to find error in build usage.
+  bool erroroInnBX = false; // TODO  temporary, to find error
   bool onB = false;
+  // onB bool;  out temporarily
+
   bool pauseB;
   bool doneB = false;
 
@@ -114,7 +118,9 @@ class CommonChore extends BaseStruct {
     flowC('--> chore $name build  -->---->--', pB);
     emblem = _emblem; //  set master and emblem fields.
     master = _master;
+    //  TODO  Initialized?  Where?
     if (onB == true) print('\n ALREADY INITIALIZED BUILD CHORE  \n');
+    print(onB);
     offB = false; //  off-state ends
     onB = true; //   app is in on
     flowC('<--  chore build  $name done --<----<-- ', pB);
@@ -248,7 +254,7 @@ class CommonChore extends BaseStruct {
   }
 
   ///  constructor
-  ///  TODO  should add #master field for mission, that owns" this chore?
+  ///  TODO  should add #master field for mission, that owns this chore?
   CommonChore(this.name, this.infoS);
 }
 
@@ -256,7 +262,7 @@ class CommonChore extends BaseStruct {
 ///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
-  //  flowServe(':CHORE:', choreBuf, msg, p);  //  verbose
+
   flowServe('', choreBuf, msg, p);
 }
 

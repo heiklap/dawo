@@ -19,6 +19,11 @@ import 'package:dawo/dawo_tools.dart';
 //   note          23 ??         CHANGE:   note  !!!
 //   test        10/50            CHANGE    test  !!!
 
+//  New async : plans to make async functions start synchronously.
+//  This change is planned for Dart 2.0.
+//  TODO  Future foo() async { await null; doSomething(); }
+//  TODO  Future bar() async { await null; return doSomething(); }
+
 ///  Not working now; to track readiness
 num dawoDevReadiness = 94;
 
