@@ -20,8 +20,8 @@ import 'clay/clay_roll.dart';
 ///  Buffer also outside class, for testing and adding visibility.
 var missionBuf = new StringBuffer();
 
-bool pB = false; //  Control printing, now:  false;
-//  bool pB = true; //  true for chore_test.dart;
+ // bool pB = false; //  Control printing, now:  false;
+  bool pB = true; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
@@ -114,6 +114,13 @@ class Mission {
     5: 'Delayed'
   };
 
+  ///  Mission loop for all it's Chores. Rumba calls this.
+  void MissionRollChores(String caller){
+    //  Start loop, use choreL to choose one at a time.
+    //  Run chore's code against it's master-mission.
+    //  Handle user-actions until: exit.
+  }
+
   ///  Present all info of this class / app.
   ///  #Tip: String can be in many lines with '''.
   void showInfo() {
@@ -136,9 +143,9 @@ class Mission {
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
     //
-    flowC('-->---->--  building mission:  $name   -->---->--', pB);
-    flowC('-->---->--  construct default Chores. For: $name -->---->--', pB);
-
+    flowC('-->-m-->         :M:-b:         $name   -->-m-->  ', pB);
+    flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', pB);
+    print(':M-build: => :chore.onB:: ');
     ///  Should use instance, that is created inside THIS mission instance.
     learnChr.build(emblem, name); //  new parameter in Chore.build
     joyChr.build(emblem, name); //  emblem and master parameters to Chore.
@@ -150,16 +157,16 @@ class Mission {
 
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
-    flowC('-->---->--  choreL add-all:  $name   -->---->--', pB);
+    flowC('-->-m-->    choreL add-all:  $name       ', pB);
     choreL.addAll(
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
     //  CODE
-    flowC('   --<----<--  building mission: done  $name   --<----<-- \n', pB);
+    flowC('   <-m--<--       :M:-b:        done  $name     ', pB);
   } //  -----  build
 
   /// devNote:  function, that OPENS something.  so rename; init
   bool opInit(int openCount, var openThis) {
-    flowC('-->---->--  opInit -->---->--', pB);
+    flowC('-->-m-->    opInit ', pB);
 
     bool _initB = false;
     //  code to initialize variables in system
@@ -168,7 +175,7 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    flowC('-->---->--  opOpen -->---->--', pB);
+    flowC('-->-m-->    opOpen  ', pB);
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
@@ -176,14 +183,14 @@ class Mission {
 
   ///  Start developing operation roll function
   int opRoll(int rollCount, Function autoRollFunc) {
-    flowC('-->---->--  opRoll -->---->--', pB);
+    flowC('-->-m-->    opRoll  ', pB);
     int done = 0;
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
       done++;
       autoRollFunc();
     }
-    flowC('--<----<--  opRoll done c: $done --<----<--', pB);
+    flowC('    <-m--<--  opRoll done c: $done    ', pB);
     return done;
   }
 
@@ -296,7 +303,7 @@ void missionChoreReport(String caller) {
 ///  Add clay ( data ) maps to missions.
 ///  TODO  Messy function buildMissions.  Clean, organize it.
 void buildMissions(String caller) {
-  flowC('-->>-->>-- build Missions, caller: $caller -->>-->>-->>--', pB);
+  flowC('-->-m--> build Missions, caller: $caller   ', pB);
   dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
 
   ///  Start of new dawoMission.
@@ -330,16 +337,16 @@ void buildMissions(String caller) {
   ]);
 
   /// .build adds default Chore's to missions
-  flowC('-->---->--  missionL forEach print-choreL   -->---->--', pB);
+  flowC('-->-m-->    missionL forEach print-choreL   -->-m-->  ', pB);
 //  hklTry   missionL.forEach((x) => x.build);
   //  missionL.forEach(print);  //  =>  Instance of 'Mission'
 
   ///  Calling mission-chore report
   if (pB) missionChoreReport('By: MissionBuildMissions');
 
-  flowC('--<----<--  missionL forEach print-choreL   done --<----<--', pB);
+  flowC('  <-m--<--  missionL forEach print-choreL   done   <-m--<--', pB);
 
-  flowC('-->---->--    missionL.forEach.build    -->---->--', pB);
+  flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', pB);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
   packDawoMission.build();
   helsinkiMission.build();
@@ -348,7 +355,7 @@ void buildMissions(String caller) {
   myTimeMission.build();
   nationalParksMission.build();
 //  };
-  flowC('--<----<--  missionL-forEach-build done --<----<-- \n', pB);
+  flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- \n', pB);
   //  TODO  make mission-chore report
   if (pB) {
     for (var x in missionL) {
@@ -361,7 +368,7 @@ void buildMissions(String caller) {
     }
   }
 
-  flowC('--<----<--  missionL forEach print-choreL done AGAIN <----<-- \n', pB);
+  flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- \n', pB);
 } //  -----  buildMissions
 
 ///  creating instance of Mission and using it's methods

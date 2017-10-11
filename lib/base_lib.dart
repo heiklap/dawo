@@ -37,6 +37,7 @@ import 'dawo_dev.dart';
 
 //  TODO  Final readiness.  this is not
 final num dawLibBaseReadiness = 2; //  readiness for  version  0.0.1
+int flowI = 0;  //  flow-counter.
 
 ///  buffer also outside class, for testing and adding visibility
 var baseLibBuf = new StringBuffer();
@@ -62,6 +63,8 @@ Map<String, String> placardM = {
 
 ///  Global class. in early dev state
 class GlobalClass {
+  //  innoTeam
+  var register;  //  register of objects that participate in Dawo / glb.
   //  Actor: String actor;  //  too important to be a String
   //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
   String actor = ':UNKNOWN: - :UNUSED:'; //  too important to be a String.
@@ -201,8 +204,10 @@ void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   String _actor = actor;
   if (pr) print(msg);
   // DONE:  Now _buf comes from caller in parameters.
-
-  buf.writeln('$_actor $msg');
+  //  Handle flow-counter, flowI
+  flowI ++;
+  String _flowIS = flowI.toString();
+  buf.writeln('$_actor $_flowIS $msg');
   //  Code here.
   //  Form nice String (for print and/or buf) that describes ongoing operation.
 }

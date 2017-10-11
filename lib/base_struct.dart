@@ -13,6 +13,8 @@ String baseStructMotto = 'Base rules for building classes';
 ///  Bif change; putting all out-stuff inside a class.
 ///  NOTE abstract classes cant be created with new keyword.
 /*
+//  Problems with: #Static members can not be used in initializer.
+//  and: Using base-class encountered some problems.
 class OutBase {
   ///  Return iterable List from StringBuffer. Also in dawo_tools.
   List<String> bufToList(StringBuffer buf) {

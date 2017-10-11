@@ -263,7 +263,7 @@ class CommonChore extends BaseStruct {
 void flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
 
-  flowServe('', choreBuf, msg, p);
+  flowServe(':CH:', choreBuf, msg, p);
 }
 
 //---------------------------------------------------------------

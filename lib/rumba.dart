@@ -152,7 +152,9 @@ class Rumba {
     var _ll = out.outBufListsForBox();
     print('\n >>>>>>>>>>>>>>>>>>>>>>  outBuffers  <<<<<<<<<<<<<<<<<<<<<<<<<');
     devBox('T', [_ll[1], _ll[2], _ll[3]], 32);
+    print(' ');
     devBox('T', [_ll[4], _ll[5], _ll[6]], 0);
+    print(' ');
     devBox('T', [_ll[7], _ll[8]], 0);
 
     ///  Header and footer from out-buffers-
@@ -161,6 +163,7 @@ class Rumba {
     //  flowFind(':RUMBA-DANCE:', '->>-', 35);
     //  flowFind(':RUMBA-DANCE:', 'build', 30);
     if (pB) flowFind(':RUMBA-DANCE:', '-->---->--', 35);
+    dev.doneL.forEach(print);
 
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
 

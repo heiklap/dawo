@@ -27,6 +27,12 @@ String streamMotto = 'Streams are not my frends :(';
 
 ///TODO  teamNext   PLAN:    Use futures for outPut
 //------------------------------------------------functions
+/*  Stack example : To get a value from a Future:
+Future foo() async {
+  var val = await theFuture;
+  print(val);
+}
+*/
 
 ///  ugly hack: list here
 var letterList = ['a', 'b', 'c']; //  used here

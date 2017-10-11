@@ -84,10 +84,10 @@ class DawoApp extends BaseStruct {
     //  TODO  Actor:  only one actor for now...
     glb.changeActor(':DAWO-APP:');
     //  TODO  Set some field values.
-    flowC('  -->-->>--  DawoApp buffer output initialized  ---', pB);
+    flowC('  -->-da->  DawoApp buffer output initialized  ---', pB);
 
     //  Set fields values.
-    flowC('  --<<--<<--  :da:b: init done', pB);
+    flowC('  --<-da-<    :da:b: init done', pB);
   }
 
   ///  Method for setting class in working condition.
@@ -97,7 +97,7 @@ class DawoApp extends BaseStruct {
     onB = true; //   app is in on
 
     ///  Build DevNotes.
-    dev.buildNotes('By: :DAWO-APP:', 'In Dawo-App-Build');
+    dev.buildNotes('By: :D:-A:', 'In Dawo-App-Build');
     initChoreSystem();
 
     /// Write something #WakeUpSleepyHead to all out.out-buffers.
@@ -114,19 +114,19 @@ class DawoApp extends BaseStruct {
     out.outBr.writeln('* * * :out.outBr:buf:  -dawoApp-build:  * * * ');
     out.outFooter.writeln('* * * :out.outFooter:buf: -dawoApp-build:  * * * ');
 
-    out.outHeader.writeln('* * * : app-roll stuff:  * * * ');
-    out.outTl.writeln('* * * : rumba stuff :  * * * ');
-    out.outTMid.writeln('* * * : mission stuff:  -dawoApp-build:  * * * ');
+    out.outHeader.writeln('       * * * : app-roll stuff:  * * * ');
+    out.outTl.writeln('       * * * : rumba stuff :  * * * ');
+    out.outTMid.writeln(    '* * * : mission stuff:  -dawoApp-build:  * * * ');
     out.outTr.writeln('* * * : dawo-app stuff :  * * * ');
 
-    out.outMTop.writeln('* * * :pack-dawo stuff : -dawoApp-build:  * * * ');
-    out.outMid.writeln('* * * :dartlang stuff:  -dawoApp-build:  * * * ');
-    out.outMBot.writeln('* * * : helsinki stuff:  -dawoApp-build:  * * * ');
+    out.outMTop.writeln(   '* * * :pack-dawo stuff : -dawoApp-build:  * * * ');
+    out.outMid.writeln('     * * * :dartlang stuff:  -dawoApp-build:  * * * ');
+    out.outMBot.writeln('   * * * : helsinki stuff:  -dawoApp-build:  * * * ');
 
     out.outBl.writeln('* * * : my-music-stuff :  -dawoApp-build:  * * * ');
     out.outBr.writeln('* * * : my-time stuff :  -dawoApp-build:  * * * ');
     out.outFooter.writeln('* * * :nat-parks stuff: -dawoApp-build:  * * * ');
-    flowC('  --<<--<<--  :da:b:  build done', pB);
+    flowC('  --<-da-<  :da:b:  build done', pB);
   }
 
   ///  #run-like method
@@ -184,7 +184,7 @@ class DawoApp extends BaseStruct {
 
     //  Add code for roll.
 
-    appRollMissions('C:DawoApp-roll ');
+    appRollMissions(':DA:-roll ');
     rollStream();
     show();
     done();
@@ -194,10 +194,10 @@ class DawoApp extends BaseStruct {
 
   ///  Roll missions in missionL AND every chore in them.
   void appRollMissions(String caller) {
-    String _msg = '\n -->>-->>---- app rollMissions  C: $caller -->>-->>----';
+    String _msg = '-->-da-> app rollMissions  C: $caller -->>-->>----';
     flowC('$_msg', pB);
     // roll BLib-class (mission) actually List of missions!
-    flowC('\n  ***  DAWO-APP  MISSIONS   ***  \n', pB);
+    flowC('  ***  DAWO-APP  MISSIONS   ***  ', pB);
     buildMissions('C:dawoApp ');
 
     ///  TODO Detail printing set false: pB; make better, global solution.
@@ -217,17 +217,25 @@ class DawoApp extends BaseStruct {
     List list6 = nationalParksMission.report('C:dawoApp-:rM:', pB);
     devBox('By; dawoApp-:rM:', [list5, list6], 9);
 
-    flowC('\n      --<----<-- app rollMissions  C: $caller --<----<--', pB);
+    ///  Loop for handling user-actions in Missions.
+    //  --
+    //  while..
+    //  Loop handler
+    //  Choose Mission
+    //  code
+    //  endLoop
+
+    flowC('      --<----<-- app rollMissions  C: $caller --<----<--', pB);
     // roll all chores, that are in mission
   }
 
   ///  calling base>_lib commonStream, elementary Stream example
   void rollStream() {
-    flowC('\n--- :stream:beg dawoApp rollStream started     ---', pB);
+    flowC('--- :stream:beg dawoApp rollStream started     ---', pB);
     // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     commonStream('dawoApp', [agenda, msg, develop, version], 'appListener');
-    flowC('\n--- :stream:end dawoApp rollStream done     ---', pB);
+    flowC('--- :stream:end dawoApp rollStream done     ---', pB);
   }
 
   ///  Show-method to be developed further.
@@ -242,7 +250,7 @@ class DawoApp extends BaseStruct {
 
   ///  After presentation method; done, if #doneB.
   void done() {
-    flowC('-->>-->>----  DawoApp.done    $infoS   :: engaged ', pB);
+    flowC('-->-da->  DawoApp.done    $infoS   :: engaged ', pB);
     out.outTl.writeln('out.outTl-dawoApp-done:');
     out.outTMid.writeln('out.outMid-dawoApp-done:');
     out.outTr.writeln('out.outTr-dawoApp-done:');
@@ -253,10 +261,9 @@ class DawoApp extends BaseStruct {
     out.outBr.writeln('out.outBr-dawoApp-done:');
     out.outFooter.writeln('out.outFooter-dawoApp-done:');
     //  code here
-    flowC('  --<<--<<--  :da:b: --  DawoApp buffer output app: done  --', pB);
+    flowC('  --<-da-<  :da:b: --  DawoApp buffer output app: done  --', pB);
     if (pB) print(buf);
-    //  buf.clear(); //  empty buffer
-    flowC('     --<<--<<----  DawoApp.done  done  --<<--<<---- \n', pB);
+    //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', pB);
   }
 
   DawoApp(this.name, this.agenda);
@@ -320,7 +327,7 @@ void flowC(String msg, bool p) {
 ///  Using new outBufM Map
 ///  TODO  Make this show in proper screen areas with devBox.
 void outBuffersPrint(String caller, String notCalled) {
-  print('\n -->>-->>----  :dawoApp: out.outBuffers  by: $caller  -->>-->>-- ');
+  print('\n -->>-->>----  :D-A:   out.outBuffers  by: $caller  -->>-->>-- ');
   int i = 0;
   int mLength = out.outBufM.length;
   for (var x = 0; x < mLength; x++) {
@@ -333,7 +340,7 @@ void outBuffersPrint(String caller, String notCalled) {
     print('* * * * * * * * * *    $_bufNameS   done  * * * * * * *  ');
   }
 
-  print('     --<<--<<----  :dawoApp: out.outBuffers  C: $caller  done  \n');
+  print('     --<<--<<----  :D-A:   out.outBuffers  C: $caller  done  \n');
 }
 
 //

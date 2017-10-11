@@ -50,6 +50,8 @@ class Dev {
 
   ///  Generic list to keep and handle all devNotes
   List<DevMessage> devMessageL = []; //  not used
+  ///  To handy keep track of fast changes in code:
+  List<String> doneL =[];
 
 // moved list from chore back to dev.. put first, header values there
   List<String> admNotes = ['* *  Team Admin notes:  * *'];
@@ -65,23 +67,29 @@ class Dev {
 
   ///  Fill devNote lists with data. dawo_app calls this in it's build-method!
   void buildNotes(String caller, msg) {
+    doneL.add('dev: doneL added to keep track of fast changes. 10.10.17');
+    doneL.add('flowserve: added flowI event counter. In base_lib: flowI. 10.10.17');
+    doneL.add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.');
+    doneL.add('4');
+    doneL.add('5');
+
     admNotes.addAll(['adm: #Principle: do not mess, keep it simple.']);
     admNotes.addAll(
         ['adm: Must be strict all the time.', 'Keep good care of people.']);
-    admNotes.add(
-        'adm: Week schedule must include total check at least 3 times in a week.  System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.');
+    admNotes.addAll([
+        'adm: Week schedule must include total check at least 3 times in a week.' , 'System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.']);
 
     devNotes.addAll([
-      'priority : rumba and web',
+      'Priority: rumba and web.',
       'Create all instances in the  ?? ri? lib.'
     ]);
     innoNotes.addAll(['-Counters?', 'Mongo-DB', 'Indexed-DB', 'User-class']);
     howToNotes
-        .addAll(['Web-html?', 'typedef?', 'connector?', 'Streams?', 'Async?']);
+        .addAll(['Web-html?', 'Typedef?', 'Connector?', 'Streams?', 'Async?']);
     howToNotes
-        .addAll(['base-lib?', 'user-action?', 'print-output-variables-logos']);
+        .addAll(['Name: base-lib?', 'User-action?', 'Print-output-variables-logos.']);
     secNotes.addAll(
-        ['Restrict use of certainn methdos', 'Create up-level pass-word']);
+        ['Restrict use of certain methods.', 'Create up-level pass-word.']);
   }
 
   ///  More demonstrative devBox presentation method.
