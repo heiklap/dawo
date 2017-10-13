@@ -30,6 +30,7 @@
 library base_lib;
 
 import 'dart:async';
+import 'dart:math';
 
 ///  How base_lib manages so far NOT importing base_struct?
 import 'base_struct.dart';
@@ -148,6 +149,67 @@ class GlobalOpClass {
 var glbOp =
     new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', assignDawo, 'msg');
 
+///  Simulating resources.
+class Resource{
+  bool active = false;
+  var random = new Random(27);
+
+  String area = 'areaR';
+  String car = 'carR';
+  String law = 'lawR';
+  String machine = 'machineR';
+  String money = 'moneyR';
+  String office = 'officeR';
+  String people = 'peopleR';
+  String time = 'timeR';
+
+  String notAvailable = 'notR';
+  String unknown = 'unknownR';
+  List<String> resL = [];
+
+  void init(String caller) {
+    print('-->-->   **  resource-init by:  $caller   ****');
+    resL.addAll([area, car, law, machine, money, office, people, time]);
+  }
+
+
+  ///  Produce nice-looking allocation-list.
+  List allocate(int _r, int _c) {
+    //  TODO  use _c variable to control width
+    //  init();  must be done somewhere.
+    List<String> _l = [];
+    StringBuffer _sB = new StringBuffer();
+    _l.add('Days Area:   Car:    Law:    Machine:Money:  Office: People: Time:');
+    for (var x = 0; x < _r; x++){
+      String _dS = x.toString();
+      //TODO  padRight(5, ' ')
+      String _sbW = 'D:$_dS ';
+      _sB.write(_sbW.padRight(5, ' '));
+      ///  Write one of 8 resources in right place
+      ///  int nextInt(int max);
+      int _rand = random.nextInt(8);  //  get one of first 8 resources.
+      for (var x = 0; x < 8; x++){
+        if (x == _rand){
+          //  padRight(8, ' ')
+          String _sP = resL[x].padRight(8, ' ');
+          _sB.write(_sP);} else {
+          _sB.write('_______ ');
+        }
+      }
+      _l.add(_sB.toString());
+      //  _sB.write();
+      _sB.clear();
+    }
+    return _l;
+  }
+
+
+
+}
+
+var res = new Resource();
+
+
 //  TODO  create some "tech"
 ///  Some variables that have not yet find their places inside classes.
 
@@ -207,6 +269,7 @@ void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   //  Handle flow-counter, flowI
   flowI ++;
   String _flowIS = flowI.toString();
+  //  TODO  take extra \n away from message.
   buf.writeln('$_actor $_flowIS $msg');
   //  Code here.
   //  Form nice String (for print and/or buf) that describes ongoing operation.

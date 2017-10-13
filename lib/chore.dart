@@ -120,7 +120,7 @@ class CommonChore extends BaseStruct {
     master = _master;
     //  TODO  Initialized?  Where?
     if (onB == true) print('\n ALREADY INITIALIZED BUILD CHORE  \n');
-    print(onB);
+    //  print(onB);
     offB = false; //  off-state ends
     onB = true; //   app is in on
     flowC('<--  chore build  $name done --<----<-- ', pB);

@@ -5,6 +5,7 @@
 /// -  devNote: 4 pc.
 //
 //  word:  build  38 / 26  pc. Is it too much.
+//  chore:  20 pc
 
 ///  Renamed library to: missions for 0.0.4.
 library missions;
@@ -20,8 +21,9 @@ import 'clay/clay_roll.dart';
 ///  Buffer also outside class, for testing and adding visibility.
 var missionBuf = new StringBuffer();
 
- // bool pB = false; //  Control printing, now:  false;
-  bool pB = true; //  true for chore_test.dart;
+//  TODO  Should all pB variables change private: _pB?
+// bool pB = false; //  Control printing, now:  false;
+bool pB = true; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
@@ -52,6 +54,9 @@ class Mission {
   String emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
+  ///  Reference to outPut-buffer don't carry much: used only in flowC(
+  var _buf = out.outTMid; //  reference to used output StringBuffer.
+
   List<CommonChore> choreL = [];
 
   ///  Create default CommonChores for every Mission.
@@ -79,6 +84,13 @@ class Mission {
     'userWork': 'yes',
     'autoWork': 'no'
   };
+
+  //----op-  variables and methods to handle Mission operations
+  ///  'open'  variables. Make this a Map. ?
+  bool opOn = false;
+  bool opDone = false;
+
+  int opCount = 0;
 
   /// #Idea?  Control missions state, working-condition / state.
   String state = 'Functional';
@@ -114,31 +126,31 @@ class Mission {
     5: 'Delayed'
   };
 
+  ///  Add #later map to constructor:
+  ///  Mission(this.name, this.motto, Map<String,String> _clayM);
+  Mission(this.name, this.motto);
+
+  ///  Usage: No
   ///  Mission loop for all it's Chores. Rumba calls this.
-  void MissionRollChores(String caller){
+  void missionRollChores(String caller) {
     //  Start loop, use choreL to choose one at a time.
     //  Run chore's code against it's master-mission.
     //  Handle user-actions until: exit.
   }
 
-  ///  Present all info of this class / app.
-  ///  #Tip: String can be in many lines with '''.
-  void showInfo() {
-    print('''idea:   some base / flow  functionality, that is too small 
-        for packages and too big for tools.dart''');
+  //TODO  teamDev *chore*, if is toChore.. should there be  outChore,  lonChore ?
+  ///  base lib's connection to chore (package) (?)
+  ///  *chore* is separate library, which controls *job* :s
+  ///  Mediating calls to outside executor process. (?)
+  ///  Name: choreBus ?  choreRoute ?
+  ///  Usage: no
+  void toChore(CommonChore _chore) {
+    String motto = 'mediating process to chore..';
+    assert(motto.substring(10, 17) == 'process');
+    //  code..
   }
 
-//----op-  variables and methods to handle Mission operations
-
-  ///  'open'  variables
-  bool opOn = false;
-  bool opDone = false;
-  int opCount = 0;
-
-  ///  Add #later map to constructor:
-  ///  Mission(this.name, this.motto, Map<String,String> _clayM);
-  Mission(this.name, this.motto);
-
+  ///  Building mission with it's chores.
   void build() {
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
@@ -146,6 +158,7 @@ class Mission {
     flowC('-->-m-->         :M:-b:         $name   -->-m-->  ', pB);
     flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', pB);
     print(':M-build: => :chore.onB:: ');
+
     ///  Should use instance, that is created inside THIS mission instance.
     learnChr.build(emblem, name); //  new parameter in Chore.build
     joyChr.build(emblem, name); //  emblem and master parameters to Chore.
@@ -164,9 +177,16 @@ class Mission {
     flowC('   <-m--<--       :M:-b:        done  $name     ', pB);
   } //  -----  build
 
-  /// devNote:  function, that OPENS something.  so rename; init
+  /// devNote:  function, that OPENS way to use outer resources.
   bool opInit(int openCount, var openThis) {
-    flowC('-->-m-->    opInit ', pB);
+    ///  use resource, res class
+    flowC('-->-m-->  :M:op:  opInit ', pB);
+    flowC(':M:op: opInit-info: Get necessary data for op-operations. >>', pB);
+    flowC('>>  :M:op:Resource object-simulations from app upper level.', pB);
+    res.active = true; //  Resource class activate.
+    //  opOn;
+    //  opDone;
+    //  opCount;
 
     bool _initB = false;
     //  code to initialize variables in system
@@ -175,15 +195,20 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    flowC('-->-m-->    opOpen  ', pB);
+    flowC('-->-m-->  :M:op:  opOpen  ', pB);
+    flowC(':M:op: opOpen-info: Open data-tables and resolve queries. >>', pB);
+    flowC('>>  :M:op: Schedule area-machine-money resources in time.', pB);
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
   }
 
   ///  Start developing operation roll function
+  ///  Eventually opRoll handles all these others: init-open-close-schedule..
   int opRoll(int rollCount, Function autoRollFunc) {
-    flowC('-->-m-->    opRoll  ', pB);
+    flowC('-->-m-->  :M:op:  opRoll  ', pB);
+    flowC(':M:op: opRoll-info: Run init-open, and; close and report. >>', pB);
+    flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', pB);
     int done = 0;
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
@@ -194,10 +219,13 @@ class Mission {
     return done;
   }
 
-  /// devNote:  function, that OPENS something.  so rename; init
+  /// devNote:  function, that CLOSES it's object.
   /// idea?
   int opClose(int openCount, Function openThis) {
-    flowC('--<----<-  opClose --<----<-', pB);
+    res.active = false;
+    flowC('--<----<-  :M:op:  opClose --<----<-', pB);
+    flowC(':M:op: opClose-info: End lof mission-op operation. >>', pB);
+    flowC('>>  :M:op: **  Statistics fready, save next-round data. **.', pB);
 
     int _openCount = openCount;
     openThis(); // As I recall, parameter-function goes like this.
@@ -206,7 +234,204 @@ class Mission {
     return _openCount;
   }
 
-  ///  To get Chore class names in String.
+  ///  Data-table of outside resources grouped in time.
+  void opSchedule() {
+    flowC('--<----<-  :M:op:  opSchedule --<----<-', pB);
+    flowC(':M:op: opSchedule-info: Report for to check data lists. >>', pB);
+    flowC('>> :M:op: opSchedule: ** Not needed when opSchedule is on.**.', pB);
+
+    ///  Call res class and it's allocate method to get resource List
+    List<String> _resAllocL = [];
+    res.init(':M:opSchedule');
+    _resAllocL.addAll(res.allocate(36, 40)); //  width var not used yet.
+    /*
+    print('*************  resAllocL  ************************');
+    print(_resAllocL.length);
+    _resAllocL.forEach(print);
+    print('*************  resAllocL  ************************');
+    */
+    ///  From fixed length list to fill screen;
+    ///  TODO  These special ASCII marks are ugly and take more space.
+    String _s176 = '░'; //  low-density mark, too ugly and not nice.
+    String _s177 = '▒'; //  high density
+    int _sw = 195; //  screen width
+    int _rc = 40; //  row count
+    //  too complicated, I guess.
+    List<String> _matrix = new List();
+    //  add row-numbers to matrix. Next operation ruins this. lol
+    for (var x = 0; x < _rc + 0; x++) {
+      String _s = x.toString();
+      _matrix.add('$_s ');
+    }
+    //  to get row numbers.
+    int _count = 100;
+    for (var z = 0; z < _matrix.length; z++) {
+      String __s176 = '░';
+      _count++;
+      String _countS = _count.toString();
+      //  TODO  choose nice background mark for matrix.
+      _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
+
+    }
+
+    ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
+    _matrix[_rc - 1] =
+        '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
+
+    ///  Add padLeft & padRight Strings to make this common.
+    ///  Pad List right and left with ' ' and make all even length
+    List padListRL(List<String> _l) {
+      int long = longestItemInList(_l);
+      //  looks funny, surely we can make better :)
+      for (var x = 0; x < _l.length; x++) {
+        //  int itemLength = _l.length;  //  length NOW
+        String _thisItem = _l[x];
+        String _s = (' $_thisItem');
+        String _ss = _s.padRight(long + 2, ' ');
+        _l[x] = _ss;
+        //  Pad every item right with ' ' to length of the longest item.
+      }
+      return _l;
+    }
+
+    //  Fill list-data in matrix in r, _c coordinates.
+    void anchorBox(int _r, int _c, List __l) {
+      List<String> _l = [];
+      _l.addAll(padListRL(__l));
+      //  supposing list items are all same length.
+      //  int _lc = _l.length;
+      //  int _lw = 0;  //  in future we use List-common-item-length.
+      int _count = _l.length;
+      for (var x = 0; x < _count; x++) {
+        //  String _sS = '';
+        String _s1 = _matrix[_r].substring(0, _c);
+        //  print(_s1);
+        String _s2 = _l[x]; //  current list value.
+        //  print(_s2);
+        int itemLength = _l[x].length;
+        //  print(itemLength);
+        int matrixRowLength = _matrix[_r].length;
+        String _s3 = _matrix[_r].substring(_c + itemLength, matrixRowLength);
+        //  print(_s3);
+        //  print(' Here we go: $_s1$_s2$_s3 ');
+        //  print('$_s1$_s2$_s3');
+        _matrix[_r] = '$_s1$_s2$_s3';
+        _r++; //  next row.
+      }
+      //  print(' ------------  anchorBox done   ---------------------');
+    }
+
+    ///  Simulated lists:
+    anchorBox(3, 5, [
+      '**  Mission-op development experience; common usable stuff',
+      '**  Presenting available objects in scope.  **'
+    ]);
+
+    anchorBox(6, 5, ['IDEA:', 'IDEA:', 'NOTE:', 'NOTE:']);
+    anchorBox(3, 80, [
+      'Tampere Office',
+      'Helsinki Warehouse',
+      'Oulu Main',
+      'Rovaniemi Office',
+      'Berlin Office',
+      'London Office'
+    ]);
+    anchorBox(12, 10, [
+      'Area-Hall',
+      'A-Warehouse',
+      'A-Factory',
+      'pipe Storage',
+      'Car-Park',
+      'Garden',
+      'Yard',
+      'Electric-center'
+    ]);
+    anchorBox(10, 82, [
+      'Rover',
+      'ToyotaPic',
+      'Toyota',
+      'Saab',
+      'Sisu',
+      'Mercedes',
+      'Volksawgen',
+      'Volvo',
+      'Ford'
+    ]);
+    anchorBox(26, 8, [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ]);
+    anchorBox(22, 60, [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ]);
+    anchorBox(33, 44, ['Web', 'Server', 'Isolate', 'Async', 'HTTP', 'Mongo']);
+    anchorBox(1, 123, _resAllocL);
+    //  Usable resources:
+    //  toolsActiveM
+    //  toolsSpeedM
+    //  status
+
+    _matrix.forEach(print);
+  }
+
+  ///  give report of op statistics
+  void opReport() {
+    flowC('--<----<-  :M:op:  opReport --<----<-', pB);
+    flowC(':M:op: opReport-info: Report for to check data lists. >>', pB);
+    flowC('>>  :M:op: opReport: ** Not needed when opSchedule is on.**.', pB);
+    List<String> _l = [];
+    List<String> _l2 = [];
+    _l.addAll(bufToList(out.outTMid));
+    for (var x = 0; x < _l.length; x++) {
+      ///  Add all ':M:op:' to _l2.
+      if (_l[x].indexOf(':M:op:') > 0) {
+        _l2.add(_l[x]);
+      }
+    }
+    /*
+    ///  Test report output
+    print('-->-->  ********* :M: op-Report ******************************* ');
+    print('OpOn   $opOn   opDone:  $opDone   ');
+    print('opCount:   $opCount   ');
+    String _lS = _l.length.toString();
+    String _l2S = _l2.length.toString();
+    print('---- Both lists lengths:  -----------------');
+    print('L1:  $_lS');
+    print('L2:  $_l2S');
+    print('---- _l:  -----------------');
+    _l.forEach(print);
+    print('---- _l2:  -----------------');
+    _l2.forEach(print);
+    print(' ');
+    print('    <--<--  ********** :M: op-Report ************************** ');
+    */
+  }
+
+  //  -------------------------    show  aso. methods   --------------------
+  ///  Present all info of this class / app.
+  ///  #Tip: String can be in many lines with '''.
+  void showInfo() {
+    print('''idea:   some base / flow  functionality, that is too small 
+        for packages and too big for tools.dart''');
+  }
+
+  ///  For report: To get Chore class names in String.
   String getChoreNamesS() {
     StringBuffer nBuf = new StringBuffer();
     for (var x = 0; x < choreL.length; x++) {
@@ -251,16 +476,6 @@ class Mission {
 
 //  TODO  teamNext   coming?:   returning some finnish day names aso.
   /// Should include some international values from other languages.
-
-//TODO  teamDev *chore*, if is toChore.. should there be  outChore,  lonChore ?
-  ///  base lib's connection to chore (package)
-  ///  *chore* is separate package, which controls *job* :s
-  ///  mediating calls to outside executor process
-  void toChore(CommonChore _chore) {
-    String motto = 'mediating process to chore..';
-    assert(motto.substring(10, 17) == 'process');
-    //  code..
-  }
 
 //  Coming.
 //  TODO  teamNext    coming:    Base Isolate example
@@ -355,7 +570,7 @@ void buildMissions(String caller) {
   myTimeMission.build();
   nationalParksMission.build();
 //  };
-  flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- \n', pB);
+  flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- ', pB);
   //  TODO  make mission-chore report
   if (pB) {
     for (var x in missionL) {
@@ -368,7 +583,7 @@ void buildMissions(String caller) {
     }
   }
 
-  flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- \n', pB);
+  flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- ', pB);
 } //  -----  buildMissions
 
 ///  creating instance of Mission and using it's methods

@@ -51,7 +51,7 @@ class Dev {
   ///  Generic list to keep and handle all devNotes
   List<DevMessage> devMessageL = []; //  not used
   ///  To handy keep track of fast changes in code:
-  List<String> doneL =[];
+  List<String> doneL = [];
 
 // moved list from chore back to dev.. put first, header values there
   List<String> admNotes = ['* *  Team Admin notes:  * *'];

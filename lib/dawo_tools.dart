@@ -19,6 +19,17 @@ List<String> bufToList(StringBuffer buf) {
   return _l;
 }
 
+///  Longest item in List<String>
+int longestItemInList(List<String> _l){
+  int _longest = 0;
+  for (var x = 0; x < _l.length; x++){
+    if (_l[x].length > _longest) {
+      _longest = _l[x].length;
+    }
+  }
+  return _longest;
+}
+
 ///  Return String from List of Strings.
 String listToString(List<String> _l) {
   print(_l);

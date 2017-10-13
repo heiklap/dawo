@@ -47,6 +47,18 @@ main() {
 
   // This also returns a StringBuffer.
   rumba.dance(dawoApp);
+  print('==<<==roll mission op/ init -open - roll: -close    ==<<==<');
+
+  void helloMission() => print('hello Mission!');
+  print('  rolling mission op-functions  ');
+  ///  Eventually opRoll handles all these others.
+  packDawoMission.opInit(1, 'empty parameter');
+  packDawoMission.opOpen(2, 'second empty parameter');
+  packDawoMission.opRoll(3, helloMission);
+  packDawoMission.opClose(4, helloMission);
+  packDawoMission.opSchedule();
+  packDawoMission.opReport();
+
   print('==<<==<<====      dawo_example buffers:     ==<<==<<====');
 
   out.outBuffersSizes('dawo_example');
