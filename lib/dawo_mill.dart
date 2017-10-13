@@ -1,3 +1,5 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 /// dawo_mill, in very early development state.
 /// dawo version:  0.0.3  25.9.2017   ready-state:  0 %  for 0.0.4
 /// - hist:  hkl  8.9.2017 created

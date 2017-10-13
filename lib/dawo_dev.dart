@@ -1,3 +1,5 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
@@ -9,7 +11,7 @@
 library dawo_dev.dart;
 
 import 'dart:math'; //  No need for in-max?
-import 'package:dawo/dawo_tools.dart';
+import 'package:dawo/tools.dart';
 
 //TODO  name   PROBLEMS, when using too common names:
 //   devTest   =   22  times     CHANGE:   test  ! ??
@@ -67,17 +69,26 @@ class Dev {
 
   ///  Fill devNote lists with data. dawo_app calls this in it's build-method!
   void buildNotes(String caller, msg) {
+    doneL.add('   * * *  doneL to keep track of daily Dawo changes.   * * * ');
+    doneL.add('9 Added copyright notice to every lib/ file.');
+    doneL.add('8 Changed library dawo_tools name to: tools.dart.');
+    doneL.add('7 Equipment, equ class to keep material and name resources.');
+    doneL.add(
+        '6 Missions specific op-methods, opSchedule for resource allocating.');
     doneL.add('dev: doneL added to keep track of fast changes. 10.10.17');
-    doneL.add('flowserve: added flowI event counter. In base_lib: flowI. 10.10.17');
+    doneL.add(
+        'flowserve: added flowI event counter. In base_lib: flowI. 10.10.17');
     doneL.add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.');
-    doneL.add('4');
-    doneL.add('5');
+    doneL.add('Older:');
+    doneL.add('Older:');
 
     admNotes.addAll(['adm: #Principle: do not mess, keep it simple.']);
     admNotes.addAll(
         ['adm: Must be strict all the time.', 'Keep good care of people.']);
     admNotes.addAll([
-        'adm: Week schedule must include total check at least 3 times in a week.' , 'System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.']);
+      'adm: Week schedule must include total check at least 3 times in a week.',
+      'System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.'
+    ]);
 
     devNotes.addAll([
       'Priority: rumba and web.',
@@ -86,8 +97,8 @@ class Dev {
     innoNotes.addAll(['-Counters?', 'Mongo-DB', 'Indexed-DB', 'User-class']);
     howToNotes
         .addAll(['Web-html?', 'Typedef?', 'Connector?', 'Streams?', 'Async?']);
-    howToNotes
-        .addAll(['Name: base-lib?', 'User-action?', 'Print-output-variables-logos.']);
+    howToNotes.addAll(
+        ['Name: base-lib?', 'User-action?', 'Print-output-variables-logos.']);
     secNotes.addAll(
         ['Restrict use of certain methods.', 'Create up-level pass-word.']);
   }
@@ -357,7 +368,7 @@ class DevHelp {
   ///  Function for to print devTestMap.  Looks funny :)
   void normMapShow() {
     print(' \n ------------>>-->>-- devHelp norms  ------------>>-->>--');
-    normMap.forEach(printSS); //  from dawo_tools.dart
+    normMap.forEach(printSS); //  from tools.dart
     print(' \n --<<--<<------------ devHelp norms  --<<--<<------------');
   }
 

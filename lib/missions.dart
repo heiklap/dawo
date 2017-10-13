@@ -1,3 +1,5 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 /// *  mission is something between app and chore, process.
 /// -  Primary functionality: engage chores. Version 0.0.3
 /// -  ready_state for 0.0.4  0 %
@@ -15,7 +17,8 @@ import 'package:dawo/base_struct.dart';
 import 'package:dawo/base_lib.dart';
 import 'package:dawo/chore.dart';
 import 'dawo_dev.dart';
-import 'package:dawo/dawo_tools.dart';
+import 'package:dawo/tools.dart';
+import 'package:dawo/equipment.dart';
 import 'clay/clay_roll.dart';
 
 ///  Buffer also outside class, for testing and adding visibility.
@@ -179,11 +182,11 @@ class Mission {
 
   /// devNote:  function, that OPENS way to use outer resources.
   bool opInit(int openCount, var openThis) {
-    ///  use resource, res class
+    ///  use resource, equ class
     flowC('-->-m-->  :M:op:  opInit ', pB);
     flowC(':M:op: opInit-info: Get necessary data for op-operations. >>', pB);
     flowC('>>  :M:op:Resource object-simulations from app upper level.', pB);
-    res.active = true; //  Resource class activate.
+    equ.active = true; //  Resource class activate.
     //  opOn;
     //  opDone;
     //  opCount;
@@ -195,9 +198,9 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    flowC('-->-m-->  :M:op:  opOpen  ', pB);
-    flowC(':M:op: opOpen-info: Open data-tables and resolve queries. >>', pB);
-    flowC('>>  :M:op: Schedule area-machine-money resources in time.', pB);
+    flowC('  -->-m-->  :M:op:  opOpen  ', pB);
+    flowC('  :M:op: opOpen-info: Open data-tables and resolve queries.>>', pB);
+    flowC('  >>  :M:op: Schedule area-machine-money resources in time.', pB);
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
@@ -206,8 +209,8 @@ class Mission {
   ///  Start developing operation roll function
   ///  Eventually opRoll handles all these others: init-open-close-schedule..
   int opRoll(int rollCount, Function autoRollFunc) {
-    flowC('-->-m-->  :M:op:  opRoll  ', pB);
-    flowC(':M:op: opRoll-info: Run init-open, and; close and report. >>', pB);
+    flowC('    -->-m-->  :M:op:  opRoll  ', pB);
+    flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', pB);
     flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', pB);
     int done = 0;
     //  now this just rolls func rollCount time,  lol
@@ -219,31 +222,16 @@ class Mission {
     return done;
   }
 
-  /// devNote:  function, that CLOSES it's object.
-  /// idea?
-  int opClose(int openCount, Function openThis) {
-    res.active = false;
-    flowC('--<----<-  :M:op:  opClose --<----<-', pB);
-    flowC(':M:op: opClose-info: End lof mission-op operation. >>', pB);
-    flowC('>>  :M:op: **  Statistics fready, save next-round data. **.', pB);
-
-    int _openCount = openCount;
-    openThis(); // As I recall, parameter-function goes like this.
-    _openCount++;
-
-    return _openCount;
-  }
-
   ///  Data-table of outside resources grouped in time.
   void opSchedule() {
     flowC('--<----<-  :M:op:  opSchedule --<----<-', pB);
     flowC(':M:op: opSchedule-info: Report for to check data lists. >>', pB);
     flowC('>> :M:op: opSchedule: ** Not needed when opSchedule is on.**.', pB);
 
-    ///  Call res class and it's allocate method to get resource List
+    ///  Call equ class and it's allocate method to get resource List
     List<String> _resAllocL = [];
-    res.init(':M:opSchedule');
-    _resAllocL.addAll(res.allocate(36, 40)); //  width var not used yet.
+    equ.init(':M:opSchedule');
+    _resAllocL.addAll(equ.allocate(36, 40)); //  width var not used yet.
     /*
     print('*************  resAllocL  ************************');
     print(_resAllocL.length);
@@ -328,59 +316,18 @@ class Mission {
     ]);
 
     anchorBox(6, 5, ['IDEA:', 'IDEA:', 'NOTE:', 'NOTE:']);
-    anchorBox(3, 80, [
-      'Tampere Office',
-      'Helsinki Warehouse',
-      'Oulu Main',
-      'Rovaniemi Office',
-      'Berlin Office',
-      'London Office'
-    ]);
-    anchorBox(12, 10, [
-      'Area-Hall',
-      'A-Warehouse',
-      'A-Factory',
-      'pipe Storage',
-      'Car-Park',
-      'Garden',
-      'Yard',
-      'Electric-center'
-    ]);
-    anchorBox(10, 82, [
-      'Rover',
-      'ToyotaPic',
-      'Toyota',
-      'Saab',
-      'Sisu',
-      'Mercedes',
-      'Volksawgen',
-      'Volvo',
-      'Ford'
-    ]);
-    anchorBox(26, 8, [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday'
-    ]);
-    anchorBox(22, 60, [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ]);
-    anchorBox(33, 44, ['Web', 'Server', 'Isolate', 'Async', 'HTTP', 'Mongo']);
+    anchorBox(3, 80, equ.officeCities);
+
+    anchorBox(12, 10, equ.areas);
+
+    anchorBox(10, 82, equ.cars);
+
+    anchorBox(26, 8, equ.weekDays);
+
+    anchorBox(22, 60, equ.months);
+
+    anchorBox(33, 44, equ.programAreas);
+
     anchorBox(1, 123, _resAllocL);
     //  Usable resources:
     //  toolsActiveM
@@ -390,11 +337,25 @@ class Mission {
     _matrix.forEach(print);
   }
 
+  /// devNote:  function, that CLOSES it's object.
+  /// idea?
+  int opClose(int openCount, Function openThis) {
+    equ.active = false;
+    flowC('--<----<-  :M:op:  opClose --<----<-', pB);
+    flowC(':M:op: opClose-info: End lof mission-op operation. >>', pB);
+    flowC('>>  :M:op: **  Statistics ready, save next-round data. **.', pB);
+
+    int _openCount = openCount;
+    openThis(); // As I recall, parameter-function goes like this.
+    _openCount++;
+    return _openCount;
+  }
+
   ///  give report of op statistics
   void opReport() {
-    flowC('--<----<-  :M:op:  opReport --<----<-', pB);
-    flowC(':M:op: opReport-info: Report for to check data lists. >>', pB);
-    flowC('>>  :M:op: opReport: ** Not needed when opSchedule is on.**.', pB);
+    flowC('  --<----<-  :M:op:  opReport --<----<-', pB);
+    flowC('  :M:op: opReport-info: Report for to check data lists. >>', pB);
+    flowC('  >>  :M:op: opReport: ** Not needed when opSchedule is on.**.', pB);
     List<String> _l = [];
     List<String> _l2 = [];
     _l.addAll(bufToList(out.outTMid));

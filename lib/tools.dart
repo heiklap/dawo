@@ -1,12 +1,14 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Some helper tools
 /// *  dawo version:  0.0.3  25.9.2017    READY-STATE for version 0.0.4   0 %
 /// *  in GIT:  yes           Hist:  hkl  2014  0.0.1  dawo/lib
 ///
 
-library dawo_tools.dart;
+library tools.dart;
 
 ///
-num demoToolsReadiness = 96;
+num toolsReadiness = 96;
 
 ///  Buffer also outside class, for testing and adding visibility.
 var toolsBuf = new StringBuffer();
@@ -20,9 +22,9 @@ List<String> bufToList(StringBuffer buf) {
 }
 
 ///  Longest item in List<String>
-int longestItemInList(List<String> _l){
+int longestItemInList(List<String> _l) {
   int _longest = 0;
-  for (var x = 0; x < _l.length; x++){
+  for (var x = 0; x < _l.length; x++) {
     if (_l[x].length > _longest) {
       _longest = _l[x].length;
     }

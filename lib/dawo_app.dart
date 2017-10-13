@@ -1,3 +1,5 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  App class
 ///  Primary functionality:  engage missions.
 ///  Some information about app, and little controls.
@@ -116,10 +118,10 @@ class DawoApp extends BaseStruct {
 
     out.outHeader.writeln('       * * * : app-roll stuff:  * * * ');
     out.outTl.writeln('       * * * : rumba stuff :  * * * ');
-    out.outTMid.writeln(    '* * * : mission stuff:  -dawoApp-build:  * * * ');
+    out.outTMid.writeln('* * * : mission stuff:  -dawoApp-build:  * * * ');
     out.outTr.writeln('* * * : dawo-app stuff :  * * * ');
 
-    out.outMTop.writeln(   '* * * :pack-dawo stuff : -dawoApp-build:  * * * ');
+    out.outMTop.writeln('* * * :pack-dawo stuff : -dawoApp-build:  * * * ');
     out.outMid.writeln('     * * * :dartlang stuff:  -dawoApp-build:  * * * ');
     out.outMBot.writeln('   * * * : helsinki stuff:  -dawoApp-build:  * * * ');
 

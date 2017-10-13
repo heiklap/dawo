@@ -15,7 +15,7 @@ import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
 import 'package:dawo/missions.dart';
-import 'package:dawo/dawo_tools.dart';
+import 'package:dawo/tools.dart';
 
 import 'package:test/test.dart';
 

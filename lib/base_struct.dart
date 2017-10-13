@@ -1,5 +1,6 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  base structures, classes in dawo
-///   copyright  Heikki K. Lappalainen
 ///   dawo version:  0.0.3  25.9.2017
 /// * READY-STATE:  0%            // for 0.0.4 version
 /// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  base_struct.dart
@@ -16,7 +17,7 @@ String baseStructMotto = 'Base rules for building classes';
 //  Problems with: #Static members can not be used in initializer.
 //  and: Using base-class encountered some problems.
 class OutBase {
-  ///  Return iterable List from StringBuffer. Also in dawo_tools.
+  ///  Return iterable List from StringBuffer. Also in tools.
   List<String> bufToList(StringBuffer buf) {
     List<String> _l = new List();
     String _s = buf.toString();
@@ -144,7 +145,7 @@ class OutBase {
 class Out {
   String name = 'Out-Class';
 
-  ///  Return iterable List from StringBuffer. Also in dawo_tools.
+  ///  Return iterable List from StringBuffer. Also in tools.
   List<String> bufToList(StringBuffer buf) {
     List<String> _l = new List();
     String _s = buf.toString();

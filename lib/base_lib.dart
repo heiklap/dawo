@@ -1,3 +1,5 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## Modeling common, reusable controls and operations for libraries.
 ///  dawo/base_lib,  dawo version:  0.0.3  25.9.2017
 ///  READY-STATE for version 0.0.4   0 %   in GIT  Yes
@@ -38,7 +40,7 @@ import 'dawo_dev.dart';
 
 //  TODO  Final readiness.  this is not
 final num dawLibBaseReadiness = 2; //  readiness for  version  0.0.1
-int flowI = 0;  //  flow-counter.
+int flowI = 0; //  flow-counter.
 
 ///  buffer also outside class, for testing and adding visibility
 var baseLibBuf = new StringBuffer();
@@ -65,7 +67,7 @@ Map<String, String> placardM = {
 ///  Global class. in early dev state
 class GlobalClass {
   //  innoTeam
-  var register;  //  register of objects that participate in Dawo / glb.
+  var register; //  register of objects that participate in Dawo / glb.
   //  Actor: String actor;  //  too important to be a String
   //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
   String actor = ':UNKNOWN: - :UNUSED:'; //  too important to be a String.
@@ -150,65 +152,7 @@ var glbOp =
     new GlobalOpClass('dawoApp', 'xSender', 'xReceiver', assignDawo, 'msg');
 
 ///  Simulating resources.
-class Resource{
-  bool active = false;
-  var random = new Random(27);
-
-  String area = 'areaR';
-  String car = 'carR';
-  String law = 'lawR';
-  String machine = 'machineR';
-  String money = 'moneyR';
-  String office = 'officeR';
-  String people = 'peopleR';
-  String time = 'timeR';
-
-  String notAvailable = 'notR';
-  String unknown = 'unknownR';
-  List<String> resL = [];
-
-  void init(String caller) {
-    print('-->-->   **  resource-init by:  $caller   ****');
-    resL.addAll([area, car, law, machine, money, office, people, time]);
-  }
-
-
-  ///  Produce nice-looking allocation-list.
-  List allocate(int _r, int _c) {
-    //  TODO  use _c variable to control width
-    //  init();  must be done somewhere.
-    List<String> _l = [];
-    StringBuffer _sB = new StringBuffer();
-    _l.add('Days Area:   Car:    Law:    Machine:Money:  Office: People: Time:');
-    for (var x = 0; x < _r; x++){
-      String _dS = x.toString();
-      //TODO  padRight(5, ' ')
-      String _sbW = 'D:$_dS ';
-      _sB.write(_sbW.padRight(5, ' '));
-      ///  Write one of 8 resources in right place
-      ///  int nextInt(int max);
-      int _rand = random.nextInt(8);  //  get one of first 8 resources.
-      for (var x = 0; x < 8; x++){
-        if (x == _rand){
-          //  padRight(8, ' ')
-          String _sP = resL[x].padRight(8, ' ');
-          _sB.write(_sP);} else {
-          _sB.write('_______ ');
-        }
-      }
-      _l.add(_sB.toString());
-      //  _sB.write();
-      _sB.clear();
-    }
-    return _l;
-  }
-
-
-
-}
-
-var res = new Resource();
-
+//  Resource class changed to:  Equipment library.
 
 //  TODO  create some "tech"
 ///  Some variables that have not yet find their places inside classes.
@@ -267,7 +211,7 @@ void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   if (pr) print(msg);
   // DONE:  Now _buf comes from caller in parameters.
   //  Handle flow-counter, flowI
-  flowI ++;
+  flowI++;
   String _flowIS = flowI.toString();
   //  TODO  take extra \n away from message.
   buf.writeln('$_actor $_flowIS $msg');

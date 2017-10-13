@@ -7,19 +7,19 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
     // Some instances of Mission Class are created with simple Map data.
     // Mission classes have instances of Chore classes inside them.
     
-    // Roll once, without loops usage;
+    // Example rolls once, without loops usage;
     var dawoApp = new DawoApp('Play-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
     var rumba = new Rumba();
 
-    // This returns in addition a StringBuffer. Not used here.
+    // This returns in addition a StringBuffer, that is not used here.
     rumba.dance(dawoApp);
-    // Example app presents sample data on windows console.
+    // Example app presents output-data on windows console.
 
 ### Brainstorming
 
  Get people together, let they present ideas, collect best ideas to libraries and 
- try to group them meaningfully.
- DO NOT build many classes in this phase, for to keep your mind open for intuitive solutions. 
+ group them meaningfully.
+ Start building first new classes, but keep your mind open for intuitive solutions. 
  Leave room and time to resolve, what will be the direction of this package.
  Practise to use Dawo by finding it's properties in editor, and think their importance in app.
  
@@ -58,20 +58,21 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
 - base_struct : Structuring base classes. These two libraries do not depend other dawo files.
 - chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
       of other, bigger, same kind of library.
-- dawlib_coll : Examples and hacking material of Dart collections.
+- dawlib_coll : Resurces. Examples and hacking material of Dart collections.
 - dawo.dart : main file, exports : dawo_src.dart.
 - dawo_app : DawoApp class, handles Missions and creates out-put-buffers.
 - dawo_connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them.
-- dawo_dev : Classes, that help in developing this package. 
+  Seeking deep, inner connections of objects. 
+- dawo_dev : Classes and data, that help in developing this package. 
   Helper functions for cl (command line)and screen output.
 - dawo_mill : Plan: processing commands orderly, all they in row, by given priorities.
-- dawo_mission : Chunk of command-processing between app and chore. 
-  Missions keep and process data (clay) in certain area. 
 - dawo_src  File created by stagehand plugin app.   
   Here it imports all other libraries and gathers some information about them. 
-- dawo_tools : Helper tools, sleep, stamps aso.
+- equipment : material and name resources for Mission and Chore.
+- missions : Chunk of command-processing between app and chore. Caring Chores.
+  Missions keep and process data (clay) in certain area. 
 - rumba.dart : Rumba classes .dance method keeps dawo's control-flow.
-
+- tools : Helper tools, sleep, stamps aso.
 
 
 src.dart imports files:
@@ -89,10 +90,11 @@ src.dart imports files:
     import 'dawo_connector.dart';  //  unused
     import 'dawo_dev.dart';
     import 'dawo_mill.dart';
-    import 'dawo_mission.dart';
-    import 'dawo_tools.dart';
+    import 'equipment.dart';
+    import 'missions.dart';
     import 'rumba.dart';  //  unused
-
+    import 'tools.dart';
+    
     ///  Data (clay) is in clay-folder.
     import 'package:dawo/clay/clay_roll.dart';
     
@@ -134,16 +136,6 @@ Creating Dawo variables in new file:
       var dawoApp = new DawoApp('Pplay-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
       var rumba = new Rumba();
       rumba.dance(dawoApp);
-      
-      //  play with classes:
-      //  Dot-notaion ( . ) gives you editor hints.
-      //  dap.    //  choose property, that you want to use.
-   
-      //  mission.
-      //  ch.
-      //  connector.   
-      
-      //  code, play with other variables
     }
     // run code in browser and check console output: Ctrl-Shift-i 
 
@@ -161,7 +153,7 @@ Like:
     
     make, init 
 
-Test objects in code_snippets / learn... , -section. 
+Test objects in code_snippets folder / learn... , -section. 
 These files might be best, when copy-pasted and studied in computer.
 
     Joker.., aldente...  bat...

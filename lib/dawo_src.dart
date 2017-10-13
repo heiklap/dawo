@@ -1,5 +1,6 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Home of dawo libraries
-///   copyright  Heikki K. Lappalainen
 /// * dawo version:  0.0.3  25.9.2017  READY-STATE:  0 %   or 0.0.4 version
 ///
 /// * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
@@ -27,8 +28,9 @@ import 'dawo_app.dart';
 import 'dawo_connector.dart'; //  unused
 import 'dawo_dev.dart';
 import 'dawo_mill.dart';
+import 'equipment.dart';
 import 'missions.dart';
-import 'dawo_tools.dart';
+import 'tools.dart';
 import 'rumba.dart'; //  unused
 
 ///  Data ( #clay ) is in clay-folder.
@@ -71,7 +73,7 @@ num get dawoReadiness =>
         dawoDartReadiness +
         dawoAppReadiness +
         dawoDevReadiness +
-        demoToolsReadiness) /
+        toolsReadiness) /
     11;
 
 ///  ---------------------     initialization at the beginning

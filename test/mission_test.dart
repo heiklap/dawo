@@ -14,9 +14,16 @@ void greetings() {
 }
 
 void main() {
+
   myMission.opRoll(3, greetings);
 
-  //  print(missionError);
-  //  var missionI = 34;
-  //  print(missionI);
+  print('  rolling mission op-functions  ');
+  ///  Eventually opRoll handles all these others.
+  myMission.opInit(1, 'empty parameter');
+  myMission.opOpen(2, 'second empty parameter');
+  myMission.opRoll(3, helloMission);
+  myMission.opClose(4, helloMission);
+  myMission.opSchedule();
+  myMission.opReport();
+
 }

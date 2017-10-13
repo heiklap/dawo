@@ -1,5 +1,6 @@
+/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  connecting  ( as #client's) app - mission - chore together,  mediating them
-///   copyright  Heikki K. Lappalainen
 ///   dawo version:  0.0.3  25.9.2017  * READY-STATE:  1 %  for  0.0.4 version
 ///
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  dawo_connector.dart

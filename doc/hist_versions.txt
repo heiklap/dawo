@@ -25,9 +25,9 @@ To be published:  approximately: 16.10.2017
 4.1 DONE  Reasonable output; regulated form for every classes original-looking output.
           Use top-level StringBuffers to save every classes output.
 
-4.2 D___  Mission - chore; operations and smaller entities; placardM aso.
+4.2 DO__  Mission - chore; operations and smaller entities; placardM aso.
 
-4.3 ____  Statistics: Roll counters to app, mission, chore, mill. LATER?
+4.3 D___  Statistics: Roll counters to app, mission, chore, mill. LATER?
           Only If it is naturally part of #Flow method.
 
 4.3b____  dawo_mill giving privileges and orderly run for smaller operations.
