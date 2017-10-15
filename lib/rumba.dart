@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Rumba : maintaining main loops of app - mission
 ///  Primary functionality:  loop, inside it: dawoApp
-///  dawo version:  0.0.4  16.10.2017   ReadyState for 0.0.4 = 0%
+///  dawo version:  0.0.4  16.10.2017   ReadyState for 0.0.5 = 0%
 ///  in GitHub  yes
 ///  Program might have a certain amount of 'self consciousness'. This is start.
 ///
@@ -12,8 +12,6 @@
 
 library rumba.dart;
 
-///  TODO  import all necessary ?? here
-//  import 'dawo_app.dart'; //  no need to import dawoApp
 
 import 'base_lib.dart';
 import 'base_struct.dart';
@@ -21,14 +19,9 @@ import 'dawo_dev.dart';
 
 ///  Collecting Rumba output.
 StringBuffer rumbaBuf = new StringBuffer();
-//  TODO  Get some fill to rumbaBuf.
+
 bool pB = false;
 
-/// TODO create classes, but where?
-/* hardly here; but in example and user files.
-var dawoApp = new DawoApp('dap in rumba', 'rumbaPlay');
-
-*/
 
 ///
 class Rumba {
@@ -87,6 +80,7 @@ class Rumba {
     //  test #word ; is clay here?
     //  Clay  clay ??  packDawo?
 
+    //  TODO  Add 2 pcs. of Stream / async / wait / then
     ///  --  rumbaLoop
     flowC('  -->---->--  rumba-loop', true);
     do {

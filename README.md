@@ -4,16 +4,16 @@ Learning Dart; simple basic data for beginners, and howTo use it for building a 
 Beginner Dart programmers kickoff to develop a glorious package.. Latest code in GitHub: https://github.com/heiklap/dawo
 - Read: hist_versions.txt to see full changes to this, and coming versions.
 ## Usage
-    // Some instances of Mission Class are created with simple Map data.
-    // Mission classes have instances of Chore classes inside them.
+    // Mission Class has wide access to data, since they have instances of
+    // Chore classes inside them, in choresL : List<CommmonChore>
     
-    // Example rolls once, without loops usage;
+    // Example files here rolls only once, without loops, and output their data in console.
     var dawoApp = new DawoApp('Play-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
     var rumba = new Rumba();
 
     // This returns in addition a StringBuffer, that is not used here.
     rumba.dance(dawoApp);
-    // Example app presents output-data on windows console.
+    // Example apps presents output-data on windows console in flow, or in two kind of boxes. 
 
 ### Brainstorming
 
@@ -25,26 +25,27 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
  
  ### Versions
  
- First dawo version seems to be a mess, and, yes, it is kind of intentional so.
+ First dawo version was kind of artistic mess, as a consequence of long-time brainstorming.
  Dawo 0.0.1 shows starter programmers confusion, and records ways and steps out of this mess 
  to clarity and understanding. Latest code in GitHub: https://github.com/heiklap/dawo
  
- 0.0.1  demonstrates how data is messy, when it is not inside classes.
-     Check for pollution of public namespace!!
+ 0.0.1  demonstrates how data is messy, when it is not inside classes. But you have direct 
+ instant access to every piece of it. Check for pollution of public namespace!!
  
- 0.0.2 version is meant to weed out the material and create a couple of classes.
+ 0.0.2 version was to weed out some of the material and create a couple of classes.
      Theme : baseStructure, base_lib, dawo_mill, connector, learn/code_snippets
      
- 0.0.3 Is for building first control-flow structure (Rumba.dance) to use Class-data inside app.
-     Theme:  Present different Mission ( = Client / customer) data and small, elementary work-flow,
+ 0.0.3 Was for building first control-flow structure (Rumba.dance) to use Class-data inside app.
+     Theme:  Present different Mission ( = Client / customer) data and small, elementary work-flow.
      Chores ( 7 chores by default in every Mission).  dawo_example.dart gives 14 screen-full data output.
      
  0.0.4 Version
-     Theme:  Statistics, output, variation, versatility, documentation in doc-folder 
+     Theme:  Statistics, output, variation, versatility, documentation in doc-folder.
+     dawo_example.dart gives 11 screen-full data output.
       
- 0.0 x  Basic idea and orientation of package to resolve.
- 0.0 x  Incubator idea: -move first too big parts to independent packages.
-        Maybe  chore  and  team
+ 0.0.6  Basic idea and orientation of package to resolve.
+ 0.0.8  Incubator idea: -move first too big parts to independent packages.
+        Maybe  chore(process)  and  team
  
 
 ## Files;
@@ -58,9 +59,9 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
 - base_struct : Structuring base classes. These two libraries do not depend other dawo files.
 - chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
       of other, bigger, same kind of library.
-- dawlib_coll : Resurces. Examples and hacking material of Dart collections.
+- dawlib_coll : Resources. Examples and hacking material of Dart collections.
 - dawo.dart : main file, exports : dawo_src.dart.
-- dawo_app : DawoApp class, handles Missions and creates out-put-buffers.
+- dawo_app : DawoApp class, handles Missions and keeps out-put-buffers in Map.
 - dawo_connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them.
   Seeking deep, inner connections of objects. 
 - dawo_dev : Classes and data, that help in developing this package. 
@@ -68,10 +69,10 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
 - dawo_mill : Plan: processing commands orderly, all they in row, by given priorities.
 - dawo_src  File created by stagehand plugin app.   
   Here it imports all other libraries and gathers some information about them. 
-- equipment : material and name resources for Mission and Chore.
+- equipment : material and names of resources for Mission and Chore.
 - missions : Chunk of command-processing between app and chore. Caring Chores.
-  Missions keep and process data (clay) in certain area. 
-- rumba.dart : Rumba classes .dance method keeps dawo's control-flow.
+  Missions keep and process data ( #clay) of their favorite area. 
+- rumba.dart : Rumba classes .dance method runs here dawo's control-flow (once).
 - tools : Helper tools, sleep, stamps aso.
 
 
@@ -103,7 +104,7 @@ Creating Dawo variables in new file:
     //  create instances of classes::
     var dap = new DawoApp('exampleApp', 'Testing in dawo_example');
     // play with them in IDE:
-    dap.   //  dot notation fives you hint of classes properties.
+    dap.   //  dot notation gives you hint of classes properties.
     var mission = new Mission('#name','#state');  //  #state  ? :)
     mission.
  
@@ -137,7 +138,8 @@ Creating Dawo variables in new file:
       var rumba = new Rumba();
       rumba.dance(dawoApp);
     }
-    // run code in browser and check console output: Ctrl-Shift-i 
+    // Run code in browser and check console output: Ctrl-Shift-i 
+    // Or make html templates that catch output to text fields / elements.
 
 ###  About variable names and Classes in Dawo
 Play in IDE editor with alphabet: a..z to see, what variables are available.
@@ -149,11 +151,9 @@ Like:
     baseLib. 
     goals, teams, temps
     morn, night, day 
-    dev
-    
-    make, init 
+    dev, make, init 
 
-Test objects in code_snippets folder / learn... , -section. 
+Test objects in code_snippets-folder / learn...  -section. 
 These files might be best, when copy-pasted and studied in computer.
 
     Joker.., aldente...  bat...

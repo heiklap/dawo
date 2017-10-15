@@ -26,10 +26,13 @@ To be published: 6.11.2017
 
 1. Make tools a Class. Lots of changes.
 2. Equipment - resource, real use-case with effort available.
-3. Deep things; #placard, M-op, #connector
-4. Rumba - small nice output for web.
+3. #DeepThings; #placard, M-op, #connector
+4. Rumba - small nice output for web. 2 streams to async - then.
 5. Use-case for dartlang - learn.
-6. buf a class field with reference to outBuf.
+6. buf => a class field with reference to outBuf.
+7. #user input data; #goal #phase #step aso. to get #schedule out of clay.
+8. Class #Lang, collections of allowed words.
+9.
 
 # Some earlier ideas:
 Rumba:  Working rumba  is mark for  0.1.0  version
