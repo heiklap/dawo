@@ -2,7 +2,7 @@
 /// is governed by a BSD-style license that can be found in the LICENSE file.
 ///
 /// Beginner Dart programmers kickoff to develop a glorious pub package; dawo
-/// dawo version:  0.0.3  25.9.2017  :  Ready-state for 0.0.4  0 %
+/// dawo version:  0.0.4  16.10.2017  :  Ready-state for 0.0.5  0 %
 ///
 /// Hist: hkl  22.5.2014  0.0.1  dawo/lib, in pub and GitHub
 // devNote: Dawo, started dev,  nothing special.

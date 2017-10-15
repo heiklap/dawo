@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  dawo_example   dawo version 0.0.3  25.9.2017
+///  dawo_example   dawo version  0.0.4  16.10.2017
 
 import 'package:dawo/dawo.dart';
 
@@ -51,6 +51,7 @@ main() {
 
   void helloMission() => print('hello Mission!');
   print('  rolling mission op-functions  ');
+
   ///  Eventually opRoll handles all these others.
   packDawoMission.opInit(1, 'empty parameter');
   packDawoMission.opOpen(2, 'second empty parameter');

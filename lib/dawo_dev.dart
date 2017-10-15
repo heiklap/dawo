@@ -1,9 +1,9 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
-///  dawo version:  0.0.3  25.9.2017    READY-STATE  70 %  for version 0.0.4
+///  dawo version: 0.0.4  16.10.2017.   READY-STATE  for version 0.0.5  0%
 /// *      GitHub: yes  29.11.2014
 /// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
 //
@@ -55,7 +55,7 @@ class Dev {
   ///  To handy keep track of fast changes in code:
   List<String> doneL = [];
 
-// moved list from chore back to dev.. put first, header values there
+  ///  First, header values to teamNotes.
   List<String> admNotes = ['* *  Team Admin notes:  * *'];
   List<String> devNotes = ['* * Team dev notes: * * '];
   List<String> innoNotes = ['* *  Team inno notes: * * '];
@@ -69,7 +69,15 @@ class Dev {
 
   ///  Fill devNote lists with data. dawo_app calls this in it's build-method!
   void buildNotes(String caller, msg) {
+    //  TODO String howTo write many line String.  From dartlang.org
+    var interpolation = "interpolation";
+    var combi = "a string "
+        "that goes over multiple lines "
+        "and uses $interpolation "
+        r"and \raw strings";
+    //  -----  code Sample
     doneL.add('   * * *  doneL to keep track of daily Dawo changes.   * * * ');
+    doneL.add('10 In analyzis options file: analyzer: strong-mode: true.');
     doneL.add('9 Added copyright notice to every lib/ file.');
     doneL.add('8 Changed library dawo_tools name to: tools.dart.');
     doneL.add('7 Equipment, equ class to keep material and name resources.');
@@ -137,7 +145,9 @@ var dev = new Dev();
 ///  TODO  Add better row / height decision.
 ///  #QUEST : Surely these 2-3-4 functions can be combined to one, and
 ///  handle 2-3-4 with parameters. Did it once, but was ugly.
-void devBox(String caller, List<List<String>> inList, int forceHeight) {
+///  TODO  Make return type: SgtringBuffer
+StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
+  StringBuffer _retBuf = new StringBuffer();
   final int sW = 210;
   String borderS = ' | '; //  In 4 columns is smaller.
 
@@ -217,6 +227,9 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       }
       twoBoxL.add(markRow);
       twoBoxL.forEach(print);
+      //  Write it all to StringBuffer;
+      _retBuf.writeAll(twoBoxL);
+      _retBuf.write(' ');
       print(' ');
     } //  --  inList length == 2
 
@@ -256,6 +269,9 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       }
       threeBoxL.add(markRow);
       threeBoxL.forEach(print);
+      //  Write it all to StringBuffer;
+      _retBuf.writeAll(threeBoxL);
+      _retBuf.write(' ');
     } // ----------  length inList = 3
 
     ///  Build four-column-area List.  -----------   4 columns.
@@ -301,10 +317,14 @@ void devBox(String caller, List<List<String>> inList, int forceHeight) {
       }
       fourBoxL.add(markRow);
       fourBoxL.forEach(print);
+      //  Write it all to StringBuffer;
+      _retBuf.writeAll(fourBoxL);
+      _retBuf.write(' ');
     } // --  length inList = 4
   } //  -------------  devBoxBuild
 
   devBoxBuild(); //  Call function.
+  return _retBuf;
 } //  ----------  devBox
 
 //TODO  teamHowTo lists: add:   automatize adding notes to lists?

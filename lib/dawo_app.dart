@@ -1,13 +1,13 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  App class
 ///  Primary functionality:  engage missions.
 ///  Some information about app, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-///  dawo version:  0.0.3  25.9.2017
-/// * ReadyState:   0 %  for version 0.0.4   in GitHub  yes
-/// * hkl  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
-///  devNote: starting.
+///  dawo version:  0.0.4  16.10.2017
+/// * ReadyState:  for version 0.0.5  0%  in GitHub  yes
+/// * hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
+//
 
 library dawo_app.dart;
 
@@ -231,12 +231,21 @@ class DawoApp extends BaseStruct {
     // roll all chores, that are in mission
   }
 
+  ///  TODO devSgtream  building stream for dev, using elementary Stream example
+  void devStream() {
+    flowC('--- :stream:beg dawoApp rollStream started     ---', pB);
+    // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
+    //  calling it with dawoApp class properties
+    commonStream(':dawoApp:', [agenda, msg, develop, version], 'appListener');
+    flowC('--- :stream:end dawoApp rollStream done     ---', pB);
+  }
+
   ///  calling base>_lib commonStream, elementary Stream example
   void rollStream() {
     flowC('--- :stream:beg dawoApp rollStream started     ---', pB);
     // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
-    commonStream('dawoApp', [agenda, msg, develop, version], 'appListener');
+    commonStream(':dawoApp:', [agenda, msg, develop, version], 'appListener');
     flowC('--- :stream:end dawoApp rollStream done     ---', pB);
   }
 

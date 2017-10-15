@@ -1,7 +1,8 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 /// dawo_mill, in very early development state.
-/// dawo version:  0.0.3  25.9.2017   ready-state:  0 %  for 0.0.4
+/// dawo version:  0.0.4  16.10.2017   ready-state for 0.0.5 : 0 %
+/// * Usability: 1%
 /// - hist:  hkl  8.9.2017 created
 /// - work-scheduling system, got flag class from dawo_app
 //
@@ -50,7 +51,7 @@ var mill = new DawoMill(); //  add Object - map to constructor
 ///  NOTE:  int '1'  do not give error...  how about int?
 ///  Or:  Map<String, Object> jobM = new Map();
 ///  Like: {'1' : chore1, '2' : chore2}
-Map<int, String> millMap = {
+Map<String, String> millMap = {
   '1': 'M',
   '2': 'T',
   '3': 'W',

@@ -1,5 +1,5 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-//  t_common_process.dart  12.9.2017   dawo version:  0.0.3  25.9.2017
+//  t_common_process.dart  12.9.2017   dawo version:  0.0.4  16.10.2017
 
 import 'package:dawo/dawo.dart';
 
@@ -37,8 +37,9 @@ void main() {
   testRenderBaseLib();
 }
 
-void testRenderBaseLib(){
+void testRenderBaseLib() {
   print('............ _lib_test:   next: renderBaseLib................');
+
   ///  NOTE: This fails, when run under main.
   renderBaseLib();
   print('............ _lib_test:   next: renderBaseLib................');

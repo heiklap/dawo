@@ -1,8 +1,8 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## Modeling common, reusable controls and operations for libraries.
-///  dawo/base_lib,  dawo version:  0.0.3  25.9.2017
-///  READY-STATE for version 0.0.4   0 %   in GIT  Yes
+///  dawo/base_lib,  dawo version:  0.0.4  16.10.2017
+///  READY-STATE for version 0.0.5   0 %   in GIT  Yes
 ///
 ///  Time to start thinking 6.th floor's machinery, when you are only just
 ///  laying base foundations for your 20-floor factory.
@@ -130,7 +130,7 @@ class GlobalOpClass {
   //TODO : used in: ?  //  Only in render here.
 
   ///
-  List showInfo(String caller) {
+  List<String> showInfo(String caller) {
     List<String> _l = [];
     String i = '          ';
     print('$i ***************  global op class-showInfo  ****************');
@@ -280,9 +280,10 @@ void commonStream(String caller, var streamData, var streamListen) {
   // Subscribe to the streams events.
   stream.listen((value) {
     //
-    print('\n--- :stream:1 commonStream Listened     ---');
-    print("   :stream: value:  $value"); // onData handler
-    print('---  :stream:2 caller: $caller        OK         --- \n');
+    print('\n--- :stream: #phase:1 commonStream Listened     ---');
+    print("   :stream: #phase:2:value:  $value"); // onData handler
+    print(
+        '---  :stream: #phase:3:ok  caller: $caller        OK         --- \n');
   });
 }
 

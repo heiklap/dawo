@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  app_chore_play.dart   version 0.0.3  25.9.2017
+///  app_chore_play.dart   version:  0.0.4  16.10.2017
 
 import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
@@ -31,6 +31,7 @@ var rumba = new Rumba();
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
   print('==>>==>>====  app_blib_chore example  ==>>==>>====');
+  //  TODO Bug: ALREADY INITIALIZED BUILD CHORE
 
   rumba.dance(dawoApp);
 
@@ -78,9 +79,14 @@ void otherStuff() {
 
   mission.opOpen(1, 'X');
 
-  mission.opRoll(4, print('x'));
+  //  Do we have hello-function somewhere?
+  void helloAppChorePlay() {
+    print('helloAppChorePlay');
+  }
 
-  mission.opClose(2, print('hello'));
+  mission.opRoll(4, helloAppChorePlay);
+
+  mission.opClose(2, helloAppChorePlay);
 
   //  ch.render();
   devHelp.line('render Chore');

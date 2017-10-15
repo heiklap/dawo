@@ -1,8 +1,6 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-//  rumba_test.dart.   12.9.2017    dawo version:  0.0.3  25.9.2017
+//  rumba_test.dart.   12.9.2017    dawo version:  0.0.4  16.10.2017
 //
-
-
 
 import 'package:dawo/base_struct.dart';
 import 'package:dawo/dawo_app.dart';
@@ -29,7 +27,6 @@ void playRumbaTest() {
 
   ///  TODO  this is old, what is new?  devBox ?
   //  out.outBuffersPrint('rumba_test', 'Not-called-strange-parameter');
-
 }
 
 void testWordsVisibility() {}

@@ -1,8 +1,8 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  equipment.dart  resources for Mission and Chore.
-///  Dawo version 0.0.3  13.10.2017  ready state 100% for version 0.0.4
-///
+///  * Dawo version 0.0.4  16.10.2017    ready state for 0.0.5 : 0%
+///  * Instance as:  equ
 //
 
 library equipment;
@@ -99,7 +99,7 @@ class Equipment {
   ];
 
   ///  Produce nice-looking allocation-list.
-  List allocate(int _r, int _c) {
+  List<String> allocate(int _r, int _c) {
     //  TODO  use _c variable to control width
     //  init();  must be done somewhere.
     List<String> _l = [];

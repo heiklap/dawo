@@ -1,5 +1,5 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-//  t_common_process.dart  12.9.2017   dawo version:  0.0.3  25.9.2017
+//  t_common_process.dart  12.9.2017   dawo version:  0.0.4  16.10.2017
 
 import 'package:dawo/dawo.dart';
 
@@ -25,7 +25,6 @@ void main() {
   //  testChore();
   //  testRumba();
 
-
   testPackDawoChore();
 }
 
@@ -42,7 +41,6 @@ void testChore() {
   print('  ==<<==<<==== ch_chore test commonChore roll done  ==<<==<<==== ');
 }
 
-
 ///  Question: do we have access to PackDawo class without imports?
 void testPackDawoChore() {
   print('==>>==>>==== ch_chore test packDawoChore roll ==>>==>>==== ');
@@ -50,20 +48,18 @@ void testPackDawoChore() {
   //  PackDawo;  //  no access it all goes via: mission
   //  print(packDawoMission.choreL); //  List is empty.
 
-
   //  Should first run packDawoMission.build.
 
   /// :ASK: for clause can not look inside Class.
   /// for(var x in packDawoMission.choreL) {
 
   ///  Must #build class, to get chores in place.
-    packDawoMission.build();
-  packDawoMission.choreL[0].roll();  //  roll one, first, chore: packDawo.
+  packDawoMission.build();
+  packDawoMission.choreL[0].roll(); //  roll one, first, chore: packDawo.
 
   // for (var x in packDawoMission.choreL){
   //   x.roll();
   // }
-
 
   print('\n ----------  chore-test chores devBox  -------------------------');
   List<String> _al = packDawoMission.choreL[0].reportList(':chore-test:');
@@ -74,12 +70,11 @@ void testPackDawoChore() {
   List<String> _fl = packDawoMission.choreL[5].reportList(':chore-test:');
   List<String> _gl = packDawoMission.choreL[6].reportList(':chore-test:');
 
-  devBox('By:CHORE-TEST:', [_al,_bl ], 10);
-  devBox('By:CHORE-TEST:', [_cl,_dl ], 10);
-  devBox('By:CHORE-TEST:', [_el,_fl, _gl ], 10);
+  devBox('By:CHORE-TEST:', [_al, _bl], 10);
+  devBox('By:CHORE-TEST:', [_cl, _dl], 10);
+  devBox('By:CHORE-TEST:', [_el, _fl, _gl], 10);
   print('------------  chore-test chores devBox done -------------------- \n');
-  devBox('By:CHORE-TEST:', [_cl, _dl, _al, _bl ], 10);
-
+  devBox('By:CHORE-TEST:', [_cl, _dl, _al, _bl], 10);
 
   print('---- one more  chore-test chores devBox done -------------------- \n');
   print('............. by test chore  ..........................');
@@ -104,7 +99,6 @@ void testPackDawoChore() {
 
   print('  ==<<==<<==== ch_chore test packDawoChore roll done ==<<==<<==== ');
 }
-
 
 void testRumba() {
   print('\n ==>>==>>==== ch_chore test test_rumba ==>>==>>==== ');

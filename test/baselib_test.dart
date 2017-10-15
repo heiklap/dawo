@@ -1,9 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-/// dawo version:  0.0.3  25.9.2017
+/// dawo version:  0.0.4  16.10.2017
 //
 // dawo 0.0.3    baselib_test
-
 
 import 'package:dawo/dawo.dart';
 
@@ -20,5 +19,4 @@ void main() {
 
   print('............ _lib_test:   next: renderBaseLib................');
   renderBaseLib();
-
 }

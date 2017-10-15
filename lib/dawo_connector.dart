@@ -1,8 +1,9 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  connecting  ( as #client's) app - mission - chore together,  mediating them
-///   dawo version:  0.0.3  25.9.2017  * READY-STATE:  1 %  for  0.0.4 version
+///   dawo version:  0.0.4  16.10.2017  * READY-STATE: for  0.0.5 version> 0%
 ///
+/// * Usability: 5%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  dawo_connector.dart
 /// #name:  connector ..is not nice. change to: ______ ??
 /// Connector is in deeply planning state. We know, that app -

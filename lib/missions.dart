@@ -1,8 +1,8 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 /// *  mission is something between app and chore, process.
-/// -  Primary functionality: engage chores. Version 0.0.3
-/// -  ready_state for 0.0.4  0 %
+/// -  Primary functionality: engage chores. Version 0.0.4  16.10.2017
+/// -  ready_state for 0.0.5  0 %
 /// -  HIST:  hkl  8.9.2017
 /// -  devNote: 4 pc.
 //
@@ -95,6 +95,7 @@ class Mission {
 
   int opCount = 0;
 
+  ///  Create some variables and figure their usage later.
   /// #Idea?  Control missions state, working-condition / state.
   String state = 'Functional';
   bool stDo = false;
@@ -102,7 +103,7 @@ class Mission {
   bool stAware = false;
 
   ///  #Idea:  use flags maps to control something     stFlags
-  Map<String, bool> stFlags = {
+  Map<String, String> stFlags = {
     'real': 'no',
     'accepted': 'no',
     'aborted': 'me',
@@ -180,6 +181,7 @@ class Mission {
     flowC('   <-m--<--       :M:-b:        done  $name     ', pB);
   } //  -----  build
 
+  /// Create some 0p___ methods, #then: find some job for them.
   /// devNote:  function, that OPENS way to use outer resources.
   bool opInit(int openCount, var openThis) {
     ///  use resource, equ class
@@ -222,7 +224,7 @@ class Mission {
     return done;
   }
 
-  ///  Data-table of outside resources grouped in time.
+  ///  Data-table of outside resources grouped in time.  Equipment-class. equ
   void opSchedule() {
     flowC('--<----<-  :M:op:  opSchedule --<----<-', pB);
     flowC(':M:op: opSchedule-info: Report for to check data lists. >>', pB);
@@ -268,7 +270,7 @@ class Mission {
 
     ///  Add padLeft & padRight Strings to make this common.
     ///  Pad List right and left with ' ' and make all even length
-    List padListRL(List<String> _l) {
+    List<String> padListRL(List<String> _l) {
       int long = longestItemInList(_l);
       //  looks funny, surely we can make better :)
       for (var x = 0; x < _l.length; x++) {
@@ -282,6 +284,7 @@ class Mission {
       return _l;
     }
 
+    //  Move to tools when ready.
     //  Fill list-data in matrix in r, _c coordinates.
     void anchorBox(int _r, int _c, List __l) {
       List<String> _l = [];
@@ -446,10 +449,10 @@ class Mission {
 } // --  end class Mission
 
 ///  Calling print/print-to-buffer method.
-///  Getting local variables; Actor and Buffer right,
-///  Every library / actor has its own flowC function
+///  Getting local variables; Actor and Buffer right;
+///  Every library / actor has its own flowC function.
 void flowC(String msg, bool p) {
-  ///  call flowServe with #LOCAL variables
+  ///  Call #common flowServe with #LOCAL variables:
   ///  :MISSION: is too long.
   flowServe(':M:', out.outTMid, msg, p);
 }
@@ -547,7 +550,7 @@ void buildMissions(String caller) {
   flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- ', pB);
 } //  -----  buildMissions
 
-///  creating instance of Mission and using it's methods
+///  Creating instance of Mission and using it's methods.
 ///  All render_X functions are for test and presentation.
 void renderMission() {
   //  helsinkiMission.  //  NOTE    #analyzer  is slow
@@ -555,7 +558,10 @@ void renderMission() {
   var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
   missionR.showInfo();
   missionR.opOn = true;
-  helsinkiMission.missionR.toChore();
+
+  //  Do this class have chores?  Try second chore.
+  missionR.toChore(missionR.choreL[1]);
+
   missionR.rollCount;
   flowC('--  mission: $missionR.name : render done  --', pB);
 }

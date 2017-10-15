@@ -1,7 +1,7 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawo : some simple collection data, mainly Sets.
-///  dawo version:  0.0.3  25.9.2017.    ready-state for 0.0.4  0 %
+///  dawo version:  0.0.4  16.10.2017.    ready-state for 0.0.5  0 %
 ///
 ///  Hist: hkl  22.5.2014  0.0.1  dawo/lib
 ///  No connection to dawo-app for now, but keeping ideas and data for them.

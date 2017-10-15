@@ -1,7 +1,8 @@
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  packDawo
 ///  presenting data for dawo-chore system
-///  dawo version:  ready for 0.0.4 : 20%    3.10.2017
+///  dawo version:   0.0.4  16.10.2017
 ///  Tracking and helping development of dawo package.
 
 library packDawo;

@@ -1,7 +1,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  dawo clay  myMusic
-///  presenting data for dawo-chore system
-///  dawo version:  0.0.3  25.9.2017
+///  # dawo clay  myMusic
+///  * Presenting data for dawo-chore system.
+//  dawo version:   0.0.4  16.10.2017
 
 //
 library myMusic;

@@ -2,12 +2,12 @@
 ///  ///  This do not bring any value to dawoApp.  Just sample code-snippets.
 ///  NOTE:  only some of these streams are executed, when called in row
 ///  BUT:   however, they work.
-/// * dawo version:  0.0.3  25.9.2017
+/// * dawo version:  0.0.4  16.10.2017    in gitHub:   yes
+/// *  READY-STATE:    for 0.0.5  0%
 /// *  NEXT:  modify these, connect to classes and lists. use stream_channel pack
 /// *  Hist: hkl  4.5.2014  0.0.1  dawo/lib    info with streams to dawo-staff
-/// *  READY-STATE:  for 0.0.4  0%            in GitHub :  yes
 ///
-///   examples wrapped from:   https://www.dartlang.org/docs/tutorials/streams/
+///   examples pasted from:   https://www.dartlang.org/docs/tutorials/streams/
 ///   Copyright notice should not concern this file... since it's from dartlang
 
 library learn_stream_sync;
@@ -23,7 +23,7 @@ StringBuffer batonMsg = new StringBuffer();
 int batonCount = 0;
 
 StringBuffer streamBuf = new StringBuffer();
-String streamMotto = 'Streams are not my frends :(';
+String streamMotto = 'Streams are not my frends :-|  ';
 
 ///TODO  teamNext   PLAN:    Use futures for outPut
 //------------------------------------------------functions
@@ -166,7 +166,11 @@ void presentStreamTransform() {
   var transformer =
       new StreamTransformer.fromHandlers(handleData: (value, sink) {
     // create two new values from the original value
-    sink.add("Message: $value").add("Body: $value");
+    //  The method "add" is not defined for method void.
+    //  sink.add("Message: $value").add("Body: $value");
+    //  sink asks (dynamic event)
+    //  hklTry: ("Body: $value"  ok. error away.
+    sink.add("Body: $value"); // add("Message: $value").add("Body: $value");
   });
 
   // transform the stream and listen to its output

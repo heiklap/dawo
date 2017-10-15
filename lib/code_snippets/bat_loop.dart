@@ -3,11 +3,11 @@
 ///  GOAL: find common, reusable elements for control-flow, and develop
 ///  names, and ideas-
 ///  In GitHub, for to be able to modify while on-The-Road.
-///  dawo version:  0.0.3  25.9.2017
+///  dawo version:   0.0.4  16.10.2017
+///  readyState for 0.0.5.  0%    in gitHub:   yes
 ///  This serves as example:  What can you develop from these ideas..?
 ///
-/// *  hkl  20.4.2014  0.0.1  dawo/lib  Collection of control-flow structures
-/// *  readyState for 0.0.4.  0%    in gitHub:   yes
+/// *  hist:  20.4.2014  0.0.1  dawo/lib  Collection of control-flow structures
 /// *  Words:  batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
 
 //NOTE   Function anonymous

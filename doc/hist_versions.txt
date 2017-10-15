@@ -1,25 +1,54 @@
 
-By Heikki K Lappalainen
+By Heikki K Lappalainen.  dawo version:  0.0.4  16.10.2017
 Development of dawo dartlang package 2017 from 0.0.1 >  to  0.0.3 25.9.2017
 _________________________________________________________________________
 Tracking possible bigger steps in dawo:
 0.1.0  Decent console output ready.          |  connector wake.
 0.2.0  Flow procedure with automatic #actor. |  base_lib in use.
-0.3.0  Simple web_app, in gitHub.            |  separate dawo_continuum package
-0.4.0  Local storage, HTTP_server, JSON.     |  dawo_mill operative
-0.5.0  Angel server and MongoDB.             |  User input in web_app
-0.6.0  Client / users.                       |  *
+0.3.0  Simple web_app, in gitHub.            |
+0.4.0  Equipment, connector and M:op.        |
+0.5.0  Simple web_app, in gitHub.            |  separate dawo_continuum package
+0.6.0  Local storage, HTTP_server, JSON.     |  dawo_mill operative
+0.7.0                                        |
+0.8.0  Angel server and MongoDB.             |  User input in web_app
+0.9.0  Client / users.                       |  *
 _________________________________________________________________________
+How does NEXT:  0.0.5 Version look in imagine now?
+Theme:  Clearance. Small innovative ideas seek the right to exist.
+To be published: 6.11.2017
 
-Way to NEXT version:  0.0.4 aso.
+* Tracking dev in this file or spreadsheet is not handy or effective.
+* Daily #FastThinking defines direction of development. Not this list.
+* Solve: Leftovers from 0.0.4 #IdeaList tell to  #SlowDown.
+* #DevTime for one version is 15 days, with 2 X three days off.
+      *  Is it funny?  Yeah!
+      *  Is it highly interesting? Yep.
+
+1. Make tools a Class. Lots of changes.
+2. Equipment - resource, real use-case with effort available.
+3. Deep things; #placard, M-op, #connector
+4. Rumba - small nice output for web.
+5. Use-case for dartlang - learn.
+6. buf a class field with reference to outBuf.
+
+# Some earlier ideas:
+Rumba:  Working rumba  is mark for  0.1.0  version
+Rumba:  Make Rumba be a Chore
+Chore: Make x (dev?) be a Chore
+Chore: Master Chore can have subChores
+Chore: marked as a "slave" to other Chore
+Chore: class.init / done  should #deactivate #clients in <chore> aso. lists
+
+__________________________________________________________________________
+
+16.10.2017 publish: version:  0.0.4  PLAN for 0.0.5 - 0.0.6
 Theme:  Statistics, output, variation, versatility.
-To be published:  approximately: 16.10.2017
 
           *  *  *   HEAD   *  *  *
 4.0 DON_  Flow-method to regulate events / output in every control-flow operation.
           Flow-log List to get only-flow events.
 
-4.b ____  Use async to catch some Stream / future to normal flow.
+6.0 ____  Use async to catch some Stream / future to normal flow.
           Use async, to gather devNotes, and present them at the end of test_output.
 
 4.1 DONE  Reasonable output; regulated form for every classes original-looking output.
@@ -30,10 +59,10 @@ To be published:  approximately: 16.10.2017
 4.3 D___  Statistics: Roll counters to app, mission, chore, mill. LATER?
           Only If it is naturally part of #Flow method.
 
-4.3b____  dawo_mill giving privileges and orderly run for smaller operations.
+6.0____  dawo_mill giving privileges and orderly run for smaller operations.
 
           *  *  *   TAIL   *  *  *
-4.4 ____  Render ( = test, presentation and quick-note function) to every library.
+6.0 ____  Render ( = test, presentation and quick-note function) to every library.
 
 4,5 DO__  dev class. dev tester person. Use actively in development.
             -every library imports dev, and can add dev-notes.
@@ -41,19 +70,19 @@ To be published:  approximately: 16.10.2017
 4.6 DO__  Dev / Team notes (List and maps) maybe: in JSON or IndexedDB mode.
             * in clay_in folder = incoming data.
 
-4.7 ____  Use JSON, enums, set, Map, queues. Just for to show that you can.
+6.0 ____  Use JSON, enums, set, Map, queues. Just for to show that you can.
           Get used to #typeDef
 
           *  *  *   OTHER   *  *  *
-4.8 ____  OutGoing data in clayOut-folder: construct common methods.
+6.0 ____  OutGoing data in clayOut-folder: construct common methods.
 
 4.9 DONE  dev : Common box / matrix outPut for show Lists in console screen.
 
-4.10 ____ Separate learnLib with its 3 files and collect it to one #learn-library.
+6.0 ____ Separate learnLib with its 3 files and collect it to one #learn-library.
           Systematic methods for learning. Terminology.
 
           *  *  *  Document, comments, notes, TODO's  *  *  *
-4.11 D___  doc/
+6.0 D___  doc/
               api/ ***
               Clean writing style, for own devNote term collection.
               getting_started.md, dictionary.MD, history.txt, versions_dev.txt
@@ -162,26 +191,6 @@ Overall problems:
 - Small uncertainty in libraries. When to import and export.
   * Import all in tests, for to be sure. And analyzer finds them quick.
 
-
-
-
-
-_________________________________________________________________________
-
-Version coming:  0.0.5 aso
-
-class.init / done  should #deactivate #clients in <chore> aso. lists
-
-Working rumba  is mark for  0.1.0  version
-
-Make Rumba be a Chore
-
-Make x (dev?) be a Chore
-
-Master Chore can have subChores
-
-Chore marked as a "slave" to other Chore
-
 _________________________________________________________________________
 Dawo Idea:
   *  Dawo might not eventually be interested in, about what kind of activity
@@ -206,7 +215,7 @@ Connector / Operation
 Frame #Word,  phases of operation or screen activity.
 
 * Class: Glad
-* Int opFull100 = 79;   #Opera operation fullfill-state (max100) is now 79.
+* Int opFull100 = 79;   #Opera operation full-fill-state (max100) is now 79.
 * NotAccessMethod - InThisState -field.
 *
 
@@ -215,4 +224,12 @@ Frame #Word,  phases of operation or screen activity.
 Mounted #word
 Freeze, snack,
 clout, impact
+
+equ class:  table
+
+circulating messages / events: #bus, #stop
+
+
+
+
 

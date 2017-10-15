@@ -1,8 +1,8 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Rumba : maintaining main loops of app - mission
 ///  Primary functionality:  loop, inside it: dawoApp
-///  dawo version:  0.0.3  25.9.2017   ReadyState:   0 %  for version 0.0.4
+///  dawo version:  0.0.4  16.10.2017   ReadyState for 0.0.4 = 0%
 ///  in GitHub  yes
 ///  Program might have a certain amount of 'self consciousness'. This is start.
 ///
@@ -73,6 +73,7 @@ class Rumba {
   ///  Class prevents polluting nameSpace with variable names.
   ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope?
   ///  Now it is just a methods parameter.
+  ///  TODO  Add all other buffers to rumbaBuf.
   StringBuffer dance(var dawoApp) {
     //  TODO  Parameters for screen-output wanted.
     flowC('-->---->--  rumba-dance', true);
@@ -146,14 +147,16 @@ class Rumba {
 
     /// --  usher loop
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
-    devBox('By:RUMBA-DANCE:', [dev.admNotes, dev.devNotes], 0);
-    devBox('By:RUMBA-DANCE:', [dev.innoNotes, dev.howToNotes, dev.secNotes], 0);
+    rumbaBuf.write(devBox('By:RUMBA-DANCE:', [dev.admNotes, dev.devNotes], 0));
+    rumbaBuf.write(devBox(
+        'By:RUMBA-DANCE:', [dev.innoNotes, dev.howToNotes, dev.secNotes], 0));
     print('------  one more funny list test   ------');
+    //  TODO  add all boxes to rumbaBuf.
     devBox('T', [dev.innoNotes, dev.admNotes, dev.devNotes, dev.secNotes], 0);
 
     var _ll = out.outBufListsForBox();
     print('\n >>>>>>>>>>>>>>>>>>>>>>  outBuffers  <<<<<<<<<<<<<<<<<<<<<<<<<');
-    devBox('T', [_ll[1], _ll[2], _ll[3]], 32);
+    rumbaBuf.write(devBox('T', [_ll[1], _ll[2], _ll[3]], 32));
     print(' ');
     devBox('T', [_ll[4], _ll[5], _ll[6]], 0);
     print(' ');
@@ -170,7 +173,7 @@ class Rumba {
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
 
     return rumbaBuf;
-  } //  ----------   StringBuffer rumba
+  } //  ----------   StringBuffer dance
 
 } //  --   rumba class
 

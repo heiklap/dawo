@@ -1,5 +1,5 @@
 ///  testing mission in dawo
-///  dawo version:  0.0.3  25.9.2017
+///  dawo version:  0.0.4  16.10.2017
 //
 
 import 'package:dawo/dawo.dart';
@@ -14,16 +14,17 @@ void greetings() {
 }
 
 void main() {
-
   myMission.opRoll(3, greetings);
 
   print('  rolling mission op-functions  ');
+
   ///  Eventually opRoll handles all these others.
   myMission.opInit(1, 'empty parameter');
   myMission.opOpen(2, 'second empty parameter');
   myMission.opRoll(3, helloMission);
-  myMission.opClose(4, helloMission);
+
   myMission.opSchedule();
   myMission.opReport();
-
+  //  Close is last one in row.
+  myMission.opClose(6, helloMission);
 }

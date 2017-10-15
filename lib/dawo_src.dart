@@ -1,7 +1,7 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Home of dawo libraries
-/// * dawo version:  0.0.3  25.9.2017  READY-STATE:  0 %   or 0.0.4 version
+/// * dawo version: 0.0.4  16.10.2017  READY-STATE: for 0.0.5 : 0 %
 ///
 /// * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
 ///

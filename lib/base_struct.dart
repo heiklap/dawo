@@ -1,10 +1,10 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  base structures, classes in dawo
-///   dawo version:  0.0.3  25.9.2017
-/// * READY-STATE:  0%            // for 0.0.4 version
+///   dawo version:  0.0.4  16.10.2017
+/// * READY-STATE: for version 0.0.5 > 0%
 /// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  base_struct.dart
-///  devNote:  No notes.
+//  devNote:  No notes.
 //
 
 library base_struct;
@@ -216,6 +216,22 @@ class Out {
     _ll.addAll([outMidBufL, outMBotBufL, outBlBufL, outBrBufL, outFooterBufL]);
 
     return _ll;
+  }
+
+  ///  return all out-buffers combined in one buffer.
+  StringBuffer outBuffersAll() {
+    StringBuffer _sB = new StringBuffer();
+    _sB.write(outHeader);
+    _sB.write(outTl);
+    _sB.write(outTMid);
+    _sB.write(outTr);
+    _sB.write(outMTop);
+    _sB.write(outMid);
+    _sB.write(outMBot);
+    _sB.write(outBl);
+    _sB.write(outBr);
+    _sB.write(outFooter);
+    return _sB;
   }
 
   ///  Sizes of out-buffers

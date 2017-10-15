@@ -1,7 +1,7 @@
-/// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-/// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Some helper tools
-/// *  dawo version:  0.0.3  25.9.2017    READY-STATE for version 0.0.4   0 %
+/// *  dawo version:  0.0.4  16.10.2017    READY-STATE for  0.0.5   0 %
 /// *  in GIT:  yes           Hist:  hkl  2014  0.0.1  dawo/lib
 ///
 
@@ -38,7 +38,15 @@ String listToString(List<String> _l) {
   print(_l[0]);
   String s;
   StringBuffer sBuf = new StringBuffer();
+  /*  TODO  #Error in HTML launch: try decent for-clause
   for (var x in _l) {
+    print(_l[x]);   //  Error:
+    sBuf.write(_l[x]);
+    sBuf.write(' ');
+  }
+  */
+  //  TODO  hklTry to use decent for-clause
+  for (var x = 0; x < _l.length; x++) {
     print(_l[x]);
     sBuf.write(_l[x]);
     sBuf.write(' ');
