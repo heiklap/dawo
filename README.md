@@ -2,7 +2,8 @@
 
 Learning Dart; simple basic data for beginners, and howTo use it for building a package.
 Beginner Dart programmers kickoff to develop a glorious package.. Latest code in GitHub: https://github.com/heiklap/dawo
-- Read: hist_versions.txt to see full changes to this, and coming versions.
+- Read: /doc/hist_versions.txt in gitHub to see full changes to this, and coming versions.
+- Blog: http://dawopack.blogspot.fi/search/label/dawo 
 ## Usage
     // Mission Class has wide access to data, since they have instances of
     // Chore classes inside them, in choresL : List<CommmonChore>
