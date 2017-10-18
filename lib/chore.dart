@@ -53,14 +53,14 @@ List<CommonChore> choreComL = [];
 ///   Initializing of chore system. Update dev-class.
 ///   CalledBy: dawo_app build.
 void initChoreSystem() {
-  dev.devNotes
+  dev.devN
     ..add('Make COMMON  init-module to EVERY  lib part. ?')
     ..add('This could be for NOTES like W O R K s to be done.');
   //  devNote:
-  dev.admNotes.add(':INIT-CHORE: NO: for  big   W O R K -lists.');
-  dev.innoNotes.add(':INIT-CHORE: :CHECK-IN: testing.');
-  dev.howToNotes.add(':INIT-CHORE: :CHECK-IN: testing.');
-  dev.secNotes.add(':INIT-CHORE: :CHECK-IN: testing.');
+  dev.admN.add(':INIT-CHORE: NO: for  big   W O R K -lists.');
+  dev.innoN.add(':INIT-CHORE: :CHECK-IN: testing.');
+  dev.howToN.add(':INIT-CHORE: :CHECK-IN: testing.');
+  dev.secN.add(':INIT-CHORE: :CHECK-IN: testing.');
 }
 
 ///  Every important dawo class is extending BaseStruct class.

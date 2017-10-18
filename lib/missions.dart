@@ -59,6 +59,8 @@ class Mission {
 
   ///  Reference to outPut-buffer don't carry much: used only in flowC(
   var _buf = out.outTMid; //  reference to used output StringBuffer.
+  //  error: The type of buf can not be inferred, because the use of the
+  //  TODO  instance-getter outTMid.
 
   List<CommonChore> choreL = [];
 
@@ -258,7 +260,7 @@ class Mission {
     for (var z = 0; z < _matrix.length; z++) {
       String __s176 = '░';
       _count++;
-      String _countS = _count.toString();
+      String _countS = _count.toString();  //  not used.
       //  TODO  choose nice background mark for matrix.
       _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
 
@@ -271,7 +273,8 @@ class Mission {
     ///  Add padLeft & padRight Strings to make this common.
     ///  Pad List right and left with ' ' and make all even length
     List<String> padListRL(List<String> _l) {
-      int long = longestItemInList(_l);
+      //  Using here new Tools, tl class.
+      int long = tl.longestItemInList(_l);
       //  looks funny, surely we can make better :)
       for (var x = 0; x < _l.length; x++) {
         //  int itemLength = _l.length;  //  length NOW
@@ -361,7 +364,7 @@ class Mission {
     flowC('  >>  :M:op: opReport: ** Not needed when opSchedule is on.**.', pB);
     List<String> _l = [];
     List<String> _l2 = [];
-    _l.addAll(bufToList(out.outTMid));
+    _l.addAll(tl.bufToList(out.outTMid));
     for (var x = 0; x < _l.length; x++) {
       ///  Add all ':M:op:' to _l2.
       if (_l[x].indexOf(':M:op:') > 0) {
@@ -432,7 +435,7 @@ class Mission {
 
       print('\n *** :M: report details clayMap chores For mission: $name ***');
       //  clayMap.forEach((k, v) => print('$k, $v'));
-      printStringMapMap(clayMap);
+      tl.printStringMapMap(clayMap);
       print('************************ :M: report details done   ******** \n ');
     }
     return _l;
@@ -483,7 +486,7 @@ void missionChoreReport(String caller) {
 ///  TODO  Messy function buildMissions.  Clean, organize it.
 void buildMissions(String caller) {
   flowC('-->-m--> build Missions, caller: $caller   ', pB);
-  dev.admNotes.add('>>ADM:CHECK-IN  build-Missions  >>');
+  dev.admN.add('>>ADM:CHECK-IN  build-Missions  >>');
 
   ///  Start of new dawoMission.
   ///  packDawo Mission.

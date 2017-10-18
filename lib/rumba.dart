@@ -38,9 +38,9 @@ class Rumba {
   ///  setting loop variables to beginning state
   void initRumba() {
     print('------------>>-->>--  init Rumba  ------------>>-->>--');
-    dev.howToNotes
+    dev.howToN
         .add(':initRumba:  howTo : Keep track that ALL notes get marked ');
-    dev.innoNotes.add(
+    dev.innoN.add(
         ':init:Rumba: CHECK-IN-NUMBER for every NOTE, that all notes are in count.');
     rumbaBuf.writeln('------------>>-->>--  init Rumba  ------------>>-->>--');
     rumbaB = true;
@@ -52,8 +52,8 @@ class Rumba {
   ///  Setting loop variables to (fake-) force-stop state.
   void doneRumba() {
     rumbaBuf.writeln('--<<--<<------------ done Rumba  --<<--<<------------');
-    dev.admNotes.add('>>ADM:CHECK-IN  doneRumba  >>');
-    dev.innoNotes.add(':doneRumba:  innovative: testing  ');
+    dev.admN.add('>>ADM:CHECK-IN  doneRumba  >>');
+    dev.innoN.add(':doneRumba:  innovative: testing  ');
 
     print('--<<--<<------------  done Rumba --<<--<<------------');
     rumbaB = false;
@@ -70,7 +70,7 @@ class Rumba {
   StringBuffer dance(var dawoApp) {
     //  TODO  Parameters for screen-output wanted.
     flowC('-->---->--  rumba-dance', true);
-    dev.admNotes.add('>>ADM:CHECK-IN  rumba-dance  >>');
+    dev.admN.add('>>ADM:CHECK-IN  rumba-dance  >>');
 
     ///  TODO  rumbaLoop is executed for now only 1-3 times
     ///  primary rumba Loops, over / outside it is: usher loop
@@ -141,12 +141,12 @@ class Rumba {
 
     /// --  usher loop
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
-    rumbaBuf.write(devBox('By:RUMBA-DANCE:', [dev.admNotes, dev.devNotes], 0));
+    rumbaBuf.write(devBox('By:RUMBA-DANCE:', [dev.admN, dev.devN], 0));
     rumbaBuf.write(devBox(
-        'By:RUMBA-DANCE:', [dev.innoNotes, dev.howToNotes, dev.secNotes], 0));
+        'By:RUMBA-DANCE:', [dev.innoN, dev.howToN, dev.secN], 0));
     print('------  one more funny list test   ------');
     //  TODO  add all boxes to rumbaBuf.
-    devBox('T', [dev.innoNotes, dev.admNotes, dev.devNotes, dev.secNotes], 0);
+    devBox('T', [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
 
     var _ll = out.outBufListsForBox();
     print('\n >>>>>>>>>>>>>>>>>>>>>>  outBuffers  <<<<<<<<<<<<<<<<<<<<<<<<<');

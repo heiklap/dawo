@@ -134,49 +134,54 @@ class DawoApp extends BaseStruct {
   ///  #run-like method
   ///  return:  Map<String, StringBuffer> out.outMapBuffers
   Map<String, StringBuffer> roll() {
-    dev.admNotes.add('>>ADM:CHECK-IN  dawo_app-roll  >>');
-    dev.admNotes.add(':Ar: = in App-Roll. Mark value number: #7: ');
-    dev.admNotes.add(':Ar: :Word: Testing: #ALERT #NoAction.');
-    dev.admNotes.add(':Ar: :Word: Testing: #ALL #Action.');
-    dev.admNotes.add(':Ar: :Word: Testing: #ALL #NoAction.');
-    dev.admNotes.add(':Ar: :Word: Testing: #ALL #NoAction.');
-    dev.admNotes.add(':Ar: :#ORDER: Short names for coders to use.');
+    dev.admN
+      ..add('>>ADM:CHECK-IN  dawo_app-roll  >>')
+      ..add(':Ar: = in App-Roll. Mark value number: #7: ')
+      ..add(':Ar: :Word: Testing: #ALERT #NoAction.')
+      ..add(':Ar: :Word: Testing: #ALL #Action.')
+      ..add(':Ar: :Word: Testing: #ALL #NoAction.')
+      ..add(':Ar: :Word: Testing: #ALL #NoAction.')
+      ..add(':Ar: :#ORDER: Short names for coders to use.');
 
-    dev.devNotes.add(':Ar: :TDev: Habits: keep 3 day off before new version.');
-    dev.devNotes.add(':Ar: :TDev: Connect: Try to get :feedback: #Area.');
-    dev.devNotes.add(':Ar: :Placement in time and area for objects.');
-    dev.devNotes.add(':Ar: :Word: #Picker.');
-    dev.devNotes.add(':Ar: :Performance: #?  #CL Long time to render.');
-    dev.devNotes.add(':Ar: :NO: list for prohibited #Words for team.');
-    dev.devNotes.add(':Ar: :YES: list for only-allowed #Words for team.');
-    dev.devNotes.add(':Ar: :SHOW: method; parameter to give #Find this.');
-    dev.devNotes.add(':Ar: :TEST:  Benchmark.');
+    dev.devN
+      ..add(':Ar: :TDev: Habits: keep 3 day off before new version.')
+      ..add(':Ar: :TDev: Connect: Try to get :feedback: #Area.')
+      ..add(':Ar: :Placement in time and area for objects.')
+      ..add(':Ar: :Word: #Picker.')
+      ..add(':Ar: :Performance: #?  #CL Long time to render.')
+      ..add(':Ar: :NO: list for prohibited #Words for team.')
+      ..add(':Ar: :YES: list for only-allowed #Words for team.')
+      ..add(':Ar: :SHOW: method; parameter to give #Find this.')
+      ..add(':Ar: :TEST:  Benchmark.');
 
-    dev.innoNotes.add(':Ar: Incremented usage-counter in old notes.');
-    dev.innoNotes.add(':Ar: Clean older notes or archive them.');
-    dev.innoNotes.add(':Ar: Not allowed messages if at least one Legal word.');
-    dev.innoNotes.add(':Ar: Words: ');
-    dev.innoNotes.add(':Ar: Words: ## To mark word for consideration as key');
-    dev.innoNotes.add(':Ar: Words: ##Carry in Rumba to medagte message.');
-    dev.innoNotes.add(':Ar: Phraseoloy');
-    dev.innoNotes.add(':Ar: #LowLevel talk for dev folks.');
+    dev.innoN
+      ..add(':Ar: Incremented #Number in new notes.')
+      ..add(':Ar: Clean older notes or archive them.')
+      ..add(':Ar: Not allowed messages if at least one Legal word.')
+      ..add(':Ar: Words: ')
+      ..add(':Ar: Words: ## To mark word for consideration as key.')
+      ..add(':Ar: Words: ##Carry : R:mediate message to #receiver.')
+      ..add(':Ar: Phraseology.')
+      ..add(':Ar: #LowLevel talk for dev folks.');
 
-    dev.howToNotes.add(':Ar: howTo fetch data via HTTP.');
-    dev.howToNotes.add(':Ar: howTo   getfirst  changeable web pages.');
-    dev.howToNotes.add(':Ar: howTo Gather devNotes by type.');
-    dev.howToNotes.add(':Ar: howTo Classify devNotes by value.');
-    dev.howToNotes.add(':Ar: howTo Add notes last in to list?');
-    dev.howToNotes.add(':Ar: howTo Send #ALERT #ALL note to every List?');
+    dev.howToN
+      ..add(':Ar: howTo fetch data via HTTP.')
+      ..add(':Ar: howTo   getfirst  changeable web pages.')
+      ..add(':Ar: howTo Gather devNotes by type.')
+      ..add(':Ar: howTo Classify devNotes by value.')
+      ..add(':Ar: howTo Add notes last in to list?')
+      ..add(':Ar: howTo Send #ALERT #ALL -note => to every List?');
 
-    dev.secNotes.add(':Ar: #Numbers for #Event:s and #Msg :s. ');
-    dev.secNotes.add(':Ar: #FlowC call check for extra innder calls.');
-    dev.secNotes.add(':Ar: #Password.');
-    dev.secNotes.add(':Ar: #Encrypt :ion.');
-    dev.secNotes.add(':Ar: #Force render methods to leave #Stamp or #Logo.');
-    dev.secNotes.add(':Ar:  #Force test methods to leave #Stamp or #Logo.');
-    dev.secNotes.add(':Ar:  #Prevent deleting notes without notice.');
-    dev.secNotes.add(':Ar:  Keep #Track of extra iterators in notes.');
-    dev.secNotes.add(':Ar:  #encrypt ed notes not allowed.');
+    dev.secN
+      ..add(':Ar: #Numbers for #Event:s and #Msg :s. ')
+      ..add(':Ar: #FlowC call check for extra innder calls.')
+      ..add(':Ar: #Password.')
+      ..add(':Ar: #Encrypt :ion.')
+      ..add(':Ar: #Force render methods to leave #Stamp or #Logo.')
+      ..add(':Ar:  #Force test methods to leave #Stamp or #Logo.')
+      ..add(':Ar:  #Prevent deleting notes without notice.')
+      ..add(':Ar:  Keep #Track of extra iterators in notes.')
+      ..add(':Ar:  #encrypt ed notes not allowed.');
 
     //  build already does this  dev.buildNotes();
     flowC(':da:b: DawoApp::roll    $infoS   :: roll engaged ', pB);

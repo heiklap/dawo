@@ -55,12 +55,12 @@ class Dev {
   ///  To handy keep track of fast changes in code:
   List<String> doneL = [];
 
-  ///  First, header values to teamNotes.
-  List<String> admNotes = ['* *  Team Admin notes:  * *'];
-  List<String> devNotes = ['* * Team dev notes: * * '];
-  List<String> innoNotes = ['* *  Team inno notes: * * '];
-  List<String> howToNotes = ['* * Team HowTo notes: * * '];
-  List<String> secNotes = ['* * Team sec notes: * * '];
+  ///  First, header values to teamN.
+  List<String> admN = ['* *  Team Admin notes:  * *'];
+  List<String> devN = ['* * Team dev notes: * * '];
+  List<String> innoN = ['* *  Team inno notes: * * '];
+  List<String> howToN = ['* * Team HowTo notes: * * '];
+  List<String> secN = ['* * Team sec notes: * * '];
 
   ///  To add developer notes.
   void addNote(List l, String s) {
@@ -76,63 +76,68 @@ class Dev {
         "and uses $interpolation "
         r"and \raw strings";
     //  -----  code Sample
-    doneL.add('   * * *  doneL to keep track of daily Dawo changes.   * * * ');
-    doneL.add('10 In analyzis options file: analyzer: strong-mode: true.');
-    doneL.add('9 Added copyright notice to every lib/ file.');
-    doneL.add('8 Changed library dawo_tools name to: tools.dart.');
-    doneL.add('7 Equipment, equ class to keep material and name resources.');
-    doneL.add(
-        '6 Missions specific op-methods, opSchedule for resource allocating.');
-    doneL.add('dev: doneL added to keep track of fast changes. 10.10.17');
-    doneL.add(
-        'flowserve: added flowI event counter. In base_lib: flowI. 10.10.17');
-    doneL.add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.');
-    doneL.add('Older:');
-    doneL.add('Older:');
 
-    admNotes.addAll(['adm: #Principle: do not mess, keep it simple.']);
-    admNotes.addAll(
-        ['adm: Must be strict all the time.', 'Keep good care of people.']);
-    admNotes.addAll([
-      'adm: Week schedule must include total check at least 3 times in a week.',
-      'System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.'
-    ]);
+    doneL
+      ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('5-02 Cascades in devNotes and names are now: admN, devN aso.')
+      ..add('5-01 All in tools removed inside a new Tool, tl class.')
+      ..add('10 In analyzis options file: analyzer: strong-mode: true.')
+      ..add('9 Added copyright notice to every lib/ file.')
+      ..add('8 Changed library dawo_tools name to: tools.dart.')
+      ..add('7 Equipment, equ class to keep material and name resources.')
+      ..add(
+          '6 Missions specific op-methods, opSchedule for resource allocating.')
+      ..add('dev: doneL added to keep track of fast changes. 10.10.17')
+      ..add(
+          'flowserve: added flowI event counter. In base_lib: flowI. 10.10.17')
+      ..add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.')
+      ..add('Older:')
+      ..add('Older:');
 
-    devNotes.addAll([
+    admN
+      ..addAll(['adm: #Principle: do not mess, keep it simple.'])
+      ..addAll(
+          ['adm: Must be strict all the time.', 'Keep good care of people.'])
+      ..addAll([
+        'adm: Week schedule must include total check at least 3 times in a week.',
+        'System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.'
+      ]);
+
+    devN.addAll([
       'Priority: rumba and web.',
       'Create all instances in the  ?? ri? lib.'
     ]);
-    innoNotes.addAll(['-Counters?', 'Mongo-DB', 'Indexed-DB', 'User-class']);
-    howToNotes
-        .addAll(['Web-html?', 'Typedef?', 'Connector?', 'Streams?', 'Async?']);
-    howToNotes.addAll(
-        ['Name: base-lib?', 'User-action?', 'Print-output-variables-logos.']);
-    secNotes.addAll(
+    innoN.addAll(['-Counters?', 'Mongo-DB', 'Indexed-DB', 'User-class']);
+    howToN
+      ..addAll(['Web-html?', 'Typedef?', 'Connector?', 'Streams?', 'Async?'])
+      ..addAll(
+          ['Name: base-lib?', 'User-action?', 'Print-output-variables-logos.']);
+    secN.addAll(
         ['Restrict use of certain methods.', 'Create up-level pass-word.']);
   }
 
   ///  More demonstrative devBox presentation method.
   void showNotes(String caller) {
     print('\n ------->>-->>--  dev.showNotes  by: $caller ------->>-->>--   ');
-    devBox('By:dev:', [dev.admNotes, dev.devNotes], 0);
-    devBox('By:dev:', [dev.innoNotes, dev.howToNotes, dev.secNotes], 0);
+    devBox('By:dev:', [dev.admN, dev.devN], 0);
+    devBox('By:dev:', [dev.innoN, dev.howToN, dev.secN], 0);
     print('--<<--<<------------  dev.showNotes  --<<--<<------------ \n  ');
   }
 
   ///  Old-fashioned list print method.
   void listNotes(String caller) {
     print('\n ------->>-->>--  dev.listNotes  by: $caller ------->>-->>--   ');
-    dev.howToNotes.add('dev-Show-Notes:  How to add 8-indent in show?  ');
-    dev.secNotes.add('dev-Show-Notes:  howTo keep some notes secret?  Sec? ');
-    admNotes.forEach(print);
+    dev.howToN.add('dev-Show-Notes:  How to add 8-indent in show?  ');
+    dev.secN.add('dev-Show-Notes:  howTo keep some notes secret?  Sec? ');
+    admN.forEach(print);
     print(' ');
-    devNotes.forEach(print);
+    devN.forEach(print);
     print(' ');
-    innoNotes.forEach(print);
+    innoN.forEach(print);
     print(' ');
-    howToNotes.forEach(print);
+    howToN.forEach(print);
     print(' ');
-    secNotes.forEach(print);
+    secN.forEach(print);
     print('--<<--<<------------  dev.listNotes  --<<--<<------------ \n ');
   }
 } //  -----  class dev
@@ -388,7 +393,8 @@ class DevHelp {
   ///  Function for to print devTestMap.  Looks funny :)
   void normMapShow() {
     print(' \n ------------>>-->>-- devHelp norms  ------------>>-->>--');
-    normMap.forEach(printSS); //  from tools.dart
+    //  Using here new Tools, tl class.
+    normMap.forEach(tl.printSS); //  from tools.dart
     print(' \n --<<--<<------------ devHelp norms  --<<--<<------------');
   }
 
