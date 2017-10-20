@@ -16,8 +16,10 @@ import 'base_lib.dart';
 import 'chore.dart';
 import 'dawo_dev.dart';
 import 'missions.dart';
+import 'tools.dart';
 
 // ignore: unused_field for those wondering.
+//  Word: stream  9 times
 
 ///  Getter practice.
 num dawoAppReadiness = 95; //  changed: 2.5.2015
@@ -192,7 +194,8 @@ class DawoApp extends BaseStruct {
     //  Add code for roll.
 
     appRollMissions(':DA:-roll ');
-    rollStream();
+    rollStream(':D-A:roll:');
+    devStream(':D-A:roll:'); //  TODO  Temp  devStream rolled
     show();
     done();
     //  code here
@@ -236,22 +239,51 @@ class DawoApp extends BaseStruct {
     // roll all chores, that are in mission
   }
 
-  ///  TODO devSgtream  building stream for dev, using elementary Stream example
-  void devStream() {
-    flowC('--- :stream:beg dawoApp rollStream started     ---', pB);
+  ///  TODO devStream  building stream for dev, using elementary Stream example
+  ///  DONE Adding caller-parameter
+  ///  TODO  WHO IS CALLING THIS ?  Nobody
+  void devStream(String caller) {
+    flowC('--- :stream:beg dawoApp rollStream started by: $caller    ---', pB);
+    flowC(
+        '--- :stream:beg dawoApp rollStream started by: $caller    ---', true);
     // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
-    commonStream(':dawoApp:', [agenda, msg, develop, version], 'appListener');
+    commonStream(
+        ':dawoApp:d-s', [agenda, msg, develop, version, msg], 'appListener');
+    commonStream(
+        ':dawoApp:d-s', ['First Book', 'My Book', 'Third Book'], 'appListener');
     flowC('--- :stream:end dawoApp rollStream done     ---', pB);
   }
 
   ///  calling base>_lib commonStream, elementary Stream example
-  void rollStream() {
-    flowC('--- :stream:beg dawoApp rollStream started     ---', pB);
+  ///
+  ///  #TODO  make this use #iterable parameter; dev.admN / where #ALL
+  ///
+  void rollStream(String _cl) {
+    flowC('--- :stream:beg dawoApp rollStream started by: $_cl    ---', pB);
     // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
-    commonStream(':dawoApp:', [agenda, msg, develop, version], 'appListener');
-    flowC('--- :stream:end dawoApp rollStream done     ---', pB);
+    commonStream(
+        ':dawoApp-r:s:', [agenda, msg, develop, version], 'appListener');
+
+    ///  calling stream on dev.admN list certain items:
+    ///  insertAll(int index, Iterable<E> iterable) → void
+    ///  Create List, that is used in Stream.
+    List<String> _queryL = ['* First _queryL item *'];
+
+    //  TODO  make common procedure for to find #Lang #word's.
+    for (var x = 0; x < dev.admN.length; x++) {
+      if (dev.admN[x].indexOf('schedule') > -1) {
+        _queryL.add(dev.admN[x]);
+      }
+    }
+    //  When using : StrInList in tools:
+    //  _queryL.addAll(tl.StrInList(dev.admN, 'schedule'));
+    //  base_lib commonStream acts nicely with 0-length list
+
+    commonStream(':dawoApp-r:s:ADM:', _queryL, 'appListener');
+    //  TODO Stream: meaningful : streams from doneL / devN important
+    flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', pB);
   }
 
   ///  Show-method to be developed further.

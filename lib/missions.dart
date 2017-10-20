@@ -183,6 +183,20 @@ class Mission {
     flowC('   <-m--<--       :M:-b:        done  $name     ', pB);
   } //  -----  build
 
+  ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
+  ///  * * *    in base_lib, chore and mission   * * *
+  var decision;
+  var decisionChain;
+
+  ///  ***********************************************************************
+  ///  #Word 's for stream-like processes. What 3 words to use?
+  ///  chain, procession, queue, order, order, request, stream, river, flow, rune
+  ///  19.10.2017  adapt this structure everywhere, until find better.
+  void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
+  void chainStream() {} //  real stream, slow answer.
+  void fireStream() {} //
+  ///  ***********************************************************************
+
   /// Create some 0p___ methods, #then: find some job for them.
   /// devNote:  function, that OPENS way to use outer resources.
   bool opInit(int openCount, var openThis) {
@@ -260,7 +274,7 @@ class Mission {
     for (var z = 0; z < _matrix.length; z++) {
       String __s176 = '░';
       _count++;
-      String _countS = _count.toString();  //  not used.
+      String _countS = _count.toString(); //  not used.
       //  TODO  choose nice background mark for matrix.
       _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
 

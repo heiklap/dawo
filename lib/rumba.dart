@@ -12,7 +12,6 @@
 
 library rumba.dart;
 
-
 import 'base_lib.dart';
 import 'base_struct.dart';
 import 'dawo_dev.dart';
@@ -21,7 +20,6 @@ import 'dawo_dev.dart';
 StringBuffer rumbaBuf = new StringBuffer();
 
 bool pB = false;
-
 
 ///
 class Rumba {
@@ -142,8 +140,8 @@ class Rumba {
     /// --  usher loop
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
     rumbaBuf.write(devBox('By:RUMBA-DANCE:', [dev.admN, dev.devN], 0));
-    rumbaBuf.write(devBox(
-        'By:RUMBA-DANCE:', [dev.innoN, dev.howToN, dev.secN], 0));
+    rumbaBuf
+        .write(devBox('By:RUMBA-DANCE:', [dev.innoN, dev.howToN, dev.secN], 0));
     print('------  one more funny list test   ------');
     //  TODO  add all boxes to rumbaBuf.
     devBox('T', [dev.innoN, dev.admN, dev.devN, dev.secN], 0);

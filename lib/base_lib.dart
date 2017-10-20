@@ -18,7 +18,7 @@
 ///  Hist:  hkl  9.10.2013  0.0.1  dawo/lib    daw lib_base.dart
 ///  Returned 10.9.2017 to same idea with empty hands.
 ///
-///
+///  #Word  Stream  34 timed
 ///  Open for all ideas, when seeking common functionality between app / lib /
 ///  classes / process aso.
 ///  NOTE: Problem:  #actor / glbActor; how to handle in sub-processes
@@ -267,12 +267,25 @@ void flowFind(String caller, String _fs, int len) {
     out.outBufM.forEach((k, v) => print('$k, $v')); //  Not output for now.
 }
 
-///  TODO  Some idea: s.
+///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
+///  * * *    in base_lib, chore, mission and dev   * * *
 var decision;
 var decisionChain;
 
-//  Elementary stream example, not yet used here in reasonable way.
-//  dawoApp.roll drives this.
+///  ***********************************************************************
+///  #Word 's for stream-like processes. What 3 words to use?
+///  chain, procession, queue, order, order, request, stream, river, flow, rune
+///  19.10.2017  adapt this structure everywhere, until find better.
+void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
+void chainStream() {} //  real stream, slow answer.
+void fireStream() {} //
+///  ***********************************************************************
+///  Elementary stream example, not yet used here in reasonable way.
+///  dawoApp.roll drives this.  When thinking about #stream / #order / #chain
+///  better name, we think for different nature of them, One is quick, one is
+///  slow, and one: we-do-not-mind: wait, but not synchronously: like queue.
+///  So: "common"Order, ...""Chain, ""Queue  #TODO  Name
+///  ***********************************************************************
 void commonStream(String caller, var streamData, var streamListen) {
 //  var data = streamData; // some sample data
   var stream = new Stream.fromIterable(streamData); // Create the stream.
@@ -280,10 +293,9 @@ void commonStream(String caller, var streamData, var streamListen) {
   // Subscribe to the streams events.
   stream.listen((value) {
     //
-    print('\n--- :stream: #phase:1 commonStream Listened     ---');
+    print('\n--- :stream: #phase:1 bLib:commonStream Listened     ---');
     print("   :stream: #phase:2:value:  $value"); // onData handler
-    print(
-        '---  :stream: #phase:3:ok  caller: $caller        OK         --- \n');
+    print('---  :stream: #phase:3:ok  caller: $caller        OK    --- \n');
   });
 }
 
@@ -345,16 +357,16 @@ StringBuffer commonProcess(
   print(infoS2);
   List<String> _li1 = [];
   StringBuffer _cpBuf = new StringBuffer();
-  _li1.add(
-      '\n -->>-->  commonProcess  #caller: $by ccccccccccccccccccccccccccp');
-  _li1.add('glbOpsInUse: ___________________________________');
-  _li1.add('  ------  commonStream  -----------');
-  _li1.add('   -----  commonStreamBoard  ----------');
-  _li1.add('   -----  commonParamToStr  ---------------   -->');
-  _li1.add('   -----  commonBufMsg  ---------------');
-  _li1.add('   -----  commonRoll  -------------');
-  _li1.add('   -----  commonMsg  ----------');
-  _li1.add('   -----  commonShow-------');
+  _li1
+    ..add('\n -->>-->  commonProcess  #caller: $by ccccccccccccccccccccccccccp')
+    ..add('glbOpsInUse: ___________________________________')
+    ..add('  ------  commonStream  -----------')
+    ..add('   -----  commonStreamBoard  ----------')
+    ..add('   -----  commonParamToStr  ---------------   -->')
+    ..add('   -----  commonBufMsg  ---------------')
+    ..add('   -----  commonRoll  -------------')
+    ..add('   -----  commonMsg  ----------')
+    ..add('   -----  commonShow-------');
   _cpBuf.writeln(':_cpBuf: -->>-->  commonProcess  #caller: $by  -------- \n');
   //  TODO  Start info and statistics.
   //  TODO  Make all these Lists for:  devBox

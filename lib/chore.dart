@@ -162,6 +162,20 @@ class CommonChore extends BaseStruct {
     flowC('<-- ch roll: $name  done --<----<--', pB);
   }
 
+  ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
+  ///  * * *    in base_lib, chore and mission  * * *
+  var decision;
+  var decisionChain;
+
+  ///  ***********************************************************************
+  ///  #Word 's for stream-like processes. What 3 words to use?
+  ///  chain, procession, queue, order, order, request, stream, river, flow, rune
+  ///  19.10.2017  adapt this structure everywhere, until find better.
+  void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
+  void chainStream() {} //  real stream, slow answer.
+  void fireStream() {} //
+  ///  ***********************************************************************
+
   ///  Operations with other Chores in choreComL List.
   opCom() {}
 

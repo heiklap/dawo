@@ -20,6 +20,7 @@ import 'package:dawo/tools.dart';
 //   phase          3
 //   note          23 ??         CHANGE:   note  !!!
 //   test        10/50            CHANGE    test  !!!
+//  #Word  Stream  6
 
 //  New async : plans to make async functions start synchronously.
 //  This change is planned for Dart 2.0.
@@ -95,7 +96,7 @@ class Dev {
       ..add('Older:');
 
     admN
-      ..addAll(['adm: #Principle: do not mess, keep it simple.'])
+      ..addAll(['adm: #Principle: do not mess, keep it simple.', 'schedule : meeting thursday.'])
       ..addAll(
           ['adm: Must be strict all the time.', 'Keep good care of people.'])
       ..addAll([

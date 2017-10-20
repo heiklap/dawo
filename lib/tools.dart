@@ -13,7 +13,6 @@ num toolsReadiness = 96;
 ///  Buffer also outside class, for testing and adding visibility.
 var toolsBuf = new StringBuffer();
 
-
 class Tools {
   ///  Return iterable List from StringBuffer.
   List<String> bufToList(StringBuffer buf) {
@@ -32,6 +31,17 @@ class Tools {
       }
     }
     return _longest;
+  }
+
+  ///  Return List of items, where #String exist
+  List<String> StrInList(List<String> _l, String _s){
+    List<String> _queryL = new List();
+    for (var x = 0; x < _l.length; x++) {
+      if (_l[x].indexOf(_s) > -1) {
+        _queryL.add(_l[x]);
+      }
+    }
+    return _queryL;  // 0-length check in the receiver side.
   }
 
   ///  Return String from List of Strings.
@@ -140,7 +150,7 @@ class Tools {
     //  1000 =  one second
     //var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
     var goalTime =
-    new DateTime.now().add(new Duration(milliseconds: waitingTime));
+        new DateTime.now().add(new Duration(milliseconds: waitingTime));
     do {} while (new DateTime.now().compareTo(goalTime) < 0);
   }
 
@@ -148,7 +158,7 @@ class Tools {
   void sleepMS(int waitingTime, [bool info]) {
 //var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
     var goalTime =
-    new DateTime.now().add(new Duration(milliseconds: waitingTime));
+        new DateTime.now().add(new Duration(milliseconds: waitingTime));
     bool _info = info;
     if (_info) (print('Waiting for  $waitingTime'));
     do {
@@ -174,8 +184,6 @@ class Tools {
     4: 'Slow',
     5: 'Delayed'
   };
-
-}  //  -----  class Tools
+} //  -----  class Tools
 
 var tl = new Tools();
-
