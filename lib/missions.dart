@@ -190,7 +190,7 @@ class Mission {
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
-  ///  chain, procession, queue, order, order, request, stream, river, flow, rune
+  ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
   void chainStream() {} //  real stream, slow answer.
@@ -258,32 +258,33 @@ class Mission {
     */
     ///  From fixed length list to fill screen;
     ///  TODO  These special ASCII marks are ugly and take more space.
-    String _s176 = '░'; //  low-density mark, too ugly and not nice.
-    String _s177 = '▒'; //  high density
+    //  String _s176 = '░'; //  low-density mark, too ugly and not nice.
+    //  String _s177 = '▒'; //  high density
     int _sw = 195; //  screen width
     int _rc = 40; //  row count
     //  too complicated, I guess.
-    List<String> _matrix = new List();
+    List<String> _matrix = new List(_rc);  //  TODO  Why not make certain length list?
     //  add row-numbers to matrix. Next operation ruins this. lol
-    for (var x = 0; x < _rc + 0; x++) {
-      String _s = x.toString();
-      _matrix.add('$_s ');
-    }
+      //  for (var x = 0; x < _rc + 0; x++) {
+      //  String _s = x.toString();
+      //  _matrix.add('$_s ');  //  TODO Next loop rolls all changes.
+      //  }
     //  to get row numbers.
     int _count = 100;
-    for (var z = 0; z < _matrix.length; z++) {
-      String __s176 = '░';
+    //  do not handle first row.
+    for (var z = 1; z < _matrix.length; z++) {
+      //  String __s176 = '░';
       _count++;
       String _countS = _count.toString(); //  not used.
       //  TODO  choose nice background mark for matrix.
       _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
 
     }
-
+    _matrix[0] =
+    '--m-schedule---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
     ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
     _matrix[_rc - 1] =
         '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
-
     ///  Add padLeft & padRight Strings to make this common.
     ///  Pad List right and left with ' ' and make all even length
     List<String> padListRL(List<String> _l) {
@@ -355,7 +356,7 @@ class Mission {
     //  status
 
     _matrix.forEach(print);
-  }
+  }  //  -----  opSchedule
 
   /// devNote:  function, that CLOSES it's object.
   /// idea?

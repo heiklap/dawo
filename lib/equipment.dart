@@ -98,7 +98,7 @@ class Equipment {
     'Sunday'
   ];
 
-  ///  Produce nice-looking allocation-list.
+  ///  simulation: Produce nice-looking allocation-list of resources.
   List<String> allocate(int _r, int _c) {
     //  TODO  use _c variable to control width
     //  init();  must be done somewhere.

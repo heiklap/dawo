@@ -22,7 +22,7 @@ import 'package:dawo/code_snippets/learn_stream_sync.dart';
 import 'base_lib.dart';
 import 'base_struct.dart'; //  unused
 import 'chore.dart';
-import 'dawlib_coll.dart';
+import 'effort.dart';
 
 import 'dawo_app.dart';
 import 'dawo_connector.dart'; //  unused
@@ -67,7 +67,7 @@ num get dawoReadiness =>
     (aldenteFuncReadiness +
         batLoopReadiness +
         dawLibBaseReadiness +
-        dawlibCollReadiness +
+        effortReadiness +
         dawLibStreamReadiness +
         dawLibWorkReadiness +
         dawoDartReadiness +

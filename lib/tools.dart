@@ -33,15 +33,25 @@ class Tools {
     return _longest;
   }
 
+  ///  Counts items in inner list
+  int countInnerList(List<List<String>> _l) {
+    int i = 0;
+    for (var x in _l) {
+      int z = (x.length);
+      i = (i + z);
+    }
+    return i;
+  }
+
   ///  Return List of items, where #String exist
-  List<String> StrInList(List<String> _l, String _s){
+  List<String> StrInList(List<String> _l, String _s) {
     List<String> _queryL = new List();
     for (var x = 0; x < _l.length; x++) {
       if (_l[x].indexOf(_s) > -1) {
         _queryL.add(_l[x]);
       }
     }
-    return _queryL;  // 0-length check in the receiver side.
+    return _queryL; // 0-length check in the receiver side.
   }
 
   ///  Return String from List of Strings.
@@ -65,6 +75,50 @@ class Tools {
     }
     s = sBuf.toString();
     return s;
+  }
+
+  ///  Screen-sized matrix pierced with staggered list elements.
+  List<String> iterableDiagonal(List<List<String>> _il, int sw) {
+    int _sw = sw; //  screen width.
+    int _ilC = countInnerList(_il); //  serves also as row-count.
+    print('------------  counted inner list length ---------------------');
+    int cStep = ((sw- 50) ~/_ilC  );  //  spread info to screen.
+    print(_ilC);
+    print(':tl: Step: $cStep');
+    print('------------  counted inner list length  done  --------------');
+    //  TODO  More complicated than 1 by 1 system.
+    int cInd = 0; //  colon index.
+
+    int rInd = 0; //  row-index if needed.
+    String _s = '';
+    List<String> _ol = ['First Item']; //  out-list
+    //  All incoming lists.
+    for (var x = 0; x < _il.length; x++) {
+      //  in-list handle all.
+      //  Items in one list.
+      for (var y = 0; y < _il[x].length; y++) {
+        _s = '';
+        String ts = ''; //  temporary String for padding
+        cInd = cInd + cStep;
+        //  pad string left count: cInd.
+        ts = _s.padLeft(cInd, '_');
+        //  add list item to string, pad right
+        _s = (ts + _il[x][y]);
+
+        ///  is this really needed??
+        int _wl = _il[x][y].length;  //  current item length
+        print(_il[x][y]);
+        //TODO  Right edge is well in line.
+       // ts = _s.padRight((_sw - (_s.length - wl)), '_'); //  to be visible: _
+        ts = _s.padRight((_sw - _wl), '_'); //  to be visible: _
+        _ol.add(ts);
+        //  empty String
+      }
+      cInd +6;  //  extra tick.
+      print(cInd);
+    }
+    _ol.add('.');
+    return _ol;
   }
 
   ///  Just a note, howTo print a map.

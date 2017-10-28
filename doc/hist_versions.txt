@@ -24,8 +24,11 @@ To be published: 6.11.2017
       *  Is it funny?  Yeah!
       *  Is it highly interesting? Yep.
 
-1. Make tools a Class. Lots of changes.
+1. Make tools a Class. Lots of changes. OK.
+X. 3 streams: #order, #chain, fireStream penetrate workFlow layer. OK.
+Y. Base-level activity play; chore using resources for jobs.
 2. Equipment - resource, real use-case with effort available.
+Z. Make devStream act async : devBox before main-end.
 3. #DeepThings; #placard, M-op, #connector
 4. Rumba - small nice output for web. 2 streams to async - then.
 5. Use-case for dartlang - learn.

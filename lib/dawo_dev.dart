@@ -80,6 +80,7 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('5-  Effort class for user-chore-data. and JSON data hndling. ')
       ..add('5-02 Cascades in devNotes and names are now: admN, devN aso.')
       ..add('5-01 All in tools removed inside a new Tool, tl class.')
       ..add('10 In analyzis options file: analyzer: strong-mode: true.')
@@ -190,11 +191,16 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
   ///  Carry the actual List building.
   void devBoxBuild() {
     int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
-
-    String markRow = '____'; //  Widen this later to screen-width.
-    String padMarkRow = markRow.padRight(sW, '_');
-    markRow = padMarkRow;
-    markRow.padRight(sW, '_'); //  (sW, '_');
+    ///  To get nice little header String in top-left corner.
+    String topRim = '_devbox___'; //  Widen this later to screen-width.
+    String botRim = '____'; //  Widen this later to screen-width.
+    String padTopRim = topRim.padRight(sW, '_');
+    String padBotRim = botRim.padRight(sW, '_');
+    topRim = padTopRim;
+    botRim = padBotRim;
+    ///  howTo String:  these two lines has no effect:
+    topRim.padRight(sW, '_'); //  (sW, '_');
+    botRim.padRight(sW, '_'); //  (sW, '_');
 
     ///  build two / three-List in parameter -case box;
     ///  Use forceHeight parameter:
@@ -224,14 +230,14 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
       tuneColumnList(bColonList, columnTwoWidth);
 
       /// Combine short List-rows to #Long-String and add borderMarks.
-      twoBoxL.add(markRow);
+      twoBoxL.add(topRim);
       for (var c = 0; c < twoBoxHeight; c++) {
         String firstData = aColonList[c];
         String secondData = bColonList[c];
         String longS = '$borderS $firstData  $borderS $secondData $borderS ';
         twoBoxL.add(longS);
       }
-      twoBoxL.add(markRow);
+      twoBoxL.add(botRim);
       twoBoxL.forEach(print);
       //  Write it all to StringBuffer;
       _retBuf.writeAll(twoBoxL);
@@ -264,7 +270,7 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
       tuneColumnList(eColonList, columnThreeWidth);
 
       ///  Form the actual matrix for printing.
-      threeBoxL.add(markRow);
+      threeBoxL.add(topRim);
       for (var c = 0; c < threeBoxHeight; c++) {
         String fData = cColonList[c];
         String sData = dColonList[c];
@@ -273,7 +279,7 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
             '$borderS $fData $borderS $sData $borderS $tData $borderS';
         threeBoxL.add(longS);
       }
-      threeBoxL.add(markRow);
+      threeBoxL.add(botRim);
       threeBoxL.forEach(print);
       //  Write it all to StringBuffer;
       _retBuf.writeAll(threeBoxL);
@@ -311,7 +317,7 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
       tuneColumnList(iColonList, columnFourWidth);
 
       ///  Start forming this overly-tight mess of funny data.
-      fourBoxL.add(markRow);
+      fourBoxL.add(topRim);
       for (var c = 0; c < fourBoxHeight; c++) {
         String fData = fColonList[c];
         String gData = gColonList[c];
@@ -321,7 +327,7 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
         //  '| $fData $borderS $gData $borderS $hData $borderS $iData $borderS';
         fourBoxL.add(longS);
       }
-      fourBoxL.add(markRow);
+      fourBoxL.add(botRim);
       fourBoxL.forEach(print);
       //  Write it all to StringBuffer;
       _retBuf.writeAll(fourBoxL);
@@ -374,7 +380,8 @@ class DevMessage {
 // ('New note joined to devStream');
 } //--------------------------------------------------  class end DevMessage
 
-//  Creating instance of (mostly unused) DevMessage class:
+///  Creating instance of (mostly unused) DevMessage class:
+///  dm  would be better.
 var devM = new DevMessage();
 
 ///  Creating Glorious :) DevTest class; implement it as:  new dt()
@@ -499,6 +506,7 @@ class DevHelp {
 //
 
 ///  Renamed class to: devHelp in 0.0.3.
+///  dh  would be nice name.
 var devHelp = new DevHelp();
 
 ///  #howTo do these?

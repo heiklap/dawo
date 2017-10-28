@@ -17,10 +17,11 @@ import 'package:dawo/code_snippets/learn_stream_sync.dart';
 import 'package:dawo/base_lib.dart';
 import 'package:dawo/base_struct.dart';
 import 'package:dawo/chore.dart';
-import 'package:dawo/dawlib_coll.dart';
+
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
+import 'package:dawo/effort.dart';
 import 'package:dawo/missions.dart';
 import 'package:dawo/tools.dart';
 import 'package:dawo/rumba.dart';
@@ -65,6 +66,37 @@ main() {
   out.outBuffersSizes('dawo_example');
   outBuffersPrint('dawo_example', 'no-prevent-printing');
 
+  print('------ calling ------ eff ----------------------- dawo sets, goals:');
+
+  eff.build();
+  eff.makeAllLists();
+  eff.goalL.forEach(print);
+  eff.getDiagonalList();
+  eff.showUserDiagonal();
+
+  print('==<<==<<====      encoded - decoded      ==<<==<<====');
+
+
+  //  encode(Object value, { dynamic toEncodable(object) }) → String
+  //  Converts value to a JSON string.
+
+  //  decode(String source, { dynamic reviver(key, value) }) → dynamic
+  //  Parses the string and returns the resulting Json object.
+  print(encoded);
+  print(encoded.length);
+  print(decoded);
+  print(decoded.length);
+
+  print('- encode: Converts value to a JSON string.::');
+  print(dpIn);
+  print(["dpStart", { "inData": 5 }]);
+  print(dpIn[0]);
+  print(dpIn[1]);
+  print('- decode: Parses the string and returns the resulting Json object::');
+  print(dpOut);
+  print('["dpNext", { "outFormData": 7 }]');
+  print(dpOut[0]);
+  print(dpOut[1]);
   print('==<<==<<====      dawo_example done     ==<<==<<====');
 }
 

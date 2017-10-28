@@ -28,6 +28,8 @@ library dawlib_chore;
 import 'base_struct.dart';
 import 'base_lib.dart';
 import 'dawo_dev.dart';
+import 'effort.dart';
+//  import 'equipment.dart';  //  mission handles equipment
 import 'clay/clay_roll.dart';
 
 ///  using - getters -example
@@ -85,8 +87,8 @@ class CommonChore extends BaseStruct {
 
   ///  Controlling chores state, working-condition-state values.
   bool offB = true;
-  //TODO  purpoted error to find error in build usage.
-  bool erroroInnBX = false; // TODO  temporary, to find error
+  //TODO  deliberated error to find error in build usage.
+  bool errorInBX = false; // TODO  temporary, to find error
   bool onB = false;
   // onB bool;  out temporarily
 
@@ -169,7 +171,7 @@ class CommonChore extends BaseStruct {
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
-  ///  chain, procession, queue, order, order, request, stream, river, flow, rune
+  ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
   void chainStream() {} //  real stream, slow answer.
@@ -350,10 +352,14 @@ StringBuffer renderChore() {
   lowGrant();
   sideGrant();
 
+
   startChore(_roller, _aLog, _xList, _yChore, _zSignal);
   doChore();
   uniteChore();
   endChore();
+
+  //  Enlisted class
+  eff.makeAllLists();
 
   print(ch.infoS);
   return _retBuf;

@@ -89,6 +89,12 @@ void batMobile(var batman, var robin, var joker) {
   print('----------  batMobile might say no to 3.  Joker');
 }
 
+///  :(
+String batMail(){
+  String sender = 'Wayne Enterprise';
+  return 'Greetings from Bstmail!  $sender';
+}
+
 ///  PLAN:  maybe some base-class.. and these three work inside it
 ///  MAYBE:  using dependency injection so plant 3 in one
 void batHome(var batman, var robin, var joker) {

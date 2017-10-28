@@ -18,7 +18,7 @@
 ///  Hist:  hkl  9.10.2013  0.0.1  dawo/lib    daw lib_base.dart
 ///  Returned 10.9.2017 to same idea with empty hands.
 ///
-///  #Word  Stream  34 timed
+///  #Word  Stream  34 times
 ///  Open for all ideas, when seeking common functionality between app / lib /
 ///  classes / process aso.
 ///  NOTE: Problem:  #actor / glbActor; how to handle in sub-processes
@@ -274,8 +274,9 @@ var decisionChain;
 
 ///  ***********************************************************************
 ///  #Word 's for stream-like processes. What 3 words to use?
-///  chain, procession, queue, order, order, request, stream, river, flow, rune
+///  chain, procession, queue, order, request, stream, river, flow, rune
 ///  19.10.2017  adapt this structure everywhere, until find better.
+///  These are upper-level streams, others are inside classes.
 void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
 void chainStream() {} //  real stream, slow answer.
 void fireStream() {} //
