@@ -19,7 +19,7 @@ import 'dawo_dev.dart';
 ///  Collecting Rumba output.
 StringBuffer rumbaBuf = new StringBuffer();
 
-bool pB = false;
+bool _pB = false;
 
 ///
 class Rumba {
@@ -159,7 +159,7 @@ class Rumba {
     print('>>>>>>>>>>>>>>>>>>>>>>  outBuffers  done <<<<<<<<<<<<<<<<<<<< \n');
     //  flowFind(':RUMBA-DANCE:', '->>-', 35);
     //  flowFind(':RUMBA-DANCE:', 'build', 30);
-    if (pB) flowFind(':RUMBA-DANCE:', '-->---->--', 35);
+    if (_pB) flowFind(':RUMBA-DANCE:', '-->---->--', 35);
     dev.doneL.forEach(print);
 
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');

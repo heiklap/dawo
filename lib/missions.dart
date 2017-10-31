@@ -24,9 +24,9 @@ import 'clay/clay_roll.dart';
 ///  Buffer also outside class, for testing and adding visibility.
 var missionBuf = new StringBuffer();
 
-//  TODO  Should all pB variables change private: _pB?
-// bool pB = false; //  Control printing, now:  false;
-bool pB = true; //  true for chore_test.dart;
+//  TODO  Should all _pB variables change private: _pB?
+// bool _pB = false; //  Control printing, now:  false;
+bool _pB = true; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
@@ -38,7 +38,7 @@ List<Mission> missionL = [];
 
 ///  To publish name in scope for testing visibility.
 void helloMission() {
-  flowC('-- Somebody call: hello this is mission file and library  ---', pB);
+  flowC('-- Somebody call: hello this is mission file and library  ---', _pB);
 }
 
 ///  Mission avoids consciously using clear and handy structure of Chore class,
@@ -161,8 +161,8 @@ class Mission {
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
     //
-    flowC('-->-m-->         :M:-b:         $name   -->-m-->  ', pB);
-    flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', pB);
+    flowC('-->-m-->         :M:-b:         $name   -->-m-->  ', _pB);
+    flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', _pB);
     print(':M-build: => :chore.onB:: ');
 
     ///  Should use instance, that is created inside THIS mission instance.
@@ -176,11 +176,11 @@ class Mission {
 
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
-    flowC('-->-m-->    choreL add-all:  $name       ', pB);
+    flowC('-->-m-->    choreL add-all:  $name       ', _pB);
     choreL.addAll(
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
     //  CODE
-    flowC('   <-m--<--       :M:-b:        done  $name     ', pB);
+    flowC('   <-m--<--       :M:-b:        done  $name     ', _pB);
   } //  -----  build
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
@@ -201,9 +201,9 @@ class Mission {
   /// devNote:  function, that OPENS way to use outer resources.
   bool opInit(int openCount, var openThis) {
     ///  use resource, equ class
-    flowC('-->-m-->  :M:op:  opInit ', pB);
-    flowC(':M:op: opInit-info: Get necessary data for op-operations. >>', pB);
-    flowC('>>  :M:op:Resource object-simulations from app upper level.', pB);
+    flowC('-->-m-->  :M:op:  opInit ', _pB);
+    flowC(':M:op: opInit-info: Get necessary data for op-operations. >>', _pB);
+    flowC('>>  :M:op:Resource object-simulations from app upper level.', _pB);
     equ.active = true; //  Resource class activate.
     //  opOn;
     //  opDone;
@@ -216,9 +216,9 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    flowC('  -->-m-->  :M:op:  opOpen  ', pB);
-    flowC('  :M:op: opOpen-info: Open data-tables and resolve queries.>>', pB);
-    flowC('  >>  :M:op: Schedule area-machine-money resources in time.', pB);
+    flowC('  -->-m-->  :M:op:  opOpen  ', _pB);
+    flowC('  :M:op: opOpen-info: Open data-tables and resolve queries.>>', _pB);
+    flowC('  >>  :M:op: Schedule area-machine-money resources in time.', _pB);
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
@@ -227,144 +227,77 @@ class Mission {
   ///  Start developing operation roll function
   ///  Eventually opRoll handles all these others: init-open-close-schedule..
   int opRoll(int rollCount, Function autoRollFunc) {
-    flowC('    -->-m-->  :M:op:  opRoll  ', pB);
-    flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', pB);
-    flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', pB);
+    flowC('    -->-m-->  :M:op:  opRoll  ', _pB);
+    flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', _pB);
+    flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
     int done = 0;
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
       done++;
       autoRollFunc();
     }
-    flowC('    <-m--<--  opRoll done c: $done    ', pB);
+    flowC('    <-m--<--  opRoll done c: $done    ', _pB);
     return done;
   }
 
   ///  Data-table of outside resources grouped in time.  Equipment-class. equ
   void opSchedule() {
-    flowC('--<----<-  :M:op:  opSchedule --<----<-', pB);
-    flowC(':M:op: opSchedule-info: Report for to check data lists. >>', pB);
-    flowC('>> :M:op: opSchedule: ** Not needed when opSchedule is on.**.', pB);
+    flowC('--<----<-  :M:op:  opSchedule --<----<-', _pB);
+    flowC(':M:op: opSchedule-info: Report for to check data lists. >>', _pB);
+    flowC('>> :M:op: opSchedule: ** Not needed when opSchedule is on.**.', _pB);
 
     ///  Call equ class and it's allocate method to get resource List
     List<String> _resAllocL = [];
     equ.init(':M:opSchedule');
     _resAllocL.addAll(equ.allocate(36, 40)); //  width var not used yet.
-    /*
-    print('*************  resAllocL  ************************');
-    print(_resAllocL.length);
-    _resAllocL.forEach(print);
-    print('*************  resAllocL  ************************');
-    */
-    ///  From fixed length list to fill screen;
-    ///  TODO  These special ASCII marks are ugly and take more space.
-    //  String _s176 = '░'; //  low-density mark, too ugly and not nice.
-    //  String _s177 = '▒'; //  high density
     int _sw = 195; //  screen width
     int _rc = 40; //  row count
-    //  too complicated, I guess.
-    List<String> _matrix = new List(_rc);  //  TODO  Why not make certain length list?
-    //  add row-numbers to matrix. Next operation ruins this. lol
-      //  for (var x = 0; x < _rc + 0; x++) {
-      //  String _s = x.toString();
-      //  _matrix.add('$_s ');  //  TODO Next loop rolls all changes.
-      //  }
-    //  to get row numbers.
+    List<String> _matrix = new List(_rc);
     int _count = 100;
-    //  do not handle first row.
     for (var z = 1; z < _matrix.length; z++) {
-      //  String __s176 = '░';
+      //  do not handle first row.
       _count++;
       String _countS = _count.toString(); //  not used.
       //  TODO  choose nice background mark for matrix.
       _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
-
     }
     _matrix[0] =
-    '--m-schedule---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+        '--m-schedule---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+
     ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
     _matrix[_rc - 1] =
         '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
-    ///  Add padLeft & padRight Strings to make this common.
-    ///  Pad List right and left with ' ' and make all even length
-    List<String> padListRL(List<String> _l) {
-      //  Using here new Tools, tl class.
-      int long = tl.longestItemInList(_l);
-      //  looks funny, surely we can make better :)
-      for (var x = 0; x < _l.length; x++) {
-        //  int itemLength = _l.length;  //  length NOW
-        String _thisItem = _l[x];
-        String _s = (' $_thisItem');
-        String _ss = _s.padRight(long + 2, ' ');
-        _l[x] = _ss;
-        //  Pad every item right with ' ' to length of the longest item.
-      }
-      return _l;
-    }
-
-    //  Move to tools when ready.
+    _matrix.forEach(print);
     //  Fill list-data in matrix in r, _c coordinates.
+    //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
     void anchorBox(int _r, int _c, List __l) {
-      List<String> _l = [];
-      _l.addAll(padListRL(__l));
-      //  supposing list items are all same length.
-      //  int _lc = _l.length;
-      //  int _lw = 0;  //  in future we use List-common-item-length.
-      int _count = _l.length;
-      for (var x = 0; x < _count; x++) {
-        //  String _sS = '';
-        String _s1 = _matrix[_r].substring(0, _c);
-        //  print(_s1);
-        String _s2 = _l[x]; //  current list value.
-        //  print(_s2);
-        int itemLength = _l[x].length;
-        //  print(itemLength);
-        int matrixRowLength = _matrix[_r].length;
-        String _s3 = _matrix[_r].substring(_c + itemLength, matrixRowLength);
-        //  print(_s3);
-        //  print(' Here we go: $_s1$_s2$_s3 ');
-        //  print('$_s1$_s2$_s3');
-        _matrix[_r] = '$_s1$_s2$_s3';
-        _r++; //  next row.
-      }
-      //  print(' ------------  anchorBox done   ---------------------');
+      tl.boxInList(_r, _c, __l, _matrix);
+      print(_matrix);
     }
 
-    ///  Simulated lists:
     anchorBox(3, 5, [
       '**  Mission-op development experience; common usable stuff',
       '**  Presenting available objects in scope.  **'
     ]);
-
     anchorBox(6, 5, ['IDEA:', 'IDEA:', 'NOTE:', 'NOTE:']);
     anchorBox(3, 80, equ.officeCities);
-
     anchorBox(12, 10, equ.areas);
-
     anchorBox(10, 82, equ.cars);
-
     anchorBox(26, 8, equ.weekDays);
-
     anchorBox(22, 60, equ.months);
-
     anchorBox(33, 44, equ.programAreas);
-
     anchorBox(1, 123, _resAllocL);
-    //  Usable resources:
-    //  toolsActiveM
-    //  toolsSpeedM
-    //  status
-
+    //  Usable resources: toolsActiveM, toolsSpeedM,status
     _matrix.forEach(print);
-  }  //  -----  opSchedule
+  } //  -----  opSchedule
 
   /// devNote:  function, that CLOSES it's object.
   /// idea?
   int opClose(int openCount, Function openThis) {
     equ.active = false;
-    flowC('--<----<-  :M:op:  opClose --<----<-', pB);
-    flowC(':M:op: opClose-info: End lof mission-op operation. >>', pB);
-    flowC('>>  :M:op: **  Statistics ready, save next-round data. **.', pB);
+    flowC('--<----<-  :M:op:  opClose --<----<-', _pB);
+    flowC(':M:op: opClose-info: End lof mission-op operation. >>', _pB);
+    flowC('>>  :M:op: **  Statistics ready, save next-round data. **.', _pB);
 
     int _openCount = openCount;
     openThis(); // As I recall, parameter-function goes like this.
@@ -374,9 +307,10 @@ class Mission {
 
   ///  give report of op statistics
   void opReport() {
-    flowC('  --<----<-  :M:op:  opReport --<----<-', pB);
-    flowC('  :M:op: opReport-info: Report for to check data lists. >>', pB);
-    flowC('  >>  :M:op: opReport: ** Not needed when opSchedule is on.**.', pB);
+    flowC('  --<----<-  :M:op:  opReport --<----<-', _pB);
+    flowC('  :M:op: opReport-info: Report for to check data lists. >>', _pB);
+    flowC(
+        '  >>  :M:op: opReport: ** Not needed when opSchedule is on.**.', _pB);
     List<String> _l = [];
     List<String> _l2 = [];
     _l.addAll(tl.bufToList(out.outTMid));
@@ -500,7 +434,7 @@ void missionChoreReport(String caller) {
 ///  Add clay ( data ) maps to missions.
 ///  TODO  Messy function buildMissions.  Clean, organize it.
 void buildMissions(String caller) {
-  flowC('-->-m--> build Missions, caller: $caller   ', pB);
+  flowC('-->-m--> build Missions, caller: $caller   ', _pB);
   dev.admN.add('>>ADM:CHECK-IN  build-Missions  >>');
 
   ///  Start of new dawoMission.
@@ -534,16 +468,16 @@ void buildMissions(String caller) {
   ]);
 
   /// .build adds default Chore's to missions
-  flowC('-->-m-->    missionL forEach print-choreL   -->-m-->  ', pB);
+  flowC('-->-m-->    missionL forEach print-choreL   -->-m-->  ', _pB);
 //  hklTry   missionL.forEach((x) => x.build);
   //  missionL.forEach(print);  //  =>  Instance of 'Mission'
 
   ///  Calling mission-chore report
-  if (pB) missionChoreReport('By: MissionBuildMissions');
+  if (_pB) missionChoreReport('By: MissionBuildMissions');
 
-  flowC('  <-m--<--  missionL forEach print-choreL   done   <-m--<--', pB);
+  flowC('  <-m--<--  missionL forEach print-choreL   done   <-m--<--', _pB);
 
-  flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', pB);
+  flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', _pB);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
   packDawoMission.build();
   helsinkiMission.build();
@@ -552,9 +486,9 @@ void buildMissions(String caller) {
   myTimeMission.build();
   nationalParksMission.build();
 //  };
-  flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- ', pB);
+  flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- ', _pB);
   //  TODO  make mission-chore report
-  if (pB) {
+  if (_pB) {
     for (var x in missionL) {
       String _misName = x.name;
       print('mis-name:  $_misName ');
@@ -565,7 +499,7 @@ void buildMissions(String caller) {
     }
   }
 
-  flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- ', pB);
+  flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- ', _pB);
 } //  -----  buildMissions
 
 ///  Creating instance of Mission and using it's methods.
@@ -581,5 +515,5 @@ void renderMission() {
   missionR.toChore(missionR.choreL[1]);
 
   missionR.rollCount;
-  flowC('--  mission: $missionR.name : render done  --', pB);
+  flowC('--  mission: $missionR.name : render done  --', _pB);
 }

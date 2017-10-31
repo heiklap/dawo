@@ -18,7 +18,7 @@ import 'dart:convert';
 import 'package:dawo/tools.dart';
 
 ///  Mediating this value to getter, that counts sum of these.
-num effortReadiness = 93;
+num effortReadiness = 10;
 
 ///  **************   JSON  example material      **************************
 ///  #QUEST : howTo mediate incoming data to user in JSON format?
@@ -28,13 +28,20 @@ num effortReadiness = 93;
 
 ///  decode(String source, { dynamic reviver(key, value) }) → dynamic
 ///  Parses the string and returns the resulting Json object.
-///  Example: Simulating user imported data with: JSON.  //  iun dart:convert
+///
+/// Class from json:   Type t = Animal;
+//  new t.fromJson(...);
+///  Example: Simulating user imported data with: JSON.  //  in dart:convert
 ///  #dartFMT has funny way to write JSON
 var encoded = JSON.encode([
   1,
   2,
   {"a": null}
 ]);
+
+///  output: [1,2,{"a":null}]  length:  16
+
+///  output:  [foo, {bar: 499}]  length:  2
 var decoded = JSON.decode('["foo", { "bar": 499 }]');
 
 var dpIn = JSON.encode([
@@ -42,8 +49,8 @@ var dpIn = JSON.encode([
   {"inData": 5}
 ]);
 var dpOut = JSON.decode('["dpNext", { "outFormData": 7 }]');
-///  **************   JSON  example material      **************************
 
+///  **************   JSON  example material      **************************
 
 ///  howTo: howToMap:  Common method to print a map.  HowToPrintMap:
 void effortOperationMapPrint(Map thisMap) {
@@ -56,6 +63,9 @@ void effortOperationMapPrint(Map thisMap) {
 ///  for chore.  Common resources are in equ with mission.
 ///  Effort is working-screen for user, with in and out-data.
 class Effort {
+  String name = 'Chore-Effort class.';
+  String motto = 'User activity and datain-out functionality in Chore.';
+
 //  team-howTo add map fields to list...   example
 //  info('next: adding map keys to list:  ');
 //  dartMap.forEach((k, v) { myValuesLists.add(v); });
@@ -64,7 +74,7 @@ class Effort {
 
   ///  Initializing some Lists. No. Lists are more simple.
 //  LinkedHashSet<String> goalL = new LinkedHashSet.from(['a', 'b', 'c']);
-///  User-data to control and describe work with chore.
+  ///  User-data to control and describe work with chore.
   List<String> goalL = new List(); //  No.    LinkedHashSet();
   List<String> planL = new List();
   List<String> phaseL = new List();
@@ -84,7 +94,8 @@ class Effort {
       ..add('Github  clean')
       ..add('HTML  Pages')
       ..add('TO-DOs check');
-    goalL.forEach(print);
+    //  goalL.forEach(print);  //  want it in one row:
+    print(goalL);
   }
 
   /// adding data to List
@@ -94,7 +105,8 @@ class Effort {
       ..add('Accepted schema')
       ..add('W o r k  scheduled')
       ..add('W o r k  started');
-    planL.forEach(print);
+    //  planL.forEach(print);
+    print(planL);
   }
 
   /// adding data to List
@@ -106,7 +118,8 @@ class Effort {
       ..add('phaseLtart')
       ..add('PhaseIn')
       ..add('PhaseDone');
-    phaseL.forEach(print);
+    //  phaseL.forEach(print);
+    print(phaseL);
   }
 
   ///  Every team might have it's saying on subjects.
@@ -115,11 +128,12 @@ class Effort {
     teamActL
       ..add('teamAdmAct')
       ..add('teamDevAct')
-      ..add('teamEduact')
-      ..add('teamHowToact')
+      ..add('teamEduAct')
+      ..add('teamHowToAct')
       ..add('teamInnoAct')
       ..add('teamNextAct');
-    teamActL.forEach(print);
+    //  teamActL.forEach(print);
+    print(teamActL);
   }
 
   ///  Function for adding data to this List.
@@ -131,12 +145,13 @@ class Effort {
       ..add('Adagio    hitaasti ')
       ..add('Andante   käyden ')
       ..add('Allegro   nopeasti');
-    tempoL.forEach(print);
+    //  tempoL.forEach(print);
+    print(tempoL);
   }
 
   ///  Rendering and presenting user-data Lists.
   void makeAllLists() {
-    print('-- show of eff, effort class  -------- dawo Lists, goalL:');
+    print('- >> - show of eff, effort class  -------- dawo Lists, -------');
     print('----------------- eff ----------------------- dawo Lists, goalL:');
     makeGoalL();
 
@@ -152,7 +167,8 @@ class Effort {
     print('---------------------- eff --------------------------    tempoL:');
     makeTempoL();
 
-    print('---------------------- eff ------------------------------------');
+    print(
+        '-- <<<<  ----------------- eff ------------------------------------');
   }
 
   ///  Get diagonal presentation of all user-data Lists
@@ -167,7 +183,7 @@ class Effort {
   }
 
   void getDiagonalList() {
-    print('......................... effort : chore-user-data  ...........');
+    print('\n .. >>  ................. effort : chore-user-data  ...........');
 
     List<String> idl = [];
 
@@ -175,7 +191,7 @@ class Effort {
     idl.addAll(tl.iterableDiagonal(effortL, 205));
     print(idl.length);
     idl.forEach(print);
-    print('.................. effort done : chore-user-data  ......');
+    print('.... << .......... effort : chore-user-data  done   ...... \n');
   }
 
   ///  **************   JSON  example material      **************************
@@ -184,9 +200,9 @@ class Effort {
     "dpEncFirst",
     {"outBeginData": 3},
     "dpEncSecond",
-    {"outBrginData": 4},
+    {"outBeginData": 4},
     "dpEncThird",
-    {"outBrginData": 5}
+    {"outBeginData": 5}
   ]);
   var furyJSONEnc = JSON.encode([
     "dpEncNext",

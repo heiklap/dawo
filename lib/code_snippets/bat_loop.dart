@@ -90,7 +90,7 @@ void batMobile(var batman, var robin, var joker) {
 }
 
 ///  :(
-String batMail(){
+String batMail() {
   String sender = 'Wayne Enterprise';
   return 'Greetings from Bstmail!  $sender';
 }

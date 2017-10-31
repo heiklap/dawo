@@ -7,6 +7,41 @@
 
 library packDawo;
 
+import 'dart:convert';
+
+///  Three classes that are used in JSON play.
+class PackDawoHook {
+  String name = 'This is class PackDawoHook';
+}
+
+var packDawoHook = new PackDawoHook();
+
+String dawoHook() {
+  return 'This is dawo-hook';
+}
+
+String dawoPole() {
+  return 'This is a dawo pole';
+}
+
+String dawoFlag() {
+  return 'This is a dawo flag';
+}
+
+///
+class PackDawoPole {
+  String name = 'This is class PackDawoPole';
+}
+
+var packDawoPole = new PackDawoPole();
+
+///
+class PackDawoFlag {
+  String name = 'This is class PackDawoFlag';
+}
+
+var packDawoFlag = new PackDawoFlag();
+
 ///
 class PackDawo {
   String name = 'Develop dawo package';
@@ -94,4 +129,57 @@ class PackDawo {
       'Version 0.0.5': vers005,
     });
   }
+}
+
+///  sample data from: http://json-schema.org/example/card.json
+var packDawoJSON = {'name': '', 'skill': 'dart', 'level': 'good'};
+
+///  sample data from: http://json-schema.org/example/card.json
+var tempoJSON = {'name': '', 'skill': 'dart', 'level': 'good'};
+
+///  sample data from: http://json-schema.org/example/card.json
+var moodJSON = {'name': '', 'mood': 'dart', 'level': 'good'};
+
+///  sample data from: http://json-schema.org/example/card.json
+var profitJSON = {'name': '', 'skill': 'dart', 'level': 'good'};
+
+var learnToLoveJSON = {
+  'use': 'Use it regularly',
+  'learn': 'Basics',
+  'dogfood': 'Eat it'
+};
+
+var responseJSON = {
+  "status": 1,
+  "content": {"sessionid": "4c86cf1acac07811db6ec670e0b9cdd2"}
+};
+
+///  model from #Wikipedia
+/*
+//TODO  quest: howTo do JSON.decode when String is in many rows?
+var dawoMenu = JSON.decode('[
+  "menu" : {
+    "id": "file",
+    "value": "File",
+    "dragdown": {
+      "menuitem": [
+        {"value": "New", "onclick": "CreateNewDoc()"},
+        {"value": "Open", "onclick": "OpenDoc()"},
+        {"value": "Close", "onclick": "CloseDoc()"}
+      ]
+    },
+    "popup": {
+      "menuitem": [
+        {"value": "New", "onclick": "CreateNewDoc()"},
+        {"value": "dawoHook()", "onclick": "dawoFlag()"},
+        {"value": "Open", "onclick": "OpenDoc()"},
+        {"value": "Close", "onclick": "CloseDoc()"}
+      ]
+    }
+  }
+]');
+*/
+
+void renderDawoMenu() {
+  //  dawoMenu.menu.popup.menuitem[1].value;
 }

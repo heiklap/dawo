@@ -26,7 +26,7 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 
 ///  Buffer also outside class, for testing and adding visibility.
 var appBuf = new StringBuffer();
-bool pB = false; //  No printing now.
+bool _pB = false; //  No printing now.
 
 ///  Test: Just for testing private variable inside a library.
 String _privacyLibraryTest = 'Testing library / part privacy';
@@ -88,10 +88,10 @@ class DawoApp extends BaseStruct {
     //  TODO  Actor:  only one actor for now...
     glb.changeActor(':DAWO-APP:');
     //  TODO  Set some field values.
-    flowC('  -->-da->  DawoApp buffer output initialized  ---', pB);
+    flowC('  -->-da->  DawoApp buffer output initialized  ---', _pB);
 
     //  Set fields values.
-    flowC('  --<-da-<    :da:b: init done', pB);
+    flowC('  --<-da-<    :da:b: init done', _pB);
   }
 
   ///  Method for setting class in working condition.
@@ -130,7 +130,7 @@ class DawoApp extends BaseStruct {
     out.outBl.writeln('* * * : my-music-stuff :  -dawoApp-build:  * * * ');
     out.outBr.writeln('* * * : my-time stuff :  -dawoApp-build:  * * * ');
     out.outFooter.writeln('* * * :nat-parks stuff: -dawoApp-build:  * * * ');
-    flowC('  --<-da-<  :da:b:  build done', pB);
+    flowC('  --<-da-<  :da:b:  build done', _pB);
   }
 
   ///  #run-like method
@@ -186,7 +186,7 @@ class DawoApp extends BaseStruct {
       ..add(':Ar:  #encrypt ed notes not allowed.');
 
     //  build already does this  dev.buildNotes();
-    flowC(':da:b: DawoApp::roll    $infoS   :: roll engaged ', pB);
+    flowC(':da:b: DawoApp::roll    $infoS   :: roll engaged ', _pB);
 
     init(); //  calling init and build methods in this class
     build(':DAWO-APP:', 'DAWO-APP-MASTER:');
@@ -205,26 +205,26 @@ class DawoApp extends BaseStruct {
   ///  Roll missions in missionL AND every chore in them.
   void appRollMissions(String caller) {
     String _msg = '-->-da-> app rollMissions  C: $caller -->>-->>----';
-    flowC('$_msg', pB);
+    flowC('$_msg', _pB);
     // roll BLib-class (mission) actually List of missions!
-    flowC('  ***  DAWO-APP  MISSIONS   ***  ', pB);
+    flowC('  ***  DAWO-APP  MISSIONS   ***  ', _pB);
     buildMissions('C:dawoApp ');
 
-    ///  TODO Detail printing set false: pB; make better, global solution.
+    ///  TODO Detail printing set false: _pB; make better, global solution.
     ///  TODO  Make mission-report return list, for box-output.
     ///  TODO  buildDawo mission
     ///  Added 3. parameter, forceHeight
     ///  NOTE packDawo gets map printed.
     List list1 = packDawoMission.report('C:dawoApp-:rM:', true);
-    List list2 = helsinkiMission.report('C:dawoApp-:rM:', pB);
+    List list2 = helsinkiMission.report('C:dawoApp-:rM:', _pB);
     devBox('By; dawoApp-:rM:', [list1, list2], 9);
 
-    List list3 = dartlangMission.report('C:dawoApp-:rM:', pB);
-    List list4 = myMusicMission.report('C:dawoApp-:rM:', pB);
+    List list3 = dartlangMission.report('C:dawoApp-:rM:', _pB);
+    List list4 = myMusicMission.report('C:dawoApp-:rM:', _pB);
     devBox('By; dawoApp-:rM:', [list3, list4], 9);
 
-    List list5 = myTimeMission.report('C:dawoApp-:rM:', pB);
-    List list6 = nationalParksMission.report('C:dawoApp-:rM:', pB);
+    List list5 = myTimeMission.report('C:dawoApp-:rM:', _pB);
+    List list6 = nationalParksMission.report('C:dawoApp-:rM:', _pB);
     devBox('By; dawoApp-:rM:', [list5, list6], 9);
 
     ///  Loop for handling user-actions in Missions.
@@ -235,7 +235,7 @@ class DawoApp extends BaseStruct {
     //  code
     //  endLoop
 
-    flowC('      --<----<-- app rollMissions  C: $caller --<----<--', pB);
+    flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
     // roll all chores, that are in mission
   }
 
@@ -243,7 +243,7 @@ class DawoApp extends BaseStruct {
   ///  DONE Adding caller-parameter
   ///  TODO  WHO IS CALLING THIS ?  Nobody
   void devStream(String caller) {
-    flowC('--- :stream:beg dawoApp rollStream started by: $caller    ---', pB);
+    flowC('--- :stream:beg dawoApp rollStream started by: $caller    ---', _pB);
     flowC(
         '--- :stream:beg dawoApp rollStream started by: $caller    ---', true);
     // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
@@ -252,7 +252,7 @@ class DawoApp extends BaseStruct {
         ':dawoApp:d-s', [agenda, msg, develop, version, msg], 'appListener');
     commonStream(
         ':dawoApp:d-s', ['First Book', 'My Book', 'Third Book'], 'appListener');
-    flowC('--- :stream:end dawoApp rollStream done     ---', pB);
+    flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
   }
 
   ///  calling base>_lib commonStream, elementary Stream example
@@ -260,7 +260,7 @@ class DawoApp extends BaseStruct {
   ///  #TODO  make this use #iterable parameter; dev.admN / where #ALL
   ///
   void rollStream(String _cl) {
-    flowC('--- :stream:beg dawoApp rollStream started by: $_cl    ---', pB);
+    flowC('--- :stream:beg dawoApp rollStream started by: $_cl    ---', _pB);
     // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     commonStream(
@@ -283,12 +283,12 @@ class DawoApp extends BaseStruct {
 
     commonStream(':dawoApp-r:s:ADM:', _queryL, 'appListener');
     //  TODO Stream: meaningful : streams from doneL / devN important
-    flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', pB);
+    flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }
 
   ///  Show-method to be developed further.
   void show() {
-    if (pB) {
+    if (_pB) {
       print(buf);
       print('-->>-->>----  dawoApp show -->>-->>----');
       print(out.outTr);
@@ -298,7 +298,7 @@ class DawoApp extends BaseStruct {
 
   ///  After presentation method; done, if #doneB.
   void done() {
-    flowC('-->-da->  DawoApp.done    $infoS   :: engaged ', pB);
+    flowC('-->-da->  DawoApp.done    $infoS   :: engaged ', _pB);
     out.outTl.writeln('out.outTl-dawoApp-done:');
     out.outTMid.writeln('out.outMid-dawoApp-done:');
     out.outTr.writeln('out.outTr-dawoApp-done:');
@@ -309,9 +309,9 @@ class DawoApp extends BaseStruct {
     out.outBr.writeln('out.outBr-dawoApp-done:');
     out.outFooter.writeln('out.outFooter-dawoApp-done:');
     //  code here
-    flowC('  --<-da-<  :da:b: --  DawoApp buffer output app: done  --', pB);
-    if (pB) print(buf);
-    //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', pB);
+    flowC('  --<-da-<  :da:b: --  DawoApp buffer output app: done  --', _pB);
+    if (_pB) print(buf);
+    //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', _pB);
   }
 
   DawoApp(this.name, this.agenda);

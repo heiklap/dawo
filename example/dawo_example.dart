@@ -66,11 +66,11 @@ main() {
   out.outBuffersSizes('dawo_example');
   outBuffersPrint('dawo_example', 'no-prevent-printing');
 
-  print('------ calling ------ eff ----------------------- dawo sets, goals:');
+  print('- >>  ----- calling ------ eff ------------- dawo sets, goals:');
 
   eff.build();
   eff.makeAllLists();
-  eff.goalL.forEach(print);
+
   eff.getDiagonalList();
   eff.showUserDiagonal();
 
@@ -82,8 +82,10 @@ main() {
 
   //  decode(String source, { dynamic reviver(key, value) }) → dynamic
   //  Parses the string and returns the resulting Json object.
+  print('encoded:: ');
   print(encoded);
   print(encoded.length);
+  print('decoded::');
   print(decoded);
   print(decoded.length);
 
@@ -97,6 +99,8 @@ main() {
   print('["dpNext", { "outFormData": 7 }]');
   print(dpOut[0]);
   print(dpOut[1]);
+
+
   print('==<<==<<====      dawo_example done     ==<<==<<====');
 }
 

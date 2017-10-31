@@ -44,7 +44,7 @@ int flowI = 0; //  flow-counter.
 
 ///  buffer also outside class, for testing and adding visibility
 var baseLibBuf = new StringBuffer();
-bool pB = false; //  Control console-printing.
+bool _pB = false; //  Control console-printing.
 
 String baseLibMotto = 'Serving common reusable resources to users.';
 
@@ -262,8 +262,8 @@ void flowFind(String caller, String _fs, int len) {
   print(flowList.length);
   print('lllllllllllllllllllllllll  flowList  c: $caller  done lllllllllll');
 
-  // No for Map   if (pB) outBufM.forEach(print); //  Not output for now.
-  if (pB)
+  // No for Map   if (_pB) outBufM.forEach(print); //  Not output for now.
+  if (_pB)
     out.outBufM.forEach((k, v) => print('$k, $v')); //  Not output for now.
 }
 

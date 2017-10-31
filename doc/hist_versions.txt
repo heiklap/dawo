@@ -235,6 +235,8 @@ equ class:  table
 
 circulating messages / events: #bus, #stop
 
+#pole  : marking meetPoint for sync and async events.
+
 
 
 

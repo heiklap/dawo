@@ -60,14 +60,6 @@ class Tools {
     print(_l[0]);
     String s;
     StringBuffer sBuf = new StringBuffer();
-    /*  TODO  #Error in HTML launch: try decent for-clause
-  for (var x in _l) {
-    print(_l[x]);   //  Error:
-    sBuf.write(_l[x]);
-    sBuf.write(' ');
-  }
-  */
-    //  TODO  hklTry to use decent for-clause
     for (var x = 0; x < _l.length; x++) {
       print(_l[x]);
       sBuf.write(_l[x]);
@@ -77,15 +69,59 @@ class Tools {
     return s;
   }
 
+  ///  Add padLeft & padRight Strings to make this common.
+  ///  Pad List right and left with ' ' and make all even length
+  void padListRL(List<String> _l) {
+    //  Using here new Tools, tl class.
+    int long = tl.longestItemInList(_l);
+    //  looks funny, surely we can make better :)
+    for (var x = 0; x < _l.length; x++) {
+      //  int itemLength = _l.length;  //  length NOW
+      String _thisItem = _l[x];
+      String _s = (' $_thisItem');
+      String _ss = _s.padRight(long + 2, ' ');
+      _l[x] = _ss;
+      //  Pad every item right with ' ' to length of the longest item.
+    }
+  }
+
+  //  Fill list-box-data in matrix in r, _c coordinates.
+  void boxInList(int _r, int _c, List<String> boxL, List<String> _mL) {
+    print('-----  box in list starting  ---------');
+    padListRL(boxL);
+
+    print(_mL);
+    print(boxL);
+    print('------- done pad  -----------');
+
+    int _count = boxL.length;
+    print(_count);
+    for (var x = 0; x < _count; x++) {
+      String _s1 = _mL[_r].substring(0, _c);
+      boxL.forEach(print);
+      print(_s1);
+      String _s2 = boxL[x]; //  current list value.
+      print(_s2);
+      int itemLength = boxL[x].length;
+      int matrixRowLength = _mL[_r].length; // ?
+      String _s3 = _mL[_r].substring(_c + itemLength, matrixRowLength);
+      print(_s3);
+      _mL[_r] = '$_s1$_s2$_s3';
+      print(_mL[_r]);
+      _r++;
+      print('------- done row  -----------');
+    }
+  } //  -----  boxInList
+
   ///  Screen-sized matrix pierced with staggered list elements.
   List<String> iterableDiagonal(List<List<String>> _il, int sw) {
     int _sw = sw; //  screen width.
     int _ilC = countInnerList(_il); //  serves also as row-count.
-    print('------------  counted inner list length ---------------------');
-    int cStep = ((sw- 50) ~/_ilC  );  //  spread info to screen.
-    print(_ilC);
-    print(':tl: Step: $cStep');
-    print('------------  counted inner list length  done  --------------');
+    print('- >->- _tl:-id: ------  counted inner list length -------------');
+    int cStep = ((sw - 50) ~/ _ilC); //  spread info to screen.
+    print('InnerList-length::  $_ilC');
+    print(':tl:-id:   Step: $cStep');
+    print('- <-<- -------  counted inner list length  done  ------------');
     //  TODO  More complicated than 1 by 1 system.
     int cInd = 0; //  colon index.
 
@@ -106,17 +142,17 @@ class Tools {
         _s = (ts + _il[x][y]);
 
         ///  is this really needed??
-        int _wl = _il[x][y].length;  //  current item length
+        int _wl = _il[x][y].length; //  current item length
         print(_il[x][y]);
-        //TODO  Right edge is well in line.
-       // ts = _s.padRight((_sw - (_s.length - wl)), '_'); //  to be visible: _
-        ts = _s.padRight((_sw - _wl), '_'); //  to be visible: _
+        // ts = _s.padRight((_sw - (_s.length - wl)), '_'); //  to be visible: _
+        ts = _s.padRight((_sw), '_'); //  to be visible: _
         _ol.add(ts);
         //  empty String
-      }
-      cInd +6;  //  extra tick.
-      print(cInd);
-    }
+      } //  ---------------    Items in one list.
+      cInd + 6; //  extra tick.
+      print('cInd::  $cInd');
+      _ol.add('.');
+    } //  -----------------    All incoming lists.
     _ol.add('.');
     return _ol;
   }

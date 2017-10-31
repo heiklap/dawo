@@ -80,7 +80,8 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
-      ..add('5-  Effort class for user-chore-data. and JSON data hndling. ')
+      ..add('5  Splitted opSchedule functions parts to tools.')
+      ..add('5-  Effort class for user-chore-data. And JSON data handling. ')
       ..add('5-02 Cascades in devNotes and names are now: admN, devN aso.')
       ..add('5-01 All in tools removed inside a new Tool, tl class.')
       ..add('10 In analyzis options file: analyzer: strong-mode: true.')
@@ -97,7 +98,10 @@ class Dev {
       ..add('Older:');
 
     admN
-      ..addAll(['adm: #Principle: do not mess, keep it simple.', 'schedule : meeting thursday.'])
+      ..addAll([
+        'adm: #Principle: do not mess, keep it simple.',
+        'schedule : meeting thursday.'
+      ])
       ..addAll(
           ['adm: Must be strict all the time.', 'Keep good care of people.'])
       ..addAll([
@@ -198,6 +202,7 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
     String padBotRim = botRim.padRight(sW, '_');
     topRim = padTopRim;
     botRim = padBotRim;
+
     ///  howTo String:  these two lines has no effect:
     topRim.padRight(sW, '_'); //  (sW, '_');
     botRim.padRight(sW, '_'); //  (sW, '_');
