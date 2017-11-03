@@ -23,7 +23,7 @@ void main() {
   myMission.opOpen(2, 'second empty parameter');
   myMission.opRoll(3, helloMission);
 
-  myMission.opSchedule();
+  myMission.opSchedule(':t-m:');
   myMission.opReport();
   //  Close is last one in row.
   myMission.opClose(6, helloMission);

@@ -375,7 +375,7 @@ void flowC(String msg, bool p) {
 ///  Using new outBufM Map
 ///  TODO  Make this show in proper screen areas with devBox.
 void outBuffersPrint(String caller, String notCalled) {
-  print('\n -->>-->>----  :D-A:   out.outBuffers  by: $caller  -->>-->>-- ');
+  print(' -->>-->>----  :D-A:   out.outBuffers  by: $caller  -->>-->>-- ');
   int i = 0;
   int mLength = out.outBufM.length;
   for (var x = 0; x < mLength; x++) {
@@ -388,7 +388,7 @@ void outBuffersPrint(String caller, String notCalled) {
     print('* * * * * * * * * *    $_bufNameS   done  * * * * * * *  ');
   }
 
-  print('     --<<--<<----  :D-A:   out.outBuffers  C: $caller  done  \n');
+  print('     --<<--<<----  :D-A:   out.outBuffers  C: $caller  done ');
 }
 
 //

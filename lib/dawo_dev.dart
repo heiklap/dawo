@@ -94,8 +94,7 @@ class Dev {
       ..add(
           'flowserve: added flowI event counter. In base_lib: flowI. 10.10.17')
       ..add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.')
-      ..add('Older:')
-      ..add('Older:');
+      ..add('Info about older notes should apper in lists.');
 
     admN
       ..addAll([

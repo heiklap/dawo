@@ -15,6 +15,7 @@ library rumba.dart;
 import 'base_lib.dart';
 import 'base_struct.dart';
 import 'dawo_dev.dart';
+import 'tools.dart';
 
 ///  Collecting Rumba output.
 StringBuffer rumbaBuf = new StringBuffer();
@@ -142,12 +143,12 @@ class Rumba {
     rumbaBuf.write(devBox('By:RUMBA-DANCE:', [dev.admN, dev.devN], 0));
     rumbaBuf
         .write(devBox('By:RUMBA-DANCE:', [dev.innoN, dev.howToN, dev.secN], 0));
-    print('------  one more funny list test   ------');
+    print('--:R:----  one more funny list test   ------');
     //  TODO  add all boxes to rumbaBuf.
     devBox('T', [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
 
     var _ll = out.outBufListsForBox();
-    print('\n >>>>>>>>>>>>>>>>>>>>>>  outBuffers  <<<<<<<<<<<<<<<<<<<<<<<<<');
+    print('\n -:R:--->>-->>-->>  outBuffers    --->>-->>-->>-->>--');
     rumbaBuf.write(devBox('T', [_ll[1], _ll[2], _ll[3]], 32));
     print(' ');
     devBox('T', [_ll[4], _ll[5], _ll[6]], 0);
@@ -156,12 +157,12 @@ class Rumba {
 
     ///  Header and footer from out-buffers-
     devBox('T', [_ll[0], _ll[9]], 0);
-    print('>>>>>>>>>>>>>>>>>>>>>>  outBuffers  done <<<<<<<<<<<<<<<<<<<< \n');
+    print('--<<--;R:--<<--<<  outBuffers  done --<<--<<--<<--<<-- \n');
     //  flowFind(':RUMBA-DANCE:', '->>-', 35);
     //  flowFind(':RUMBA-DANCE:', 'build', 30);
     if (_pB) flowFind(':RUMBA-DANCE:', '-->---->--', 35);
-    dev.doneL.forEach(print);
 
+    tl.listShow(dev.doneL, ':R:');
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
 
     return rumbaBuf;

@@ -49,33 +49,33 @@ main() {
   // This also returns a StringBuffer.
   rumba.dance(dawoApp);
   print('==<<==roll mission op/ init -open - roll: -close    ==<<==<');
-
-  void helloMission() => print('hello Mission!');
-  print('  rolling mission op-functions  ');
+  //  TODO  Better hello-function, to do something real.
+  void helloMission() => print(':d:exmpl: * *   Mission!  Message-bus.  * * ');
+  print('\n -:d-ex: -----------  rolling mission op-functions ------------- ');
 
   ///  Eventually opRoll handles all these others.
   packDawoMission.opInit(1, 'empty parameter');
   packDawoMission.opOpen(2, 'second empty parameter');
   packDawoMission.opRoll(3, helloMission);
   packDawoMission.opClose(4, helloMission);
-  packDawoMission.opSchedule();
   packDawoMission.opReport();
+  print(' -:d-ex: -----------  rolling mission op-functions done ---------\n');
+  packDawoMission.opSchedule(':d:ex:');
 
-  print('==<<==<<====      dawo_example buffers:     ==<<==<<====');
-
+  print('==>>==>>====      dawo_example buffers:     ==>>==>>====');
   out.outBuffersSizes('dawo_example');
   outBuffersPrint('dawo_example', 'no-prevent-printing');
+  print('==<<==<<====      dawo_example buffers:     ==<<==<<====');
 
-  print('- >>  ----- calling ------ eff ------------- dawo sets, goals:');
-
+  print('d-ex- >>  ----- calling ------ eff ------------- dawo sets, goals:');
   eff.build();
   eff.makeAllLists();
 
   eff.getDiagonalList();
   eff.showUserDiagonal();
+  print('d-ex- <<  ----- calling ------ eff done  ------ dawo sets, goals:');
 
-  print('==<<==<<====      encoded - decoded      ==<<==<<====');
-
+  print(':d:ex: ==>>==>>====      encoded - decoded      ==>>==>>====');
 
   //  encode(Object value, { dynamic toEncodable(object) }) → String
   //  Converts value to a JSON string.
@@ -91,7 +91,10 @@ main() {
 
   print('- encode: Converts value to a JSON string.::');
   print(dpIn);
-  print(["dpStart", { "inData": 5 }]);
+  print([
+    "dpStart",
+    {"inData": 5}
+  ]);
   print(dpIn[0]);
   print(dpIn[1]);
   print('- decode: Parses the string and returns the resulting Json object::');
@@ -99,7 +102,7 @@ main() {
   print('["dpNext", { "outFormData": 7 }]');
   print(dpOut[0]);
   print(dpOut[1]);
-
+  print(':d:ex: ==<<==<<====      encoded - decoded   done   ==<<==<<====');
 
   print('==<<==<<====      dawo_example done     ==<<==<<====');
 }

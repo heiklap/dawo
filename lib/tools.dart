@@ -33,8 +33,26 @@ class Tools {
     return _longest;
   }
 
+  ///  Method for informative list-printing.
+  void listShow(List _l, String caller) {
+    String l = _l.length.toString();
+    print('\n       :ls:-->-->  caller:: $caller  length:: $l   -->-->--');
+    _l.forEach(print);
+    print('      --:ls:--<<--<<--<<    done    --<<--<<--<<--<< \n');
+  }
+
   ///  Counts items in inner list
   int countInnerList(List<List<String>> _l) {
+    int i = 0;
+    for (var x in _l) {
+      int z = (x.length);
+      i = (i + z);
+    }
+    return i;
+  }
+
+  ///  Counts items in inner list
+  int countInnerMap(List<Map<String, String>> _l) {
     int i = 0;
     for (var x in _l) {
       int z = (x.length);
@@ -70,91 +88,127 @@ class Tools {
   }
 
   ///  Add padLeft & padRight Strings to make this common.
-  ///  Pad List right and left with ' ' and make all even length
-  void padListRL(List<String> _l) {
+  ///  Pad List right and left with: _leS, _raS and make all even length
+  void padListRL(List<String> _l, String _leS, _raS) {
     //  Using here new Tools, tl class.
     int long = tl.longestItemInList(_l);
     //  looks funny, surely we can make better :)
     for (var x = 0; x < _l.length; x++) {
       //  int itemLength = _l.length;  //  length NOW
       String _thisItem = _l[x];
-      String _s = (' $_thisItem');
-      String _ss = _s.padRight(long + 2, ' ');
+      String _s = ('$_leS$_thisItem');
+      String _ss = _s.padRight(long + 2, _raS);
       _l[x] = _ss;
-      //  Pad every item right with ' ' to length of the longest item.
+      //  Pad every item right with _leS, _raS to length of the longest item.
     }
   }
 
   //  Fill list-box-data in matrix in r, _c coordinates.
-  void boxInList(int _r, int _c, List<String> boxL, List<String> _mL) {
-    print('-----  box in list starting  ---------');
-    padListRL(boxL);
-
-    print(_mL);
-    print(boxL);
-    print('------- done pad  -----------');
-
+  //  Modify _mL to be NOT PRIVATE and name to: masterL
+  void boxInList(int _r, int _c, List<String> boxL, List<String> masterL) {
+    padListRL(boxL, ' ', ' ');
     int _count = boxL.length;
-    print(_count);
     for (var x = 0; x < _count; x++) {
-      String _s1 = _mL[_r].substring(0, _c);
-      boxL.forEach(print);
-      print(_s1);
-      String _s2 = boxL[x]; //  current list value.
-      print(_s2);
+      //  Control for range errors
       int itemLength = boxL[x].length;
-      int matrixRowLength = _mL[_r].length; // ?
-      String _s3 = _mL[_r].substring(_c + itemLength, matrixRowLength);
-      print(_s3);
-      _mL[_r] = '$_s1$_s2$_s3';
-      print(_mL[_r]);
+      int control = itemLength + _c;
+      int matrixRowLength = masterL[_r].length; // ?
+      if (matrixRowLength < control) {
+        String errorRowS = masterL[_r];
+        print('ALERT::: mrl:: $matrixRowLength < control:: $control  * * * ');
+        print(':::$errorRowS:::');
+      }
+
+      String _s1 = masterL[_r].substring(0, _c);
+      String _s2 = boxL[x]; //  current list value.
+      String _s3 = masterL[_r].substring(_c + itemLength, matrixRowLength);
+      masterL[_r] = '$_s1$_s2$_s3';
       _r++;
-      print('------- done row  -----------');
+      if (_r > masterL.length) {
+        print('ALERT::: * * *    _r > masterL.length   * * *   ');
+      }
     }
   } //  -----  boxInList
 
   ///  Screen-sized matrix pierced with staggered list elements.
+  ///  TODO  change all box-methods to use Map<String,String>
   List<String> iterableDiagonal(List<List<String>> _il, int sw) {
     int _sw = sw; //  screen width.
     int _ilC = countInnerList(_il); //  serves also as row-count.
-    print('- >->- _tl:-id: ------  counted inner list length -------------');
     int cStep = ((sw - 50) ~/ _ilC); //  spread info to screen.
-    print('InnerList-length::  $_ilC');
-    print(':tl:-id:   Step: $cStep');
-    print('- <-<- -------  counted inner list length  done  ------------');
     //  TODO  More complicated than 1 by 1 system.
     int cInd = 0; //  colon index.
 
     int rInd = 0; //  row-index if needed.
     String _s = '';
-    List<String> _ol = ['First Item']; //  out-list
-    //  All incoming lists.
+    String infoS1 = '  INFO: V:Value E:Effort D:Done :';
+    String infoS2 = ' ** Diagonal list describing Chore-Effort user-data  **';
+    String infoS3 =
+        ' - Finally this data is best when get by server to client. -';
+    List<String> _ol = [': tl.it-d-First Item    $infoS1 $infoS2 $infoS3'];
     for (var x = 0; x < _il.length; x++) {
-      //  in-list handle all.
-      //  Items in one list.
       for (var y = 0; y < _il[x].length; y++) {
         _s = '';
         String ts = ''; //  temporary String for padding
         cInd = cInd + cStep;
-        //  pad string left count: cInd.
         ts = _s.padLeft(cInd, '_');
-        //  add list item to string, pad right
         _s = (ts + _il[x][y]);
 
         ///  is this really needed??
         int _wl = _il[x][y].length; //  current item length
-        print(_il[x][y]);
-        // ts = _s.padRight((_sw - (_s.length - wl)), '_'); //  to be visible: _
         ts = _s.padRight((_sw), '_'); //  to be visible: _
         _ol.add(ts);
         //  empty String
       } //  ---------------    Items in one list.
       cInd + 6; //  extra tick.
-      print('cInd::  $cInd');
-      _ol.add('.');
-    } //  -----------------    All incoming lists.
-    _ol.add('.');
+      _ol.add(
+          '.--------------------------------'); //TODO  Make something more visible and useful.
+    } //  -----------------    All incoming lists.3
     return _ol;
+  }
+
+  ///  Version, that uses Map in incoming data.  ******************** map ***
+  ///  Screen-sized matrix pierced with staggered list elements.
+  ///  TODO  change all box-methods to use Map<String,String>
+  List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
+    int _sw = sw; //  screen width.
+    ///  Using different,  count Map method.
+    int _ilMC = countInnerMap(_ilM); //  serves also as row-count.
+    int cStep = ((sw - 50) ~/ _ilMC); //  spread info to screen.
+    //  TODO  More complicated than 1 by 1 system.
+    int cInd = 0; //  colon index.
+    int rInd = 0; //  row-index if needed.
+    String _s = '';
+    String infoS1 = '  INFO: V:= Value E: = Effort D: = Done :    ';
+    String infoS2 = ' ** Diagonal list describing Chore-Effort user-data  **  ';
+    String infoS3 =
+        '      - Finally this data is best when get by server to client. -';
+    List<String> _ol = [': tl.it-d-First Item    $infoS1 $infoS2 $infoS3'];
+
+    for (var x = 0; x < _ilM.length; x++) {
+      ///  Loop to handle all map values
+      for (var y in _ilM[x].keys) {
+        _s = '';
+        String ts = ''; //  temporary String for padding
+        cInd = cInd + cStep;
+        ts = _s.padLeft(cInd, '_');
+        //  Must get key AND value to String.
+        //  hklTry  glorious:  y
+        _s = (ts + y + _ilM[x][y]);
+        // _s = (ts + _ilM[x][y]);
+        ///  is this really needed??
+        int _wl = _ilM[x][y].length; //  current item length
+        ts = _s.padRight((_sw), '_'); //  to be visible: _
+        _ol.add(ts);
+        //  empty String
+      } //  ---------------    Items in one list.
+      cInd + 6; //  extra tick.
+      //  pad String to _sw, screen width.
+      String _nlS = '.'.padRight(sw - 2, ' ');
+      String _nlS2 = _nlS + '.';
+      _ol.add(_nlS2); //TODO  Make something more visible and useful.
+    } //  -----------------    All incoming lists.3
+    return _ol; //  ----------   ********************************** map ****
   }
 
   ///  Just a note, howTo print a map.

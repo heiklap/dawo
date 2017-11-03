@@ -227,7 +227,7 @@ class Mission {
   ///  Start developing operation roll function
   ///  Eventually opRoll handles all these others: init-open-close-schedule..
   int opRoll(int rollCount, Function autoRollFunc) {
-    flowC('    -->-m-->  :M:op:  opRoll  ', _pB);
+    flowC('    -->-m-->  :M:op:  opRoll    * * * * * * * * * * * * *  ', _pB);
     flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', _pB);
     flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
     int done = 0;
@@ -236,12 +236,12 @@ class Mission {
       done++;
       autoRollFunc();
     }
-    flowC('    <-m--<--  opRoll done c: $done    ', _pB);
+    flowC('    <-m--<--  :M:op:  opRoll   done c: $done   * * * * * * *', _pB);
     return done;
   }
 
   ///  Data-table of outside resources grouped in time.  Equipment-class. equ
-  void opSchedule() {
+  void opSchedule(String _caller) {
     flowC('--<----<-  :M:op:  opSchedule --<----<-', _pB);
     flowC(':M:op: opSchedule-info: Report for to check data lists. >>', _pB);
     flowC('>> :M:op: opSchedule: ** Not needed when opSchedule is on.**.', _pB);
@@ -262,17 +262,17 @@ class Mission {
       _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
     }
     _matrix[0] =
-        '--m-schedule---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+        '--m-schedule--$_caller--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
 
     ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
     _matrix[_rc - 1] =
         '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
-    _matrix.forEach(print);
+    //NO   _matrix.forEach(print);
     //  Fill list-data in matrix in r, _c coordinates.
     //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
     void anchorBox(int _r, int _c, List __l) {
       tl.boxInList(_r, _c, __l, _matrix);
-      print(_matrix);
+      //NO   print(_matrix);
     }
 
     anchorBox(3, 5, [

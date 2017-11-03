@@ -15,7 +15,8 @@ library effort;
 
 import 'dart:collection';
 import 'dart:convert';
-import 'package:dawo/tools.dart';
+import 'dart:math';
+import 'tools.dart';
 
 ///  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;
@@ -75,122 +76,232 @@ class Effort {
   ///  Initializing some Lists. No. Lists are more simple.
 //  LinkedHashSet<String> goalL = new LinkedHashSet.from(['a', 'b', 'c']);
   ///  User-data to control and describe work with chore.
-  List<String> goalL = new List(); //  No.    LinkedHashSet();
-  List<String> planL = new List();
-  List<String> phaseL = new List();
-  List<String> teamActL = new List();
-  List<String> tempoL = new List(); // adminNote   not nice name
+  Map<String, String> goalM = new Map(); //  No.    LinkedHashSet();
+  Map<String, String> planM = new Map();
+  Map<String, String> phaseM = new Map();
+  Map<String, String> teamActM = new Map();
+  Map<String, String> tempoM = new Map(); // adminNote   not nice name
 
   ///  Om hand-written schema was also:
-  List<String> timeL = new List();
-  List<String> stateL = new List();
-  List<String> levelL = new List();
-  List<String> moodL = new List();
+  Map<String, String> timeM = new Map();
+  Map<String, String> stateM = new Map();
+  Map<String, String> levelM = new Map();
+  Map<String, String> moodM = new Map();
 
   ///  testing... difference between  .  and ..
-  void makeGoalL() {
-    goalL
-      ..add('Project 0.0.1 Plan')
-      ..add('Github  clean')
-      ..add('HTML  Pages')
-      ..add('TO-DOs check');
-    //  goalL.forEach(print);  //  want it in one row:
-    print(goalL);
+  void makegoalM() {
+    goalM
+
+      ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
+      ..putIfAbsent('Project 0.0.1 Plan', () => 'V:3 E:2 D:1 ')
+      ..putIfAbsent('Github  clean', () => 'V:3 E:5 D:3 ')
+      ..putIfAbsent('HTML  Pages', () => 'V:6 E:7 D:2 ')
+      ..putIfAbsent('TO-DOs check', () => 'V:3 E:2 D:2 ');
+    //  goalM.forEach(print);  //  want it in one row:
+    print(goalM);
   }
 
   /// adding data to List
-  void makePlanL() {
-    planL
-      ..add('Plain idea')
-      ..add('Accepted schema')
-      ..add('W o r k  scheduled')
-      ..add('W o r k  started');
-    //  planL.forEach(print);
-    print(planL);
+  void makeplanM() {
+    planM
+
+      ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
+      ..putIfAbsent('Plain idea', () => 'V:3 E:3 D:6 ')
+      ..putIfAbsent('Accepted schema', () => 'V:3 E:1 D:3 ')
+      ..putIfAbsent('W o r k scheduled', () => 'V:3 E:6 D:0 ')
+      ..putIfAbsent('W o r k started', () => 'V:3 E:2 D:1 ');
+    //  planM.forEach(print);
+    print(planM);
   }
 
   /// adding data to List
-  void makePhaseL() {
-    phaseL
-      ..add('PhaseUnknown')
-      ..add('PhaseGetInfo')
-      ..add('PhaseMakePlan')
-      ..add('phaseLtart')
-      ..add('PhaseIn')
-      ..add('PhaseDone');
-    //  phaseL.forEach(print);
-    print(phaseL);
+  void makephaseM() {
+    phaseM
+      ..putIfAbsent('PhaseUnknown', () => 'V:0 E:3 D:0 ')
+      ..putIfAbsent('PhaseGetInfo', () => 'V:2 E:8 D:5 ')
+      ..putIfAbsent('PhaseMakePlan', () => 'V:3 E:7 D:0 ')
+      ..putIfAbsent('phaseMtart', () => 'V:8 E:8 D:0 ')
+      ..putIfAbsent('PhaseInSt', () => 'V:3 E:6 D:0 ')
+      ..putIfAbsent('PhaseDone', () => 'V:9 E:8 D:7 ');
+    //  phaseM.forEach(print);
+    print(phaseM);
   }
 
   ///  Every team might have it's saying on subjects.
-  /// Filling teamActL List
+  /// Filling teamActM List
   void makeTeams() {
-    teamActL
-      ..add('teamAdmAct')
-      ..add('teamDevAct')
-      ..add('teamEduAct')
-      ..add('teamHowToAct')
-      ..add('teamInnoAct')
-      ..add('teamNextAct');
-    //  teamActL.forEach(print);
-    print(teamActL);
+    teamActM
+      ..putIfAbsent('teamAdmAct', () => 'V:3 E:9 D:1 ')
+      ..putIfAbsent('teamDevAct', () => 'V:3 E:2 D:0 ')
+      ..putIfAbsent('teamEduAct', () => 'V:2 E:9 D:0 ')
+      ..putIfAbsent('teamHowToAct', () => 'V:6 E:8 D:2 ')
+      ..putIfAbsent('teamInnoAct', () => 'V:3 E:1 D:0 ')
+      ..putIfAbsent('teamNextAct', () => 'V:1 E:1 D:0 ');
+    //  teamActM.forEach(print);
+    print(teamActM);
   }
 
   ///  Function for adding data to this List.
-  void makeTempoL() {
-    tempoL
-      ..add('Largo     leveästi')
-      ..add('Lento     hitaasti ')
-      ..add('Grave     raskaasti ')
-      ..add('Adagio    hitaasti ')
-      ..add('Andante   käyden ')
-      ..add('Allegro   nopeasti');
-    //  tempoL.forEach(print);
-    print(tempoL);
+  void maketempoM() {
+    tempoM
+
+      ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
+      ..putIfAbsent('Largo     leveästi', () => 'V:3 E:2 D:0 ')
+      ..putIfAbsent('Lento     hitaasti ', () => 'V:2 E:3 D:0 ')
+      ..putIfAbsent('Grave     raskaasti ', () => 'V:4 E:4 D:0 ')
+      ..putIfAbsent('Adagio    hitaasti ', () => 'V:8 E:5 D:0 ')
+      ..putIfAbsent('Andante   käyden ', () => 'V:6 E:7 D:0 ')
+      ..putIfAbsent('Allegro   nopeasti', () => 'V:7 E:8 D:0 ');
+    //  tempoM.forEach(print);
+    print(tempoM);
   }
 
   ///  Rendering and presenting user-data Lists.
   void makeAllLists() {
     print('- >> - show of eff, effort class  -------- dawo Lists, -------');
-    print('----------------- eff ----------------------- dawo Lists, goalL:');
-    makeGoalL();
+    print('----------------- eff ----------------------- dawo Lists, goalM:');
+    makegoalM();
 
-    print('------------------- eff -----------------------------    planL:');
-    makePlanL();
+    print('------------------- eff -----------------------------    planM:');
+    makeplanM();
 
-    print('-------------------- eff ----------------------------    phaseL:');
-    makePhaseL();
+    print('-------------------- eff ----------------------------    phaseM:');
+    makephaseM();
 
     print('--------------------- eff ---------------------------    teamL:');
     makeTeams();
 
-    print('---------------------- eff --------------------------    tempoL:');
-    makeTempoL();
+    print('---------------------- eff --------------------------    tempoM:');
+    maketempoM();
 
-    print(
-        '-- <<<<  ----------------- eff ------------------------------------');
+    print('-- <<<<  ----------------- eff ------------------------------');
   }
 
   ///  Get diagonal presentation of all user-data Lists
-  List<List<String>> effortL = [];
+  List<Map<String, String>> effortLM = [];
 
   ///  Usual init method even if we have no fields yet.
   void init() {}
 
-  ///  Fill lists in effortL
+  ///  Fill lists in effortLM
   void build() {
-    effortL.addAll([goalL, planL, phaseL, teamActL, tempoL]);
+    effortLM.addAll([goalM, planM, phaseM, teamActM, tempoM]);
   }
 
+  ///  Adding small boxed data-areas to DiagonalList.
+  ///  At the end this should be user - server -in-data stuff.
+  void addStuffToDiagonal() {
+    //  Using this method from tl, tools library.
+    //  Problem is, that #matrix should be publicly visible.
+    //  tl.boxInList(_r, _c, __l, _matrix);
+  }
+
+  ///  Gets some small data from effortLM based on parameters.
+  List<String> effortTable(
+      List<Map<String, String>> _ilM, String _sf, int _w, _itemC) {
+    //  _sf  String, that swe are looking for, like: E:5  or  M:7
+    //  _w  how wide String of map-key we want?
+    //  _itemC  how many values we want?
+    //  _ilM  is effortLM
+    //  print('parmeters:: _sf::  $_sf  _w:: $_w   _itemC::  $_itemC ');
+
+    String _foundS = '';
+    List<String> _l = [];
+
+    int _ilMC = tl.countInnerMap(_ilM); //  Why?  WTF
+    //  Handle whole list.
+    for (var x = 0; x < _ilM.length; x++) {
+      // 'Seek every map for search-criteria'
+      for (var y in _ilM[x].keys) {
+        //  Zero / short length check. Is it needed?
+        if (_ilM[x][y].length < 2) {
+          print('ALERT::    _ilM[x][y].length < 2     ********************');
+        }
+        ;
+
+        //  Found String?
+        if ((_ilM[x][y].indexOf(_sf) > -1)) {
+          ///  separating index finding.
+          int iSub = _ilM[x][y].indexOf(_sf);
+          //  Are we over right edge of list.item?
+          if ((iSub + 3) >= _ilM[x][y].length) {
+            print('ALERT:: iSub +3  >  _ilM[x][y].length     **************');
+          }
+          ;
+
+          //  TODO  check for: not to be out of range.
+          //  print(_ilM[x][y].substring(iSub ,iSub+3));
+          _foundS = _ilM[x][y].substring(iSub, iSub + 3);
+
+          ///  Drive String manipulation in order, for to be sure.
+          ///  Surely shorter way might exist.
+          String tempS1 = y; //  key
+          String tempS2 = tempS1; //
+
+          //  TODO  force all items to tl.longestItemInList, or...
+          //  force Strings to width:  _w
+          if (tempS1.length < _w + 2) {
+            tempS2 = tempS1.padRight(_w, ' ');
+            //  force all to same length
+          } else {
+            tempS2 = tempS1.substring(0, _w);
+          }
+          String tempS3 = tempS2 + ' ' + _foundS;
+          //  Or temp2S is as it was.
+          _l.add(tempS3);
+        }
+      }
+    }
+
+    List<String> sL = [];
+
+    //  TODO  check for int 1-9
+    //  Add to sL in numeric-high order
+
+    for (var x = 9; x > -1; x--) {
+      String sx = x.toString();
+      for (var y in _l) {
+        if (y.indexOf(sx) > -1) {
+          sL.add(y);
+        }
+      }
+    }
+    List<String> _retL = [];
+    _retL.addAll(sL.take(_itemC));
+    print(_retL);
+    print('------------------------ effortTable done-----------------------');
+    return _retL;
+  }
+
+  ///  Form diagonal List and plant boxed search-data inside it.
   void getDiagonalList() {
-    print('\n .. >>  ................. effort : chore-user-data  ...........');
+    List<String> diagonalL = [];
+    diagonalL.addAll(tl.iterableDiagonalM(effortLM, 205));
 
-    List<String> idl = [];
+    List<String> _l1 = [];
+    List<String> _l2 = [];
+    List<String> _l3 = [];
+    _l1.addAll(effortTable(effortLM, 'V:', 7, 12));
+    _l2.addAll(effortTable(effortLM, 'E:', 12, 22));
+    _l3.addAll(effortTable(effortLM, 'D:', 8, 12));
 
-    ///  Using method from tools library.
-    idl.addAll(tl.iterableDiagonal(effortL, 205));
-    print(idl.length);
-    idl.forEach(print);
+    tl.boxInList(
+        9,
+        2,
+        ['Meetings:', 'Monday   8', 'Tuesday 11', 'Friday  15', 'Chat 13.30'],
+        diagonalL);
+    tl.boxInList(
+        2,
+        72,
+        ['Priority:', '1 Customs', '2 Deals', '3 Bugs', '4 Example'],
+        diagonalL);
+
+    tl.boxInList(2, 94, _l1, diagonalL);
+    tl.boxInList(2, 160, _l2, diagonalL);
+    tl.boxInList(18, 20, _l3, diagonalL);
+
+    print(diagonalL.length);
+    diagonalL.forEach(print);
     print('.... << .......... effort : chore-user-data  done   ...... \n');
   }
 

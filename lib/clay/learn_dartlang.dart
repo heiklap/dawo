@@ -122,7 +122,7 @@ class LearnDartlang {
     'b': ' '
   };
 
-  ///  separate phrases picked from net and dartlang.org
+  ///  separate phrases and said, picked from net and dartlang.org
   Map<String, String> phrasesM = {
     'ABS': ' ',
     'Angular Dart':
@@ -140,7 +140,7 @@ class LearnDartlang {
     'Type Generic': 'Because Darts generic types are covariant... ',
     'Type Subtyping':
         'Usually, subtyping is written using the "<:" operator: Apple <: Fruit.',
-    'h': ' ',
+    'http': 'With http you always have to import http/browser_client.dart.',
     'i': ' ',
     'Instance': ' ',
     'int': ' ',
@@ -150,6 +150,8 @@ class LearnDartlang {
     'Match': ' ',
     'Method Overloading':
         'method overloading. I think this is also considered for the future. Wasn not possible in Dart 1.x because of optional types',
+    'Mirror':
+        'Mirror is good if you are 1% of Dart users and do not mind of AOT.',
     'num': ' ',
     'Object': ' ',
     'Publish': ' ',

@@ -248,7 +248,7 @@ class Out {
     String outFooterLS = outFooter.length.toString();
 
     //  NOTE  Will eventually be list, for devBox.
-    print('\n --------------- outBuffersSizes  C: $caller  ----------------');
+    print('--------------- outBuffersSizes  C: $caller  ----------------');
     print(' outHeader::  $outHeaderLS');
     print(' outTl::  $outTlLS ');
     print(' outTMid::  $outTMidLS ');
@@ -259,7 +259,7 @@ class Out {
     print(' outBl::  $outBlLS ');
     print(' outBr::   $outBrLS');
     print(' outFooter::  $outFooterLS ');
-    print('--------------- outBuffersSizes  C: $caller   :done: ---------- \n');
+    print('--------------- outBuffersSizes  C: $caller   :done: ----------');
   }
 
   void build() {
