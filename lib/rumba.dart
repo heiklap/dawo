@@ -15,6 +15,7 @@ library rumba.dart;
 import 'base_lib.dart';
 import 'base_struct.dart';
 import 'dawo_dev.dart';
+import 'shower.dart';
 import 'tools.dart';
 
 ///  Collecting Rumba output.

@@ -37,6 +37,7 @@ import 'dart:math';
 ///  How base_lib manages so far NOT importing base_struct?
 import 'base_struct.dart';
 import 'dawo_dev.dart';
+import 'shower.dart'; //  for devBox
 
 //  TODO  Final readiness.  this is not
 final num dawLibBaseReadiness = 2; //  readiness for  version  0.0.1

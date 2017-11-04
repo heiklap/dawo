@@ -30,6 +30,7 @@ import 'dawo_dev.dart';
 import 'dawo_mill.dart';
 import 'equipment.dart';
 import 'missions.dart';
+import 'shower.dart';
 import 'tools.dart';
 import 'rumba.dart'; //  unused
 

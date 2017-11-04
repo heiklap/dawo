@@ -11,7 +11,8 @@
 library dawo_dev.dart;
 
 import 'dart:math'; //  No need for in-max?
-import 'package:dawo/tools.dart';
+import 'shower.dart';
+import 'tools.dart';
 
 //TODO  name   PROBLEMS, when using too common names:
 //   devTest   =   22  times     CHANGE:   test  ! ??
@@ -80,7 +81,10 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
-      ..add('5  Splitted opSchedule functions parts to tools.')
+      ..add('5  Shower: all screen presentations moved here.')
+      ..add('5  Formed iterable-diagonal preentation with boxed add-on-lists.')
+      ..add('5  Changed choreL mlists to maps.')
+      ..add('5  Splitted cheduleBox functions parts to tools.')
       ..add('5-  Effort class for user-chore-data. And JSON data handling. ')
       ..add('5-02 Cascades in devNotes and names are now: admN, devN aso.')
       ..add('5-01 All in tools removed inside a new Tool, tl class.')
@@ -89,7 +93,7 @@ class Dev {
       ..add('8 Changed library dawo_tools name to: tools.dart.')
       ..add('7 Equipment, equ class to keep material and name resources.')
       ..add(
-          '6 Missions specific op-methods, opSchedule for resource allocating.')
+          '6 Missions specific op-methods, cheduleBox for resource allocating.')
       ..add('dev: doneL added to keep track of fast changes. 10.10.17')
       ..add(
           'flowserve: added flowI event counter. In base_lib: flowI. 10.10.17')
@@ -149,199 +153,6 @@ class Dev {
 
 ///  Create instance of class Dev.
 var dev = new Dev();
-
-///  Show Lists, like devNotes in nice column-box in console.
-///  Can now handle 2, 3 and 4 column cases, and is common-usage function.
-///  TODO  Add better row / height decision.
-///  #QUEST : Surely these 2-3-4 functions can be combined to one, and
-///  handle 2-3-4 with parameters. Did it once, but was ugly.
-///  TODO  Make return type: SgtringBuffer
-StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
-  StringBuffer _retBuf = new StringBuffer();
-  final int sW = 210;
-  String borderS = ' | '; //  In 4 columns is smaller.
-
-  List<String> twoBoxL = []; //  For two columns in console screen.
-  List<String> threeBoxL = []; //  For three columns in console screen.
-  List<String> fourBoxL = []; //  For four columns in console screen.
-
-  //  ***********  GLORIOUS CODING  byMe :)  ****************
-  //  Make sure that list is certain length.
-  void addEmpty(List _list, int _height, String _note) {
-    while (_list.length < _height) {
-      _list.add(_note);
-    }
-    ; //  -- while
-  } //  -- addEmpty
-
-  ///  TODO  Build one function for all these 2 X 2 functions.
-  ///  PadRight both Colon-Lists items to certain length.
-  ///  aColonList and bColonList, int columnTwoWidth.
-  void tuneColumnList(List<String> cL, int width) {
-    for (var x = 0; x < cL.length; x++) {
-      if (cL[x].length < width) {
-        String s = cL[x].padRight(width, '_');
-        cL[x] = s;
-      }
-      if (cL[x].length > width) {
-        String s = cL[x].substring(0, width);
-        //  TODO  add " >>" for last marks.
-        cL[x] = s;
-      }
-    }
-  } //  ---------  tuneColumnList
-
-  ///  Carry the actual List building.
-  void devBoxBuild() {
-    int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
-    ///  To get nice little header String in top-left corner.
-    String topRim = '_devbox___'; //  Widen this later to screen-width.
-    String botRim = '____'; //  Widen this later to screen-width.
-    String padTopRim = topRim.padRight(sW, '_');
-    String padBotRim = botRim.padRight(sW, '_');
-    topRim = padTopRim;
-    botRim = padBotRim;
-
-    ///  howTo String:  these two lines has no effect:
-    topRim.padRight(sW, '_'); //  (sW, '_');
-    botRim.padRight(sW, '_'); //  (sW, '_');
-
-    ///  build two / three-List in parameter -case box;
-    ///  Use forceHeight parameter:
-    int twoBoxHeight = 15; //  TODO  Should be decided by Lists length.
-    // Should force length of in-list.
-    if (forceHeight > 0) twoBoxHeight = forceHeight;
-
-    int threeBoxHeight = 17;
-    if (forceHeight > 0) threeBoxHeight = forceHeight;
-
-    int fourBoxHeight = 17;
-    if (forceHeight > 0) fourBoxHeight = forceHeight;
-
-    ///  Build two-column-area List.  -----------   2 columns.
-    if (inList.length == 2) {
-      //  Create 2 temp List to be able to modify data.
-      List<String> aColonList = [];
-      aColonList.addAll(inList[0]);
-
-      List<String> bColonList = [];
-      bColonList.addAll(inList[1]);
-
-      addEmpty(aColonList, twoBoxHeight, '_');
-      addEmpty(bColonList, twoBoxHeight, '_');
-
-      tuneColumnList(aColonList, columnTwoWidth);
-      tuneColumnList(bColonList, columnTwoWidth);
-
-      /// Combine short List-rows to #Long-String and add borderMarks.
-      twoBoxL.add(topRim);
-      for (var c = 0; c < twoBoxHeight; c++) {
-        String firstData = aColonList[c];
-        String secondData = bColonList[c];
-        String longS = '$borderS $firstData  $borderS $secondData $borderS ';
-        twoBoxL.add(longS);
-      }
-      twoBoxL.add(botRim);
-      twoBoxL.forEach(print);
-      //  Write it all to StringBuffer;
-      _retBuf.writeAll(twoBoxL);
-      _retBuf.write(' ');
-      print(' ');
-    } //  --  inList length == 2
-
-    ///  Build three-column-area List.  -----------   3 columns.
-    if (inList.length == 3) {
-      int columnThreeWidth = ((sW ~/ 3) - 10); //  when 3 notes in a row
-
-      ///  3-case; Create 3 new List to modify data:
-      List<String> cColonList = [];
-      cColonList.addAll(inList[0]);
-
-      List<String> dColonList = [];
-      dColonList.addAll(inList[1]);
-
-      List<String> eColonList = [];
-      eColonList.addAll(inList[2]);
-
-      ///  Add three-List-case -area Lists to certain length if needed.
-      addEmpty(cColonList, threeBoxHeight, '_');
-      addEmpty(dColonList, threeBoxHeight, '_');
-      addEmpty(eColonList, threeBoxHeight, '_');
-
-      ///  Tune Three-columns-area Lists items to certain length.
-      tuneColumnList(cColonList, columnThreeWidth);
-      tuneColumnList(dColonList, columnThreeWidth);
-      tuneColumnList(eColonList, columnThreeWidth);
-
-      ///  Form the actual matrix for printing.
-      threeBoxL.add(topRim);
-      for (var c = 0; c < threeBoxHeight; c++) {
-        String fData = cColonList[c];
-        String sData = dColonList[c];
-        String tData = eColonList[c];
-        String longS =
-            '$borderS $fData $borderS $sData $borderS $tData $borderS';
-        threeBoxL.add(longS);
-      }
-      threeBoxL.add(botRim);
-      threeBoxL.forEach(print);
-      //  Write it all to StringBuffer;
-      _retBuf.writeAll(threeBoxL);
-      _retBuf.write(' ');
-    } // ----------  length inList = 3
-
-    ///  Build four-column-area List.  -----------   4 columns.
-    if (inList.length == 4) {
-      int columnFourWidth = ((sW ~/ 4) - 4); //  when 4 notes in a row
-      String borderS = '|';
-
-      ///  in three List parameter -case:
-      List<String> fColonList = [];
-      fColonList.addAll(inList[0]);
-
-      List<String> gColonList = [];
-      gColonList.addAll(inList[1]);
-
-      List<String> hColonList = [];
-      hColonList.addAll(inList[2]);
-
-      List<String> iColonList = [];
-      iColonList.addAll(inList[3]);
-
-      ///  Add four-List-case -area Lists to certain length if needed.
-      addEmpty(fColonList, threeBoxHeight, '_');
-      addEmpty(gColonList, threeBoxHeight, '_');
-      addEmpty(hColonList, threeBoxHeight, '_');
-      addEmpty(iColonList, threeBoxHeight, '_');
-
-      ///  Tune Four-columns-area Lists Items to certain length.
-      tuneColumnList(fColonList, columnFourWidth);
-      tuneColumnList(gColonList, columnFourWidth);
-      tuneColumnList(hColonList, columnFourWidth);
-      tuneColumnList(iColonList, columnFourWidth);
-
-      ///  Start forming this overly-tight mess of funny data.
-      fourBoxL.add(topRim);
-      for (var c = 0; c < fourBoxHeight; c++) {
-        String fData = fColonList[c];
-        String gData = gColonList[c];
-        String hData = hColonList[c];
-        String iData = iColonList[c];
-        String longS = '$fData  $gData  $hData  $iData $borderS';
-        //  '| $fData $borderS $gData $borderS $hData $borderS $iData $borderS';
-        fourBoxL.add(longS);
-      }
-      fourBoxL.add(botRim);
-      fourBoxL.forEach(print);
-      //  Write it all to StringBuffer;
-      _retBuf.writeAll(fourBoxL);
-      _retBuf.write(' ');
-    } // --  length inList = 4
-  } //  -------------  devBoxBuild
-
-  devBoxBuild(); //  Call function.
-  return _retBuf;
-} //  ----------  devBox
 
 //TODO  teamHowTo lists: add:   automatize adding notes to lists?
 //TODO  teamInno  notes:  automatic roll of createNotes.? no; events..?

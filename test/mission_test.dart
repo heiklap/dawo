@@ -4,6 +4,7 @@
 
 import 'package:dawo/dawo.dart';
 import 'package:dawo/missions.dart';
+import 'package:dawo/shower.dart';
 
 var myMission = new Mission('ToDo glorious stuff', 'test');
 
@@ -23,7 +24,10 @@ void main() {
   myMission.opOpen(2, 'second empty parameter');
   myMission.opRoll(3, helloMission);
 
-  myMission.opSchedule(':t-m:');
+  //  is now in shower   myMission.cheduleBox(':t-m:');
+  scheduleBox(':t-m:');
+
+
   myMission.opReport();
   //  Close is last one in row.
   myMission.opClose(6, helloMission);

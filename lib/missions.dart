@@ -240,57 +240,6 @@ class Mission {
     return done;
   }
 
-  ///  Data-table of outside resources grouped in time.  Equipment-class. equ
-  void opSchedule(String _caller) {
-    flowC('--<----<-  :M:op:  opSchedule --<----<-', _pB);
-    flowC(':M:op: opSchedule-info: Report for to check data lists. >>', _pB);
-    flowC('>> :M:op: opSchedule: ** Not needed when opSchedule is on.**.', _pB);
-
-    ///  Call equ class and it's allocate method to get resource List
-    List<String> _resAllocL = [];
-    equ.init(':M:opSchedule');
-    _resAllocL.addAll(equ.allocate(36, 40)); //  width var not used yet.
-    int _sw = 195; //  screen width
-    int _rc = 40; //  row count
-    List<String> _matrix = new List(_rc);
-    int _count = 100;
-    for (var z = 1; z < _matrix.length; z++) {
-      //  do not handle first row.
-      _count++;
-      String _countS = _count.toString(); //  not used.
-      //  TODO  choose nice background mark for matrix.
-      _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
-    }
-    _matrix[0] =
-        '--m-schedule--$_caller--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
-
-    ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
-    _matrix[_rc - 1] =
-        '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
-    //NO   _matrix.forEach(print);
-    //  Fill list-data in matrix in r, _c coordinates.
-    //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
-    void anchorBox(int _r, int _c, List __l) {
-      tl.boxInList(_r, _c, __l, _matrix);
-      //NO   print(_matrix);
-    }
-
-    anchorBox(3, 5, [
-      '**  Mission-op development experience; common usable stuff',
-      '**  Presenting available objects in scope.  **'
-    ]);
-    anchorBox(6, 5, ['IDEA:', 'IDEA:', 'NOTE:', 'NOTE:']);
-    anchorBox(3, 80, equ.officeCities);
-    anchorBox(12, 10, equ.areas);
-    anchorBox(10, 82, equ.cars);
-    anchorBox(26, 8, equ.weekDays);
-    anchorBox(22, 60, equ.months);
-    anchorBox(33, 44, equ.programAreas);
-    anchorBox(1, 123, _resAllocL);
-    //  Usable resources: toolsActiveM, toolsSpeedM,status
-    _matrix.forEach(print);
-  } //  -----  opSchedule
-
   /// devNote:  function, that CLOSES it's object.
   /// idea?
   int opClose(int openCount, Function openThis) {
@@ -310,7 +259,7 @@ class Mission {
     flowC('  --<----<-  :M:op:  opReport --<----<-', _pB);
     flowC('  :M:op: opReport-info: Report for to check data lists. >>', _pB);
     flowC(
-        '  >>  :M:op: opReport: ** Not needed when opSchedule is on.**.', _pB);
+        '  >>  :M:op: opReport: ** Not needed when cheduleBox is on.**.', _pB);
     List<String> _l = [];
     List<String> _l2 = [];
     _l.addAll(tl.bufToList(out.outTMid));

@@ -5,6 +5,9 @@
 ///
 ///  Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
 ///  (previous name : enlisted)
+///  NEXT:  Move all JSON stuff to own user-income-data
+///  NEXT:  User actions,  markDone()  changeValueEffort()
+///  NEXT:  Usage workFlow
 ///
 ///  NEXT version: Add SplayTreeSet,  and  LinkedHashSet
 ///  devNote:  Collecting here habit / human-like objects.
@@ -16,6 +19,7 @@ library effort;
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:math';
+import 'shower.dart';
 import 'tools.dart';
 
 ///  Mediating this value to getter, that counts sum of these.
@@ -89,7 +93,7 @@ class Effort {
   Map<String, String> moodM = new Map();
 
   ///  testing... difference between  .  and ..
-  void makegoalM() {
+  void makeGoalM() {
     goalM
 
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
@@ -102,7 +106,7 @@ class Effort {
   }
 
   /// adding data to List
-  void makeplanM() {
+  void makePlanM() {
     planM
 
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
@@ -115,7 +119,7 @@ class Effort {
   }
 
   /// adding data to List
-  void makephaseM() {
+  void makePhaseM() {
     phaseM
       ..putIfAbsent('PhaseUnknown', () => 'V:0 E:3 D:0 ')
       ..putIfAbsent('PhaseGetInfo', () => 'V:2 E:8 D:5 ')
@@ -142,7 +146,7 @@ class Effort {
   }
 
   ///  Function for adding data to this List.
-  void maketempoM() {
+  void makeTempoM() {
     tempoM
 
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
@@ -160,19 +164,19 @@ class Effort {
   void makeAllLists() {
     print('- >> - show of eff, effort class  -------- dawo Lists, -------');
     print('----------------- eff ----------------------- dawo Lists, goalM:');
-    makegoalM();
+    makeGoalM();
 
     print('------------------- eff -----------------------------    planM:');
-    makeplanM();
+    makePlanM();
 
     print('-------------------- eff ----------------------------    phaseM:');
-    makephaseM();
+    makePhaseM();
 
     print('--------------------- eff ---------------------------    teamL:');
     makeTeams();
 
     print('---------------------- eff --------------------------    tempoM:');
-    maketempoM();
+    makeTempoM();
 
     print('-- <<<<  ----------------- eff ------------------------------');
   }
@@ -196,92 +200,18 @@ class Effort {
     //  tl.boxInList(_r, _c, __l, _matrix);
   }
 
-  ///  Gets some small data from effortLM based on parameters.
-  List<String> effortTable(
-      List<Map<String, String>> _ilM, String _sf, int _w, _itemC) {
-    //  _sf  String, that swe are looking for, like: E:5  or  M:7
-    //  _w  how wide String of map-key we want?
-    //  _itemC  how many values we want?
-    //  _ilM  is effortLM
-    //  print('parmeters:: _sf::  $_sf  _w:: $_w   _itemC::  $_itemC ');
-
-    String _foundS = '';
-    List<String> _l = [];
-
-    int _ilMC = tl.countInnerMap(_ilM); //  Why?  WTF
-    //  Handle whole list.
-    for (var x = 0; x < _ilM.length; x++) {
-      // 'Seek every map for search-criteria'
-      for (var y in _ilM[x].keys) {
-        //  Zero / short length check. Is it needed?
-        if (_ilM[x][y].length < 2) {
-          print('ALERT::    _ilM[x][y].length < 2     ********************');
-        }
-        ;
-
-        //  Found String?
-        if ((_ilM[x][y].indexOf(_sf) > -1)) {
-          ///  separating index finding.
-          int iSub = _ilM[x][y].indexOf(_sf);
-          //  Are we over right edge of list.item?
-          if ((iSub + 3) >= _ilM[x][y].length) {
-            print('ALERT:: iSub +3  >  _ilM[x][y].length     **************');
-          }
-          ;
-
-          //  TODO  check for: not to be out of range.
-          //  print(_ilM[x][y].substring(iSub ,iSub+3));
-          _foundS = _ilM[x][y].substring(iSub, iSub + 3);
-
-          ///  Drive String manipulation in order, for to be sure.
-          ///  Surely shorter way might exist.
-          String tempS1 = y; //  key
-          String tempS2 = tempS1; //
-
-          //  TODO  force all items to tl.longestItemInList, or...
-          //  force Strings to width:  _w
-          if (tempS1.length < _w + 2) {
-            tempS2 = tempS1.padRight(_w, ' ');
-            //  force all to same length
-          } else {
-            tempS2 = tempS1.substring(0, _w);
-          }
-          String tempS3 = tempS2 + ' ' + _foundS;
-          //  Or temp2S is as it was.
-          _l.add(tempS3);
-        }
-      }
-    }
-
-    List<String> sL = [];
-
-    //  TODO  check for int 1-9
-    //  Add to sL in numeric-high order
-
-    for (var x = 9; x > -1; x--) {
-      String sx = x.toString();
-      for (var y in _l) {
-        if (y.indexOf(sx) > -1) {
-          sL.add(y);
-        }
-      }
-    }
-    List<String> _retL = [];
-    _retL.addAll(sL.take(_itemC));
-    print(_retL);
-    print('------------------------ effortTable done-----------------------');
-    return _retL;
-  }
-
   ///  Form diagonal List and plant boxed search-data inside it.
   void getDiagonalList() {
     List<String> diagonalL = [];
-    diagonalL.addAll(tl.iterableDiagonalM(effortLM, 205));
+    diagonalL.addAll(iterableDiagonalM(effortLM, 205));
 
-    List<String> _l1 = [];
-    List<String> _l2 = [];
-    List<String> _l3 = [];
+    ///  Three lists used to hold box-shaped effort-data from effort-maps.
+    List<String> _l1 = ['* Valuable: *'];
+    List<String> _l2 = ['* Effort: *'];
+    List<String> _l3 = ['* Done: *'];
     _l1.addAll(effortTable(effortLM, 'V:', 7, 12));
+
+    ///  Take  22 items where #Effort (E:N) value is high, key 12 wide text.
     _l2.addAll(effortTable(effortLM, 'E:', 12, 22));
     _l3.addAll(effortTable(effortLM, 'D:', 8, 12));
 
@@ -345,7 +275,8 @@ class Effort {
     List<String> idl = [];
 
     ///  Using method from tools library.
-    idl.addAll(tl.iterableDiagonal(userJSONInL, 205));
+    ///  iterableDiagonal i now in shower-library
+    idl.addAll(iterableDiagonal(userJSONInL, 205, 'Effort-ShowUserDiagonal'));
     print(idl.length);
     idl.forEach(print);
     print('* * * * * * *  user-JSON-diagonal-data-in  done * * * * * * *  \n');

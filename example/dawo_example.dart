@@ -23,6 +23,7 @@ import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
 import 'package:dawo/effort.dart';
 import 'package:dawo/missions.dart';
+import 'package:dawo/shower.dart';
 import 'package:dawo/tools.dart';
 import 'package:dawo/rumba.dart';
 
@@ -60,7 +61,7 @@ main() {
   packDawoMission.opClose(4, helloMission);
   packDawoMission.opReport();
   print(' -:d-ex: -----------  rolling mission op-functions done ---------\n');
-  packDawoMission.opSchedule(':d:ex:');
+  scheduleBox(':d:ex:');
 
   print('==>>==>>====      dawo_example buffers:     ==>>==>>====');
   out.outBuffersSizes('dawo_example');
