@@ -272,6 +272,7 @@ void flowFind(String caller, String _fs, int len) {
 ///  * * *    in base_lib, chore, mission and dev   * * *
 var decision;
 var decisionChain;
+var callChain; //  Give objects ability to know route, that called it.
 
 ///  ***********************************************************************
 ///  #Word 's for stream-like processes. What 3 words to use?

@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Shover  -  presentation info and data screens.
+///  ##  Shower  -  presentation info and data screens.
 ///
 ///  dawo version: 0.0.4  3.11.2017.   READY-STATE  for version 0.0.5  70%
 /// *      GitHub:
@@ -263,6 +263,58 @@ void scheduleBox(String _caller) {
 } //  -----  scheduleBox
 
 ///  Gets some small data from effortLM based on parameters.
+List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
+  print('-->>-->>getRecommendation in effort  -->>-->>-- ');
+  //  _w parameter is for KEY field width.
+  //  TODO  add width check / repair for too long _w value
+  //  #QUEST:  There surely is better way to do this.
+  List<String> _retL = [];
+  List<String> _tempL = [];
+  for (var x = 0; x < _inlM.length; x++) {
+    for (var y in _inlM[x].keys) {
+      int iVpos = _inlM[x][y].indexOf('V:');
+      int iEpos = _inlM[x][y].indexOf('E:');
+      String vString = _inlM[x][y].substring(iVpos + 2, iVpos + 3);
+      String eString = _inlM[x][y].substring(iEpos + 2, iEpos + 3);
+      int iVal = -1;
+      int iEff = -1;
+      //  check if we got 2 numbers.
+      String checkS = _inlM[x][y].substring(iVpos + 2, iVpos + 3);
+      if (tl.isNumber(checkS)) {
+        iVal = int.parse(_inlM[x][y].substring(iVpos + 2, iVpos + 3));
+        String checkS = _inlM[x][y].substring(iEpos + 2, iEpos + 3);
+        if (tl.isNumber(checkS)) {
+          iEff = int.parse(_inlM[x][y].substring(iEpos + 2, iEpos + 3));
+
+          //  check for high value-effort coefficient.
+          //  copy positive-value-efforts to new map
+          if ((iVal - iEff) > 0) {
+            //  3 ?
+            //  print('------------ iVal - iEff > 0 -----------------------');
+            String _s1 = y.substring(0, _w); // Map key of _w width.
+            ///  Copy  :  V:3 E:9  like string.
+            String _s2 = _inlM[x][y].substring(iVpos, iVpos + 3);
+            String _s3 = _inlM[x][y].substring(iEpos, iEpos + 3);
+            String _sAdd = ('$_s1 $_s2 $_s3');
+            _retL.add(_sAdd);
+          }
+        }
+      } //  --  tl.isNumber(checkS)
+    } //  --  for (var y in _inlM[x].keys)
+  }
+  //  _retL.forEach(print);
+  List<String> _retLTake = [];
+  //  take _c items as asked in parameter.
+  //  TODO  Count check _c > _retL.length
+  _retLTake.addAll(_retL.take(_c));
+  //  might use:  _retL.takeWhile(  bool  );
+  print('-->>-->>getRecommendation callled highValue in shower  -->>-->>-- ');
+  print('returning list:: n-values:  $_c ');
+  _retLTake.forEach(print);
+  return _retLTake;
+}
+
+///  Gets some small data from effortLM based on parameters.
 List<String> effortTable(
     List<Map<String, String>> _ilM, String _sf, int _w, _itemC) {
   //  _sf  String, that swe are looking for, like: E:5  or  M:7
@@ -281,7 +333,7 @@ List<String> effortTable(
     for (var y in _ilM[x].keys) {
       //  Zero / short length check. Is it needed?
       if (_ilM[x][y].length < 2) {
-        print('ALERT::    _ilM[x][y].length < 2     ********************');
+        print('ALERT::    _ilM[x][y].length < 2   ********************');
       }
       ;
 
@@ -291,7 +343,7 @@ List<String> effortTable(
         int iSub = _ilM[x][y].indexOf(_sf);
         //  Are we over right edge of list.item?
         if ((iSub + 3) >= _ilM[x][y].length) {
-          print('ALERT:: iSub +3  >  _ilM[x][y].length     **************');
+          print('ALERT:: iSub +3  >  _ilM[x][y].length   **************');
         }
         ;
 
@@ -355,7 +407,7 @@ List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
   String infoS2 = ' ** Diagonal list describing Chore-Effort user-data  **';
   String infoS3 =
       ' - Finally this data is best when get by server to client. -';
-  List<String> _ol = [':shower.it-d-  First Item    $infoS1 $infoS2 $infoS3'];
+  List<String> _ol = [':sh-it-diagL-  First Item    $infoS1 $infoS2 $infoS3'];
   for (var x = 0; x < _il.length; x++) {
     for (var y = 0; y < _il[x].length; y++) {
       _s = '';
@@ -381,7 +433,7 @@ List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
 ///  Version, that uses Map in incoming data.  ******************** map ***
 ///  Screen-sized matrix pierced with staggered list elements.
 ///  TODO  change all box-methods to use Map<String,String>
-///  #Usage:       Caller:  effort  getDiagonalList
+///  #Users:       Caller:  effort  getDiagonalList
 List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
   int _sw = sw; //  screen width.
   ///  Using different,  count Map method.
@@ -391,11 +443,14 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
   int cInd = 0; //  colon index.
   int rInd = 0; //  row-index if needed.
   String _s = '';
-  String infoS1 = ' it-diag-Map  INFO: V:= Value E: = Effort D: = Done :    ';
+  String infoS1 = ' it-diag-Map  INFO: V:= Value E: = Effort D: = Done :  ';
   String infoS2 = ' ** Diagonal list describing Chore-Effort user-data  **  ';
   String infoS3 =
-      '      - Finally this data is best when get by server to client. -';
-  List<String> _ol = [': tl.it-d-First Item    $infoS1 $infoS2 $infoS3'];
+      '  - Finally this data is best when get by server to client. -';
+  List<String> _ol = [':sh-it-diagM-   First Item  $infoS1 $infoS2 $infoS3'];
+  String topLine = tl.strMark('>', _sw);
+  String botLine = tl.strMark('<', _sw);
+  _ol.add(topLine);
   for (var x = 0; x < _ilM.length; x++) {
     ///  Loop to handle all map values
     for (var y in _ilM[x].keys) {
@@ -403,11 +458,8 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
       String ts = ''; //  temporary String for padding
       cInd = cInd + cStep;
       ts = _s.padLeft(cInd, '_');
-      //  Must get key AND value to String.
-      //  hklTry  glorious:  y
-      _s = (ts + y + _ilM[x][y]);
-      // _s = (ts + _ilM[x][y]);
-      ///  is this really needed??
+      //  Must get key AND value to String : hklTry  glorious: y
+      _s = (ts + y + ' ' + _ilM[x][y]);
       int _wl = _ilM[x][y].length; //  current item length
       ts = _s.padRight((_sw), '_'); //  to be visible: _
       _ol.add(ts);
@@ -419,7 +471,7 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
     String _nlS2 = _nlS + '.';
     _ol.add(_nlS2); //TODO  Make something more visible and useful.
   } //  -----------------    All incoming lists.3
-  //  inpt type was:  ********************************** map ****
+  _ol.add(botLine);
   return _ol; //  ---------- return type:   List<String>
 }
 

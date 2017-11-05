@@ -27,7 +27,6 @@ void main() {
   //  is now in shower   myMission.cheduleBox(':t-m:');
   scheduleBox(':t-m:');
 
-
   myMission.opReport();
   //  Close is last one in row.
   myMission.opClose(6, helloMission);

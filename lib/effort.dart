@@ -1,11 +1,13 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawo : data-in / out - working frame for chore user.
+///  **  ONLY  chore.dart should import this. All goes via it.
+///  User adds or changes his own data to effort Maps.
 ///  dawo version:  0.0.4  16.10.2017.    ready-state for 0.0.5  10 %
 ///
 ///  Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
 ///  (previous name : enlisted)
-///  NEXT:  Move all JSON stuff to own user-income-data
+///  DONE:   Move all JSON stuff to own user-income-data
 ///  NEXT:  User actions,  markDone()  changeValueEffort()
 ///  NEXT:  Usage workFlow
 ///
@@ -21,41 +23,10 @@ import 'dart:convert';
 import 'dart:math';
 import 'shower.dart';
 import 'tools.dart';
+import 'clay/user_json.dart';
 
 ///  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;
-
-///  **************   JSON  example material      **************************
-///  #QUEST : howTo mediate incoming data to user in JSON format?
-///  https://api.dartlang.org/stable/1.24.2/dart-convert/JsonCodec-class.html
-///  encode(Object value, { dynamic toEncodable(object) }) → String
-///  Converts value to a JSON string.
-
-///  decode(String source, { dynamic reviver(key, value) }) → dynamic
-///  Parses the string and returns the resulting Json object.
-///
-/// Class from json:   Type t = Animal;
-//  new t.fromJson(...);
-///  Example: Simulating user imported data with: JSON.  //  in dart:convert
-///  #dartFMT has funny way to write JSON
-var encoded = JSON.encode([
-  1,
-  2,
-  {"a": null}
-]);
-
-///  output: [1,2,{"a":null}]  length:  16
-
-///  output:  [foo, {bar: 499}]  length:  2
-var decoded = JSON.decode('["foo", { "bar": 499 }]');
-
-var dpIn = JSON.encode([
-  "dpStart",
-  {"inData": 5}
-]);
-var dpOut = JSON.decode('["dpNext", { "outFormData": 7 }]');
-
-///  **************   JSON  example material      **************************
 
 ///  howTo: howToMap:  Common method to print a map.  HowToPrintMap:
 void effortOperationMapPrint(Map thisMap) {
@@ -69,6 +40,7 @@ void effortOperationMapPrint(Map thisMap) {
 ///  Effort is working-screen for user, with in and out-data.
 class Effort {
   String name = 'Chore-Effort class.';
+
   String motto = 'User activity and datain-out functionality in Chore.';
 
 //  team-howTo add map fields to list...   example
@@ -111,7 +83,7 @@ class Effort {
 
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
       ..putIfAbsent('Plain idea', () => 'V:3 E:3 D:6 ')
-      ..putIfAbsent('Accepted schema', () => 'V:3 E:1 D:3 ')
+      ..putIfAbsent('Accepted schema', () => 'V:5 E:1 D:3 ')
       ..putIfAbsent('W o r k scheduled', () => 'V:3 E:6 D:0 ')
       ..putIfAbsent('W o r k started', () => 'V:3 E:2 D:1 ');
     //  planM.forEach(print);
@@ -123,7 +95,7 @@ class Effort {
     phaseM
       ..putIfAbsent('PhaseUnknown', () => 'V:0 E:3 D:0 ')
       ..putIfAbsent('PhaseGetInfo', () => 'V:2 E:8 D:5 ')
-      ..putIfAbsent('PhaseMakePlan', () => 'V:3 E:7 D:0 ')
+      ..putIfAbsent('PhaseMakePlan', () => 'V:7 E:7 D:0 ')
       ..putIfAbsent('phaseMtart', () => 'V:8 E:8 D:0 ')
       ..putIfAbsent('PhaseInSt', () => 'V:3 E:6 D:0 ')
       ..putIfAbsent('PhaseDone', () => 'V:9 E:8 D:7 ');
@@ -161,8 +133,8 @@ class Effort {
   }
 
   ///  Rendering and presenting user-data Lists.
-  void makeAllLists() {
-    print('- >> - show of eff, effort class  -------- dawo Lists, -------');
+  void makeAllLists(String caller) {
+    print('- >> - show of eff, effort class -- dawo Lists, C: $caller  ---');
     print('----------------- eff ----------------------- dawo Lists, goalM:');
     makeGoalM();
 
@@ -188,8 +160,43 @@ class Effort {
   void init() {}
 
   ///  Fill lists in effortLM
-  void build() {
+  void build(String caller) {
     effortLM.addAll([goalM, planM, phaseM, teamActM, tempoM]);
+  }
+
+  ///  Constructing 6 items 15-20 wide list of HIGH VALUE-EFFORT
+  List<String> getRecommendation(String caller) {
+    print('-->>-->>--  getRecommendation in effort C: $caller  -->>-->>-- ');
+    //  TODO  Add schema for Value-Effort high valuation. V:N - E:N >
+
+    List<String> _getRecL = [];
+
+    ///  Call function from shower-lib to get high-value items.
+    ///  parameters in called method:  _inlM, int _c, int _w
+    _getRecL.addAll(highValue(effortLM, 8, 9));
+    //  calling:   highValue(effortLM, 15, 8);
+    print('--<<--<<--  getRecommendation in effort done  --<<--<<-- ');
+    return _getRecL;
+  }
+
+  ///  Add user data to effort Maps and connect more user-data.
+  ///  called by:  effort / getDiagonalList
+  List<String> getUserData(String choice, String caller) {
+    List<String> _gudL = [];
+    print('--->-->  effort-getUserData  C: $caller  param: $choice --->-->');
+    //  code
+    //  user_json.dart has 3 bunch of json data:
+    if (choice == 'bus') _gudL.addAll([userJson.busJSONEnc]);
+    if (choice == 'fury') _gudL.addAll([userJson.furyJSONEnc]);
+    if (choice == 'human') _gudL.addAll([userJson.humanInEnc]);
+    print(_gudL.length);
+    print('--->-->  effort-getUserData  C: $caller  --->-->');
+    return _gudL;
+  }
+
+  ///  Handle user data, and change it in web-presentations.
+  void rollUserData() {
+    //  code
   }
 
   ///  Adding small boxed data-areas to DiagonalList.
@@ -201,7 +208,8 @@ class Effort {
   }
 
   ///  Form diagonal List and plant boxed search-data inside it.
-  void getDiagonalList() {
+  void getDiagonalList(String caller) {
+    print('-->>--   effort : getDiagonalList    -->>-->>  ');
     List<String> diagonalL = [];
     diagonalL.addAll(iterableDiagonalM(effortLM, 205));
 
@@ -209,68 +217,77 @@ class Effort {
     List<String> _l1 = ['* Valuable: *'];
     List<String> _l2 = ['* Effort: *'];
     List<String> _l3 = ['* Done: *'];
+    List<String> _l4 = ['* Recommendation: *']; //  Value - effort  HIGH!!
+    List<String> _l5 = ['* PING *'];
+
+    ///  Three lists that get their data from effort / user_json
+    List<String> _lBus = ['JSON-BUS'];
+    List<String> _lFury = ['JSON-FURY'];
+    List<String> _lHuman = ['JSON-HUMAN'];
+
     _l1.addAll(effortTable(effortLM, 'V:', 7, 12));
 
     ///  Take  22 items where #Effort (E:N) value is high, key 12 wide text.
     _l2.addAll(effortTable(effortLM, 'E:', 12, 22));
     _l3.addAll(effortTable(effortLM, 'D:', 8, 12));
 
-    tl.boxInList(
-        9,
-        2,
-        ['Meetings:', 'Monday   8', 'Tuesday 11', 'Friday  15', 'Chat 13.30'],
-        diagonalL);
-    tl.boxInList(
-        2,
-        72,
-        ['Priority:', '1 Customs', '2 Deals', '3 Bugs', '4 Example'],
-        diagonalL);
+    //  build List _l4   * Recommendation: *
+    //  OLD   _l4.addAll(['1', '2', '3', '4', '5', '6']);
+    //  call::  highValue(effortLM, 15, 6)
+    _l4.addAll(getRecommendation('caller'));
+
+    //  build List _l5
+    _l5.addAll(['1', '2', '3', '4', '5', '6']);
+
+    ///  calling class Effort method
+    _lBus.addAll(eff.getUserData('bus', ':ef:g-diag:'));
+    _lFury.addAll(eff.getUserData('fury', ':ef:g-diag:'));
+    _lHuman.addAll(eff.getUserData('human', ':ef:g-diag:'));
+
+    List<String> dayL = [
+      'Meetings:',
+      'Monday   8',
+      'Tuesday 11',
+      'Friday  15',
+      'Chat 13.30'
+    ];
+    tl.boxInList(9, 2, dayL, diagonalL);
+    List<String> priorityL = [
+      'Priority:',
+      '1 Customs',
+      '2 Deals',
+      '3 Bugs',
+      '4 Example'
+    ];
+    tl.boxInList(2, 72, priorityL, diagonalL);
 
     tl.boxInList(2, 94, _l1, diagonalL);
     tl.boxInList(2, 160, _l2, diagonalL);
-    tl.boxInList(18, 20, _l3, diagonalL);
+    tl.boxInList(18, 19, _l3, diagonalL);
+
+    tl.boxInList(18, 39, _l4, diagonalL);
+    tl.boxInList(18, 1, _l5, diagonalL);
+
+    ///  Adding json-to-List data to diagonalL matrix.
+    tl.boxInList(28, 35, _lBus, diagonalL);
+    tl.boxInList(25, 65, _lFury, diagonalL);
+    tl.boxInList(15, 1, _lHuman, diagonalL);
 
     print(diagonalL.length);
     diagonalL.forEach(print);
-    print('.... << .......... effort : chore-user-data  done   ...... \n');
-  }
+    print('--<<--<<--   effort : getDiagonalList  done   ...... \n');
+  } //  -----  getDiagonalList
 
-  ///  **************   JSON  example material      **************************
-  ///  Simulating two user-data.
-  var busJSONEnc = JSON.encode([
-    "dpEncFirst",
-    {"outBeginData": 3},
-    "dpEncSecond",
-    {"outBeginData": 4},
-    "dpEncThird",
-    {"outBeginData": 5}
-  ]);
-  var furyJSONEnc = JSON.encode([
-    "dpEncNext",
-    {"outFormData": 7}
-  ]);
-
-  var humanInEnc = JSON.encode([
-    "df",
-    {"outDD": 3, "inDD": 2},
-    "dg",
-    {"outBD": 4, "inBD": 2},
-    "dh",
-    {"outCC": 5, "OutCD": 7}
-  ]);
-
-  ///  Two var that are planned to be used for user-in JSON data.
-  var busJSONDec = JSON.decode('["dpFirst", { "outBusData": 7 }]');
-  var furyJSONDec = JSON.decode('["dpFirst", { "outFuryData": 3 }]');
-
-  void showUserDiagonal() {
-    print('\n * * * * * * *  user-JSON-diagonal-data-in * * * * * * *  ');
+  ///  This must be in effort.dart
+  ///  Getting json data from UserJson class from user_json.dart.
+  void showUserDiagonal(String caller) {
+    print('\n * * * * *  user-JSON-diagonal-data-in  C: $caller  * * * * *  ');
 
     List<List<String>> userJSONInL = [];
-    userJSONInL.add([busJSONEnc]);
+    userJSONInL.add([userJson.busJSONEnc]);
     print(userJSONInL.length);
-    userJSONInL.add([furyJSONEnc]);
-    userJSONInL.add([humanInEnc]);
+    userJSONInL.add([userJson.furyJSONEnc]);
+    userJSONInL.add([userJson.humanInEnc]);
     print(userJSONInL.length);
     List<String> idl = [];
 
@@ -284,6 +301,13 @@ class Effort {
 } //  -----  class effort
 
 ///  Creating instance of effort class.
+///  From now on there is ONLY ONE instance of Effort class.
+///  All it's activity is rolled via chore.dart
 var eff = new Effort();
+
+///  Chaining calls to serve userJson.
+void effortCallingUserJson(String caller) {
+  renderUserJson(':effort-callX:');
+}
 
 //

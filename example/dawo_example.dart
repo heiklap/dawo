@@ -21,7 +21,6 @@ import 'package:dawo/chore.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/dawo_mill.dart';
-import 'package:dawo/effort.dart';
 import 'package:dawo/missions.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/tools.dart';
@@ -52,7 +51,8 @@ main() {
   print('==<<==roll mission op/ init -open - roll: -close    ==<<==<');
   //  TODO  Better hello-function, to do something real.
   void helloMission() => print(':d:exmpl: * *   Mission!  Message-bus.  * * ');
-  print('\n -:d-ex: -----------  rolling mission op-functions ------------- ');
+  print(
+      '\n -::dw-ex: -----------  rolling mission op-functions ------------- ');
 
   ///  Eventually opRoll handles all these others.
   packDawoMission.opInit(1, 'empty parameter');
@@ -60,7 +60,8 @@ main() {
   packDawoMission.opRoll(3, helloMission);
   packDawoMission.opClose(4, helloMission);
   packDawoMission.opReport();
-  print(' -:d-ex: -----------  rolling mission op-functions done ---------\n');
+  print(
+      ' -::dw-ex: -----------  rolling mission op-functions done ---------\n');
   scheduleBox(':d:ex:');
 
   print('==>>==>>====      dawo_example buffers:     ==>>==>>====');
@@ -68,47 +69,21 @@ main() {
   outBuffersPrint('dawo_example', 'no-prevent-printing');
   print('==<<==<<====      dawo_example buffers:     ==<<==<<====');
 
-  print('d-ex- >>  ----- calling ------ eff ------------- dawo sets, goals:');
-  eff.build();
-  eff.makeAllLists();
+  print('d-ex- >>  ----- calling choreEffort---------- dawo sets, goals:');
+  choreEffort('d-ex-');
 
-  eff.getDiagonalList();
-  eff.showUserDiagonal();
-  print('d-ex- <<  ----- calling ------ eff done  ------ dawo sets, goals:');
+  print('d-ex- <<  ----- calling choreEffort done  ------ dawo sets, goals:');
 
   print(':d:ex: ==>>==>>====      encoded - decoded      ==>>==>>====');
+  print(':d:ex: ==>>==>>==== chore > effort > user_json render   ==>>==>>====');
+  choreToEffortUserJson(':d-ex:');
 
-  //  encode(Object value, { dynamic toEncodable(object) }) → String
-  //  Converts value to a JSON string.
-
-  //  decode(String source, { dynamic reviver(key, value) }) → dynamic
-  //  Parses the string and returns the resulting Json object.
-  print('encoded:: ');
-  print(encoded);
-  print(encoded.length);
-  print('decoded::');
-  print(decoded);
-  print(decoded.length);
-
-  print('- encode: Converts value to a JSON string.::');
-  print(dpIn);
-  print([
-    "dpStart",
-    {"inData": 5}
-  ]);
-  print(dpIn[0]);
-  print(dpIn[1]);
-  print('- decode: Parses the string and returns the resulting Json object::');
-  print(dpOut);
-  print('["dpNext", { "outFormData": 7 }]');
-  print(dpOut[0]);
-  print(dpOut[1]);
   print(':d:ex: ==<<==<<====      encoded - decoded   done   ==<<==<<====');
 
   print('==<<==<<====      dawo_example done     ==<<==<<====');
 }
 
-///
+///  For to check variables visibility.
 void wordPlay() {
   //  Play with variables: watch something from every file
   //  base

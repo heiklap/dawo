@@ -335,6 +335,25 @@ void endChore() {
   flowC('<-- endChore  execution scheduled, when  WORK is done', _pB);
 }
 
+///  Quick hack to run effort from test aso files.
+///  This is only access to effort.
+void choreEffort(String caller) {
+  //  Add ability to choose between user-data in effort.
+  eff.build(':chEf:');
+  eff.makeAllLists(':chEf:');
+
+  eff.getDiagonalList(':chEf:');
+  eff.showUserDiagonal(':chEf:');
+
+  //  TODO  New
+  eff.getRecommendation(':choreEffort:');
+}
+
+///  QuickHack
+void choreToEffortUserJson(String caller) {
+  effortCallingUserJson(':chore:-callRenderUserJson:');
+}
+
 ///  example / testing chore ----------------------------------------------
 StringBuffer renderChore() {
   StringBuffer _retBuf;
@@ -359,7 +378,7 @@ StringBuffer renderChore() {
   endChore();
 
   //  Enlisted class
-  eff.makeAllLists();
+  eff.makeAllLists(':render:Chore:');
 
   print(ch.infoS);
   return _retBuf;

@@ -21,6 +21,8 @@ import 'package:dawo/tools.dart';
 import 'package:dawo/equipment.dart';
 import 'clay/clay_roll.dart';
 
+///  #NOTE:  #effort is not visible here.  Only in chore.dart.
+
 ///  Buffer also outside class, for testing and adding visibility.
 var missionBuf = new StringBuffer();
 
@@ -259,7 +261,7 @@ class Mission {
     flowC('  --<----<-  :M:op:  opReport --<----<-', _pB);
     flowC('  :M:op: opReport-info: Report for to check data lists. >>', _pB);
     flowC(
-        '  >>  :M:op: opReport: ** Not needed when cheduleBox is on.**.', _pB);
+        '  >>  :M:op: opReport: ** Not needed when scheduleBox is on.**.', _pB);
     List<String> _l = [];
     List<String> _l2 = [];
     _l.addAll(tl.bufToList(out.outTMid));

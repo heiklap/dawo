@@ -112,6 +112,13 @@ class HelsinkiGuide {
 
   Map<String, String> eventM = {' ': ' ', 'a': ' ', 'b': ' '};
 
+  ///  Is effort Map here convenient?
+  Map<String, String> effortM = {
+    'hg-em-1': 'Walk',
+    'hg-em-2': 'Stay',
+    'hg-em-3': 'Go for it!'
+  };
+
   void buildMaps(String caller) {
     flowC('--  building Helsinki maps  c: $caller --', pB);
     helsinkiClayM.addAll({

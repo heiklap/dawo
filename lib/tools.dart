@@ -167,8 +167,26 @@ class Tools {
     }
   }
 
+  ///  is it number?
+  bool isNumber(String _s) {
+    bool retB = false;
+    if ('0123456789'.indexOf(_s) > -1) {
+      retB = true;
+      //  print('------------yep, is number');
+    }
+    return retB;
+  }
+
   /// some class tests.. for #teamNext use
   var strLin = '----------------------------------------         ';
+
+  String strMark(String mark, int l) {
+    String _s = '';
+    String _r = '';
+    //  String padding = mark;
+    _r = _s.padRight(l, mark);
+    return _r;
+  }
 
   ///  To print class, that is commonly used in dawo
   void printClass(var thisClass, String str1, String str2, String str3) {

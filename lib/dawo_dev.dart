@@ -54,6 +54,9 @@ class Dev {
 
   ///  Generic list to keep and handle all devNotes
   List<DevMessage> devMessageL = []; //  not used
+  //  To collect range aso. errors.
+  List<String> errorLog = ['* dev errorLog  *'];
+
   ///  To handy keep track of fast changes in code:
   List<String> doneL = [];
 
@@ -81,6 +84,8 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('5  Only Chore knows the one and only instance of Effort.')
+      ..add('5  JSON stuff moved from Effort to clay/user_json.dart.')
       ..add('5  Shower: all screen presentations moved here.')
       ..add('5  Formed iterable-diagonal preentation with boxed add-on-lists.')
       ..add('5  Changed choreL mlists to maps.')
@@ -117,6 +122,7 @@ class Dev {
       'Create all instances in the  ?? ri? lib.'
     ]);
     innoN.addAll(['-Counters?', 'Mongo-DB', 'Indexed-DB', 'User-class']);
+    innoN.add('#CallChain, to track call-route of every current command.');
     howToN
       ..addAll(['Web-html?', 'Typedef?', 'Connector?', 'Streams?', 'Async?'])
       ..addAll(
