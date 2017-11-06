@@ -4,9 +4,9 @@
 ///  Including some funny logical-naming-errors, where name do not correspond to
 ///  functionality.  Seeking common, reusable functions.
 ///
-/// *  dawo version:   0.0.4  16.10.2017
+/// *  dawo version:   0.0.5  6.11.2017
 /// *  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
-/// *  readyState for 0.0.5.  0%    in gitHub:  YES  22.04.2015
+/// *  readyState for 0.0.6.  0%    in gitHub:  YES  22.04.2015
 /// *
 //
 library aldente_func.dart;
@@ -267,7 +267,7 @@ bool alDenteAsync(var fFunc, var sFunc, bool condition) {
       }
     }
 
-    ///TODO  funny lonely ; here..   no effect to code :)
+    ///TODO  DartFormat    funny lonely ; here..   no effect to code :)
     ;
     if (_x == 3) (condition = true);
   } while (condition);
@@ -325,7 +325,7 @@ void alDenteShort(var boolFuncOne, var boolFuncTwo, bool fulfill) {
   } while (!_fulfill);
 }
 
-//T/ODO teamNext  Function  NOT-READY  Make: functions that DO NOT  make alDente
+//TODO teamNext  Function  NOT-READY  Make: functions that DO NOT make alDente
 void alDenteNot(var firstFunction, var secondFunction, bool clause) {
   bool _clause = clause;
   num _counter = 0;

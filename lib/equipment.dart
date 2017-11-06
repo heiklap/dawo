@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  equipment.dart  resources for Mission and Chore.
-///  * Dawo version 0.0.4  16.10.2017    ready state for 0.0.5 : 0%
+///  * Dawo version 0.0.5  6.11.2017    ready state for 0.0.6 : 0%
 ///  * Instance as:  equ
 //
 

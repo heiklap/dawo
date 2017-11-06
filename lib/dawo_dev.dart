@@ -3,7 +3,7 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
-///  dawo version: 0.0.4  16.10.2017.   READY-STATE  for version 0.0.5  0%
+///  dawo version: 0.0.5  6.11.2017.   READY-STATE  for version 0.0.6  0%
 /// *      GitHub: yes  29.11.2014
 /// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
 //
@@ -84,6 +84,8 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('5  Shorter names, dawo away: connector.dart, mill.dart.')
+      ..add('5  Effort-diagonal got recommendation and JSON lists.')
       ..add('5  Only Chore knows the one and only instance of Effort.')
       ..add('5  JSON stuff moved from Effort to clay/user_json.dart.')
       ..add('5  Shower: all screen presentations moved here.')

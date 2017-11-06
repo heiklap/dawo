@@ -1,8 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  base structures, classes in dawo
-///   dawo version:  0.0.4  16.10.2017
-/// * READY-STATE: for version 0.0.5 > 0%
+///   dawo version:  0.0.5  6.11.2017
+/// * READY-STATE: for version 0.0.6 > 0%
 /// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  base_struct.dart
 //  devNote:  No notes.
 //
@@ -119,7 +119,7 @@ class OutBase {
     print(' outBl::  $outBlLS ');
     print(' outBr::   $outBrLS');
     print(' outFooter::  $outFooterLS ');
-    print('--------------- outBuffersSizes  C: $caller   :done: ---------- \n');
+    print('--------------- outBuffersSizes  C: $caller   :done: --------- \n');
 
     void build() {
       //  outBufM.put

@@ -1,5 +1,5 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-//  rumba_test.dart.   12.9.2017    dawo version:  0.0.4  16.10.2017
+//  rumba_test.dart.   6.11.2017    dawo version:  0.0.4  16.10.2017
 //
 
 import 'package:dawo/base_struct.dart';

@@ -1,12 +1,12 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  app_chore_play.dart   version:  0.0.4  16.10.2017
+///  app_chore_play.dart   version:  0.0.5  6.11.2017
 
 import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/rumba.dart';
 import 'package:dawo/dawo_dev.dart';
-import 'package:dawo/dawo_mill.dart';
+import 'package:dawo/mill.dart';
 import 'package:dawo/missions.dart';
 
 import 'package:dawo/chore.dart';
@@ -19,7 +19,7 @@ import 'package:dawo/dawo_src.dart';
 
 //  creating instances of classes in upper level
 
-var df = new DawoMill();
+var mill = new Mill();
 
 var mission = new Mission('mission-class', 'test-in:de-test.dart');
 
@@ -37,7 +37,7 @@ main() {
 
   //  getting something from classes
   print('da-Info::   $dawoApp.info');
-  print('df-active::  $df.active');
+  print('mill-active::  $mill.active');
   print('bLibInfo::  $mission.blInfo');
   print('ch-info::   $ch.info');
 
@@ -66,12 +66,12 @@ void otherStuff() {
   appPhaseM;
   dawo003;
 
-  //  df.render();
+  //  mill.render();
   devHelp.line('dawoFlags');
-  df.roll();
+  mill.roll();
 
   //  wanna more: play them
-  //  df.
+  //  mill.
 
   devHelp.line('bLib');
 

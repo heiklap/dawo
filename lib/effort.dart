@@ -3,7 +3,7 @@
 ///  ##  dawo : data-in / out - working frame for chore user.
 ///  **  ONLY  chore.dart should import this. All goes via it.
 ///  User adds or changes his own data to effort Maps.
-///  dawo version:  0.0.4  16.10.2017.    ready-state for 0.0.5  10 %
+///  dawo version:  0.0.5  6.11.2017.    ready-state for 0.0.6  0 %
 ///
 ///  Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
 ///  (previous name : enlisted)

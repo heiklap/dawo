@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  dawo_example   dawo version  0.0.4  16.10.2017
+///  dawo_example   dawo version  0.0.5  6.11.2017
 
 import 'package:dawo/dawo.dart';
 
@@ -20,7 +20,7 @@ import 'package:dawo/chore.dart';
 
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
-import 'package:dawo/dawo_mill.dart';
+import 'package:dawo/mill.dart';
 import 'package:dawo/missions.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/tools.dart';
@@ -30,7 +30,7 @@ import 'package:dawo/rumba.dart';
 
 //  create classes::
 var da = new DawoApp('exampleApp', 'Testing in dawo_example');
-var df = new DawoMill();
+var df = new Mill();
 
 var missionX = new Mission('Mission-class', 'example:dawo_example');
 
@@ -50,9 +50,8 @@ main() {
   rumba.dance(dawoApp);
   print('==<<==roll mission op/ init -open - roll: -close    ==<<==<');
   //  TODO  Better hello-function, to do something real.
-  void helloMission() => print(':d:exmpl: * *   Mission!  Message-bus.  * * ');
-  print(
-      '\n -::dw-ex: -----------  rolling mission op-functions ------------- ');
+  void helloMission() => print(':d:exmpl: * *   Mission!  Message-bus. * * ');
+  print('\n -::dw-ex: -----------  rolling mission op-functions ---------- ');
 
   ///  Eventually opRoll handles all these others.
   packDawoMission.opInit(1, 'empty parameter');
@@ -60,8 +59,7 @@ main() {
   packDawoMission.opRoll(3, helloMission);
   packDawoMission.opClose(4, helloMission);
   packDawoMission.opReport();
-  print(
-      ' -::dw-ex: -----------  rolling mission op-functions done ---------\n');
+  print(' -::dw-ex: -----------  rolling mission op-functions done ------\n');
   scheduleBox(':d:ex:');
 
   print('==>>==>>====      dawo_example buffers:     ==>>==>>====');
@@ -75,7 +73,7 @@ main() {
   print('d-ex- <<  ----- calling choreEffort done  ------ dawo sets, goals:');
 
   print(':d:ex: ==>>==>>====      encoded - decoded      ==>>==>>====');
-  print(':d:ex: ==>>==>>==== chore > effort > user_json render   ==>>==>>====');
+  print(':d:ex: ==>>==>>==== chore > effort > user_json render   ==>>==>>===');
   choreToEffortUserJson(':d-ex:');
 
   print(':d:ex: ==<<==<<====      encoded - decoded   done   ==<<==<<====');

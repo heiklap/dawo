@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Rumba : maintaining main loops of app - mission
 ///  Primary functionality:  loop, inside it: dawoApp
-///  dawo version:  0.0.4  16.10.2017   ReadyState for 0.0.5 = 0%
+///  dawo version:  0.0.5  6.11.2017   ReadyState for 0.0.6 = 0%
 ///  in GitHub  yes
 ///  Program might have a certain amount of 'self consciousness'. This is start.
 ///
@@ -146,18 +146,18 @@ class Rumba {
         .write(devBox('By:RUMBA-DANCE:', [dev.innoN, dev.howToN, dev.secN], 0));
     print('--:R:----  one more funny list test   ------');
     //  TODO  add all boxes to rumbaBuf.
-    devBox('T', [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
+    devBox(':R-D:', [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
 
     var _ll = out.outBufListsForBox();
     print('\n -:R:--->>-->>-->>  outBuffers    --->>-->>-->>-->>--');
-    rumbaBuf.write(devBox('T', [_ll[1], _ll[2], _ll[3]], 32));
+    rumbaBuf.write(devBox(':R-D:', [_ll[1], _ll[2], _ll[3]], 32));
     print(' ');
-    devBox('T', [_ll[4], _ll[5], _ll[6]], 0);
+    devBox(':R-D:', [_ll[4], _ll[5], _ll[6]], 0);
     print(' ');
-    devBox('T', [_ll[7], _ll[8]], 0);
+    devBox(':R-D:', [_ll[7], _ll[8]], 0);
 
     ///  Header and footer from out-buffers-
-    devBox('T', [_ll[0], _ll[9]], 0);
+    devBox(':R-D:', [_ll[0], _ll[9]], 0);
     print('--<<--;R:--<<--<<  outBuffers  done --<<--<<--<<--<<-- \n');
     //  flowFind(':RUMBA-DANCE:', '->>-', 35);
     //  flowFind(':RUMBA-DANCE:', 'build', 30);

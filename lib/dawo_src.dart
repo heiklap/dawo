@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Home of dawo libraries
-/// * dawo version: 0.0.4  16.10.2017  READY-STATE: for 0.0.5 : 0 %
+/// * dawo version: 0.0.5  56.11.2017  READY-STATE: for 0.0.6 : 0 %
 ///
 /// * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
 ///
@@ -22,17 +22,16 @@ import 'package:dawo/code_snippets/learn_stream_sync.dart';
 import 'base_lib.dart';
 import 'base_struct.dart'; //  unused
 import 'chore.dart';
-import 'effort.dart';
-
+import 'connector.dart'; //  unused
 import 'dawo_app.dart';
-import 'dawo_connector.dart'; //  unused
 import 'dawo_dev.dart';
-import 'dawo_mill.dart';
+import 'effort.dart';
 import 'equipment.dart';
+import 'mill.dart';
 import 'missions.dart';
+import 'rumba.dart'; //  unused
 import 'shower.dart';
 import 'tools.dart';
-import 'rumba.dart'; //  unused
 
 ///  Data ( #clay ) is in clay-folder.
 import 'package:dawo/clay/clay_roll.dart';
@@ -98,14 +97,16 @@ StringBuffer renderDawo() {
   renderBuffer.writeln('\n ------ renderBuffer starting  ------------ \n');
 
   var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
-  var dawoFlags = new DawoMill();
+
+  //TODO  where is this? var dawoFlags = new Dawo
+
   dawoApp.agenda; //  Just naming it.
 
   /// Just another instance, shorter, for testing.
   var da = new DawoApp('dawoApp', 'playing in renderDawo-function');
-  var df = new DawoMill();
+  var mill = new Mill();
   renderBuffer.writeln(da.infoS);
-  df.userChoice;
+  mill.userChoice;
 
   /// -------------------------------- testing  getters and setters
   /// HINT:  with getters you can make code, that works NOW
@@ -113,10 +114,11 @@ StringBuffer renderDawo() {
 //  NOTE: howTo:   getters can not be defined withing methods or functions;
 //  bool get dawoOn   => dawoFlags.on;
 //  bool get dawoActive => dawoFlags.active;  //  stupid name
-  var dawoOn = dawoFlags.active;
-  dawoOn; //  just naming it
-  var dawoActive = dawoFlags.active;
-  dawoActive;
+  //TODO  where did this go?  var dawoOn = dawoFlags.active;
+  //  dawoOn; //  just naming it
+  //TODO  var dawoActive = dawoFlags.active;
+  //  dawoActive;
+
   renderBuffer.writeln('------- renderBuffer data--------------------- \n');
   var missionY = new Mission('mission in dawo_src-render', 'test-mission');
   missionY.opCount;

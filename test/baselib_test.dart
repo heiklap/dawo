@@ -1,8 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-/// dawo version:  0.0.4  16.10.2017
+/// dawo version:  0.0.5  6.11.2017
 //
-// dawo 0.0.3    baselib_test
+// dawo 0.0.5    baselib_test
 
 import 'package:dawo/dawo.dart';
 

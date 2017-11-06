@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Chore for organizing work flow.  dawo version:  0.0.4  16.10.2017
-///  Ready-state: for 0.0.5 > 15%   In  GitHub:   yes
+///  ##  Chore for organizing work flow.  dawo version:  0.0.5  6.11.2017
+///  Ready-state: for 0.0.6 > 0%   In  GitHub:   yes
 ///
 ///  Primary functionality: get notes-list aso data from input/clay
 ///  incoming data (clayIn) comes from customer. coders OR sample aso.
@@ -142,17 +142,17 @@ class CommonChore extends BaseStruct {
     //  How to get mission emblem here??  out now.  build();
     //  code for roll
     //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
-    //  print('------------ chore  clay maps ---------------------------------');
+    //  print('------------ chore  clay maps -------------------------------');
     //  print(clayMapL);
     //  [helsinkiGuide, packDawo, learnDartlang, myMusic, myTime, nationalParks]
-    //  print('------------ chore  clay maps printed Names---------------------');
+    //  print('------------ chore  clay maps printed Names------------------');
     if (pBNotNow) {
       for (var f in clayMapL) {
         Map _m = getClayMap(f);
         print('\n  map/chore::   $f   ------ ');
         _m.forEach((k, v) => print('$k ,$v'));
       }
-      print('------------ chore  clay maps details done ---------------------');
+      print('------------ chore  clay maps details done --------------------');
     } //  --_pB
 
     //  run #op, for single operation

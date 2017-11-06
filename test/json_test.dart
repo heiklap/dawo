@@ -1,3 +1,6 @@
+// Copyright (c) 2017, hmmmm
+//  dawo version:  0.0.5  6.11.2017
+
 import 'dart:convert';
 
 void main() {

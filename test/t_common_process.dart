@@ -1,5 +1,5 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-//  t_common_process.dart  12.9.2017   dawo version:  0.0.4  16.10.2017
+//  t_common_process.dart  12.9.2017   dawo version:  0.0.5  6.11.2017
 
 import 'package:dawo/dawo.dart';
 
@@ -13,7 +13,7 @@ import 'package:dawo/chore.dart';
 import 'package:dawo/effort.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dawo_dev.dart';
-import 'package:dawo/dawo_mill.dart';
+import 'package:dawo/mill.dart';
 import 'package:dawo/missions.dart';
 import 'package:dawo/tools.dart';
 

@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawo : data-in : user specific data in json format.
 
-///  dawo version:  0.0.4  4.11.2017.    ready-state for 0.0.5  0 %
+///  dawo version:  0.0.5  6.11.2017.    ready-state for 0.0.6  0 %
 ///
 ///  Hist: hkl  4.11.2017 dawo.0.0.4  dawo/lib/clay user_json.dart
 ///  Move here from effort.dart all json aso. data.

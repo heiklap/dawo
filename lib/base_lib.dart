@@ -1,8 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## Modeling common, reusable controls and operations for libraries.
-///  dawo/base_lib,  dawo version:  0.0.4  16.10.2017
-///  READY-STATE for version 0.0.5   0 %   in GIT  Yes
+///  dawo/base_lib,  dawo version:  0.0.5  6.11.2017
+///  READY-STATE for version 0.0.6   0 %   in GIT  Yes
 ///
 ///  Time to start thinking 6.th floor's machinery, when you are only just
 ///  laying base foundations for your 20-floor factory.
@@ -380,7 +380,7 @@ StringBuffer commonProcess(
   placardM.forEach((k, v) => _li2.add('$k, $v'));
   _li2.add('__________________________________');
 
-  devBox('T', [_li1, _li2], 10);
+  devBox(':bl:comProc:', [_li1, _li2], 10);
 
   List<String> _li3 = [];
   // actual command.
@@ -398,11 +398,11 @@ StringBuffer commonProcess(
 
   glOpC.operation; //  no operation, just show info now.
 
-  devBox('T', [_li3, _li4], 10);
+  devBox(':bl:comProc:', [_li3, _li4], 10);
 
   //  TODO  CommonProcess end info and statistics.
-  _cpBuf.writeln(':_cpBuf:  <--<<--  commonProcess done -------------------\n');
-  print('  <--<<--  commonProcess done ccccccccccccccccccccccccccccccccccp \n');
+  _cpBuf.writeln(':_cpBuf:  <--<<--  commonProcess done ------------------\n');
+  print('  <--<<--  commonProcess done cccccccccccccccccccccccccccccccccp \n');
   return _cpBuf;
 }
 

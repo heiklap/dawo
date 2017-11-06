@@ -2,8 +2,8 @@
 ///  ///  This do not bring any value to dawoApp.  Just sample code-snippets.
 ///  NOTE:  only some of these streams are executed, when called in row
 ///  BUT:   however, they work.
-/// * dawo version:  0.0.4  16.10.2017    in gitHub:   yes
-/// *  READY-STATE:    for 0.0.5  0%
+/// * dawo version:  0.0.5  6.11.2017    in gitHub:   yes
+/// *  READY-STATE:    for 0.0.6  0%
 /// *  NEXT:  modify these, connect to classes and lists. use stream_channel pack
 /// *  Hist: hkl  4.5.2014  0.0.1  dawo/lib    info with streams to dawo-staff
 ///

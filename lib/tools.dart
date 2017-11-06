@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Some helper tools
-/// *  dawo version:  0.0.4  16.10.2017    READY-STATE for  0.0.5   0 %
+/// *  dawo version:  0.0.5  6.11.2017    READY-STATE for  0.0.6   0 %
 /// *  in GIT:  yes           Hist:  hkl  2014  0.0.1  dawo/lib
 ///
 
@@ -167,6 +167,7 @@ class Tools {
     }
   }
 
+  ///  QUEST:  sure you can do better?
   ///  is it number?
   bool isNumber(String _s) {
     bool retB = false;
@@ -180,6 +181,7 @@ class Tools {
   /// some class tests.. for #teamNext use
   var strLin = '----------------------------------------         ';
 
+  ///  Long line with same mark.
   String strMark(String mark, int l) {
     String _s = '';
     String _r = '';

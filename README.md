@@ -1,4 +1,4 @@
-# dawo 0.0.4
+# dawo 0.0.5
 
 Learning Dart; simple basic data for beginners, and howTo use it for building a package.
 Beginner Dart programmers kickoff to develop a glorious package.. Latest code in GitHub: https://github.com/heiklap/dawo
@@ -43,6 +43,8 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
  0.0.4 Version
      Theme:  Statistics, output, variation, versatility, documentation in doc-folder.
      dawo_example.dart gives 11 screen-full data output.
+     
+ 0.0.5 High level connections between objects, placard, glb, commonOp and states.    
       
  0.0.6  Basic idea and orientation of package to resolve.
  0.0.8  Incubator idea: -move first too big parts to independent packages.
@@ -52,7 +54,7 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
 ## Files;
 ### code_snippets, learn / copy-paste stuff:
 - aldente_func :  Simple functions, including some logical errors. Can you spot errors?!
-- bat_loop :  Control flow structures.
+- bat_loop :  Control flow structure samples.
 - learn_stream_sync : Examples of simple Streams. So. async stuff.
 
 ### app files
@@ -60,21 +62,23 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
 - base_struct : Structuring base classes. These two libraries do not depend other dawo files.
 - chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
       of other, bigger, same kind of library.
-- dawlib_coll : Resources. Examples and hacking material of Dart collections.
+- connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them. 
+  Seeking deep, inner connections of objects. 
+- (? dawlib_coll : Resources. Examples and hacking material of Dart collections.)
 - dawo.dart : main file, exports : dawo_src.dart.
 - dawo_app : DawoApp class, handles Missions and keeps out-put-buffers in Map.
-- dawo_connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them.
-  Seeking deep, inner connections of objects. 
 - dawo_dev : Classes and data, that help in developing this package. 
   Helper functions for cl (command line)and screen output.
-- dawo_mill : Plan: processing commands orderly, all they in row, by given priorities.
-- dawo_src  File created by stagehand plugin app.   
-  Here it imports all other libraries and gathers some information about them. 
-- equipment : material and names of resources for Mission and Chore.
+- dawo_src : File created by stagehand plugin app.
+  Here it imports all other libraries and gathers some information about them.    
+- effort.dart : Human activities, chores sub, main user-activity and presentation.
+- equipment.dart : Controlling material resources for Mission and Chore.
+- mill : Plan: processing commands orderly, all they in row, by given priorities.
 - missions : Chunk of command-processing between app and chore. Caring Chores.
   Missions keep and process data ( #clay) of their favorite area. 
 - rumba.dart : Rumba classes .dance method runs here dawo's control-flow (once).
-- tools : Helper tools, sleep, stamps aso.
+- shower.dart : presentations on console, mostly box-shaped.
+- tools : Helper tools, sleep, stamps, lists aso.
 
 
 src.dart imports files:
@@ -83,20 +87,24 @@ src.dart imports files:
     import 'package:dawo/code_snippets/bat_loop.dart';
     import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
-    import 'base_lib.dart';
-    import 'base_struct.dart';  //  unused
-    import 'chore.dart';
-    import 'dawlib_coll.dart';
+    import 'package:dawo/code_snippets/aldente_func.dart';
+    import 'package:dawo/code_snippets/bat_loop.dart';
+    import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
+    import 'base_lib.dart';
+    import 'base_struct.dart'; //  unused
+    import 'chore.dart';
+    import 'connector.dart'; //  unused
     import 'dawo_app.dart';
-    import 'dawo_connector.dart';  //  unused
     import 'dawo_dev.dart';
-    import 'dawo_mill.dart';
+    import 'effort.dart';
     import 'equipment.dart';
+    import 'mill.dart';
     import 'missions.dart';
-    import 'rumba.dart';  //  unused
+    import 'rumba.dart'; //  unused
+    import 'shower.dart';
     import 'tools.dart';
-    
+   
     ///  Data (clay) is in clay-folder.
     import 'package:dawo/clay/clay_roll.dart';
     

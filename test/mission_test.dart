@@ -1,5 +1,5 @@
 ///  testing mission in dawo
-///  dawo version:  0.0.4  16.10.2017
+///  dawo version:  0.0.5  6.11.2017
 //
 
 import 'package:dawo/dawo.dart';

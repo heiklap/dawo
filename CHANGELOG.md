@@ -1,4 +1,6 @@
 # Changelog
+## 0.0.5
+- Effort, diagonal and schedule console output.
 ## 0.0.4 
 - Console output of mission, chore, dev; in box-form.
 

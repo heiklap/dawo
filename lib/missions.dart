@@ -1,8 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// *  mission is something between app and chore, process.
-/// -  Primary functionality: engage chores. Version 0.0.4  16.10.2017
-/// -  ready_state for 0.0.5  0 %
+/// -  Primary functionality: engage chores. Version 0.0.5  6.11.2017
+/// -  ready_state for 0.0.6  0 %
 /// -  HIST:  hkl  8.9.2017
 /// -  devNote: 4 pc.
 //
@@ -146,7 +146,7 @@ class Mission {
     //  Handle user-actions until: exit.
   }
 
-  //TODO  teamDev *chore*, if is toChore.. should there be  outChore,  lonChore ?
+  //TODO  teamDev *chore*, if is toChore.. should there be outChore, lonChore ?
   ///  base lib's connection to chore (package) (?)
   ///  *chore* is separate library, which controls *job* :s
   ///  Mediating calls to outside executor process. (?)

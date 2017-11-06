@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## packDawo
 ///  * Presenting data for dawo-chore system.
-///  dawo version:   0.0.4  16.10.2017
+///  dawo version:   0.0.5  6.11.2017
 ///  * Tracking and helping development of dawo package.
 
 library packDawo;

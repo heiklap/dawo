@@ -1,21 +1,27 @@
 
-By Heikki K Lappalainen.  dawo version:  0.0.4  16.10.2017
-Development of dawo dartlang package 2017 from 0.0.1 >  to  0.0.3 25.9.2017
+By Heikki K Lappalainen.  dawo version:  0.0.5  6.11.2017
+Development of dawo dartlang package 2017 from 0.0.1 >  to  0.0.5 6.11.2017
 _________________________________________________________________________
 Tracking possible bigger steps in dawo:
 0.1.0  Decent console output ready.          |  connector wake.
 0.2.0  Flow procedure with automatic #actor. |  base_lib in use.
 0.3.0  Simple web_app, in gitHub.            |
 0.4.0  Equipment, connector and M:op.        |
-0.5.0  Simple web_app, in gitHub.            |  separate dawo_continuum package
-0.6.0  Local storage, HTTP_server, JSON.     |  dawo_mill operative
-0.7.0                                        |
-0.8.0  Angel server and MongoDB.             |  User input in web_app
+0.5.0
+0.6.0                                        |  separate dawo_continuum package
+0.7.0  Local storage, HTTP_server, JSON.     |  dawo_mill operative
+0.8.0  Simple web_app, in gitHub.            |
+0.9.0  Angel server and MongoDB.             |  User input in web_app
 0.9.0  Client / users.                       |  *
+
 _________________________________________________________________________
-How does NEXT:  0.0.5 Version look in imagine now?
+
+How does NEXT: 27.11.2017,   0.0.6 Version look in imagine now?
+Create high-level connections and common procedures between objects
+using #placard, glb, commonOp, clause and states.
 Theme:  Clearance. Small innovative ideas seek the right to exist.
-To be published: 6.11.2017
+________________________________
+0.0.5.  To be published: 6.11.2017
 
 * Tracking dev in this file or spreadsheet is not handy or effective.
 * Daily #FastThinking defines direction of development. Not this list.

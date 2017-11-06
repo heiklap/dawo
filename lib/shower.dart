@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Shower  -  presentation info and data screens.
 ///
-///  dawo version: 0.0.4  3.11.2017.   READY-STATE  for version 0.0.5  70%
+///  dawo version: 0.0.5  6.11.2017.   READY-STATE  for version 0.0.6  0%
 /// *      GitHub:
 /// * Hist:hkl  3.11.2017  0.0.4  presentation tools for dawo
 //
@@ -58,7 +58,8 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
   void devBoxBuild() {
     int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
     ///  To get nice little header String in top-left corner.
-    String topRim = '_devbox___'; //  Widen this later to screen-width.
+    String topRim =
+        '_devbox_C: $caller __'; //  Widen this later to screen-width.
     String botRim = '____'; //  Widen this later to screen-width.
     String padTopRim = topRim.padRight(sW, '_');
     String padBotRim = botRim.padRight(sW, '_');

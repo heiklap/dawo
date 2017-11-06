@@ -1,13 +1,13 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-/// dawo_mill, in very early development state.
+/// mill, in very early development state.
 /// * Usability: 1%
-/// dawo version:  0.0.4  16.10.2017   ready-state for 0.0.5 : 0 %
+/// dawo version:  0.0.5  6.11.2017   ready-state for 0.0.6 : 0 %
 /// - hist:  hkl  8.9.2017 created
 /// - work-scheduling system, got flag class from dawo_app
 //
 
-library dawo_mill;
+library mill;
 
 ///  Buffer also outside class, for testing and adding visibility.
 var millBuf = new StringBuffer();
@@ -18,8 +18,8 @@ var millBuf = new StringBuffer();
 ///  Keeps track of the privileges and performance of the assignments.
 ///  Names might be:  millRoll  and millFlag
 
-///
-class DawoMill {
+///  Event ordering and scheduling system.
+class Mill {
   int tempo = 6;
   int rounds = 1;
 
@@ -45,7 +45,7 @@ class DawoMill {
 }
 
 ///  create instance
-var mill = new DawoMill(); //  add Object - map to constructor
+var mill = new Mill(); //  add Object - map to constructor
 
 ///  TODO  teamNext  for to use in next versions
 ///  NOTE:  int '1'  do not give error...  how about int?

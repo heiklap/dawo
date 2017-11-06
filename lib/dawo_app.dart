@@ -4,15 +4,15 @@
 ///  Primary functionality:  engage missions.
 ///  Some information about app, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-///  dawo version:  0.0.4  16.10.2017
-/// * ReadyState:  for version 0.0.5  0%  in GitHub  yes
+///  dawo version:  0.0.5  6.11.2017
+/// * ReadyState:  for version 0.0.6  0%  in GitHub  yes
 /// * hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
 //
 
 library dawo_app.dart;
 
-import 'base_struct.dart';
 import 'base_lib.dart';
+import 'base_struct.dart';
 import 'chore.dart';
 import 'dawo_dev.dart';
 import 'missions.dart';
