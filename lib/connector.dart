@@ -301,8 +301,9 @@ class Connector extends BaseStruct {
     bindingM['Bind:'].forEach((k, v)  => print('$k $v'));
     print('---------- bindingM ------------------------');
     _flowC(':CN:-info:  $info', _pB);
-    print('** :c:opJoint:  operationMapPrint plcM   **');
-    tl.operationMapPrint(plcM);
+    print('** :c:opJoint:  operationMapPrint OR shortMapPrint plcM   **');
+    //  tl.operationMapPrint(plcM);
+    tl.shortMapPrint(plcM);
     //  TODO  connector  add memberM    add  BindingM
 
     _flowC(':CN:  --<<--<<--  :connector: done   C:$caller  --<<--<<--', _pB);

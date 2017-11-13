@@ -23,6 +23,7 @@ import 'base_lib.dart';
 import 'base_struct.dart'; //  unused
 import 'chore.dart';
 import 'connector.dart'; //  unused
+import 'corporate.dart';  //  some stuff from base_lib.
 import 'dawo_app.dart';
 import 'dawo_dev.dart';
 import 'effort.dart';

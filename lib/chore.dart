@@ -28,6 +28,7 @@ library chore;
 import 'base_struct.dart';
 import 'base_lib.dart'; //  flowServe() is here.
 import 'connector.dart';
+import 'corporate.dart';
 import 'dawo_dev.dart';
 import 'effort.dart';
 //  import 'equipment.dart';  //  mission handles equipment
@@ -226,7 +227,7 @@ class CommonChore extends BaseStruct {
     ///  With actual command:
     ///  Add placardM to parameters
     _retBuf.write(
-        commonProcess(':Ch-Op:', chOpClass, placardM, assignComProChore));
+        corporate.process(':Ch-Op:', chOpClass, placardM, assignComProChore));
     print('\n ---------- chore-Op and common process  ----------------------');
     print(_retBuf);
 

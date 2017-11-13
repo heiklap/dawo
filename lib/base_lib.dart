@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ## Modeling common, reusable controls and operations for libraries.
+///  ## Modeling joint, reusable controls and operations for libraries.
 ///  dawo/base_lib,  dawo version:  0.0.5  6.11.2017
 ///  READY-STATE for version 0.0.6   0 %   in GIT  Yes
 ///
@@ -19,7 +19,7 @@
 ///  Returned 10.9.2017 to same idea with empty hands.
 ///
 ///  #Word  Stream  34 times
-///  Open for all ideas, when seeking common functionality between app / lib /
+///  Open for all ideas, when seeking joint functionality between app / lib /
 ///  classes / process aso.
 ///  NOTE: Problem:  #actor / glbActor; how to handle in sub-processes
 ///  RULE:  #actor  every #actor deletes it's own name when op-done, and
@@ -36,6 +36,7 @@ import 'dart:math';
 
 ///  How base_lib manages so far NOT importing base_struct?
 import 'base_struct.dart';
+import 'corporate.dart';  //  these import each other.
 import 'dawo_dev.dart';
 import 'shower.dart'; //  for devBox
 
@@ -60,7 +61,7 @@ bool _pB = true; //  Control console-printing.
 ///  setting flow-print now to zero.
 bool printGlobalB = false;
 
-String baseLibMotto = 'Serving common reusable resources to users.';
+String baseLibMotto = 'Serving joint reusable resources to users.';
 
 ///  test:  for testing, assign-functions are for sharing stuff.
 void assignDawo() {
@@ -69,7 +70,7 @@ void assignDawo() {
 
 /// ..  or is it class BasePlacard ?
 ///  Placard: Common form of information, that is in hand for every operation.
-///  Model for #id-data in common handshake method.
+///  Model for #id-data in joint handshake method.
 Map<String, String> placardM = {
   'actor': '',
   'sender': '',
@@ -117,6 +118,7 @@ class GlobalVariables {
 ///  This can be #sub-process, that normal rollOp uses. #Connector may give
 ///  this extra power and connect to other operations.
 ///  For that, here should be added fields.
+///  IDEA: Change this name to class CoOp.  So why not:  Coup.
 class GlobalOpClass {
   //  BaseStruct is known here.
   //  BasePlacard is known also.
@@ -172,7 +174,7 @@ var glbOp =
 ///  Some variables that have not yet find their places inside classes.
 
 /// Chores are biggest users of this.
-/// Stock handles and shares common resources with participants.
+/// Stock handles and shares joint resources with participants.
 ///  Resources are: people, places, jobs aso.
 class Stock {
   /// al" base_classes for below vars and functions.
@@ -308,7 +310,7 @@ void fireStream() {} //
 ///  dawoApp.roll drives this.  When thinking about #stream / #order / #chain
 ///  better name, we think for different nature of them, One is quick, one is
 ///  slow, and one: we-do-not-mind: wait, but not synchronously: like queue.
-///  So: "common"Order, ...""Chain, ""Queue  #TODO  Name
+///  So: "joint"Order, ...""Chain, ""Queue  #TODO  Name
 ///  ***********************************************************************
 void commonStream(String caller, var streamData, var streamListen) {
 //  var data = streamData; // some sample data
@@ -340,98 +342,7 @@ void commonStreamBroad(String caller, Iterable streamData, var streamListen) {
     ..length.then((value) => print("SUCCESS_5_:: stream.length: $value")); // 5
 }
 
-///  Change "Automatic messages" to buf messages.
-String commonParamToStr(var sender, receiver, op, msg) {
-//  Or return List.
-  String s = sender.toString();
-  String r = receiver.toString();
-  String o = op.toString();
-  String _rStr = "$s $r $o $msg";
-  return _rStr;
-}
 
-///  TODO Automatic messages to buf, in operations.
-///  Formulate String for buffer message.
-String commonBufMsg(String sender, receiver, op, msg) {
-  String _s = "s: $sender  r: $receiver oop: $op msg: $msg";
-  //  code here
-  return _s;
-}
-
-///  Shaping common functionality for series of commands.
-void commonRoll() {
-  //  code here
-}
-
-///  Shaping common functionality for messages.
-void commonMsg() {
-  //  code here
-}
-
-///  caller:  chore-op
-///  Shaping common functionality for..
-///  TODO  commonProcess
-StringBuffer commonProcess(
-    String by, GlobalOpClass glOpC, Map placardM, Function _assigned) {
-  ///  NOTE  callers placardM is here now.
-  print(':debug: common process begins:');
-  String infoS1 =
-      '#Caller have accessed #CommonProrocess, where it will hava access in all common resources, ';
-  String infoS2 = 'and it can interact with other users.';
-  print(infoS1);
-  print(infoS2);
-  List<String> _li1 = [];
-  StringBuffer _cpBuf = new StringBuffer();
-  _li1
-    ..add('\n -->>-->  commonProcess  #caller: $by ccccccccccccccccccccccccccp')
-    ..add('glbOpsInUse: ___________________________________')
-    ..add('  ------  commonStream  -----------')
-    ..add('   -----  commonStreamBoard  ----------')
-    ..add('   -----  commonParamToStr  ---------------   -->')
-    ..add('   -----  commonBufMsg  ---------------')
-    ..add('   -----  commonRoll  -------------')
-    ..add('   -----  commonMsg  ----------')
-    ..add('   -----  commonShow-------');
-  _cpBuf.writeln(':_cpBuf: -->>-->  commonProcess  #caller: $by  -------- \n');
-  //  TODO  Start info and statistics.
-  //  TODO  Make all these Lists for:  devBox
-  //  code here
-  List<String> _li2 = [];
-  _li2.add('placardMap: ');
-  //  placardM.forEach((k,v)  => print('$k, $v'));
-  placardM.forEach((k, v) => _li2.add('$k, $v'));
-  _li2.add('__________________________________');
-
-  devBox(':bl:comProc:', [_li1, _li2], 10);
-
-  List<String> _li3 = [];
-  // actual command.
-  _li3.add('calling command:');
-  //  call to function that was get in parameter by caller.
-  //  TODO Make this route more evident in in call,  and returned Strings.
-  String _comStr = _assigned();
-  _li3.add(_comStr); //  Returning String, from caller-object.
-  _li3.add('  3. part done in commonProcess. ');
-
-  List<String> _li4 = [];
-  _li4.add('calling: glOpC.showInfo AND  glOpC.operation::');
-  _li4.addAll(glOpC.showInfo(':commonProcess:'));
-  _li4.add('  part 4 done in common process.  ');
-
-  glOpC.operation; //  no operation, just show info now.
-
-  devBox(':bl:comProc:', [_li3, _li4], 10);
-
-  //  TODO  CommonProcess end info and statistics.
-  _cpBuf.writeln(':_cpBuf:  <--<<--  commonProcess done ------------------\n');
-  print('  <--<<--  commonProcess done cccccccccccccccccccccccccccccccccp \n');
-  return _cpBuf;
-}
-
-///  Shaping common functionality for presentation.
-void commonShow() {
-  //  code here
-}
 
 ///  Usual presentation / play function.
 StringBuffer renderBaseLib() {
@@ -440,11 +351,11 @@ StringBuffer renderBaseLib() {
   StringBuffer _retBuf;
 
   ///  For to share stuff with global command in #op
-  ///  TODO  "Global-connect" function for to use in commonProcess / op.
+  ///  TODO  "Global-connect" function for to use in :corporate:process: / op.
   ///  TODO  This should have same name in all libraries?
   String assignBaseRender() {
-    print('   **  baseRender assignBaseRender > CommonProcess    ***');
-    return ('   **  baseRender assignBaseRender > CommonProcess   ***');
+    print('   **  baseRender assignBaseRender > :corporate:process:    ***');
+    return ('   **  baseRender assignBaseRender > :corporate:process:   ***');
   }
 
   var glbVar = new GlobalVariables();
@@ -454,10 +365,10 @@ StringBuffer renderBaseLib() {
   var renderBaseLibClass = new GlobalOpClass(
       'n:name', 'renderBaseLib', 'rec:test', assignDawo, 'all ok');
 
-  print('-->-->--  calling commonProcess  -->-->--   ');
+  print('-->-->--  calling :corporate:process:  -->-->--   ');
 
   ///  Using local placardM
-  commonProcess(':RenderBLib:', renderBaseLibClass, placardM, assignBaseRender);
+  corporate.process(':RenderBLib:', renderBaseLibClass, placardM, assignBaseRender);
 
   renderBaseLibClass.showInfo('By: renderBaseLib');
 

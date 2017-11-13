@@ -84,9 +84,14 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('6 class Group and Member in base_struct.')
+      ..add('6 Solving chaos : changing names to privat and original ones.')
+      ..add('6 Solving chaos : console output is now only 22 screens.')
+      ..add('6 solving chaos : :who:did:this: to mark outputs in console.')
       ..add('6 Nearing chaos : was hard to spot: #whoPrintedThisToConsole.')
       ..add('6 typedef effPrint conPrint aso and method inside class.')
       ..add('6 Connector: much activity; ERROR: dartdoc fails.  ')
+      ..add('6 dawolang: using 0.0.1 in connector opJoin to check #words.')
       ..add('5  Shorter names, dawo away: connector.dart, mill.dart.')
       ..add('5  Effort-diagonal got recommendation and JSON lists.')
       ..add('5  Only Chore knows the one and only instance of Effort.')

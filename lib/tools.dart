@@ -137,6 +137,11 @@ class Tools {
     });
   }
 
+  ///  Just to print map in one row.
+  void shortMapPrint(Map thisMap) {
+    print(thisMap);
+  }
+
   ///  Return list<String> from map<String, String>.
   List<String> mapToList(Map<String, String> thisMap) {
     List<String> _l = [];
