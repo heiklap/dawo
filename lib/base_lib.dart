@@ -43,9 +43,22 @@ import 'shower.dart'; //  for devBox
 final num dawLibBaseReadiness = 2; //  readiness for  version  0.0.1
 int flowI = 0; //  flow-counter.
 
+//  hklTry this.
+typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
+
+//  TODO  typedef SPrint
+typedef void SPrint(String msg);
+//  typedef SPrint(String msg);
+SPrint sPrint(String msg) {
+  if (_pB) print(':sPrint:  $msg');
+}
+
 ///  buffer also outside class, for testing and adding visibility
 var baseLibBuf = new StringBuffer();
-bool _pB = false; //  Control console-printing.
+bool _pB = true; //  Control console-printing.
+
+///  setting flow-print now to zero.
+bool printGlobalB = false;
 
 String baseLibMotto = 'Serving common reusable resources to users.';
 
@@ -203,19 +216,27 @@ void getOperationInfoOnParameters() {
 //  void flow(String actor, StringBuffer buf, String msg, bool pr)
 ///  DONE:  To avoid messing with buffer and actor HOORAY: used local fl().
 ///  local: fl calls this Flow()
-void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
+FlowServe flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   ///  ********************************************************************
   ///  GETTING NOW  ACTOR AND BUFFER RIGHT, WHEN USED LOCAL fl()
   /// **********************************************************************
   //  TODO : is flow pushing empty rows to buffers?
-  String _actor = actor;
-  if (pr) print(msg);
-  // DONE:  Now _buf comes from caller in parameters.
+  //  hklTry, add :FS:
   //  Handle flow-counter, flowI
   flowI++;
-  String _flowIS = flowI.toString();
-  //  TODO  take extra \n away from message.
-  buf.writeln('$_actor $_flowIS $msg');
+  String flowIS = flowI.toString();
+
+  ///  Added opC: to flow-counter for easy search.
+  String _flowIS = 'opC:$flowIS';
+
+  String header = ':fs:$pr:';
+  String text = '$actor $header$_flowIS  $msg ';
+  //  #debug  print(':flowServe:test:  $_msg $pr');
+  if (pr) print(':flowServe:test:  $text');
+  // DONE:  Now _buf comes from caller in parameters.
+
+  buf.writeln('$text');
+  //  buf.writeln('$actor $_flowIS $msg');
   //  Code here.
   //  Form nice String (for print and/or buf) that describes ongoing operation.
 }
@@ -353,6 +374,7 @@ void commonMsg() {
 StringBuffer commonProcess(
     String by, GlobalOpClass glOpC, Map placardM, Function _assigned) {
   ///  NOTE  callers placardM is here now.
+  print(':debug: common process begins:');
   String infoS1 =
       '#Caller have accessed #CommonProrocess, where it will hava access in all common resources, ';
   String infoS2 = 'and it can interact with other users.';

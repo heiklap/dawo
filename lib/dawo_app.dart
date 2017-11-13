@@ -14,6 +14,7 @@ library dawo_app.dart;
 import 'base_lib.dart';
 import 'base_struct.dart';
 import 'chore.dart';
+import 'connector.dart';
 import 'dawo_dev.dart';
 import 'missions.dart';
 import 'shower.dart';
@@ -82,6 +83,13 @@ class DawoApp extends BaseStruct {
   final String version_0_0_02 = 'dawo 0.0.02 - 12 / 2013 hkl';
   String thisVersion; //  users announce their version of dawo
   String latestChange = '23.3.2017. th.12.15';
+
+  //  Setting value for console
+  // printing in flowC / flowS. TODO  hklGTry
+  void printControl(bool pc) {
+    _pB = pc;
+    print(':printControl: set to:  $pc');
+  }
 
   ///  Initialize class values to beginning state.
   void init() {
@@ -190,6 +198,12 @@ class DawoApp extends BaseStruct {
 
     init(); //  calling init and build methods in this class
     build(':DAWO-APP:', 'DAWO-APP-MASTER:');
+
+    //
+    print('-->>-->>--  :dawoapp: calling :collector:  -->>-->>--');
+    String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
+    con.opJoin(placardM, connectorMsg, ':D:app:');
+    con.roll();
 
     //  Add code for roll.
 
@@ -363,7 +377,7 @@ Map<String, String> dawo003 = {
 };
 
 ///  Every important library has it's own flowC function. #Library #Privacy!!
-///  Calling print/print-to-buffer method.
+///  Calling print/print-to-buffer function from base_lib.
 ///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p) {
   ///  call flowServe with #LOCAL variables

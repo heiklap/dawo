@@ -58,8 +58,8 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
   void devBoxBuild() {
     int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
     ///  To get nice little header String in top-left corner.
-    String topRim =
-        '_devbox_C: $caller __'; //  Widen this later to screen-width.
+    //  Widen this later to screen-width.
+    String topRim = '_devbox_C: $caller __';
     String botRim = '____'; //  Widen this later to screen-width.
     String padTopRim = topRim.padRight(sW, '_');
     String padBotRim = botRim.padRight(sW, '_');

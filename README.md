@@ -4,6 +4,7 @@ Learning Dart; simple basic data for beginners, and howTo use it for building a 
 Beginner Dart programmers kickoff to develop a glorious package.. Latest code in GitHub: https://github.com/heiklap/dawo
 - Read: /doc/hist_versions.txt in gitHub to see full changes to this, and coming versions.
 - Blog: http://dawopack.blogspot.fi/search/label/dawo 
+- Dawo is using my other package: dawolang: 0.0.1, for word recognition in connector.
 ## Usage
     // Mission Class has wide access to data, since they have instances of
     // Chore classes inside them, in choresL : List<CommmonChore>
@@ -82,10 +83,6 @@ Beginner Dart programmers kickoff to develop a glorious package.. Latest code in
 
 
 src.dart imports files:
-
-    import 'package:dawo/code_snippets/aldente_func.dart';
-    import 'package:dawo/code_snippets/bat_loop.dart';
-    import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
     import 'package:dawo/code_snippets/aldente_func.dart';
     import 'package:dawo/code_snippets/bat_loop.dart';

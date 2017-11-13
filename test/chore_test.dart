@@ -54,7 +54,7 @@ void testPackDawoChore() {
   /// for(var x in packDawoMission.choreL) {
 
   ///  Must #build class, to get chores in place.
-  packDawoMission.build();
+  packDawoMission.build(':CHR;test:');
   packDawoMission.choreL[0].roll(); //  roll one, first, chore: packDawo.
 
   // for (var x in packDawoMission.choreL){

@@ -21,12 +21,19 @@ library effort;
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:math';
+import 'base_lib.dart';
 import 'shower.dart';
 import 'tools.dart';
 import 'clay/user_json.dart';
 
 ///  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;
+bool _pB = true;
+String typeDefTestS = 'typeDefTestString';
+
+//  TODO  typedef _effPrint
+///  TODO  typeDefSuccess
+typedef void _EffPrint(String msg);
 
 ///  howTo: howToMap:  Common method to print a map.  HowToPrintMap:
 void effortOperationMapPrint(Map thisMap) {
@@ -134,27 +141,45 @@ class Effort {
 
   ///  Rendering and presenting user-data Lists.
   void makeAllLists(String caller) {
-    print('- >> - show of eff, effort class -- dawo Lists, C: $caller  ---');
-    print('----------------- eff ----------------------- dawo Lists, goalM:');
+    _effPrint('- >> - show of eff, effort class -- dawo Lists, C: $caller  -');
+    ifPrint('- >> - show of eff, effort class -- dawo Lists, C: $caller  ---');
+    _effPrint('----------------- eff ------ $typeDefTestS dawo Lists, goalM:');
+    ifPrint('----------------- eff ------- $typeDefTestS dawo Lists, goalM:');
     makeGoalM();
 
-    print('------------------- eff -----------------------------    planM:');
+    _effPrint('------------------- eff ---------------------------    planM:');
+    ifPrint('------------------- eff -----------------------------    planM:');
     makePlanM();
 
-    print('-------------------- eff ----------------------------    phaseM:');
+    _effPrint('-------------------- eff -------------------------    phaseM:');
+    ifPrint('-------------------- eff ----------------------------   phaseM:');
     makePhaseM();
 
-    print('--------------------- eff ---------------------------    teamL:');
+    _effPrint('--------------------- eff --------------------------   teamL:');
     makeTeams();
 
-    print('---------------------- eff --------------------------    tempoM:');
+    _effPrint('---------------------- eff -----------------------    tempoM:');
     makeTempoM();
 
-    print('-- <<<<  ----------------- eff ------------------------------');
+    _effPrint('-- <<<<  ----------------- eff ------------------------------');
   }
 
   ///  Get diagonal presentation of all user-data Lists
   List<Map<String, String>> effortLM = [];
+
+  //  TODO  typedef _effPrint
+  ///  announced outside class:  typedef void _effPrint(String msg);
+//  typedef _effPrint(String msg);
+  _EffPrint _effPrint(String msg) {
+    if (_pB) print(':_effPrint:$_pB  $msg $typeDefTestS');
+  }
+
+  ///
+  //  TODO  typedef _effPrint
+//  typedef _effPrint(String msg);
+  void ifPrint(String msg) {
+    if (_pB) print(':sPrint: Is better than this ifPrint $msg $typeDefTestS');
+  }
 
   ///  Usual init method even if we have no fields yet.
   void init() {}
@@ -229,7 +254,7 @@ class Effort {
 
     ///  Take  22 items where #Effort (E:N) value is high, key 12 wide text.
     _l2.addAll(effortTable(effortLM, 'E:', 12, 22));
-    _l3.addAll(effortTable(effortLM, 'D:', 8, 12));
+    _l3.addAll(effortTable(effortLM, 'D:', 8, 9));
 
     //  build List _l4   * Recommendation: *
     //  OLD   _l4.addAll(['1', '2', '3', '4', '5', '6']);
@@ -269,7 +294,7 @@ class Effort {
     tl.boxInList(18, 1, _l5, diagonalL);
 
     ///  Adding json-to-List data to diagonalL matrix.
-    tl.boxInList(28, 35, _lBus, diagonalL);
+    tl.boxInList(28, 33, _lBus, diagonalL);
     tl.boxInList(25, 65, _lFury, diagonalL);
     tl.boxInList(15, 1, _lHuman, diagonalL);
 

@@ -6,6 +6,8 @@
 ///
 /// Hist: hkl  22.5.2014  0.0.1  dawo/lib, in pub and GitHub
 // devNote: Dawo, started dev,  nothing special.
+//    dawolang:    //  path dependency
+//      path: C:\..\Public\..\dawolang
 
 library dawo;
 

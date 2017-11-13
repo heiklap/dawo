@@ -14,14 +14,13 @@ library rumba.dart;
 
 import 'base_lib.dart';
 import 'base_struct.dart';
+import 'connector.dart';
 import 'dawo_dev.dart';
 import 'shower.dart';
 import 'tools.dart';
 
 ///  Collecting Rumba output.
 StringBuffer rumbaBuf = new StringBuffer();
-
-bool _pB = false;
 
 ///
 class Rumba {
@@ -33,7 +32,17 @@ class Rumba {
   bool dawoAppB = false;
   bool missionB = false;
 
+  bool _pB = false;
+
   int rumbaCount = 0;
+
+  Map<String, String> placardM = {
+    'actor': 'Rumba',
+    'sender': 'Rumba instance',
+    'receiver': 'All sub',
+    'command': 'R=>-cmd:',
+    'msg': 'R=>-msg:',
+  };
 
   ///  setting loop variables to beginning state
   void initRumba() {
@@ -69,7 +78,7 @@ class Rumba {
   ///  TODO  Add all other buffers to rumbaBuf.
   StringBuffer dance(var dawoApp) {
     //  TODO  Parameters for screen-output wanted.
-    flowC('-->---->--  rumba-dance', true);
+    _flowC('-->---->--  rumba-dance', true);
     dev.admN.add('>>ADM:CHECK-IN  rumba-dance  >>');
 
     ///  TODO  rumbaLoop is executed for now only 1-3 times
@@ -82,13 +91,17 @@ class Rumba {
 
     //  TODO  Add 2 pcs. of Stream / async / wait / then
     ///  --  rumbaLoop
-    flowC('  -->---->--  rumba-loop', true);
+    _flowC('  -->---->--  rumba-loop', true);
     do {
       /// -----------------------  rumbaB loop code   -------------------
       /// some loopS variables to test visibility, and carry msg.
       /// TODO  add some functionality to rumbaLoop____  messages.
       String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
-      flowC('   -->---->--  rumba-loop-usher', true);
+      _flowC('   -->---->--  rumba-loop-usher', true);
+      print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
+      String connectorMsg = ':DO :NOT :USE #dawolang without #BUILD => :ERROR';
+      con.opJoin(placardM, connectorMsg, ':R:u:');
+      con.roll();
 
       ///  --  usher loop
       do {
@@ -100,7 +113,7 @@ class Rumba {
         do {
           String rumbaLoopDawoAppS = '**  dawoAppLoop is rolling  **';
           //  ---------------------  dawo app loop code ------------------
-          flowC('      -->---->--  rumba-loop-dawoApp', true);
+          _flowC('      -->---->--  rumba-loop-dawoApp', true);
 
           ///  TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
           ///  Running base activity of dawo.
@@ -118,26 +131,30 @@ class Rumba {
             rumbaBuf.writeAll([rumbaLoopRumbaS, rumbaLoopUsherS]);
             rumbaBuf.writeAll([rumbaLoopDawoAppS, rumbaLoopMissionS]);
 
-            flowC('     -->---->--  rumba-loop-mission', true);
+            _flowC('     -->---->--  rumba-loop-mission', true);
 
             // -- chore:  All chore ops go via: Mission
 
             missionB = false; //  Emergency exit, while testing.
           } while (missionB);
-          flowC('        --<----<--  rumba-loop-mission: done', true);
+          _flowC('        --<----<--  rumba-loop-mission: done', true);
 
           dawoAppB = false; //  force loop to run only once.
         } while (dawoAppB);
-        flowC('      --<----<--  rumba-dawo-app: done', true);
+        _flowC('      --<----<--  rumba-dawo-app: done', true);
 
         usherB = false; //  force loop to run only once.
       } while (usherB);
-      flowC('    --<----<--  rumba-loop-usher: done', true);
+      _flowC('    --<----<--  rumba-loop-usher: done', true);
+      print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
+      connectorMsg = ':ALL :DO :ANSWER ;FAST => :HOW:MANY #Process :ON ?';
+      con.opJoin(placardM, connectorMsg, ':R:done:');
+      con.roll();
 
       doneRumba(); //  --  Do it only once now.
       rumbaB = false;
     } while (rumbaB);
-    flowC('  --<----<--  rumba: done', true);
+    _flowC('  --<----<--  rumba: done', true);
 
     /// --  usher loop
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
@@ -169,11 +186,10 @@ class Rumba {
     return rumbaBuf;
   } //  ----------   StringBuffer dance
 
+  ///  Calling print/print-to-buffer function from base_lib.
+  ///  Getting local variables; Actor and Buffer right.
+  void _flowC(String msg, bool prB) {
+    ///  Call flowServe with #LOCAL variables.
+    flowServe(':R:', out.outTl, msg, prB); //  Location:  in base_lib
+  }
 } //  --   rumba class
-
-///  Calling print / print-to-buffer function.
-///  Getting local variables; Actor and Buffer right.
-void flowC(String msg, bool p) {
-  ///  Call flowServe with #LOCAL variables.
-  flowServe(':R:', out.outTl, msg, p); //  Location:  in base_lib
-}

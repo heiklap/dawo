@@ -23,10 +23,11 @@
 //  TODO  chore  Build simple plugin or usage-case for chore.
 //  TODO  chore  NEXT, make  Chr -class.??
 
-library dawlib_chore;
+library chore;
 
 import 'base_struct.dart';
-import 'base_lib.dart';
+import 'base_lib.dart'; //  flowServe() is here.
+import 'connector.dart';
 import 'dawo_dev.dart';
 import 'effort.dart';
 //  import 'equipment.dart';  //  mission handles equipment
@@ -96,6 +97,7 @@ class CommonChore extends BaseStruct {
   bool doneB = false;
 
   ///  Testing placardM inside chore.
+  ///  Present info for outer process calls.
   Map<String, String> placardM = {
     'actor': 'Chore',
     'sender': 'Chore instance',
@@ -106,20 +108,20 @@ class CommonChore extends BaseStruct {
 
   ///  Method for setting class field values.
   void init() {
-    flowC('--> C-init $name  -->---->--', _pB);
+    _flowC('--> C-init $name  -->---->--', _pB);
     String __name = name.toUpperCase();
     String _name = ':$__name :';
     glb.changeActor(_name);
-    flowC('-->  Chore buffer output initialized  -->---->--', _pB);
+    _flowC('-->  Chore buffer output initialized  -->---->--', _pB);
 
     //  Set-fields values done.
-    flowC('<-- ch init done  $name --<----<--', _pB);
+    _flowC('<-- ch init done  $name --<----<--', _pB);
   }
 
   ///  TODO  Chore gets emblem and master from mission in build. Are they right
   ///  Method for setting class in working condition.
   void build(String _emblem, String _master) {
-    flowC('--> chore $name build  -->---->--', _pB);
+    _flowC('--> chore $name build  -->---->--', _pB);
     emblem = _emblem; //  set master and emblem fields.
     master = _master;
     //  TODO  Initialized?  Where?
@@ -127,15 +129,15 @@ class CommonChore extends BaseStruct {
     //  print(onB);
     offB = false; //  off-state ends
     onB = true; //   app is in on
-    flowC('<--  chore build  $name done --<----<-- ', _pB);
+    _flowC('<--  chore build  $name done --<----<-- ', _pB);
   }
 
   ///  #run-like method
   ///  If this or one of it's sub-operations conduct #connector-operations,
   ///  it might be annotated in function parameter.
   void roll() {
-    flowC('--> ch roll:  $name -->---->--', _pB);
-    flowC('Chore::  $infoS   :: roll engaged ', _pB);
+    _flowC('--> ch roll:  $name -->---->--', _pB);
+    _flowC('Chore::  $infoS   :: roll engaged ', _pB);
 
     init(); //  Calling init and build methods in this class.
     //  NOTE  Mission also calls this build.
@@ -155,6 +157,16 @@ class CommonChore extends BaseStruct {
       print('------------ chore  clay maps details done --------------------');
     } //  --_pB
 
+    ///  Connector: normal procedure when acting with it.
+    ///  Connector: join.  placardM mediates necessary info.
+    /// This works, even if analyzer is not finding Connector.
+    /// TODO  Connector, analyzer do not find, or handle #var dynamic.
+    //  Join "clients" / Members to opList. placardM mediates necessary info.
+    _flowC('-->>-->>--  :chore: calling :connector:  -->>-->>--', _pB);
+    String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
+    con.opJoin(placardM, connectorMsg, ':Chr:');
+    con.roll();
+
     //  run #op, for single operation
     op(placardM); //  Actually map is yet not used there.
     //  loop
@@ -162,7 +174,7 @@ class CommonChore extends BaseStruct {
     show();
     done();
     //  code here
-    flowC('<-- ch roll: $name  done --<----<--', _pB);
+    _flowC('<-- ch roll: $name  done --<----<--', _pB);
   }
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
@@ -183,15 +195,20 @@ class CommonChore extends BaseStruct {
   opCom() {}
 
   ///  Second version of above
+  ///  Also connector has method of this name.
   void opJoint() {}
 
   ///  Individual operations are done here.
   ///  Common operation with placard-Map  is in base_lib.
   String op(Map<String, String> _pcM) {
-    flowC('-->  ch roll=>op:  $name -->---->', _pB);
+    _flowC('-->  ch roll=>op:  $name -->---->', _pB);
 
     ///  NOTE  placardM is not used.  TODO
     String _retStr;
+    print('-->>-->>--  :Ch:-op: calling :connector:  -->>-->>--');
+    String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
+    con.opJoin(placardM, connectorMsg, ':Ch:-op:');
+    con.roll();
 
     ///  Make placard in shape.
     ///  calls commonProcess with #placard
@@ -215,18 +232,18 @@ class CommonChore extends BaseStruct {
 
     print('------------ chore-Op and common process  done  -------------- \n');
 
-    flowC('<-- ch roll-op: $name  done <----<--', _pB);
+    _flowC('<-- ch roll-op: $name  done <----<--', _pB);
     return _retStr;
   }
 
   ///  Usual presentation method.
   void show() {
-    flowC('--> ch show:  $name -->---->--', _pB);
+    _flowC('--> ch show:  $name -->---->--', _pB);
     //  print(buf);
     print('bbbbbbbbbb chore.show  choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
     print(choreBuf);
     print('bbbbbbbbbb chore.show  choreBuf done bbbbbbbbbbbbbbbbbbbbbb');
-    flowC('<-- ch show: $name  done --<----<--', _pB);
+    _flowC('<-- ch show: $name  done --<----<--', _pB);
   }
 
   ///  Report of chore.
@@ -255,12 +272,12 @@ class CommonChore extends BaseStruct {
 
   ///  close method
   void done() {
-    flowC('<-- Chore buffer $name output app: done  --<----<--', _pB);
-    flowC('Chore::    $infoS   :: engaged ', _pB);
+    _flowC('<-- Chore buffer $name output app: done  --<----<--', _pB);
+    _flowC('Chore::    $infoS   :: engaged ', _pB);
     //  code here
     //  Too many times.  print(choreBuf);
     //  choreBuf.clear(); //  empty
-    flowC('<-- chore.done    ok   --<----<--', _pB);
+    _flowC('<-- chore.done    ok   --<----<--', _pB);
   }
 
   ///  For to share stuff with  global command in #op
@@ -268,7 +285,7 @@ class CommonChore extends BaseStruct {
   ///  TODO  This should have same name in all libraries?
   ///  Renamed to show, that only commonProcess is meant to use this.
   String assignComProChore() {
-    print('   **  resource sharer assignChore > CommonProcess    ***');
+    _flowC('   **  resource sharer assignChore > CommonProcess    ***', _pB);
     return ('   **  resource sharer assignChore > CommonProcess   ***');
   }
 
@@ -277,9 +294,9 @@ class CommonChore extends BaseStruct {
   CommonChore(this.name, this.infoS);
 }
 
-///  Calling print/print-to-buffer method.
+///  Calling print/print-to-buffer function from base_lib.
 ///  Getting local variables; Actor and Buffer right.
-void flowC(String msg, bool p) {
+void _flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
 
   flowServe(':CH:', choreBuf, msg, p);
@@ -292,27 +309,27 @@ void flowC(String msg, bool p) {
 ///    * * *   so they ARE outside of Chore class  * * *
 ///  PLAN   small checks, updates, msg:s, notes aso.
 ///  But only, if marked in   "flow - chart"
-///  TODO  flowC DO NOT HAVE ACCESS TO inside-class-name variable.'
+///  TODO  _flowC DO NOT HAVE ACCESS TO inside-class-name variable.'
 ///  So it must be given in parameter. lol
 void topGrant() {
-  flowC('these   W O R K S   are executed in every cycle', _pB);
+  _flowC('these   W O R K S   are executed in every cycle', _pB);
 }
 
 /// USAGE:    Execution of EVENT is meant to be avoided.. as long as possible.
 void lowGrant() {
   ///
-  flowC('FLOW:lowGrant:  These are executed ONLY in last occasion', _pB);
+  _flowC('FLOW:lowGrant:  These are executed ONLY in last occasion', _pB);
 }
 
 ///  USAGE:    Run occasionally / timely, in sidebar.
 void sideGrant() {
-  flowC('FLOW:SideGrant:  executed occasionally in sidebar..', _pB);
+  _flowC('FLOW:SideGrant:  executed occasionally in sidebar..', _pB);
 }
 
 //------------------------------------------------------------------------
 ///  flow of chore might be like this... Functions to execute W O R K   flow
 void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
-  flowC('--> these are executed in beginning of W O R K  ', _pB);
+  _flowC('--> these are executed in beginning of W O R K  ', _pB);
 
   ///  ABLE: rollAble and signalAble are separate properties of chore.
   ///  roller(rollAble)   takes care of workFlow.
@@ -322,17 +339,17 @@ void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
 
 ///  main   W O R K   routines
 void doChore() {
-  flowC(' :FLOW:doChore -->  Actual  W O R K   code here...', _pB);
+  _flowC(' :FLOW:doChore -->  Actual  W O R K   code here...', _pB);
 }
 
 /// United chore   W O R K   routines.
 void uniteChore() {
-  flowC(' :FLOW:uniteChore -->  Combined Chore  W O R K   code here...', _pB);
+  _flowC(' :FLOW:uniteChore -->  Combined Chore  W O R K   code here...', _pB);
 }
 
 ///   routines, after W O R K   is done
 void endChore() {
-  flowC('<-- endChore  execution scheduled, when  WORK is done', _pB);
+  _flowC('<-- endChore  execution scheduled, when  WORK is done', _pB);
 }
 
 ///  Quick hack to run effort from test aso files.

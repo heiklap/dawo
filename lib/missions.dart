@@ -13,12 +13,13 @@
 library missions;
 
 //  import 'package:dawo/dawo_app.dart';  //  not used
-import 'package:dawo/base_struct.dart';
-import 'package:dawo/base_lib.dart';
-import 'package:dawo/chore.dart';
+import 'base_struct.dart';
+import 'base_lib.dart';
+import 'chore.dart';
+import 'connector.dart';
 import 'dawo_dev.dart';
-import 'package:dawo/tools.dart';
-import 'package:dawo/equipment.dart';
+import 'tools.dart';
+import 'equipment.dart';
 import 'clay/clay_roll.dart';
 
 ///  #NOTE:  #effort is not visible here.  Only in chore.dart.
@@ -28,7 +29,7 @@ var missionBuf = new StringBuffer();
 
 //  TODO  Should all _pB variables change private: _pB?
 // bool _pB = false; //  Control printing, now:  false;
-bool _pB = true; //  true for chore_test.dart;
+bool _pB = false; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
@@ -40,7 +41,7 @@ List<Mission> missionL = [];
 
 ///  To publish name in scope for testing visibility.
 void helloMission() {
-  flowC('-- Somebody call: hello this is mission file and library  ---', _pB);
+  _flowC('-- Somebody call: hello this is mission file and library  ---', _pB);
 }
 
 ///  Mission avoids consciously using clear and handy structure of Chore class,
@@ -59,7 +60,7 @@ class Mission {
   String emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
-  ///  Reference to outPut-buffer don't carry much: used only in flowC(
+  ///  Reference to outPut-buffer don't carry much: used only in _flowC(
   var _buf = out.outTMid; //  reference to used output StringBuffer.
   //  error: The type of buf can not be inferred, because the use of the
   //  TODO  instance-getter outTMid.
@@ -158,13 +159,31 @@ class Mission {
     //  code..
   }
 
+  ///  Present info for outer process calls.
+  Map<String, String> placardM = {
+    'actor': 'Mission',
+    'sender': 'Mission instance',
+    'receiver': '',
+    'command': ':M:com:',
+    'msg': 'Mis-msg:',
+  };
+
+  ///  Initializing Mission instances fields.
+  void init(String caller) {
+    print('-->>-->>-- Mission-init   C: $caller     -->>-->>--    ');
+    placardM['actor'] = name;
+    placardM['sender'] = name.substring(0, 8);
+    //  TODO  placardM['command'] =
+    //  TODO  placardM['sender'] =
+  }
+
   ///  Building mission with it's chores.
-  void build() {
+  void build(String caller) {
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
     //
-    flowC('-->-m-->         :M:-b:         $name   -->-m-->  ', _pB);
-    flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', _pB);
+    _flowC('-->-m-->         :M:-b:         $name   -->-m-->  ', _pB);
+    _flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', _pB);
     print(':M-build: => :chore.onB:: ');
 
     ///  Should use instance, that is created inside THIS mission instance.
@@ -175,14 +194,19 @@ class Mission {
     placeChr.build(emblem, name);
     seasonChr.build(emblem, name);
     showChr.build(emblem, name);
+    print('-->>-->>--  :M:-build: calling :connector:  -->>-->>--');
+    String _nS = name.substring(0, 7);
+    String connectorMsg = ':INFO :ALL M: $_nS : are :READY :FOR :NEXT :EVENT ';
+    con.opJoin(placardM, connectorMsg, ':M:-build:');
+    con.roll();
 
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
-    flowC('-->-m-->    choreL add-all:  $name       ', _pB);
+    _flowC('-->-m-->    choreL add-all:  $name       ', _pB);
     choreL.addAll(
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
     //  CODE
-    flowC('   <-m--<--       :M:-b:        done  $name     ', _pB);
+    _flowC('   <-m--<--       :M:-b:        done  $name     ', _pB);
   } //  -----  build
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
@@ -203,9 +227,9 @@ class Mission {
   /// devNote:  function, that OPENS way to use outer resources.
   bool opInit(int openCount, var openThis) {
     ///  use resource, equ class
-    flowC('-->-m-->  :M:op:  opInit ', _pB);
-    flowC(':M:op: opInit-info: Get necessary data for op-operations. >>', _pB);
-    flowC('>>  :M:op:Resource object-simulations from app upper level.', _pB);
+    _flowC('-->-m-->  :M:op:  opInit ', _pB);
+    _flowC(':M:op: opInit-info: Get necessary data for op-operations. >>', _pB);
+    _flowC('>>  :M:op:Resource object-simulations from app upper level.', _pB);
     equ.active = true; //  Resource class activate.
     //  opOn;
     //  opDone;
@@ -218,9 +242,10 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    flowC('  -->-m-->  :M:op:  opOpen  ', _pB);
-    flowC('  :M:op: opOpen-info: Open data-tables and resolve queries.>>', _pB);
-    flowC('  >>  :M:op: Schedule area-machine-money resources in time.', _pB);
+    _flowC('  -->-m-->  :M:op:  opOpen  ', _pB);
+    _flowC(
+        '  :M:op: opOpen-info: Open data-tables and resolve queries.>>', _pB);
+    _flowC('  >>  :M:op: Schedule area-machine-money resources in time.', _pB);
     bool _openB = false;
     //  code to roll -open-   - operations
     return _openB;
@@ -229,16 +254,21 @@ class Mission {
   ///  Start developing operation roll function
   ///  Eventually opRoll handles all these others: init-open-close-schedule..
   int opRoll(int rollCount, Function autoRollFunc) {
-    flowC('    -->-m-->  :M:op:  opRoll    * * * * * * * * * * * * *  ', _pB);
-    flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', _pB);
-    flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
+    _flowC('    -->-m-->  :M:op:  opRoll    * * * * * * * * * * * * *  ', _pB);
+    _flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', _pB);
+    _flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
     int done = 0;
+    print('-->>-->>--  :M:-opR: calling :connector:  -->>-->>--');
+    String connectorMsg = ':M:-opR: C:PING :CLIENT :GRANT :N:47345 :VALID 3day';
+    con.opJoin(placardM, connectorMsg, ':M:-opR:');
+    con.roll();
+
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
       done++;
       autoRollFunc();
     }
-    flowC('    <-m--<--  :M:op:  opRoll   done c: $done   * * * * * * *', _pB);
+    _flowC('    <-m--<--  :M:op:  opRoll   done c: $done   * * * * * * *', _pB);
     return done;
   }
 
@@ -246,9 +276,9 @@ class Mission {
   /// idea?
   int opClose(int openCount, Function openThis) {
     equ.active = false;
-    flowC('--<----<-  :M:op:  opClose --<----<-', _pB);
-    flowC(':M:op: opClose-info: End lof mission-op operation. >>', _pB);
-    flowC('>>  :M:op: **  Statistics ready, save next-round data. **.', _pB);
+    _flowC('--<----<-  :M:op:  opClose --<----<-', _pB);
+    _flowC(':M:op: opClose-info: End lof mission-op operation. >>', _pB);
+    _flowC('>>  :M:op: **  Statistics ready, save next-round data. **.', _pB);
 
     int _openCount = openCount;
     openThis(); // As I recall, parameter-function goes like this.
@@ -258,9 +288,9 @@ class Mission {
 
   ///  give report of op statistics
   void opReport() {
-    flowC('  --<----<-  :M:op:  opReport --<----<-', _pB);
-    flowC('  :M:op: opReport-info: Report for to check data lists. >>', _pB);
-    flowC(
+    _flowC('  --<----<-  :M:op:  opReport --<----<-', _pB);
+    _flowC('  :M:op: opReport-info: Report for to check data lists. >>', _pB);
+    _flowC(
         '  >>  :M:op: opReport: ** Not needed when scheduleBox is on.**.', _pB);
     List<String> _l = [];
     List<String> _l2 = [];
@@ -351,10 +381,10 @@ class Mission {
 
 } // --  end class Mission
 
-///  Calling print/print-to-buffer method.
+///  Calling print/print-to-buffer function from base_lib.
 ///  Getting local variables; Actor and Buffer right;
 ///  Every library / actor has its own flowC function.
-void flowC(String msg, bool p) {
+void _flowC(String msg, bool p) {
   ///  Call #common flowServe with #LOCAL variables:
   ///  :MISSION: is too long.
   flowServe(':M:', out.outTMid, msg, p);
@@ -385,7 +415,7 @@ void missionChoreReport(String caller) {
 ///  Add clay ( data ) maps to missions.
 ///  TODO  Messy function buildMissions.  Clean, organize it.
 void buildMissions(String caller) {
-  flowC('-->-m--> build Missions, caller: $caller   ', _pB);
+  _flowC('-->-m--> build Missions, caller: $caller   ', _pB);
   dev.admN.add('>>ADM:CHECK-IN  build-Missions  >>');
 
   ///  Start of new dawoMission.
@@ -419,25 +449,38 @@ void buildMissions(String caller) {
   ]);
 
   /// .build adds default Chore's to missions
-  flowC('-->-m-->    missionL forEach print-choreL   -->-m-->  ', _pB);
+  _flowC('-->-m-->    missionL forEach print-choreL   -->-m-->  ', _pB);
 //  hklTry   missionL.forEach((x) => x.build);
   //  missionL.forEach(print);  //  =>  Instance of 'Mission'
 
   ///  Calling mission-chore report
   if (_pB) missionChoreReport('By: MissionBuildMissions');
 
-  flowC('  <-m--<--  missionL forEach print-choreL   done   <-m--<--', _pB);
+  _flowC('  <-m--<--  missionL forEach print-choreL   done   <-m--<--', _pB);
 
-  flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', _pB);
+  _flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', _pB);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
-  packDawoMission.build();
-  helsinkiMission.build();
-  dartlangMission.build();
-  myMusicMission.build();
-  myTimeMission.build();
-  nationalParksMission.build();
+  ///  TODO  hklTry: #cascades   Now should do init AND build.
+  packDawoMission
+    ..init(':M:-bms:')
+    ..build(':M:-bms:');
+  helsinkiMission
+    ..init(':M:-bms:')
+    ..build(':M:-bms:');
+  dartlangMission
+    ..init(':M:-bms:')
+    ..build(':M:-bms:');
+  myMusicMission
+    ..init(':M:-bms:')
+    ..build(':M:-bms:');
+  myTimeMission
+    ..init(':M:-bms:')
+    ..build(':M:-bms:');
+  nationalParksMission
+    ..init(':M:-bms:')
+    ..build(':M:-bms:');
 //  };
-  flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- ', _pB);
+  _flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- ', _pB);
   //  TODO  make mission-chore report
   if (_pB) {
     for (var x in missionL) {
@@ -450,7 +493,7 @@ void buildMissions(String caller) {
     }
   }
 
-  flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- ', _pB);
+  _flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- ', _pB);
 } //  -----  buildMissions
 
 ///  Creating instance of Mission and using it's methods.
@@ -466,5 +509,5 @@ void renderMission() {
   missionR.toChore(missionR.choreL[1]);
 
   missionR.rollCount;
-  flowC('--  mission: $missionR.name : render done  --', _pB);
+  _flowC('--  mission: $missionR.name : render done  --', _pB);
 }

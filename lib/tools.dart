@@ -61,7 +61,7 @@ class Tools {
     return i;
   }
 
-  ///  Return List of items, where #String exist
+  ///  Return List of items, where #String exist. from dawo-tools.
   List<String> StrInList(List<String> _l, String _s) {
     List<String> _queryL = new List();
     for (var x = 0; x < _l.length; x++) {
@@ -135,6 +135,17 @@ class Tools {
     thisMap.forEach((k, v) {
       print('$k, $v');
     });
+  }
+
+  ///  Return list<String> from map<String, String>.
+  List<String> mapToList(Map<String, String> thisMap) {
+    List<String> _l = [];
+    thisMap.forEach((k, v) {
+      String _s = '';
+      _s = '$k, $v';
+      _l.add(_s);
+    });
+    return _l;
   }
 
   ///  print Map<String, Map<String, String>>  map nicely

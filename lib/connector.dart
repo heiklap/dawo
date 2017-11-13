@@ -1,31 +1,51 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  connecting  ( as #client's) app - mission - chore together,  mediating them
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this
+// source code is governed by a BSD-style license that can be found in the
+// LICENSE file.
+///  ##  connecting  ( as #client's) app - mission - chore together,
+///  mediating them. separate objects work together in outer processes,
+///  using #LANG -specific commands to configure their proceedings.
+///  using #dawolang package in path dependency
+///  method String weightString(String _aS) checks #C messages
 ///   dawo version:  0.0.5  6.11.2017  * READY-STATE: for  0.0.6 version> 0%
 ///
-/// * Usability: 5%
+/// * Usability: 7%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
 /// #name:  connector ..is not nice. change to: ______ ??
+/// #name: placard : 1 !!
 /// Connector is in deeply planning state. We know, that app -
-/// mission - chore work together in same sphere, and there must be something, that
-/// they have in common; abstraction layer, in which they must work together.
+/// mission - chore work together in same sphere, and there must be something,
+/// that they have in common; abstraction layer, in which they must
+/// work together.
 ///
 /// * Every #little operation is "connector-operation", and connector has
 /// * knowledge for all of them and can interact with them.
 /// * Sending messages between objects. Stance, approach
 /// * "Connector-operations" have access to certain up-level variables.
-/// * Using GlobalOpClass might be too heavy.!!
+/// *   * * *   companions in process  * * *
+/// * Using #GlobalOpClass to do outer process.
+/// * #LANG : command-words to give behaviour to actions.
 /// * ADD IS-GLOBAL bool field to Operation-classes.
 /// * Connector classes might have precedence in Mill-op.
 /// * Might trig some action in their connected sister-operations.
 //  * Find common interests, i've been here.. follow-me, give-take
+/// * Other objects also handle things connected to this. So connector might
+/// * be just  a simple message (plea) mediator.
+/// * Global op does something
 //  NOTE:
 //  devNote: tracking begins.
 
 library connector;
 
-import 'package:dawo/base_struct.dart';
-import 'package:dawo/base_lib.dart';
+///  path dependency
+import 'package:dawolang/dawolang.dart';
+
+import 'base_struct.dart';
+
+//  TODO import ruins this app flowServe stops working. lib-function import 2X
+import 'base_lib.dart';
+//NO NEED    import 'package:dawo/base_lib.dart' as blib show flowServe();
+import 'shower.dart';
+import 'tools.dart';
 
 ///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = new StringBuffer();
@@ -34,7 +54,7 @@ StringBuffer connectorBuf = new StringBuffer();
 String connectorMotto = 'connecting app, mission, chore; mediating them';
 
 ///  ***********************************************************************
-/*      connector:  very weak idea, how to accomplish this. 10 %
+/*      connector:  getting some idea, how to accomplish this. 10 %
         Not much of this functionality is yet done.
         
         Name:   #connector is not the right one. Not nice.
@@ -42,16 +62,18 @@ String connectorMotto = 'connecting app, mission, chore; mediating them';
 
 * Get "service calls" from #members:  app - mission - chore; and solve them.
 * Have rules of privilege for precedence of missions - chores.
-* Give TO > mill commands, "work-orders".
-* Should have access to class-buffers to seek data.
-* Special language #Lang, to force commands to certain shape.
+* #Mill is separate job-keep-them-in-privileged-order processor.
+* feed > mill commands-messages-flags-schedules; "work-orders".
+* #C should have access to class-buffers to seek data.
+* Special language #Lang, to force commands to certain shape, and
+* send messages.
 * #baton : to carry only-one-can-have-at-a-same-time magic thing.
 *
 * COMMAND ROLL:
-* 1. get command, handle parameters.
+* 1. get command, handle parameters, handle #LANG-message.
 * 2. Check command against rules. Take - return - reject.
 * 3. Full-fill command;  void obey(sender, receiver, baton, msg, flags)
-* 4. Get answer, serve back.
+* 4. Get answer, serve back. #Report operations shows total results.
 * 5. Mark done.
 *
 * Questions:
@@ -61,7 +83,7 @@ String connectorMotto = 'connecting app, mission, chore; mediating them';
 * 3. ?
 *
 * IDEA:  All (commands) might happen in #mill. ( an order processor system ).
-* IDEA:  #Callback-like service calls.
+* IDEA:  #Callback-like service calls. Maybe later, now just: #order, #turn.
 * IDEA:  #serviceKey #baton, that only one client can have at a time.
 * IDEA:  Privilege key.
 *
@@ -79,68 +101,234 @@ String connectorMotto = 'connecting app, mission, chore; mediating them';
  */
 ///  ***********************************************************************
 
+//  typedef _conPrint = List<String> Function <String>(String);
+//  typedef _conPrint = List<String> Function <String>(String);
+//  typedef int Compare(Object a, Object b);
+typedef void _ConPrint(String msg);
+
+/*
+void _conPrint(String msg){
+  if (_pB) print(msg);
+}
+
+typedef  _conPrint =  void _conPrint(String msg);
+*/
+
+//
 ///  This class gets same structure base, as other important classes.
 ///  Connecting clients (app-mission-chore) to work together.
 class Connector extends BaseStruct {
+  bool _pB = false; //  false;   //  To control printing in _flowC method.
   String name = 'connector class';
-  String info = 'connecting app - mission - chore together, mediating them';
-  String motto = 'do my job, connector, mediates';
+  String info = 'App - mission - chore co-op in #CommonProcess via #LANG';
+  String motto = 'Give objects long, powerful extra hand.';
 
-  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal; //  like:  ":CONNECTOR:";
-  /// emblem can be used in flowC
-  String emblem =
-      ':D-A:'; //  or this emblem.StringBuffer buf = new StringBuffer();
-  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
-  String master; //  Object that owns this.
+  ///  devNote: IDEA: Fields for to better shape outPut stuff in console.
+  String seal = ":CONNECTOR:"; //  like:  ":CONNECTOR:";
+  /// .. or this:  emblem can be used in _flowC
+  String emblem = ':D-A:';
+  String indent = "      "; // like: 3-5-7 empty marks or something visible.
 
-  // Buffer inside class for output.
+  //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
+  ///  clause walks with objects in process call and carries list of words.
+  ///  Combination of #LANG words in sentence.
+  String clause = ":DO :HINT :FIND :AREA :JOIN :OPEN :RULE";
+  String master; //  Object that owns this. Now only a String.
+
+  // Buffer inside class to keep String-data for output.
   StringBuffer buf = new StringBuffer();
+  String _sb = 'cb- '; //  marking all buf rows.
 
-  ///  Controlling connectors state, working-condition-state values.
-  bool offB = true;
-  bool onB = false;
-  bool pauseB;
-  bool doneB = false;
+  ///  4 var to control connectors state, working-condition-state values.
+  ///  DONE: This is now a map.
+  Map<String, bool> st = {
+    'offB': true,
+    'onB': false,
+    'pauseB': false,
+    'doneB': false,
+  };
+
+  ///  *****************************************************************
+  ///  GlobalOperation ?
+  ///  * Using GlobalOpClass might be too heavy.!!
+  ///  var msgBus * Sending messages between objects. Stance, approach
+  ///  If this is only simple msg-handler getPlea, handlePlea, givePlea
+  ///  And now section, that handles all those small details:
 
   ///  #New: #Gear Something turns around this.
+  ///  the sail pivots around the axis of a virtually static mast
   var pivot;
 
-  ///  just an idea.. PING
+  //  typedef void _ConPrint(String msg); // announced outside of class
+  _ConPrint _conPrint(String msg) {
+    if (_pB) print(':_conPrint:C: $_pB  $msg');
+  }
+
+  ///  or: void metro() {}   for putting messages to move.
+  ///  PING, Putting messages in queue or sending them immediately.
+  // void ping(Baker sender, receiver, var key) {
   void ping(var sender, var receiver, var key) {
     ///  code
   }
 
+  ///  Members, that are participating in this connector.
+  ///  Member is a class in base_struct.
+  ///  #PLAN:  eventually this will be Member.
+  //  Map<String, Member> memberM = {};
+  Map<String, String> memberM = {};
+
   ///  get / collect bindings
-  Map<String, Map<dynamic, dynamic>> bindingM = {};
+  ///  Processes, that are bind inside connector.
 
-  //  Connect something to other. One more empty idea:
-  String binding(var customer, var thing) {
-    //  Idea: Have some ideas?
+  ///  Structure and usage of this map is not yet clear.Data is like:
+  ///  Dawo example D-ex-loops
+  //   Rumba instance All sub
+  Map<String, Map<String, String>> bindingM = {
+    'Bind:' : {
+      'First': 'Bind',
+      'Test': 'Bind2'
+    }
+  };
+
+  ///  Eventually this will be object - object
+  //  Map<String, Map<dynamic, dynamic>> bindingM = {};
+
+  //  Connect Members action to one or many other Members action.
+  //  eventually this will be: var / dynamic / command...
+  //String bind(var senderProcess, var receiverProcess, var thing, String msg) {
+  String bind(String sProcess, String rProcess, String thing, String msg) {
+    _flowC(':CN:bind:  -->>-->>--  :connector:  C::Chr:  -->>-->>--', _pB);
+    //  Idea: Have some binding-models and types.
     //  add / find from bindingM Map
-    return 'binding: #one to #second';
+    return 'binding: #one to: #second';
   }
 
-  ///  Just copy methods body from other class.  lol
+  ///  Giving nice report of connections.
+  List report() {
+    _conPrint('--------------- connector report ----------------------------');
+    List<List<String>> _dbL = new List();
+    List<List<String>> _dbL2 = new List();
+    //  List<List<String>> _dbL3 = new List();
+
+    _dbL.addAll([_memberL, _joinLog]);
+    //  Add message list: for in-coming messages: _inMsgL
+    _dbL2.addAll([_inMsgL, _bindL]);
+
+    /*
+    _memberL.addAll(tl.mapToList(memberM));
+    //  TODO  hklTry  Glorious code
+    for (var x in _memberL) {
+      _bindL.addAll(tl.mapToList(bindingM[x])); //TODO  values
+    }
+    _dbL3.addAll([_memberL, _bindL]);
+    */
+
+    _conPrint('--------------- connector report devBox:: -------------------');
+    //  presenting devBox in 2 x 2 table.
+    devBox(':con-r1:', _dbL, 0);
+    devBox(':con-r2:', _dbL2, 0);
+    //  devBox(':con-r3:', _dbL3, 0);
+    _conPrint('--------------- connector report done -----------------------');
+    return ['this', 'list', 'is', 'vain']; //  No need for list??
+  }
+
+  ///  Connector base activity, keep list of Members / their operations.
+  ///  devNote: Or should it be something smaller?  abstract class BasePlacard?
+  List<GlobalOpClass> opL = new List();
+
+  ///  List for #C information. Used for devBox reporting.
+  List<String> _joinLog = ['* :connector: join-log *'];
+  List<String> _bindL = ['*  :connector: bind-list  *'];
+  List<String> _inMsgL = ['*  :connector: in-msg-list  *'];
+  List<String> _memberL = ['*  :connector: member-list  *'];
+
+  ///  Join "clients" / Members to opList. placardM mediates necessary info.
+  void opJoin(Map<String, String> plcM, String _inMsg, caller) {
+    ///  Operations register to Connector with placardM.
+    //  'actor': 'Chore',
+    //  'sender': 'Chore instance',
+    //  'receiver': '',
+    //  'command': 'Ch-cmd:',
+    //  'msg': 'Ch-msg:',
+    //  *******************************
+    ///  code:
+    _flowC(':CN:  -->>-->>--  :connector:  C:$caller  -->>-->>--', _pB);
+
+    //  TODO  #dawolang
+    _flowC(':CN:  -->>-->>-- :dawolang-call: by :dawo-connector -->>-->>', _pB);
+
+    ///  Using LexiconBase class from dawolang.
+    lb.build(':call:WG:-dawolang:  :by:dawo-connector:');
+
+    ///  Using Analyzer class from dawolang.
+    an.analyzeStrS(':ONE more :WEEK :WILL :DO', lb.wordList);
+    an.analyzeStrS(':YOU in :NEW :ROLE gives :MORE :VALUE :TO :THIS :PROJECT',
+        lb.wordList);
+
+    _flowC(':CN:  -->>-->>- :dawolang-call: by :dawo-connector done -->>', _pB);
+
+    _flowC(':CN:  -->>-->>--  :connector:  C:$caller  -->>-->>--', _pB);
+    String actorS = plcM['actor'];
+    String senderS = plcM['sender'];
+    String receiverS = plcM['receiver'];
+    String comS = plcM['command'];
+    String msgS = plcM['msg'];
+    String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
+    _flowC(':CN:  $_S', _pB);
+    String jAddS = ':C:JoinEvent $comS $msgS $senderS';
+    _joinLog.add(jAddS);
+
+    _flowC('\n -->>-->> connector  :con:opJoin:inMsg:    -->>-->>', _pB);
+    _flowC(_inMsg, _pB);
+
+    ///  Using Analyzer class from dawolang.
+    String _weightStringMsg = an.weightString(_inMsg, lb.wordList);
+    _flowC(_weightStringMsg, _pB);
+    _flowC('--<<--<< :con:opJoin:inMsg:  done  --<<--<< \n', _pB);
+
+    /// Use new  _inMsgL  for keeping#unmodified   _inMsg.
+    _inMsgL.add(_inMsg);
+    //  memberM
+    //  TODO  Make sure to have original key for every "event"
+    memberM.putIfAbsent(actorS, () => comS);
+
+    //  bindingM
+    //  TODO  Error  Can n ot handle this map. howTo Map?
+    //  Map<String, Map<String, String>> bindingM = {};
+    //  TODO  Map putIfAbsent(senderS, () => receiverS );
+    print(':debug: bindingM putIfAbsent::');
+    bindingM['Bind:'].putIfAbsent(senderS, () => receiverS);
+    bindingM['Bind:'].forEach((k, v)  => print('$k $v'));
+    print('---------- bindingM ------------------------');
+    _flowC(':CN:-info:  $info', _pB);
+    print('** :c:opJoint:  operationMapPrint plcM   **');
+    tl.operationMapPrint(plcM);
+    //  TODO  connector  add memberM    add  BindingM
+
+    _flowC(':CN:  --<<--<<--  :connector: done   C:$caller  --<<--<<--', _pB);
+  }
+
+  ///  Here goes normal init-build-roll-show-done -round. No loop.
   ///  Method for setting class field values to their run-time-values.
+  ///  Called by: roll.
   void init() {
-    buf.writeln('---  Connector buffer output initialized  ---');
+    buf.writeln('$_sb ---  Connector buffer output initialized  ---');
 
-    //  Set fields values.
-    buf.writeln('init done');
+    //  Set fields values, mostly lists and maps.
+    buf.writeln('$_sb init done');
   }
 
-  ///  Method for setting class in working condition.
-  ///  CalledBy:  No calls.
+  ///  Method for further setting class fields in working condition.
+  ///  CalledBy:  Roll.
   void build(String _emblem, String _master) {
-    offB = false; //  off-state ends
-    onB = true; //   Connector is in on-state.
-    buf.writeln('build done');
+    st['offB'] = false; //  off-state ends
+    st['onB'] = true; //   Connector is in on-state.
+    buf.writeln('$_sb :connector: -> build done');
   }
 
   ///  #run / roll method
   void roll() {
-    buf.writeln('Connector::    $info   :: roll engaged ');
+    buf.writeln('$_sb Connector::    $info   :c: roll engaged ');
     init(); //  calling init and build methods in this class.
     //  TODO  connector Build parameters.
     build('*CONNECTOR:', 'CONNENCTORS-MASTER:');
@@ -152,26 +340,44 @@ class Connector extends BaseStruct {
     //  code here
   }
 
-  ///  Connector base activity, keep list of clients.
-  ///  devNote: Or should it be something smaller?  abstract class BasePlacard?
-  List<GlobalOpClass> opL = new List();
+  ///  Method for #Members to take part in common operations.
+  void rollCommon() {}
 
-  ///  Join "clients" to opList.
-  void opJoin() {
-    ///  Operations register to Connector.
-    ///  code:
+  ///  Gives members privileges in common operations..
+  void sharer() {}
+
+  ///  Presentation method.
+  void show() {
+    //  TODO  Make forced print
+    if (_pB) {
+      print(':buffer: is printed');
+      print(buf);
+    }
   }
 
+  ///  close method
+  void done() {
+    _flowC('Connector::    $info   :: engaged ', _pB);
+    //  code here
+    buf.write('$_sb ---  Connector buffer output app: done  ---');
+    if (_pB) print(buf);
+    buf.clear(); //  empty buffer
+  }
+
+  /// 3 #LANG specific commands, that configure objects behaviour in relation
+  /// to other objects.
   ///  TODO  Name for next 3 fields might be opTouche aso.
   ///  Solve one unambiguous textual find-decide problem.
-  String touche(String sender, String key, String source) {
+  ///  NOTE: might be separate Touche class.
+  String touch(String sender, String key, String source) {
     //  TODO problem
     return 'solved:toucheStr: ';
   }
 
   ///  Search big amount of #clay data for #customer:s key / order.
   ///  .. solve textual problems based on keywords / search in textual data
-  String solver(String sender, String key, String source) {
+  ///  NOTE: might be separate Solver class.
+  String solve(String sender, String key, String source) {
     //  TODO problem
     return 'solved: solveString';
   }
@@ -185,18 +391,19 @@ class Connector extends BaseStruct {
   }
   //  *****************************************************************
 
-  ///  Presentation method.
-  void show() {
-    print(buf);
-  }
+  ///  TODO  typedef  print function
+  ///  typedef int Compare<T>(T a, T b);
+  //  typedef _conPrint(String msg);
+  //   typedef  _conPrint =  void _conPrint(String msg){
+  //   if (_pB) print(msg);  }
 
-  ///  close method
-  void done() {
-    print('Connector::    $info   :: engaged ');
-    //  code here
-    buf.write('---  Connector buffer output app: done  ---');
-    print(buf);
-    buf.clear(); //  empty buffer
+  ///  Calling print/print-to-buffer function from base_lib.
+  ///  Getting local variables; Actor and Buffer right.
+  ///  Changing to use local -
+  void _flowC(String msg, bool prnB) {
+    ///  Call flowServe with #LOCAL variables.
+    //  TODO  Why not find base_lib flowServe() ??
+    flowServe(':con:flC:$prnB ', buf, msg, prnB);
   }
 
   ///  constructor
@@ -204,7 +411,7 @@ class Connector extends BaseStruct {
 }
 
 ///  Create instance of Connector.
-var cn = new Connector('DawoAppconnector', 'Connection operations');
+var con = new Connector('DawoAppconnector', 'Connection operations');
 
 ///  Construct almost same class: but for collecting data.
 ///  Would like to extend this from Connector: class, but it do not have

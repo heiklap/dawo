@@ -19,6 +19,7 @@ import 'package:dawo/base_struct.dart';
 import 'package:dawo/chore.dart';
 
 import 'package:dawo/dawo_app.dart';
+import 'package:dawo/connector.dart';
 import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/mill.dart';
 import 'package:dawo/missions.dart';
@@ -37,21 +38,35 @@ var missionX = new Mission('Mission-class', 'example:dawo_example');
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {
-  print('==>>==>>====      dawo_example          ==>>==>>====');
+
+  print('d-ex-==>>==>>====      dawo_example          ==>>==>>====');
   //  By Google Stagehand example
   var awesome = new Awesome();
-  print(':DAWO:EXAMPLE:  awesome: ${awesome.isAwesome}');
+  print('d-ex-:DAWO:EXAMPLE:  awesome: ${awesome.isAwesome}');
+  Map<String, String> placardM = {
+    'actor': 'D-example',
+    'sender': 'Dawo example',
+    'receiver': 'D-ex-loops',
+    'command': 'D-ex-cmd:',
+    'msg': 'D-ex-msg:',
+  };
 
   var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
       'By: dawo_example.dart: dawoApp rolls missioms');
   var rumba = new Rumba();
+  noPrint();
+
+  print('d-ex--->>-->>--  :dawo:example: calling :connector:  -->>-->>--');
+  String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
+  con.opJoin(placardM, connectorMsg, ':Dawo:example:');
+  con.roll();
 
   // This also returns a StringBuffer.
   rumba.dance(dawoApp);
-  print('==<<==roll mission op/ init -open - roll: -close    ==<<==<');
+  print('d-ex-==<<==roll mission op/ init -open - roll: -close    ==<<==<');
   //  TODO  Better hello-function, to do something real.
-  void helloMission() => print(':d:exmpl: * *   Mission!  Message-bus. * * ');
-  print('\n -::dw-ex: -----------  rolling mission op-functions ---------- ');
+  void helloMission() => print('d-ex-exmpl: * *   Mission!  Message-bus. * * ');
+  print('\n d-ex-::dw-ex: -----------  rolling mission op-functions ------ ');
 
   ///  Eventually opRoll handles all these others.
   packDawoMission.opInit(1, 'empty parameter');
@@ -59,27 +74,56 @@ main() {
   packDawoMission.opRoll(3, helloMission);
   packDawoMission.opClose(4, helloMission);
   packDawoMission.opReport();
-  print(' -::dw-ex: -----------  rolling mission op-functions done ------\n');
+  print('d-ex- -::dw-ex: -------  rolling mission op-functions done ---\n');
   scheduleBox(':d:ex:');
 
-  print('==>>==>>====      dawo_example buffers:     ==>>==>>====');
+  // #connector
+  ch.roll();
+
+  print('d-ex- ==>>==>>====      dawo_example buffers:     ==>>==>>====');
   out.outBuffersSizes('dawo_example');
-  outBuffersPrint('dawo_example', 'no-prevent-printing');
-  print('==<<==<<====      dawo_example buffers:     ==<<==<<====');
+  outBuffersPrint('d-ex- dawo_example', 'no-prevent-printing');
+  print('d-ex- ==<<==<<====      dawo_example buffers:     ==<<==<<====');
 
   print('d-ex- >>  ----- calling choreEffort---------- dawo sets, goals:');
   choreEffort('d-ex-');
 
   print('d-ex- <<  ----- calling choreEffort done  ------ dawo sets, goals:');
 
-  print(':d:ex: ==>>==>>====      encoded - decoded      ==>>==>>====');
-  print(':d:ex: ==>>==>>==== chore > effort > user_json render   ==>>==>>===');
+  print('d-ex- ==>>==>>====      encoded - decoded      ==>>==>>====');
+  print('d-ex- ==>>==>>==== chore > effort > user_json render   ==>>==>>===');
   choreToEffortUserJson(':d-ex:');
 
-  print(':d:ex: ==<<==<<====      encoded - decoded   done   ==<<==<<====');
+  print('d-ex- ==<<==<<====      encoded - decoded   done   ==<<==<<====');
+  print('d-ex- ==>>==>>==== :d:ex: calling connector report   ==>>==>>===');
+  con.report();
+  print('d-ex- ==<<==<<====      connector report done     ==<<==<<====');
 
-  print('==<<==<<====      dawo_example done     ==<<==<<====');
+  print('d-ex- ==<<==<<====      dawo_example done     ==<<==<<====');
 }
+
+void noPrint(){
+  /*
+  //  lol  You can not access local private variables.
+  dawoApp.printControl(false);  //  no top-level getter dawoApp ??
+  connector._pB = false;
+  dev._pB = false;
+  mill._pB = false;
+  missions._pB = false;
+  shower._pB = false;
+  tools._pB = false;
+  rumba._pB = false;
+ */
+
+
+
+
+
+
+
+}
+
+
 
 ///  For to check variables visibility.
 void wordPlay() {

@@ -318,6 +318,8 @@ abstract class BaseStruct {
   String infoS;
   String motto;
 
+  //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
+  String clause; //  Combination of #LANG words in sentence.
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   String seal; //  like:  ":DAWO-APP:";
   String emblem; //  or this emblem.
@@ -362,6 +364,20 @@ abstract class BasePlacard {
   String receiver;
   String command;
   String msg;
+}
+
+///  base class that serves objects that can have members.
+///  #connector is using this
+class Group {
+  String name = '';
+  Map<String, Member> memberM = {};
+}
+
+///  base class that serves objects that can be members in some group.
+///  #connector is using this
+class Member {
+  String name = '';
+  String group = '';
 }
 
 //

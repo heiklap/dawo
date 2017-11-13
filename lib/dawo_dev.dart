@@ -84,6 +84,9 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('6 Nearing chaos : was hard to spot: #whoPrintedThisToConsole.')
+      ..add('6 typedef effPrint conPrint aso and method inside class.')
+      ..add('6 Connector: much activity; ERROR: dartdoc fails.  ')
       ..add('5  Shorter names, dawo away: connector.dart, mill.dart.')
       ..add('5  Effort-diagonal got recommendation and JSON lists.')
       ..add('5  Only Chore knows the one and only instance of Effort.')
