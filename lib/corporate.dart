@@ -45,13 +45,12 @@ class Corporate {
 
   ///  caller:  chore-op
   ///  Shaping everybody-to-use functionality for..
-  ///  DONE: previous:  commonProcess
   StringBuffer process(
       String by, GlobalOpClass glOpC, Map placardM, Function _assigned) {
     ///  NOTE  callers placardM is here now.
     print(':debug: :corporate: process begins:');
     String infoS1 =
-        '#Caller have accessed #corporate.process, where it will hava access in all common resources, ';
+        '#Caller have accessed #corporate.process, where it will hava access in all public resources, ';
     String infoS2 = 'and it can interact with other users.';
     print(infoS1);
     print(infoS2);
@@ -61,8 +60,8 @@ class Corporate {
       ..add(
           '\n -->>-->  corporate.process  #caller: $by ccccccccccccccccccccccccccp')
       ..add('glbOpsInUse: ___________________________________')
-      ..add('  ------  commonStream  -----------')
-      ..add('   -----  commonStreamBoard  ----------')
+      ..add('  ------  demandStream  -----------')
+      ..add('   -----  demandStreamBoard  ----------')
       ..add('   -----  corporate.paramToStr  ---------------   -->')
       ..add('   -----  corporate.bufMsg  ---------------')
       ..add('   -----  corporate.roll  -------------')

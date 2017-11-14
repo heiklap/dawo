@@ -84,7 +84,9 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('New Store class, all Streams are now: supply and demand.')
       ..add('6 class Group and Member in base_struct.')
+      ..add('Corporate class, previous #common operate from base_lib.dart.')
       ..add('6 Solving chaos : changing names to privat and original ones.')
       ..add('6 Solving chaos : console output is now only 22 screens.')
       ..add('6 solving chaos : :who:did:this: to mark outputs in console.')

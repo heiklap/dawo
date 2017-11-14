@@ -17,6 +17,7 @@ import 'chore.dart';
 import 'connector.dart';
 import 'dawo_dev.dart';
 import 'missions.dart';
+import 'store.dart';
 import 'shower.dart';
 
 // ignore: unused_field for those wondering.
@@ -260,24 +261,24 @@ class DawoApp extends BaseStruct {
     flowC('--- :stream:beg dawoApp rollStream started by: $caller    ---', _pB);
     flowC(
         '--- :stream:beg dawoApp rollStream started by: $caller    ---', true);
-    // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
+    // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
-    commonStream(
+    store.demandStream(
         ':dawoApp:d-s', [agenda, msg, develop, version, msg], 'appListener');
-    commonStream(
+    store.demandStream(
         ':dawoApp:d-s', ['First Book', 'My Book', 'Third Book'], 'appListener');
     flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
   }
 
-  ///  calling base>_lib commonStream, elementary Stream example
+  ///  calling base>_lib demandStream, elementary Stream example
   ///
   ///  #TODO  make this use #iterable parameter; dev.admN / where #ALL
   ///
   void rollStream(String _cl) {
     flowC('--- :stream:beg dawoApp rollStream started by: $_cl    ---', _pB);
-    // commonStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
+    // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
-    commonStream(
+    store.demandStream(
         ':dawoApp-r:s:', [agenda, msg, develop, version], 'appListener');
 
     ///  calling stream on dev.admN list certain items:
@@ -293,9 +294,9 @@ class DawoApp extends BaseStruct {
     }
     //  When using : StrInList in tools:
     //  _queryL.addAll(tl.StrInList(dev.admN, 'schedule'));
-    //  base_lib commonStream acts nicely with 0-length list
+    //  store demandStream acts nicely with 0-length list
 
-    commonStream(':dawoApp-r:s:ADM:', _queryL, 'appListener');
+    store.demandStream(':dawoApp-r:s:ADM:', _queryL, 'appListener');
     //  TODO Stream: meaningful : streams from doneL / devN important
     flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }

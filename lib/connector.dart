@@ -120,7 +120,7 @@ typedef  _conPrint =  void _conPrint(String msg);
 class Connector extends BaseStruct {
   bool _pB = false; //  false;   //  To control printing in _flowC method.
   String name = 'connector class';
-  String info = 'App - mission - chore co-op in #CommonProcess via #LANG';
+  String info = 'App - mission - chore co-op in #corporate.process via #LANG';
   String motto = 'Give objects long, powerful extra hand.';
 
   ///  devNote: IDEA: Fields for to better shape outPut stuff in console.
@@ -341,10 +341,10 @@ class Connector extends BaseStruct {
     //  code here
   }
 
-  ///  Method for #Members to take part in common operations.
-  void rollCommon() {}
+  ///  Method for #Members to take part in corporate operations.
+  void rollCorporate() {}
 
-  ///  Gives members privileges in common operations..
+  ///  Gives members privileges in joint operations..
   void sharer() {}
 
   ///  Presentation method.
