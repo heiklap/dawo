@@ -18,5 +18,5 @@ void main() {
   print('---  do some test in beta library  ----');
 
   print('............ _lib_test:   next: renderBeta................');
-  renderBeta();
+  renderBeta('Call by  beta_test.dart:');
 }

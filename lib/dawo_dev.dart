@@ -84,6 +84,7 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('beta -library total renovation, and connections to it.')
       ..add('base_struct & base_lib renamed to: alpha and  beta -libraries.')
       ..add('New Store class, all Streams are now: supply and demand.')
       ..add('6 class Group and Member in base_struct. RENAMED: alpha. !!')

@@ -9,7 +9,7 @@
 
 library alpha;
 
-String baseStructMotto = 'Basic rules for building classes';
+String alphaMotto = 'Basic rules for building classes';
 
 ///  Big change; putting all out-stuff inside a class.
 ///  NOTE abstract classes cant be created with new keyword.

@@ -234,7 +234,7 @@ class Connector extends BaseStruct {
 
   ///  Connector basic activity, keep list of Members / their operations.
   ///  devNote: Or should it be something smaller? abstract class ModelPlacard?
-  List<GlobalOpClass> opL = new List();
+  List<GlobalOp> opL = new List();
 
   ///  List for #C information. Used for devBox reporting.
   List<String> _joinLog = ['* :connector: join-log *'];
@@ -398,7 +398,7 @@ class Connector extends BaseStruct {
   //   typedef  _conPrint =  void _conPrint(String msg){
   //   if (_pB) print(msg);  }
 
-  ///  Calling print/print-to-buffer function from beta.
+  ///  Calling print/print-to-buffer function from library: beta.
   ///  Getting local variables; Actor and Buffer right.
   ///  Changing to use local -
   void _flowC(String msg, bool prnB) {

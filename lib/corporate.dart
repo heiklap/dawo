@@ -46,7 +46,7 @@ class Corporate {
   ///  caller:  chore-op
   ///  Shaping everybody-to-use functionality for..
   StringBuffer process(
-      String by, GlobalOpClass glOpC, Map placardM, Function _assigned) {
+      String by, GlobalOp _glbOp, Map placardM, Function _assigned) {
     ///  NOTE  callers placardM is here now.
     print(':debug: :corporate: process begins:');
     String infoS1 =
@@ -57,8 +57,7 @@ class Corporate {
     List<String> _li1 = [];
     StringBuffer _cpBuf = new StringBuffer();
     _li1
-      ..add(
-          '\n -->>-->  corporate.process  #caller: $by ccccccccccccccccccccccccccp')
+      ..add('\n -->>-->  corporate.process  #caller: $by cccccccccccp')
       ..add('glbOpsInUse: ___________________________________')
       ..add('  ------  demandStream  -----------')
       ..add('   -----  demandStreamBoard  ----------')
@@ -76,7 +75,7 @@ class Corporate {
     _li2.add('placardMap: ');
     //  placardM.forEach((k,v)  => print('$k, $v'));
     placardM.forEach((k, v) => _li2.add('$k, $v'));
-    _li2.add('__________________________________');
+    _li2.add('_______ placardM ___________________________');
 
     devBox(':bl:comProc:', [_li1, _li2], 10);
 
@@ -89,18 +88,22 @@ class Corporate {
     _li3.add(_comStr); //  Returning String, from caller-object.
     _li3.add('  3. part done in :corporate:process. ');
 
+    ///  Mediating placardM to glbOp
+    _glbOp.init(placardM);
+
     List<String> _li4 = [];
-    _li4.add('calling: glOpC.showInfo AND  glOpC.operation::');
-    _li4.addAll(glOpC.showInfo(':corporate:process:'));
+    _li4.add('calling: _glbOp.showInfo AND  _glbOp.operation::');
+    _li4.addAll(_glbOp.showInfo(':corporate:process:'));
     _li4.add('  part 4 done in :corporate:process:  ');
 
-    glOpC.operation; //  no operation, just show info now.
+    _glbOp.operation; //  no operation, just show info now.
+    _glbOp.showInfo(':corporate:process:');
 
     devBox(':bl:comProc:', [_li3, _li4], 10);
 
     //  TODO  :corporate:process: end info and statistics.
     _cpBuf.writeln(
-        ':_cpBuf:  <--<<--  :corporate:rocess done ------------------\n');
+        ':_cpBuf:  <--<<--  :corporate:process done ------------------\n');
     print(
         '  <--<<--  :corporate:process done cccccccccccccccccccccccccccccccccp \n');
     return _cpBuf;

@@ -216,8 +216,8 @@ class CommonChore extends BaseStruct {
     ///  TODO  operation class instance
     ///  TODO  Constructor: add eventually constructor
     ///  order: #actor #sender #receiver #command #msg
-    var chOpClass = new GlobalOpClass(
-        name, 'chore', 'rec:test', assignComProChore, 'all ok');
+    var chOpClass = new GlobalOp(
+        name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
     _retBuf.writeln('_retBuf in chore-op method is ready...');

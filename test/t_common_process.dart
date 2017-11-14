@@ -41,7 +41,7 @@ void testRenderBetaLib() {
   print('............ _lib_test:   next: renderBetaLib................');
 
   ///  NOTE: This fails, when run under main.
-  renderBeta();
+  renderBeta('Call by  t_common_process.dart:');
   print('............ _lib_test:   next: renderBetaLib................');
 }
 

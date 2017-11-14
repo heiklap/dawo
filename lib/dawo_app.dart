@@ -97,10 +97,10 @@ class DawoApp extends BaseStruct {
     //  TODO  Actor:  only one actor for now...
     glb.changeActor(':DAWO-APP:');
     //  TODO  Set some field values.
-    flowC('  -->-da->  DawoApp buffer output initialized  ---', _pB);
+    _flowC('  -->-da->  DawoApp buffer output initialized  ---', _pB);
 
     //  Set fields values.
-    flowC('  --<-da-<    :da:b: init done', _pB);
+    _flowC('  --<-da-<    :da:b: init done', _pB);
   }
 
   ///  Method for setting class in working condition.
@@ -139,7 +139,7 @@ class DawoApp extends BaseStruct {
     out.outBl.writeln('* * * : my-music-stuff :  -dawoApp-build:  * * * ');
     out.outBr.writeln('* * * : my-time stuff :  -dawoApp-build:  * * * ');
     out.outFooter.writeln('* * * :nat-parks stuff: -dawoApp-build:  * * * ');
-    flowC('  --<-da-<  :da:b:  build done', _pB);
+    _flowC('  --<-da-<  :da:b:  build done', _pB);
   }
 
   ///  #run-like method
@@ -195,7 +195,7 @@ class DawoApp extends BaseStruct {
       ..add(':Ar:  #encrypt ed notes not allowed.');
 
     //  build already does this  dev.buildNotes();
-    flowC(':da:b: DawoApp::roll    $infoS   :: roll engaged ', _pB);
+    _flowC(':da:b: DawoApp::roll    $infoS   :: roll engaged ', _pB);
 
     init(); //  calling init and build methods in this class
     build(':DAWO-APP:', 'DAWO-APP-MASTER:');
@@ -203,7 +203,7 @@ class DawoApp extends BaseStruct {
     //
     print('-->>-->>--  :dawoapp: calling :collector:  -->>-->>--');
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
-    con.opJoin(placardM, connectorMsg, ':D:app:');
+    con.opJoin(betaPlacardM, connectorMsg, ':D:app:');
     con.roll();
 
     //  Add code for roll.
@@ -220,9 +220,9 @@ class DawoApp extends BaseStruct {
   ///  Roll missions in missionL AND every chore in them.
   void appRollMissions(String caller) {
     String _msg = '-->-da-> app rollMissions  C: $caller -->>-->>----';
-    flowC('$_msg', _pB);
+    _flowC('$_msg', _pB);
     // roll BLib-class (mission) actually List of missions!
-    flowC('  ***  DAWO-APP  MISSIONS   ***  ', _pB);
+    _flowC('  ***  DAWO-APP  MISSIONS   ***  ', _pB);
     buildMissions('C:dawoApp ');
 
     ///  TODO Detail printing set false: _pB; make better, global solution.
@@ -250,7 +250,7 @@ class DawoApp extends BaseStruct {
     //  code
     //  endLoop
 
-    flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
+    _flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
     // roll all chores, that are in mission
   }
 
@@ -258,8 +258,8 @@ class DawoApp extends BaseStruct {
   ///  DONE Adding caller-parameter
   ///  TODO  WHO IS CALLING THIS ?  Nobody
   void devStream(String caller) {
-    flowC('--- :stream:beg dawoApp rollStream started by: $caller    ---', _pB);
-    flowC(
+    _flowC('--- :stream:beg dawoApp rollStream started by: $caller    ---', _pB);
+    _flowC(
         '--- :stream:beg dawoApp rollStream started by: $caller    ---', true);
     // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
@@ -267,7 +267,7 @@ class DawoApp extends BaseStruct {
         ':dawoApp:d-s', [agenda, msg, develop, version, msg], 'appListener');
     store.demandStream(
         ':dawoApp:d-s', ['First Book', 'My Book', 'Third Book'], 'appListener');
-    flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
+    _flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
   }
 
   ///  calling beta demandStream, elementary Stream example
@@ -275,7 +275,7 @@ class DawoApp extends BaseStruct {
   ///  #TODO  make this use #iterable parameter; dev.admN / where #ALL
   ///
   void rollStream(String _cl) {
-    flowC('--- :stream:beg dawoApp rollStream started by: $_cl    ---', _pB);
+    _flowC('--- :stream:beg dawoApp rollStream started by: $_cl    ---', _pB);
     // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     store.demandStream(
@@ -298,7 +298,7 @@ class DawoApp extends BaseStruct {
 
     store.demandStream(':dawoApp-r:s:ADM:', _queryL, 'appListener');
     //  TODO Stream: meaningful : streams from doneL / devN important
-    flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
+    _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }
 
   ///  Show-method to be developed further.
@@ -313,7 +313,7 @@ class DawoApp extends BaseStruct {
 
   ///  After presentation method; done, if #doneB.
   void done() {
-    flowC('-->-da->  DawoApp.done    $infoS   :: engaged ', _pB);
+    _flowC('-->-da->  DawoApp.done    $infoS   :: engaged ', _pB);
     out.outTl.writeln('out.outTl-dawoApp-done:');
     out.outTMid.writeln('out.outMid-dawoApp-done:');
     out.outTr.writeln('out.outTr-dawoApp-done:');
@@ -324,7 +324,7 @@ class DawoApp extends BaseStruct {
     out.outBr.writeln('out.outBr-dawoApp-done:');
     out.outFooter.writeln('out.outFooter-dawoApp-done:');
     //  code here
-    flowC('  --<-da-<  :da:b: --  DawoApp buffer output app: done  --', _pB);
+    _flowC('  --<-da-<  :da:b: --  DawoApp buffer output app: done  --', _pB);
     if (_pB) print(buf);
     //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', _pB);
   }
@@ -380,7 +380,7 @@ Map<String, String> dawo003 = {
 ///  Every important library has it's own flowC function. #Library #Privacy!!
 ///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right.
-void flowC(String msg, bool p) {
+void _flowC(String msg, bool p) {
   ///  call flowServe with #LOCAL variables
   ///  :DAWO-APP:  is too long.
   flowServe(':D-A:', out.outTr, msg, p);
