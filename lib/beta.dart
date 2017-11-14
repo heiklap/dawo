@@ -1,21 +1,21 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## Modeling joint, reusable controls and operations for libraries.
-///  dawo/base_lib,  dawo version:  0.0.5  6.11.2017
+///  dawo/beta,  dawo version:  0.0.5  6.11.2017
 ///  READY-STATE for version 0.0.6   0 %   in GIT  Yes
 ///
 ///  Time to start thinking 6.th floor's machinery, when you are only just
-///  laying base foundations for your 20-floor factory.
+///  laying basic foundations for your 20-floor factory.
 ///
 ///  All dawo code-constructing should depend on code, that is here, and all
 ///  thinking about dawo should concentrate on collecting reusable code here.
 ///
-///  idea:   some base / flow  functionality, that is too small for packages,
+///  idea:   some basic / flow  functionality, that is too small for packages,
 ///  and too big for tools.dart or dawo_app.dart.
 ///  Connections to packages, that we do not want to import fully. (?)
 ///  Extra control / flow / actor variables for processes/events/jobs
 ///
-///  Hist:  hkl  9.10.2013  0.0.1  dawo/lib    daw lib_base.dart
+///  Hist:  hkl  9.10.2013  0.0.1  dawo/lib  daw lib_base.dart > beta.dart
 ///  Returned 10.9.2017 to same idea with empty hands.
 ///
 ///  #Word  Stream  34 times
@@ -29,19 +29,19 @@
 //TODO  Global variables
 //TODO  Global operations
 
-library base_lib;
+library beta;
 
 import 'dart:async';
 import 'dart:math';
 
-///  How base_lib manages so far NOT importing base_struct?
-import 'base_struct.dart';
-import 'corporate.dart';  //  these import each other.
+///  How beta manages so far NOT importing beta?
+import 'alpha.dart';
+import 'corporate.dart'; //  these import each other.
 import 'dawo_dev.dart';
 import 'shower.dart'; //  for devBox
 
 //  TODO  Final readiness.  this is not
-final num dawLibBaseReadiness = 2; //  readiness for  version  0.0.1
+final num betaReadiness = 2; //  readiness for  version  0.0.1
 int flowI = 0; //  flow-counter.
 
 //  hklTry this.
@@ -55,20 +55,20 @@ SPrint sPrint(String msg) {
 }
 
 ///  buffer also outside class, for testing and adding visibility
-var baseLibBuf = new StringBuffer();
+var betaBuf = new StringBuffer();
 bool _pB = true; //  Control console-printing.
 
 ///  setting flow-print now to zero.
 bool printGlobalB = false;
 
-String baseLibMotto = 'Serving joint reusable resources to users.';
+String betaMotto = 'Serving joint reusable resources to users.';
 
 ///  test:  for testing, assign-functions are for sharing stuff.
 void assignDawo() {
-  print('   **  hello (share stuff) from dawo app /base_lib    ***');
+  print('   **  hello (share stuff) from dawo app /beta    ***');
 }
 
-/// ..  or is it class BasePlacard ?
+/// ..  or is it class BetaPlacard ?
 ///  Placard: Common form of information, that is in hand for every operation.
 ///  Model for #id-data in joint handshake method.
 Map<String, String> placardM = {
@@ -120,8 +120,8 @@ class GlobalVariables {
 ///  For that, here should be added fields.
 ///  IDEA: Change this name to class CoOp.  So why not:  Coup.
 class GlobalOpClass {
-  //  BaseStruct is known here.
-  //  BasePlacard is known also.
+  //  Alpha is known here.
+  //  BetaPlacard is known also.
 
   //  String actor;  //  too important to be a String
   String actor = ':No usage yet:'; //  Too important to be a String.
@@ -173,11 +173,11 @@ var glbOp =
 //  TODO  create some "tech"
 ///  Some variables that have not yet find their places inside classes.
 
-/// Chores are biggest users of this.
+/// Chores are biggest users of this.  NOTE:  also Store-class.
 /// Stock handles and shares joint resources with participants.
 ///  Resources are: people, places, jobs aso.
 class Stock {
-  /// al" base_classes for below vars and functions.
+  /// add lasses for below vars and functions.
   //  code;  give nice table with random-generator.
   var supply;
   var demand;
@@ -292,41 +292,41 @@ void flowFind(String caller, String _fs, int len) {
 }
 
 ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
-///  * * *    in base_lib, chore, mission and dev   * * *
+///  * * *    in beta, chore, mission and dev   * * *
 var decision;
 var decisionChain;
 var callChain; //  Give objects ability to know route, that called it.
 
-
 ///  Usual presentation / play function.
-StringBuffer renderBaseLib() {
-  print('\n ================= render base llib ========================');
+StringBuffer renderBeta() {
+  print('\n ================= render beta llib ========================');
 
   StringBuffer _retBuf;
 
   ///  For to share stuff with global command in #op
   ///  TODO  "Global-connect" function for to use in :corporate:process: / op.
   ///  TODO  This should have same name in all libraries?
-  String assignBaseRender() {
-    print('   **  baseRender assignBaseRender > :corporate:process:    ***');
-    return ('   **  baseRender assignBaseRender > :corporate:process:   ***');
+  String assignBetaRender() {
+    print('   **  betaRender assignBetaRender > :corporate:process:    ***');
+    return ('   **  betaRender assignBetaRender > :corporate:process:   ***');
   }
 
   var glbVar = new GlobalVariables();
   glbVar.showInfo();
 
   /// and instance;
-  var renderBaseLibClass = new GlobalOpClass(
-      'n:name', 'renderBaseLib', 'rec:test', assignDawo, 'all ok');
+  var renderBetaClass = new GlobalOpClass(
+      'n:name', 'renderBeta', 'rec:test', assignDawo, 'all ok');
 
   print('-->-->--  calling :corporate:process:  -->-->--   ');
 
   ///  Using local placardM
-  corporate.process(':RenderBLib:', renderBaseLibClass, placardM, assignBaseRender);
+  corporate.process(
+      ':RenderBLib:', renderBetaClass, placardM, assignBetaRender);
 
-  renderBaseLibClass.showInfo('By: renderBaseLib');
+  renderBetaClass.showInfo('By: renderBeta');
 
-  print('================= render base llib : done ================= \n');
+  print('================= renderBetaClass : done ================= \n');
   return _retBuf;
 }
 

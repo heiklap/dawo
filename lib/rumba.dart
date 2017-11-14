@@ -12,8 +12,8 @@
 
 library rumba.dart;
 
-import 'base_lib.dart';
-import 'base_struct.dart';
+import 'beta.dart';
+import 'alpha.dart';
 import 'connector.dart';
 import 'dawo_dev.dart';
 import 'shower.dart';
@@ -186,10 +186,10 @@ class Rumba {
     return rumbaBuf;
   } //  ----------   StringBuffer dance
 
-  ///  Calling print/print-to-buffer function from base_lib.
+  ///  Calling print/print-to-buffer function from beta.
   ///  Getting local variables; Actor and Buffer right.
   void _flowC(String msg, bool prB) {
     ///  Call flowServe with #LOCAL variables.
-    flowServe(':R:', out.outTl, msg, prB); //  Location:  in base_lib
+    flowServe(':R:', out.outTl, msg, prB); //  Location:  in beta
   }
 } //  --   rumba class

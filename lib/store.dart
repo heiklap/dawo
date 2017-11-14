@@ -25,6 +25,7 @@ class Store{
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
   void chainStream() {} //  real stream, slow answer.
   void fireStream() {} //
+
   ///  ***********************************************************************
   ///  Elementary stream example, not yet used here in reasonable way.
   ///  dawoApp.roll drives this.  When thinking about #stream / #order / #chain

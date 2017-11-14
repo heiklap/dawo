@@ -6,13 +6,13 @@
 ///  Program might have a certain amount of 'self consciousness'. This is start.
 ///  dawo version:  0.0.5  6.11.2017
 /// * ReadyState:  for version 0.0.6  0%  in GitHub  yes
-/// * hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   base status of dawo
+/// * hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   basic status of dawo
 //
 
 library dawo_app.dart;
 
-import 'base_lib.dart';
-import 'base_struct.dart';
+import 'alpha.dart';
+import 'beta.dart';
 import 'chore.dart';
 import 'connector.dart';
 import 'dawo_dev.dart';
@@ -270,7 +270,7 @@ class DawoApp extends BaseStruct {
     flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
   }
 
-  ///  calling base>_lib demandStream, elementary Stream example
+  ///  calling beta demandStream, elementary Stream example
   ///
   ///  #TODO  make this use #iterable parameter; dev.admN / where #ALL
   ///
@@ -378,7 +378,7 @@ Map<String, String> dawo003 = {
 };
 
 ///  Every important library has it's own flowC function. #Library #Privacy!!
-///  Calling print/print-to-buffer function from base_lib.
+///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right.
 void flowC(String msg, bool p) {
   ///  call flowServe with #LOCAL variables

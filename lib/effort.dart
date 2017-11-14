@@ -21,7 +21,7 @@ library effort;
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:math';
-import 'base_lib.dart';
+import 'beta.dart';
 import 'shower.dart';
 import 'tools.dart';
 import 'clay/user_json.dart';

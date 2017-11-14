@@ -39,11 +39,11 @@ library connector;
 ///  path dependency
 import 'package:dawolang/dawolang.dart';
 
-import 'base_struct.dart';
+import 'alpha.dart';
 
 //  TODO import ruins this app flowServe stops working. lib-function import 2X
-import 'base_lib.dart';
-//NO NEED    import 'package:dawo/base_lib.dart' as blib show flowServe();
+import 'beta.dart';
+//NO NEED    import 'package:dawo/beta.dart' as blib show flowServe();
 import 'shower.dart';
 import 'tools.dart';
 
@@ -115,7 +115,7 @@ typedef  _conPrint =  void _conPrint(String msg);
 */
 
 //
-///  This class gets same structure base, as other important classes.
+///  This class gets same structures from alpha, as other important classes.
 ///  Connecting clients (app-mission-chore) to work together.
 class Connector extends BaseStruct {
   bool _pB = false; //  false;   //  To control printing in _flowC method.
@@ -172,7 +172,7 @@ class Connector extends BaseStruct {
   }
 
   ///  Members, that are participating in this connector.
-  ///  Member is a class in base_struct.
+  ///  Member is a class in alpha.
   ///  #PLAN:  eventually this will be Member.
   //  Map<String, Member> memberM = {};
   Map<String, String> memberM = {};
@@ -232,8 +232,8 @@ class Connector extends BaseStruct {
     return ['this', 'list', 'is', 'vain']; //  No need for list??
   }
 
-  ///  Connector base activity, keep list of Members / their operations.
-  ///  devNote: Or should it be something smaller?  abstract class BasePlacard?
+  ///  Connector basic activity, keep list of Members / their operations.
+  ///  devNote: Or should it be something smaller? abstract class ModelPlacard?
   List<GlobalOpClass> opL = new List();
 
   ///  List for #C information. Used for devBox reporting.
@@ -398,12 +398,12 @@ class Connector extends BaseStruct {
   //   typedef  _conPrint =  void _conPrint(String msg){
   //   if (_pB) print(msg);  }
 
-  ///  Calling print/print-to-buffer function from base_lib.
+  ///  Calling print/print-to-buffer function from beta.
   ///  Getting local variables; Actor and Buffer right.
   ///  Changing to use local -
   void _flowC(String msg, bool prnB) {
     ///  Call flowServe with #LOCAL variables.
-    //  TODO  Why not find base_lib flowServe() ??
+    //  TODO  Why not find beta flowServe() ??
     flowServe(':con:flC:$prnB ', buf, msg, prnB);
   }
 

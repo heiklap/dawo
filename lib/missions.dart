@@ -13,8 +13,8 @@
 library missions;
 
 //  import 'package:dawo/dawo_app.dart';  //  not used
-import 'base_struct.dart';
-import 'base_lib.dart';
+import 'alpha.dart';
+import 'beta.dart';
 import 'chore.dart';
 import 'connector.dart';
 import 'dawo_dev.dart';
@@ -148,7 +148,7 @@ class Mission {
   }
 
   //TODO  teamDev *chore*, if is toChore.. should there be outChore, lonChore ?
-  ///  base lib's connection to chore (package) (?)
+  ///  beta's connection to chore (package) (?)
   ///  *chore* is separate library, which controls *job* :s
   ///  Mediating calls to outside executor process. (?)
   ///  Name: choreBus ?  choreRoute ?
@@ -210,7 +210,7 @@ class Mission {
   } //  -----  build
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
-  ///  * * *    in base_lib, chore and mission   * * *
+  ///  * * *    in beta, chore and mission   * * *
   var decision;
   var decisionChain;
 
@@ -324,7 +324,7 @@ class Mission {
   ///  Present all info of this class / app.
   ///  #Tip: String can be in many lines with '''.
   void showInfo() {
-    print('''idea:   some base / flow  functionality, that is too small 
+    print('''idea:   some basic / flow  functionality, that is too small 
         for packages and too big for tools.dart''');
   }
 
@@ -375,13 +375,13 @@ class Mission {
   /// Should include some international values from other languages.
 
 //  Coming.
-//  TODO  teamNext    coming:    Base Isolate example
-//  TODO  teamNext    Base future  sample
-//  TODO  teamNext    Base Mixin   sample
+//  TODO  teamNext    coming:    Elementary Isolate example
+//  TODO  teamNext    Simple future  sample
+//  TODO  teamNext    Elementary Mixin   sample
 
 } // --  end class Mission
 
-///  Calling print/print-to-buffer function from base_lib.
+///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right;
 ///  Every library / actor has its own flowC function.
 void _flowC(String msg, bool p) {

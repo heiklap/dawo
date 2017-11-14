@@ -25,8 +25,8 @@
 
 library chore;
 
-import 'base_struct.dart';
-import 'base_lib.dart'; //  flowServe() is here.
+import 'alpha.dart';
+import 'beta.dart'; //  flowServe() is here.
 import 'connector.dart';
 import 'corporate.dart';
 import 'dawo_dev.dart';
@@ -67,7 +67,7 @@ void initChoreSystem() {
   dev.secN.add(':INIT-CHORE: :CHECK-IN: testing.');
 }
 
-///  Every important dawo class is extending BaseStruct class.
+///  Every important dawo class is extending Alpha class.
 class CommonChore extends BaseStruct {
   String name = 'Common Chore class  ';
   String infoS = 'Chore resolves  W O R K  flow and control ..';
@@ -179,7 +179,7 @@ class CommonChore extends BaseStruct {
   }
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
-  ///  * * *    in base_lib, chore and mission  * * *
+  ///  * * *    in beta, chore and mission  * * *
   var decision;
   var decisionChain;
 
@@ -200,7 +200,7 @@ class CommonChore extends BaseStruct {
   void opJoint() {}
 
   ///  Individual operations are done here.
-  ///  Common operation with placard-Map  is in base_lib.
+  ///  Common operation with placard-Map  is in beta.
   String op(Map<String, String> _pcM) {
     _flowC('-->  ch roll=>op:  $name -->---->', _pB);
 
@@ -222,7 +222,7 @@ class CommonChore extends BaseStruct {
     StringBuffer _retBuf = new StringBuffer();
     _retBuf.writeln('_retBuf in chore-op method is ready...');
 
-    ///  Mediate command to common process (in base_lib) with info from chore.
+    ///  Mediate command to common process (in beta) with info from chore.
     ///  TODO  Mediate clay-stuff itemL to commonProcess
     ///  With actual command:
     ///  Add placardM to parameters
@@ -295,7 +295,7 @@ class CommonChore extends BaseStruct {
   CommonChore(this.name, this.infoS);
 }
 
-///  Calling print/print-to-buffer function from base_lib.
+///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right.
 void _flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.

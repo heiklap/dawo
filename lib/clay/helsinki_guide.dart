@@ -6,8 +6,8 @@
 library helsinkiGuide;
 
 ///  for to get actor and buffer
-import 'package:dawo/base_struct.dart';
-import 'package:dawo/base_lib.dart';
+import 'package:dawo/alpha.dart';
+import 'package:dawo/beta.dart';
 
 bool pB = false;
 

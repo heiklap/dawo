@@ -19,11 +19,11 @@ import 'package:dawo/code_snippets/aldente_func.dart';
 import 'package:dawo/code_snippets/bat_loop.dart';
 import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
-import 'base_lib.dart';
-import 'base_struct.dart'; //  unused
+import 'beta.dart';
+import 'alpha.dart'; //  unused
 import 'chore.dart';
 import 'connector.dart'; //  unused
-import 'corporate.dart';  //  some stuff from base_lib.
+import 'corporate.dart';  //  some stuff from beta.
 import 'dawo_app.dart';
 import 'dawo_dev.dart';
 import 'effort.dart';
@@ -32,6 +32,7 @@ import 'mill.dart';
 import 'missions.dart';
 import 'rumba.dart'; //  unused
 import 'shower.dart';
+import 'store.dart';
 import 'tools.dart';
 
 ///  Data ( #clay ) is in clay-folder.
@@ -67,7 +68,7 @@ String missionError = 'Yes there is mission error';
 num get dawoReadiness =>
     (aldenteFuncReadiness +
         batLoopReadiness +
-        dawLibBaseReadiness +
+        betaReadiness +
         effortReadiness +
         dawLibStreamReadiness +
         dawLibWorkReadiness +
@@ -134,4 +135,5 @@ StringBuffer renderDawo() {
 ///  Fast test for rumba.
 void renderRumba() {
   //  rumba  //  2 variables
+
 }

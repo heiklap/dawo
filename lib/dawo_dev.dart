@@ -84,9 +84,10 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('base_struct & base_lib renamed to: alpha and  beta -libraries.')
       ..add('New Store class, all Streams are now: supply and demand.')
-      ..add('6 class Group and Member in base_struct.')
-      ..add('Corporate class, previous #common operate from base_lib.dart.')
+      ..add('6 class Group and Member in base_struct. RENAMED: alpha. !!')
+      ..add('Corporate class, previous #common operate from beta.dart.')
       ..add('6 Solving chaos : changing names to privat and original ones.')
       ..add('6 Solving chaos : console output is now only 22 screens.')
       ..add('6 solving chaos : :who:did:this: to mark outputs in console.')
@@ -113,7 +114,7 @@ class Dev {
           '6 Missions specific op-methods, cheduleBox for resource allocating.')
       ..add('dev: doneL added to keep track of fast changes. 10.10.17')
       ..add(
-          'flowserve: added flowI event counter. In base_lib: flowI. 10.10.17')
+          'flowserve: added flowI event counter. In beta: flowI. 10.10.17')
       ..add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.')
       ..add('Info about older notes should apper in lists.');
 

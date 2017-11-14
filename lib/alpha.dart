@@ -1,145 +1,18 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  base structures, classes in dawo
+///  ##  Model structures, classes in dawo
 ///   dawo version:  0.0.5  6.11.2017
-/// * READY-STATE: for version 0.0.6 > 0%
-/// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  base_struct.dart
+/// * READY-STATE: for version 0.0.6 > 50%
+/// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
 //  devNote:  No notes.
 //
 
-library base_struct;
+library alpha;
 
-String baseStructMotto = 'Base rules for building classes';
+String baseStructMotto = 'Basic rules for building classes';
 
-///  Bif change; putting all out-stuff inside a class.
+///  Big change; putting all out-stuff inside a class.
 ///  NOTE abstract classes cant be created with new keyword.
-/*
-//  Problems with: #Static members can not be used in initializer.
-//  and: Using base-class encountered some problems.
-class OutBase {
-  ///  Return iterable List from StringBuffer. Also in tools.
-  List<String> bufToList(StringBuffer buf) {
-    List<String> _l = new List();
-    String _s = buf.toString();
-    _l.addAll(_s.split('\n'));
-    return _l;
-  }
-
-  ///  Must use static, if this is inside a class
-  ///  10 StringBuffers named for output to screen areas.
- StringBuffer outHeader = new StringBuffer(); //  app - roll
-
- StringBuffer outTl = new StringBuffer(); //  rumba
- StringBuffer outTMid = new StringBuffer(); //  ?  mission
- StringBuffer outTr = new StringBuffer(); //  dev
-
- StringBuffer outMTop = new StringBuffer(); //  m - packDawo
- StringBuffer outMid = new StringBuffer(); //  m - dartlang
- StringBuffer outMBot = new StringBuffer(); //  m - helsinki
-
- StringBuffer outBl = new StringBuffer(); //  m - myMusic
- StringBuffer outBr = new StringBuffer(); //  m - myTime
-
- StringBuffer outFooter = new StringBuffer(); // m -  nParks
-
-  ///  List containing all outBuffers for special browser screen areas.
-  ///  Change this to Map<String, StringBuffer> to get names.
-//  List<StringBuffer> outBufL = [
-  Map<String, StringBuffer> outBufM = {
-    /*
-       // This map is filled in build-method.
-
-    'outHeaderBuf': outHeader,
-    'outTlBuf': outTl,
-    'outTMidBuf': outTMid,
-    'outTrBuf': outTr,
-    'outMTopBuf': outMTop,
-    'outMidBuf': outMid,
-    'outMBotBuf': outMBot,
-    'outBlBuf': outBl,
-    'outBrBuf': outBr,
-    'outFooterBuf': outFooter,
-    */
-  };
-
-
-  List<List<String>> outBufListsForBox() {
-    List<List<String>> _ll = new List();
-    List<String> outHeaderBufL = new List();
-    List<String> outTlBufL = new List();
-    List<String> outTMidBufL = new List();
-    List<String> outTrBufL = new List();
-    List<String> outMTopBufL = new List();
-    List<String> outMidBufL = new List();
-    List<String> outMBotBufL = new List();
-    List<String> outBlBufL = new List();
-    List<String> outBrBufL = new List();
-    List<String> outFooterBufL = new List();
-
-    outHeaderBufL.addAll(bufToList(outHeader));
-    outTlBufL.addAll(bufToList(outTl));
-    outTMidBufL.addAll(bufToList(outTMid));
-    outTrBufL.addAll(bufToList(outTr));
-    outMTopBufL.addAll(bufToList(outMTop));
-    outMidBufL.addAll(bufToList(outMid));
-    outMBotBufL.addAll(bufToList(outMBot));
-    outBlBufL.addAll(bufToList(outBl));
-    outBrBufL.addAll(bufToList(outBr));
-    outFooterBufL.addAll(bufToList(outFooter));
-
-    _ll.addAll([outHeaderBufL, outTlBufL, outTMidBufL, outTrBufL, outMTopBufL]);
-    _ll.addAll([outMidBufL, outMBotBufL, outBlBufL, outBrBufL, outFooterBufL]);
-
-    return _ll;
-  }
-
-
-  ///  Sizes of out-buffers
-  void outBuffersSizes(String caller) {
-    String outHeaderLS = outHeader.length.toString();
-    String outTlLS = outTl.length.toString();
-    String outTMidLS = outTMid.length.toString();
-    String outTrLS = outTr.length.toString();
-    String outMTopLS = outMTop.length.toString();
-    String outMidLS = outMid.length.toString();
-    String outMBotLS = outMBot.length.toString();
-    String outBlLS = outBl.length.toString();
-    String outBrLS = outBr.length.toString();
-    String outFooterLS = outFooter.length.toString();
-
-    //  NOTE  Will eventually be list, for devBox.
-    print('\n --------------- outBuffersSizes  C: $caller  ----------------');
-    print(' outHeader::  $outHeaderLS');
-    print(' outTl::  $outTlLS ');
-    print(' outTMid::  $outTMidLS ');
-    print(' outTr::  $outTrLS ');
-    print(' outMTop::  $outMTopLS ');
-    print(' outMid:  $outMidLS ');
-    print(' outMBot::  $outMBotLS ');
-    print(' outBl::  $outBlLS ');
-    print(' outBr::   $outBrLS');
-    print(' outFooter::  $outFooterLS ');
-    print('--------------- outBuffersSizes  C: $caller   :done: --------- \n');
-
-    void build() {
-      //  outBufM.put
-      outBufM.putIfAbsent( 'outHeaderBuf', () =>  outHeader   );
-      outBufM.putIfAbsent( 'outTlBuf', () =>  outTl          );
-      outBufM.putIfAbsent( 'outTMidBuf',() =>  outTMid,       );
-      outBufM.putIfAbsent( 'outTrBuf', () =>  outTr,           );
-      outBufM.putIfAbsent( 'outMTopBuf',() =>  outMTop,       );
-      outBufM.putIfAbsent( 'outMidBuf', () =>  outMid,         );
-      outBufM.putIfAbsent( 'outMBotBuf', () =>  outMBot,       );
-      outBufM.putIfAbsent( 'outBlBuf', () =>  outBl,           );
-      outBufM.putIfAbsent( 'outBrBuf', () =>  outBr,           );
-      outBufM.putIfAbsent( 'outFooterBuf', () =>  outFooter,   );
-
-    }
-  }
-}  //  --  BaseOut
-//  No.  Creating instance.
-//  var out = new OutBase();
-*/
 
 //  Mess, when trying to extend OutBase.
 class Out {
@@ -311,7 +184,7 @@ var out = new Out();
 
 //  TODO  bring here from dawoApp serialized outBuffersPrint - function
 
-///  base class for most dawo classes
+///  Starter class for most dawo classes
 ///  DawoApp, BLib, Chore, Flag  use this
 abstract class BaseStruct {
   String name;

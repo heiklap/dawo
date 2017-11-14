@@ -1,14 +1,14 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-///  previous #common operate from base_lib.dart aso. is here
+///  previous #common operate from beta.dart aso. is here
 ///  history: 2017.11.13.   development-state: 5%
 
 library corporate;
 
-///  How base_lib manages so far NOT importing base_struct?
-//  import 'base_struct.dart';
-import 'base_lib.dart';
+///  How beta manages so far NOT importing alpha.dart?
+//  import 'alpha.dart';
+import 'beta.dart';
 import 'shower.dart'; //  for devBox
 
 ///  Here objects work together after #connector joins them to system.
