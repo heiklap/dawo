@@ -15,6 +15,17 @@ import 'shower.dart'; //  for devBox
 class Corporate {
   String name = 'corporate-united';
 
+  ///  Testing placardM inside chore.
+  ///  Present info for outer process calls.
+  ///  Other users are calling process with their own placard.
+  Map<String, String> placardM = {
+    'actor': 'Corporation',
+    'sender': 'Our corp frendly',
+    'receiver': 'Customers',
+    'command': 'Buy new products:',
+    'msg': 'New season coming.',
+  };
+
   ///  TODO Automatic messages to buf, in operations.
   ///  Formulate String for buffer message.
   String bufMsg(String sender, receiver, op, msg) {
@@ -44,6 +55,8 @@ class Corporate {
   }
 
   ///  caller:  chore-op
+  ///  Call:    _retBuf.write(
+  //  corporate.process(':Ch-Op:', chOpClass, placardM, assignComProChore));
   ///  Shaping everybody-to-use functionality for..
   StringBuffer process(
       String by, GlobalOp _glbOp, Map placardM, Function _assigned) {

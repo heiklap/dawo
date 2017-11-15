@@ -2,7 +2,6 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  app_chore_play.dart   version:  0.0.5  6.11.2017
 
-import 'package:dawo/dawo.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/rumba.dart';
 import 'package:dawo/dawo_dev.dart';
@@ -11,11 +10,7 @@ import 'package:dawo/missions.dart';
 
 import 'package:dawo/chore.dart';
 
-//  dawlib is part of src: so bring dawlib_base via this
-import 'package:dawo/dawo_src.dart';
 
-//  THIS DO NOT BRING ALL LIBS WITH IT
-//import 'package:dawo/dawo_src.dart';
 
 //  creating instances of classes in upper level
 
@@ -75,7 +70,7 @@ void otherStuff() {
 
   devHelp.line('bLib');
 
-  renderMission();
+  renderMission(':app:chore:play.dart:');
 
   mission.opOpen(1, 'X');
 
@@ -86,7 +81,7 @@ void otherStuff() {
 
   mission.opRoll(4, helloAppChorePlay);
 
-  mission.opClose(2, helloAppChorePlay);
+  mission.opClose();  //  no parameters.
 
   //  ch.render();
   devHelp.line('render Chore');

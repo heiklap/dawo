@@ -60,8 +60,8 @@ class Mission {
   String emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
-  ///  Reference to outPut-buffer don't carry much: used only in _flowC(
-  var _buf = out.outTMid; //  reference to used output StringBuffer.
+  ///  Reference to outPut-buffer don't give much: used only in _flowC(
+  StringBuffer _buf = out.outTMid; //  reference to used output StringBuffer.
   //  error: The type of buf can not be inferred, because the use of the
   //  TODO  instance-getter outTMid.
 
@@ -253,7 +253,8 @@ class Mission {
 
   ///  Start developing operation roll function
   ///  Eventually opRoll handles all these others: init-open-close-schedule..
-  int opRoll(int rollCount, Function autoRollFunc) {
+  ///  opRollCal by: mission_test,  dawo_example
+  int opRoll(int rollCount, var courierFunc) {
     _flowC('    -->-m-->  :M:op:  opRoll    * * * * * * * * * * * * *  ', _pB);
     _flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', _pB);
     _flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
@@ -266,24 +267,27 @@ class Mission {
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
       done++;
-      autoRollFunc();
+      courierFunc();
     }
+    print('-1:run  2:print-cf---3: print:courier:Func.runtimeType- ------');
+    print(courierFunc()); //  null
+    print(courierFunc); //  Closure: () => void
+    print(courierFunc.runtimeType); //  () => void
+    print('-----courier------------- \n');
+    print(':M:opRoll: :courier:func:  :');
+
     _flowC('    <-m--<--  :M:op:  opRoll   done c: $done   * * * * * * *', _pB);
     return done;
   }
 
   /// devNote:  function, that CLOSES it's object.
   /// idea?
-  int opClose(int openCount, Function openThis) {
+  //  int opClose(int openCount, Function openThis) {
+  void opClose() {
     equ.active = false;
     _flowC('--<----<-  :M:op:  opClose --<----<-', _pB);
     _flowC(':M:op: opClose-info: End lof mission-op operation. >>', _pB);
-    _flowC('>>  :M:op: **  Statistics ready, save next-round data. **.', _pB);
-
-    int _openCount = openCount;
-    openThis(); // As I recall, parameter-function goes like this.
-    _openCount++;
-    return _openCount;
+    _flowC('>>:M:op:close: * Statistics ready, save next-round data. *.', _pB);
   }
 
   ///  give report of op statistics
@@ -498,16 +502,33 @@ void buildMissions(String caller) {
 
 ///  Creating instance of Mission and using it's methods.
 ///  All render_X functions are for test and presentation.
-void renderMission() {
+void renderMission(String caller) {
+  print(':M:render: -->>-->>--   renderMission C: $caller -->>-->>-- ');
   //  helsinkiMission.  //  NOTE    #analyzer  is slow
   //  Testing some imaginary mission.
   var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
   missionR.showInfo();
+
   missionR.opOn = true;
 
+  missionR._buf.writeln(':renderMission: saving row od data to :m:_buf:');
+
+  print('debug #: :RM:  14');
   //  Do this class have chores?  Try second chore.
+  //  TODO  :BUG:  missionR.choreL is empty here.
+  //  DO:  Mission - build -chores
+  print(missionR.choreL);
+  missionR.choreL.forEach(print);
   missionR.toChore(missionR.choreL[1]);
 
+  print('debug #: :RM:  15');
+  missionR._buf.writeln(':renderMission: done, close; :m:_buf:');
+
+  print('debug #: :RM:  16');
+  print(missionR._buf);
+  missionR._buf.clear();
+
   missionR.rollCount;
+  print(':M:render: <<--<<--   renderMission done  C: $caller --<<--<<-- ');
   _flowC('--  mission: $missionR.name : render done  --', _pB);
 }

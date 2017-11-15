@@ -175,7 +175,7 @@ class Out {
 } //  --  class out
 
 ///  Creating instance of class.
-var out = new Out();
+Out out = new Out();
 
 ///  Other buffer-classes are not yet in use.
 //  var outA = new OutBase();  //  app

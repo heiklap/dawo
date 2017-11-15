@@ -15,7 +15,6 @@
 
 library user_json;
 
-import 'dart:collection';
 import 'dart:convert';
 
 ///  Now only one UserJson data file.

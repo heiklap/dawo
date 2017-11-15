@@ -10,7 +10,6 @@
 
 library dawo_dev.dart;
 
-import 'dart:math'; //  No need for in-max?
 import 'shower.dart';
 import 'tools.dart';
 
@@ -84,6 +83,11 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('Solved BUG: m.opRoll: autoRollFunc-Works. #NAME: :courier:Func.')
+      ..add('Marked BUG: when mission-render : choreL list is emptyl')
+      ..add('Marked BUG: m-render to mission.opRoll: autoRollFunc DoNotWork')
+      ..add('Cleared all -not-used-library errors.')
+      ..add(combi)
       ..add('beta -library total renovation, and connections to it.')
       ..add('base_struct & base_lib renamed to: alpha and  beta -libraries.')
       ..add('New Store class, all Streams are now: supply and demand.')

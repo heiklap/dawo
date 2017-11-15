@@ -7,7 +7,6 @@
 
 library packDawo;
 
-import 'dart:convert';
 
 ///  Three classes that are used in JSON play.
 class PackDawoHook {

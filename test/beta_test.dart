@@ -4,7 +4,6 @@
 //
 // dawo 0.0.5    beta_test
 
-import 'package:dawo/dawo.dart';
 
 //  TODO  import  why this must also be imported
 import 'package:dawo/beta.dart';

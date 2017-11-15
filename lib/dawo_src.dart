@@ -12,27 +12,21 @@
 
 library dawo_src; //  naming this to _src...
 
-//  Some unused imports stay..
-import 'dart:async';
 
 import 'package:dawo/code_snippets/aldente_func.dart';
 import 'package:dawo/code_snippets/bat_loop.dart';
 import 'package:dawo/code_snippets/learn_stream_sync.dart';
 
-import 'alpha.dart'; //  unused
 import 'beta.dart';
 import 'chore.dart';
-import 'connector.dart'; //  unused
-import 'corporate.dart';  //  some stuff from beta.
+
 import 'dawo_app.dart';
 import 'dawo_dev.dart';
 import 'effort.dart';
-import 'equipment.dart';
+
 import 'mill.dart';
 import 'missions.dart';
-import 'rumba.dart'; //  unused
-import 'shower.dart';
-import 'store.dart';
+
 import 'tools.dart';
 
 ///  Data ( #clay ) is in clay-folder.

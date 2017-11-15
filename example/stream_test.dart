@@ -6,9 +6,6 @@
 /// simple code example using them by; Gitter Jacob MacDonald
 /// https://gist.github.com/jakemac53/68d006b31dd1d62e0109fbe04bab226b
 
-import 'dart:async';
-
-import 'package:dawo/dawo.dart';
 import 'package:dawo/code_snippets/learn_stream_sync.dart';
 import 'package:dawo/dawo_dev.dart';
 

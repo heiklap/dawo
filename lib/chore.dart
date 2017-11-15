@@ -102,9 +102,9 @@ class CommonChore extends BaseStruct {
   Map<String, String> placardM = {
     'actor': 'Chore',
     'sender': 'Chore instance',
-    'receiver': '',
-    'command': 'Ch-cmd:',
-    'msg': 'Ch-msg:',
+    'receiver': 'Other Chores',
+    'command': 'Ch-command:',
+    'msg': 'Ch-message:',
   };
 
   ///  Method for setting class field values.

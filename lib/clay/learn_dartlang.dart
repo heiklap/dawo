@@ -160,6 +160,7 @@ class LearnDartlang {
     'Strong mode':
         '..optional in the first version of the language. Integrated part of the second.',
     'T': ' ',
+    'This': 'The only time you need to use this. is when a local variable with the same name shadows the member you want to access.',
     'Type': 'Typesystems help you scale. The type system gives us guarantees.',
     'U': ' ',
     'Void': 'void is not a user-accessible Type (yet) .. isnt that 2.0',

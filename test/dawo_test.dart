@@ -4,19 +4,9 @@
 
 import 'package:dawo/dawo.dart';
 
-import 'package:dawo/code_snippets/aldente_func.dart';
-import 'package:dawo/code_snippets/bat_loop.dart';
-import 'package:dawo/code_snippets/learn_stream_sync.dart';
-
-import 'package:dawo/beta.dart';
-import 'package:dawo/alpha.dart';
-import 'package:dawo/chore.dart';
-import 'package:dawo/effort.dart';
 import 'package:dawo/dawo_app.dart';
-import 'package:dawo/dawo_dev.dart';
-import 'package:dawo/mill.dart';
+
 import 'package:dawo/missions.dart';
-import 'package:dawo/tools.dart';
 
 import 'package:test/test.dart';
 

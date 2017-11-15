@@ -9,7 +9,6 @@
 
 library shower.dart;
 
-import 'dart:math'; //  No need for min-max?
 import 'equipment.dart';
 import 'tools.dart';
 
@@ -229,7 +228,6 @@ void scheduleBox(String _caller) {
   for (var z = 1; z < _matrix.length; z++) {
     //  do not handle first row.
     _count++;
-    String _countS = _count.toString(); //  not used.
     //  TODO  choose nice background mark for matrix.
     _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
   }
@@ -270,13 +268,12 @@ List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
   //  TODO  add width check / repair for too long _w value
   //  #QUEST:  There surely is better way to do this.
   List<String> _retL = [];
-  List<String> _tempL = [];
+
   for (var x = 0; x < _inlM.length; x++) {
     for (var y in _inlM[x].keys) {
       int iVpos = _inlM[x][y].indexOf('V:');
       int iEpos = _inlM[x][y].indexOf('E:');
-      String vString = _inlM[x][y].substring(iVpos + 2, iVpos + 3);
-      String eString = _inlM[x][y].substring(iEpos + 2, iEpos + 3);
+
       int iVal = -1;
       int iEff = -1;
       //  check if we got 2 numbers.
@@ -327,7 +324,6 @@ List<String> effortTable(
   String _foundS = '';
   List<String> _l = [];
 
-  int _ilMC = tl.countInnerMap(_ilM); //  Why?  WTF
   //  Handle whole list.
   for (var x = 0; x < _ilM.length; x++) {
     // 'Seek every map for search-criteria'
@@ -402,7 +398,7 @@ List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
   //  TODO  More complicated than 1 by 1 system.
   int cInd = 0; //  colon index.
 
-  int rInd = 0; //  row-index if needed.
+  //  If needed:  int rInd = 0; //  row-index if needed.
   String _s = '';
   String infoS1 = '  INFO: V:Value E:Effort D:Done :  C:$caller';
   String infoS2 = ' ** Diagonal list describing Chore-Effort user-data  **';
@@ -418,7 +414,7 @@ List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
       _s = (ts + _il[x][y]);
 
       ///  is this really needed??
-      int _wl = _il[x][y].length; //  current item length
+      //  if needed:  int _wl = _il[x][y].length; //  current item length
       ts = _s.padRight((_sw), '_'); //  to be visible: _
       _ol.add(ts);
       //  empty String
@@ -442,7 +438,7 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
   int cStep = ((sw - 50) ~/ _ilMC); //  spread info to screen.
   //  TODO  More complicated than 1 by 1 system.
   int cInd = 0; //  colon index.
-  int rInd = 0; //  row-index if needed.
+  //  int rInd = 0; //  row-index if needed.
   String _s = '';
   String infoS1 = ' it-diag-Map  INFO: V:= Value E: = Effort D: = Done :  ';
   String infoS2 = ' ** Diagonal list describing Chore-Effort user-data  **  ';
@@ -461,12 +457,12 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
       ts = _s.padLeft(cInd, '_');
       //  Must get key AND value to String : hklTry  glorious: y
       _s = (ts + y + ' ' + _ilM[x][y]);
-      int _wl = _ilM[x][y].length; //  current item length
+      //Not needed: current item length   int _wl = _ilM[x][y].length;
       ts = _s.padRight((_sw), '_'); //  to be visible: _
       _ol.add(ts);
       //  empty String
     } //  ---------------    Items in one list.
-    cInd + 6; //  extra tick.
+    cInd + 6; //  extra tick to get TAB in screen.
     //  pad String to _sw, screen width.
     String _nlS = '.'.padRight(sw - 2, ' ');
     String _nlS2 = _nlS + '.';

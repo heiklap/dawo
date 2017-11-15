@@ -2,7 +2,6 @@
 
 library packDawoJson;
 
-import 'dart:convert';
 
 class PdJson {
   var myFriends = {

@@ -9,22 +9,14 @@ import 'package:dawo/dawo.dart';
 ///  dawo.dart exports: export 'package:dawo/dawo_src.dart';
 //  import 'package:dawo/dawo_src.dart';
 
-// wanna import all of them?
-import 'package:dawo/code_snippets/aldente_func.dart';
-import 'package:dawo/code_snippets/bat_loop.dart';
-import 'package:dawo/code_snippets/learn_stream_sync.dart';
-
-import 'package:dawo/beta.dart';
 import 'package:dawo/alpha.dart';
 import 'package:dawo/chore.dart';
 
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/connector.dart';
-import 'package:dawo/dawo_dev.dart';
 import 'package:dawo/mill.dart';
 import 'package:dawo/missions.dart';
 import 'package:dawo/shower.dart';
-import 'package:dawo/tools.dart';
 import 'package:dawo/rumba.dart';
 
 //
@@ -38,7 +30,6 @@ var missionX = new Mission('Mission-class', 'example:dawo_example');
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
 main() {
-
   print('d-ex-==>>==>>====      dawo_example          ==>>==>>====');
   //  By Google Stagehand example
   var awesome = new Awesome();
@@ -65,16 +56,16 @@ main() {
   rumba.dance(dawoApp);
   print('d-ex-==<<==roll mission op/ init -open - roll: -close    ==<<==<');
   //  TODO  Better hello-function, to do something real.
-  void helloMission() => print('d-ex-exmpl: * *   Mission!  Message-bus. * * ');
-  print('\n d-ex-::dw-ex: -----------  rolling mission op-functions ------ ');
+  void courierMission() => print('d-ex-exmpl: * *  :courier: Mission!. * * ');
+  print('\n d-ex-:dw:-ex: -----------  rolling :courier:Mission: ------ ');
 
   ///  Eventually opRoll handles all these others.
   packDawoMission.opInit(1, 'empty parameter');
   packDawoMission.opOpen(2, 'second empty parameter');
-  packDawoMission.opRoll(3, helloMission);
-  packDawoMission.opClose(4, helloMission);
+  packDawoMission.opRoll(3, courierMission);
+  packDawoMission.opClose(); //  No parameters.
   packDawoMission.opReport();
-  print('d-ex- -::dw-ex: -------  rolling mission op-functions done ---\n');
+  print('d-ex- -:dw:-ex: -----  rolling :courier:mission: opFunc  done ---\n');
   scheduleBox(':d:ex:');
 
   // #connector
@@ -102,7 +93,7 @@ main() {
   print('d-ex- ==<<==<<====      dawo_example done     ==<<==<<====');
 }
 
-void noPrint(){
+void noPrint() {
   /*
   //  lol  You can not access local private variables.
   dawoApp.printControl(false);  //  no top-level getter dawoApp ??
@@ -114,16 +105,7 @@ void noPrint(){
   tools._pB = false;
   rumba._pB = false;
  */
-
-
-
-
-
-
-
 }
-
-
 
 ///  For to check variables visibility.
 void wordPlay() {
