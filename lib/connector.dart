@@ -43,7 +43,7 @@ import 'alpha.dart';
 
 //  TODO import ruins this app flowServe stops working. lib-function import 2X
 import 'beta.dart';
-//NO NEED    import 'package:dawo/beta.dart' as blib show flowServe();
+
 import 'shower.dart';
 import 'tools.dart';
 
@@ -104,7 +104,7 @@ String connectorMotto = 'connecting app, mission, chore; mediating them';
 //  typedef _conPrint = List<String> Function <String>(String);
 //  typedef _conPrint = List<String> Function <String>(String);
 //  typedef int Compare(Object a, Object b);
-typedef void _ConPrint(String msg);
+//  typedef void _ConPrint(String msg);
 
 /*
 void _conPrint(String msg){
@@ -126,7 +126,7 @@ class Connector extends BaseStruct {
   ///  devNote: IDEA: Fields for to better shape outPut stuff in console.
   String seal = ":CONNECTOR:"; //  like:  ":CONNECTOR:";
   /// .. or this:  emblem can be used in _flowC
-  String emblem = ':D-A:';
+  String emblem = ':C:';
   String indent = "      "; // like: 3-5-7 empty marks or something visible.
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
@@ -160,8 +160,9 @@ class Connector extends BaseStruct {
   var pivot;
 
   //  typedef void _ConPrint(String msg); // announced outside of class
-  _ConPrint _conPrint(String msg) {
-    if (_pB) print(':_conPrint:C: $_pB  $msg');
+  //  _ConPrint
+  void _conPrint(String msg) {
+    if (_pB) print(':_conPrint$emblem $_pB  $msg');
   }
 
   ///  or: void metro() {}   for putting messages to move.
@@ -184,10 +185,7 @@ class Connector extends BaseStruct {
   ///  Dawo example D-ex-loops
   //   Rumba instance All sub
   Map<String, Map<String, String>> bindingM = {
-    'Bind:' : {
-      'First': 'Bind',
-      'Test': 'Bind2'
-    }
+    'Bind:': {'First': 'Bind', 'Test': 'Bind2'}
   };
 
   ///  Eventually this will be object - object
@@ -275,7 +273,7 @@ class Connector extends BaseStruct {
     String msgS = plcM['msg'];
     String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
     _flowC(':CN:  $_S', _pB);
-    String jAddS = ':C:JoinEvent $comS $msgS $senderS';
+    String jAddS = '$emblem JoinEvent $comS $msgS $senderS';
     _joinLog.add(jAddS);
 
     _flowC('\n -->>-->> connector  :con:opJoin:inMsg:    -->>-->>', _pB);
@@ -298,12 +296,14 @@ class Connector extends BaseStruct {
     //  TODO  Map putIfAbsent(senderS, () => receiverS );
     print(':debug: bindingM putIfAbsent::');
     bindingM['Bind:'].putIfAbsent(senderS, () => receiverS);
-    bindingM['Bind:'].forEach((k, v)  => print('$k $v'));
-    print('---------- bindingM ------------------------');
+    bindingM['Bind:'].forEach((k, v) => print('$k $v'));
+    print('--<<-------- bindingM ------------------------');
+
     _flowC(':CN:-info:  $info', _pB);
-    print('** :c:opJoint:  operationMapPrint OR shortMapPrint plcM   **');
+    print('** :C:opJoint:  operationMapPrint OR shortMapPrint plcM   **');
     //  tl.operationMapPrint(plcM);
     tl.shortMapPrint(plcM);
+    print('--<<-------- plcM  ------------------------');
     //  TODO  connector  add memberM    add  BindingM
 
     _flowC(':CN:  --<<--<<--  :connector: done   C:$caller  --<<--<<--', _pB);
@@ -329,7 +329,7 @@ class Connector extends BaseStruct {
 
   ///  #run / roll method
   void roll() {
-    buf.writeln('$_sb Connector::    $info   :c: roll engaged ');
+    buf.writeln('$_sb Connector::    $info   $emblem roll engaged ');
     init(); //  calling init and build methods in this class.
     //  TODO  connector Build parameters.
     build('*CONNECTOR:', 'CONNENCTORS-MASTER:');
@@ -404,7 +404,8 @@ class Connector extends BaseStruct {
   void _flowC(String msg, bool prnB) {
     ///  Call flowServe with #LOCAL variables.
     //  TODO  Why not find beta flowServe() ??
-    flowServe(':con:flC:$prnB ', buf, msg, prnB);
+    //  flowServe(':con:flC:$prnB ', buf, msg, prnB);
+    flowServe(':con:flC: ', buf, msg, true); //  $prnB : when needed.
   }
 
   ///  constructor

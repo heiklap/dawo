@@ -25,11 +25,11 @@ import 'clay/user_json.dart';
 ///  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;
 bool _pB = true;
-String typeDefTestS = 'typeDefTestString';
+String typeDefTestS = 'typeDefTestString not used n ow.';
 
-//  TODO  typedef _effPrint
+//  TODO  typedef _effPrint  Deleted 15.11.
 ///  TODO  typeDefSuccess
-typedef void _EffPrint(String msg);
+// typedef void _EffPrint(String msg);
 
 ///  howTo: howToMap:  Common method to print a map.  HowToPrintMap:
 void effortOperationMapPrint(Map thisMap) {
@@ -166,13 +166,12 @@ class Effort {
   //  TODO  typedef _effPrint
   ///  announced outside class:  typedef void _effPrint(String msg);
 //  typedef _effPrint(String msg);
-  _EffPrint _effPrint(String msg) {
+ // _EffPrint _effPrint(String msg) {
+  void _effPrint(String msg) {
     if (_pB) print(':_effPrint:$_pB  $msg $typeDefTestS');
   }
 
   ///
-  //  TODO  typedef _effPrint
-//  typedef _effPrint(String msg);
   void ifPrint(String msg) {
     if (_pB) print(':sPrint: Is better than this ifPrint $msg $typeDefTestS');
   }

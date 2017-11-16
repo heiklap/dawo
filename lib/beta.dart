@@ -37,8 +37,9 @@ final num betaReadiness = 2; //  readiness for  version  0.0.1
 int flowI = 0; //  Global: flow-counter.
 bool _betaPB = true; //  control for printing.
 
-//  hklTry this.
-typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
+//  hklTry this out now.
+// typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
+//  Typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
 
 /// * *  This is main f-Print, that handles all flowC call from every library.
 /// Do not look out unprofessionally and spam your code with print-clauses!
@@ -46,8 +47,8 @@ typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
 //  Actor and buf are not needed in parameter !!  They are get from caller.
 //  void flow(String actor, StringBuffer buf, String msg, bool pr)
 ///  DONE:  To avoid messing with buffer and actor HOORAY: used local flowC().
-///  local: flowC() calls this flowServe()
-FlowServe flowServe(String actor, StringBuffer buf, String msg, bool pr) {
+///  ALL  local flowC() calls this flowServe()
+void  flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   ///  ********************************************************************
   ///  GETTING NOW  ACTOR AND BUFFER RIGHT, WHEN USED LOCAL fl()
   /// **********************************************************************
@@ -59,10 +60,10 @@ FlowServe flowServe(String actor, StringBuffer buf, String msg, bool pr) {
 
   ///  Added opC: to flow-counter for easy search.
   String _flowIS = 'opC:$flowIS';
-  String header = ':fs:$pr:';
-  String text = '$actor $header$_flowIS  $msg ';
-  //  #debug  print(':flowServe:test:  $_msg $pr');
-  if (pr) print(':flowServe:test:  $text');
+  String header = 'fs:';  //  $pr:  If want true / false.
+  String text = '$actor$header$_flowIS $msg ';
+  //  #debug print(':flowServe:test:  $_msg $pr');
+  if (pr) print(text);  // When needed  :flowServe:test:
   // DONE:  Now _buf comes from caller in parameters.
   buf.writeln('$text');
   //  buf.writeln('$actor $_flowIS $msg');
@@ -124,11 +125,10 @@ void _flowC(String msg, bool betaPB) {
   flowServe(':beta:flC:$betaPB ', betaBuf, msg, betaPB);
 }
 
-//  TODO  typedef SPrint
-//  TODO  Stop polluting global name space. ??
-typedef void SPrint(String msg);
+//  TODO  typedef SPrint, comment away.
+// typedef void SPrint(String msg);
 //  typedef SPrint(String msg);
-SPrint sPrint(String msg) {
+void sPrint(String msg) {
   if (_betaPB) print(':sPrint:  $msg');
 }
 

@@ -30,8 +30,6 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 var appBuf = new StringBuffer();
 bool _pB = false; //  No printing now.
 
-///  Test: Just for testing private variable inside a library.
-String _privacyLibraryTest = 'Testing library / part privacy';
 
 ///  Every important dawo Class extends BaseStruct abstract class.
 ///  Class that holds 'soul' of THIS dawo app.

@@ -29,7 +29,7 @@ void main() {
 
   myMission.opOpen(2, 'second empty parameter');
 
-  print('debug #: 4  BUG mission opRoll do not run this function');
+  print('debug #: 4  :BUG: mission opRoll do not run this function');
   myMission.opRoll(3, courierGreetings);
 
   //  is now in shower   myMission.scheduleBox(':t-m:');
