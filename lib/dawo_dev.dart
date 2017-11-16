@@ -83,6 +83,7 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('Made shower.scheduleBox() a class.')
       ..add('Solved BUG: m.opRoll: autoRollFunc-Works. #NAME: :courier:Func.')
       ..add('Out-comment all typedef stuff, use effPrint & flowC.')
       ..add('Marked BUG: when mission-render : choreL list is emptyl')

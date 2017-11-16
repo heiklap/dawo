@@ -33,7 +33,7 @@ void main() {
   myMission.opRoll(3, courierGreetings);
 
   //  is now in shower   myMission.scheduleBox(':t-m:');
-  scheduleBox(':t-m:');
+  scheduleBox.roll(':t-m:');
 
   myMission.opReport();
   //  Close is last one in row.

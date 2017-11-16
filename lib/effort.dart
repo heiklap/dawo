@@ -25,7 +25,7 @@ import 'clay/user_json.dart';
 ///  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;
 bool _pB = true;
-String typeDefTestS = 'typeDefTestString not used n ow.';
+String typeDefTestS = 'typeDefTestString not used now.';
 
 //  TODO  typedef _effPrint  Deleted 15.11.
 ///  TODO  typeDefSuccess

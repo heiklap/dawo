@@ -206,60 +206,78 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
   return _retBuf;
 } //  ----------  devBox
 
+///  #deprecated  Changed to class.
+void scheduleBoxDeprecated(String _caller) {} //  -----  scheduleBox
+
+///  Made this to be not a function, but a class 16.11.2017
 ///  Data-table of outside resources grouped in time.  Equipment-class. equ
 ///  Can be developed to common-usage, when getting left and right area data
 ///  in parameters. #Plan  Resource, Equipment, Time
-void scheduleBox(String _caller) {
+///  Big amount of data relative to the code : multipurpose is unprofitable.
+class ScheduleBox {
   /*
   //  TODO  should create and use _pB and flowC class here?
   flowC('--<----<-  :M:op:  scheduleBox --<----<-', _pB);
   flowC(':M:op: scheduleBox-info: Report for to check data lists. >>', _pB);
   flowC('>> :M:op: scheduleBox: **Not needed when scheduleBox is on.**.', _pB);
   */
-
-  ///  Call equ class and it's allocate method to get resource List
-  List<String> _resAllocL = [];
-  equ.init(':M:cheduleBox');
-  _resAllocL.addAll(equ.allocate(36, 40)); //  width var not used yet.
   int _sw = 195; //  screen width
-  int _rc = 40; //  row count
+  static int _rc = 40; //  row count
   List<String> _matrix = new List(_rc);
-  int _count = 100;
-  for (var z = 1; z < _matrix.length; z++) {
-    //  do not handle first row.
-    _count++;
-    //  TODO  choose nice background mark for matrix.
-    _matrix[z] = '$_count '.padRight(_sw, '-'); //  pad with low-density mark.
-  }
-  _matrix[0] =
-      '--m-schedule--$_caller--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+  int _colPos = 100;
+  List<String> _resAllocL = [];
 
-  ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
-  _matrix[_rc - 1] =
-      '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
-  //NO   _matrix.forEach(print);
-  //  Fill list-data in matrix in r, _c coordinates.
-  //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
-  void anchorBox(int _r, int _c, List __l) {
-    tl.boxInList(_r, _c, __l, _matrix);
-    //NO #print:  print(_matrix);
+  void init() {
+    ///  Call equ class and it's allocate method to get resource List
+
+    equ.init(':M:scheduleBox');
+    _resAllocL.addAll(equ.allocate(36, 40)); //  width var not used yet.
   }
 
-  anchorBox(3, 5, [
-    '**  Mission-op development experience; common usable stuff',
-    '**  Presenting available objects in scope.  **'
-  ]);
-  anchorBox(6, 5, ['IDEA:', 'IDEA:', 'NOTE:', 'NOTE:']);
-  anchorBox(3, 80, equ.officeCities);
-  anchorBox(12, 10, equ.areas);
-  anchorBox(10, 82, equ.cars);
-  anchorBox(26, 8, equ.weekDays);
-  anchorBox(22, 60, equ.months);
-  anchorBox(33, 44, equ.programAreas);
-  anchorBox(1, 123, _resAllocL);
-  //  Usable resources: toolsActiveM, toolsSpeedM,status
-  _matrix.forEach(print);
-} //  -----  scheduleBox
+  void build(String _caller) {
+    for (var z = 1; z < _matrix.length; z++) {
+      //  do not handle first row.
+      _colPos++;
+      //  TODO  choose nice background mark for matrix.
+      _matrix[z] = '$_colPos '.padRight(_sw, '-'); //  pad with low-density mark.
+    }
+    _matrix[0] =
+        '--m-schedule--$_caller--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+
+    ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
+    _matrix[_rc - 1] =
+        '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
+    //NO   _matrix.forEach(print);
+    //  Fill list-data in matrix in r, _c coordinates.
+    //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
+    void anchorBox(int _r, int _c, List __l) {
+      tl.boxInList(_r, _c, __l, _matrix);
+      //NO #print:  print(_matrix);
+    }
+
+    anchorBox(3, 5, [
+      '**  Mission-op development experience; common usable stuff',
+      '**  Presenting available objects in scope.  **'
+    ]);
+    anchorBox(6, 5, ['IDEA:', 'IDEA:', 'NOTE:', 'NOTE:']);
+    anchorBox(3, 80, equ.officeCities);
+    anchorBox(12, 10, equ.areas);
+    anchorBox(10, 82, equ.cars);
+    anchorBox(26, 8, equ.weekDays);
+    anchorBox(22, 60, equ.months);
+    anchorBox(33, 44, equ.programAreas);
+    anchorBox(1, 123, _resAllocL);
+    //  Usable resources: toolsActiveM, toolsSpeedM,status
+  }
+
+  void roll(String _caller) {
+    init();
+    build(_caller);
+    _matrix.forEach(print);
+  }
+} //  -----  class ScheduleBox
+
+var scheduleBox = new ScheduleBox();
 
 ///  Gets some small data from effortLM based on parameters.
 List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {

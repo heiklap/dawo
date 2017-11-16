@@ -66,7 +66,7 @@ main() {
   packDawoMission.opClose(); //  No parameters.
   packDawoMission.opReport();
   print('d-ex- -:dw:-ex: -----  rolling :courier:mission: opFunc  done ---\n');
-  scheduleBox(':d:ex:');
+  scheduleBox.roll(':d:ex:');
 
   // #connector
   ch.roll();
