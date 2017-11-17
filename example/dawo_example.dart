@@ -2,99 +2,193 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  dawo_example   dawo version  0.0.5  6.11.2017
 
+///  *  dawo_example creates 28 screens of console output data presentation.
+///  Find:  :con: :connector: :opCom:  :corporate:
+
 import 'package:dawo/dawo.dart';
 
 ///  watch difference, when importing dawo/dawo_src.dart
 ///  dawo_src only #imports all dawo files except dawo.dart
 ///  dawo.dart exports: export 'package:dawo/dawo_src.dart';
-//  import 'package:dawo/dawo_src.dart';
+
+///
 
 import 'package:dawo/alpha.dart';
 import 'package:dawo/chore.dart';
-
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/connector.dart';
-import 'package:dawo/mill.dart';
 import 'package:dawo/missions.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
+import 'package:dawo/tools.dart';
 
-//
+//  Unused package is marked with grey, and #warning.
+import 'package:dawo/mill.dart';
 
-//  create classes::
-var da = new DawoApp('exampleApp', 'Testing in dawo_example');
-var df = new Mill();
+//  You can use any name for classes, that you create:
+//  var da = new DawoApp('exampleApp', 'Testing in dawo_example');
 
-var missionX = new Mission('Mission-class', 'example:dawo_example');
+/// Mill class is planned to be method runner / scheduler of dawo.
+//  var mill = new Mill();
 
+//  Example, how extra instance of mission is created:
+//  var missionX = new Mission('Mission-class', 'example:dawo_example');
+
+//  Made by Google Stagehand automatically, when creating a new package.
+//  This serves as an example of class, and user can develop it further.
+var awesome = new Awesome();
+//  When you try code below, you can see 6 properties of awesome class.
+//  awesome.
+
+//  Used once here to run method roll()
 var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
 
+//  create classes, that do not already have an instance inside dawo::
+var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
+    'By: dawo_example.dart: dawoApp rolls missioms');
+var rumba = new Rumba();
+
+///  Data fields:
+///  Information of #user for :con:  :opCom: and :corporate:
+Map<String, String> placardM = {
+  'actor': 'D-example',
+  'sender': 'Dawo example',
+  'receiver': 'D-ex-loops',
+  'command': 'D-ex-cmd:',
+  'msg': 'D-ex-msg:',
+};
+
+///  Local variables for this presentation.
+bool _pB = true; //  Boolean value used to control printing.
+String dexS = ':d-ex:'; //  Prefix for print messages and easy find.
+int dexC = 0; //  counter for activities in this example.
+String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
+
+///  For 0.0.6, main function is 17.11.2017 separated to small functions.
+///  In dawo package there is no main-function. Only in example files.
+///  Every dart program starts it's execution from main method.
 main() {
-  print('d-ex-==>>==>>====      dawo_example          ==>>==>>====');
-  //  By Google Stagehand example
-  var awesome = new Awesome();
-  print('d-ex-:DAWO:EXAMPLE:  awesome: ${awesome.isAwesome}');
-  Map<String, String> placardM = {
-    'actor': 'D-example',
-    'sender': 'Dawo example',
-    'receiver': 'D-ex-loops',
-    'command': 'D-ex-cmd:',
-    'msg': 'D-ex-msg:',
-  };
+  ///  Call function that adds #actor and #count to this String and prints it.
+  exInfo('==>>==>>==   dawo_example    ==>>==>>==');
+  exInfo('==>>==>>==   dawo_example  awesome: ${awesome.isAwesome}');
 
-  var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
-      'By: dawo_example.dart: dawoApp rolls missioms');
-  var rumba = new Rumba();
-  noPrint();
+  //  example of empty function, that can be modified to do #things!!
+  noteToMe();
 
-  print('d-ex--->>-->>--  :dawo:example: calling :connector:  -->>-->>--');
-  String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
+  ///  All connector activity is marked with: :connector: in output.
+  exInfo('==>>==>>==   dawo_example calling :connector:    ==>>==>>==');
+  connectorOp(dexS); //  function below.
+
+  // This method also returns a StringBuffer, that is not used here.
+  rumba.dance(dawoApp); //  15 screens of output.
+
+  exampleMethodsPlay(); //  Add more 13 screens output.
+
+  exInfo('    ==<<==<<==    dawo_example done    ==<<==<<==');
+} //  -----  end of main.
+
+///  To allow easy-run of these 8 separated activities.
+void exampleMethodsPlay() {
+  exampleMission();
+
+  ///  Calling Class scheduleBox method, in dawo/shower.dart
+  ///  Nice screen of collected data in boxed for,
+  scheduleBox.roll('$dexS');
+
+  lonelySampleChore();
+  sampleDawoBuffers();
+
+  exInfo('==>>==>>==   calling choreEffort---------- dawo sets, goals:');
+  choreEffort('$dexS');
+  exInfo('    ==<<==<<==    calling choreEffort done  dawo sets, goals:');
+
+  sampleJsonData();
+  connectorExampleReport();
+  schedulePlay();
+}
+
+///  Form  message row to follow
+void exInfo(String msg) {
+  dexC++;
+  String dexCS = dexC.toString();
+  //  String: -exInfo appended here, as an example. It is 16 times in output.
+  String _msg = ' -exInfo $dexS $dexCS $msg';
+  if (_pB) print(_msg);
+}
+
+///  Place where :corporate:  :opCom:  and :connector: play together.
+void connectorOp(String caller) {
   con.opJoin(placardM, connectorMsg, ':Dawo:example:');
   con.roll();
+}
 
-  // This also returns a StringBuffer.
-  rumba.dance(dawoApp);
-  print('d-ex-==<<==roll mission op/ init -open - roll: -close    ==<<==<');
-  //  TODO  Better hello-function, to do something real.
-  void courierMission() => print('d-ex-exmpl: * *  :courier: Mission!. * * ');
-  print('\n d-ex-:dw:-ex: -----------  rolling :courier:Mission: ------ ');
+//  TODO  #IDEA: for courier carrier, to do something really nice.
+//  :courier: marks this message carriage functions activity.
+void courierMessage() => print('d-ex-exmpl: * *  :courier: Mission!. * * ');
+
+///  This class instance has been created in dawo, and it is usable here.
+void exampleMission() {
+  exInfo('    ==<<==<<==    roll mission op/ init -open - roll: -close==<<==');
+  exInfo('\n ==>>==>>==   rolling :packDawo:Mission:    ==>>==>>==');
 
   ///  Eventually opRoll handles all these others.
   packDawoMission.opInit(1, 'empty parameter');
   packDawoMission.opOpen(2, 'second empty parameter');
-  packDawoMission.opRoll(3, courierMission);
-  packDawoMission.opClose(); //  No parameters.
+  //  calls void function that prints a String.
+  //  In front of String is line feed, and another String with interpolation.
+  exInfo('\n $dexS-:dw:-ex: -----------  rolling :courier:Message: ------ ');
+  packDawoMission.opRoll(3, courierMessage);
+  exInfo('  - -:dw:-ex: -----  rolling :courier:mission: opFunc  done ---\n');
+  packDawoMission.opClose(); //  No  parameters.
   packDawoMission.opReport();
-  print('d-ex- -:dw:-ex: -----  rolling :courier:mission: opFunc  done ---\n');
-  scheduleBox.roll(':d:ex:1');
-
-  // #connector
-  ch.roll();
-
-  print('d-ex- ==>>==>>====      dawo_example buffers:     ==>>==>>====');
-  out.outBuffersSizes('dawo_example');
-  outBuffersPrint('d-ex- dawo_example', 'no-prevent-printing');
-  print('d-ex- ==<<==<<====      dawo_example buffers:     ==<<==<<====');
-
-  print('d-ex- >>  ----- calling choreEffort---------- dawo sets, goals:');
-  choreEffort('d-ex-');
-
-  print('d-ex- <<  ----- calling choreEffort done  ------ dawo sets, goals:');
-
-  print('d-ex- ==>>==>>====      encoded - decoded      ==>>==>>====');
-  print('d-ex- ==>>==>>==== chore > effort > user_json render   ==>>==>>===');
-  choreToEffortUserJson(':d-ex:');
-
-  print('d-ex- ==<<==<<====      encoded - decoded   done   ==<<==<<====');
-  print('d-ex- ==>>==>>==== :d:ex:3 calling connector report   ==>>==>>===');
-  con.report();
-  print('d-ex- ==<<==<<====      connector report done     ==<<==<<====');
-
-  scheduleCon.roll(':d:ex:4');
-  print('d-ex- ==<<==<<====      dawo_example done     ==<<==<<====');
+  exInfo('    ==<<==<<==    rolling :packDawo:Mission: done    ==<<==<<==');
+  //  When you print row below, you can see all methods.
+  //  packDawoMission.
 }
 
-void noPrint() {
+///
+void lonelySampleChore() {
+  exInfo('\n ==>>==>>==   rolling lonelySampleChore    ==>>==>>==');
+
+  ///  Sample lonely Chore, that is created here
+  ch.roll();
+  exInfo('    ==<<==<<==    rolling lonelySampleChore: done    ==<<==<<==');
+}
+
+///
+void sampleDawoBuffers() {
+  exInfo('\n ==>>==>>==   rolling sampleDawoBuffers    ==>>==>>==');
+  out.outBuffersSizes('dawo_example');
+  outBuffersPrint('$dexS dawo_example', 'no-prevent-printing');
+  exInfo('    ==<<==<<==    rolling sampleDawoBuffers: done    ==<<==<<==');
+}
+
+///
+void sampleJsonData() {
+  exInfo('\n ==>>==>>==   rolling sampleJsonData    ==>>==>>==');
+  exInfo('==>>==>>==   encoded - decoded    ==>>==>>==');
+  exInfo('==>>==>>==   chore > effort > user_json render   ==>>==>>===');
+  choreToEffortUserJson(':d-ex:');
+  exInfo('    ==<<==<<==    encoded - decoded   done    ==<<==<<==');
+  exInfo('    ==<<==<<==    rolling sampleJsonData: done    ==<<==<<==');
+}
+
+///
+void connectorExampleReport() {
+  exInfo('==>>==>>==   calling :connector: report    ==>>==>>==');
+  con.report();
+  exInfo('    ==<<==<<==    :connector: report done    ==<<==<<==');
+}
+
+///
+void schedulePlay() {
+  exInfo('==>>==>>==   calling :schedule:play:    ==>>==>>==');
+  scheduleCon.roll('$dexS');
+  exInfo('    ==<<==<<==    :schedule:play: done    ==<<==<<==');
+}
+
+/// Empty, or message method
+void noteToMe() {
   /*
   //  lol  You can not access local private variables.
   dawoApp.printControl(false);  //  no top-level getter dawoApp ??
@@ -158,4 +252,5 @@ void wordPlay() {
   //  printBuffers();
 }
 
+///  Empty not used method.
 void playDawoSrcDart() {}

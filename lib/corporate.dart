@@ -37,6 +37,7 @@ class Corporate {
     ':Done': 'Close doors when leave.',
   };
 
+  ///  V= Value E= Effort D= Done 0-9
   Map<String, String> jobM = {
     'J1': 'V:2 E:6 D:3',
     'J2': 'V:6 E:6 D:3',

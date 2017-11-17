@@ -279,6 +279,8 @@ class Effort {
       '3 Bugs',
       '4 Example'
     ];
+    //  new parameters 3 and 4: _items, _w ( width of text)
+    //  100, 100 is often harmless guess, but too long list breaks.
     tl.boxInList(2, 72, 100, 100, priorityL, diagonalL);
    //  If you do not know list length and what width you want, try 100
     tl.boxInList(2, 94, 100, 100, _l1, diagonalL);

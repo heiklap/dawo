@@ -15,6 +15,8 @@ import 'corporate.dart';
 import 'equipment.dart';
 import 'tools.dart';
 
+//  TODO :  21 matches,  add one more to make it even count.
+
 ///  Show Lists, like devNotes in nice column-box in console.
 ///  Can now handle 2, 3 and 4 column cases, and is common-usage function.
 ///  TODO  Add better row / height decision.
@@ -219,6 +221,7 @@ void scheduleBoxDeprecated(String _caller) {} //  -----  scheduleBox
 ///  Big amount of data relative to the code : multipurpose is unprofitable.
 class ScheduleBox {
   /*
+  //  TODO  Stop crunching original Lists and Maps.
   //  TODO  should create and use _pB and flowC class here?
   flowC('--<----<-  :M:op:  scheduleBox --<----<-', _pB);
   flowC(':M:op: scheduleBox-info: Report for to check data lists. >>', _pB);
@@ -357,6 +360,8 @@ class ScheduleCon {
 
     //anchorBox(3, 80, equ.officeCities);
     lHeader(4, 47, '* :corp:placardM 7 *');
+    //  new parameters 3 and 4: _items, _w ( width of text)
+    //  100, 100 is often harmless guess, but too long list breaks.
     anchorBox(5, 47, 7, 100, corporate.placardM.values.toList());
 
     lHeader(4, 70, '* :corp:orderM 7 *');

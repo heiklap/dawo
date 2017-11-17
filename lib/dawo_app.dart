@@ -22,6 +22,7 @@ import 'shower.dart';
 
 // ignore: unused_field for those wondering.
 //  Word: stream  9 times
+///  TODO  Add all those nice boxes, schedule, aso here, or think flow better.
 
 ///  Getter practice.
 num dawoAppReadiness = 95; //  changed: 2.5.2015
