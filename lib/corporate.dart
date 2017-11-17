@@ -15,6 +15,38 @@ import 'shower.dart'; //  for devBox
 class Corporate {
   String name = 'corporate-united';
 
+  //  Some Map to simulate activity
+  Map<String, String> phaseM = {
+    '1': 'Ask',
+    '2': 'Join',
+    '3': 'Op',
+    '4': 'msg',
+    '5': 'Ping',
+    '6': 'Bind',
+    '7': 'comOp',
+    '8': 'bye',
+  };
+
+  //  Some Map to simulate activity
+  Map<String, String> orderM = {
+    'Header': 'Corp orderM',
+    'o:Start': 'Corp Start',
+    'o:init': 'Initialize bindings',
+    'o:join': 'Join other members',
+    'o:do': 'Do Stuff',
+    ':Done': 'Close doors when leave.',
+  };
+
+  Map<String, String> jobM = {
+    'J1': 'V:2 E:6 D:3',
+    'J2': 'V:6 E:6 D:3',
+    'J3': 'V:2 E:6 D:0',
+    'J4': 'V:5 E:6 D:0',
+    'J5': 'V:0 E:6 D:0',
+    'J6': 'V:2 E:6 D:1',
+    'JX': 'V:0 E:0 D:0',
+  };
+
   ///  Testing placardM inside chore.
   ///  Present info for outer process calls.
   ///  Other users are calling process with their own placard.
@@ -61,7 +93,7 @@ class Corporate {
   StringBuffer process(
       String by, GlobalOp _glbOp, Map placardM, Function _assigned) {
     ///  NOTE  callers placardM is here now.
-    print(':debug: :corporate: process begins:');
+    print(':corporate: process begins:');
     String infoS1 =
         '#Caller have accessed #corporate.process, where it will hava access in all public resources, ';
     String infoS2 = 'and it can interact with other users.';
@@ -115,10 +147,8 @@ class Corporate {
     devBox(':bl:comProc:', [_li3, _li4], 10);
 
     //  TODO  :corporate:process: end info and statistics.
-    _cpBuf.writeln(
-        ':_cpBuf:  <--<<--  :corporate:process done ------------------\n');
-    print(
-        '  <--<<--  :corporate:process done cccccccccccccccccccccccccccccccccp \n');
+    _cpBuf.writeln(':_cpBuf:  <--<<--  :corporate:process done --------\n');
+    print('  <--<<--  :corporate:process done cccccccccccccccccccccccccp \n');
     return _cpBuf;
   }
 

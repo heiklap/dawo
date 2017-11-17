@@ -83,6 +83,10 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('NEXT: Make clear structure with functions to dawo_example.dart.')
+      ..add('NEXT: Bind / binding in opCom: data and more clarity.')
+      ..add('NEXT: ouput clean after: con - corp console schedule.')
+      ..add('Connector & Corporation > opCom console outPut in schedule.')
       ..add('Made shower.scheduleBox() a class.')
       ..add('Solved BUG: m.opRoll: autoRollFunc-Works. #NAME: :courier:Func.')
       ..add('Out-comment all typedef stuff, use effPrint & flowC.')

@@ -180,12 +180,15 @@ class Connector extends BaseStruct {
 
   ///  get / collect bindings
   ///  Processes, that are bind inside connector.
+  int bindC = 0;
 
   ///  Structure and usage of this map is not yet clear.Data is like:
   ///  Dawo example D-ex-loops
   //   Rumba instance All sub
   Map<String, Map<String, String>> bindingM = {
-    'Bind:': {'First': 'Bind', 'Test': 'Bind2'}
+    'first': {'Try': 'Bind', 'Test': 'Bind2'},
+    'second': {},
+    'third': {},
   };
 
   ///  Eventually this will be object - object
@@ -206,26 +209,13 @@ class Connector extends BaseStruct {
     _conPrint('--------------- connector report ----------------------------');
     List<List<String>> _dbL = new List();
     List<List<String>> _dbL2 = new List();
-    //  List<List<String>> _dbL3 = new List();
-
-    _dbL.addAll([_memberL, _joinLog]);
+    _dbL.addAll([memberL, joinLog]);
     //  Add message list: for in-coming messages: _inMsgL
-    _dbL2.addAll([_inMsgL, _bindL]);
-
-    /*
-    _memberL.addAll(tl.mapToList(memberM));
-    //  TODO  hklTry  Glorious code
-    for (var x in _memberL) {
-      _bindL.addAll(tl.mapToList(bindingM[x])); //TODO  values
-    }
-    _dbL3.addAll([_memberL, _bindL]);
-    */
-
+    _dbL2.addAll([inMsgL, bindL]);
     _conPrint('--------------- connector report devBox:: -------------------');
     //  presenting devBox in 2 x 2 table.
     devBox(':con-r1:', _dbL, 0);
     devBox(':con-r2:', _dbL2, 0);
-    //  devBox(':con-r3:', _dbL3, 0);
     _conPrint('--------------- connector report done -----------------------');
     return ['this', 'list', 'is', 'vain']; //  No need for list??
   }
@@ -235,10 +225,10 @@ class Connector extends BaseStruct {
   List<GlobalOp> opL = new List();
 
   ///  List for #C information. Used for devBox reporting.
-  List<String> _joinLog = ['* :connector: join-log *'];
-  List<String> _bindL = ['*  :connector: bind-list  *'];
-  List<String> _inMsgL = ['*  :connector: in-msg-list  *'];
-  List<String> _memberL = ['*  :connector: member-list  *'];
+  List<String> joinLog = ['* :connector: join-log *'];
+  List<String> bindL = ['*  :connector: bind-list  *'];
+  List<String> inMsgL = ['*  :connector: in-msg-list  *'];
+  List<String> memberL = ['*  :connector: member-list  *'];
 
   ///  Join "clients" / Members to opList. placardM mediates necessary info.
   void opJoin(Map<String, String> plcM, String _inMsg, caller) {
@@ -273,8 +263,8 @@ class Connector extends BaseStruct {
     String msgS = plcM['msg'];
     String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
     _flowC(':CN:  $_S', _pB);
-    String jAddS = '$emblem JoinEvent $comS $msgS $senderS';
-    _joinLog.add(jAddS);
+    String jAddS = '$emblem JoinEvent" $comS $msgS $senderS';
+    joinLog.add(jAddS);
 
     _flowC('\n -->>-->> connector  :con:opJoin:inMsg:    -->>-->>', _pB);
     _flowC(_inMsg, _pB);
@@ -285,19 +275,25 @@ class Connector extends BaseStruct {
     _flowC('--<<--<< :con:opJoin:inMsg:  done  --<<--<< \n', _pB);
 
     /// Use new  _inMsgL  for keeping#unmodified   _inMsg.
-    _inMsgL.add(_inMsg);
+    inMsgL.add(_inMsg);
     //  memberM
     //  TODO  Make sure to have original key for every "event"
-    memberM.putIfAbsent(actorS, () => comS);
 
-    //  bindingM
-    //  TODO  Error  Can n ot handle this map. howTo Map?
-    //  Map<String, Map<String, String>> bindingM = {};
-    //  TODO  Map putIfAbsent(senderS, () => receiverS );
-    print(':debug: bindingM putIfAbsent::');
-    bindingM['Bind:'].putIfAbsent(senderS, () => receiverS);
-    bindingM['Bind:'].forEach((k, v) => print('$k $v'));
-    print('--<<-------- bindingM ------------------------');
+    /// Make new bind name,
+    bindC++;
+    String bindCS = bindC.toString();
+    String bindNameS = '$actorS$bindCS';
+
+    print(':bind:  bindingM putIfAbsent:: bNS: $bindNameS comS: $comS ');
+    //  Map<String, Member>
+    memberM.putIfAbsent(bindNameS, () => comS);
+    print(memberM);
+    print(' bindingM putIfAbsent:: S: $senderS  R: $receiverS');
+    bindingM['second'].putIfAbsent(senderS, () => receiverS);
+    // Map<String, Map<String, String>>
+    print(bindingM);
+    bindingM['first'].forEach((k, v) => print('$k $v'));
+    print('--<<-------- bindingM - done -----------------\n');
 
     _flowC(':CN:-info:  $info', _pB);
     print('** :C:opJoint:  operationMapPrint OR shortMapPrint plcM   **');
@@ -362,7 +358,7 @@ class Connector extends BaseStruct {
     //  code here
     buf.write('$_sb ---  Connector buffer output app: done  ---');
     if (_pB) print(buf);
-    buf.clear(); //  empty buffer
+    // Do  not, only when whole system closes.  buf.clear(); //  empty buffer
   }
 
   /// 3 #LANG specific commands, that configure objects behaviour in relation

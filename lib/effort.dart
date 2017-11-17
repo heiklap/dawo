@@ -271,7 +271,7 @@ class Effort {
       'Friday  15',
       'Chat 13.30'
     ];
-    tl.boxInList(9, 2, dayL, diagonalL);
+    tl.boxInList(9, 2, 100, 100, dayL, diagonalL);
     List<String> priorityL = [
       'Priority:',
       '1 Customs',
@@ -279,19 +279,19 @@ class Effort {
       '3 Bugs',
       '4 Example'
     ];
-    tl.boxInList(2, 72, priorityL, diagonalL);
+    tl.boxInList(2, 72, 100, 100, priorityL, diagonalL);
+   //  If you do not know list length and what width you want, try 100
+    tl.boxInList(2, 94, 100, 100, _l1, diagonalL);
+    tl.boxInList(2, 160, 100, 100, _l2, diagonalL);
+    tl.boxInList(18, 19, 100, 100, _l3, diagonalL);
 
-    tl.boxInList(2, 94, _l1, diagonalL);
-    tl.boxInList(2, 160, _l2, diagonalL);
-    tl.boxInList(18, 19, _l3, diagonalL);
-
-    tl.boxInList(18, 39, _l4, diagonalL);
-    tl.boxInList(18, 1, _l5, diagonalL);
+    tl.boxInList(18, 39, 100, 100, _l4, diagonalL);
+    tl.boxInList(18, 1, 100, 100, _l5, diagonalL);
 
     ///  Adding json-to-List data to diagonalL matrix.
-    tl.boxInList(28, 33, _lBus, diagonalL);
-    tl.boxInList(25, 65, _lFury, diagonalL);
-    tl.boxInList(15, 1, _lHuman, diagonalL);
+    tl.boxInList(28, 33, 100, 100, _lBus, diagonalL);
+    tl.boxInList(25, 65, 100, 100, _lFury, diagonalL);
+    tl.boxInList(15, 1, 100, 100, _lHuman, diagonalL);
 
     print(diagonalL.length);
     diagonalL.forEach(print);

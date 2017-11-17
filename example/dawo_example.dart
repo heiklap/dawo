@@ -66,7 +66,7 @@ main() {
   packDawoMission.opClose(); //  No parameters.
   packDawoMission.opReport();
   print('d-ex- -:dw:-ex: -----  rolling :courier:mission: opFunc  done ---\n');
-  scheduleBox.roll(':d:ex:');
+  scheduleBox.roll(':d:ex:1');
 
   // #connector
   ch.roll();
@@ -86,10 +86,11 @@ main() {
   choreToEffortUserJson(':d-ex:');
 
   print('d-ex- ==<<==<<====      encoded - decoded   done   ==<<==<<====');
-  print('d-ex- ==>>==>>==== :d:ex: calling connector report   ==>>==>>===');
+  print('d-ex- ==>>==>>==== :d:ex:3 calling connector report   ==>>==>>===');
   con.report();
   print('d-ex- ==<<==<<====      connector report done     ==<<==<<====');
 
+  scheduleCon.roll(':d:ex:4');
   print('d-ex- ==<<==<<====      dawo_example done     ==<<==<<====');
 }
 

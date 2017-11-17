@@ -7,6 +7,7 @@
 
 library tools.dart;
 
+import 'dart:math';
 ///
 num toolsReadiness = 96;
 
@@ -89,9 +90,11 @@ class Tools {
 
   ///  Add padLeft & padRight Strings to make this common.
   ///  Pad List right and left with: _leS, _raS and make all even length
-  void padListRL(List<String> _l, String _leS, _raS) {
+  void padListRL(List<String> _l, int _w, String _leS, _raS) {
+    //  Add new parameter, asked width: _w
     //  Using here new Tools, tl class.
-    int long = tl.longestItemInList(_l);
+    //  If asked shorter rows.
+    int long = min(tl.longestItemInList(_l), _w);
     //  looks funny, surely we can make better :)
     for (var x = 0; x < _l.length; x++) {
       //  int itemLength = _l.length;  //  length NOW
@@ -103,11 +106,26 @@ class Tools {
     }
   }
 
+  //  Want to get List items to max certain length.
+  void shortenItemsInList(List<String> _l, int _w){
+    String s;
+    for (var x = 0; x < _l.length; x++){
+      s = _l[x];
+      if (_l[x].length > _w) {
+        _l[x] = s.substring(0,_w);
+      }
+    }
+  }
+
   //  Fill list-box-data in matrix in r, _c coordinates.
   //  Modify _mL to be NOT PRIVATE and name to: masterL
-  void boxInList(int _r, int _c, List<String> boxL, List<String> masterL) {
-    padListRL(boxL, ' ', ' ');
-    int _count = boxL.length;
+  void boxInList(int _r, int _c, _items, _w, List<String> boxL, List<String> masterL) {
+    //  new parameters _items, _w :  items and asked output width
+    if (_w < longestItemInList(boxL)) {
+      shortenItemsInList(boxL, _w );
+    }
+    padListRL(boxL, _w, ' ', ' ');
+    int _count = min(boxL.length, _items);  //  All or asked amount.
     for (var x = 0; x < _count; x++) {
       //  Control for range errors
       int itemLength = boxL[x].length;

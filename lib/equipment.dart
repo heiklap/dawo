@@ -29,7 +29,10 @@ class Equipment {
 
   void init(String caller) {
     print('-->-->   **  resource-init by:  $caller   ****');
-    resL.addAll([area, car, law, machine, money, office, people, time]);
+    if (resL.length==0) {
+      resL.addAll([area, car, law, machine, money, office, people, time]);
+    }
+
   }
 
   List<String> areas = [
