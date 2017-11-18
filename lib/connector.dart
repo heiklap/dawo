@@ -46,6 +46,7 @@ import 'beta.dart';
 
 import 'shower.dart';
 import 'tools.dart';
+import 'src/bind.dart';
 
 ///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = new StringBuffer();
@@ -178,82 +179,32 @@ class Connector extends BaseStruct {
   ///  Member is a class in alpha.
   ///  #PLAN:  eventually this will be Member.
   //  Map<String, Member> memberM = {};  Not object yet.
+  //  Usage: Shower and connector: put.. and copy
   Map<String, String> memberM = {
     'cM-1': 'First :con:Member:test:',
     'cM-2': 'Second :con:Member:test:',
   };
 
-  ///  get / collect bindings
-  ///  Processes, that are bind inside connector.
-  int bindC = 0;
 
-  ///
-  Map<String, String> bindTypes = {
-    'all': ':bind:all:',
-    'first': 'First accountant',
-    'name': 'Member _____',
-    'unknown': 'Unknown ____',
-  };
 
-  ///  Structure and usage of this map is not yet clear.Data is like:
-  ///  Dawo example D-ex-loops
-  //   Rumba instance All sub
-  ///  Usage:
-  Map<String, Map<String, String>> bindingM = {
-    'all': {'Try': ':bind:1', 'Test': ':bind:2'},
-    'first': {'Play': ':bind:7'},
-    'name': {'N:x': ':bind:nX'},
-    'unknown': {}
-  };
+//  connect to bind:
+//  String bind(String actorS, senderS, receiverS, comS, msgS, _inMsg)
 
-  ///  Eventually this will be object - object
-  //  Map<String, Map<dynamic, dynamic>> bindingM = {};
 
-  //  Connect Members action to one or many other Members action.
-  //  eventually this will be: var / dynamic / command...
-  //String bind(var senderProcess, var receiverProcess, var thing, String msg)
-  ///  Usage:  opJoin is calling this
-  //String bind(String sProcess, String rProcess, String thing, String msg) {
-  String bind(String actorS, senderS, receiverS, comS, msgS, _inMsg) {
-    _flowC(':CN:bind:  -->>-->>--  :connector:  C::Chr:  -->>-->>--', _pB);
-    //  Idea: Have some binding-models and types.
-    //  add / find from bindingM Map
-    /// Make new bind name,
-    /// NOTE opJoin parameters inMsg  and  caller are available here
-    bindC++;
-    String bindCS = bindC.toString();
-    String bindNameS = '$actorS$bindCS';
-    print(':bind:  bindingM putIfAbsent:: bNS: $bindNameS comS: $comS ');
-
-    /// TODO  :bind: _inMsg string to binding system
-    /// GET:   C:PING:all: C:BIND:all  from inMsg to catch :first:all:name:
-    bindL.add('   $_inMsg');
-    print('inMsg:  $_inMsg');
-    //  Map<String, Member>
-    memberM.putIfAbsent(bindNameS, () => comS);
-    print(memberM);
-    print(' bindingM putIfAbsent:: S: $senderS  R: $receiverS');
-    bindingM['all'].putIfAbsent(senderS, () => receiverS);
-    // Map<String, Map<String, String>>
-    print(bindingM);
-    bindingM['first'].forEach((k, v) => print('$k $v'));
-
-    return 'binding: #one to: #second';
-  }
 
   ///  Giving nice report of connections.
   List report() {
-    _conPrint('--------------- connector report ----------------------------');
+    print('--------------- connector report ----------------------------');
     List<List<String>> _dbL = new List();
     List<List<String>> _dbL2 = new List();
     _dbL.addAll([tl.mapToList(memberM), joinLog]);
     //  Add message list: for in-coming messages: inMsgL
-    _dbL2.addAll([inMsgL, bindL]);
-    _conPrint('--------------- connector report devBox:: -------------------');
+    _dbL2.addAll([inMsgL, bind.bindL]);
+    print('--------------- connector report devBox:: -------------------');
     //  presenting devBox in 2 x 2 table.
     devBox(':con-r1:', _dbL, 0);
     devBox(':con-r2:', _dbL2, 0);
-    _conPrint('--------------- connector report done -----------------------');
+    print('--------------- connector report done -----------------------');
     return ['this', 'list', 'is', 'vain']; //  No need for list??
   }
 
@@ -263,7 +214,7 @@ class Connector extends BaseStruct {
 
   ///  List for #C information. Used for devBox reporting.
   List<String> joinLog = ['* :connector: join-log *'];
-  List<String> bindL = ['*  :connector: bind-list  *'];
+
   List<String> inMsgL = ['*  :connector: in-msg-list  *'];
 
   ///  Join "clients" / Members to opList. placardM mediates necessary info.
@@ -318,8 +269,7 @@ class Connector extends BaseStruct {
 
     ///  -----------  all :bind: stuff to bind-method
     ///  Call parameters from placardM and last from opCom parameter.
-    bind(actorS, senderS, receiverS, comS, msgS, inMsg);
-
+    bind.mark(actorS, senderS, receiverS, comS, msgS, inMsg);
     print('--<<-------- bindingM - done -----------------\n');
 
     _flowC(':CN:-info:  $info', _pB);

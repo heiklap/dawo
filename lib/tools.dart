@@ -133,7 +133,8 @@ class Tools {
     if (_w < longestItemInList(boxL)) {
       shortenItemsInList(boxL, _w );
     }
-    padListRL(boxL, _w, ' ', ' ');
+    ///  Only >2 width lists are padded
+    if (_w > 2 )padListRL(boxL, _w, ' ', ' ');
     int _count = min(boxL.length, _items);  //  All or asked amount.
     for (var x = 0; x < _count; x++) {
       //  Control for range errors

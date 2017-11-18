@@ -14,6 +14,9 @@ import 'connector.dart';
 import 'corporate.dart';
 import 'equipment.dart';
 import 'tools.dart';
+import 'src/bind.dart';
+
+
 
 //  TODO :  21 matches,  add one more to make it even count.
 
@@ -354,9 +357,6 @@ class ScheduleCon {
       '**  #Caller have accessed :corporate:process: public resources,  **'
     ]);
 
-    //  Add screen-high vertical line |
-    anchorBox(1, 30, 47, 1, verticalLineL);
-
     //  tl.bufToList(con.buf).forEach(print);
     //  bufL.addAll(tl.bufToList(con.buf));
     //  Add :con: work-flow list 44 items 26 wide on left of screen
@@ -378,14 +378,14 @@ class ScheduleCon {
     lHeader(4, 101, '* :corp:jobM 7*');
     anchorBox(5, 101, 7, 100, tl.mapToList(corporate.jobM));
 
-    lHeader(13, 32, '======:con:bind:M-first=======');
-    anchorBox(14, 32, 18, 28, tl.mapToList(con.bindingM['first']));
+    lHeader(13, 32, '===bindingM:bind:==first=====');
+    anchorBox(14, 32, 18, 28, tl.mapToList(bind.bindingM['first']));
 
-    lHeader(13, 55, '=======:con:bind:M-all========');
-    anchorBox(14, 62, 18, 28, tl.mapToList(con.bindingM['all']));
+    lHeader(13, 61, '==bindingM:bind:==all=======');
+    anchorBox(14, 62, 18, 28, tl.mapToList(bind.bindingM['all']));
 
-    lHeader(13, 87, '=======:con:bind:M-name=========');
-    anchorBox(14, 92, 18, 28, tl.mapToList(con.bindingM['name']));
+    lHeader(13, 89, '===bindingM:bind:==name=========');
+    anchorBox(14, 92, 18, 26, tl.mapToList(bind.bindingM['name']));
 
     //
     anchorBox(38, 101, 100, 100,
@@ -403,17 +403,19 @@ class ScheduleCon {
     //  NO anchorBox(1, 123, 100, 100, _resAllocL);
     //  No need for headers
     //  lHeader(1, 123, '*  con.joinLog *');
-    anchorBox(1, 123, 10, 50, con.joinLog);
+    anchorBox(1, 123, 14, 50, con.joinLog);
 
     //  lHeader(10, 123, '*  con.bindL *');
-    anchorBox(12, 123, 10, 50, con.bindL);
+    anchorBox(16, 123, 14, 50, bind.bindL);
 
     //  lHeader(20, 123, '*  con.inMsgL *');
-    anchorBox(24, 123, 10, 50, con.inMsgL);
+    anchorBox(31, 123, 14, 50, con.inMsgL);
 
-    anchorBox(1, 179, 47, 1, verticalLineL);
-    //  :BUG:  prints right only in first round. TODO no RL-padding needed.
-    //  LOL:  PadRL has already ruined verticalLineL :)
+    //  Add screen-high vertical line |
+    anchorBox(1, 30, 47, 1, verticalLineL);
+    anchorBox(1, 173, 47, 1, verticalLineL);
+    anchorBox(1, 124, 47, 1, verticalLineL);
+    // NOTE: 1-2 length items in lists are not R-L-padded
 
     //  Usable resources: toolsActiveM, toolsSpeedM,status
   }

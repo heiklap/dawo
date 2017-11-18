@@ -21,6 +21,7 @@ import 'package:dawo/missions.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
 import 'package:dawo/tools.dart';
+import 'package:dawo/src/bind.dart';
 
 //  Unused package is marked with grey, and #warning.
 import 'package:dawo/mill.dart';
@@ -83,6 +84,7 @@ main() {
   rumba.dance(dawoApp); //  15 screens of output.
 
   exampleMethodsPlay(); //  Add more 13 screens output.
+  bind.report('$dexS');
 
   exInfo('    ==<<==<<==    dawo_example done    ==<<==<<==');
 } //  -----  end of main.
