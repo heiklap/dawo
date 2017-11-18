@@ -260,7 +260,8 @@ class Mission {
     _flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
     int done = 0;
     print('-->>-->>--  :M:-opR: calling :connector:  -->>-->>--');
-    String connectorMsg = ':M:-opR: C:PING :CLIENT :GRANT :N:47345 :VALID 3day';
+    ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
+    String connectorMsg = ':M:-opR: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
     con.opJoin(placardM, connectorMsg, ':M:-opR:');
     con.roll();
 

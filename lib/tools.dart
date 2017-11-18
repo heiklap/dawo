@@ -62,6 +62,15 @@ class Tools {
     return i;
   }
 
+  ///  Making for example vertical lines for box
+  List<String> strToList(String str, int count){
+    List<String> l = [];
+    for (int i = 0; i < count; i++){
+      l.add(str);
+    }
+    return l;
+  }
+
   ///  Return List of items, where #String exist. from dawo-tools.
   List<String> StrInList(List<String> _l, String _s) {
     List<String> _queryL = new List();

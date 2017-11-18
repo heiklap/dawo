@@ -287,7 +287,7 @@ class ScheduleBox {
 
 var scheduleBox = new ScheduleBox();
 
-///  Schedule connect, opJoin corporate,
+///  Schedule connect, opJoin corporate, bind, binding
 class ScheduleCon {
   /*
   //  TODO  should create and use _pB and flowC class here?
@@ -344,14 +344,22 @@ class ScheduleCon {
       _matrix[_r] = '$_s1$s$_s3';
     }
 
+    ///  Forming vertical line for screen.
+    List<String> verticalLineL = [];
+    verticalLineL.addAll(tl.strToList('|', _rc - 2));
+
     ///  ******************************************************************
     anchorBox(1, 40, 100, 100, [
-      '* Here objects work together after #connector joins them to system. *',
-      '**  #Caller have accessed #corporate.process, public resources,  **'
+      '* Objects work together after :bind: #connector joins them to system. *',
+      '**  #Caller have accessed :corporate:process: public resources,  **'
     ]);
+
+    //  Add screen-high vertical line |
+    anchorBox(1, 30, 47, 1, verticalLineL);
 
     //  tl.bufToList(con.buf).forEach(print);
     //  bufL.addAll(tl.bufToList(con.buf));
+    //  Add :con: work-flow list 44 items 26 wide on left of screen
     anchorBox(1, 3, 44, 26, con.buf.toString().split('\n'));
 
     //anchorBox(4, 32, 100, 100 ,['CORPORATE:', 'connect:', 'Bing:', 'opCon:']);
@@ -370,29 +378,24 @@ class ScheduleCon {
     lHeader(4, 101, '* :corp:jobM 7*');
     anchorBox(5, 101, 7, 100, tl.mapToList(corporate.jobM));
 
-    // anchorBox(12, 10, equ.areas);
-    lHeader(16, 32, '* :con:MemberL Only first!!*');
-    anchorBox(17, 32, 1, 100, con.memberL);
+    lHeader(13, 32, '======:con:bind:M-first=======');
+    anchorBox(14, 32, 18, 28, tl.mapToList(con.bindingM['first']));
 
-    //anchorBox(13, 32, 100, 100, con.memberM.values.toList());
-    lHeader(19, 32, '* :con:MemberM show:12*');
-    anchorBox(20, 32, 12, 38, tl.mapToList(con.memberM));
+    lHeader(13, 55, '=======:con:bind:M-all========');
+    anchorBox(14, 62, 18, 28, tl.mapToList(con.bindingM['all']));
 
-    lHeader(13, 52, ':con:bindingM-f');
-    anchorBox(14, 52, 100, 100, tl.mapToList(con.bindingM['first']));
+    lHeader(13, 87, '=======:con:bind:M-name=========');
+    anchorBox(14, 92, 18, 28, tl.mapToList(con.bindingM['name']));
 
-    lHeader(13, 75, ':con:bindingM-s');
-    anchorBox(14, 74, 100, 100, tl.mapToList(con.bindingM['second']));
-
-    lHeader(13, 107, ':con:bindingM-t');
-    anchorBox(14, 107, 100, 100, tl.mapToList(con.bindingM['third']));
-
-    //  anchorBox(10, 82, equ.cars);
+    //
     anchorBox(38, 101, 100, 100,
         ['Some more', 'connector', 'info here', 'will come']);
 
     anchorBox(33, 32, 100, 100, equ.months);
     anchorBox(38, 60, 100, 100, equ.weekDays);
+
+    lHeader(33, 89, '*  con.memberM *');
+    anchorBox(34, 89, 12, 32, tl.mapToList(con.memberM));
 
     // anchorBox(33, 44, equ.programAreas);
     // anchorBox(33, 44, tl.mapToList(glbOp.placardMM[0]));
@@ -400,16 +403,17 @@ class ScheduleCon {
     //  NO anchorBox(1, 123, 100, 100, _resAllocL);
     //  No need for headers
     //  lHeader(1, 123, '*  con.joinLog *');
-    anchorBox(1, 123, 10, 74, con.joinLog);
+    anchorBox(1, 123, 10, 50, con.joinLog);
 
     //  lHeader(10, 123, '*  con.bindL *');
-    anchorBox(12, 123, 10, 74, con.bindL);
+    anchorBox(12, 123, 10, 50, con.bindL);
 
     //  lHeader(20, 123, '*  con.inMsgL *');
-    anchorBox(24, 123, 10, 74, con.inMsgL);
+    anchorBox(24, 123, 10, 50, con.inMsgL);
 
-    //  lHeader(30, 123, '*  con.memberL *');
-    anchorBox(36, 123, 10, 74, con.memberL);
+    anchorBox(1, 179, 47, 1, verticalLineL);
+    //  :BUG:  prints right only in first round. TODO no RL-padding needed.
+    //  LOL:  PadRL has already ruined verticalLineL :)
 
     //  Usable resources: toolsActiveM, toolsSpeedM,status
   }
