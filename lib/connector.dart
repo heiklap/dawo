@@ -22,15 +22,14 @@
 /// * Sending messages between objects. Stance, approach
 /// * "Connector-operations" have access to certain up-level variables.
 /// *   * * *   companions in process  * * *
-/// * Using #GlobalOpClass to do outer process.
+/// * Using :affair: class to operate, maybe for :corporate:
 /// * #LANG : command-words to give behaviour to actions.
-/// * ADD IS-GLOBAL bool field to Operation-classes.
+/// * ADD IS-GLOBAL bool field to :affair: classes.
 /// * Connector classes might have precedence in Mill-op.
 /// * Might trig some action in their connected sister-operations.
 //  * Find common interests, i've been here.. follow-me, give-take
 /// * Other objects also handle things connected to this. So connector might
-/// * be just  a simple message (plea) mediator.
-/// * Global op does something
+
 //  NOTE:
 //  devNote: tracking begins.
 
@@ -46,6 +45,7 @@ import 'beta.dart';
 
 import 'shower.dart';
 import 'tools.dart';
+import 'src/affair.dart';
 import 'src/bind.dart';
 
 ///  Buffering out-data ( #clayOut )
@@ -149,8 +149,7 @@ class Connector extends BaseStruct {
   };
 
   ///  *****************************************************************
-  ///  GlobalOperation ?
-  ///  * Using GlobalOpClass might be too heavy.!!
+  ///  Serves both mission-chore  and  corporate-affair "lines".
   ///  var msgBus * Sending messages between objects. Stance, approach
   ///  If this is only simple msg-handler getPlea, handlePlea, givePlea
   ///  And now section, that handles all those small details:
@@ -202,7 +201,7 @@ class Connector extends BaseStruct {
 
   ///  Connector basic activity, keep list of Members / their operations.
   ///  devNote: Or should it be something smaller? abstract class ModelPlacard?
-  List<GlobalOp> opL = new List();
+  List<Affair> opL = new List();
 
   ///  List for #C information. Used for devBox reporting.
   List<String> joinLog = ['* :connector: join-log *'];

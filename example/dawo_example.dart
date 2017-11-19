@@ -69,6 +69,8 @@ String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
 ///  In dawo package there is no main-function. Only in example files.
 ///  Every dart program starts it's execution from main method.
 main() {
+  var sw = new Stopwatch()..start();
+  DateTime start = new DateTime.now();
   ///  Call function that adds #actor and #count to this String and prints it.
   exInfo('==>>==>>==   dawo_example    ==>>==>>==');
   exInfo('==>>==>>==   dawo_example  awesome: ${awesome.isAwesome}');
@@ -87,6 +89,11 @@ main() {
   bind.report('$dexS');
 
   exInfo('    ==<<==<<==    dawo_example done    ==<<==<<==');
+
+  print("Executing dawo_example.dart took: ${sw.elapsed}us");
+  DateTime stop = new DateTime.now();
+  print(stop.difference(start));
+
 } //  -----  end of main.
 
 ///  To allow easy-run of these 8 separated activities.

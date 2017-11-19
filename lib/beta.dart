@@ -25,16 +25,13 @@
 ///  --- returns previous actor, if it,s operation is not done. #Glorious.
 ///  devNote:  No notes.
 
-//TODO  Global variables
-//TODO  Global operations
-
 library beta;
 
 import 'alpha.dart';
 
 //  TODO  Final readiness.  this is not
 final num betaReadiness = 2; //  readiness for  version  0.0.1
-int flowI = 0; //  Global: flow-counter.
+int flowI = 0; // flow-counter.
 bool _betaPB = true; //  control for printing.
 
 //  hklTry this out now.
@@ -166,143 +163,8 @@ Map<String, String> betaPlacardM = {
   'msg': '',
 };
 
-///  Global variables class deleted; moved to GlobalClass
-///  Global class. in early dev state
-///  With this handy and nice  clb  we are one day doing glorious things.
-class GlobalClass {
-  // Aka, you have some property StringSink output. All of your code writes
-  // to that - output?.writeln(“some message”). Depending on the context,
-  // output = new StringBuffer() or output = stdout. Grabbed.
-  var signature;
-  var output;
-  var input;
 
-  var register; //  register of objects that participate in Dawo / glb.
-  //  Actor: String actor;  //  too important to be a String
-  //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
-  String actor = ':UNKNOWN: - :UNUSED:';
 
-  ///  Not much use, #Actor is announced in function parameter.
-  void changeActor(String _actor) {
-    actor = _actor;
-  }
-
-  //  code
-  void showInfo() {
-    print('\n ***  no code in GlobalClass yet :)  *** \n');
-  }
-}
-
-GlobalClass glb = new GlobalClass();
-
-///  Second or third alternative to operations, besides :corporate:
-///  NOTE:  Global operations.  Some dawo #operation could relay on these.
-///  Order: #actor #sender #receiver #command #msg
-///  Early development state, idea: 15%
-///  This can be #sub-process, that normal rollOp uses. #Connector may give
-///  this extra power and connect to other operations.
-///  For that, here should be added fields.
-///  IDEA: Change this name to class CoOp.  So why not:  Coup.
-class GlobalOp {
-  //  Alpha is known here.  betaPlacardM is known also.
-
-  String actor = ':No usage yet:'; //  Too important to be a String.
-  String sender;
-  String receiver;
-
-  /// Question:  Can it be a function?
-  String cmd;
-  String msg;
-
-  var actorState;
-  Map<dynamic, dynamic> actorM = {};
-  Map<dynamic, dynamic> actionM = {};
-
-  ///  Other alternatives to main #actor.
-  //
-  //
-  Map<String, Map<String, String>> placardMM = {
-    'FirstActor': {
-      'actor': 'first',
-      'sender': 'fS',
-      'receiver': 'fR',
-      'command': 'fC',
-      'msg': 'fMsg'
-    }
-  };
-
-  ///  handling #global #actor
-  ///  Who is in "charge" of operation, when it is routed through subroutines?
-  ///  Problem: howTo handle #glbActor change, when subroutines occur?
-  void handleActor() {
-    //  Add actor
-    //  Remove Actor
-    //  Change Actor
-  }
-
-  ///  Maybe not needed, when #actor is handled in lib-local functions.
-  ///  Method to run actual actor-change procedure.
-  void actorMill(var actor, var action) {
-    ///  RULE:  #actor  every #actor deletes it's own name when op-done, and
-    ///  --- returns previous actor, if it,s operation is not done. #Glorious.
-    // #CODE
-  }
-
-  ///  Operation levels.
-  var opLevel; //  Is it changed during operation?
-  var opChange; //  Handle actual change.
-
-  var decision;
-  var decisionChain;
-  var callChain; //  Give objects ability to know route, that called it.
-
-  void init(Map<String, String> _placardM) {
-    print(' ***************  global op class-init  *********');
-    _placardM.forEach((k, v) => print('$k, $v'));
-    actor = _placardM['actor'];
-    sender = _placardM['sender'];
-    receiver = _placardM['receiver'];
-    cmd = _placardM['command'];
-    msg = _placardM['msg'];
-  }
-
-  var operation; //  Collecting grate ideas.
-
-  ///  Save cleared placardM to to placardMM
-  void save() {}
-
-  void done() {}
-
-  //  TODO  constructor add
-  GlobalOp(this.actor, this.sender, this.receiver, this.cmd, this.msg);
-  //TODO : used in: ?  //  Only in render here.
-
-  ///  Usage: for example, :corporate:process:
-  List<String> showInfo(String caller) {
-    //  add parameter: placardM _pM
-    // TODO  like:  : placardM.forEach((k, v) => _li2.add('$k, $v'));
-    List<String> _l = [];
-    String i = '          ';
-    print('$i ***************  global op class-showInfo C: $caller *********');
-    //  TODO : give actor aso values to this form.
-    _l.add('$i ** actor: $actor      C:  $caller');
-    _l.add('$i ** sender: $sender   receiver: $receiver ');
-    String _cmdS = cmd.toString();
-    _l.add('$i ** cmd: $_cmdS ');
-    print(
-        ':beta:glbOp:showInfo:  cmd is only a String:$cmd'); //  TODO  resolve this for List
-    _l.add('$i ** msg:   $msg');
-    _l.add('$i ** ');
-    _l.forEach(print);
-    print('$i ***************  global op class-showInfo  done ************ ');
-    print('$i  ***  no code in GlobalOperations yet :)  *** \n');
-    return _l;
-  }
-}
-
-//  Just testing Create instance as glbOp.
-var glbOp =
-    new GlobalOp('dawoApp', 'xSender', 'xReceiver', 'betaAssign', 'msg');
 
 /// Chores are biggest users of this.  NOTE:  also Store-class.
 /// Stock handles and shares joint resources with participants.
@@ -327,9 +189,6 @@ StringBuffer renderBeta(String caller) {
   _flowC(':beta:renderBeta:', _betaPB);
   StringBuffer _retBuf;
 
-  ///  For to share stuff with global command in #op
-  ///  TODO  "Global-connect" function for to use in :corporate:process: / op.
-  ///  TODO  This should have same name in all libraries?
   String assignBetaRender() {
     print('   **  betaRender assignBetaRender > :corporate:process:    ***');
     return ('   **  betaRender assignBetaRender > :corporate:process:   ***');

@@ -8,8 +8,10 @@ library corporate;
 
 ///  How beta manages so far NOT importing alpha.dart?
 //  import 'alpha.dart';
-import 'beta.dart';
+//  import 'beta.dart';
 import 'shower.dart'; //  for devBox
+import 'src/affair.dart';
+
 
 ///  Here objects work together after #connector joins them to system.
 class Corporate {
@@ -92,7 +94,7 @@ class Corporate {
   //  corporate.process(':Ch-Op:', chOpClass, placardM, assignComProChore));
   ///  Shaping everybody-to-use functionality for..
   StringBuffer process(
-      String by, GlobalOp _glbOp, Map placardM, Function _assigned) {
+      String by, Affair _affairOp, Map placardM, Function _assigned) {
     ///  NOTE  callers placardM is here now.
     print(':corporate: process begins:');
     String infoS1 =
@@ -104,7 +106,7 @@ class Corporate {
     StringBuffer _cpBuf = new StringBuffer();
     _li1
       ..add('\n -->>-->  corporate.process  #caller: $by cccccccccccp')
-      ..add('glbOpsInUse: ___________________________________')
+      ..add('affairOpsInUse: ___________________________________')
       ..add('  ------  demandStream  -----------')
       ..add('   -----  demandStreamBoard  ----------')
       ..add('   -----  corporate.paramToStr  ---------------   -->')
@@ -134,16 +136,16 @@ class Corporate {
     _li3.add(_comStr); //  Returning String, from caller-object.
     _li3.add('  3. part done in :corporate:process. ');
 
-    ///  Mediating placardM to glbOp
-    _glbOp.init(placardM);
+    ///  Mediating placardM to affairOp
+    _affairOp.init(placardM);
 
     List<String> _li4 = [];
-    _li4.add('calling: _glbOp.showInfo AND  _glbOp.operation::');
-    _li4.addAll(_glbOp.showInfo(':corporate:process:'));
+    _li4.add('calling: _affairOp.showInfo AND  _affairOp.operation::');
+    _li4.addAll(_affairOp.showInfo(':corporate:process:'));
     _li4.add('  part 4 done in :corporate:process:  ');
 
-    _glbOp.operation; //  no operation, just show info now.
-    _glbOp.showInfo(':corporate:process:');
+    _affairOp.operation; //  no operation, just show info now.
+    _affairOp.showInfo(':corporate:process:');
 
     devBox(':bl:comProc:', [_li3, _li4], 10);
 

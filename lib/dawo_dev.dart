@@ -83,7 +83,8 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
-      ..add('NEXT: Extract glb class from beta-library.')
+      ..add('DONE: Extract glb class from beta-library to: src.')
+      ..add('DONE: Extract GlobalOp from beta to: src as: affair.')
       ..add('NEXT: Own box-output for connector show.')
       ..add('NEXT: Hide  ALL  flow-output. Do it with user parameters.')
       ..add('NEXT: User simulated data for actions. Server-client ?.')

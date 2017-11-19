@@ -272,6 +272,29 @@ class Tools {
     print(n.toString);
   }
 
+  //
+  String stampDateTime() {
+    var start = new DateTime.now();
+    /*
+    //NOTE:  dateFormat is in:   intl  package
+    var formatterYmd = new DateFormat('yyyy-MM-dd');
+
+    String formattedYmd = formatterYmd.format(now);
+    //  print(formattedYmd); // something like 2013-04-20
+
+    //  Hms
+    var formatterHms = new DateFormat('Hms');
+    String formattedHms = formatterHms.format(now);
+    //  print(formattedHms); // something like 20:45:12
+
+    String dateTimeStampNow = formattedYmd + ' ' + formattedHms;
+    //  print(dateTimeStampNow);
+    */
+    //  testDateSlug();
+    //  return dateTimeStampNow;
+    return '';
+  }
+
   ///  Small sleep-methods, to get time, to see, what is happening in tests.
   void sleepSimple(int waitingTime) {
     //  1000 =  one second

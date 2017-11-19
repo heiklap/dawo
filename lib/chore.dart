@@ -32,6 +32,9 @@ import 'corporate.dart';
 import 'dawo_dev.dart';
 import 'effort.dart';
 //  import 'equipment.dart';  //  mission handles equipment
+
+import 'src/affair.dart';
+import 'src/glb.dart';
 import 'clay/clay_roll.dart';
 
 ///  using - getters -example
@@ -216,7 +219,7 @@ class CommonChore extends BaseStruct {
     ///  TODO  operation class instance
     ///  TODO  Constructor: add eventually constructor
     ///  order: #actor #sender #receiver #command #msg
-    var chOpClass = new GlobalOp(
+    var chOpClass = new Affair(
         name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
@@ -281,10 +284,9 @@ class CommonChore extends BaseStruct {
     _flowC('<-- chore.done    ok   --<----<--', _pB);
   }
 
-  ///  For to share stuff with  global command in #op
-  ///  TODO  "Global-connect" function for to use in commonProcess / op.
-  ///  TODO  This should have same name in all libraries?
-  ///  Renamed to show, that only commonProcess is meant to use this.
+  ///  For to share stuff with  :affair: command in #operations
+  ///  :connector:  to mediate to :affair: and do :bind:
+  ///  TODO  Name: #Assign  This should have same name in all libraries?
   String assignComProChore() {
     _flowC('   **  resource sharer assignChore > CommonProcess    ***', _pB);
     return ('   **  resource sharer assignChore > CommonProcess   ***');

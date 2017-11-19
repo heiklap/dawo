@@ -20,6 +20,8 @@ import 'missions.dart';
 import 'store.dart';
 import 'shower.dart';
 
+import 'src/glb.dart';
+
 // ignore: unused_field for those wondering.
 //  Word: stream  9 times
 ///  TODO  Add all those nice boxes, schedule, aso here, or think flow better.
@@ -37,7 +39,7 @@ bool _pB = false; //  No printing now.
 class DawoApp extends BaseStruct {
   String name = 'dawo app';
   String actor = ':DAWO-APP:';
-  String infoS = 'giving global variables to dawo_src.dart';
+  String infoS = 'giving usable variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
@@ -224,7 +226,7 @@ class DawoApp extends BaseStruct {
     _flowC('  ***  DAWO-APP  MISSIONS   ***  ', _pB);
     buildMissions('C:dawoApp ');
 
-    ///  TODO Detail printing set false: _pB; make better, global solution.
+    ///  TODO Detail printing set false: _pB; make better, valuable solution.
     ///  TODO  Make mission-report return list, for box-output.
     ///  TODO  buildDawo mission
     ///  Added 3. parameter, forceHeight
