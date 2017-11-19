@@ -305,33 +305,6 @@ class Connector extends BaseStruct {
     // Do  not, only when whole system closes.  buf.clear(); //  empty buffer
   }
 
-  /// 3 #LANG specific commands, that configure objects behaviour in relation
-  /// to other objects.
-  ///  TODO  Name for next 3 fields might be opTouche aso.
-  ///  Solve one unambiguous textual find-decide problem.
-  ///  NOTE: might be separate Touche class.
-  String touch(String sender, String key, String source) {
-    //  TODO problem
-    return 'solved:toucheStr: ';
-  }
-
-  ///  Search big amount of #clay data for #customer:s key / order.
-  ///  .. solve textual problems based on keywords / search in textual data
-  ///  NOTE: might be separate Solver class.
-  String solve(String sender, String key, String source) {
-    //  TODO problem
-    return 'solved: solveString';
-  }
-
-  ///  TODO:  connector one-time calls must have parameters;
-  ///  Sketching one-time commands, coming from clients.
-  void obey(String sender, receiver, baton, msg) {
-    /// #baton  to carry only-one-can-have-at-a-same-time magic thing
-    //  TODO  code, badly missing
-    //  handle command / message
-  }
-  //  *****************************************************************
-
   ///  TODO  typedef  print function
   ///  typedef int Compare<T>(T a, T b);
   //  typedef _conPrint(String msg);

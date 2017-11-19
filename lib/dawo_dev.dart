@@ -83,9 +83,13 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
-      ..add('NEXT: User simulated data for actions.')
+      ..add('NEXT: Extract glb class from beta-library.')
+      ..add('NEXT: Own box-output for connector show.')
+      ..add('NEXT: Hide  ALL  flow-output. Do it with user parameters.')
+      ..add('NEXT: User simulated data for actions. Server-client ?.')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
-      ..add('NOW: Connector class-opJoin  modification')
+      ..add('Reolve: word-preferences, class to src/  Out of connector class.')
+      ..add('Connector class-opJoin  modification')
       ..add(':bind: moved from connector to own library: class Bind in src/.')
       ..add(':bind: / binding in opCom:con: and shower: data and more clarity.')
       ..add('dawo_example.dart had total reconstruct. Was really needed.')

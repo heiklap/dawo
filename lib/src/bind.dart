@@ -1,6 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  bind   bindings between objects.
+///  * Using #resolve library
 ///
 ///  dawo version: 0.0.5  6.11.2017.   READY-STATE  for version 0.0.6  0%
 /// *      GitHub:
@@ -10,6 +11,8 @@
 library bind.dart;
 
 import 'package:dawo/beta.dart';
+import 'package:dawo/src/resolve.dart';
+
 
 ///  Class Bind keeps and handles message-based bindings between objects.
 class Bind {
@@ -88,6 +91,9 @@ class Bind {
   ///  Get what user wants from bind-data.
   String find() {
     String _fs = '';
+    ///  Using Resolve library:
+    //  res.solve(sender, key, source);
+
 
     return _fs;
   }
