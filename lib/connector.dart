@@ -128,7 +128,6 @@ class Connector extends BaseStruct {
   String seal = ":CONNECTOR:"; //  like:  ":CONNECTOR:";
   /// .. or this:  emblem can be used in _flowC
   String emblem = ':C:';
-  String indent = "      "; // like: 3-5-7 empty marks or something visible.
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
   ///  clause walks with objects in process call and carries list of words.
@@ -143,10 +142,10 @@ class Connector extends BaseStruct {
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
   Map<String, bool> st = {
-    'offB': true,
-    'onB': false,
+    'off': true,
+    'on': false,
     'pauseB': false,
-    'doneB': false,
+    'done': false,
   };
 
   ///  *****************************************************************
@@ -185,13 +184,6 @@ class Connector extends BaseStruct {
     'cM-2': 'Second :con:Member:test:',
   };
 
-
-
-//  connect to bind:
-//  String bind(String actorS, senderS, receiverS, comS, msgS, _inMsg)
-
-
-
   ///  Giving nice report of connections.
   List report() {
     print('--------------- connector report ----------------------------');
@@ -214,36 +206,19 @@ class Connector extends BaseStruct {
 
   ///  List for #C information. Used for devBox reporting.
   List<String> joinLog = ['* :connector: join-log *'];
-
   List<String> inMsgL = ['*  :connector: in-msg-list  *'];
 
   ///  Join "clients" / Members to opList. placardM mediates necessary info.
   ///  Usage: mission, dawoApp, rumba, chore, dawo_example
   void opJoin(Map<String, String> plcM, String inMsg, caller) {
     ///  Operations register to Connector with placardM.
-    //  'actor': 'Chore',
-    //  'sender': 'Chore instance',
-    //  'receiver': '',
-    //  'command': 'Ch-cmd:',
-    //  'msg': 'Ch-msg:',
-    //  *******************************
-    ///  code:
-    _flowC(':CN:  -->>-->>--  :connector:  C:$caller  -->>-->>--', _pB);
-
-    //  TODO  #dawolang
-    _flowC(':CN:  -->>-->>-- :dawolang-call: by :dawo-connector -->>-->>', _pB);
-
     ///  Using LexiconBase class from dawolang.
     lb.build(':call:WG:-:dawolang:  :by:dawo-:connector:');
-
     ///  Using Analyzer class from dawolang.
     an.analyzeStrS(':ONE more :WEEK :WILL :DO', lb.wordList);
     an.analyzeStrS(':YOU in :NEW :ROLE gives :MORE :VALUE :TO :THIS :PROJECT',
         lb.wordList);
 
-    _flowC(':CN:  -->>-->>- :dawolang-call: by :dawo-connector done -->>', _pB);
-
-    _flowC(':CN:  -->>-->>--  :connector:  C:$caller  -->>-->>--', _pB);
     String actorS = plcM['actor'];
     String senderS = plcM['sender'];
     String receiverS = plcM['receiver'];
@@ -251,27 +226,19 @@ class Connector extends BaseStruct {
     String msgS = plcM['msg'];
     String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
     _flowC(':CN:  $_S', _pB);
-    String jAddS = '$emblem JoinEvent" $comS $msgS $senderS';
-    joinLog.add(jAddS);
+    String joinLogS = '$emblem :je: $actorS $comS $msgS $senderS';
+    joinLog.add(joinLogS);
 
-    _flowC('\n -->>-->> connector  :con:opJoin:inMsg:    -->>-->>', _pB);
     _flowC(inMsg, _pB);
 
     ///  Using Analyzer class from dawolang.
     String _weightStringMsg = an.weightString(inMsg, lb.wordList);
     _flowC(_weightStringMsg, _pB);
-    _flowC('--<<--<< :con:opJoin:inMsg:  done  --<<--<< \n', _pB);
 
-    /// Use new  inMsgL  for keeping#unmodified   inMsg.
-    inMsgL.add(inMsg);
-    //  memberM
-    //  TODO  Make sure to have original key for every "event"
-
-    ///  -----------  all :bind: stuff to bind-method
-    ///  Call parameters from placardM and last from opCom parameter.
+    inMsgL.add(inMsg);  //  for keeping#unmodified   inMsg.
+    ///  call to bind OR opCom
     bind.mark(actorS, senderS, receiverS, comS, msgS, inMsg);
     print('--<<-------- bindingM - done -----------------\n');
-
     _flowC(':CN:-info:  $info', _pB);
     print('** :C:opJoint:  operationMapPrint OR shortMapPrint plcM   **');
     //  tl.operationMapPrint(plcM);
@@ -279,8 +246,8 @@ class Connector extends BaseStruct {
     print('--<<-------- plcM  ------------------------');
     //  TODO  connector  add memberM    add  BindingM
 
-    _flowC(':CN:  --<<--<<--  :connector: done   C:$caller  --<<--<<--', _pB);
-  }
+    _flowC(':CN:  --<<--<<:connector:opJoin done   C:$caller  <<--<<--', _pB);
+  } //  -----  opJoin
 
   ///  Here goes normal init-build-roll-show-done -round. No loop.
   ///  Method for setting class field values to their run-time-values.

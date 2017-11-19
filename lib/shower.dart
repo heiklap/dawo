@@ -318,8 +318,8 @@ class ScheduleCon {
       //  do not handle first row.
       _colPos++;
       //  TODO  choose nice background mark for matrix.
-      _matrix[z] =
-          '$_colPos '.padRight(_sw, '-'); //  pad with low-density mark.
+      //  pad with low-density mark.
+      _matrix[z] = '$_colPos '.padRight(_sw, '-');
     }
     _matrix[0] =
         '--m-schedule--$_caller--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
@@ -331,6 +331,7 @@ class ScheduleCon {
     //  Fill list-data in matrix in r, _c coordinates.
     //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
     //  new parameters 3 and 4: _items, _w
+    //  TODO :BUG: No error check for over-sized lists.
     void anchorBox(int _r, _c, _items, _w, List __l) {
       //  If not know list length / wanted items and width, try 100. lol
       tl.boxInList(_r, _c, _items, _w, __l, _matrix);
@@ -378,13 +379,15 @@ class ScheduleCon {
     lHeader(4, 101, '* :corp:jobM 7*');
     anchorBox(5, 101, 7, 100, tl.mapToList(corporate.jobM));
 
-    lHeader(13, 32, '===bindingM:bind:==first=====');
+    lHeader(13, 32, '=======================================================');
+    lHeader(13, 87, '====================================');
+    lHeader(13, 32, ' bindingM:bind: first ');
     anchorBox(14, 32, 18, 28, tl.mapToList(bind.bindingM['first']));
 
-    lHeader(13, 61, '==bindingM:bind:==all=======');
+    lHeader(13, 62, ' bindingM:bind: all ');
     anchorBox(14, 62, 18, 28, tl.mapToList(bind.bindingM['all']));
 
-    lHeader(13, 89, '===bindingM:bind:==name=========');
+    lHeader(13, 90, ' bindingM:bind: name ');
     anchorBox(14, 92, 18, 26, tl.mapToList(bind.bindingM['name']));
 
     //
@@ -397,11 +400,6 @@ class ScheduleCon {
     lHeader(33, 89, '*  con.memberM *');
     anchorBox(34, 89, 12, 32, tl.mapToList(con.memberM));
 
-    // anchorBox(33, 44, equ.programAreas);
-    // anchorBox(33, 44, tl.mapToList(glbOp.placardMM[0]));
-
-    //  NO anchorBox(1, 123, 100, 100, _resAllocL);
-    //  No need for headers
     //  lHeader(1, 123, '*  con.joinLog *');
     anchorBox(1, 123, 14, 50, con.joinLog);
 
@@ -411,7 +409,7 @@ class ScheduleCon {
     //  lHeader(20, 123, '*  con.inMsgL *');
     anchorBox(31, 123, 14, 50, con.inMsgL);
 
-    //  Add screen-high vertical line |
+    //  Add screen-high-2 vertical lines marked with: |
     anchorBox(1, 30, 47, 1, verticalLineL);
     anchorBox(1, 173, 47, 1, verticalLineL);
     anchorBox(1, 124, 47, 1, verticalLineL);

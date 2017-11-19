@@ -93,19 +93,31 @@ class Mission {
     'autoWork': 'no'
   };
 
-  //----op-  variables and methods to handle Mission operations
-  ///  'open'  variables. Make this a Map. ?
-  bool opOn = false;
-  bool opDone = false;
-
-  int opCount = 0;
-
   ///  Create some variables and figure their usage later.
   /// #Idea?  Control missions state, working-condition / state.
   String state = 'Functional';
-  bool stDo = false;
-  bool stDone = false;
-  bool stAware = false;
+  //  State Map, Missions upper level state.
+  Map<String, bool> st = {
+    'off': true,
+    'on': false,
+    'con': false,
+    'pause': false,
+    'done': false,
+  };
+
+
+  //----op-  variables and methods to handle Mission operations
+  ///  'open'  variables. Make this a Map. ?
+  //  Sub-operations state
+  Map<String, bool> op = {
+    'off': true,
+    'on': false,
+    'pause': false,
+    'done': false,
+  };
+  int opCount = 0;
+
+
 
   ///  #Idea:  use flags maps to control something     stFlags
   Map<String, String> stFlags = {
@@ -350,14 +362,15 @@ class Mission {
     //  NOTE  If more than 9 Chores, need something else.
     String choreLengthS = choreL.length.toString();
     String choreS = getChoreNamesS();
-
+    String opS = op.toString();
+    String stS = st.toString();
     String ps1 = ('**.               caller: $caller                       .');
     String ps2 = ('**  $name         Motto: $motto');
-    String ps3 = ('**  State:  $state ');
-    String ps4 = ('**  stDo:  $stDo     stDone: $stDone  ');
+    String ps3 = ('**  State: off    on     con     pause    done   ');
+    String ps4 = ('**  stDo: $stS ');
     String ps5 = ('**  rollDone:   $rollDone     rollCount:  $rollCount');
-    String ps6 = ('**  ');
-    String ps7 = ('**  opOn: $opOn    opDone: $opDone     opCount:  $opCount');
+    String ps6 = ('**  operations:  off   on   pause   done  ');
+    String ps7 = ('** $opS  opCount:  $opCount');
     String ps8 = ('**  Chores:   $choreLengthS');
     String ps9 = ('**  $choreS');
     String ps10 = ('** ______________________________________________________');
@@ -510,7 +523,7 @@ void renderMission(String caller) {
   var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
   missionR.showInfo();
 
-  missionR.opOn = true;
+  missionR.op['on'] = true;
 
   missionR._buf.writeln(':renderMission: saving row od data to :m:_buf:');
 

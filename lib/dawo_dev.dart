@@ -83,8 +83,9 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
-      ..add('NEXT: Make clear structure with functions to dawo_example.dart.')
+      ..add('NEXT: User simulated data for actions.')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
+      ..add('NOW: Connector class-opJoin  modification')
       ..add(':bind: moved from connector to own library: class Bind in src/.')
       ..add(':bind: / binding in opCom:con: and shower: data and more clarity.')
       ..add('dawo_example.dart had total reconstruct. Was really needed.')
