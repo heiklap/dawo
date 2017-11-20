@@ -6,7 +6,7 @@ import 'package:dawo/dawo.dart';
 
 import 'package:dawo/dawo_app.dart';
 
-import 'package:dawo/missions.dart';
+import 'package:dawo/mis/missions.dart';
 
 import 'package:test/test.dart';
 

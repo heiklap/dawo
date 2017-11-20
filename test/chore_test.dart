@@ -2,10 +2,10 @@
 //  t_common_process.dart  12.9.2017   dawo version:  0.0.5  6.11.2017
 
 
-import 'package:dawo/chore.dart';
+import 'package:dawo/mis/chore.dart';
 import 'package:dawo/dawo_app.dart';
-import 'package:dawo/dawo_dev.dart';
-import 'package:dawo/missions.dart';
+import 'package:dawo/dev/dawo_dev.dart';
+import 'package:dawo/mis/missions.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
 

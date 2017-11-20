@@ -12,25 +12,26 @@
 
 library dawo_src; //  naming this to _src...
 
+///  Data ( #clay ) is in clay-folder.
+import 'clay/clay_roll.dart';
 
-import 'package:dawo/code_snippets/aldente_func.dart';
-import 'package:dawo/code_snippets/bat_loop.dart';
-import 'package:dawo/code_snippets/learn_stream_sync.dart';
+import 'code_snippets/aldente_func.dart';
+import 'code_snippets/bat_loop.dart';
+import 'code_snippets/learn_stream_sync.dart';
 
 import 'beta.dart';
-import 'chore.dart';
-
-import 'dawo_app.dart';
-import 'dawo_dev.dart';
-import 'effort.dart';
-
 import 'mill.dart';
-import 'missions.dart';
-
 import 'tools.dart';
+import 'dawo_app.dart';
 
-///  Data ( #clay ) is in clay-folder.
-import 'package:dawo/clay/clay_roll.dart';
+import 'dev/dawo_dev.dart';
+
+import 'mis/chore.dart';
+import 'mis/effort.dart';
+import 'mis/missions.dart';
+
+
+
 
 //  *team* became independent. How to use team in future.. that's the question.
 //  *team* was collaboration system to serve as tool for dawo development.

@@ -10,7 +10,7 @@
 
 library resolve;
 
-import 'package:dawo/tools.dart';
+//  import '../tools.dart';
 
 ///  Solve word-command searches and validating for bind - bing and connector.
 class Resolve {
@@ -94,3 +94,22 @@ class Resolve {
 
 ///  Instance, although I remember reserving #res word for something else.
 var resolve = new Resolve();
+
+void renderResolve() {
+
+  ///  Just to name variables here for to avoid unused error.
+  resolve._uh; //  user handle
+
+  resolve._dh; //  data handle, ALL
+  resolve._dhC; //  data handle, current #client
+  //  Definition, how Client requests are handled, preferences aso.
+  resolve._rh; //  common rule handle
+  resolve._rhC; //  rule handle, #Client
+  //  Priority system in word-search.
+  resolve._phC; //  preference handle, #Client
+  //  Outside library that is used or clients own library.
+  resolve._dl; //  handle to #LANG  maybe #dawolang
+
+  resolve._zyld; //  Outside data zylinder.
+
+}

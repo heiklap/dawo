@@ -10,8 +10,8 @@
 
 library bind.dart;
 
-import 'package:dawo/beta.dart';
-import 'package:dawo/src/resolve.dart';
+import '../beta.dart';
+//  import 'resolve.dart';
 
 
 ///  Class Bind keeps and handles message-based bindings between objects.
@@ -138,6 +138,7 @@ class Bind {
     ///  Call flowServe with #LOCAL variables.
     //  TODO  Why not find beta flowServe() ??
     //  flowServe(':con:flC:$prnB ', buf, msg, prnB);
+    buf.writeln('Print bool value _pB::  $_pB ');
     flowServe(':bind:flC: ', buf, msg, true); //  $prnB : when needed.
   }
 } //  -----  class Bind

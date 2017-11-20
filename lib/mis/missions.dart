@@ -13,14 +13,18 @@
 library missions;
 
 //  import 'package:dawo/dawo_app.dart';  //  not used
-import 'alpha.dart';
-import 'beta.dart';
+import '../alpha.dart';
+import '../beta.dart';
+
 import 'chore.dart';
-import 'connector.dart';
-import 'dawo_dev.dart';
-import 'tools.dart';
 import 'equipment.dart';
-import 'clay/clay_roll.dart';
+
+import '../dev/dawo_dev.dart';
+import '../tools.dart';
+
+import '../corp/connector.dart';
+import '../clay/clay_roll.dart';
+
 
 ///  #NOTE:  #effort is not visible here.  Only in chore.dart.
 
@@ -527,7 +531,7 @@ void renderMission(String caller) {
 
   missionR._buf.writeln(':renderMission: saving row od data to :m:_buf:');
 
-  print('debug #: :RM:  14');
+  print('debug #: :RM:  14  when run: mission_test.dart');
   //  Do this class have chores?  Try second chore.
   //  TODO  :BUG:  missionR.choreL is empty here.
   //  DO:  Mission - build -chores

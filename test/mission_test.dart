@@ -2,7 +2,7 @@
 ///  dawo version:  0.0.5  6.11.2017
 //
 
-import 'package:dawo/missions.dart';
+import 'package:dawo/mis/missions.dart';
 import 'package:dawo/shower.dart';
 
 var myMission = new Mission('ToDo glorious stuff', 'test');

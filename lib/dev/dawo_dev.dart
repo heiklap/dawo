@@ -10,8 +10,8 @@
 
 library dawo_dev.dart;
 
-import 'shower.dart';
-import 'tools.dart';
+import '../shower.dart';
+import '../tools.dart';
 
 //TODO  name   PROBLEMS, when using too common names:
 //   devTest   =   22  times     CHANGE:   test  ! ??
@@ -83,12 +83,14 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
-      ..add('DONE: Extract glb class from beta-library to: src.')
-      ..add('DONE: Extract GlobalOp from beta to: src as: affair.')
-      ..add('NEXT: Own box-output for connector show.')
+
+      ..add('NEXT: Own box-output for bind and connector show.')
       ..add('NEXT: Hide  ALL  flow-output. Do it with user parameters.')
       ..add('NEXT: User simulated data for actions. Server-client ?.')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
+      ..add('Enhancement: folders #corp #mis and #dev to group files.')
+      ..add('Extract glb class from beta-library to: src.')
+      ..add('Extract GlobalOp from beta to: src as: affair.')
       ..add('Reolve: word-preferences, class to src/  Out of connector class.')
       ..add('Connector class-opJoin  modification')
       ..add(':bind: moved from connector to own library: class Bind in src/.')

@@ -5,7 +5,7 @@
 //  import 'package:dawo/dawo.dart';
 
 import 'package:dawo/dawo_app.dart';
-import 'package:dawo/dawo_dev.dart';
+import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/rumba.dart';
 
 //  import 'package:dawo/chore.dart';

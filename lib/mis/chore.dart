@@ -25,17 +25,21 @@
 
 library chore;
 
-import 'alpha.dart';
-import 'beta.dart'; //  flowServe() is here.
-import 'connector.dart';
-import 'corporate.dart';
-import 'dawo_dev.dart';
 import 'effort.dart';
 //  import 'equipment.dart';  //  mission handles equipment
 
-import 'src/affair.dart';
-import 'src/glb.dart';
-import 'clay/clay_roll.dart';
+import '../alpha.dart';
+import '../beta.dart'; //  flowServe() is here.
+
+import '../corp/affair.dart';
+import '../corp/connector.dart';
+import '../corp/corporate.dart';
+
+import '../dev/dawo_dev.dart';
+
+import '../src/glb.dart';
+import '../clay/clay_roll.dart';
+
 
 ///  using - getters -example
 num dawLibWorkReadiness = 94; // for version  0.0.1

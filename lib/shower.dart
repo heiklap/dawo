@@ -9,12 +9,16 @@
 
 library shower.dart;
 
-import 'beta.dart';
-import 'connector.dart';
-import 'corporate.dart';
-import 'equipment.dart';
+//  import 'beta.dart';
 import 'tools.dart';
-import 'src/bind.dart';
+
+
+import 'corp/connector.dart';
+import 'corp/corporate.dart';
+
+import 'mis/equipment.dart';
+
+import 'corp/bind.dart';
 
 
 

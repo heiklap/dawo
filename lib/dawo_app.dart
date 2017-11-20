@@ -13,12 +13,15 @@ library dawo_app.dart;
 
 import 'alpha.dart';
 import 'beta.dart';
-import 'chore.dart';
-import 'connector.dart';
-import 'dawo_dev.dart';
-import 'missions.dart';
-import 'store.dart';
 import 'shower.dart';
+
+import 'mis/chore.dart';
+import 'mis/missions.dart';
+
+import 'corp/connector.dart';
+import 'corp/store.dart';
+
+import 'dev/dawo_dev.dart';
 
 import 'src/glb.dart';
 

@@ -14,17 +14,17 @@ import 'package:dawo/dawo.dart';
 ///
 
 import 'package:dawo/alpha.dart';
-import 'package:dawo/chore.dart';
+import 'package:dawo/mis/chore.dart';
 import 'package:dawo/dawo_app.dart';
-import 'package:dawo/connector.dart';
-import 'package:dawo/missions.dart';
+import 'package:dawo/mis/missions.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
-import 'package:dawo/tools.dart';
-import 'package:dawo/src/bind.dart';
+//  import 'package:dawo/tools.dart';
+import 'package:dawo/corp/bind.dart';
+import 'package:dawo/corp/connector.dart';
 
 //  Unused package is marked with grey, and #warning.
-import 'package:dawo/mill.dart';
+//  import 'package:dawo/mill.dart';
 
 //  You can use any name for classes, that you create:
 //  var da = new DawoApp('exampleApp', 'Testing in dawo_example');
@@ -92,6 +92,7 @@ main() {
 
   print("Executing dawo_example.dart took: ${sw.elapsed}us");
   DateTime stop = new DateTime.now();
+  print(' \nStoptime::  $stop');
   print(stop.difference(start));
 
 } //  -----  end of main.

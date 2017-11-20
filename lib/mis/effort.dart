@@ -18,9 +18,9 @@
 
 library effort;
 
-import 'shower.dart';
-import 'tools.dart';
-import 'clay/user_json.dart';
+import '../shower.dart';
+import '../tools.dart';
+import '../clay/user_json.dart';
 
 ///  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;

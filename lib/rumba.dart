@@ -12,12 +12,16 @@
 
 library rumba.dart;
 
-import 'beta.dart';
 import 'alpha.dart';
-import 'connector.dart';
-import 'dawo_dev.dart';
+import 'beta.dart';
 import 'shower.dart';
 import 'tools.dart';
+
+import 'corp/connector.dart';
+import 'dev/dawo_dev.dart';
+
+
+
 
 ///  Collecting Rumba output.
 StringBuffer rumbaBuf = new StringBuffer();

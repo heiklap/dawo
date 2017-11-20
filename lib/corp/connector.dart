@@ -38,15 +38,15 @@ library connector;
 ///  path dependency
 import 'package:dawolang/dawolang.dart';
 
-import 'alpha.dart';
+import '../alpha.dart';
 
 //  TODO import ruins this app flowServe stops working. lib-function import 2X
-import 'beta.dart';
+import '../beta.dart';
 
-import 'shower.dart';
-import 'tools.dart';
-import 'src/affair.dart';
-import 'src/bind.dart';
+import '../shower.dart';
+import '../tools.dart';
+import 'package:dawo/corp/affair.dart';
+import 'bind.dart';
 
 ///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = new StringBuffer();
@@ -348,4 +348,5 @@ void renderConnector() {
   //  or: shorthand
   var c = new Connector('render-test-connector', 'just for testing');
   c.info;
+  c._conPrint(':connector: conPrint test in render.');
 }

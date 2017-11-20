@@ -22,7 +22,7 @@ void playRumbaTest() {
 
   // we got buffer here
   rumba.dance(dawoApp);
-
+  print(':bug:  --ruining rumba_test? ');
   out.outBuffersSizes('rumba_test');
 
   ///  TODO  this is old, what is new?  devBox ?

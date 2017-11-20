@@ -9,8 +9,8 @@ library corporate;
 ///  How beta manages so far NOT importing alpha.dart?
 //  import 'alpha.dart';
 //  import 'beta.dart';
-import 'shower.dart'; //  for devBox
-import 'src/affair.dart';
+import '../shower.dart'; //  for devBox
+import 'affair.dart';
 
 
 ///  Here objects work together after #connector joins them to system.
