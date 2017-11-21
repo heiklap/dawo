@@ -20,9 +20,6 @@ import 'tools.dart';
 import 'corp/connector.dart';
 import 'dev/dawo_dev.dart';
 
-
-
-
 ///  Collecting Rumba output.
 StringBuffer rumbaBuf = new StringBuffer();
 
@@ -103,13 +100,27 @@ class Rumba {
       String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
       _flowC('   -->---->--  rumba-loop-usher', true);
       print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
-      String connectorMsg = ':DO :NOT :USE #dawolang without #BUILD => :ERROR';
-      con.opJoin(placardM, connectorMsg, ':R:u:');
-      con.roll();
+
+      String connectorMsg =
+          ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
+      connector.opJoin(placardM, connectorMsg, ':R:u:');
+      connector.roll();
 
       ///  --  usher loop
       do {
         String rumbaLoopUsherS = '**  usherLoop is rolling  **';
+
+        ///  duplicating this to get ListOverArea-message
+        print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
+        String connectorMsg =
+            ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
+        connector.opJoin(placardM, connectorMsg, ':R:u:');
+        connector.roll();
+        print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
+        String connectorMsg2 =
+            ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
+        connector.opJoin(placardM, connectorMsg2, ':R:u:');
+        connector.roll();
 
         /// ----------------------  usher loop code  ---------------------
 
@@ -118,6 +129,13 @@ class Rumba {
           String rumbaLoopDawoAppS = '**  dawoAppLoop is rolling  **';
           //  ---------------------  dawo app loop code ------------------
           _flowC('      -->---->--  rumba-loop-dawoApp', true);
+
+          ///  duplicating this to get ListOverArea-message
+          print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
+          String connectorMsg =
+              ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
+          connector.opJoin(placardM, connectorMsg, ':R:u:');
+          connector.roll();
 
           ///  TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
           ///  Running base activity of dawo.
@@ -152,8 +170,9 @@ class Rumba {
       _flowC('    --<----<--  rumba-loop-usher: done', true);
       print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
       connectorMsg = ':ALL :DO :ANSWER ;FAST => :HOW:MANY #Process :ON ?';
-      con.opJoin(placardM, connectorMsg, ':R:done:');
-      con.roll();
+
+      connector.opJoin(placardM, connectorMsg, ':R:done:');
+      connector.roll();
 
       doneRumba(); //  --  Do it only once now.
       rumbaB = false;

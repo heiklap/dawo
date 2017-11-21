@@ -40,7 +40,6 @@ import '../dev/dawo_dev.dart';
 import '../src/glb.dart';
 import '../clay/clay_roll.dart';
 
-
 ///  using - getters -example
 num dawLibWorkReadiness = 94; // for version  0.0.1
 
@@ -172,8 +171,9 @@ class CommonChore extends BaseStruct {
     //  Join "clients" / Members to opList. placardM mediates necessary info.
     _flowC('-->>-->>--  :chore: calling :connector:  -->>-->>--', _pB);
     String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
-    con.opJoin(placardM, connectorMsg, ':Chr:');
-    con.roll();
+    //  :dawolang:con:away:
+    connector.opJoin(placardM, connectorMsg, ':Chr:');
+    connector.roll();
 
     //  run #op, for single operation
     op(placardM); //  Actually map is yet not used there.
@@ -215,16 +215,17 @@ class CommonChore extends BaseStruct {
     String _retStr;
     print('-->>-->>--  :Ch:-op: calling :connector:  -->>-->>--');
     String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
-    con.opJoin(placardM, connectorMsg, ':Ch:-op:');
-    con.roll();
+    //  :debug::dawolang:con:away
+    //con.opJoin(placardM, connectorMsg, ':Ch:-op:');
+    //con.roll();
 
     ///  Make placard in shape.
     ///  calls commonProcess with #placard
     ///  TODO  operation class instance
     ///  TODO  Constructor: add eventually constructor
     ///  order: #actor #sender #receiver #command #msg
-    var chOpClass = new Affair(
-        name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
+    var chOpClass =
+        new Affair(name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
     _retBuf.writeln('_retBuf in chore-op method is ready...');
@@ -248,9 +249,12 @@ class CommonChore extends BaseStruct {
   void show() {
     _flowC('--> ch show:  $name -->---->--', _pB);
     //  print(buf);
-    print('bbbbbbbbbb chore.show  choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
-    print(choreBuf);
-    print('bbbbbbbbbb chore.show  choreBuf done bbbbbbbbbbbbbbbbbbbbbb');
+    ///  :TEST: :glb:ifPrint:  Is false: so should not print buf.
+    if (glb.st['buf']) {
+      print('bbbbbbbbbb chore.show  choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
+      print(choreBuf);
+      print('bbbbbbbbbb chore.show  choreBuf done bbbbbbbbbbbbbbbbbbbbbb');
+    }
     _flowC('<-- ch show: $name  done --<----<--', _pB);
   }
 

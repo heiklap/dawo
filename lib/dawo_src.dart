@@ -30,8 +30,8 @@ import 'mis/chore.dart';
 import 'mis/effort.dart';
 import 'mis/missions.dart';
 
-
-
+//  Only connector needs this.
+//  export 'package:dawolang/dawolang.dart';
 
 //  *team* became independent. How to use team in future.. that's the question.
 //  *team* was collaboration system to serve as tool for dawo development.
@@ -130,5 +130,4 @@ StringBuffer renderDawo() {
 ///  Fast test for rumba.
 void renderRumba() {
   //  rumba  //  2 variables
-
 }

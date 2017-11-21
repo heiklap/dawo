@@ -12,15 +12,12 @@ library shower.dart;
 //  import 'beta.dart';
 import 'tools.dart';
 
-
 import 'corp/connector.dart';
 import 'corp/corporate.dart';
 
 import 'mis/equipment.dart';
 
 import 'corp/bind.dart';
-
-
 
 //  TODO :  21 matches,  add one more to make it even count.
 
@@ -362,10 +359,12 @@ class ScheduleCon {
       '**  #Caller have accessed :corporate:process: public resources,  **'
     ]);
 
-    //  tl.bufToList(con.buf).forEach(print);
-    //  bufL.addAll(tl.bufToList(con.buf));
+    tl.bufToList(connector.buf).forEach(print);
+
+    //  bufL.addAll(tl.bufToList(connector.buf));
     //  Add :con: work-flow list 44 items 26 wide on left of screen
-    anchorBox(1, 3, 44, 26, con.buf.toString().split('\n'));
+    anchorBox(1, 3, 44, 26, connector.buf.toString().split('\n'));
+    anchorBox(1, 3, 44, 26, ['1', '2', '3', '4']);
 
     //anchorBox(4, 32, 100, 100 ,['CORPORATE:', 'connect:', 'Bing:', 'opCon:']);
     lHeader(4, 32, 'corp:phase');
@@ -401,17 +400,25 @@ class ScheduleCon {
     anchorBox(33, 32, 100, 100, equ.months);
     anchorBox(38, 60, 100, 100, equ.weekDays);
 
-    lHeader(33, 89, '*  con.memberM *');
-    anchorBox(34, 89, 12, 32, tl.mapToList(con.memberM));
+    lHeader(33, 89, '*  connector.memberM *');
+    Map<String, String> conMemberM = {
+      '1m': 'memb1',
+      '2m': 'memb2',
+      '3m': 'me3mb3',
+      '4m': 'memb4',
+    };
+    anchorBox(34, 89, 12, 32, tl.mapToList(conMemberM));
 
-    //  lHeader(1, 123, '*  con.joinLog *');
-    anchorBox(1, 123, 14, 50, con.joinLog);
+    //  lHeader(1, 123, '*  connector.joinLog *');
+    anchorBox(1, 123, 14, 50, connector.joinLog);
 
-    //  lHeader(10, 123, '*  con.bindL *');
+    //  lHeader(10, 123, '*  bind.bindL *');
     anchorBox(16, 123, 14, 50, bind.bindL);
 
-    //  lHeader(20, 123, '*  con.inMsgL *');
-    anchorBox(31, 123, 14, 50, con.inMsgL);
+
+    //  lHeader(20, 123, '*  connector.inMsgL *');
+    anchorBox(31, 123, 14, 50, connector.inMsgL);
+
 
     //  Add screen-high-2 vertical lines marked with: |
     anchorBox(1, 30, 47, 1, verticalLineL);

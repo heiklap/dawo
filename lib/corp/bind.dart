@@ -13,7 +13,6 @@ library bind.dart;
 import '../beta.dart';
 //  import 'resolve.dart';
 
-
 ///  Class Bind keeps and handles message-based bindings between objects.
 class Bind {
   int bindC = 0; //  counter for connections.
@@ -91,9 +90,9 @@ class Bind {
   ///  Get what user wants from bind-data.
   String find() {
     String _fs = '';
+
     ///  Using Resolve library:
     //  res.solve(sender, key, source);
-
 
     return _fs;
   }

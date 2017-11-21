@@ -2,7 +2,6 @@
 
 library packDawoJson;
 
-
 class PdJson {
   var myFriends = {
     "name": "John",

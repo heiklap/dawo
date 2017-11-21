@@ -83,11 +83,12 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
-
       ..add('NEXT: Own box-output for bind and connector show.')
-      ..add('NEXT: Hide  ALL  flow-output. Do it with user parameters.')
+
       ..add('NEXT: User simulated data for actions. Server-client ?.')
+      ..add('NEXT; SearchList of important dawo termes to example-file. :con: :m:')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
+      ..add('Hide  ALL  flow-output. Do it with :glb: user parameters.')
       ..add('Enhancement: folders #corp #mis and #dev to group files.')
       ..add('Extract glb class from beta-library to: src.')
       ..add('Extract GlobalOp from beta to: src as: affair.')
@@ -134,8 +135,7 @@ class Dev {
       ..add(
           '6 Missions specific op-methods, cheduleBox for resource allocating.')
       ..add('dev: doneL added to keep track of fast changes. 10.10.17')
-      ..add(
-          'flowserve: added flowI event counter. In beta: flowI. 10.10.17')
+      ..add('flowserve: added flowI event counter. In beta: flowI. 10.10.17')
       ..add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.')
       ..add('Info about older notes should apper in lists.');
 

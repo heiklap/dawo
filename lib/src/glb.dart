@@ -24,15 +24,37 @@ class GlobalClass {
   //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
   String actor = ':UNKNOWN: - :UNUSED:';
 
+  ///  states. PLAN: many levels of flow-printing.
+  ///  TODO  howTo mediate these to xPrint?
+  Map<String, bool> st = {
+    'flow': false, //  false prevents all "flow" printing via flowServe();
+    //  Shorten output 2 screens.
+    'buf': false, // TODO   controls bufPrint
+    'info': false,
+    'help': false,
+    'bug': false,
+    'test': false,
+    'msg': false,
+    'dev': false,
+    'header': false,
+    'footer': false,
+    'state': false, //  state
+  };
+
+  ///  User dan set print variables like this.
+  void setGlbPrint(bool tOrF) {
+    for (var x in st.keys) {
+      st[x] = tOrF; //  set it true or false.
+    }
+  }
+
   ///  Not much use, #Actor is announced in function parameter.
   void changeActor(String _actor) {
     actor = _actor;
   }
 
   ///  Minimize / stop console-flow printing.
-  void printControl(){
-
-  }
+  void printControl() {}
 
   //  code
   void showInfo() {

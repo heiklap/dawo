@@ -96,7 +96,6 @@ class Resolve {
 var resolve = new Resolve();
 
 void renderResolve() {
-
   ///  Just to name variables here for to avoid unused error.
   resolve._uh; //  user handle
 
@@ -111,5 +110,4 @@ void renderResolve() {
   resolve._dl; //  handle to #LANG  maybe #dawolang
 
   resolve._zyld; //  Outside data zylinder.
-
 }

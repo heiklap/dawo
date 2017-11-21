@@ -27,6 +27,7 @@
 
 library beta;
 
+import 'src/glb.dart'; //  for glb.. & printControl.
 import 'alpha.dart';
 
 //  TODO  Final readiness.  this is not
@@ -38,6 +39,25 @@ bool _betaPB = true; //  control for printing.
 // typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
 //  Typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
 
+void ifPrint(Object obj, bool _b) {
+  /*   Flags in glb.st Map, that control printing of diferent things.
+  'flow' : false,  //  false prevents all "flow" printing via flowServe();
+  //  Shorten output 2 screens.
+  'buf' : false,  // TODO   controls bufPrint
+  'info' : false,
+  'help' : false,
+  'bug' : false,
+  'test' : false,
+  'msg' : false,
+  'dev' : false,
+  'header' : false,
+  'footer' : false,
+  'state' : false,  //  state
+  */
+  ///  TODO Can this print buf, map, list, String?
+  if (_b) print(obj);
+}
+
 /// * *  This is main f-Print, that handles all flowC call from every library.
 /// Do not look out unprofessionally and spam your code with print-clauses!
 /// Instead use: flow !!
@@ -45,7 +65,7 @@ bool _betaPB = true; //  control for printing.
 //  void flow(String actor, StringBuffer buf, String msg, bool pr)
 ///  DONE:  To avoid messing with buffer and actor HOORAY: used local flowC().
 ///  ALL  local flowC() calls this flowServe()
-void  flowServe(String actor, StringBuffer buf, String msg, bool pr) {
+void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   ///  ********************************************************************
   ///  GETTING NOW  ACTOR AND BUFFER RIGHT, WHEN USED LOCAL fl()
   /// **********************************************************************
@@ -57,10 +77,10 @@ void  flowServe(String actor, StringBuffer buf, String msg, bool pr) {
 
   ///  Added opC: to flow-counter for easy search.
   String _flowIS = 'opC:$flowIS';
-  String header = 'fs:';  //  $pr:  If want true / false.
+  String header = 'fs:'; //  $pr:  If want true / false.
   String text = '$actor$header$_flowIS $msg ';
-
-  if (pr) print(text);  // When needed  :flowServe:test:
+  //  && glb.st['flow']  /   Shortens output from 24 to 22 screens.
+  if (pr && glb.st['flow']) print(text); // When needed  :flowServe:test:
   // DONE:  Now _buf comes from caller in parameters.
   buf.writeln('$text');
   //  buf.writeln('$actor $_flowIS $msg');
@@ -163,9 +183,6 @@ Map<String, String> betaPlacardM = {
   'msg': '',
 };
 
-
-
-
 /// Chores are biggest users of this.  NOTE:  also Store-class.
 /// Stock handles and shares joint resources with participants.
 ///  Resources are: people, places, jobs aso.
@@ -193,6 +210,7 @@ StringBuffer renderBeta(String caller) {
     print('   **  betaRender assignBetaRender > :corporate:process:    ***');
     return ('   **  betaRender assignBetaRender > :corporate:process:   ***');
   }
+
   assignBetaRender();
   print('================= renderBeta : done  C: $caller ============ \n');
   return _retBuf;

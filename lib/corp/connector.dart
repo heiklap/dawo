@@ -36,17 +36,16 @@
 library connector;
 
 ///  path dependency
-import 'package:dawolang/dawolang.dart';
+import 'package:dawolang/dawolang.dart' as d_lang;
+
+import 'affair.dart';
+import 'bind.dart';
 
 import '../alpha.dart';
-
-//  TODO import ruins this app flowServe stops working. lib-function import 2X
 import '../beta.dart';
 
 import '../shower.dart';
 import '../tools.dart';
-import 'package:dawo/corp/affair.dart';
-import 'bind.dart';
 
 ///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = new StringBuffer();
@@ -156,7 +155,7 @@ class Connector extends BaseStruct {
 
   ///  #New: #Gear Something turns around this.
   ///  the sail pivots around the axis of a virtually static mast
-  var pivot;
+  Object pivot;
 
   //  typedef void _ConPrint(String msg); // announced outside of class
   //  _ConPrint
@@ -212,11 +211,12 @@ class Connector extends BaseStruct {
   void opJoin(Map<String, String> plcM, String inMsg, caller) {
     ///  Operations register to Connector with placardM.
     ///  Using LexiconBase class from dawolang.
-    lb.build(':call:WG:-:dawolang:  :by:dawo-:connector:');
+    d_lang.lb.build(':call:WG:-:dawolang:  :by:dawo-:connector:');
+
     ///  Using Analyzer class from dawolang.
-    an.analyzeStrS(':ONE more :WEEK :WILL :DO', lb.wordList);
-    an.analyzeStrS(':YOU in :NEW :ROLE gives :MORE :VALUE :TO :THIS :PROJECT',
-        lb.wordList);
+    d_lang.an.analyzeStrS(':ONE more :WEEK :WILL :DO', d_lang.lb.wordList);
+    d_lang.an.analyzeStrS(':YOU in :NEW :ROLE gives :MORE :VALUE :TO :THIS :PROJECT',
+    d_lang.lb.wordList);
 
     String actorS = plcM['actor'];
     String senderS = plcM['sender'];
@@ -231,10 +231,10 @@ class Connector extends BaseStruct {
     _flowC(inMsg, _pB);
 
     ///  Using Analyzer class from dawolang.
-    String _weightStringMsg = an.weightString(inMsg, lb.wordList);
+    String _weightStringMsg = d_lang.an.weightString(inMsg, d_lang.lb.wordList);
     _flowC(_weightStringMsg, _pB);
 
-    inMsgL.add(inMsg);  //  for keeping#unmodified   inMsg.
+    inMsgL.add(inMsg); //  for keeping#unmodified   inMsg.
     ///  call to bind OR opCom
     bind.mark(actorS, senderS, receiverS, comS, msgS, inMsg);
     print('--<<-------- bindingM - done -----------------\n');
@@ -325,7 +325,7 @@ class Connector extends BaseStruct {
 }
 
 ///  Create instance of Connector.
-var con = new Connector('DawoAppconnector', 'Connection operations');
+Connector connector = new Connector('DawoAppconnector', 'Connection operations');
 
 ///  Construct almost same class: but for collecting data.
 ///  Would like to extend this from Connector: class, but it do not have
@@ -344,9 +344,8 @@ class Collector {
 
 ///  Usual render, presentation, function.
 void renderConnector() {
-  //  var connector = new Connector();
-  //  or: shorthand
-  var c = new Connector('render-test-connector', 'just for testing');
+
+  Connector c = new Connector('render-test-connector', 'just for testing');
   c.info;
   c._conPrint(':connector: conPrint test in render.');
 }

@@ -14,14 +14,19 @@ import 'package:dawo/dawo.dart';
 ///
 
 import 'package:dawo/alpha.dart';
-import 'package:dawo/mis/chore.dart';
+import 'package:dawo/beta.dart';
 import 'package:dawo/dawo_app.dart';
-import 'package:dawo/mis/missions.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
-//  import 'package:dawo/tools.dart';
+
+import 'package:dawo/mis/chore.dart';
+import 'package:dawo/mis/missions.dart';
+
+
 import 'package:dawo/corp/bind.dart';
 import 'package:dawo/corp/connector.dart';
+//  import 'package:dawo/tools.dart';
+import 'package:dawo/src/glb.dart';
 
 //  Unused package is marked with grey, and #warning.
 //  import 'package:dawo/mill.dart';
@@ -73,6 +78,11 @@ main() {
   DateTime start = new DateTime.now();
   ///  Call function that adds #actor and #count to this String and prints it.
   exInfo('==>>==>>==   dawo_example    ==>>==>>==');
+
+  print(':glb:print:states:  set to false. only :buf: used');
+  print(glb.st);
+  print('-- Change print status: glb.setGlbPrint(true or false) ------');
+
   exInfo('==>>==>>==   dawo_example  awesome: ${awesome.isAwesome}');
 
   //  example of empty function, that can be modified to do #things!!
@@ -94,6 +104,7 @@ main() {
   DateTime stop = new DateTime.now();
   print(' \nStoptime::  $stop');
   print(stop.difference(start));
+  print('FlowServe calls::   $flowI ');
 
 } //  -----  end of main.
 
@@ -117,7 +128,7 @@ void exampleMethodsPlay() {
   schedulePlay();
 }
 
-///  Form  message row to follow
+///  Form  message row to easy-find and print it if: _pB
 void exInfo(String msg) {
   dexC++;
   String dexCS = dexC.toString();
@@ -128,8 +139,9 @@ void exInfo(String msg) {
 
 ///  Place where :corporate:  :opCom:  and :connector: play together.
 void connectorOp(String caller) {
-  con.opJoin(placardM, connectorMsg, ':Dawo:example:');
-  con.roll();
+
+  connector.opJoin(placardM, connectorMsg, ':Dawo:example:');
+  connector.roll();
 }
 
 //  TODO  #IDEA: for courier carrier, to do something really nice.
@@ -186,7 +198,8 @@ void sampleJsonData() {
 ///
 void connectorExampleReport() {
   exInfo('==>>==>>==   calling :connector: report    ==>>==>>==');
-  con.report();
+
+  connector.report();
   exInfo('    ==<<==<<==    :connector: report done    ==<<==<<==');
 }
 

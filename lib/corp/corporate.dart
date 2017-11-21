@@ -12,7 +12,6 @@ library corporate;
 import '../shower.dart'; //  for devBox
 import 'affair.dart';
 
-
 ///  Here objects work together after #connector joins them to system.
 class Corporate {
   String name = 'corporate-united';

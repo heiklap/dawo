@@ -11,7 +11,6 @@
 
 library affair;
 
-
 ///  conduct?  affair!!
 ///  Second or third alternative to operations, besides :corporate:
 ///  NOTE:  Global operations.  Some dawo #operation could relay on these.
@@ -119,5 +118,4 @@ class Affair {
 }
 
 //  Just testing Create instance as affair.
-var affair =
-new Affair('dawoApp', 'xSender', 'xReceiver', 'betaAssign', 'msg');
+var affair = new Affair('dawoApp', 'xSender', 'xReceiver', 'betaAssign', 'msg');

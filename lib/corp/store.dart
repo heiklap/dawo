@@ -13,10 +13,7 @@ library store;
 
 import 'dart:async';
 
-
-
-class Store{
-
+class Store {
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
   ///  chain, procession, queue, order, request, stream, river, flow, rune
@@ -46,8 +43,6 @@ class Store{
     });
   }
 
-
-
   ///  Another basic stream example, grabbed from dartlang.org
   ///  Not used yet here.
   void demandStreamBroad(String caller, Iterable streamData, var streamListen) {
@@ -56,21 +51,15 @@ class Store{
     var broadcastStream = stream.asBroadcastStream();
 
     broadcastStream //   Using method cascades...
-    //  TODO  Test:  Can we NOT use shorthand function?
+      //  TODO  Test:  Can we NOT use shorthand function?
       ..listen((value) => print("SUCCESS_1_:: stream.listen: $value"))
       ..first.then((value) => print("SUCCESS_2_:: stream.first: $value")) // 1
       ..last.then((value) => print("SUCCESS_3_:: stream.last: $value")) // 5
-      ..isEmpty
-          .then((value) => print("SUCCESS_4_:: stream.isEmpty: $value")) // false
-      ..length.then((value) => print("SUCCESS_5_:: stream.length: $value")); // 5
+      ..isEmpty.then(
+          (value) => print("SUCCESS_4_:: stream.isEmpty: $value")) // false
+      ..length
+          .then((value) => print("SUCCESS_5_:: stream.length: $value")); // 5
   }
-
-
-
-
-
-
-
 }
 
 Store store = new Store();

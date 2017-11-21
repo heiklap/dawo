@@ -8,6 +8,7 @@
 library tools.dart;
 
 import 'dart:math';
+
 ///
 num toolsReadiness = 96;
 
@@ -63,9 +64,9 @@ class Tools {
   }
 
   ///  Making for example vertical lines for box
-  List<String> strToList(String str, int count){
+  List<String> strToList(String str, int count) {
     List<String> l = [];
-    for (int i = 0; i < count; i++){
+    for (int i = 0; i < count; i++) {
       l.add(str);
     }
     return l;
@@ -116,27 +117,40 @@ class Tools {
   }
 
   //  Want to get List items to max certain length.
-  void shortenItemsInList(List<String> _l, int _w){
+  void shortenItemsInList(List<String> _l, int _w) {
     String s;
-    for (var x = 0; x < _l.length; x++){
+    for (var x = 0; x < _l.length; x++) {
       s = _l[x];
       if (_l[x].length > _w) {
-        _l[x] = s.substring(0,_w);
+        _l[x] = s.substring(0, _w);
       }
     }
   }
 
   //  Fill list-box-data in matrix in r, _c coordinates.
   //  Modify _mL to be NOT PRIVATE and name to: masterL
-  void boxInList(int _r, int _c, _items, _w, List<String> boxL, List<String> masterL) {
-    //  new parameters _items, _w :  items and asked output width
+  void boxInList(
+      int _r, int _c, _asked, _w, List<String> boxL, List<String> masterL) {
+    //  new parameters _asked, _w :  items and asked output width
     if (_w < longestItemInList(boxL)) {
-      shortenItemsInList(boxL, _w );
+      shortenItemsInList(boxL, _w);
     }
+
     ///  Only >2 width lists are padded
-    if (_w > 2 )padListRL(boxL, _w, ' ', ' ');
-    int _count = min(boxL.length, _items);  //  All or asked amount.
-    for (var x = 0; x < _count; x++) {
+    if (_w > 2) padListRL(boxL, _w, ' ', ' ');
+    int _take = min(boxL.length, _asked); //  All or asked amount.
+    //  Take to var, how many items was left out.
+
+    int leftOver = boxL.length - _asked; // count not printed items
+    if (leftOver > 0) {
+      String _loS = leftOver.toString();
+      String _loS2 =
+          boxL[_take - 1].substring(0, _w - 7) + ':+:' + _loS; //  nearly _w.
+      //  Modify last item in list_
+      boxL[_take - 1] = _loS2; //  done: Like:  Item
+    }
+
+    for (var x = 0; x < _take; x++) {
       //  Control for range errors
       int itemLength = boxL[x].length;
       int control = itemLength + _c;
@@ -275,6 +289,7 @@ class Tools {
   //
   String stampDateTime() {
     var start = new DateTime.now();
+    //  print('Start::  $start ');
     /*
     //NOTE:  dateFormat is in:   intl  package
     var formatterYmd = new DateFormat('yyyy-MM-dd');
@@ -292,7 +307,7 @@ class Tools {
     */
     //  testDateSlug();
     //  return dateTimeStampNow;
-    return '';
+    return 'Start::  $start ';
   }
 
   ///  Small sleep-methods, to get time, to see, what is happening in tests.

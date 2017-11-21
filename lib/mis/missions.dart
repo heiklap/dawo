@@ -12,7 +12,7 @@
 ///  Renamed library to: missions for 0.0.4.
 library missions;
 
-//  import 'package:dawo/dawo_app.dart';  //  not used
+//  import '../dawo_app.dart';  //  not used
 import '../alpha.dart';
 import '../beta.dart';
 
@@ -24,7 +24,6 @@ import '../tools.dart';
 
 import '../corp/connector.dart';
 import '../clay/clay_roll.dart';
-
 
 ///  #NOTE:  #effort is not visible here.  Only in chore.dart.
 
@@ -109,7 +108,6 @@ class Mission {
     'done': false,
   };
 
-
   //----op-  variables and methods to handle Mission operations
   ///  'open'  variables. Make this a Map. ?
   //  Sub-operations state
@@ -120,8 +118,6 @@ class Mission {
     'done': false,
   };
   int opCount = 0;
-
-
 
   ///  #Idea:  use flags maps to control something     stFlags
   Map<String, String> stFlags = {
@@ -213,8 +209,8 @@ class Mission {
     print('-->>-->>--  :M:-build: calling :connector:  -->>-->>--');
     String _nS = name.substring(0, 7);
     String connectorMsg = ':INFO :ALL M: $_nS : are :READY :FOR :NEXT :EVENT ';
-    con.opJoin(placardM, connectorMsg, ':M:-build:');
-    con.roll();
+    connector.opJoin(placardM, connectorMsg, ':M:-build:');
+    connector.roll();
 
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
@@ -276,10 +272,13 @@ class Mission {
     _flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
     int done = 0;
     print('-->>-->>--  :M:-opR: calling :connector:  -->>-->>--');
+
     ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
-    String connectorMsg = ':M:-opR: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
-    con.opJoin(placardM, connectorMsg, ':M:-opR:');
-    con.roll();
+    String connectorMsg =
+        ':M:-opR: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
+    //  :dawolang:debug:
+    connector.opJoin(placardM, connectorMsg, ':M:-opR:');
+    connector.roll();
 
     //  now this just rolls func rollCount time,  lol
     for (var i = 0; i < rollCount; i++) {
