@@ -14,7 +14,8 @@ web:
 
 dependencies:
   browser: "^0.10.0+2"
-  dawolang: "^0.0.1"
+  dawolang:
+    path:  "C:/Users/Public/IdeaDart/dawolang"
 
 dev_dependencies:
   test: "^0.12.24+2"

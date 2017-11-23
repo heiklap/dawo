@@ -83,11 +83,10 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
-      ..add('NEXT: Own box-output for bind and connector show.')
-
       ..add('NEXT: User simulated data for actions. Server-client ?.')
-      ..add('NEXT; SearchList of important dawo termes to example-file. :con: :m:')
+      ..add('NEXT; SearchList of important dawo terms to example-file :con:m:')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
+      ..add('boxServe: box-output for bind and connector AND to everybody.')
       ..add('Hide  ALL  flow-output. Do it with :glb: user parameters.')
       ..add('Enhancement: folders #corp #mis and #dev to group files.')
       ..add('Extract glb class from beta-library to: src.')
@@ -370,3 +369,6 @@ void addDawoDevNotes() {
   //  code here.
   print('--  not clear yet, how this must be done  -- \n');
 }
+
+
+

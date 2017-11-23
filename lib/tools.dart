@@ -72,6 +72,23 @@ class Tools {
     return l;
   }
 
+  ///  :QUEST:  ??
+  ///  Change letter/s in a String
+  String changeLetter(String inS, int pos, String newS) {
+    //print(inS);
+    int length = inS.length;
+    String _s1 = inS.substring(0, pos-1);
+    //print(_s1);
+    String _s2 = inS.substring(pos,pos+1); //  wanted OLD letter for change
+    _s2 = newS;  //  Now it is changed
+    //print(_s2);
+    String _s3 = inS.substring(pos, length);
+    //print(_s3);
+    String s4 = '$_s1$_s2$_s3';
+    //print(s4);
+    return s4;
+  }
+
   ///  Return List of items, where #String exist. from dawo-tools.
   List<String> StrInList(List<String> _l, String _s) {
     List<String> _queryL = new List();

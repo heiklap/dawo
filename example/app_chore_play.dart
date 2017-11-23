@@ -9,6 +9,7 @@ import 'package:dawo/mill.dart';
 import 'package:dawo/mis/missions.dart';
 
 import 'package:dawo/mis/chore.dart';
+import 'package:dawo/tools.dart';
 
 
 
@@ -25,6 +26,9 @@ var rumba = new Rumba();
 
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
+  String xs = '';
+  xs = tl.changeLetter('1234567890', 5, 'x');
+  print(xs);
   print('==>>==>>====  app_blib_chore example  ==>>==>>====');
   //  TODO Bug: ALREADY INITIALIZED BUILD CHORE
 

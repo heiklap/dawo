@@ -276,7 +276,6 @@ class Mission {
     ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
     String connectorMsg =
         ':M:-opR: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
-    //  :dawolang:debug:
     connector.opJoin(placardM, connectorMsg, ':M:-opR:');
     connector.roll();
 

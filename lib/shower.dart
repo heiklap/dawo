@@ -328,13 +328,8 @@ class ScheduleCon {
     ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
     _matrix[_rc - 1] =
         '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
-    //NO   _matrix.forEach(print);
-    //  Fill list-data in matrix in r, _c coordinates.
-    //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
-    //  new parameters 3 and 4: _items, _w
-    //  TODO :BUG: No error check for over-sized lists.
-    void anchorBox(int _r, _c, _items, _w, List __l) {
-      //  If not know list length / wanted items and width, try 100. lol
+
+    void anchorBox(int _r, int _c, _items, _w, List __l) {
       tl.boxInList(_r, _c, _items, _w, __l, _matrix);
       //NO #print:  print(_matrix);
     }
@@ -349,7 +344,6 @@ class ScheduleCon {
       _matrix[_r] = '$_s1$s$_s3';
     }
 
-    ///  Forming vertical line for screen.
     List<String> verticalLineL = [];
     verticalLineL.addAll(tl.strToList('|', _rc - 2));
 
@@ -401,13 +395,7 @@ class ScheduleCon {
     anchorBox(38, 60, 100, 100, equ.weekDays);
 
     lHeader(33, 89, '*  connector.memberM *');
-    Map<String, String> conMemberM = {
-      '1m': 'memb1',
-      '2m': 'memb2',
-      '3m': 'me3mb3',
-      '4m': 'memb4',
-    };
-    anchorBox(34, 89, 12, 32, tl.mapToList(conMemberM));
+    anchorBox(34, 89, 12, 32, tl.mapToList(connector.memberM));
 
     //  lHeader(1, 123, '*  connector.joinLog *');
     anchorBox(1, 123, 14, 50, connector.joinLog);
@@ -438,6 +426,8 @@ class ScheduleCon {
 } //  -----  class ScheduleBox
 
 var scheduleCon = new ScheduleCon();
+
+
 
 ///  Gets some small data from effortLM based on parameters.
 List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {

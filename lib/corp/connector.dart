@@ -35,6 +35,8 @@
 
 library connector;
 
+//  TOD  import 'dart:intl';
+
 ///  path dependency
 import 'package:dawolang/dawolang.dart' as d_lang;
 
@@ -43,9 +45,12 @@ import 'bind.dart';
 
 import '../alpha.dart';
 import '../beta.dart';
+import 'package:dawo/src/box_serve.dart';
 
 import '../shower.dart';
 import '../tools.dart';
+
+import '../mis/equipment.dart';
 
 ///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = new StringBuffer();
@@ -121,6 +126,7 @@ class Connector extends BaseStruct {
   bool _pB = false; //  false;   //  To control printing in _flowC method.
   String name = 'connector class';
   String info = 'App - mission - chore co-op in #corporate.process via #LANG';
+  Map<String, String> infoM = {};
   String motto = 'Give objects long, powerful extra hand.';
 
   ///  devNote: IDEA: Fields for to better shape outPut stuff in console.
@@ -147,6 +153,30 @@ class Connector extends BaseStruct {
     'done': false,
   };
 
+  String poleInfo =
+      'Connector-specific poles. Corporate has own specific poles.';
+
+  //  For future use
+  Map<String, String> answerPoleM = {
+    'Who?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'What?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'When?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'Whíle?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'Where?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'Why?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+  };
+
+  //
+  //  For future use
+  Map<String, String> workPoleM = {
+    'Always': '_ _ _ _ _ _ _ _ _ _ _ ',
+    'Newer': '_ _ _ _ _ _ _ _ _ _ _ ',
+    'Start': '_ _ _ _ _ _ _ _ _ _ _ ',
+    'Day': '_ _ _ _ _ _ _ _ _ _ _ ',
+    'Week': '_ _ _ _ _ _ _ _ _ _ _ ',
+    'Stop': '_ _ _ _ _ _ _ _ _ _ _ ',
+  };
+
   ///  *****************************************************************
   ///  Serves both mission-chore  and  corporate-affair "lines".
   ///  var msgBus * Sending messages between objects. Stance, approach
@@ -168,6 +198,7 @@ class Connector extends BaseStruct {
   // void ping(Baker sender, receiver, var key) {
   void ping(String sender, receiver, key, msg) {
     print('    :ping: is used.. hooray!! S: $sender R: $receiver K: $key ');
+    buf.writeln(':con:buf:  :ping: is used..S: $sender R: $receiver K: $key ');
 
     ///  code
   }
@@ -185,6 +216,7 @@ class Connector extends BaseStruct {
   ///  Giving nice report of connections.
   List report() {
     print('--------------- connector report ----------------------------');
+    buf.writeln('con:report:done:  ');
     List<List<String>> _dbL = new List();
     List<List<String>> _dbL2 = new List();
     _dbL.addAll([tl.mapToList(memberM), joinLog]);
@@ -209,14 +241,18 @@ class Connector extends BaseStruct {
   ///  Join "clients" / Members to opList. placardM mediates necessary info.
   ///  Usage: mission, dawoApp, rumba, chore, dawo_example
   void opJoin(Map<String, String> plcM, String inMsg, caller) {
+    buf.writeln('con:opJoin: starting by:$caller  ');
+
     ///  Operations register to Connector with placardM.
     ///  Using LexiconBase class from dawolang.
     d_lang.lb.build(':call:WG:-:dawolang:  :by:dawo-:connector:');
 
     ///  Using Analyzer class from dawolang.
     d_lang.an.analyzeStrS(':ONE more :WEEK :WILL :DO', d_lang.lb.wordList);
-    d_lang.an.analyzeStrS(':YOU in :NEW :ROLE gives :MORE :VALUE :TO :THIS :PROJECT',
-    d_lang.lb.wordList);
+    d_lang.an.analyzeStrS(
+        ':YOU in :NEW :ROLE gives :MORE :VALUE :TO :THIS :PROJECT',
+        d_lang.lb.wordList);
+    //  TODO  Output!!  '..:debug:dawolang:print:.:connector;opJoin:...');
 
     String actorS = plcM['actor'];
     String senderS = plcM['sender'];
@@ -236,15 +272,16 @@ class Connector extends BaseStruct {
 
     inMsgL.add(inMsg); //  for keeping#unmodified   inMsg.
     ///  call to bind OR opCom
-    bind.mark(actorS, senderS, receiverS, comS, msgS, inMsg);
-    print('--<<-------- bindingM - done -----------------\n');
-    _flowC(':CN:-info:  $info', _pB);
-    print('** :C:opJoint:  operationMapPrint OR shortMapPrint plcM   **');
-    //  tl.operationMapPrint(plcM);
-    tl.shortMapPrint(plcM);
-    print('--<<-------- plcM  ------------------------');
-    //  TODO  connector  add memberM    add  BindingM
-
+    if (_pB) {
+      bind.mark(actorS, senderS, receiverS, comS, msgS, inMsg);
+      print('--<<-------- bindingM - done -----------------\n');
+      _flowC('operationMapPrint OR shortMapPrin  $info', _pB);
+      print('** :C:opJoint:  operationMapPrint OR shortMapPrint plcM   **');
+      //  tl.operationMapPrint(plcM);
+      tl.shortMapPrint(plcM);
+      print('--<<-------- plcM  ------------------------');
+      //  TODO  connector  add memberM    add  BindingM
+    }
     _flowC(':CN:  --<<--<<:connector:opJoin done   C:$caller  <<--<<--', _pB);
   } //  -----  opJoin
 
@@ -286,6 +323,98 @@ class Connector extends BaseStruct {
   ///  Gives members privileges in joint operations..
   void sharer() {}
 
+  ///  Using boxServe-class for everybody-to use box-shaped info.
+  void box(String caller) {
+    buf.writeln('con:box:start:  ');
+    //  use: boxServe  OR  create own class here
+    final int _sw = 195; //  screen width, changed later =>
+    final int _rc = 47; //  row count
+    //  ???  Keep matrix here on callers side all the time
+    List<String> _conMatrix = new List(_rc);
+    String boxHeader = ':connector:box:';
+    print('-->>-->>  :connector:box: boxServe  start  -->>-->>--  ');
+    List<String> infoL = [
+      'Connector joins other object to spheres, like corporate, where thei can work together and join messaging.',
+      'Every coOp:ed object carries with it a bunch of information, placardM, and has access to :bind:bing:',
+    ];
+
+    //  TODO  if change ton 150, it should be visible variable
+    boxServe.init(42, 150, '_'); //  rows, width or: 0 = use default 47, 195
+    boxServe.construct(':connector:box:  C: $caller');
+    boxServe.build(':connector:box:');
+    int r1 = 2; //  easy x-y pointing
+    int r2 = 12;
+    int r3 = 20;
+    int r4 = 32;
+    int m1 = 3;
+    int m2 = 40;
+    int m3 = 74;
+    int m4 = 100;
+
+    boxServe.aBox(r1 - 1, m2, 2, 100, infoL);
+
+    boxServe.aHeader(3, m2, '*clause :');
+    boxServe.aBox(3, m2 + 10, 1, 60, ['$clause']);
+
+    boxServe.aHeader(4, m2, '*motto :');
+    boxServe.aBox(4, m2 + 10, 1, 60, ['$motto']);
+
+    boxServe.aHeader(r1, m1, '* buf  *');
+    boxServe.aBox(r1 + 1, m1, 39, 33, tl.bufToList(buf));
+
+    boxServe.aHeader(7, m2, '*Connector*');
+    boxServe.aBox(8, m2, 6, 10, ['Connector', 'box-method', 'Clause', clause]);
+
+    boxServe.aHeader(7, m3, '*: con:infoM *');
+    boxServe.aBox(8, m3, 6, 14, tl.mapToList(infoM));
+
+    boxServe.aHeader(4, m4, '*Called:*');
+    boxServe.aBox(8, m4, 6, 8, ['Mission', 'Chore', 'Corporate', 'Example']);
+
+    boxServe.aBox(4, 125, 12, 14, equ.months);
+
+    boxServe.aHeader(r2, m4, '*member M*');
+    boxServe.aBox(r2 + 1, m4, 8, 12, tl.mapToList(memberM));
+
+    boxServe.aBox(r3, m2, 12, 50, joinLog);
+    boxServe.aBox(r3, m4 - 5, 12, 50, inMsgL);
+
+    //  TODO  resource / samples add something
+
+    boxServe.aBox(r4, m2, 6, 9,
+        ['Mon   ', 'Tue   ', 'Wed   ', 'Thu   ', 'Fri   ', 'WE   ']);
+
+    boxServe.aBox(r4 - 5, m3, 1, 70, ['$poleInfo']);
+    boxServe.aHeader(
+        r4 - 4, m3, '     * answerPole *               * workPole  *  ');
+    boxServe.aBox(r4 - 3, m3, 6, 18, tl.mapToList(answerPoleM));
+    // ['Answer Pole:',  'Question:', 'Done:', 'TODO:', 'Problem:', 'All-OK']
+    boxServe.aBox(r4 - 3, m4 + 4, 6, 28, tl.mapToList(workPoleM));
+    //['Work Pole:',  'W: Correct errors.', 'W: Style', 'W: Info', 'W: BIND', 'W: BING'] );
+
+    // boxServe.aBox(r1, m4-3, 16, 1, boxServe.verticalLineL);
+    print('--verticalLineL--- ');
+    //  :BUG:  Unhandled exception:
+    //  RangeError: Value not in range: -4
+    //  #0      _StringBase.substring (dart:core-patch/string_patch.dart:363)
+    //  #1      Tools.boxInList (package:dawo/tools.dart:148:27)
+    ///  use instead:
+    boxServe.vertLine(r2, m2, 7); //  clause
+    boxServe.vertLine(4, m4, 15); //  header & next
+    boxServe.vertLine(r4, m2, 6); //   days
+    boxServe.vertLine(2, 149, 29); //  Up-right edge
+
+    //print(boxServe.verticalLineL);
+    //  boxServe.aBox(2, 4, 16, 3, boxServe.verticalLineL);
+    //  print('--verticalLineL--- ');
+    // print(boxServe.verticalLineL);
+    // boxServe.aBox(r1, m4+13, 16, 1, boxServe.verticalLineL);
+    //  anchorBox(1, 30, 47, 1, verticalLineL);
+
+    boxServe.boxDone(':connector:box:', 'print');
+    print('--<<--<<  :connector:box: boxServe  done  --<<--<<--  ');
+  }
+
   ///  Presentation method.
   void show() {
     //  TODO  Make forced print
@@ -325,7 +454,8 @@ class Connector extends BaseStruct {
 }
 
 ///  Create instance of Connector.
-Connector connector = new Connector('DawoAppconnector', 'Connection operations');
+Connector connector =
+    new Connector('DawoAppconnector', 'Connection operations');
 
 ///  Construct almost same class: but for collecting data.
 ///  Would like to extend this from Connector: class, but it do not have
@@ -344,7 +474,6 @@ class Collector {
 
 ///  Usual render, presentation, function.
 void renderConnector() {
-
   Connector c = new Connector('render-test-connector', 'just for testing');
   c.info;
   c._conPrint(':connector: conPrint test in render.');

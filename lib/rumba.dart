@@ -136,6 +136,7 @@ class Rumba {
               ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
           connector.opJoin(placardM, connectorMsg, ':R:u:');
           connector.roll();
+          connector.box(':R:.do:');
 
           ///  TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
           ///  Running base activity of dawo.

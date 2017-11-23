@@ -89,8 +89,8 @@ main() {
   noteToMe();
 
   ///  All connector activity is marked with: :connector: in output.
-  exInfo('==>>==>>==   dawo_example calling :connector:    ==>>==>>==');
-  connectorOp(dexS); //  function below.
+  //  exInfo('==>>==>>==   dawo_example calling :connector:    ==>>==>>==');
+  //  Later:  connectorOp(dexS); //  function below.
 
   // This method also returns a StringBuffer, that is not used here.
   rumba.dance(dawoApp); //  15 screens of output.
@@ -142,6 +142,7 @@ void connectorOp(String caller) {
 
   connector.opJoin(placardM, connectorMsg, ':Dawo:example:');
   connector.roll();
+  connector.box(':d-ex:');
 }
 
 //  TODO  #IDEA: for courier carrier, to do something really nice.

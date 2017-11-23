@@ -171,7 +171,6 @@ class CommonChore extends BaseStruct {
     //  Join "clients" / Members to opList. placardM mediates necessary info.
     _flowC('-->>-->>--  :chore: calling :connector:  -->>-->>--', _pB);
     String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
-    //  :dawolang:con:away:
     connector.opJoin(placardM, connectorMsg, ':Chr:');
     connector.roll();
 
@@ -215,9 +214,9 @@ class CommonChore extends BaseStruct {
     String _retStr;
     print('-->>-->>--  :Ch:-op: calling :connector:  -->>-->>--');
     String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
-    //  :debug::dawolang:con:away
-    //con.opJoin(placardM, connectorMsg, ':Ch:-op:');
-    //con.roll();
+
+    connector.opJoin(placardM, connectorMsg, ':Ch:-op:');
+    connector.roll();
 
     ///  Make placard in shape.
     ///  calls commonProcess with #placard

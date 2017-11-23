@@ -18,7 +18,7 @@ import 'shower.dart';
 import 'mis/chore.dart';
 import 'mis/missions.dart';
 
-//  import 'corp/connector.dart';
+import 'corp/connector.dart';
 import 'corp/store.dart';
 
 import 'dev/dawo_dev.dart';
@@ -205,10 +205,9 @@ class DawoApp extends BaseStruct {
 
     //
     print('-->>-->>--  :dawoapp: calling :collector:  -->>-->>--');
-    //  String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
-    //  :dawolang:debug:
-    //con.opJoin(betaPlacardM, connectorMsg, ':D:app:');
-    //con.roll();
+    String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
+    connector.opJoin(betaPlacardM, connectorMsg, ':D:app:');
+    connector.roll();
 
     //  Add code for roll.
 
@@ -262,10 +261,8 @@ class DawoApp extends BaseStruct {
   ///  DONE Adding caller-parameter
   ///  TODO  WHO IS CALLING THIS ?  Nobody
   void devStream(String caller) {
-    _flowC(
-        '--- :stream:beg dawoApp rollStream started by: $caller    ---', _pB);
-    _flowC(
-        '--- :stream:beg dawoApp rollStream started by: $caller    ---', true);
+    _flowC('--:stream:beg dawoApp rollStream started by: $caller   --', _pB);
+    _flowC('-- :stream:beg dawoApp rollStream started by: $caller ---', true);
     // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     store.demandStream(
