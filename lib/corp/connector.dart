@@ -149,7 +149,7 @@ class Connector extends BaseStruct {
   Map<String, bool> st = {
     'off': true,
     'on': false,
-    'pauseB': false,
+    'pause': false,
     'done': false,
   };
 
@@ -238,6 +238,11 @@ class Connector extends BaseStruct {
   List<String> joinLog = ['* :connector: join-log *'];
   List<String> inMsgL = ['*  :connector: in-msg-list  *'];
 
+  ///  Clients tool to access connector data and other services.
+  void signUp(List<String> _callL){
+    //  code
+  }
+
   ///  Join "clients" / Members to opList. placardM mediates necessary info.
   ///  Usage: mission, dawoApp, rumba, chore, dawo_example
   void opJoin(Map<String, String> plcM, String inMsg, caller) {
@@ -312,7 +317,7 @@ class Connector extends BaseStruct {
     //  code for roll
     //  ***   code missing, see on top of this file
     //
-    show();
+    show('buf,info, hello');
     done();
     //  code here
   }
@@ -334,11 +339,11 @@ class Connector extends BaseStruct {
     String boxHeader = ':connector:box:';
     print('-->>-->>  :connector:box: boxServe  start  -->>-->>--  ');
     List<String> infoL = [
-      'Connector joins other object to spheres, like corporate, where thei can work together and join messaging.',
+      'Connector joins other object to spheres, like corporate, where they can work together and join messaging.',
       'Every coOp:ed object carries with it a bunch of information, placardM, and has access to :bind:bing:',
     ];
 
-    //  TODO  if change ton 150, it should be visible variable
+    //  TODO  if change to: 150, it should be visible variable
     boxServe.init(42, 150, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':connector:box:  C: $caller');
     boxServe.build(':connector:box:');
@@ -388,41 +393,30 @@ class Connector extends BaseStruct {
     boxServe.aHeader(
         r4 - 4, m3, '     * answerPole *               * workPole  *  ');
     boxServe.aBox(r4 - 3, m3, 6, 18, tl.mapToList(answerPoleM));
-    // ['Answer Pole:',  'Question:', 'Done:', 'TODO:', 'Problem:', 'All-OK']
     boxServe.aBox(r4 - 3, m4 + 4, 6, 28, tl.mapToList(workPoleM));
-    //['Work Pole:',  'W: Correct errors.', 'W: Style', 'W: Info', 'W: BIND', 'W: BING'] );
 
-    // boxServe.aBox(r1, m4-3, 16, 1, boxServe.verticalLineL);
-    print('--verticalLineL--- ');
-    //  :BUG:  Unhandled exception:
-    //  RangeError: Value not in range: -4
-    //  #0      _StringBase.substring (dart:core-patch/string_patch.dart:363)
-    //  #1      Tools.boxInList (package:dawo/tools.dart:148:27)
-    ///  use instead:
     boxServe.vertLine(r2, m2, 7); //  clause
     boxServe.vertLine(4, m4, 15); //  header & next
     boxServe.vertLine(r4, m2, 6); //   days
     boxServe.vertLine(2, 149, 29); //  Up-right edge
 
-    //print(boxServe.verticalLineL);
-    //  boxServe.aBox(2, 4, 16, 3, boxServe.verticalLineL);
-    //  print('--verticalLineL--- ');
-    // print(boxServe.verticalLineL);
-    // boxServe.aBox(r1, m4+13, 16, 1, boxServe.verticalLineL);
-    //  anchorBox(1, 30, 47, 1, verticalLineL);
-
     boxServe.boxDone(':connector:box:', 'print');
     print('--<<--<<  :connector:box: boxServe  done  --<<--<<--  ');
   }
 
-  ///  Presentation method.
-  void show() {
+
+  //  TODO  :BUG:Funny:error:
+  ///  Presentation method. Trying list as a parameter.
+  //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
+  void show(String action) {
     //  TODO  Make forced print
-    if (_pB) {
+    bool _clB = false;
+    if (_pB && action.contains('buf')) {  //  no good: no-buf !!buf+ ?
       print(':buffer: is printed');
       print(buf);
     }
   }
+
 
   ///  close method
   void done() {
@@ -439,9 +433,6 @@ class Connector extends BaseStruct {
   //   typedef  _conPrint =  void _conPrint(String msg){
   //   if (_pB) print(msg);  }
 
-  ///  Calling print/print-to-buffer function from library: beta.
-  ///  Getting local variables; Actor and Buffer right.
-  ///  Changing to use local -
   void _flowC(String msg, bool prnB) {
     ///  Call flowServe with #LOCAL variables.
     //  TODO  Why not find beta flowServe() ??

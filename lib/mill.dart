@@ -30,10 +30,16 @@ class Mill {
   int jobInQueue = 0;
   int jobsDone = 0;
 
-  bool on = false;
+  ///  4 var to control connectors state, working-condition-state values.
+  ///  DONE: This is now a map.
+  Map<String, bool> st = {
+    'off': true,
+    'on': false,
+    'pause': false,
+    'done': false,
+  };
+
   bool active = false;
-  bool paused = false;
-  bool stopped = false;
 
   String userChoice = '-';
   String autoChoice = '1';

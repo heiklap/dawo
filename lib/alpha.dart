@@ -201,11 +201,21 @@ abstract class BaseStruct {
 
   StringBuffer buf;
 
+  ///  4 var to control connectors state, working-condition-state values.
+  ///  DONE: This is now a map.
+  Map<String, bool> st = {
+    'off': true,
+    'on': false,
+    'pause': false,
+    'done': false,
+  };
+  /*
   ///  controlling objects state, working-condition-state values
   bool offB;
   bool onB;
   bool pauseB;
   bool doneB;
+  */
 
   //  TODO  Add fields for incoming and outgoing data.
   //  var clayIn;
@@ -222,7 +232,8 @@ abstract class BaseStruct {
   void roll();
 
   ///  Presentation method.
-  void show();
+  void show(String action);
+  //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
 
   ///  Close method.
   void done();

@@ -25,6 +25,10 @@ import 'dev/dawo_dev.dart';
 
 import 'src/glb.dart';
 
+//  for box_serve:
+import 'tools.dart';
+import 'package:dawo/src/box_serve.dart';
+
 // ignore: unused_field for those wondering.
 //  Word: stream  9 times
 ///  TODO  Add all those nice boxes, schedule, aso here, or think flow better.
@@ -51,13 +55,23 @@ class DawoApp extends BaseStruct {
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
   String master; //  Object that owns this.
 
-  StringBuffer buf;
+  StringBuffer buf = new StringBuffer();
 
+  ///  4 var to control connectors state, working-condition-state values.
+  ///  DONE: This is now a map.
+  Map<String, bool> st = {
+    'off': true,
+    'on': false,
+    'pause': false,
+    'done': false,
+  };
   ///  Controlling app state, working-condition-state values.
+  /*
   bool offB = true;
   bool onB = false;
   bool pauseB;
   bool doneB = false;
+  */
 
   ///  Organize out.out-buffers to Map for return to package users.
   Map<String, StringBuffer> outMapBuffers = {
@@ -109,8 +123,8 @@ class DawoApp extends BaseStruct {
   ///  Method for setting class in working condition.
   void build(String emblem, String master) {
     ///  NOTE empty parameter now, not used. For chore.build.
-    offB = false; //  off-state ends
-    onB = true; //   app is in on
+    st['off'] = false; //  off-state ends
+    st['on']= true; //   app is in on
 
     ///  Build DevNotes.
     dev.buildNotes('By: :D:-A:', 'In Dawo-App-Build');
@@ -214,7 +228,7 @@ class DawoApp extends BaseStruct {
     appRollMissions(':DA:-roll ');
     rollStream(':D-A:roll:');
     devStream(':D-A:roll:'); //  TODO  Temp  devStream rolled
-    show();
+    show('noPrint, buf, test');
     done();
     //  code here
     return outMapBuffers;
@@ -303,8 +317,63 @@ class DawoApp extends BaseStruct {
     _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }
 
+  ///  Calling boxServe-class for info.
+  void box(String caller) {
+    buf.writeln(':dapp:box:start: C:$caller 123456789-23456789-23456788');
+    print('-->>-->>-- :dapp:box:start: C:$caller  -->>-->>-- ');
+    //  use: boxServe  OR  create own class here
+    //  TODO  set min-max values
+    final int _sw = 190; //  screen width, changed later =>
+    final int _rc = 37; //  row count
+    //  ???  Keep matrix here on callers side all the time
+    List<String> _dapMatrix = new List(_rc);
+    String boxHeader = ':dap:box:';
+
+    print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
+    //  :BUG:  Clear old lists first. ??
+
+    boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
+    boxServe.construct(':dap:box: ');   //  :BUG: C: $caller');
+    boxServe.build(':glb:box:');
+
+    int r9 = 9;
+
+    boxServe.aHeader(1, 4, '* *  States * * ');
+    boxServe.aBox(2, 7, 6, 16, tl.mapToListB(st));
+
+    boxServe.aHeader(1, 60, ' *  DAWO APP INFO  *');
+
+    boxServe.aHeader(2, 22, 'Info:');
+    boxServe.aBox(2, 30, 2, 48, ['$infoS', '$motto']);
+
+    boxServe.aBox(2, 80, 4, 20, ['Agenda', 'Develop', 'Msg:', 'Versions']);
+    boxServe.aBox(2, 92, 5, 20, ['______', '________', '______', '____']);
+
+    boxServe.aHeader(r9-2, 7, 'Buffer:');
+    boxServe.aBox(r9-1, 6, 28, 38, buf.toString().split('\n'));
+    boxServe.vertLine(r9-1, 5, 28); //  phases
+
+    boxServe.aHeader(r9, 50, '* Plans: *');
+    boxServe.aBox(r9+1, 50, 4, 20, ['Plans: ', 'More plans', 'xxxx', 'yyyyy']);
+    boxServe.vertLine(r9, 49, 7); //   plans
+
+    boxServe.aHeader(r9, 80, '* reserved *');
+    boxServe.aBox(r9+1, 80, 5, 15, ['A', 'B', 'C', 'C', ]);
+
+    boxServe.aHeader(r9, 100, '* Clients *');
+    boxServe.aBox(r9+1, 100, 5, 15, ['State', 'Set', 'Puf', 'Print', ]);
+
+    boxServe.vertLine(1, 117, 23); //  Up-right edge
+    boxServe.vertLine(1, 139, 23); //  Up-right edge
+    boxServe.aHeader(1, 120, '* Actions *');
+
+    boxServe.boxDone(boxHeader, 'print');
+    print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
+  }
+
   ///  Show-method to be developed further.
-  void show() {
+  ///  //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
+  void show(String action) {
     if (_pB) {
       print(buf);
       print('-->>-->>----  dawoApp show -->>-->>----');

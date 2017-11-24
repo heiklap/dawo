@@ -80,7 +80,7 @@ void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   String header = 'fs:'; //  $pr:  If want true / false.
   String text = '$actor$header$_flowIS $msg ';
   //  && glb.st['flow']  /   Shortens output from 24 to 22 screens.
-  if (pr && glb.st['flow']) print(text); // When needed  :flowServe:test:
+  if (pr && glb.prSt['flow']) print(text); // When needed  :flowServe:test:
   // DONE:  Now _buf comes from caller in parameters.
   buf.writeln('$text');
   //  buf.writeln('$actor $_flowIS $msg');

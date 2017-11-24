@@ -80,8 +80,9 @@ main() {
   exInfo('==>>==>>==   dawo_example    ==>>==>>==');
 
   print(':glb:print:states:  set to false. only :buf: used');
-  print(glb.st);
+  print(glb.prSt);
   print('-- Change print status: glb.setGlbPrint(true or false) ------');
+  glb.box(dexS);
 
   exInfo('==>>==>>==   dawo_example  awesome: ${awesome.isAwesome}');
 
@@ -97,6 +98,7 @@ main() {
 
   exampleMethodsPlay(); //  Add more 13 screens output.
   bind.report('$dexS');
+  dawoApp.box(dexS);  //  2. time here-
 
   exInfo('    ==<<==<<==    dawo_example done    ==<<==<<==');
 

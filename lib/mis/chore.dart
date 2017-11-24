@@ -87,21 +87,24 @@ class CommonChore extends BaseStruct {
   String master; //  mission, that owns this chore. Like : 'packDawo'
   var sister; //  get other same-group chores via master/Mission choreL
   //  or via up-level choreL list.
+
+  ///  4 var to control connectors state, working-condition-state values.
+  ///  DONE: This is now a map.
+  Map<String, bool> st = {
+    'off': true,  ///  Controlling chores state, working-condition-state values.
+    'on': false,
+    'pause': false,
+    'done': false,
+  };
+
   ///
   var circle; //  Other Chores, that we can join.
   void join(circle) {}
 
   StringBuffer buf = new StringBuffer();
 
-  ///  Controlling chores state, working-condition-state values.
-  bool offB = true;
   //TODO  deliberated error to find error in build usage.
   bool errorInBX = false; // TODO  temporary, to find error
-  bool onB = false;
-  // onB bool;  out temporarily
-
-  bool pauseB;
-  bool doneB = false;
 
   ///  Testing placardM inside chore.
   ///  Present info for outer process calls.
@@ -132,10 +135,10 @@ class CommonChore extends BaseStruct {
     emblem = _emblem; //  set master and emblem fields.
     master = _master;
     //  TODO  Initialized?  Where?
-    if (onB == true) print('\n ALREADY INITIALIZED BUILD CHORE  \n');
+    if (st['on'] == true) print('\n ALREADY INITIALIZED BUILD CHORE  \n');
     //  print(onB);
-    offB = false; //  off-state ends
-    onB = true; //   app is in on
+    st['off']  = false; //  off-state ends
+    st['on'] = true; //   app is in on
     _flowC('<--  chore build  $name done --<----<-- ', _pB);
   }
 
@@ -178,7 +181,7 @@ class CommonChore extends BaseStruct {
     op(placardM); //  Actually map is yet not used there.
     //  loop
 
-    show();
+    show('no-print, buf, test');
     done();
     //  code here
     _flowC('<-- ch roll: $name  done --<----<--', _pB);
@@ -245,11 +248,12 @@ class CommonChore extends BaseStruct {
   }
 
   ///  Usual presentation method.
-  void show() {
+  //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
+  void show(String action) {
     _flowC('--> ch show:  $name -->---->--', _pB);
     //  print(buf);
     ///  :TEST: :glb:ifPrint:  Is false: so should not print buf.
-    if (glb.st['buf']) {
+    if (glb.prSt['buf']) {
       print('bbbbbbbbbb chore.show  choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
       print(choreBuf);
       print('bbbbbbbbbb chore.show  choreBuf done bbbbbbbbbbbbbbbbbbbbbb');
@@ -265,7 +269,7 @@ class CommonChore extends BaseStruct {
     String _s3 = '** $infoS';
     String _s4 = '** $motto';
     String _s5 = '** Master:   $master  Emblem: $emblem';
-    String _s6 = '** Off: $offB   On: $onB   Paused: $pauseB    Done: $doneB';
+    String _s6 = '** Off: $st.toString';
     String _s7 = '** $rowInfoS';
     String _s8 = '** ';
     String _s9 = '** ';
@@ -277,7 +281,8 @@ class CommonChore extends BaseStruct {
 
   ///  get
   String rowInfo() {
-    String _s = '$name  m: $motto on: $onB off: $offB p: $pauseB d: $doneB ';
+    //  on: $st['on] off: $off p: $pause d: $done
+    String _s = '$name  m: $motto $st.toSgtring ';
     return _s;
   }
 

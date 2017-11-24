@@ -86,6 +86,8 @@ class Dev {
       ..add('NEXT: User simulated data for actions. Server-client ?.')
       ..add('NEXT; SearchList of important dawo terms to example-file :con:m:')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
+      ..add('boxServe: box-output for dawoApp & glb. More st-Maps in classes.')
+      ..add('Map state; st added to some classes.')
       ..add('boxServe: box-output for bind and connector AND to everybody.')
       ..add('Hide  ALL  flow-output. Do it with :glb: user parameters.')
       ..add('Enhancement: folders #corp #mis and #dev to group files.')
@@ -369,6 +371,3 @@ void addDawoDevNotes() {
   //  code here.
   print('--  not clear yet, how this must be done  -- \n');
 }
-
-
-

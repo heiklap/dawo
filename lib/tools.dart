@@ -212,6 +212,17 @@ class Tools {
     return _l;
   }
 
+  ///  Return list<String> from map<String, Bool>.
+  List<String> mapToListB(Map<String, bool> thisMap) {
+    List<String> _l = [];
+    thisMap.forEach((k, v) {
+      String _s = '';
+      _s = '$k, $v';
+      _l.add(_s);
+    });
+    return _l;
+  }
+
   ///  print Map<String, Map<String, String>>  map nicely
   void printStringMapMap(Map<String, Map<String, String>> _map) {
     int _length = _map.length;

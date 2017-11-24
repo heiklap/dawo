@@ -25,6 +25,7 @@ class BoxServe {
   //  build('$_caller :roll:');
 
   ///  Initialize measure values by parameters
+  ///  //  TODO  set min-max-maxWidthString values
   void init(int h, w, String _pm) {
     pm = _pm;
     ///  Use default, unless parameters are > 0
@@ -32,6 +33,7 @@ class BoxServe {
       rc = h;
       sw = w;
     }
+    // :BUG: in headerLine logo length
     verticalLineL.addAll(tl.strToList('|', rc - 2));
     String rowS = ' '.padRight(sw);
     for (var x = 0; x < rc; x++) {   //  add to matrix rc items.
@@ -47,15 +49,17 @@ class BoxServe {
       //  TODO  choose nice background mark for matrix.
       //  pad with low-density mark.
       _matrix[z] = '$_fakeRow '.padRight(sw, pm);  //  NO: '-'
-    }
+    };
     String m0ro = '--m-boxServe--$_caller-------';
     int m0roI = m0ro.length;
     String m0row = m0ro.padRight(sw, pm);
     _matrix[0] = m0row;
-
     //  TODO  StampLeft ' '  // there is pm ! = ' '
     ///  Last row of matrix for range-10 marks; NOTE: rc - 1
-    String bRowLong = '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70'.substring(0, sw);
+    String bRowLong = '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70-----';
+    //  :BUG:  TODO  Make sure that this row is ==  sw !!!
+    //.substring(0, sw);
+
     String bRow = bRowLong.substring(0,sw);
     _matrix[rc-1] = bRow;
     //   '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
@@ -101,6 +105,10 @@ class BoxServe {
     if (action == 'print') _matrix.forEach(print);  //  only way!!
     //  return _matrix;  //  if type is: List<String>
     _matrix.clear();
+    //  :BUG:  so clear all
+    _resAllocL.clear();
+    verticalLineL.clear();
+    _fakeRow = 100;
   }
 
   ///  TODO : Constructor, to give shapes and measures

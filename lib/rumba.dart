@@ -111,6 +111,7 @@ class Rumba {
         String rumbaLoopUsherS = '**  usherLoop is rolling  **';
 
         ///  duplicating this to get ListOverArea-message
+        ///  duplicating this to get ListOverArea-message
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
         String connectorMsg =
             ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
@@ -165,7 +166,8 @@ class Rumba {
           dawoAppB = false; //  force loop to run only once.
         } while (dawoAppB);
         _flowC('      --<----<--  rumba-dawo-app: done', true);
-
+        ///
+        dawoApp.box(':rumba:');
         usherB = false; //  force loop to run only once.
       } while (usherB);
       _flowC('    --<----<--  rumba-loop-usher: done', true);
