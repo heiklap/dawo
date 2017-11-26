@@ -1,14 +1,15 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  bind   bindings between objects.
-///  * Using #resolve library
+///  ##  bind   #LANG and #CLAUSE based bindings between objects.
+///  * Using #resolve library with #dawolang to solve bind-literal-Strings.
 ///
 ///  dawo version: 0.0.5  6.11.2017.   READY-STATE  for version 0.0.6  0%
-/// *      GitHub:
-/// * Hist:hkl  18.11.2017  Moved stuff from connector.
+/// *   GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/bind.dart
+/// * Hist:hkl  18.11.2017  Moved stuff here from connector.
+/// * devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
 
-library bind.dart;
+library bind;
 
 import '../beta.dart';
 //  import 'resolve.dart';
@@ -20,6 +21,7 @@ class Bind {
   String emblem = ':bind:'; //  header for messages.
   StringBuffer buf = new StringBuffer();
 
+  ///  List of #LANG and #CLAUSE based String-bindings between objects.
   List<String> bindL = ['*  :bind: bind-list  *'];
 
   ///  Share / answer type of bind-actions.
@@ -121,7 +123,7 @@ class Bind {
     print('--------------------------- unknown: --------------------');
     //  bindingM['unknown'].forEach((k, v) => print('$k $v'));
     print(bindingM['unknown']);
-    print('------------------------------------------------------');
+    print('---------- :bind:report C: $caller   done  -----------------');
     return l;
   }
 
@@ -133,6 +135,7 @@ class Bind {
     return _s;
   }
 
+  ///  Normal conditional buffer/print-call to wake flowServe.
   void _flowC(String msg, bool prnB) {
     ///  Call flowServe with #LOCAL variables.
     //  TODO  Why not find beta flowServe() ??

@@ -1,8 +1,10 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  # dawo clay  myTime
-///  * Presenting data for dawo-chore system.
-//  dawo version:   0.0.5  6.11.2017
+///  * Presenting data for dawo-myTimeMission and it's chore system.
+///  * All missions can (PLAN:) contact and co-work other objects in dawo.
+///  * PLAN: connect to outside time-management and productivity tools.
+///  * version:   0.0.6 :  27.11.2017  -  devState: 30%
 
 //
 library myTime;
@@ -11,8 +13,10 @@ library myTime;
 class MyTime {
   String name = 'My Time class';
 
+  ///
   Map<String, Map<String, String>> myTimeClayM = {};
 
+  ///
   Map<String, String> dayM = {
     'Monday': 'Dartlang, Music',
     'Tuesday': 'Boating, outdoor',
@@ -54,12 +58,14 @@ class MyTime {
     ///
   };
 
+  ///
   void buildMaps() {
     myTimeClayM
         .addAll({'dayMap': dayM, 'dayTimes': dayTimes, 'workHours': workHours});
   }
 } //  -----  class MyTime
 
+///
 void renderWorkingWeek() {
   var wW = new MyTime();
   wW.dayM;

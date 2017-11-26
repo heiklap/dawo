@@ -14,7 +14,6 @@ library glb;
 import 'box_serve.dart';
 import '../tools.dart';
 
-
 ///  Global, everybody to use variables and constants.
 class GlobalClass {
   // Aka, you have some property StringSink output. All of your code writes
@@ -30,8 +29,7 @@ class GlobalClass {
   ];
 
   ///  Records changes to states
-  List<String> actionL = [
-    ];
+  List<String> actionL = [];
 
   StringBuffer buf = new StringBuffer();
 
@@ -95,7 +93,6 @@ class GlobalClass {
     boxServe.aHeader(2, 42, 'Info:');
     boxServe.aBox(2, 50, 2, 70, infoL);
 
-
     boxServe.aHeader(6, 30, 'Phases:');
     boxServe.aBox(7, 30, 5, 5, ['Play', 'Test', 'Code', 'Again']);
     boxServe.vertLine(6, 29, 7); //  phases
@@ -105,10 +102,20 @@ class GlobalClass {
     boxServe.vertLine(6, 49, 7); //   plans
 
     boxServe.aHeader(6, 80, '* reserved *');
-    boxServe.aBox(7, 80, 5, 15, ['A', 'B', 'C', 'C', ]);
+    boxServe.aBox(7, 80, 5, 15, [
+      'A',
+      'B',
+      'C',
+      'C',
+    ]);
 
     boxServe.aHeader(6, 100, '* Clients *');
-    boxServe.aBox(7, 100, 5, 15, ['State', 'Set', 'Puf', 'Print', ]);
+    boxServe.aBox(7, 100, 5, 15, [
+      'State',
+      'Set',
+      'Puf',
+      'Print',
+    ]);
 
     boxServe.vertLine(1, 117, 13); //  Up-right edge
     boxServe.vertLine(1, 139, 13); //  Up-right edge

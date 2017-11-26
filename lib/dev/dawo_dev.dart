@@ -31,7 +31,7 @@ import '../tools.dart';
 num dawoDevReadiness = 94;
 
 ///  Buffer also outside class, for testing and adding visibility.
-var devBuf = new StringBuffer();
+//  StringBuffer devBuf = new StringBuffer();  //  notUsed
 
 ///  Collect dev stuff to Dev class, to help in development of package.
 class Dev {
@@ -83,9 +83,11 @@ class Dev {
 
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
+      ..add('NEXT: Internal systematics. Most critical improvements.')
       ..add('NEXT: User simulated data for actions. Server-client ?.')
       ..add('NEXT; SearchList of important dawo terms to example-file :con:m:')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
+      ..add('NEXT: Version 0.0.6 changes, and publish to pub and gitHub.')
       ..add('boxServe: box-output for dawoApp & glb. More st-Maps in classes.')
       ..add('Map state; st added to some classes.')
       ..add('boxServe: box-output for bind and connector AND to everybody.')
@@ -362,8 +364,8 @@ class DevHelp {
 //
 
 ///  Renamed class to: devHelp in 0.0.3.
-///  dh  would be nice name.
-var devHelp = new DevHelp();
+///  TODO  devHelp  dh  would be nice name.
+var devHelp = new DevHelp(); //  Usage: example/app_chore_play.dart
 
 ///  #howTo do these?
 void addDawoDevNotes() {

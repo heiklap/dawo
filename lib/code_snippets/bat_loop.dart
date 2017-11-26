@@ -1,4 +1,4 @@
-///  Do not produce to dawoApp.  Just sample code-snippets.
+///  This lib do not participate to dawoApp: here are only sample code-snippets.
 ///  Some useful copy-paste stuff for learning simple functions.
 ///  GOAL: find common, reusable elements for control-flow, and develop
 ///  names, and ideas-

@@ -1,10 +1,12 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-/// mill, in very early development state.
-/// * Usability: 1%
-/// dawo version:  0.0.5  6.11.2017   ready-state for 0.0.6 : 0 %
-/// - hist:  hkl  8.9.2017 created
-/// - work-scheduling system, got flag class from dawo_app
+/// # Mill, fine-graded command / event scheduling system.
+/// * State: Just an long developed idea, in very early development state.
+/// * Usability: 1%  IDEA: Clear, but got no time to implement it.
+/// * work-scheduling system, got flag class from dawo_app.
+/// * Version:  0.0.6 :  27.11.2017  -  Ready-state for 0.0.7 : 0 %
+// - hist:  hkl  8.9.2017 created
+
 //
 
 library mill;
@@ -12,8 +14,6 @@ library mill;
 ///  Buffer also outside class, for testing and adding visibility.
 var millBuf = new StringBuffer();
 
-///  teamInno -- plan for controlling  this apps states and behaviour
-///  Low level work-flow "flags" are in dawlib.....
 ///  Will eventually be some kind of #mill, that controls all #job's
 ///  Keeps track of the privileges and performance of the assignments.
 ///  Names might be:  millRoll  and millFlag

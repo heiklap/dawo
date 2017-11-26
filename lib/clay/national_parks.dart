@@ -1,8 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  # dawo clay Finlands national park
-///  * Presenting data for dawo-chore system.
-//  dawo version:   0.0.5  6.11.2017
+///  # dawo clay: Finlands national parks.
+///  * Presenting data for dawo-Mission and it's chore system.
+///  * dawo version:   0.0.6 :  27.11.2017
 
 //
 library nationalParksFinland;
@@ -61,6 +61,7 @@ class NationalParks {
         'Valkmusa s extensive natural open bogs give visitors a chance to wind down and see, hear, smell and even taste nature all around.     http://www.nationalparks.fi/valkmusanp'
   };
 
+  ///
   void buildMaps() {
     nationalParksClayM.addAll({'Finlands National Parks': parksM});
   }

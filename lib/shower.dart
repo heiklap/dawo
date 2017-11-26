@@ -1,10 +1,14 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Shower  -  presentation info and data screens.
-///
-///  dawo version: 0.0.5  6.11.2017.   READY-STATE  for version 0.0.6  0%
-/// *      GitHub:
-/// * Hist:hkl  3.11.2017  0.0.4  presentation tools for dawo
+///  New box_serve makes this better: makes only frames and keep clients data
+///  in client side.  This file might eventually fade out.
+///  * dawo version: 0.0.6  27.11.2017.  devState: 90%
+///  *      GitHub: yes.
+///  * NEXT: Study, what can not be moved to box_serve.
+///  * SCHEDULE might deserve it's own class.
+///  * SCHEDULE: No hurry, 0.1.X
+// * Hist:hkl  3.11.2017  0.0.4  presentation tools for dawo
 //
 
 library shower.dart;
@@ -403,10 +407,8 @@ class ScheduleCon {
     //  lHeader(10, 123, '*  bind.bindL *');
     anchorBox(16, 123, 14, 50, bind.bindL);
 
-
     //  lHeader(20, 123, '*  connector.inMsgL *');
     anchorBox(31, 123, 14, 50, connector.inMsgL);
-
 
     //  Add screen-high-2 vertical lines marked with: |
     anchorBox(1, 30, 47, 1, verticalLineL);
@@ -426,8 +428,6 @@ class ScheduleCon {
 } //  -----  class ScheduleBox
 
 var scheduleCon = new ScheduleCon();
-
-
 
 ///  Gets some small data from effortLM based on parameters.
 List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {

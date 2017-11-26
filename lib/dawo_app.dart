@@ -1,12 +1,13 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  App class
-///  Primary functionality:  engage missions.
-///  Some information about app, and little controls.
+///  ##  dawoApp class
+///  Primary functionality:  build, roll and rollMissions.
+///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-///  dawo version:  0.0.5  6.11.2017
-/// * ReadyState:  for version 0.0.6  0%  in GitHub  yes
-/// * hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   basic status of dawo
+/// * dawo version:  0.0.6 :  27.11.2017
+/// * ReadyState:  for version 0.0.7.  -  0%  in GitHub : yes
+/// * NEXT:  Reconstruct class.  Separate hist to own class.
+// hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   basic status of dawo
 //
 
 library dawo_app.dart;
@@ -27,11 +28,10 @@ import 'src/glb.dart';
 
 //  for box_serve:
 import 'tools.dart';
-import 'package:dawo/src/box_serve.dart';
+import 'src/box_serve.dart';
 
 // ignore: unused_field for those wondering.
-//  Word: stream  9 times
-///  TODO  Add all those nice boxes, schedule, aso here, or think flow better.
+//  Word: stream  9 / 32  times
 
 ///  Getter practice.
 num dawoAppReadiness = 95; //  changed: 2.5.2015
@@ -40,6 +40,7 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 var appBuf = new StringBuffer();
 bool _pB = false; //  No printing now.
 
+//  TODO  DawoApp class to reconstruct and maybe split to 2.
 ///  Every important dawo Class extends BaseStruct abstract class.
 ///  Class that holds 'soul' of THIS dawo app.
 class DawoApp extends BaseStruct {
@@ -65,13 +66,6 @@ class DawoApp extends BaseStruct {
     'pause': false,
     'done': false,
   };
-  ///  Controlling app state, working-condition-state values.
-  /*
-  bool offB = true;
-  bool onB = false;
-  bool pauseB;
-  bool doneB = false;
-  */
 
   ///  Organize out.out-buffers to Map for return to package users.
   Map<String, StringBuffer> outMapBuffers = {
@@ -111,7 +105,7 @@ class DawoApp extends BaseStruct {
 
   ///  Initialize class values to beginning state.
   void init() {
-    //  TODO  Actor:  only one actor for now...
+    //  TODO  Actor:  only one actor for now... But class Actor in alpha.dart
     glb.changeActor(':DAWO-APP:');
     //  TODO  Set some field values.
     _flowC('  -->-da->  DawoApp buffer output initialized  ---', _pB);
@@ -124,7 +118,7 @@ class DawoApp extends BaseStruct {
   void build(String emblem, String master) {
     ///  NOTE empty parameter now, not used. For chore.build.
     st['off'] = false; //  off-state ends
-    st['on']= true; //   app is in on
+    st['on'] = true; //   app is in on
 
     ///  Build DevNotes.
     dev.buildNotes('By: :D:-A:', 'In Dawo-App-Build');
@@ -333,7 +327,7 @@ class DawoApp extends BaseStruct {
     //  :BUG:  Clear old lists first. ??
 
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':dap:box: ');   //  :BUG: C: $caller');
+    boxServe.construct(':dap:box: '); //  :BUG: C: $caller');
     boxServe.build(':glb:box:');
 
     int r9 = 9;
@@ -349,19 +343,30 @@ class DawoApp extends BaseStruct {
     boxServe.aBox(2, 80, 4, 20, ['Agenda', 'Develop', 'Msg:', 'Versions']);
     boxServe.aBox(2, 92, 5, 20, ['______', '________', '______', '____']);
 
-    boxServe.aHeader(r9-2, 7, 'Buffer:');
-    boxServe.aBox(r9-1, 6, 28, 38, buf.toString().split('\n'));
-    boxServe.vertLine(r9-1, 5, 28); //  phases
+    boxServe.aHeader(r9 - 2, 7, 'Buffer:');
+    boxServe.aBox(r9 - 1, 6, 28, 38, buf.toString().split('\n'));
+    boxServe.vertLine(r9 - 1, 5, 28); //  phases
 
     boxServe.aHeader(r9, 50, '* Plans: *');
-    boxServe.aBox(r9+1, 50, 4, 20, ['Plans: ', 'More plans', 'xxxx', 'yyyyy']);
+    boxServe
+        .aBox(r9 + 1, 50, 4, 20, ['Plans: ', 'More plans', 'xxxx', 'yyyyy']);
     boxServe.vertLine(r9, 49, 7); //   plans
 
     boxServe.aHeader(r9, 80, '* reserved *');
-    boxServe.aBox(r9+1, 80, 5, 15, ['A', 'B', 'C', 'C', ]);
+    boxServe.aBox(r9 + 1, 80, 5, 15, [
+      'A',
+      'B',
+      'C',
+      'C',
+    ]);
 
     boxServe.aHeader(r9, 100, '* Clients *');
-    boxServe.aBox(r9+1, 100, 5, 15, ['State', 'Set', 'Puf', 'Print', ]);
+    boxServe.aBox(r9 + 1, 100, 5, 15, [
+      'State',
+      'Set',
+      'Puf',
+      'Print',
+    ]);
 
     boxServe.vertLine(1, 117, 23); //  Up-right edge
     boxServe.vertLine(1, 139, 23); //  Up-right edge

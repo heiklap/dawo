@@ -1,7 +1,9 @@
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  # dawo clay  myMusic
-///  * Presenting data for dawo-chore system.
-//  dawo version:   0.0.5  6.11.2017
+///  * Presenting data for dawo musicMission -chore system in music area.
+///  * Includes simple Map data, that may be presented by objects box-method.
+///  * version:   0.0.6  27.11.2017
 
 //
 library myMusic;
@@ -82,6 +84,7 @@ class MyMusic {
     '16	': 'Rock'
   };
 
+  ///
   void buildMaps() {
     myMusicClayM.addAll({
       'myMusic': myMusicM,

@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Chore for organizing work flow.  dawo version:  0.0.5  6.11.2017
+///  ##  Chore for organizing work flow.  Version:  0.0.5 :  6.11.2017
 ///  Ready-state: for 0.0.6 > 0%   In  GitHub:   yes
 ///
 ///  Primary functionality: get notes-list aso data from input/clay
@@ -46,7 +46,7 @@ num dawLibWorkReadiness = 94; // for version  0.0.1
 ///  Buffer also outside class, for testing and adding visibility.
 ///  TODO  Chore buffer. Chore do not have #outBuffer.
 ///  Little dumb: is this for ALL chores?
-var choreBuf = new StringBuffer();
+StringBuffer choreBuf = new StringBuffer();
 
 bool _pB = false; //  Not printing now.
 ///  TODO  Temporary hack.
@@ -84,6 +84,7 @@ class CommonChore extends BaseStruct {
   String seal; //   No usage
   String emblem; //  or this emblem.  like:  ":DAWO-APP:";
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+
   String master; //  mission, that owns this chore. Like : 'packDawo'
   var sister; //  get other same-group chores via master/Mission choreL
   //  or via up-level choreL list.
@@ -91,7 +92,9 @@ class CommonChore extends BaseStruct {
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
   Map<String, bool> st = {
-    'off': true,  ///  Controlling chores state, working-condition-state values.
+    'off': true,
+
+    ///  Controlling chores state, working-condition-state values.
     'on': false,
     'pause': false,
     'done': false,
@@ -137,7 +140,7 @@ class CommonChore extends BaseStruct {
     //  TODO  Initialized?  Where?
     if (st['on'] == true) print('\n ALREADY INITIALIZED BUILD CHORE  \n');
     //  print(onB);
-    st['off']  = false; //  off-state ends
+    st['off'] = false; //  off-state ends
     st['on'] = true; //   app is in on
     _flowC('<--  chore build  $name done --<----<-- ', _pB);
   }
@@ -189,8 +192,9 @@ class CommonChore extends BaseStruct {
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission  * * *
-  var decision;
-  var decisionChain;
+  ///  Action class from alpha
+  Action decision;
+  Map<String, Map<String, Action>> decisionChainMM;
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?

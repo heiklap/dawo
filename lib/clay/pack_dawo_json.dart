@@ -1,3 +1,4 @@
+///  JSON data for packDawo.  -  dawo version  0.0.6 : 27.11.2017
 ///  While waiting for server-client to import json.data
 
 library packDawoJson;

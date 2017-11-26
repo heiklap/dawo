@@ -1,8 +1,10 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-
-///  previous #common operate from beta.dart aso. is here
-///  history: 2017.11.13.   development-state: 5%
+///  ##  Corporate,  enterprise-like entity.  Dawo version:  0.0.6
+///  * Holds: Affairs, Stores, takes Order's, makes Jobs in phases.
+///  * previous: #common operate from beta.dart aso. is here
+///  * devState:  10%,   PLAN:  do simple demo / presentation.
+//  history: 2017.11.13.   development-state: 5%
 
 library corporate;
 
@@ -11,10 +13,17 @@ library corporate;
 //  import 'beta.dart';
 import '../shower.dart'; //  for devBox
 import 'affair.dart';
+import 'store.dart';
 
 ///  Here objects work together after #connector joins them to system.
 class Corporate {
   String name = 'corporate-united';
+
+  ///  All the affairs, that this corporate owns.
+  Map<String, Affair> affairM = {'dawoApp': affair};
+
+  ///  All the stores, that this corporate owns.
+  Map<String, Store> storeM = {'Store-1': store};
 
   //  Some Map to simulate activity
   Map<String, String> phaseM = {

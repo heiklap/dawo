@@ -1,14 +1,17 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Rumba : maintaining main loops of app - mission
-///  Primary functionality:  loop, inside it: dawoApp
-///  dawo version:  0.0.5  6.11.2017   ReadyState for 0.0.6 = 0%
-///  in GitHub  yes
-///  Program might have a certain amount of 'self consciousness'. This is start.
+///  ##  Rumba : Loop, that runs dawoApp and some other stuff.
+///  Runs it's loops forced, only once, without possibility of user action.
+///  * Primary functionality:  loop, inside it: dawoApp
+///  * dawo version:  0.0.6 :  27.11.2017  -   functionality: 70%
+///  * in GitHub :  yes  NEXT: parameters for output?
+///  * NEXT: bool values, that stop loops #FromInside dawo-app.
+///  * If program parts have a certain amount of 'self consciousness' or other
+///  . upper level activities, they are engaged from here.
 ///
-/// * hkl  14.9.2017  dawo/lib  rumba.dart   main loop of dawoApp
-///
-/// Visibility:  only dawo_src.dart sees this class
+// history:  hkl  14.9.2017  dawo/lib  rumba.dart   main loop of dawoApp
+//
+///Visibility:  only dawo_src.dart sees this class
 
 library rumba.dart;
 
@@ -33,10 +36,13 @@ class Rumba {
   bool dawoAppB = false;
   bool missionB = false;
 
+  ///  control for printing.
   bool _pB = false;
 
+  ///  Loop counter.
   int rumbaCount = 0;
 
+  ///  Info about *this* actor.
   Map<String, String> placardM = {
     'actor': 'Rumba',
     'sender': 'Rumba instance',
@@ -166,6 +172,7 @@ class Rumba {
           dawoAppB = false; //  force loop to run only once.
         } while (dawoAppB);
         _flowC('      --<----<--  rumba-dawo-app: done', true);
+
         ///
         dawoApp.box(':rumba:');
         usherB = false; //  force loop to run only once.

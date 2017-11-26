@@ -1,12 +1,13 @@
 /// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 /// is governed by a BSD-style license that can be found in the LICENSE file.
-///
-/// Beginner Dart programmers kickoff to develop a glorious pub package; dawo
-/// dawo version:  0.0.5  6.11.2017  :  Ready-state for 0.0.6  0 %
+///  ##  Dawo,  learning Dartlang project.
+/// Beginner Dart programmers kickoff to develop a glorious pub package; dawo.
+/// Make it big, complicated; then organize, and make internal systematics.
+/// dawo version:  0.0.6 :  27.11.2017  :  Ready-state for 0.0.7  0 %.
 ///
 /// Hist: hkl  22.5.2014  0.0.1  dawo/lib, in pub and GitHub
-// devNote: Dawo, started dev,  nothing special.
-//    dawolang:    //  path dependency
+//  devNote: Dawo, started dev,  nothing special.
+//  My other package:  dawolang:    //  pub 0.0.1 or path dependency.
 //      path: C:\..\Public\..\dawolang
 
 library dawo;

@@ -36,7 +36,6 @@ int flowI = 0; // flow-counter.
 bool _betaPB = true; //  control for printing.
 
 //  hklTry this out now.
-// typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
 //  Typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
 
 void ifPrint(Object obj, bool _b) {

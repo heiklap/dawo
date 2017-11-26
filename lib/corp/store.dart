@@ -1,18 +1,22 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-
-///  Here are streams, supply and demand, all in store
-///  history: 2017.11.13.   development-state: 5%
-///
-///  TODO  all methods are:  supplyX and  demandX
-///
-///
+/// ## Store is, or simulates: shop, or market place, serving and selling.
+/// Here it is stream-based.
+///  * Here are streams, supply and demand, all in store, and they: deliver.
+///  * dawo version: 0.0.6  27.11.2017.  devState: 3%
+///  * NEXT: when main methods are sync, it is hard to find practical usage.
+///  * NEXT: try box_serve for output-
+///  * OutPut:  :demand:stream: search gives 15 results in output.
+//  history: 2017.11.13.   development-state: 5%
+//
+// TODO  all methods are:  supplyX and  demandX
 //
 
 library store;
 
 import 'dart:async';
 
+///
 class Store {
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
@@ -29,6 +33,8 @@ class Store {
   ///  better name, we think for different nature of them, One is quick, one is
   ///  slow, and one: we-do-not-mind: wait, but not synchronously: like queue.
   ///  So: "joint"Order, ...""Chain, ""Queue  #TODO  Name
+  ///  USAGE:  dawoApp uses this 4 times.
+  ///  :demand:stream search gives 15 results in output
   ///  ***********************************************************************
   void demandStream(String caller, var streamData, var streamListen) {
 //  var data = streamData; // some sample data
@@ -38,7 +44,7 @@ class Store {
     stream.listen((value) {
       //
       print('\n--- :stream: #phase:1 bLib:demandStream Listened     ---');
-      print("   :stream: #phase:2:value:  $value"); // onData handler
+      print("   :demand:stream: #phase:2:value:  $value"); // onData handler
       print('---  :stream: #phase:3:ok  caller: $caller        OK    --- \n');
     });
   }

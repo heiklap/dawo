@@ -1,6 +1,6 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  dawo clay  main library
-///  presenting data for dawo-chore / mission system
+///  ##  dawo clay  main library
+///  presenting incoming data for dawo-chore / mission system
 ///  dawo version:   0.0.5  6.11.2017
 
 //

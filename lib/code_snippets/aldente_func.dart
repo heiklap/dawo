@@ -1,5 +1,5 @@
 ///  ##     AlDente-functions in dawo
-///  Do not produce to dawoApp.  Just sample code-snippets.
+///  This lib do not participate to dawoApp: here are only sample code-snippets.
 ///  Bunch of simple functions, acting variously, mostly boolean conditions.
 ///  Including some funny logical-naming-errors, where name do not correspond to
 ///  functionality.  Seeking common, reusable functions.

@@ -1,9 +1,11 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Home of dawo libraries
-/// * dawo version: 0.0.5  56.11.2017  READY-STATE: for 0.0.6 : 0 %
-///
-/// * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
+///  ##  Sample file made by Dart.  "Home of dawo libraries."
+/// * Badly treated and would deserve more love than I have to give.
+/// * Might serve as a collector or central for it's sub-libraries.
+/// * dawo version: 0.0.6 :  27.11.2017  READY-STATE: for 0.0.7 : 0 %
+/// *
+// * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
 ///
 
 //  TODO  teamEdu  ---------   notes are essential part of dawo package ------
@@ -30,13 +32,6 @@ import 'mis/chore.dart';
 import 'mis/effort.dart';
 import 'mis/missions.dart';
 
-//  Only connector needs this.
-//  export 'package:dawolang/dawolang.dart';
-
-//  *team* became independent. How to use team in future.. that's the question.
-//  *team* was collaboration system to serve as tool for dawo development.
-//  Small elements of team are presented.
-
 // #Team teamAdm  'favorite Dev, kill inno :), save money & time'
 //       teamDev  'create fine new complicated things'
 //       teamEdu   'this works, show it to everybody'
@@ -51,8 +46,6 @@ import 'mis/missions.dart';
 //  TODO  Should make alphabetical .txt  list of suggestions & not-used things.
 
 part 'src/awesome.dart';
-
-//  TODO  teamNext   not yet :  part 'wrap_game_loop.dart';
 
 ///---------------------  count how long way to 0.0.1 version
 num dawoDartReadiness = 92;
@@ -83,10 +76,9 @@ Map getClay(String _mapS) {
   return _retM;
 }
 
-///  NOTE: Need to create instance of BLib class here?
-
 ///  Example of library usage: dawo_app can be accessed from here,
 ///  but users of package can access it only by importing it.
+
 ///  All render.. functions are tests or example-like files.
 StringBuffer renderDawo() {
   print('\n ---------------  renderDawo rolling -------------------------');
@@ -94,8 +86,6 @@ StringBuffer renderDawo() {
   renderBuffer.writeln('\n ------ renderBuffer starting  ------------ \n');
 
   var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
-
-  //TODO  where is this? var dawoFlags = new Dawo
 
   dawoApp.agenda; //  Just naming it.
 
@@ -108,12 +98,10 @@ StringBuffer renderDawo() {
   /// -------------------------------- testing  getters and setters
   /// HINT:  with getters you can make code, that works NOW
   /// -------------       bool.. use some getters for testing
-//  NOTE: howTo:   getters can not be defined withing methods or functions;
-//  bool get dawoOn   => dawoFlags.on;
-//  bool get dawoActive => dawoFlags.active;  //  stupid name
-  //TODO  where did this go?  var dawoOn = dawoFlags.active;
+  //  NOTE: howTo:   getters can not be defined withing methods or functions;
+  //  bool get dawoOn   => dawoFlags.on;
+  //  bool get dawoActive => dawoFlags.active;  //  stupid name
   //  dawoOn; //  just naming it
-  //TODO  var dawoActive = dawoFlags.active;
   //  dawoActive;
 
   renderBuffer.writeln('------- renderBuffer data--------------------- \n');

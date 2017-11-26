@@ -1,9 +1,10 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  equipment.dart  resources for Mission and Chore.
-///  * Dawo version 0.0.5  6.11.2017    ready state for 0.0.6 : 0%
+///  ## equipment  :  material resources for Mission and Chore.
+///  * No objects, but:  String-values for simple demo and presentation.
+///  * Dawo version 0.0.6  27.11.2017    ready state for 0.0.7 : 0%
 ///  * Instance as:  equ
-//
+///
 
 library equipment;
 
@@ -27,6 +28,7 @@ class Equipment {
   String unknown = 'unknownR';
   List<String> resL = [];
 
+  ///
   void init(String caller) {
     print('-->-->   **  resource-init by:  $caller   ****');
     if (resL.length == 0) {
@@ -34,6 +36,7 @@ class Equipment {
     }
   }
 
+  ///  representation on aerial entities
   List<String> areas = [
     'Area-Hall',
     'A-Warehouse',
@@ -45,6 +48,7 @@ class Equipment {
     'Electric-center'
   ];
 
+  ///  That's what you drive.
   List<String> cars = [
     'Rover',
     'ToyotaPic',
@@ -57,6 +61,7 @@ class Equipment {
     'Ford'
   ];
 
+  ///  Might be better from intl? package.  Do it Map.
   List<String> months = [
     'January',
     'February',
@@ -72,6 +77,7 @@ class Equipment {
     'December'
   ];
 
+  ///  Nice little towns from civilized world.
   List<String> officeCities = [
     'Tampere Office',
     'Helsinki Warehouse',
@@ -81,6 +87,7 @@ class Equipment {
     'London Office'
   ];
 
+  ///
   List<String> programAreas = [
     'Web',
     'Server',
@@ -90,6 +97,7 @@ class Equipment {
     'Mongo'
   ];
 
+  ///  How about 3-letter abbreviations?
   List<String> weekDays = [
     'Monday',
     'Tuesday',

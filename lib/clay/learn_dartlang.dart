@@ -1,8 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  # dawo clay dartlang_guide
-///  * presenting data for dawo-chore system
-//  dawo version:   0.0.5  6.11.2017
+///  # dawo clay dartlang_guide.
+///  * presenting data for dawo-chore system, mostly Maps.
+//  dawo version:   0.0.6  27.11.2017
 
 library learnDartlang;
 

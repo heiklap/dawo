@@ -1,7 +1,9 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  * dawo clay helsinki_guide
-///  * presenting data for dawo-chore system
-//  dawo version:   0.0.5  6.11.2017
+/// * #Helsinki, dynamic center of inspiration and innovations.
+///  * dawo clay helsinki_guide: links and methods for active living.
+///  * presenting data for Dawo chore-effort system
+///  * devState: 60%   -  PLAN:
+///  * dawo version:   0.0.6  27.11.2017
 
 library helsinkiGuide;
 

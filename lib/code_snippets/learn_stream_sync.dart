@@ -1,14 +1,14 @@
-///  ##  Dart Streams
-///  ///  This do not bring any value to dawoApp.  Just sample code-snippets.
-///  NOTE:  only some of these streams are executed, when called in row
-///  BUT:   however, they work.
-/// * dawo version:  0.0.5  6.11.2017    in gitHub:   yes
-/// *  READY-STATE:    for 0.0.6  0%
+///  ##  Dart Streams, example and learning-code.
+///  This do not bring any value to dawoApp.  Just sample code-snippets.
+///  NOTE:  Only some of these streams are executed, when called in row,
+///  but however, they work.
+/// * dawo version:  0.0.6  -  27.11.2017  -  in gitHub : yes
+/// * READY-STATE:    for 0.0.7 : 0%
 /// *  NEXT:  modify these, connect to classes and lists. use stream_channel pack
-/// *  Hist: hkl  4.5.2014  0.0.1  dawo/lib    info with streams to dawo-staff
-///
-///   examples pasted from:   https://www.dartlang.org/docs/tutorials/streams/
+///   Examples pasted from:   https://www.dartlang.org/docs/tutorials/streams/
 ///   Copyright notice should not concern this file... since it's from dartlang
+// Hist: hkl  4.5.2014  0.0.1  dawo/lib    info with streams to dawo-staff
+//
 
 library learn_stream_sync;
 

@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  bind   solving literal searches by customer wishes.
+///  ##  bind   solving literal searches by customer #LANG priorities.
 ///
 ///  dawo version: 0.0.5  19.11.2017.   READY-STATE  for version 0.0.6  5%
 /// *      GitHub:
@@ -10,6 +10,8 @@
 //
 
 library affair;
+
+import '../alpha.dart';
 
 ///  conduct?  affair!!
 ///  Second or third alternative to operations, besides :corporate:
@@ -21,7 +23,7 @@ library affair;
 ///  For that, here should be added fields.
 ///  IDEA: Change this name to class CoOp.  So why not:  Coup.
 class Affair {
-  //  Alpha is known here.  betaPlacardM is known also.
+  //  Alpha is known here.  beta-PlacardM is known also.
 
   String actor = ':No usage yet:'; //  Too important to be a String.
   String sender;
@@ -32,8 +34,12 @@ class Affair {
   String msg;
 
   var actorState;
-  Map<dynamic, dynamic> actorM = {};
-  Map<dynamic, dynamic> actionM = {};
+
+  ///
+  Map<String, Actor> actorM = {};
+
+  ///
+  Map<String, Action> actionM = {};
 
   ///  Other alternatives to main #actor.
   //
@@ -73,6 +79,7 @@ class Affair {
   var decisionChain;
   var callChain; //  Give objects ability to know route, that called it.
 
+  ///
   void init(Map<String, String> _placardM) {
     print(' ***************  affair class-init  *********');
     _placardM.forEach((k, v) => print('$k, $v'));
@@ -90,7 +97,7 @@ class Affair {
 
   void done() {}
 
-  //  TODO  constructor add
+  //  Constructor
   Affair(this.actor, this.sender, this.receiver, this.cmd, this.msg);
   //TODO : used in: ?  //  Only in render here.
 

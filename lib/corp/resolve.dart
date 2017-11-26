@@ -1,13 +1,25 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  bind   solving literal searches by customer wishes.
-///
-///  dawo version: 0.0.5  19.11.2017.   READY-STATE  for version 0.0.6  5%
-/// *      GitHub:
-/// * Hist:hkl  19.11.2017  Moved stuff out from connector.
-/// * State:  schema
-//
+///  ##  bind :  solving literal searches by customer (bind) wishes.
+///  * find: memberM.placardM/clause / bindItem => response.bing.caller
+///  * dawo version: 0.0.6  27.11.2017.   READY-STATE  for version 0.0.7  0%
+///  *      GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/resolve.dart
+///  * devState: schema  5%  -  PLAN: no time.
+///  * NEXT:  0.0.7  small rebuild and practical use-case: #dailyWork
+//  Hist:hkl  19.11.2017  Moved stuff out from connector.
 
+// * * * *    Start using RegExp in String operations.  * * * *
+/*  #CODE  from:  https://www.dartlang.org/guides/libraries/library-tour
+Replacing part of a string
+Strings are immutable objects, which means you can create them but you can’t change them. If you look closely at the String API docs, you’ll notice that none of the methods actually changes the state of a String. For example, the method replaceAll() returns a new String without changing the original String:
+
+var greetingTemplate = 'Hello, NAME!';
+var greeting = greetingTemplate
+    .replaceAll(new RegExp('NAME'), 'Bob');
+
+assert(greeting !=
+    greetingTemplate); // greetingTemplate didn't change.
+ */
 library resolve;
 
 //  import '../tools.dart';

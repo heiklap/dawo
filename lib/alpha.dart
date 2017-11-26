@@ -1,6 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Model structures, classes in dawo
+///  ##  Model structures, base classes, that are used everywhere in dawo:
+/// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
 ///   dawo version:  0.0.5  6.11.2017
 /// * READY-STATE: for version 0.0.6 > 50%
 /// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
@@ -11,13 +12,12 @@ library alpha;
 
 String alphaMotto = 'Basic rules for building classes';
 
-///  Big change; putting all out-stuff inside a class.
 ///  NOTE abstract classes cant be created with new keyword.
 
 //  Mess, when trying to extend OutBase.
 class Out {
   String name = 'Out-Class';
-
+  //  Quest: shorter way?
   ///  Return iterable List from StringBuffer. Also in tools.
   List<String> bufToList(StringBuffer buf) {
     List<String> _l = new List();
@@ -264,4 +264,15 @@ class Member {
   String group = '';
 }
 
+///  Base for this class. Representation of an object, that does something.
+class Actor {
+  String name = '';
+  Map<String, Map<String, String>> infoM = {};
+}
+
+///  Base
+class Action {
+  String name = '';
+  Map<String, Map<String, String>> infoM = {};
+}
 //

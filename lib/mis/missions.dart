@@ -1,10 +1,12 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-/// *  mission is something between app and chore, process.
-/// -  Primary functionality: engage chores. Version 0.0.5  6.11.2017
-/// -  ready_state for 0.0.6  0 %
-/// -  HIST:  hkl  8.9.2017
-/// -  devNote: 4 pc.
+/// *  missions: primary Dawo workPlatforms, they have chores that do the job.
+/// *  dawoApp builds all the missions and their chores.
+/// *  Primary functionality: engage chores.
+/// *  Version 0.0.6 :  27.11.2017  -  ready_state for 0.0.7  :  0 %
+/// *  devState : unknown  -  PLAN:  cleaning
+// -  HIST:  hkl  8.9.2017
+// -  devNote: 4 pc.
 //
 //  word:  build  38 / 26  pc. Is it too much.
 //  chore:  20 pc
@@ -28,7 +30,7 @@ import '../clay/clay_roll.dart';
 ///  #NOTE:  #effort is not visible here.  Only in chore.dart.
 
 ///  Buffer also outside class, for testing and adding visibility.
-var missionBuf = new StringBuffer();
+//  StringBuffer  missionBuf = new StringBuffer();  //  Not used
 
 //  TODO  Should all _pB variables change private: _pB?
 // bool _pB = false; //  Control printing, now:  false;
@@ -111,7 +113,7 @@ class Mission {
   //----op-  variables and methods to handle Mission operations
   ///  'open'  variables. Make this a Map. ?
   //  Sub-operations state
-  Map<String, bool> op = {
+  Map<String, bool> opSt = {
     'off': true,
     'on': false,
     'pause': false,
@@ -223,8 +225,8 @@ class Mission {
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission   * * *
-  var decision;
-  var decisionChain;
+  Action decision;
+  Map<String, Map<String, Action>> decisionChainMM;
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
@@ -364,7 +366,7 @@ class Mission {
     //  NOTE  If more than 9 Chores, need something else.
     String choreLengthS = choreL.length.toString();
     String choreS = getChoreNamesS();
-    String opS = op.toString();
+    String opS = opSt.toString();
     String stS = st.toString();
     String ps1 = ('**.               caller: $caller                       .');
     String ps2 = ('**  $name         Motto: $motto');
@@ -525,7 +527,7 @@ void renderMission(String caller) {
   var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
   missionR.showInfo();
 
-  missionR.op['on'] = true;
+  missionR.opSt['on'] = true;
 
   missionR._buf.writeln(':renderMission: saving row od data to :m:_buf:');
 

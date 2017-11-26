@@ -1,19 +1,13 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  dawo : data-in / out - working frame for chore user.
-///  **  ONLY  chore.dart should import this. All goes via it.
-///  User adds or changes his own data to effort Maps.
-///  dawo version:  0.0.5  6.11.2017.    ready-state for 0.0.6  0 %
-///
-///  Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
-///  (previous name : enlisted)
-///  DONE:   Move all JSON stuff to own user-income-data
-///  NEXT:  User actions,  markDone()  changeValueEffort()
-///  NEXT:  Usage workFlow
-///
-///  NEXT version: Add SplayTreeSet,  and  LinkedHashSet
-///  devNote:  Collecting here habit / human-like objects.
-
+///  ##  Effort : data-in / out - working frame for chore user.
+/// * ONLY  chore.dart should import this. 70% of user-activity is here.
+/// * User adds or changes his own data to effort Maps.
+/// * dawo version:  0.0.6 : 27.11.2017.    ready-state for 0.0.7 :  0 %
+/// * NEXT version: Add SplayTreeSet,  and  LinkedHashSet
+/// * devState : 25%  -  PLAN: 007 : 30%
+// devNote:  Collecting here habit / human-like objects.
+// Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
 //
 
 library effort;
@@ -22,13 +16,13 @@ import '../shower.dart';
 import '../tools.dart';
 import '../clay/user_json.dart';
 
-///  Mediating this value to getter, that counts sum of these.
+//  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;
 bool _pB = true;
 String typeDefTestS = 'typeDefTestString not used now.';
 
 //  TODO  typedef _effPrint  Deleted 15.11.
-///  TODO  typeDefSuccess
+//  TODO  typeDefSuccess
 // typedef void _EffPrint(String msg);
 
 ///  howTo: howToMap:  Common method to print a map.  HowToPrintMap:

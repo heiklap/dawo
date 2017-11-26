@@ -1,20 +1,27 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Some helper tools
-/// *  dawo version:  0.0.5  6.11.2017    READY-STATE for  0.0.6   0 %
-/// *  in GIT:  yes           Hist:  hkl  2014  0.0.1  dawo/lib
-///
+///  ##  Helper tools, like: longestItemInList() and  changeLetter(String..)
+///  Mostly String and list manipulation and Map printing aso. This kind of
+///  stuff is most valuable to beginner programmers, and developing this has
+///  taken time. Fixing bugs only when something throws.
+/// * Also some #stamp date-time aso. functions.
+/// * dawo version:  0.0.6 :  27.11.2017    READY-STATE for  0.0.7   0 %
+/// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
+/// * in GIT:  yes.  Blog post:  should b.
+/// * PLAN:  develop some _private inside functions and variables.??
+// Hist:  hkl  2014  0.0.1  dawo/lib
 
 library tools.dart;
 
 import 'dart:math';
 
-///
+///  Was statistics and getter practice.
 num toolsReadiness = 96;
 
 ///  Buffer also outside class, for testing and adding visibility.
 var toolsBuf = new StringBuffer();
 
+///  instantiated as: tl  Very handy, you gonna like it!
 class Tools {
   ///  Return iterable List from StringBuffer.
   List<String> bufToList(StringBuffer buf) {
@@ -77,10 +84,10 @@ class Tools {
   String changeLetter(String inS, int pos, String newS) {
     //print(inS);
     int length = inS.length;
-    String _s1 = inS.substring(0, pos-1);
+    String _s1 = inS.substring(0, pos - 1);
     //print(_s1);
-    String _s2 = inS.substring(pos,pos+1); //  wanted OLD letter for change
-    _s2 = newS;  //  Now it is changed
+    String _s2 = inS.substring(pos, pos + 1); //  wanted OLD letter for change
+    _s2 = newS; //  Now it is changed
     //print(_s2);
     String _s3 = inS.substring(pos, length);
     //print(_s3);
@@ -379,4 +386,4 @@ class Tools {
   };
 } //  -----  class Tools
 
-var tl = new Tools();
+Tools tl = new Tools();

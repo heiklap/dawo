@@ -8,7 +8,7 @@
 ///  method String weightString(String _aS) checks #C messages
 ///   dawo version:  0.0.5  6.11.2017  * READY-STATE: for  0.0.6 version> 0%
 ///
-/// * Usability: 7%
+/// * devState: 10%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
 /// #name:  connector ..is not nice. change to: ______ ??
 /// #name: placard : 1 !!
@@ -195,7 +195,7 @@ class Connector extends BaseStruct {
 
   ///  or: void metro() {}   for putting messages to move.
   ///  PING, Putting messages in queue or sending them immediately.
-  // void ping(Baker sender, receiver, var key) {
+  /// void ping(Baker sender, receiver, var key) {
   void ping(String sender, receiver, key, msg) {
     print('    :ping: is used.. hooray!! S: $sender R: $receiver K: $key ');
     buf.writeln(':con:buf:  :ping: is used..S: $sender R: $receiver K: $key ');
@@ -205,9 +205,9 @@ class Connector extends BaseStruct {
 
   ///  Members, that are participating in this connector.
   ///  Member is a class in alpha.
-  ///  #PLAN:  eventually this will be Member.
-  //  Map<String, Member> memberM = {};  Not object yet.
-  //  Usage: Shower and connector: put.. and copy
+  ///  #PLAN:  eventually this will be class-Member.
+  ///  Map<String, Member> memberM = {};  Not object yet.
+  ///  Usage: Shower and connector: put.. and copy
   Map<String, String> memberM = {
     'cM-1': 'First :con:Member:test:',
     'cM-2': 'Second :con:Member:test:',
@@ -239,7 +239,7 @@ class Connector extends BaseStruct {
   List<String> inMsgL = ['*  :connector: in-msg-list  *'];
 
   ///  Clients tool to access connector data and other services.
-  void signUp(List<String> _callL){
+  void signUp(List<String> _callL) {
     //  code
   }
 
@@ -404,19 +404,18 @@ class Connector extends BaseStruct {
     print('--<<--<<  :connector:box: boxServe  done  --<<--<<--  ');
   }
 
-
   //  TODO  :BUG:Funny:error:
   ///  Presentation method. Trying list as a parameter.
   //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
   void show(String action) {
     //  TODO  Make forced print
     bool _clB = false;
-    if (_pB && action.contains('buf')) {  //  no good: no-buf !!buf+ ?
+    if (_pB && action.contains('buf')) {
+      //  no good: no-buf !!buf+ ?
       print(':buffer: is printed');
       print(buf);
     }
   }
-
 
   ///  close method
   void done() {

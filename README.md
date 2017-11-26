@@ -1,7 +1,8 @@
 # dawo 0.0.5
 
-Learning Dart; simple basic data for beginners, and howTo use it for building a package.
-Beginner Dart programmers kickoff to develop a glorious package.. Latest code in GitHub: https://github.com/heiklap/dawo
+Learning Dart; by building complicated Dart package with many libraries. Organizing it, finding it's 
+inner connections and developing multipurpose methods.
+Beginner Dart programmers kickoff to develop a glorious package. Latest code in GitHub: https://github.com/heiklap/dawo
 - Read: /doc/hist_versions.txt in gitHub to see full changes to this, and coming versions.
 - Blog: http://dawopack.blogspot.fi/search/label/dawo 
 - Dawo is using my other package: dawolang: 0.0.1, for word recognition in connector.
