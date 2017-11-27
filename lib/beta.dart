@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## Modeling joint, reusable controls and operations for libraries.
-///  dawo/beta,  dawo version:  0.0.5  6.11.2017
+///  dawo/beta,  dawo version:   0.0.6.  27.11.2017
 ///  READY-STATE for version 0.0.6   0 %   in GIT  Yes
 ///
 ///  Time to start thinking 6.th floor's machinery, when you are only just

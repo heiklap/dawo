@@ -1,13 +1,12 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  bind   #LANG and #CLAUSE based bindings between objects.
-///  * Using #resolve library with #dawolang to solve bind-literal-Strings.
-///
-///  dawo version: 0.0.5  6.11.2017.   READY-STATE  for version 0.0.6  0%
-/// *   GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/bind.dart
-/// * Hist:hkl  18.11.2017  Moved stuff here from connector.
-/// * devState: 8%  PLAN: yes   SCHEDULE:  NO.
+/// *  Using #resolve library with #dawolang to solve bind-literal-Strings.
+/// *  dawo version:  0.0.6.  27.11.2017.
+/// *  GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/bind.dart
+/// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
+// Hist:hkl  18.11.2017  Moved stuff here from connector.
 
 library bind;
 

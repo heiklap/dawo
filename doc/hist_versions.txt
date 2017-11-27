@@ -1,6 +1,6 @@
 
-By Heikki K Lappalainen.  dawo version:  0.0.5  6.11.2017
-Development of dawo dartlang package 2017 from 0.0.1 >  to  0.0.5 6.11.2017
+By Heikki K Lappalainen.  dawo version:  0.0.6.   27.11.2017
+Development of dawo dartlang package 2017 from 0.0.1 >
 _________________________________________________________________________
 Tracking possible bigger steps in dawo:
 0.1.0  Decent console output ready.          |  connector wake.
@@ -16,8 +16,8 @@ Tracking possible bigger steps in dawo:
 
 _________________________________________________________________________
 
-How does NEXT: 27.11.2017,   0.0.6 Version look in imagine now?
-Create high-level connections and common procedures between objects
+Published: 27.11.2017,   0.0.6 Version
+High-level connections and common procedures between objects
 using #placard, glb, commonOp, clause and states.
 Theme:  Clearance. Small innovative ideas seek the right to exist.
 ________________________________

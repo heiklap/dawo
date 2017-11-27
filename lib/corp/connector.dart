@@ -6,7 +6,7 @@
 ///  using #LANG -specific commands to configure their proceedings.
 ///  using #dawolang package in path dependency
 ///  method String weightString(String _aS) checks #C messages
-///   dawo version:  0.0.5  6.11.2017  * READY-STATE: for  0.0.6 version> 0%
+///   dawo version:   0.0.6.  27.11.2017  * READY-STATE: for  0.0.6 version> 0%
 ///
 /// * devState: 10%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
@@ -356,13 +356,13 @@ class Connector extends BaseStruct {
     int m3 = 74;
     int m4 = 100;
 
-    boxServe.aBox(r1 - 1, m2, 2, 100, infoL);
+    boxServe.aBox(r1 - 1, m2, 2, 106, infoL);
 
     boxServe.aHeader(3, m2, '*clause :');
-    boxServe.aBox(3, m2 + 10, 1, 60, ['$clause']);
+    boxServe.aBox(3, m2 + 10, 1, 55, ['$clause']);
 
     boxServe.aHeader(4, m2, '*motto :');
-    boxServe.aBox(4, m2 + 10, 1, 60, ['$motto']);
+    boxServe.aBox(4, m2 + 10, 1, 55, ['$motto']);
 
     boxServe.aHeader(r1, m1, '* buf  *');
     boxServe.aBox(r1 + 1, m1, 39, 33, tl.bufToList(buf));

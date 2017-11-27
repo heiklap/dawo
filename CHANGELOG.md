@@ -1,4 +1,6 @@
 # Changelog
+## 0.0.6
+ - Box_serve console presentation.
 ## 0.0.5
 - Effort, diagonal and schedule console output.
 ## 0.0.4 

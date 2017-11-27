@@ -32,8 +32,6 @@ import '../clay/clay_roll.dart';
 ///  Buffer also outside class, for testing and adding visibility.
 //  StringBuffer  missionBuf = new StringBuffer();  //  Not used
 
-//  TODO  Should all _pB variables change private: _pB?
-// bool _pB = false; //  Control printing, now:  false;
 bool _pB = false; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
@@ -184,7 +182,7 @@ class Mission {
 
   ///  Initializing Mission instances fields.
   void init(String caller) {
-    print('-->>-->>-- Mission-init   C: $caller     -->>-->>--    ');
+    _flowC('-->>-->>-- :M:init:   C: $caller     -->>-->>--    ', _pB);
     placardM['actor'] = name;
     placardM['sender'] = name.substring(0, 8);
     //  TODO  placardM['command'] =
@@ -198,7 +196,7 @@ class Mission {
     //
     _flowC('-->-m-->         :M:-b:         $name   -->-m-->  ', _pB);
     _flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', _pB);
-    print(':M-build: => :chore.onB:: ');
+    _flowC(':M:build: => :chore.onB:: ', _pB);
 
     ///  Should use instance, that is created inside THIS mission instance.
     learnChr.build(emblem, name); //  new parameter in Chore.build
@@ -208,7 +206,7 @@ class Mission {
     placeChr.build(emblem, name);
     seasonChr.build(emblem, name);
     showChr.build(emblem, name);
-    print('-->>-->>--  :M:-build: calling :connector:  -->>-->>--');
+    _flowC('-->>-->>--  :M:build: calling :connector:  -->>-->>--', _pB);
     String _nS = name.substring(0, 7);
     String connectorMsg = ':INFO :ALL M: $_nS : are :READY :FOR :NEXT :EVENT ';
     connector.opJoin(placardM, connectorMsg, ':M:-build:');
@@ -241,7 +239,7 @@ class Mission {
   /// devNote:  function, that OPENS way to use outer resources.
   bool opInit(int openCount, var openThis) {
     ///  use resource, equ class
-    _flowC('-->-m-->  :M:op:  opInit ', _pB);
+    _flowC('-->-m-->  :M:op:$name  opInit ', _pB);
     _flowC(':M:op: opInit-info: Get necessary data for op-operations. >>', _pB);
     _flowC('>>  :M:op:Resource object-simulations from app upper level.', _pB);
     equ.active = true; //  Resource class activate.
@@ -256,7 +254,7 @@ class Mission {
 
   /// devNote:  function, that OPENS something.
   bool opOpen(int openCount, var openThis) {
-    _flowC('  -->-m-->  :M:op:  opOpen  ', _pB);
+    _flowC('  -->-m-->  :M:op:$name  opOpen  ', _pB);
     _flowC(
         '  :M:op: opOpen-info: Open data-tables and resolve queries.>>', _pB);
     _flowC('  >>  :M:op: Schedule area-machine-money resources in time.', _pB);
@@ -269,11 +267,11 @@ class Mission {
   ///  Eventually opRoll handles all these others: init-open-close-schedule..
   ///  opRollCal by: mission_test,  dawo_example
   int opRoll(int rollCount, var courierFunc) {
-    _flowC('    -->-m-->  :M:op:  opRoll    * * * * * * * * * * * * *  ', _pB);
+    _flowC('    -->-m-->  :M:op:$name  opRoll    * * * * * * * * * * * * *  ', _pB);
     _flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', _pB);
     _flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
     int done = 0;
-    print('-->>-->>--  :M:-opR: calling :connector:  -->>-->>--');
+    _flowC('-->>-->>--  :M:opR: calling :connector:  -->>-->>--', _pB);
 
     ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
     String connectorMsg =
@@ -302,17 +300,16 @@ class Mission {
   //  int opClose(int openCount, Function openThis) {
   void opClose() {
     equ.active = false;
-    _flowC('--<----<-  :M:op:  opClose --<----<-', _pB);
+    _flowC('--<----<-  :M:op:$name  opClose --<----<-', _pB);
     _flowC(':M:op: opClose-info: End lof mission-op operation. >>', _pB);
     _flowC('>>:M:op:close: * Statistics ready, save next-round data. *.', _pB);
   }
 
   ///  give report of op statistics
   void opReport() {
-    _flowC('  --<----<-  :M:op:  opReport --<----<-', _pB);
+    _flowC('  --<----<-  :M:op:$name  opReport --<----<-', _pB);
     _flowC('  :M:op: opReport-info: Report for to check data lists. >>', _pB);
-    _flowC(
-        '  >>  :M:op: opReport: ** Not needed when scheduleBox is on.**.', _pB);
+    _flowC('  >>  :M:op: opReport: ** Not needed when scheduleBox.**.', _pB);
     List<String> _l = [];
     List<String> _l2 = [];
     _l.addAll(tl.bufToList(out.outTMid));
@@ -369,7 +366,7 @@ class Mission {
     String opS = opSt.toString();
     String stS = st.toString();
     String ps1 = ('**.               caller: $caller                       .');
-    String ps2 = ('**  $name         Motto: $motto');
+    String ps2 = ('**  MissionName:  $name         Motto: $motto');
     String ps3 = ('**  State: off    on     con     pause    done   ');
     String ps4 = ('**  stDo: $stS ');
     String ps5 = ('**  rollDone:   $rollDone     rollCount:  $rollCount');
@@ -413,20 +410,20 @@ void _flowC(String msg, bool p) {
 }
 
 ///  Create Mission class instances.
-var packDawoMission = new Mission('pack Dawo mission', 'Build Dawo package');
+var packDawoMission = new Mission('packDawo mission', 'Build Dawo package');
 var helsinkiMission = new Mission('Helsinki-mission', 'Presenting Helsinki');
 var dartlangMission = new Mission('Dartlang mission', 'Learn dartlang');
 
 var myMusicMission =
     new Mission('My-Music mission', 'Play and share good music');
 var myTimeMission = new Mission(
-    'My-Time mission', 'Spend at least one hour in a week with reasonable way');
+    'MyTime mission', 'Spend at least one hour in a week with reasonable way');
 var nationalParksMission = new Mission(
     'Finlands national park mission', 'Present beautiful finish nature');
 
 ///  Show missions and their chores.
 void missionChoreReport(String caller) {
-  print('-->>-->>----  missionChoreReport  caller: $caller');
+  print('-->>-->>----:M:  missionChoreReport  caller: $caller');
   for (var x in missionL) {
     print(x.name);
     print(x.choreL);
@@ -482,7 +479,6 @@ void buildMissions(String caller) {
 
   _flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', _pB);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
-  ///  TODO  hklTry: #cascades   Now should do init AND build.
   packDawoMission
     ..init(':M:-bms:')
     ..build(':M:-bms:');
@@ -521,32 +517,30 @@ void buildMissions(String caller) {
 ///  Creating instance of Mission and using it's methods.
 ///  All render_X functions are for test and presentation.
 void renderMission(String caller) {
-  print(':M:render: -->>-->>--   renderMission C: $caller -->>-->>-- ');
+  //  TODO:  too much of:  Instance of 'CommonChore'
   //  helsinkiMission.  //  NOTE    #analyzer  is slow
   //  Testing some imaginary mission.
   var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
+  String nameS = missionR.name;
+  print(':M:render: -->>-->>-- renderMission:$nameS C: $caller ');
   missionR.showInfo();
 
+  //  Methods init and build are obligatory for mission to work.
+  missionR.init(':M:render:');
+  missionR.build(':M:render:');
   missionR.opSt['on'] = true;
 
   missionR._buf.writeln(':renderMission: saving row od data to :m:_buf:');
 
-  print('debug #: :RM:  14  when run: mission_test.dart');
-  //  Do this class have chores?  Try second chore.
-  //  TODO  :BUG:  missionR.choreL is empty here.
-  //  DO:  Mission - build -chores
   print(missionR.choreL);
   missionR.choreL.forEach(print);
   missionR.toChore(missionR.choreL[1]);
 
-  print('debug #: :RM:  15');
   missionR._buf.writeln(':renderMission: done, close; :m:_buf:');
 
-  print('debug #: :RM:  16');
-  print(missionR._buf);
   missionR._buf.clear();
 
-  missionR.rollCount;
+  print(missionR.rollCount);
   print(':M:render: <<--<<--   renderMission done  C: $caller --<<--<<-- ');
   _flowC('--  mission: $missionR.name : render done  --', _pB);
 }

@@ -1,7 +1,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawo clay  main library
 ///  presenting incoming data for dawo-chore / mission system
-///  dawo version:   0.0.5  6.11.2017
+///  dawo version:    0.0.6.  27.11.2017
 
 //
 library clayRoll;

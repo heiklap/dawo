@@ -1,14 +1,14 @@
 ///  This lib do not participate to dawoApp: here are only sample code-snippets.
 ///  Some useful copy-paste stuff for learning simple functions.
 ///  GOAL: find common, reusable elements for control-flow, and develop
-///  names, and ideas-
-///  In GitHub, for to be able to modify while on-The-Road.
-///  dawo version:   0.0.5  6.11.2017
-///  readyState for 0.0.6.  0%    in gitHub:   yes
-///  This serves as example:  What can you develop from these ideas..?
-///
-/// *  hist:  20.4.2014  0.0.1  dawo/lib  Collection of control-flow structures
-/// *  Words:  batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
+///  names, and ideas.  In GitHub, for to be able to modify while on-The-Road.
+///  * dawo version:    0.0.6.  27.11.2017
+///  * devState%  60%  -   in gitHub:   yes
+///  * This serves as example:  What can you develop from these ideas..?
+///  *  Words:  batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
+//
+// hist:  20.4.2014  0.0.1  dawo/lib  Collection of control-flow structures
+//
 
 //NOTE   Function anonymous
 /* functions

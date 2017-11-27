@@ -2,9 +2,9 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Model structures, base classes, that are used everywhere in dawo:
 /// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
-///   dawo version:  0.0.5  6.11.2017
-/// * READY-STATE: for version 0.0.6 > 50%
-/// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
+/// * dawo version:   0.0.6.  27.11.2017
+//
+// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
 //  devNote:  No notes.
 //
 

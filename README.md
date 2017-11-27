@@ -1,8 +1,8 @@
-# dawo 0.0.5
+# dawo 0.0.6
 
 Learning Dart; by building complicated Dart package with many libraries. Organizing it, finding it's 
 inner connections and developing multipurpose methods.
-Beginner Dart programmers kickoff to develop a glorious package. Latest code in GitHub: https://github.com/heiklap/dawo
+Beginner Dart programmers kickoff to learn by developing a glorious package. Latest code in GitHub: https://github.com/heiklap/dawo
 - Read: /doc/hist_versions.txt in gitHub to see full changes to this, and coming versions.
 - Blog: http://dawopack.blogspot.fi/search/label/dawo 
 - Dawo is using my other package: dawolang: 0.0.1, for word recognition in connector.
@@ -47,8 +47,8 @@ Beginner Dart programmers kickoff to develop a glorious package. Latest code in 
      dawo_example.dart gives 11 screen-full data output.
      
  0.0.5 High level connections between objects, placard, glb, commonOp and states.    
-      
- 0.0.6  Basic idea and orientation of package to resolve.
+ 0.0.6 box_serve presentation and corporate.     
+ 0.0.7  Basic idea and orientation of package to resolve.
  0.0.8  Incubator idea: -move first too big parts to independent packages.
         Maybe  chore(process)  and  team
  
@@ -60,51 +60,35 @@ Beginner Dart programmers kickoff to develop a glorious package. Latest code in 
 - learn_stream_sync : Examples of simple Streams. So. async stuff.
 
 ### app files
-- base_lib : Develop common properties, that other libraries should depend on.
-- base_struct : Structuring base classes. These two libraries do not depend other dawo files.
-- chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
-      of other, bigger, same kind of library.
-- connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them. 
-  Seeking deep, inner connections of objects. 
-- (? dawlib_coll : Resources. Examples and hacking material of Dart collections.)
+- alpha : Structuring base classes. These two libraries do not depend other dawo files.
+- beta : Develop common properties, that other libraries should depend on.
 - dawo.dart : main file, exports : dawo_src.dart.
 - dawo_app : DawoApp class, handles Missions and keeps out-put-buffers in Map.
-- dawo_dev : Classes and data, that help in developing this package. 
-  Helper functions for cl (command line)and screen output.
 - dawo_src : File created by stagehand plugin app.
-  Here it imports all other libraries and gathers some information about them.    
-- effort.dart : Human activities, chores sub, main user-activity and presentation.
-- equipment.dart : Controlling material resources for Mission and Chore.
 - mill : Plan: processing commands orderly, all they in row, by given priorities.
-- missions : Chunk of command-processing between app and chore. Caring Chores.
-  Missions keep and process data ( #clay) of their favorite area. 
-- rumba.dart : Rumba classes .dance method runs here dawo's control-flow (once).
-- shower.dart : presentations on console, mostly box-shaped.
-- tools : Helper tools, sleep, stamps, lists aso.
+- rumba.dart : Rumba classes .dance method runs here dawo's control-flow (once)
+- shower.dart : presentations on console, mostly box-shaped. src/box_serve.dart makes it better!
+- tools : Helper tools, sleep, stamps, lists aso.Helper functions for cl (command line)and screen output.
+
+- mis/missions : Chunk of command-processing between app and chore. Caring Chores.
+  Missions keep and process data ( #clay) of their favorite area.
+- mis/chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
+      of other, bigger, same kind of library.
+- mis/effort.dart : Human activities, chores sub, main user-activity and presentation.
+- mis/equipment.dart : Controlling material resources for Mission and Chore.      
+      
+- corp-folder has corporate, affair, resolve and store classes.      
+- corp/connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them. 
+  Seeking deep, inner connections of objects. 
+  
+- clay-folder has data  
+- (? dawlib_coll : Resources. Examples and hacking material of Dart collections. Missing / todo)
+
+- dawo_dev : Classes and data, that help in developing this package. 
+- src/box_serve gives frames for box_shaped cl outputs.
+- src/glb keeps global variables.    
 
 
-src.dart imports files:
-
-    import 'package:dawo/code_snippets/aldente_func.dart';
-    import 'package:dawo/code_snippets/bat_loop.dart';
-    import 'package:dawo/code_snippets/learn_stream_sync.dart';
-
-    import 'base_lib.dart';
-    import 'base_struct.dart'; //  unused
-    import 'chore.dart';
-    import 'connector.dart'; //  unused
-    import 'dawo_app.dart';
-    import 'dawo_dev.dart';
-    import 'effort.dart';
-    import 'equipment.dart';
-    import 'mill.dart';
-    import 'missions.dart';
-    import 'rumba.dart'; //  unused
-    import 'shower.dart';
-    import 'tools.dart';
-   
-    ///  Data (clay) is in clay-folder.
-    import 'package:dawo/clay/clay_roll.dart';
     
 Creating Dawo variables in new file:
 
@@ -126,7 +110,7 @@ Creating Dawo variables in new file:
     
     Add to your pubspec.yaml:
     dependencies:
-      dawo: 0.0.4
+      dawo: 0.0.6
       
     dev_dependencies:
       browser: ^0.10.0

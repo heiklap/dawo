@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## equipment  :  material resources for Mission and Chore.
 ///  * No objects, but:  String-values for simple demo and presentation.
-///  * Dawo version 0.0.6  27.11.2017    ready state for 0.0.7 : 0%
+///  * Dawo version 0.0.6  -  27.11.2017    ready state for 0.0.7 : 0%
 ///  * Instance as:  equ
 ///
 

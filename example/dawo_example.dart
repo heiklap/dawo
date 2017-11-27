@@ -1,9 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  dawo_example   dawo version  0.0.5  6.11.2017
-
+///  *  dawo_example   dawo version   0.0.6.  -  27.11.2017
 ///  *  dawo_example creates 28 screens of console output data presentation.
-///  Find:  :con: :connector: :opCom:  :corporate:
+///  * Find:  :con: :connector: :opCom:  :corporate:
 
 import 'package:dawo/dawo.dart';
 

@@ -3,9 +3,10 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
-///  dawo version: 0.0.5  6.11.2017.   READY-STATE  for version 0.0.6  0%
-/// *      GitHub: yes  29.11.2014
-/// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
+/// * dawo version:  0.0.6.  -  27.11.2017  -   devState: 15 %
+/// * GitHub: yes  29.11.2014
+//
+// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
 //
 
 library dawo_dev.dart;
@@ -84,10 +85,15 @@ class Dev {
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
       ..add('NEXT: Internal systematics. Most critical improvements.')
-      ..add('NEXT: User simulated data for actions. Server-client ?.')
+      ..add('NEXT: User simulated data for #dayActions. Server-client ?.')
       ..add('NEXT; SearchList of important dawo terms to example-file :con:m:')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
-      ..add('NEXT: Version 0.0.6 changes, and publish to pub and gitHub.')
+      ..add('NEXT: dawoApp class clean and reshape. dawoHist new class')
+      ..add('NEXT: dev class clean. Consider new file for devHelp.')
+      ..add('NEXT: dawo-State box_serve presentation with 12 boxes.')
+      ..add('NEXT: Dawo-Object presentation with box_serve.')
+      ..add('Mission: Fix render:BUG: and gave name variable more visibility.')
+      ..add('Version 0.0.6 changes, and publish to pub and gitHub.')
       ..add('boxServe: box-output for dawoApp & glb. More st-Maps in classes.')
       ..add('Map state; st added to some classes.')
       ..add('boxServe: box-output for bind and connector AND to everybody.')

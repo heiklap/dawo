@@ -3,12 +3,13 @@
 ///  Bunch of simple functions, acting variously, mostly boolean conditions.
 ///  Including some funny logical-naming-errors, where name do not correspond to
 ///  functionality.  Seeking common, reusable functions.
-///
-/// *  dawo version:   0.0.5  6.11.2017
-/// *  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
-/// *  readyState for 0.0.6.  0%    in gitHub:  YES  22.04.2015
-/// *
+/// *  dawo version:    0.0.6.  27.11.2017
+/// *  devState:  50%    in gitHub:  YES  22.04.2015
+/// *  PLAN:  Total check for logic.
 //
+//  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
+
+
 library aldente_func.dart;
 
 ///  from punch/tools/signal

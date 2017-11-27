@@ -1,9 +1,12 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Corporate,  enterprise-like entity.  Dawo version:  0.0.6
+///  ##  Corporate,  enterprise-like entity.
 ///  * Holds: Affairs, Stores, takes Order's, makes Jobs in phases.
 ///  * previous: #common operate from beta.dart aso. is here
+///   * Dawo version:   0.0.6.  27.11.2017
 ///  * devState:  10%,   PLAN:  do simple demo / presentation.
+///
+//
 //  history: 2017.11.13.   development-state: 5%
 
 library corporate;

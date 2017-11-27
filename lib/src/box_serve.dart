@@ -1,11 +1,10 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  box_serve presenting objects in cl in box-shaped form .
-///  * Structuring-logic, elements order, is in callers side
-///  * PLAN:  Automatic ordering of elements, if client do not give it.
-///
-///  dawo version: 0.0.5  22.11.2017.   READY-STATE  for version 0.0.6  60%
-/// *      GitHub: yes
+/// * Structuring-logic, elements order, is in callers side
+/// * PLAN:  Automatic ordering of elements, if client do not give it.
+/// * dawo version:  0.0.6.  27.11.2017.   devState:  60%
+/// * GitHub: yes
 //
 
 library box_serve;

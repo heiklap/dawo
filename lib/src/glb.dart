@@ -1,12 +1,11 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  glb   keeping important everybody-uses variables and constants.
-///
-///  dawo version: 0.0.5  19.11.2017.   READY-STATE  for version 0.0.6  2%
-/// *      GitHub:
-/// * Hist:hkl  19.11.2017  Moved stuff out from beta to make clarity.
+/// * dawo version:  0.0.6.  27.11.2017  -  devState:  10%
+/// * GitHub: yes.
 /// * State:  schema
 //
+//  Hist:hkl  19.11.2017  Moved stuff out from beta to make clarity.
 
 library glb;
 

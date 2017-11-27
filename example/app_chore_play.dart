@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  app_chore_play.dart   version:  0.0.5  6.11.2017
+///  app_chore_play.dart   version:  0.0.6.  27.11.2017
 
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/rumba.dart';

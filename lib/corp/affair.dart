@@ -1,13 +1,11 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  bind   solving literal searches by customer #LANG priorities.
-///
-///  dawo version: 0.0.5  19.11.2017.   READY-STATE  for version 0.0.6  5%
-/// *      GitHub:
-/// * Hist:hkl  19.11.2017  Moved stuff out from connector. and from beta.
-///
-/// * State:  schema
+///  ##  affair,  handling small jobs inside corporate.
+/// * dawo version:  0.0.6.  -  27.11.2017  -.   devState:  5%
+/// * GitHub:  Yes  -  State:  schema
+/// * PLAN:  0.0.8  small upgrade when common methods are ready.
 //
+// Hist:hkl  19.11.2017
 
 library affair;
 

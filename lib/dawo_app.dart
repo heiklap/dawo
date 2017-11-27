@@ -141,15 +141,15 @@ class DawoApp extends BaseStruct {
     out.outHeader.writeln('       * * * : app-roll stuff:  * * * ');
     out.outTl.writeln('       * * * : rumba stuff :  * * * ');
     out.outTMid.writeln('* * * : mission stuff:  -dawoApp-build:  * * * ');
-    out.outTr.writeln('* * * : dawo-app stuff :  * * * ');
+    out.outTr.writeln('* * * : dawoApp stuff :  * * * ');
 
-    out.outMTop.writeln('* * * :pack-dawo stuff : -dawoApp-build:  * * * ');
+    out.outMTop.writeln('* * * :packDawo stuff : -dawoApp-build:  * * * ');
     out.outMid.writeln('     * * * :dartlang stuff:  -dawoApp-build:  * * * ');
     out.outMBot.writeln('   * * * : helsinki stuff:  -dawoApp-build:  * * * ');
 
-    out.outBl.writeln('* * * : my-music-stuff :  -dawoApp-build:  * * * ');
-    out.outBr.writeln('* * * : my-time stuff :  -dawoApp-build:  * * * ');
-    out.outFooter.writeln('* * * :nat-parks stuff: -dawoApp-build:  * * * ');
+    out.outBl.writeln('* * * : myMusic-stuff :  -dawoApp-build:  * * * ');
+    out.outBr.writeln('* * * : myTime stuff :  -dawoApp-build:  * * * ');
+    out.outFooter.writeln('* * * :natParks stuff: -dawoApp-build:  * * * ');
     _flowC('  --<-da-<  :da:b:  build done', _pB);
   }
 
