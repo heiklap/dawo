@@ -22,6 +22,22 @@ class GlobalClass {
   var output;
   var input;
 
+  ///  5 x 56 logo
+  final List<String> dawoLogo = [
+    'DDD_____________A________W____________W_________OOO',
+    'D___D__________A__A_______W__________W________O______O',
+    'D____D________A____A_______W___W____W_________O______O',
+    'D___D________A_AAAA_A_______W__W___W__________O______O',
+    'DDDD________A________A_______W___W______________OOOO',
+  ];
+  /*
+  'DDD             A        W            W         OOO',
+  'D   D          A  A       W          W        O      O',
+  'D    D        A    A       W   W    W         O      O',
+  'D   D        A AAAA A       W  W   W          O      O',
+  'DDDD        A        A       W   W              OOOO',
+  */
+
   List<String> infoL = [
     'glb   keeping important everybody-uses variables and constants.',
     'prSt controls global printing states in every object'
@@ -82,7 +98,6 @@ class GlobalClass {
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
     boxServe.init(15, 140, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':glb:box:  C: $caller');
-    boxServe.build(':glb:box:');
 
     boxServe.aHeader(1, 4, '* *  Print-State * * ');
     boxServe.aBox(2, 7, 12, 20, tl.mapToListB(prSt));
@@ -120,7 +135,8 @@ class GlobalClass {
     boxServe.vertLine(1, 139, 13); //  Up-right edge
     boxServe.aHeader(1, 120, '* Actions *');
 
-    boxServe.boxDone(boxHeader, 'print');
+    boxServe.show(boxHeader, 'print');
+    boxServe.done(boxHeader);
     print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
   }
 

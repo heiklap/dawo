@@ -47,10 +47,12 @@ void helloMission() {
   _flowC('-- Somebody call: hello this is mission file and library  ---', _pB);
 }
 
+///  TODO  Use some private methods, for not to spam scope.
 ///  Mission avoids consciously using clear and handy structure of Chore class,
 ///  for to leave space for innovation and to find different solutions for ops.
 ///  Mission handles acts below -app level, but above chore.
 ///  Mission can include many chores. 7 Chores are build by default.
+///  TODO  Mission has 40 public fields !!
 class Mission {
 // #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
@@ -60,8 +62,8 @@ class Mission {
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
-  String emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
-  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String _emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
+  String _indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
   ///  Reference to outPut-buffer don't give much: used only in _flowC(
   StringBuffer _buf = out.outTMid; //  reference to used output StringBuffer.
@@ -98,7 +100,7 @@ class Mission {
 
   ///  Create some variables and figure their usage later.
   /// #Idea?  Control missions state, working-condition / state.
-  String state = 'Functional';
+  String _state = 'Functional';
   //  State Map, Missions upper level state.
   Map<String, bool> st = {
     'off': true,
@@ -111,7 +113,7 @@ class Mission {
   //----op-  variables and methods to handle Mission operations
   ///  'open'  variables. Make this a Map. ?
   //  Sub-operations state
-  Map<String, bool> opSt = {
+  Map<String, bool> _opSt = {
     'off': true,
     'on': false,
     'pause': false,
@@ -120,7 +122,7 @@ class Mission {
   int opCount = 0;
 
   ///  #Idea:  use flags maps to control something     stFlags
-  Map<String, String> stFlags = {
+  Map<String, String> _stFlags = {
     'real': 'no',
     'accepted': 'no',
     'aborted': 'me',
@@ -134,12 +136,12 @@ class Mission {
 
   /// #Idea? -roll  and  -op : are different level of operations.
   ///  -roll-  variables.
-  bool rollDone = false;
-  int rollCount = 0;
+  bool _rollDone = false;
+  int _rollCount = 0;
 
   /// #Idea?  chore map to give names to  W O R K  -states.
   /// #Name: Do not want to use "work". Instead: #job.
-  Map<int, String> rollSchedule = {
+  Map<int, String> _rollSchedule = {
     1: 'Speed!',
     2: 'Hurry',
     3: 'Schedule',
@@ -180,8 +182,8 @@ class Mission {
     'msg': 'Mis-msg:',
   };
 
-  ///  Initializing Mission instances fields.
-  void init(String caller) {
+  ///  Initializing Mission instances fields. Changed to private.
+  void _init(String caller) {
     _flowC('-->>-->>-- :M:init:   C: $caller     -->>-->>--    ', _pB);
     placardM['actor'] = name;
     placardM['sender'] = name.substring(0, 8);
@@ -199,13 +201,13 @@ class Mission {
     _flowC(':M:build: => :chore.onB:: ', _pB);
 
     ///  Should use instance, that is created inside THIS mission instance.
-    learnChr.build(emblem, name); //  new parameter in Chore.build
-    joyChr.build(emblem, name); //  emblem and master parameters to Chore.
-    actChr.build(emblem, name);
-    peopleChr.build(emblem, name);
-    placeChr.build(emblem, name);
-    seasonChr.build(emblem, name);
-    showChr.build(emblem, name);
+    learnChr.build(_emblem, name); //  new parameter in Chore.build
+    joyChr.build(_emblem, name); //  emblem and master parameters to Chore.
+    actChr.build(_emblem, name);
+    peopleChr.build(_emblem, name);
+    placeChr.build(_emblem, name);
+    seasonChr.build(_emblem, name);
+    showChr.build(_emblem, name);
     _flowC('-->>-->>--  :M:build: calling :connector:  -->>-->>--', _pB);
     String _nS = name.substring(0, 7);
     String connectorMsg = ':INFO :ALL M: $_nS : are :READY :FOR :NEXT :EVENT ';
@@ -223,8 +225,9 @@ class Mission {
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission   * * *
-  Action decision;
-  Map<String, Map<String, Action>> decisionChainMM;
+  ///  :TEST:  change some variables to private.
+  Action _decision;
+  Map<String, Map<String, Action>> _decisionChainMM;
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
@@ -237,6 +240,7 @@ class Mission {
 
   /// Create some 0p___ methods, #then: find some job for them.
   /// devNote:  function, that OPENS way to use outer resources.
+  /// #op.. system in 15% devState.  NEXT:
   bool opInit(int openCount, var openThis) {
     ///  use resource, equ class
     _flowC('-->-m-->  :M:op:$name  opInit ', _pB);
@@ -363,13 +367,13 @@ class Mission {
     //  NOTE  If more than 9 Chores, need something else.
     String choreLengthS = choreL.length.toString();
     String choreS = getChoreNamesS();
-    String opS = opSt.toString();
+    String opS = _opSt.toString();
     String stS = st.toString();
     String ps1 = ('**.               caller: $caller                       .');
     String ps2 = ('**  MissionName:  $name         Motto: $motto');
     String ps3 = ('**  State: off    on     con     pause    done   ');
     String ps4 = ('**  stDo: $stS ');
-    String ps5 = ('**  rollDone:   $rollDone     rollCount:  $rollCount');
+    String ps5 = ('**  rollDone:   $_rollDone     rollCount:  $_rollCount');
     String ps6 = ('**  operations:  off   on   pause   done  ');
     String ps7 = ('** $opS  opCount:  $opCount');
     String ps8 = ('**  Chores:   $choreLengthS');
@@ -480,22 +484,22 @@ void buildMissions(String caller) {
   _flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', _pB);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
   packDawoMission
-    ..init(':M:-bms:')
+    .._init(':M:-bms:')
     ..build(':M:-bms:');
   helsinkiMission
-    ..init(':M:-bms:')
+    .._init(':M:-bms:')
     ..build(':M:-bms:');
   dartlangMission
-    ..init(':M:-bms:')
+    .._init(':M:-bms:')
     ..build(':M:-bms:');
   myMusicMission
-    ..init(':M:-bms:')
+    .._init(':M:-bms:')
     ..build(':M:-bms:');
   myTimeMission
-    ..init(':M:-bms:')
+    .._init(':M:-bms:')
     ..build(':M:-bms:');
   nationalParksMission
-    ..init(':M:-bms:')
+    .._init(':M:-bms:')
     ..build(':M:-bms:');
 //  };
   _flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- ', _pB);
@@ -526,9 +530,9 @@ void renderMission(String caller) {
   missionR.showInfo();
 
   //  Methods init and build are obligatory for mission to work.
-  missionR.init(':M:render:');
+  missionR._init(':M:render:');
   missionR.build(':M:render:');
-  missionR.opSt['on'] = true;
+  missionR._opSt['on'] = true;
 
   missionR._buf.writeln(':renderMission: saving row od data to :m:_buf:');
 
@@ -540,7 +544,7 @@ void renderMission(String caller) {
 
   missionR._buf.clear();
 
-  print(missionR.rollCount);
+  print(missionR._rollCount);
   print(':M:render: <<--<<--   renderMission done  C: $caller --<<--<<-- ');
   _flowC('--  mission: $missionR.name : render done  --', _pB);
 }

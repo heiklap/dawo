@@ -26,6 +26,7 @@ import 'package:dawo/corp/bind.dart';
 import 'package:dawo/corp/connector.dart';
 //  import 'package:dawo/tools.dart';
 import 'package:dawo/src/glb.dart';
+import 'package:dawo/src/box_serve.dart';
 
 //  Unused package is marked with grey, and #warning.
 //  import 'package:dawo/mill.dart';
@@ -73,6 +74,7 @@ String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
 ///  In dawo package there is no main-function. Only in example files.
 ///  Every dart program starts it's execution from main method.
 main() {
+  glb.dawoLogo.forEach(print);
   var sw = new Stopwatch()..start();
   DateTime start = new DateTime.now();
   ///  Call function that adds #actor and #count to this String and prints it.
@@ -106,8 +108,26 @@ main() {
   print(' \nStoptime::  $stop');
   print(stop.difference(start));
   print('FlowServe calls::   $flowI ');
-
+  boxServeTemplate();
 } //  -----  end of main.
+
+///  From dailyAction
+void boxServeTemplate(){
+  print('---------- :boxServe:dawoLogo: :temporary:hack:   ----------------');
+  DawoHist dawoHist = new DawoHist();
+  dawoHist.init();
+  dawoHist.build('_emblemString', '_masterString');
+  dawoHist.roll();
+  dawoHist.buf.writeln(':dailyAction:friday:');
+
+  boxServe.init(36, 175, '_');
+  boxServe.construct(':dawoHist:dailyAction:friday:');
+
+  ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
+  boxLayoutDap(dawoHist, ':dawoHist:dailyAction:friday:');
+  boxServe.show(':dailyAction:test:', 'print');
+  boxServe.done(':dailyAction:test:');
+}
 
 ///  To allow easy-run of these 8 separated activities.
 void exampleMethodsPlay() {

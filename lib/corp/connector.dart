@@ -345,8 +345,7 @@ class Connector extends BaseStruct {
 
     //  TODO  if change to: 150, it should be visible variable
     boxServe.init(42, 150, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':connector:box:  C: $caller');
-    boxServe.build(':connector:box:');
+    boxServe.construct(':connector:box::connector:box:  C: $caller');
     int r1 = 2; //  easy x-y pointing
     int r2 = 12;
     int r3 = 20;
@@ -381,7 +380,7 @@ class Connector extends BaseStruct {
     boxServe.aHeader(r2, m4, '*member M*');
     boxServe.aBox(r2 + 1, m4, 8, 12, tl.mapToList(memberM));
 
-    boxServe.aBox(r3, m2, 12, 50, joinLog);
+    boxServe.aBox(r3 - 7, m2, 12, 50, joinLog);
     boxServe.aBox(r3, m4 - 5, 12, 50, inMsgL);
 
     //  TODO  resource / samples add something
@@ -400,7 +399,8 @@ class Connector extends BaseStruct {
     boxServe.vertLine(r4, m2, 6); //   days
     boxServe.vertLine(2, 149, 29); //  Up-right edge
 
-    boxServe.boxDone(':connector:box:', 'print');
+    boxServe.show(':connector:box:', 'print');
+    boxServe.done(':connector:box:');
     print('--<<--<<  :connector:box: boxServe  done  --<<--<<--  ');
   }
 

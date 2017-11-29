@@ -37,8 +37,7 @@ import 'src/box_serve.dart';
 num dawoAppReadiness = 95; //  changed: 2.5.2015
 
 ///  Buffer also outside class, for testing and adding visibility.
-var appBuf = new StringBuffer();
-bool _pB = false; //  No printing now.
+var appBuf = new StringBuffer(); //  not used here
 
 //  TODO  DawoApp class to reconstruct and maybe split to 2.
 ///  Every important dawo Class extends BaseStruct abstract class.
@@ -56,6 +55,7 @@ class DawoApp extends BaseStruct {
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
   String master; //  Object that owns this.
 
+  bool _pB = false; //  No printing now.
   StringBuffer buf = new StringBuffer();
 
   ///  4 var to control connectors state, working-condition-state values.
@@ -91,11 +91,6 @@ class DawoApp extends BaseStruct {
   String develop = 'Under development.. 0 % to:  0.0.4';
   String version = '0.0.3';
 
-  ///  Old marking to find usage of this version in test apps.
-  final String version_0_0_02 = 'dawo 0.0.02 - 12 / 2013 hkl';
-  String thisVersion; //  users announce their version of dawo
-  String latestChange = '23.3.2017. th.12.15';
-
   //  Setting value for console
   // printing in flowC / flowS. TODO  hklGTry
   void printControl(bool pc) {
@@ -122,7 +117,7 @@ class DawoApp extends BaseStruct {
 
     ///  Build DevNotes.
     dev.buildNotes('By: :D:-A:', 'In Dawo-App-Build');
-    initChoreSystem();
+    initChoreSystem(); //  just ome notes to chore...
 
     /// Write something #WakeUpSleepyHead to all out.out-buffers.
     out.outHeader.writeln('* * * :out.outHeader:buf: -dawoApp-build:  * * * ');
@@ -153,9 +148,8 @@ class DawoApp extends BaseStruct {
     _flowC('  --<-da-<  :da:b:  build done', _pB);
   }
 
-  ///  #run-like method
-  ///  return:  Map<String, StringBuffer> out.outMapBuffers
-  Map<String, StringBuffer> roll() {
+  ///  Roll, next, calls this.
+  void fillNotes() {
     dev.admN
       ..add('>>ADM:CHECK-IN  dawo_app-roll  >>')
       ..add(':Ar: = in App-Roll. Mark value number: #7: ')
@@ -177,6 +171,7 @@ class DawoApp extends BaseStruct {
       ..add(':Ar: :TEST:  Benchmark.');
 
     dev.innoN
+      ..add('full of extensions, macros, rules, and more.  bazel')
       ..add(':Ar: Incremented #Number in new notes.')
       ..add(':Ar: Clean older notes or archive them.')
       ..add(':Ar: Not allowed messages if at least one Legal word.')
@@ -204,22 +199,24 @@ class DawoApp extends BaseStruct {
       ..add(':Ar:  #Prevent deleting notes without notice.')
       ..add(':Ar:  Keep #Track of extra iterators in notes.')
       ..add(':Ar:  #encrypt ed notes not allowed.');
+  }
 
+  ///  #run-like method
+  ///  return:  Map<String, StringBuffer> out.outMapBuffers
+  Map<String, StringBuffer> roll() {
+    fillNotes();
     //  build already does this  dev.buildNotes();
     _flowC(':da:b: DawoApp::roll    $infoS   :: roll engaged ', _pB);
 
     init(); //  calling init and build methods in this class
     build(':DAWO-APP:', 'DAWO-APP-MASTER:');
-
     //
     print('-->>-->>--  :dawoapp: calling :collector:  -->>-->>--');
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
     connector.opJoin(betaPlacardM, connectorMsg, ':D:app:');
     connector.roll();
 
-    //  Add code for roll.
-
-    appRollMissions(':DA:-roll ');
+    appRollMissions(':DA:-roll ');  //
     rollStream(':D-A:roll:');
     devStream(':D-A:roll:'); //  TODO  Temp  devStream rolled
     show('noPrint, buf, test');
@@ -234,6 +231,7 @@ class DawoApp extends BaseStruct {
     _flowC('$_msg', _pB);
     // roll BLib-class (mission) actually List of missions!
     _flowC('  ***  DAWO-APP  MISSIONS   ***  ', _pB);
+    ///  Calling method in missions.dart
     buildMissions('C:dawoApp ');
 
     ///  TODO Detail printing set false: _pB; make better, valuable solution.
@@ -253,21 +251,13 @@ class DawoApp extends BaseStruct {
     List list6 = nationalParksMission.report('C:dawoApp-:rM:', _pB);
     devBox('By; dawoApp-:rM:', [list5, list6], 9);
 
-    ///  Loop for handling user-actions in Missions.
-    //  --
-    //  while..
-    //  Loop handler
-    //  Choose Mission
-    //  code
-    //  endLoop
-
     _flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
     // roll all chores, that are in mission
   }
 
   ///  TODO devStream  building stream for dev, using elementary Stream example
   ///  DONE Adding caller-parameter
-  ///  TODO  WHO IS CALLING THIS ?  Nobody
+  ///  TODO  WHO IS CALLING THIS ?  roll method above.
   void devStream(String caller) {
     _flowC('--:stream:beg dawoApp rollStream started by: $caller   --', _pB);
     _flowC('-- :stream:beg dawoApp rollStream started by: $caller ---', true);
@@ -305,7 +295,6 @@ class DawoApp extends BaseStruct {
     //  When using : StrInList in tools:
     //  _queryL.addAll(tl.StrInList(dev.admN, 'schedule'));
     //  store demandStream acts nicely with 0-length list
-
     store.demandStream(':dawoApp-r:s:ADM:', _queryL, 'appListener');
     //  TODO Stream: meaningful : streams from doneL / devN important
     _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
@@ -328,7 +317,6 @@ class DawoApp extends BaseStruct {
 
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':dap:box: '); //  :BUG: C: $caller');
-    boxServe.build(':glb:box:');
 
     int r9 = 9;
 
@@ -372,7 +360,8 @@ class DawoApp extends BaseStruct {
     boxServe.vertLine(1, 139, 23); //  Up-right edge
     boxServe.aHeader(1, 120, '* Actions *');
 
-    boxServe.boxDone(boxHeader, 'print');
+    boxServe.show(boxHeader, 'print');
+    boxServe.done(boxHeader);
     print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
   }
 
@@ -408,51 +397,6 @@ class DawoApp extends BaseStruct {
   DawoApp(this.name, this.agenda);
 } //  ----------  class DawoApp
 
-/// Models and sample maps ; for later usage and playing.
-Map<String, String> appMap = {
-  'name': 'dawo App',
-  'infoS': 'dartang pub package for education',
-  'creator': 'me',
-  'version': '0.0.3',
-  'active': '0',
-  'stopped': '0',
-  'paused': '0',
-  'userChoise': '-',
-  'autoChoise': '1'
-};
-
-/// TODO  teamInno    this map is for testing work-flow routines
-Map<String, String> appPhaseM = {
-  'closed': '',
-  'dance': 'galop',
-  'dancer': 'LateNightCoder',
-  'tempo': '7',
-  'time': '18',
-  'active': '0',
-  'paused': '0',
-  'danceQueue: ': 'yes',
-  'danceDone:  ': 'no',
-  'stopped': '0'
-};
-
-/// Map to hold development status of this app / version.
-Map<String, String> dawo003 = {
-  'devStateNum': '99% to  0.0.3',
-  'devSituation': 'Ready to Publish',
-
-  ///  Find, where in my test-folders is THIS  version used?
-  'version': '0.0.3',
-  'published': 'Yes, Pub',
-
-  ///  next-version-info might be useful for my different tests and devNotes
-  'next version': '0.0.4. ~15.10.2017',
-
-  'author': 'Heikki Lappalainen',
-  'webPage': 'https://github.com/heiklap/dawo',
-  'started': '15.7.2013   hkl  ',
-  'purpose': 'Education, Learning  '
-};
-
 ///  Every important library has it's own flowC function. #Library #Privacy!!
 ///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right.
@@ -481,5 +425,138 @@ void outBuffersPrint(String caller, String notCalled) {
 
   print('     --<<--<<----  :D-A:   out.outBuffers  C: $caller  done ');
 }
+
+///  Keeping historical aso. info about dawo.
+///  Just testing: implements, here.
+class DawoHist implements BaseStruct {
+  String name = 'dawoHist';
+  String info = 'Historical and old stuff of dawo.';
+  String motto = 'Keeping this stuff out of dawoApp';
+
+  //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
+  String clause; //  Combination of #LANG words in sentence.
+  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  String seal; //  like:  ":DAWO-HIST:";
+  String emblem = ':dawoHist:'; //  or this emblem.
+  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String master = ':dawoApp:'; //  Object that owns this.
+
+  bool _pB = true; //  yes / no printing now.
+  StringBuffer buf = new StringBuffer();
+
+  ///  4 var to control connectors state, working-condition-state values.
+  ///  DONE: This is now a map.
+  Map<String, bool> st = {
+    'off': true,
+    'on': false,
+    'pause': false,
+    'done': false,
+  };
+
+  ///  Old marking to find usage of this version in test apps.
+  final String version_0_0_02 = 'dawo 0.0.02 - 12 / 2013 hkl';
+  String thisVersion; //  users announce their version of dawo
+  String latestChange = '23.3.2017. th.12.15';
+
+  /// Map to hold development status of this app / version.
+  Map<String, String> dawo003 = {
+    'devStateNum': '99% to  0.0.3',
+    'devSituation': 'Ready to Publish',
+
+    ///  Find, where in my test-folders is THIS  version used?
+    'version': '0.0.3',
+    'published': 'Yes, Pub',
+
+    ///  next-version-info might be useful for my different tests and devNotes
+    'next version': '0.0.4. ~15.10.2017',
+
+    'author': 'Heikki Lappalainen',
+    'webPage': 'https://github.com/heiklap/dawo',
+    'started': '15.7.2013   hkl  ',
+    'purpose': 'Education, Learning  '
+  };
+
+  /// Models and sample maps ; for later usage and playing.
+  Map<String, String> appMap = {
+    'name': 'dawo App',
+    'infoS': 'dartang pub package for education',
+    'creator': 'me',
+    'version': '0.0.3',
+    'active': '0',
+    'stopped': '0',
+    'paused': '0',
+    'userChoise': '-',
+    'autoChoise': '1'
+  };
+
+  /// TODO  teamInno    this map is for testing work-flow routines
+  Map<String, String> appPhaseM = {
+    'closed': '',
+    'dance': 'galop',
+    'dancer': 'LateNightCoder',
+    'tempo': '7',
+    'time': '18',
+    'active': '0',
+    'paused': '0',
+    'danceQueue: ': 'yes',
+    'danceDone:  ': 'no',
+    'stopped': '0'
+  };
+
+  ///  Method for setting class field values.
+  ///  TODO  add parameters
+  void init() {
+    buf.writeln(':buf:dawoHist:  init-empty ow-done.');
+    print('------------ :dawoHist: init done-------------------------');
+  }
+
+  ///  Method for setting class in working condition.
+  void build(String _emblem, String _master) {
+    buf.writeln(':buf:dawoHist:  build-empty ow-done.');
+    print('------------ :dawoHist: build done-------------------------');
+  }
+
+  ///  #run-like method, it my have sub-methods; do, run.
+  void roll() {
+    print('------------ :dawoHist:roll done -------------------------');
+  }
+
+  ///  Calling boxServe-class for info.
+  void box(String caller) {
+    buf.writeln(':dawoHist:box:start: C:$caller 123456789-23456789-23456788');
+    print('-->>-->>-- :dawoHist:box:start: C:$caller  -->>-->>-- ');
+    //  use: boxServe  OR  create own class here
+    //  TODO  set min-max values
+    final int _sw = 190; //  screen width, changed later =>
+    final int _rc = 37; //  row count
+    //  ???  Keep matrix here on callers side all the time
+    List<String> _dawoHistMatrix = new List(_rc);
+    String boxHeader = ':dawoHist:box:';
+
+    print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
+    //  :BUG:  Clear old lists first. ??
+
+    boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
+    boxServe.construct(':dawoHist:box: '); //  :BUG: C: $caller');
+
+    int r9 = 9; //  anchor for row.
+  }
+
+  ///  Presentation method.
+  void show(String action) {}
+  //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
+
+  ///  Close method.
+  void done() {}
+
+  ///  Every important library has it's own flowC function. #Library #Privacy!!
+  ///  Calling print/print-to-buffer function from beta.
+  ///  Getting local variables; Actor and Buffer right.
+  void _flowC(String msg, bool p) {
+    ///  call flowServe with #LOCAL variables
+    ///  :dawoHist:  is too long.
+    flowServe(':dHist:', buf, msg, p);
+  }
+} //  -----  class DawoHist
 
 //

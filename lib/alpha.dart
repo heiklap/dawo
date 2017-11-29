@@ -60,7 +60,7 @@ class Out {
     'outFooterBuf': outFooter,
     */
   };
-
+  //  = new List
   List<List<String>> outBufListsForBox() {
     List<List<String>> _ll = new List();
     List<String> outHeaderBufL = new List();
@@ -188,7 +188,7 @@ Out out = new Out();
 ///  DawoApp, BLib, Chore, Flag  use this
 abstract class BaseStruct {
   String name;
-  String info;
+  String info;  //  TODO  change to:  infoMM
   String motto;
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY

@@ -192,6 +192,27 @@ class LearnDartlang {
     //  '' : ' ',
   };
 
+  ///  What is to correct in dawo by:
+  ///  https://www.dartlang.org/guides/language/effective-dart#documentation
+  Map<String, String> effectiveDartM = {
+    ' ': ' ',
+    'a': ' ',
+    'b': ' ',
+    'collections': 'DO use collection literals when possible. No constructor.',
+    'c': ' ',
+    'd': ' ',
+    'e': ' ',
+    'f': ' ',
+    'g': ' ',
+    'h': ' ',
+    'i': ' ',
+    'j': ' ',
+    'k': ' ',
+    'libraryPrivate': 'PREFER making declarations private. ',
+    'l': ' ',
+  };
+
+
   ///
   Map<String, String> whyDartM = {
     ' ': ' ',

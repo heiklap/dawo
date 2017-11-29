@@ -55,15 +55,16 @@ main() {
 //  classes are not interacting aso.
 void otherStuff() {
   print('==>>==>>====  app_blib_chore example otherStuff ==>>==>>====');
+  var dawoHist = new DawoHist();  //  new DawoHist class.
   devHelp..line('dawoAppRoll');
   dawoApp.roll();
 
   //  get something out of these??
   devHelp.line('appMap, flagMap, appPhase,dawo001');
-  appMap;
-  millMap;
-  appPhaseM;
-  dawo003;
+  dawoHist.appMap;  //  just to name it
+  millMap;   //  from mill.
+  dawoHist.appPhaseM;
+  dawoHist.dawo003;
 
   //  mill.render();
   devHelp.line('dawoFlags');

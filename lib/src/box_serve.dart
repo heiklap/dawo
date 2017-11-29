@@ -11,6 +11,8 @@ library box_serve;
 
 import '../tools.dart';
 //  import '../shower.dart';
+import '../alpha.dart';
+import '../src/glb.dart';
 
 ///  Schedule connect, opJoin corporate, bind, binding
 class BoxServe {
@@ -73,8 +75,6 @@ class BoxServe {
     //   '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
   } //  -----  construct
 
-  ///   Not in use yet.
-  void build(String _caller) {}
 
   //  Fill list-data in matrix in r, _c coordinates.
   //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
@@ -107,13 +107,20 @@ class BoxServe {
     }
   }
 
-  ///  Lets see, if this will eventually be List<String>
-  void boxDone(String _caller, String action) {
+  ///  New show method extracted from done
+  void show(String _caller, String action){
     print(_matrix.length);
+    ///  if.. is awkward
     if (action == 'print') _matrix.forEach(print); //  only way!!
     //  return _matrix;  //  if type is: List<String>
+  }
+
+  ///  Lets see, if this will eventually be List<String>
+  ///  TODO  #deprecated  split in:  show and #done
+  void done(String _caller) {
     _matrix.clear();
-    //  :BUG:  so clear all, to be sure.
+    //  message somewhere??
+    //  :BUG: ?? so clear all, to be sure.
     _resAllocL.clear();
     verticalLineL.clear();
     _fakeRow = 100;
@@ -124,3 +131,56 @@ class BoxServe {
 } //  -----  class BoxServe
 
 BoxServe boxServe = new BoxServe();
+
+///  TODO  Scope?  Can this reach called fields.
+///  Using BaseStruct (dawoApp) fields to set usual fields in boxServe
+///  _model is reference to BASE-class BaseStruct in alpha.dart.
+///  Fields placement is copied from DawoApp.dart.
+///  This template for BaseStruct fields is used in example/daily_work
+void boxLayoutDap(BaseStruct _model, String _rubric){
+  int r9 = 9;
+  //  TODO  BaseStruct class usage in boxServeModel
+   _model.buf.writeln('buf: :boxServe: is ready to present data in box.');
+
+  boxServe.aHeader(1, 4, '* *  States * * ');
+  boxServe.aBox(2, 7, 6, 16, tl.mapToListB(_model.st));
+  ///  rubric like: DAWO HIST INFO
+  boxServe.aHeader(0, 60, ' :layout:dawoApp: ');
+  boxServe.aHeader(1, 60, ' *  $_rubric  *  by :layout:baseStruct:dawoApp:');
+
+  boxServe.aHeader(2, 22, 'Info:');
+  String mottoS = _model.motto;
+  String infoS = _model.info;
+  boxServe.aBox(2, 30, 2, 48, ['$infoS', '$mottoS']);
+
+  boxServe.aBox(2, 80, 4, 20, ['Agenda', 'Develop', 'Msg:', 'Versions']);
+  boxServe.aBox(2, 92, 5, 20, ['1          ', '2         ', '3         ', '4          ']);
+
+  //  TODO  also buffer must catch to inner buf.
+  List<String> _bufList = [];
+  _bufList.addAll(_model.buf.toString().split('\n'));
+  boxServe.aHeader(r9 - 2, 7, 'Buffer:');
+  boxServe.aBox(r9 - 1, 6, 28, 38, _bufList);
+  boxServe.vertLine(r9 - 1, 5, 28); //  phases
+
+  boxServe.aHeader(r9, 50, '* Plans: *');
+  boxServe
+      .aBox(r9 + 1, 50, 4, 20, ['Plans: ', 'More plans', 'xxxx', 'yyyyy']);
+  boxServe.vertLine(r9, 49, 7); //   plans
+
+  boxServe.aHeader(r9, 80, '* reserved *');
+  boxServe.aBox(r9 + 1, 80, 5, 15, [
+  'A',
+  'B',
+  'C',
+  'C',
+  ]);
+
+  boxServe.aBox(3, 110, 5, 62, glb.dawoLogo);
+}  //  -----  boxLayoutDab
+
+///  UsingBaseStruct (connector) fields to set usual fields in boxServe
+void boxLayoutlConnector(){
+
+
+}
