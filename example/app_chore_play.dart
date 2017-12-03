@@ -77,14 +77,14 @@ void otherStuff() {
 
   renderMission(':app:chore:play.dart:');
 
-  mission.opOpen(1, 'X');
+  mission.scoutOpen(1, 'X');
 
   //  Do we have hello-function somewhere?
   void helloAppChorePlay() {
     print('helloAppChorePlay');
   }
 
-  mission.opRoll(4, helloAppChorePlay);
+  mission.scoutRoll(4, helloAppChorePlay);
 
   mission.opClose();  //  no parameters.
 

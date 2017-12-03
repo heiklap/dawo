@@ -79,6 +79,7 @@ class CommonChore extends BaseStruct {
   String infoS = 'Chore resolves  W O R K  flow and control ..';
   //  Do not initialize values; just study, what this class got.
   String motto = 'chore handling small jobs';
+  String clause; //  Combination of #LANG words in sentence.
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   String seal; //   No usage
@@ -177,7 +178,7 @@ class CommonChore extends BaseStruct {
     //  Join "clients" / Members to opList. placardM mediates necessary info.
     _flowC('-->>-->>--  :chore: calling :connector:  -->>-->>--', _pB);
     String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
-    connector.opJoin(placardM, connectorMsg, ':Chr:');
+    connector.scoutJoin(placardM, connectorMsg, ':Chr:');
     connector.roll();
 
     //  run #op, for single operation
@@ -222,7 +223,7 @@ class CommonChore extends BaseStruct {
     print('-->>-->>--  :Ch:-op: calling :connector:  -->>-->>--');
     String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
 
-    connector.opJoin(placardM, connectorMsg, ':Ch:-op:');
+    connector.scoutJoin(placardM, connectorMsg, ':Ch:-op:');
     connector.roll();
 
     ///  Make placard in shape.

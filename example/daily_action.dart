@@ -120,7 +120,7 @@ void monday() {
   dartlangMission.showInfo();
   dartlangMission.report(':dailyAct:monday:', true);
   //  Decide, how reasonable is put these functions inside a class.
-  connector.opJoin(
+  connector.scoutJoin(
       mondayAct.placardM, ':actMonday:msg:', ':dailyAction:monday:');
   //  ':dailyAct:monday:', ':receiver:all:', ':key:dailyAct:monday:', ':da:msg:'
   connector.ping(':dailyAct:monday:', ':receiver:all:', ':key:dailyAct:monday:',
@@ -128,12 +128,12 @@ void monday() {
   connectorBuf.write('-->>  :dailyAct:monday: connector :opJoin:ping:done  ');
   dartlangMission.report(':monday:', true);
   dartlangMission.learnChr.roll();
-  dartlangMission.opInit(2, mondayAct.dailyCourier);
-  dartlangMission.opOpen(1, mondayAct.dailyCourier); //  ??   openThis
+  dartlangMission.scoutInit(2, mondayAct.dailyCourier);
+  dartlangMission.scoutOpen(1, mondayAct.dailyCourier); //  ??   openThis
 
   // PLAY:  #courier func
-  dartlangMission.opRoll(3, mondayAct.dailyCourier);
-  dartlangMission.opReport();
+  dartlangMission.scoutRoll(3, mondayAct.dailyCourier);
+  dartlangMission.scoutReport();
   //  not visible  corporate.
   //  No: private   mondayAct.init();
   //  no: private  mondayAct.build();
@@ -160,7 +160,7 @@ void monday() {
 ///
 void tuesday() {
   print('--------- :day:tuesday:---- helsinkiMission------------------');
-  helsinkiMission.opReport();
+  helsinkiMission.scoutReport();
   packDawoMission.report(':dailyAction:test:', false);
 }
 
@@ -208,7 +208,7 @@ void friday() {
   boxServe.aBox(17, 85, 18, 50, connector.inMsgL);
 
   boxServe.aHeader(16, 138, '* connector memberM * ');
-  boxServe.aBox(17, 138, 14, 40, tl.mapToList(connector.memberM));
+  boxServe.aBox(17, 138, 14, 40, tl.mapToListO(connector.memberM));
 
   boxServe.show(':dailyAction:test:', 'print');
   boxServe.done(':dailyAction:test:');

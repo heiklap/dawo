@@ -188,7 +188,7 @@ Out out = new Out();
 ///  DawoApp, BLib, Chore, Flag  use this
 abstract class BaseStruct {
   String name;
-  String info;  //  TODO  change to:  infoMM
+  String info; //  TODO  change to:  infoMM
   String motto;
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY

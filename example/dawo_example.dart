@@ -101,6 +101,8 @@ main() {
   bind.report('$dexS');
   dawoApp.box(dexS);  //  2. time here-
 
+
+  connectorOp(dexS);
   exInfo('    ==<<==<<==    dawo_example done    ==<<==<<==');
 
   print("Executing dawo_example.dart took: ${sw.elapsed}us");
@@ -146,7 +148,7 @@ void exampleMethodsPlay() {
 
   sampleJsonData();
   connectorExampleReport();
-  schedulePlay();
+  //  deprecated  schedulePlay();
 }
 
 ///  Form  message row to easy-find and print it if: _pB
@@ -161,7 +163,7 @@ void exInfo(String msg) {
 ///  Place where :corporate:  :opCom:  and :connector: play together.
 void connectorOp(String caller) {
 
-  connector.opJoin(placardM, connectorMsg, ':Dawo:example:');
+  connector.scoutJoin(placardM, connectorMsg, ':Dawo:example:');
   connector.roll();
   connector.box(':d-ex:');
 }
@@ -176,15 +178,15 @@ void exampleMission() {
   exInfo('\n ==>>==>>==   rolling :packDawo:Mission:    ==>>==>>==');
 
   ///  Eventually opRoll handles all these others.
-  packDawoMission.opInit(1, 'empty parameter');
-  packDawoMission.opOpen(2, 'second empty parameter');
+  packDawoMission.scoutInit(1, 'empty parameter');
+  packDawoMission.scoutOpen(2, 'second empty parameter');
   //  calls void function that prints a String.
   //  In front of String is line feed, and another String with interpolation.
   exInfo('\n $dexS-:dw:-ex: -----------  rolling :courier:Message: ------ ');
-  packDawoMission.opRoll(3, courierMessage);
+  packDawoMission.scoutRoll(3, courierMessage);
   exInfo('  - -:dw:-ex: -----  rolling :courier:mission: opFunc  done ---\n');
   packDawoMission.opClose(); //  No  parameters.
-  packDawoMission.opReport();
+  packDawoMission.scoutReport();
   exInfo('    ==<<==<<==    rolling :packDawo:Mission: done    ==<<==<<==');
   //  When you print row below, you can see all methods.
   //  packDawoMission.
@@ -226,11 +228,13 @@ void connectorExampleReport() {
 }
 
 ///
+/*  #deprecated:  use connector.box
 void schedulePlay() {
   exInfo('==>>==>>==   calling :schedule:play:    ==>>==>>==');
   scheduleCon.roll('$dexS');
   exInfo('    ==<<==<<==    :schedule:play: done    ==<<==<<==');
 }
+*/
 
 /// Empty, or message method
 void noteToMe() {

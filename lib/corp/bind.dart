@@ -35,6 +35,7 @@ class Bind {
   ///  Member is also a class in alpha.
   ///  #PLAN:  eventually this will be Object Member. Or reference to Chore.
   //  Map<String, Member> bindMembM = {};  Not object yet.
+  //  This might be <BaseStruct>  for Chore to be able to join
   //  Usage: Only here
   Map<String, String> bindMembM = {
     'bMemb-1': 'First member in bind',

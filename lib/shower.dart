@@ -22,6 +22,7 @@ import 'corp/corporate.dart';
 import 'mis/equipment.dart';
 
 import 'corp/bind.dart';
+import 'dart:math';
 
 //  TODO :  21 matches,  add one more to make it even count.
 
@@ -271,6 +272,12 @@ class ScheduleBox {
       //NO #print:  print(_matrix);
     }
 
+    ///  Marks left of console screen to put table in convenient place for to see.
+    void eyeMark14() {
+      int pegC = min(_matrix.length, 14);
+      anchorBox(pegC, 0, 100, 100, ['peg']); //  Lay "screen-watch-anchor"
+    }
+
     anchorBox(3, 5, 100, 100, [
       '**  Mission-op development experience; common usable stuff',
       '**  Presenting available objects in scope.  **'
@@ -284,6 +291,7 @@ class ScheduleBox {
     anchorBox(33, 44, 100, 100, equ.programAreas);
     anchorBox(1, 123, 100, 100, _resAllocL);
     //  Usable resources: toolsActiveM, toolsSpeedM,status
+    eyeMark14(); //  mark 'peg' to put screen table to screen.
   }
 
   void roll(String _caller) {
@@ -295,6 +303,7 @@ class ScheduleBox {
 
 var scheduleBox = new ScheduleBox();
 
+/*  ScheduleCon deprecated;  use: connector.box
 ///  Schedule connect, opJoin corporate, bind, binding
 class ScheduleCon {
   /*
@@ -333,10 +342,14 @@ class ScheduleCon {
     _matrix[_rc - 1] =
         '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
 
+
+
     void anchorBox(int _r, int _c, _items, _w, List __l) {
       tl.boxInList(_r, _c, _items, _w, __l, _matrix);
       //NO #print:  print(_matrix);
     }
+
+
 
     ///   Lay String in a certain place in matrix.
     ///   :QUEST:  This is too complicated, lol.
@@ -346,6 +359,12 @@ class ScheduleCon {
       int _length = _matrix[_r].length;
       String _s3 = _matrix[_r].substring(_pos + s.length, _length);
       _matrix[_r] = '$_s1$s$_s3';
+    }
+
+    ///  Marks left of console screen to put table in convenient place for to see.
+    void eyeMark14(){
+      int pegC = min(_matrix.length,14);
+      lHeader(pegC , 0, 'peg');  //  Lay "screen-watch-anchor"
     }
 
     List<String> verticalLineL = [];
@@ -398,8 +417,8 @@ class ScheduleCon {
     anchorBox(33, 32, 100, 100, equ.months);
     anchorBox(38, 60, 100, 100, equ.weekDays);
 
-    lHeader(33, 89, '*  connector.memberM *');
-    anchorBox(34, 89, 12, 32, tl.mapToList(connector.memberM));
+    lHeader(33, 93, '  *      conMemberM  *  ');
+    anchorBox(34, 89, 12, 32, tl.mapToListO(connector.memberM));
 
     //  lHeader(1, 123, '*  connector.joinLog *');
     anchorBox(1, 123, 14, 50, connector.joinLog);
@@ -415,7 +434,7 @@ class ScheduleCon {
     anchorBox(1, 173, 47, 1, verticalLineL);
     anchorBox(1, 124, 47, 1, verticalLineL);
     // NOTE: 1-2 length items in lists are not R-L-padded
-
+    eyeMark14();  //  mark 'peg' to put screen table to screen.
     //  Usable resources: toolsActiveM, toolsSpeedM,status
   }
 
@@ -428,6 +447,7 @@ class ScheduleCon {
 } //  -----  class ScheduleBox
 
 var scheduleCon = new ScheduleCon();
+*/
 
 ///  Gets some small data from effortLM based on parameters.
 List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {

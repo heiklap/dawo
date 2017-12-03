@@ -9,7 +9,6 @@
 //
 //  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
 
-
 library aldente_func.dart;
 
 ///  from punch/tools/signal

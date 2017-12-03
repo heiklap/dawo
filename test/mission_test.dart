@@ -26,20 +26,20 @@ void main() {
 
   //  At the end renderMission() is playing another mission.
   //  myMission is used here only to play opX
-  myMission.opRoll(3, courierGreetings);
+  myMission.scoutRoll(3, courierGreetings);
   print('  rolling mission op-functions  ');
 
   ///  Eventually opRoll handles all these others.
   //  myMission.opInit(1, 'empty parameter');
-  myMission.opInit(1, 'empty parameter');
-  myMission.opOpen(2, 'second empty parameter');
-  myMission.opOpen(2, 'second empty parameter');
-  myMission.opRoll(3, courierGreetings);
+  myMission.scoutInit(1, 'empty parameter');
+  myMission.scoutOpen(2, 'second empty parameter');
+  myMission.scoutOpen(2, 'second empty parameter');
+  myMission.scoutRoll(3, courierGreetings);
 
   //  is now in shower   myMission.scheduleBox(':t-m:');
   scheduleBox.roll(':t-m:');
 
-  myMission.opReport();
+  myMission.scoutReport();
   //  Close is last one in row.
   myMission.opClose();
 

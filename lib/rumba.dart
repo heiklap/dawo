@@ -109,7 +109,7 @@ class Rumba {
 
       String connectorMsg =
           ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
-      connector.opJoin(placardM, connectorMsg, ':R:u:');
+      connector.scoutJoin(placardM, connectorMsg, ':R:u:');
       connector.roll();
 
       ///  --  usher loop
@@ -121,12 +121,12 @@ class Rumba {
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
         String connectorMsg =
             ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
-        connector.opJoin(placardM, connectorMsg, ':R:u:');
+        connector.scoutJoin(placardM, connectorMsg, ':R:u:');
         connector.roll();
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
         String connectorMsg2 =
             ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
-        connector.opJoin(placardM, connectorMsg2, ':R:u:');
+        connector.scoutJoin(placardM, connectorMsg2, ':R:u:');
         connector.roll();
 
         /// ----------------------  usher loop code  ---------------------
@@ -141,7 +141,7 @@ class Rumba {
           print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
           String connectorMsg =
               ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
-          connector.opJoin(placardM, connectorMsg, ':R:u:');
+          connector.scoutJoin(placardM, connectorMsg, ':R:u:');
           connector.roll();
           connector.box(':R:.do:');
 
@@ -181,7 +181,7 @@ class Rumba {
       print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
       connectorMsg = ':ALL :DO :ANSWER ;FAST => :HOW:MANY #Process :ON ?';
 
-      connector.opJoin(placardM, connectorMsg, ':R:done:');
+      connector.scoutJoin(placardM, connectorMsg, ':R:done:');
       connector.roll();
 
       doneRumba(); //  --  Do it only once now.

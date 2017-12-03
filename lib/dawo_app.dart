@@ -88,8 +88,8 @@ class DawoApp extends BaseStruct {
   ///  App-specified fields.
   String agenda = 'dawoApp rolls missioms';
   String msg = 'dawoApp-Message..';
-  String develop = 'Under development.. 0 % to:  0.0.4';
-  String version = '0.0.3';
+  String develop = 'Under development.. 0 % to:  0.0.6';
+  String version = '0.0.6';
 
   //  Setting value for console
   // printing in flowC / flowS. TODO  hklGTry
@@ -213,12 +213,12 @@ class DawoApp extends BaseStruct {
     //
     print('-->>-->>--  :dawoapp: calling :collector:  -->>-->>--');
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
-    connector.opJoin(betaPlacardM, connectorMsg, ':D:app:');
+    connector.scoutJoin(betaPlacardM, connectorMsg, ':D:app:');
     connector.roll();
 
-    appRollMissions(':DA:-roll ');  //
-    rollStream(':D-A:roll:');
-    devStream(':D-A:roll:'); //  TODO  Temp  devStream rolled
+    appRollMissions(':DA:-roll:'); //
+    rollStream(':D-A:roll:2');
+    devStream(':D-A:roll:3'); //  TODO  Temp  devStream rolled
     show('noPrint, buf, test');
     done();
     //  code here
@@ -231,6 +231,7 @@ class DawoApp extends BaseStruct {
     _flowC('$_msg', _pB);
     // roll BLib-class (mission) actually List of missions!
     _flowC('  ***  DAWO-APP  MISSIONS   ***  ', _pB);
+
     ///  Calling method in missions.dart
     buildMissions('C:dawoApp ');
 
@@ -318,7 +319,7 @@ class DawoApp extends BaseStruct {
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':dap:box: '); //  :BUG: C: $caller');
 
-    int r9 = 9;
+    int r9 = 9; //  row anchor
 
     boxServe.aHeader(1, 4, '* *  States * * ');
     boxServe.aBox(2, 7, 6, 16, tl.mapToListB(st));

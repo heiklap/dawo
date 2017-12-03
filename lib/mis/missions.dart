@@ -59,6 +59,7 @@ class Mission {
 
   String name;
   String motto;
+  String clause; //  Combination of #LANG words in sentence.
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
@@ -211,7 +212,7 @@ class Mission {
     _flowC('-->>-->>--  :M:build: calling :connector:  -->>-->>--', _pB);
     String _nS = name.substring(0, 7);
     String connectorMsg = ':INFO :ALL M: $_nS : are :READY :FOR :NEXT :EVENT ';
-    connector.opJoin(placardM, connectorMsg, ':M:-build:');
+    connector.scoutJoin(placardM, connectorMsg, ':M:-build:');
     connector.roll();
 
     ///  add default chores to choreL and #TODO  forEach.build
@@ -238,49 +239,59 @@ class Mission {
   void fireStream() {} //
   ///  ***********************************************************************
 
-  /// Create some 0p___ methods, #then: find some job for them.
+  /// Create some scout___ methods, #then: find some job for them.
+  /// Renamed to:  scoutXX
   /// devNote:  function, that OPENS way to use outer resources.
-  /// #op.. system in 15% devState.  NEXT:
-  bool opInit(int openCount, var openThis) {
+  /// #scout.. system in 15% devState.  NEXT:
+  bool scoutInit(int openCount, var openThis) {
     ///  use resource, equ class
-    _flowC('-->-m-->  :M:op:$name  opInit ', _pB);
-    _flowC(':M:op: opInit-info: Get necessary data for op-operations. >>', _pB);
-    _flowC('>>  :M:op:Resource object-simulations from app upper level.', _pB);
+    _flowC('-->-m-->  :M:scout:$name  scoutInit ', _pB);
+    _flowC(':M:scout: opInit-info: Get necessary data for scut-operations. >>',
+        _pB);
+    _flowC(
+        '>>  :M:scout:Resource object-simulations from app upper level.', _pB);
     equ.active = true; //  Resource class activate.
-    //  opOn;
-    //  opDone;
-    //  opCount;
+    //  scoutOn;
+    //  scoutDone;
+    //  scoutCount;
 
     bool _initB = false;
     //  code to initialize variables in system
     return _initB;
   }
 
-  /// devNote:  function, that OPENS something.
-  bool opOpen(int openCount, var openThis) {
-    _flowC('  -->-m-->  :M:op:$name  opOpen  ', _pB);
+  /// devNote:  method, that OPENS scout thins.
+  bool scoutOpen(int openCount, var openThis) {
+    _flowC('  -->-m-->  :M:scout:$name  scoutOpen  ', _pB);
     _flowC(
-        '  :M:op: opOpen-info: Open data-tables and resolve queries.>>', _pB);
-    _flowC('  >>  :M:op: Schedule area-machine-money resources in time.', _pB);
+        '  :M:scout: scoutOpen-info: Open data-tables and resolve queries.>>',
+        _pB);
+    _flowC(
+        '  >>  :M:scout: Schedule area-machine-money resources in time.', _pB);
     bool _openB = false;
-    //  code to roll -open-   - operations
+    //  code to roll -scoutOpen-   - operations
     return _openB;
   }
 
-  ///  Start developing operation roll function
-  ///  Eventually opRoll handles all these others: init-open-close-schedule..
-  ///  opRollCal by: mission_test,  dawo_example
-  int opRoll(int rollCount, var courierFunc) {
-    _flowC('    -->-m-->  :M:op:$name  opRoll    * * * * * * * * * * * * *  ', _pB);
-    _flowC('    :M:op: opRoll-info: Run init-open, &; close & report. >>', _pB);
-    _flowC('>>  :M:op: INFO: op-operationsa are outside chore-world.', _pB);
+  ///  Start developing scout roll function
+  ///  Eventually scoutRoll handles all these others: init-open-close-schedule..
+  ///  scoutRoll call, by: mission_test,  dawo_example
+  int scoutRoll(int rollCount, var courierFunc) {
+    _flowC(
+        '    -->-m-->  :M:scout:$name  opRoll    * * * * * * * * * * * * *  ',
+        _pB);
+    _flowC('    :M:scout: scoutRoll-info: Run init-open, &; close & report. >>',
+        _pB);
+    _flowC(
+        '>>  :M:scout: INFO: scout-operationsa are outside chore-world.', _pB);
     int done = 0;
-    _flowC('-->>-->>--  :M:opR: calling :connector:  -->>-->>--', _pB);
+    _flowC('-->>-->>--  :M:scoutR: calling :connector:  -->>-->>--', _pB);
 
     ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
     String connectorMsg =
-        ':M:-opR: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
-    connector.opJoin(placardM, connectorMsg, ':M:-opR:');
+        ':M:-scoutR: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
+    //  instead: :M:-scoutR:  change 3. parameter to: name
+    connector.scoutJoin(placardM, connectorMsg, name);
     connector.roll();
 
     //  now this just rolls func rollCount time,  lol
@@ -293,33 +304,38 @@ class Mission {
     print(courierFunc); //  Closure: () => void
     print(courierFunc.runtimeType); //  () => void
     print('-----courier------------- \n');
-    print(':M:opRoll: :courier:func:  :');
+    print(':M:scoutRoll: :courier:func:  :');
 
-    _flowC('    <-m--<--  :M:op:  opRoll   done c: $done   * * * * * * *', _pB);
+    _flowC('    <-m--<--  :M:scout:  scoutRoll   done c: $done   * * * * * * *',
+        _pB);
     return done;
-  }
+  }  //  -----  scoutRoll
 
-  /// devNote:  function, that CLOSES it's object.
+  /// devNote:  method, that CLOSES it's object.
   /// idea?
   //  int opClose(int openCount, Function openThis) {
   void opClose() {
     equ.active = false;
-    _flowC('--<----<-  :M:op:$name  opClose --<----<-', _pB);
-    _flowC(':M:op: opClose-info: End lof mission-op operation. >>', _pB);
-    _flowC('>>:M:op:close: * Statistics ready, save next-round data. *.', _pB);
+    _flowC('--<----<-  :M:scout:$name  scoutClose --<----<-', _pB);
+    _flowC(
+        ':M:scout: scoutClose-info: End lof mission-scout operation. >>', _pB);
+    _flowC(
+        '>>:M:scout:close: * Statistics ready, save next-round data. *.', _pB);
   }
 
-  ///  give report of op statistics
-  void opReport() {
-    _flowC('  --<----<-  :M:op:$name  opReport --<----<-', _pB);
-    _flowC('  :M:op: opReport-info: Report for to check data lists. >>', _pB);
-    _flowC('  >>  :M:op: opReport: ** Not needed when scheduleBox.**.', _pB);
+  ///  give report of scout statistics
+  void scoutReport() {
+    _flowC('  --<----<-  :M:scout:$name  scoutReport --<----<-', _pB);
+    _flowC('  :M:scout: scoutReport-info: Report for to check data lists. >>',
+        _pB);
+    _flowC(
+        '  >>  :M:scout: scoutReport: ** Not needed when scheduleBox.**.', _pB);
     List<String> _l = [];
     List<String> _l2 = [];
     _l.addAll(tl.bufToList(out.outTMid));
     for (var x = 0; x < _l.length; x++) {
-      ///  Add all ':M:op:' to _l2.
-      if (_l[x].indexOf(':M:op:') > 0) {
+      ///  Add all ':M:scout:' to _l2.
+      if (_l[x].indexOf(':M:scout:') > 0) {
         _l2.add(_l[x]);
       }
     }
