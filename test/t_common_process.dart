@@ -20,7 +20,7 @@ void main() {
 
   ch.op(ch.placardM);
   print('............ t_common_process  done .............................');
-  print(ch.infoS);
+  print(ch.info);
   print('............ t_common_process  done All:done  ...................');
 
   testRenderBetaLib();

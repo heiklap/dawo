@@ -275,7 +275,7 @@ class ScheduleBox {
     ///  Marks left of console screen to put table in convenient place for to see.
     void eyeMark14() {
       int pegC = min(_matrix.length, 14);
-      anchorBox(pegC, 0, 100, 100, ['peg']); //  Lay "screen-watch-anchor"
+      anchorBox(14, 0, 1, 6, ['pegXLZ']); //  Lay "screen-watch-anchor"
     }
 
     anchorBox(3, 5, 100, 100, [
@@ -292,7 +292,7 @@ class ScheduleBox {
     anchorBox(1, 123, 100, 100, _resAllocL);
     //  Usable resources: toolsActiveM, toolsSpeedM,status
     eyeMark14(); //  mark 'peg' to put screen table to screen.
-  }
+  }  //  -----  build
 
   void roll(String _caller) {
     init();
@@ -447,6 +447,7 @@ class ScheduleCon {
 } //  -----  class ScheduleBox
 
 var scheduleCon = new ScheduleCon();
+//  -----  ScheduleCon deprecated;  use: connector.box
 */
 
 ///  Gets some small data from effortLM based on parameters.

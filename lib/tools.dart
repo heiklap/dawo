@@ -236,8 +236,11 @@ class Tools {
   List<String> mapToListO(Map<String, Object> thisMap) {
     List<String> _l = [];
     thisMap.forEach((k, v) {
+      //  we get:  Instance of 'Mission',  unless use: toString()
+      String _v;
+      _v = v.toString();
       String _s = '';
-      _s = '$k, $v';
+      _s = '$k, $_v';
       _l.add(_s);
     });
     return _l;

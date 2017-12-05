@@ -92,7 +92,7 @@ StringBuffer renderDawo() {
   /// Just another instance, shorter, for testing.
   var da = new DawoApp('dawoApp', 'playing in renderDawo-function');
   var mill = new Mill();
-  renderBuffer.writeln(da.infoS);
+  renderBuffer.writeln(da.info);
   mill.userChoice;
 
   /// -------------------------------- testing  getters and setters

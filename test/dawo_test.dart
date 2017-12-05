@@ -16,7 +16,7 @@ void main() {
   print(missionH.name);
 
   var appX = new DawoApp('d-app', 'test');
-  appX.infoS; //  string
+  appX.info; //  string
 
   group('A group of tests', () {
     Awesome awesome;

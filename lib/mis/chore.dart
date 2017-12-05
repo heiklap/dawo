@@ -76,7 +76,7 @@ void initChoreSystem() {
 ///  Every important dawo class is extending Alpha class.
 class CommonChore extends BaseStruct {
   String name = 'Common Chore class  ';
-  String infoS = 'Chore resolves  W O R K  flow and control ..';
+  String info = 'Chore resolves  W O R K  flow and control ..';
   //  Do not initialize values; just study, what this class got.
   String motto = 'chore handling small jobs';
   String clause; //  Combination of #LANG words in sentence.
@@ -93,10 +93,10 @@ class CommonChore extends BaseStruct {
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
   Map<String, bool> st = {
-    'off': true,
+    'wake': true,
 
     ///  Controlling chores state, working-condition-state values.
-    'on': false,
+    'work': false,
     'pause': false,
     'done': false,
   };
@@ -141,8 +141,8 @@ class CommonChore extends BaseStruct {
     //  TODO  Initialized?  Where?
     if (st['on'] == true) print('\n ALREADY INITIALIZED BUILD CHORE  \n');
     //  print(onB);
-    st['off'] = false; //  off-state ends
-    st['on'] = true; //   app is in on
+    st['wake'] = true; //  sleep-state ends
+    st['work'] = true; //   app is in on
     _flowC('<--  chore build  $name done --<----<-- ', _pB);
   }
 
@@ -151,7 +151,7 @@ class CommonChore extends BaseStruct {
   ///  it might be annotated in function parameter.
   void roll() {
     _flowC('--> ch roll:  $name -->---->--', _pB);
-    _flowC('Chore::  $infoS   :: roll engaged ', _pB);
+    _flowC('Chore::  $info   :: roll engaged ', _pB);
 
     init(); //  Calling init and build methods in this class.
     //  NOTE  Mission also calls this build.
@@ -271,10 +271,10 @@ class CommonChore extends BaseStruct {
     String rowInfoS = rowInfo();
     String _s1 = '** _______________________________________________________';
     String _s2 = '** Nimi:  $name     C:  $caller';
-    String _s3 = '** $infoS';
+    String _s3 = '** $info';
     String _s4 = '** $motto';
     String _s5 = '** Master:   $master  Emblem: $emblem';
-    String _s6 = '** Off: $st.toString';
+    String _s6 = '** st: $st.toString';
     String _s7 = '** $rowInfoS';
     String _s8 = '** ';
     String _s9 = '** ';
@@ -286,7 +286,7 @@ class CommonChore extends BaseStruct {
 
   ///  get
   String rowInfo() {
-    //  on: $st['on] off: $off p: $pause d: $done
+    //  st::  'wake'; false, 'work' false',  'pause': true, 'done': false
     String _s = '$name  m: $motto $st.toSgtring ';
     return _s;
   }
@@ -294,7 +294,7 @@ class CommonChore extends BaseStruct {
   ///  close method
   void done() {
     _flowC('<-- Chore buffer $name output app: done  --<----<--', _pB);
-    _flowC('Chore::    $infoS   :: engaged ', _pB);
+    _flowC('Chore::    $info   :: engaged ', _pB);
     //  code here
     //  Too many times.  print(choreBuf);
     //  choreBuf.clear(); //  empty
@@ -311,7 +311,7 @@ class CommonChore extends BaseStruct {
 
   ///  constructor
   ///  TODO  should add #master field for mission, that owns this chore?
-  CommonChore(this.name, this.infoS);
+  CommonChore(this.name, this.info);
 }
 
 ///  Calling print/print-to-buffer function from beta.
@@ -403,7 +403,7 @@ StringBuffer renderChore() {
 
 //  var superChore = new SuperChore();
   var ch = new CommonChore('ChoreInRenderChore', 'Testing-Chore');
-  print(ch.infoS);
+  print(ch.info);
 
   topGrant();
   lowGrant();
@@ -417,7 +417,7 @@ StringBuffer renderChore() {
   //  Enlisted class
   eff.makeAllLists(':render:Chore:');
 
-  print(ch.infoS);
+  print(ch.info);
   return _retBuf;
 } //----------------------------------------------   end renderChore
 

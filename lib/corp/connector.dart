@@ -149,8 +149,8 @@ class Connector extends BaseStruct {
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
   Map<String, bool> st = {
-    'off': true, //  'wake'
-    'on': false, //  'work'
+    'wake': false,
+    'work': false,
     'pause': false,
     'done': false,
   };
@@ -240,8 +240,10 @@ class Connector extends BaseStruct {
   Map<String, Mission> scoutM = {
     'packDawo mission': packDawoMission,
     'Helsinki-mission': dartlangMission,
+    'Dartlang mission': dartlangMission,
     'My-Music mission': myMusicMission,
     'MyTime mission': myTimeMission,
+    'Finlands national park mission': nationalParksMission
     // old  'cM-1': 'First :con:Member:test:',
     // 'cM-2': 'Second :con:Member:test:',
   };
@@ -262,7 +264,7 @@ class Connector extends BaseStruct {
       scoutInfoL.forEach(print);
       print(tl.mapToListO(scoutM));
       print('------------- info map: -----------------------');
-      scoutM[caller].info.forEach((k,v) => print('$k $v'));
+      scoutM[caller].infoM.forEach((k,v) => print('$k $v'));
       print('-------- name: motto:  -----------------------');
       print(scoutM[caller].name);
       print(scoutM[caller].motto);
@@ -348,8 +350,8 @@ class Connector extends BaseStruct {
   ///  Method for further setting class fields in working condition.
   ///  CalledBy:  Roll.
   void build(String _emblem, String _master) {
-    st['offB'] = false; //  off-state ends
-    st['onB'] = true; //   Connector is in on-state.
+    st['wake'] = true; //  sleep-state ends
+    st['work'] = true; //   Connector is in work-state.
     buf.writeln('$_bm :connector: -> build done');
   }
 
@@ -411,7 +413,7 @@ class Connector extends BaseStruct {
     boxServe.aHeader(r1, m1 + 6, '* connector  buf  *');
     boxServe.aBox(r1 + 1, m1, 39, 33, tl.bufToList(buf));
 
-    boxServe.aHeader(7, m2, '*Connector*');
+    boxServe.aHeader(7, m2, '*Connector-*');
     boxServe.aBox(8, m2, 6, 10, ['Connector', 'box-method', 'Clause', clause]);
 
     boxServe.aHeader(7, m3, '*: con:infoM *');
@@ -422,8 +424,10 @@ class Connector extends BaseStruct {
 
     boxServe.aBox(4, 125, 12, 14, equ.months);
 
-    //boxServe.aHeader(r2, m4 + 4, ' *  conscoutM  * ');
-    boxServe.aHeader(r3 - 6, m2, ' *  conscoutM  * ');
+    //boxServe.aHeader(r2, m4 + 4, ' *  conScoutM  * ');
+    //  NoWork!??  Try absolute   boxServe.aHeader(r3 - 6, m2, ' *  conScoutM  * ');
+    //  Try absolute address::
+    boxServe.aHeader(12, 44, ' *  conScoutMember  * ');
     //boxServe.aBox(r2 + 1, m4 + 1, 6, 21, tl.mapToListO(scoutM));
     boxServe.aBox(r3 - 7, m2, 12, 50, tl.mapToListO(scoutM));
 

@@ -24,7 +24,6 @@ import 'package:dawo/corp/bind.dart';
 import 'package:dawo/corp/connector.dart';
 import 'package:dawo/tools.dart';
 import 'package:dawo/src/box_serve.dart';
-import 'package:dawo/src/glb.dart';
 
 DawoApp dawoApp = new DawoApp(':dailyAction:test:', 'By: :dailyAction:test:');
 var dawoHist = new DawoHist();
@@ -102,16 +101,15 @@ void main() {
   //  this proves, that dawoApp.appRollMissions is elementary for chores aso.
   //  But other functionality plays without it.
 
-  dawoApp.appRollMissions(':dailyAction:test:');
-
+  //  NO need: next do it.  dawoApp.appRollMissions(':dailyAction:test:');
   ///  gives too long and messy output.
   dawoApp.roll();
   print('------------- :dailyAction: start  -----------------------');
   //  monday();
   //  tuesday();
-  wednesday();
-  thursday();
-  friday();
+  //  wednesday();
+  //  thursday();
+  //  friday();
 }
 
 ///  Play with mission-op  and connector  courier aso.
@@ -166,7 +164,45 @@ void tuesday() {
 
 ///
 void wednesday() {
-  print('--------- :day:wednesday:----empty ------------------');
+  print('--------- :day:wednesday: ----------------------');
+  myTimeMission.showInfo();
+  myTimeMission.report(':dailyAct:wednesday:', true);
+  //  Decide, how reasonable is put these functions inside a class.
+  connector.scoutJoin(
+      wednesdayAct.placardM, ':actWednesday:msg:', ':dailyAction:wednesday:');
+  //  ':dailyAct:wednesday:', ':receiver:all:', ':key:dailyAct:wednesday:', ':da:msg:'
+  connector.ping(':dailyAct:wednesday:', ':receiver:all:', ':key:dailyAct:wednesday:',
+      ':da:msg:');
+  connectorBuf.write('-->>  :dailyAct:wednesday: connector :opJoin:ping:done  ');
+  myTimeMission.report(':wednesday:', true);
+  myTimeMission.learnChr.roll();
+  myTimeMission.scoutInit(2, wednesdayAct.dailyCourier);
+  myTimeMission.scoutOpen(1, wednesdayAct.dailyCourier); //  ??   openThis
+
+  // PLAY:  #courier func
+  myTimeMission.scoutRoll(3, wednesdayAct.dailyCourier);
+  myTimeMission.scoutReport();
+  //  not visible  corporate.
+  //  No: private   wednesdayAct.init();
+  //  no: private  wednesdayAct.build();
+  //  dawoApp:
+  wednesdayAct.roll(':day:wednesday:', 16, 125, '_');
+
+  ///  eventually roll init /build / handles the next:
+  boxServe.init(16, 125, '_');
+  boxServe.construct(':dailyAction:wednesday:'); //
+
+  //  add connector or other stuff  stuff
+  //  boxServe.aBox(17, 20, _items, _w, __l)
+
+  boxServe.show(':dailyAction:wednesday:', 'print');
+  boxServe.done(':dailyAction:wednesday:test:');
+  // ?  do we have connector - boxServe ?  No; but box is.
+  ///  At least "at-the-end-of-the-week" we could get enough con-events.
+  connector.box('dailyAct:wednesday:');
+
+  ///  NEXT:  boxServe #myTime
+  print('--------- :day:wednesday:done  ----------------------');
 }
 
 ///
@@ -208,7 +244,7 @@ void friday() {
   boxServe.aBox(17, 85, 18, 50, connector.inMsgL);
 
   boxServe.aHeader(16, 138, '* connector memberM * ');
-  boxServe.aBox(17, 138, 14, 40, tl.mapToListO(connector.memberM));
+  boxServe.aBox(17, 138, 14, 40, tl.mapToListO(connector.scoutM));
 
   boxServe.show(':dailyAction:test:', 'print');
   boxServe.done(':dailyAction:test:');

@@ -288,6 +288,8 @@ class Effort {
     tl.boxInList(28, 33, 100, 100, _lBus, diagonalL);
     tl.boxInList(25, 65, 100, 100, _lFury, diagonalL);
     tl.boxInList(15, 1, 100, 100, _lHuman, diagonalL);
+    tl.boxInList(14, 0, 100, 100, ['peg'], diagonalL);
+    tl.boxInList(1, 30, 100, 100, [':effort:get:diagonal:list:'], diagonalL);
 
     print(diagonalL.length);
     diagonalL.forEach(print);

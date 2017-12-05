@@ -204,8 +204,8 @@ abstract class BaseStruct {
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
   Map<String, bool> st = {
-    'off': true,
-    'on': false,
+    'wake': false,
+    'work': false,
     'pause': false,
     'done': false,
   };

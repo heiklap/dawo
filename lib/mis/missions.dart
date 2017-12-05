@@ -27,6 +27,8 @@ import '../tools.dart';
 import '../corp/connector.dart';
 import '../clay/clay_roll.dart';
 
+part 'missions_data.dart';
+
 ///  #NOTE:  #effort is not visible here.  Only in chore.dart.
 
 ///  Buffer also outside class, for testing and adding visibility.
@@ -53,6 +55,7 @@ void helloMission() {
 ///  Mission handles acts below -app level, but above chore.
 ///  Mission can include many chores. 7 Chores are build by default.
 ///  TODO  Mission has 40 public fields !!
+///  TESTED: when extending BaseStruct: Too many arguments in constructor
 class Mission {
 // #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
@@ -60,6 +63,20 @@ class Mission {
   String name;
   String motto;
   String clause; //  Combination of #LANG words in sentence.
+
+  /// #NEXT: Carry values to scoutJoin in connector
+  /// Fields describe actions in connector and binding.
+  Map<String, String> infoM = {
+    'purpose': ':SAMPLE :ThisMissionBLAA blaa blaa',
+    'lang': ':SAMPKLE :LANG :HERE :ARE :ALL :WORDS',
+    'area': ':SAMPLE :AREA1  :AREA2',
+    'product': ':SAMPLE :PROD1 :PROD2',
+    'offer': ':SAMPLE :OFFER1 :OFFER2 :OFFER3',
+    'buy': ':SAMPLE :MATERIAL :TIME',
+    'ask': ':SAMPLE :ASK1 :ASK2 :ASK3',
+    'always': ':SAMPLE :alwaysX :alwaysY :alwaysZ :SAMPLE',
+    'newer': ':SAMPLE :NO :UGLY'
+  };
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
@@ -86,26 +103,10 @@ class Mission {
   /// Changed clayMap to be more complicated:
   Map<String, Map<String, String>> clayMap = {};
 
-  /// #innoTeam Some maps to give platform for ideas to future development.
-  Map<String, String> info = {
-    'name': 'My App',
-    'info': 'dartlang application',
-    'creator': 'me',
-    'instruct': 'Git clone and develop',
-    'active': 'yes',
-    'stopped': 'no',
-    'paused': 'no',
-    'userWork': 'yes',
-    'autoWork': 'no'
-  };
-
-  ///  Create some variables and figure their usage later.
-  /// #Idea?  Control missions state, working-condition / state.
-  String _state = 'Functional';
   //  State Map, Missions upper level state.
   Map<String, bool> st = {
-    'off': true,
-    'on': false,
+    'wake': true,
+    'work': false,
     'con': false,
     'pause': false,
     'done': false,
@@ -115,8 +116,8 @@ class Mission {
   ///  'open'  variables. Make this a Map. ?
   //  Sub-operations state
   Map<String, bool> _opSt = {
-    'off': true,
-    'on': false,
+    'wake': true,
+    'work': false,
     'pause': false,
     'done': false,
   };
@@ -246,7 +247,7 @@ class Mission {
   bool scoutInit(int openCount, var openThis) {
     ///  use resource, equ class
     _flowC('-->-m-->  :M:scout:$name  scoutInit ', _pB);
-    _flowC(':M:scout: opInit-info: Get necessary data for scut-operations. >>',
+    _flowC(':M:scout: opInit-info: Get necessary data for scout-operations. >>',
         _pB);
     _flowC(
         '>>  :M:scout:Resource object-simulations from app upper level.', _pB);
@@ -309,7 +310,7 @@ class Mission {
     _flowC('    <-m--<--  :M:scout:  scoutRoll   done c: $done   * * * * * * *',
         _pB);
     return done;
-  }  //  -----  scoutRoll
+  } //  -----  scoutRoll
 
   /// devNote:  method, that CLOSES it's object.
   /// idea?
@@ -383,19 +384,38 @@ class Mission {
     //  NOTE  If more than 9 Chores, need something else.
     String choreLengthS = choreL.length.toString();
     String choreS = getChoreNamesS();
-    String opS = _opSt.toString();
-    String stS = st.toString();
-    String ps1 = ('**.               caller: $caller                       .');
-    String ps2 = ('**  MissionName:  $name         Motto: $motto');
-    String ps3 = ('**  State: off    on     con     pause    done   ');
-    String ps4 = ('**  stDo: $stS ');
-    String ps5 = ('**  rollDone:   $_rollDone     rollCount:  $_rollCount');
-    String ps6 = ('**  operations:  off   on   pause   done  ');
-    String ps7 = ('** $opS  opCount:  $opCount');
-    String ps8 = ('**  Chores:   $choreLengthS');
-    String ps9 = ('**  $choreS');
-    String ps10 = ('** ______________________________________________________');
+
+    String ps1 = ('**. $name  M: $motto                 .');
+    String ps2 = ('** Clause:  $clause                     ');
+    String ps3 = ('**  st: $st                                             ');
+    String ps4 = ('**  rDone: $_rollDone  rCount: $_rollCount    ');
+    String ps5 = ('**  OpSt: $_opSt   opCount:  $opCount ');
+    String ps6 = ('** $_stFlags                                            ');
+    String ps7 = ('** rollSchedule: $_rollSchedule  ');
+    String ps8 = ('**  ');
+    String ps9 = ('** Chrs: $choreLengthS  $choreS    ');
+    String ps10 = ('** _$placardM  _______________________________________');
     var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
+    /* TODO  howTo mapToList
+    print('----------infoM in mission   ----');
+    List<String> _infoL = [];
+    //  Get infoM Map to list
+    _infoL.addAll(tl.mapToList(infoM));
+    _infoL.forEach(print) ;
+    */
+    /*  mission infoM structure:
+    String px1 = ('purpose                   ');
+    String px2 = ('lang':                    ');
+    String px3 = ('area':                    ');
+    String px4 = ('product                   ');
+    String px5 = ('offer':                   ');
+    String px6 = ('buy': '                   ');
+    String px7 = ('ask': '                   ');
+    String px8 = ('always'                   ');
+    String px9 = ('newer'                   ');
+    String px10 = (                    ');
+    */
+
     //  _l.forEach(print);
     ///  glorious coding. Once again;  choreL and default chores
     if (detailsB) {
@@ -476,6 +496,10 @@ void buildMissions(String caller) {
 
   nationalParksMission.clayMap.addAll(getClayMap('nationalParks'));
   out.outFooter.writeln('out.outFooter-buildMission : nationalParks');
+
+  //  call missionData.roll.  handles now only packDawo
+  ///  new missionData.roll
+  missionData.roll();
 
   ///  Add Mission-objects to upper-level missionL List.
   missionL.addAll([

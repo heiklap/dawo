@@ -45,7 +45,7 @@ var appBuf = new StringBuffer(); //  not used here
 class DawoApp extends BaseStruct {
   String name = 'dawo app';
   String actor = ':DAWO-APP:';
-  String infoS = 'giving usable variables to dawo_src.dart';
+  String info = 'giving usable variables to dawo_src.dart';
   String motto = 'collect them here and rule them..';
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
@@ -61,8 +61,8 @@ class DawoApp extends BaseStruct {
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
   Map<String, bool> st = {
-    'off': true,
-    'on': false,
+    'wake': true,
+    'work': false,
     'pause': false,
     'done': false,
   };
@@ -112,8 +112,8 @@ class DawoApp extends BaseStruct {
   ///  Method for setting class in working condition.
   void build(String emblem, String master) {
     ///  NOTE empty parameter now, not used. For chore.build.
-    st['off'] = false; //  off-state ends
-    st['on'] = true; //   app is in on
+    st['wake'] = true; //  sleep-state ends
+    st['work'] = true; //   working state begins
 
     ///  Build DevNotes.
     dev.buildNotes('By: :D:-A:', 'In Dawo-App-Build');
@@ -206,12 +206,12 @@ class DawoApp extends BaseStruct {
   Map<String, StringBuffer> roll() {
     fillNotes();
     //  build already does this  dev.buildNotes();
-    _flowC(':da:b: DawoApp::roll    $infoS   :: roll engaged ', _pB);
+    _flowC(':da:b: DawoApp::roll    $info   :: roll engaged ', _pB);
 
     init(); //  calling init and build methods in this class
     build(':DAWO-APP:', 'DAWO-APP-MASTER:');
     //
-    print('-->>-->>--  :dawoapp: calling :collector:  -->>-->>--');
+    print('-->>-->>--  :dawoapp: calling :connector:  -->>-->>--');
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
     connector.scoutJoin(betaPlacardM, connectorMsg, ':D:app:');
     connector.roll();
@@ -241,16 +241,28 @@ class DawoApp extends BaseStruct {
     ///  Added 3. parameter, forceHeight
     ///  NOTE packDawo gets map printed.
     List list1 = packDawoMission.report('C:dawoApp-:rM:', true);
+    List info1 =  tl.mapToList(packDawoMission.infoM);
+    devBox('By; dawoApp-:rM:', [list1, info1], 9);
+
     List list2 = helsinkiMission.report('C:dawoApp-:rM:', _pB);
-    devBox('By; dawoApp-:rM:', [list1, list2], 9);
+    List info2 =  tl.mapToList(helsinkiMission.infoM);
+    devBox('By; dawoApp-:rM:', [list2, info2], 9);
 
     List list3 = dartlangMission.report('C:dawoApp-:rM:', _pB);
+    List info3 =  tl.mapToList(dartlangMission.infoM);
+    devBox('By; dawoApp-:rM:', [list3, info3], 9);
+
     List list4 = myMusicMission.report('C:dawoApp-:rM:', _pB);
-    devBox('By; dawoApp-:rM:', [list3, list4], 9);
+    List info4 =  tl.mapToList(myMusicMission.infoM);
+    devBox('By; dawoApp-:rM:', [list4, info4], 9);
 
     List list5 = myTimeMission.report('C:dawoApp-:rM:', _pB);
+    List info5 =  tl.mapToList(myTimeMission.infoM);
+    devBox('By; dawoApp-:rM:', [list5, info5], 9);
+
     List list6 = nationalParksMission.report('C:dawoApp-:rM:', _pB);
-    devBox('By; dawoApp-:rM:', [list5, list6], 9);
+    List info6 =  tl.mapToList(nationalParksMission.infoM);
+    devBox('By; dawoApp-:rM:', [list6, info6], 9);
 
     _flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
     // roll all chores, that are in mission
@@ -327,7 +339,7 @@ class DawoApp extends BaseStruct {
     boxServe.aHeader(1, 60, ' *  DAWO APP INFO  *');
 
     boxServe.aHeader(2, 22, 'Info:');
-    boxServe.aBox(2, 30, 2, 48, ['$infoS', '$motto']);
+    boxServe.aBox(2, 30, 2, 48, ['$info', '$motto']);
 
     boxServe.aBox(2, 80, 4, 20, ['Agenda', 'Develop', 'Msg:', 'Versions']);
     boxServe.aBox(2, 92, 5, 20, ['______', '________', '______', '____']);
@@ -379,7 +391,7 @@ class DawoApp extends BaseStruct {
 
   ///  After presentation method; done, if #doneB.
   void done() {
-    _flowC('-->-da->  DawoApp.done    $infoS   :: engaged ', _pB);
+    _flowC('-->-da->  DawoApp.done    $info   :: engaged ', _pB);
     out.outTl.writeln('out.outTl-dawoApp-done:');
     out.outTMid.writeln('out.outMid-dawoApp-done:');
     out.outTr.writeln('out.outTr-dawoApp-done:');
@@ -448,8 +460,8 @@ class DawoHist implements BaseStruct {
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
   Map<String, bool> st = {
-    'off': true,
-    'on': false,
+    'wake': false,
+    'work': false,
     'pause': false,
     'done': false,
   };
@@ -480,7 +492,7 @@ class DawoHist implements BaseStruct {
   /// Models and sample maps ; for later usage and playing.
   Map<String, String> appMap = {
     'name': 'dawo App',
-    'infoS': 'dartang pub package for education',
+    'info': 'dartang pub package for education',
     'creator': 'me',
     'version': '0.0.3',
     'active': '0',
