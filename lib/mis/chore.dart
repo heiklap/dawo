@@ -73,7 +73,7 @@ void initChoreSystem() {
   dev.secN.add(':INIT-CHORE: :CHECK-IN: testing.');
 }
 
-///  Every important dawo class is extending Alpha class.
+///  Many important dawo class is extending Alpha class.
 class CommonChore extends BaseStruct {
   String name = 'Common Chore class  ';
   String info = 'Chore resolves  W O R K  flow and control ..';
@@ -312,10 +312,11 @@ class CommonChore extends BaseStruct {
   ///  constructor
   ///  TODO  should add #master field for mission, that owns this chore?
   CommonChore(this.name, this.info);
-}
+}  //  -----  CommonChore class
 
 ///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right.
+///  Location of: _flowC inside OR outside of class?
 void _flowC(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
 

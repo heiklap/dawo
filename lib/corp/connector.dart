@@ -128,7 +128,8 @@ class Connector extends BaseStruct {
   bool _pB = false; //  false;   //  To control printing in _flowC method.
   String name = 'connector class';
   String info = 'App - mission - chore conScout #corporate.process via #LANG';
-  Map<String, String> infoM = {};
+  //  TODO  #lang  won for connector
+  Map<String, String> say = {};
   String motto = 'Give objects long, powerful extra hand.';
 
   ///  devNote: IDEA: Fields for to better shape outPut stuff in console.
@@ -206,8 +207,8 @@ class Connector extends BaseStruct {
 
   ///  Giving nice report of connections.
   List report() {
-    print('--------------- connector report ----------------------------');
-    buf.writeln('con:report:done:  ');
+    print('--->------>------ connector report:: ------>----------->---------');
+    buf.writeln('con:report::  ');
     List<List<String>> _dbL = new List();
     List<List<String>> _dbL2 = new List();
     _dbL.addAll([tl.mapToListO(scoutM), joinLog]);
@@ -217,7 +218,7 @@ class Connector extends BaseStruct {
     //  presenting devBox in 2 x 2 table.
     devBox(':con-r1:', _dbL, 0);
     devBox(':con-r2:', _dbL2, 0);
-    print('--------------- connector report done -----------------------');
+    print('--<----------<--- connector report done ---<--------------<-----');
     return ['this', 'list', 'is', 'vain']; //  No need for list??
   }
 
@@ -226,8 +227,8 @@ class Connector extends BaseStruct {
   List<Affair> opL = new List();
 
   ///  List for #C information. Used for devBox reporting.
-  List<String> joinLog = ['* :connector: join-log *'];
-  List<String> inMsgL = ['*  :connector: in-msg-list  *'];
+  List<String> joinLog = ['* :connector:joinLog:  *'];
+  List<String> inMsgL = ['*  :connector:inMsg: -list  *'];
 
   ///  Clients tool to access connector data and other services.
   void signUp(List<String> _callL) {
@@ -260,11 +261,11 @@ class Connector extends BaseStruct {
         ''
       ];
 
-      print('-------- scoutSolve C: $caller  ----------------------------');
+      print('----->--- scoutSolve C: $caller  --->------------->---------');
       scoutInfoL.forEach(print);
       print(tl.mapToListO(scoutM));
       print('------------- info map: -----------------------');
-      scoutM[caller].infoM.forEach((k,v) => print('$k $v'));
+      scoutM[caller].say.forEach((k,v) => print('$k $v'));
       print('-------- name: motto:  -----------------------');
       print(scoutM[caller].name);
       print(scoutM[caller].motto);
@@ -274,7 +275,7 @@ class Connector extends BaseStruct {
       print('--------placardM: ----------------------------');
       print(scoutM[caller].placardM);
 
-      print('-------- scoutSolve   done  ----------------------------');
+      print('--<------ scoutSolve   done  ----<-------------<---------');
     }
     //  get #findThisThing, announce it
     //  search scoutM / forEach / clause-info-motto for: / findWord
@@ -283,7 +284,7 @@ class Connector extends BaseStruct {
     //  Answer #Match scoutM, to give them to do their own actions
     //  Add Joins and Binds to 2-week, year and connect-table
     //  Done this search.
-  }
+  }  //  -----  scoutSolve
 
   ///  Join "clients" / Members to scoutList. placardM mediates necessary info.
   ///  Usage: mission, dawoApp, rumba, chore, dawo_example
@@ -292,14 +293,10 @@ class Connector extends BaseStruct {
     //  TODO : if #caller is in scoutM
     //  else:  caller is Rumba, Chore or example
     ///  Operations register to Connector with placardM.
-    ///  Using LexiconBase class from dawolang.
-    d_lang.lb.build(':call:WG:-:dawolang:  :by:dawo-:connector:');
 
     ///  Using Analyzer class from dawolang. TODO: get clause from caller.
-    d_lang.an.analyzeStrS(':ONE more :WEEK :WILL :DO', d_lang.lb.wordList);
-    d_lang.an.analyzeStrS(
-        ':YOU in :NEW :ROLE gives :MORE :VALUE :TO :THIS :PROJECT',
-        d_lang.lb.wordList);
+    d_lang.an.analyzeStrS(inMsg,d_lang.lb.wordList);
+    print(':dawolang:analyze:watch:check:');
     //  TODO  Output!!  '..:debug:dawolang:print:.:connector;scoutJoin:...');
     //  TODO  Stop keeping placard here: get: scoutM.find.placardM
     //  Placard here is unnecessary, after scoutSolve has access viu scoutM
@@ -342,7 +339,8 @@ class Connector extends BaseStruct {
   ///  Called by: roll.
   void init() {
     buf.writeln('$_bm ---  Connector buffer output initialized  ---');
-
+    ///  TODO  Move this row to dawoApp? Using LexiconBase class from dawolang.
+    d_lang.lb.build(':call:WG:-:dawolang:  :by:dawo-:connector:');
     //  Set fields values, mostly lists and maps.
     buf.writeln('$_bm init done');
   }
@@ -392,7 +390,7 @@ class Connector extends BaseStruct {
 
     //  TODO  if change to: 150, it should be visible variable
     boxServe.init(42, 190, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':connector:box::connector:box:  C: $caller');
+    boxServe.construct(':connector:box:  C: $caller');
     int r1 = 2; //  easy x-y pointing
     int r2 = 12;
     int r3 = 20;
@@ -416,11 +414,11 @@ class Connector extends BaseStruct {
     boxServe.aHeader(7, m2, '*Connector-*');
     boxServe.aBox(8, m2, 6, 10, ['Connector', 'box-method', 'Clause', clause]);
 
-    boxServe.aHeader(7, m3, '*: con:infoM *');
-    boxServe.aBox(8, m3, 6, 14, tl.mapToList(infoM));
+    boxServe.aHeader(7, m3, '*: con:say Map *');
+    boxServe.aBox(8, m3, 6, 14, tl.mapToList(say));
 
     boxServe.aHeader(4, m4, '*Called:*');
-    boxServe.aBox(8, m4, 6, 8, ['Mission', 'Chore', 'Corporate', 'Example']);
+    boxServe.aBox(7, m4, 6, 8, ['Mission', 'Chore', 'Corporate', 'Example']);
 
     boxServe.aBox(4, 125, 12, 14, equ.months);
 
@@ -435,7 +433,7 @@ class Connector extends BaseStruct {
     //TODO  Error ??
     boxServe.aBox(2, 150, 12, 38, joinLog);
 
-    boxServe.aBox(r3 - 4, m4 - 5, 12, 50, inMsgL);
+    boxServe.aBox(r3 -3, m4 - 5, 12, 50, inMsgL);
 
     //  TODO  resource / samples add something
 

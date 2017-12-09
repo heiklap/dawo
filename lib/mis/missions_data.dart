@@ -28,29 +28,40 @@ class MissionData {
 
     /// #NEXT: Carry values to scoutJoin in connector
     /// Fields describe actions in connector and binding.
-    packDawoMission.infoM = {
+    packDawoMission.say = {
       'purpose':
           ':packDawo :Learn :Programming  :MATH :VISUALIZE :THINKING :PLAN',
       'lang': ':packDawo :LANG :HERE :ARE :ALL :WORDS :FIND_MORE :SAVE',
       'area': ':packDawo :WEB  :MOBILE :CL aso :SERVER :CLIENT :DB',
       'product': ':packDawo :dawolang :dawo :huilo :punch :parley aso',
-      'offer': ':packDawo :BuyME :RentME :SendMe :HireMe',
+      'sell': ':packDawo :BuyME :RentME :SendMe :HireMe',
       'buy': ':packDawo :ADVIDCE :TIME :MyTime',
       'ask': ':packDawo :Stack :GITTER :ASK3',
       'always': ':packDawo :alwaysX :alwaysY :alwaysZ :packDawo',
       'newer': ':packDawo :NO :UGLY :HUILO :ANGRY :SORROW'
     };
+
+    ///  Planning to use placardM with #Lang type Strings.
+    ///  Present info for outer process calls.
+    packDawoMission.placardM = {
+      'actor': 'a: packDawoM ',
+      'sender': 's: packDawoCon ',
+      'receiver': 'r: :ALL :DartLAng',
+      'command': 'cmd: :JOIN :BUY',
+      'msg': 'msg: :LEARN :RENT :LECTURE :DAWO ',
+    };
+
     packDawoMission.clause =
         'packDawo :ALL :QUEST :HELP :FIND :DATA :CODE :FREE';
 
     //
-    helsinkiMission.infoM = {
+    helsinkiMission.say = {
       'purpose': ':helsinkiMis: :ThisMissionBLAA blaa blaa',
       'lang': ':HMis: :LANG :STADI :SUOMI :ME :OPI :TULE :TAIDE :TIEDE :TALOUS',
       'area':
           ':HMis: :ART  :ACTIVITY :SPACE :OUTDOOR :BAR :CAFE :ECONOMY :TOURISM',
       'product': ':HMis: :AIR :FREE_TIME :NATURE :PARK :MUSEUM :ARCHITECTURE',
-      'offer': ':HMis: :ALE :TODAY :FOR_SALE :FOR_RENT :FREE :',
+      'sell': ':HMis: :ALE :TODAY :FOR_SALE :FOR_RENT :FREE :',
       'buy': ':HMis: :MATERIAL :TIME',
       'ask': ':HMis: :ASK1 :ASK2 :ASK3',
       'always':
@@ -59,14 +70,22 @@ class MissionData {
     };
     helsinkiMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
 
+    helsinkiMission.placardM = {
+      'actor': 'a:hMis ',
+      'sender': 's: hMis ',
+      'receiver': 'r: :ALL :TOURISM',
+      'command': 'cmd: :COME :BUY :RENT ',
+      'msg': 'msg:hMis ',
+    };
+
     //
-    dartlangMission.infoM = {
+    dartlangMission.say = {
       'purpose': ':dartlangMis :WebProgramming :Tools :library :api',
       'lang': ':dlMis :EASY :FAMILIAR :NEW :EFFECTIVE :WEB :',
       'area': ':dlMis :WEB  :MOBILE :CL aso :SERVER :CLIENT :DB',
       'product':
           ':dlMis :LANGUAGE :API :TOOLS :COMMUNITY :HELP :FLUTTER :ANGULAR',
-      'offer': ':dlMis :Power :Learn :Help :Info :Examples',
+      'sell': ':dlMis :Power :Learn :Help :Info :Examples',
       'buy': ':dlMis :Jobs :License :Projects :PushRequests :',
       'ask': ':dlMis :GitHub :Stack :Gitter :GPlus :Misc',
       'always': ':dlMis :FREE :FRENDLY :EASY :FAST :',
@@ -74,13 +93,21 @@ class MissionData {
     };
     dartlangMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
 
+    dartlangMission.placardM = {
+      'actor': 'a:dLang:',
+      'sender': 's:dLang ',
+      'receiver': 'r: :ALL _PUBLIC :EDUCATION :WEB',
+      'command': 'cmd: ',
+      'msg': 'msg: dartlang.org',
+    };
+
     //
-    myMusicMission.infoM = {
+    myMusicMission.say = {
       'purpose': ':myMusicMis :JOY :ENTERTAINMENT :COMMUNITY :',
       'lang': ':mmMis :HEAR :LISTEN :MY :ListenMe :Train :HighLevel :Practice',
       'area': ':mmMis :Country  :Folk :own :Misc :Operett :Classic :Old :',
       'product': ':mmMis :CONCERT :JAM :StreetMusic :PARTY :DRUNKEN_PARTY',
-      'offer': ':mmMis :EVENT :BuyMe :RentME :ListenMe',
+      'sell': ':mmMis :EVENT :BuyMe :RentME :ListenMe',
       'buy': ':mmMis :MATERIAL :TIME',
       'ask': ':mmMis :SingTechnic :Tenor :MusicTheory',
       'always': ':mmMis :Peace :Beauty :Hope :Understand :',
@@ -88,13 +115,21 @@ class MissionData {
     };
     myMusicMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
 
+    myMusicMission.placardM = {
+      'actor': 'a:mMus:',
+      'sender': 's: myMusicMis',
+      'receiver': 'r: :ALL :FRENDS :MUSIC',
+      'command': 'cmd: :LISTEN :ENJOY :BUY :RENT',
+      'msg': 'msg: myMusicMsg :MUSIC :SINGING ',
+    };
+
     //
-    myTimeMission.infoM = {
+    myTimeMission.say = {
       'purpose': ':myTime :Effectiveness :SYSTEM :ORDER ',
       'lang': ':myTime :TIME :NOW :SOON :NEWER :SAVE :WASTE',
       'area': ':myTime :TODAY  :TOMORROW :NEXT',
       'product': ':myTime :Peace :Order :',
-      'offer': ':myTime :BuyMyTime :Mayber :Rarely :OnlyByOrder',
+      'sell': ':myTime :BuyMyTime :Mayber :Rarely :OnlyByOrder',
       'buy': ':myTime :Programming :Learning :Education',
       'ask': ':myTime :YouHaveTime :When :HowLong',
       'always': ':myTime :alwaysX :alwaysY :alwaysZ :myTime',
@@ -102,19 +137,36 @@ class MissionData {
     };
     myTimeMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
 
+    myTimeMission.placardM = {
+      'actor': 'a: ',
+      'sender': 's: ',
+      'receiver': 'r: ',
+      'command': 'cmd: ',
+      'msg': 'msg: ',
+    };
+
     //
-    nationalParksMission.infoM = {
+    nationalParksMission.say = {
       'purpose': ':natParkMis :Movement :Freshment :Health :Nature',
       'lang': ':npMis :LANG :HERE :COME :VISIT :ENJOY :WALK',
       'area': ':npMis :SEA  :LAND :FOREST :MORE :',
       'product': ':npMis :NATURE :ANIMALS :EXPERIENCE :FRESH_AIR',
-      'offer': ':npMis :COME_HERE :JOIN_GROUP :RENT_COTTAGE :ORDER_ROOM :HIKE',
+      'sell': ':npMis :COME_HERE :JOIN_GROUP :RENT_COTTAGE :ORDER_ROOM :HIKE',
       'buy': ':npMis :RENT_COTTAGE :RENT_CAR :RENT_QUIDE :BUY_READY_TRIP',
       'ask': ':npMis :MAP :INFO :QUIDE :ROOM :DANGER :FIRST_HELP',
       'always': ':npMis :Healthy :Cheap :Special :Fendly :',
       'newer': ':npMis :NO :UGLY :HUILO :Shit :Hostile :Unfrendly'
     };
     nationalParksMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
+
+    //
+    nationalParksMission.placardM = {
+      'actor': 'a: ',
+      'sender': 's: ',
+      'receiver': 'r: ',
+      'command': 'cmd: ',
+      'msg': 'msg: ',
+    };
 
     print(':M:D:roll: --<<--<<  :mission:data:roll: done --<<--<<');
 

@@ -56,10 +56,11 @@ class BoxServe {
     for (var z = 1; z < _matrix.length - 1; z++) {
       //  do not handle first row.
       _fakeRow++;
+      String _fakeRowS = _fakeRow.toString().substring(1,3);
       //  TODO  take only 2 last numbers to _fakeRowS like 123 = 23
       //  TODO  choose nice background mark for matrix.
       //  pad with low-density mark.   NO: '-'
-      _matrix[z] = '$_fakeRow '.padRight(sw, pm);
+      _matrix[z] = '$_fakeRowS '.padRight(sw, pm);
     }
     ; //  <=  ;  dartFormatter is sometimes funny
     //  TODO  should  get #name in the middle of first line,
@@ -87,13 +88,49 @@ class BoxServe {
 
   //  Fill list-data in matrix in r, _c coordinates.
   //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
-  //  new parameters 3 and 4: _items, _w
-  //  TODO :BUG: No error check for over-sized lists.
-  //  anchorBox///  Add all list element to matrix
-  void aBox(int _r, _c, _items, _w, List __l) {
+  //  TODO :BUG: :QUEST: Error check for over-sized lists: do not work always.
+  ///  Add all list element to matrix in _r, _c WITH _items in _w-width.
+  void aBox(int _r, _c, _items, _w, List _l) {
     //  If not know list length / wanted items and width, try 100. lol
-    tl.boxInList(_r, _c, _items, _w, __l, _matrix);
-  }
+    //  TODO  Truncate items and length, if List outOfMatrix borders
+    int _overWidth = 0;
+    int _overLength = 0;
+    bool error = false;
+    String _overWidthS = '';
+    String _overLengthS = '';
+    if ((_c + _w > sw ) || (_r + _items > rc) ) {
+      error = true;
+      _overWidth = (_c + _w)  - sw;
+      print(_overWidth);
+      _overLength = (_r + _items) - rc;
+      print(_overLength);
+      print('W: $_w  Items:  $_items  ');
+
+      if (_overWidth > 0) _w = (_w - _overWidth);
+      if (_overLength > 0) _items = (_items - _overLength);
+      print('W: $_w  Items:  $_items  ');
+      print('sw: $sw   ');
+      print('Overlength::  $_overLength     OwerWidth::  $_overWidth');
+      _overWidthS = _overWidth.toString();  //assume like: '7'
+      _overLengthS = _overLength.toString(); //  like: '3'
+    };
+
+    //  ??  If error-position, parameters should now have changed ??
+    tl.boxInList(_r, _c, _items, _w, _l, _matrix);
+    if (error) {
+      //  lay vertical #VARNING line !!!
+      List<String> verticalWarningL = new List(_items);
+      verticalWarningL.fillRange(0, _items, _overWidthS);
+      //  call: void vertWarning(int _x, _y, count, String _s)
+      print('vert warning::  ');
+      vertWarning(_r, _c + _w + 2, _items, _overWidthS);  //  try +1 .. 2
+      print('_overLengthS::  $_overLengthS ');
+      print('horizWarnibg::  ');
+      horizWarning(_r + _items - 1, _c, _w, _overLengthS);
+      print('error done::');
+      //  lay horizontal #VARNING line
+    }  //  -----  error
+  }  //  -----  aBox
 
   ///   Lay String in a certain place in matrix.
   ///   :QUEST:  This is too complicated, lol.
@@ -111,16 +148,37 @@ class BoxServe {
     int toX = _x + count;
     for (var x = _x; x < toX; x++) {
       _newS = tl.changeLetter(_matrix[x], _y, '|');
-      //  print(_newS);
       _matrix[x] = _newS;
     }
   }
 
+
+  //  Set vertical Warning-line to screen matrix
+  void vertWarning(int _x, _y, count, String _s) {
+    String _newS;
+    int toX = _x + count;
+    for (var x = _x; x < toX; x++) {
+      _newS = tl.changeLetter(_matrix[x], _y, _s);
+      _matrix[x] = _newS;
+    }
+  }
+
+  //  Set horizontal Warning-line to screen matrix
+  void horizWarning(int _x, _y, _width, String _extraS) {
+    StringBuffer _b = new StringBuffer();
+    ///  form String like:  ´7777777777777777'
+    for (var x = 0; x < _width; x++) {
+      _b.write(_extraS);
+    }
+      ///  Fill it to the matrix
+      aHeader(_x, _y, _b.toString());
+    print('horizWarning done::');
+  }
+
   ///  New show method extracted from done
   void show(String _caller, String action) {
-    eyeMark14(); //  put table to fit screen.
+    eyeMark14(); //  put 'peg' in row_14, col_0, for table to fill screen.
     print(_matrix.length);
-
     ///  if.. is awkward
     if (action == 'print') _matrix.forEach(print); //  only way!!
     //  return _matrix;  //  if type is: List<String>
@@ -195,4 +253,6 @@ void boxLayoutDap(BaseStruct _model, String _rubric) {
 } //  -----  boxLayoutDab
 
 ///  UsingBaseStruct (connector) fields to set usual fields in boxServe
-void boxLayoutlConnector() {}
+void boxLayoutlConnector() {
+
+}

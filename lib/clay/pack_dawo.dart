@@ -103,8 +103,9 @@ class PackDawo {
     '15': '',
   };
 
+  //  TODO  Copy-Paste data from dawo_dew or get_data from there.
   Map<String, String> vers006 = {
-    '1': '',
+    '1': 'V:N E:N  Copy-Paste data from dawo_dew or get_data from there.',
     '2': '',
     '3': '',
     '4': '',

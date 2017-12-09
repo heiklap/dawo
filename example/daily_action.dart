@@ -7,7 +7,7 @@
 /// * GitHub:
 /// * Connect:  #Schedule  #Week  #Month  from:  #equ
 // * Hist:hkl  27.11.2017  -  0.0.6
-//
+//  NEXT:  :BUB:DEBUG:  in friday..  sw  range error..  175
 
 library dailyAction;
 
@@ -105,11 +105,11 @@ void main() {
   ///  gives too long and messy output.
   dawoApp.roll();
   print('------------- :dailyAction: start  -----------------------');
-  //  monday();
-  //  tuesday();
-  //  wednesday();
-  //  thursday();
-  //  friday();
+      monday();
+      tuesday();
+      wednesday();
+      thursday();
+    friday();
 }
 
 ///  Play with mission-op  and connector  courier aso.
@@ -231,6 +231,8 @@ void friday() {
   dawoHist.buf.writeln(':dailyAction:friday:');
   print('--------- :dawo:hist:build: :day:friday: done -------------------');
 
+  //  :BUG:  hklTry:  195  boxServe.init(36, 175, '_');
+  //  :BUG:DEBUG:  175..  try:  195
   boxServe.init(36, 175, '_');
   boxServe.construct(':dawoHist:dailyAction:friday:');
 
@@ -243,8 +245,17 @@ void friday() {
   boxServe.aHeader(16, 90, '* connector inMsgLog * ');
   boxServe.aBox(17, 85, 18, 50, connector.inMsgL);
 
-  boxServe.aHeader(16, 138, '* connector memberM * ');
-  boxServe.aBox(17, 138, 14, 40, tl.mapToListO(connector.scoutM));
+
+  //  :BUB:DEBUG:
+  // RANGE ERROR!! boxServe.aBox(17, 138, 14, 40, tl.mapToListO(connector.scoutM));
+  // RANGE ERROR! boxServe.aBox(17, 138, 14, 40, tl.mapToListO(connector.scoutM));
+  ///  16, 130..  hklTry add both..
+  boxServe.aHeader(25, 130, '* connector memberM * ');
+  // "30,142" = 2 errors               134 brings error
+  //  boxServe.aBox(30,142, 14, 40, tl.mapToListO(connector.scoutM));
+  boxServe.aBox(26,132, 14, 40, tl.mapToListO(connector.scoutM));
+  //  OK  boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
+ //OK boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
 
   boxServe.show(':dailyAction:test:', 'print');
   boxServe.done(':dailyAction:test:');

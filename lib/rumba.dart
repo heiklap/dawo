@@ -103,14 +103,9 @@ class Rumba {
       /// -----------------------  rumbaB loop code   -------------------
       /// some loopS variables to test visibility, and carry msg.
       /// TODO  add some functionality to rumbaLoop____  messages.
+      String connectorMsg = '';
       String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
       _flowC('   -->---->--  rumba-loop-usher', true);
-      print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
-
-      String connectorMsg =
-          ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
-      connector.scoutJoin(placardM, connectorMsg, ':R:u:');
-      connector.roll();
 
       ///  --  usher loop
       do {
@@ -119,14 +114,12 @@ class Rumba {
         ///  duplicating this to get ListOverArea-message
         ///  duplicating this to get ListOverArea-message
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
-        String connectorMsg =
-            ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
-        connector.scoutJoin(placardM, connectorMsg, ':R:u:');
+
+        connector.scoutJoin(placardM, ':USHER :LOOP :START', ':R:u:');
         connector.roll();
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
-        String connectorMsg2 =
-            ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
-        connector.scoutJoin(placardM, connectorMsg2, ':R:u:');
+
+        connector.scoutJoin(placardM, ':NEXT :CONNECT :TO :SCOUT', ':R:u:');
         connector.roll();
 
         /// ----------------------  usher loop code  ---------------------
@@ -139,9 +132,7 @@ class Rumba {
 
           ///  duplicating this to get ListOverArea-message
           print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
-          String connectorMsg =
-              ':DO :NOT :USE #dawolang without #BUILD => :ERROR:DO :NOT :USE #dawolang without #BUILD => :ERROR';
-          connector.scoutJoin(placardM, connectorMsg, ':R:u:');
+          connector.scoutJoin(placardM, ':RUMBA :3 :TEST :CON', ':R:u:');
           connector.roll();
           connector.box(':R:.do:');
 

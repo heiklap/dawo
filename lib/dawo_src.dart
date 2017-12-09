@@ -87,7 +87,7 @@ StringBuffer renderDawo() {
 
   var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
 
-  dawoApp.agenda; //  Just naming it.
+  dawoApp.pack['agenda']; //  Just naming it.
 
   /// Just another instance, shorter, for testing.
   var da = new DawoApp('dawoApp', 'playing in renderDawo-function');
@@ -106,7 +106,7 @@ StringBuffer renderDawo() {
 
   renderBuffer.writeln('------- renderBuffer data--------------------- \n');
   var missionY = new Mission('mission in dawo_src-render', 'test-mission');
-  missionY.opCount;
+  //Private:  no access and no need for it.  missionY._opCount;
 
   renderBuffer.writeln('--------renderBuffer done -------------------- \n');
   print(renderBuffer);

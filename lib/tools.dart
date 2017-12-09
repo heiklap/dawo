@@ -151,15 +151,16 @@ class Tools {
     }
   }
 
-  //  Fill list-box-data in matrix in r, _c coordinates.
-  //  Modify _mL to be NOT PRIVATE and name to: masterL
-  void boxInList(
+  ///  box_serve aBox(int _r, _c, _items, _w, List __l) calls this
+  ///  Fill list-box-data in big matrix List, in r, _c coordinates.
+  ///  change to bool!
+  boxInList(
       int _r, int _c, _asked, _w, List<String> boxL, List<String> masterL) {
+
     //  new parameters _asked, _w :  items and asked output width
     if (_w < longestItemInList(boxL)) {
       shortenItemsInList(boxL, _w);
     }
-
     ///  Only >2 width lists are padded
     if (_w > 2) padListRL(boxL, _w, ' ', ' ');
     int _take = min(boxL.length, _asked); //  All or asked amount.
@@ -173,26 +174,17 @@ class Tools {
       //  Modify last item in list_
       boxL[_take - 1] = _loS2; //  done: Like:  Item
     }
-
     for (var x = 0; x < _take; x++) {
       //  Control for range errors
       int itemLength = boxL[x].length;
-      int control = itemLength + _c;
+
       int matrixRowLength = masterL[_r].length; // ?
-      if (matrixRowLength < control) {
-        String errorRowS = masterL[_r];
-        print('ALERT::: mrl:: $matrixRowLength < control:: $control  * * * ');
-        print(':::$errorRowS:::');
-      }
 
       String _s1 = masterL[_r].substring(0, _c);
       String _s2 = boxL[x]; //  current list value.
       String _s3 = masterL[_r].substring(_c + itemLength, matrixRowLength);
       masterL[_r] = '$_s1$_s2$_s3';
       _r++;
-      if (_r > masterL.length) {
-        print('ALERT::: * * *    _r > masterL.length   * * *   ');
-      }
     }
   } //  -----  boxInList
 
@@ -206,6 +198,20 @@ class Tools {
   ///  Just to print map in one row.
   void shortMapPrint(Map thisMap) {
     print(thisMap);
+  }
+
+  ///  Return String from map<String, String>.
+  ///  parameters: Key_width: kw, Value_width  vw
+  String rowFromMap(Map<String, String> thisMap, int kw, vw) {
+    StringBuffer b = new StringBuffer();
+    thisMap.forEach((k, v) {
+      String _kS = k;  //  key-String,  value_String
+      String _vS = v;
+      if (kw > 0) _kS = k.substring(0,kw);
+      if (vw > 0) _vS = k.substring(0,vw);
+      b.write('$_kS: $_vS  ');  //  write modified key-value to buffer
+    });
+    return b.toString();
   }
 
   ///  Return list<String> from map<String, String>.

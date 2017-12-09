@@ -185,10 +185,11 @@ Out out = new Out();
 //  TODO  bring here from dawoApp serialized outBuffersPrint - function
 
 ///  Starter class for most dawo classes
-///  DawoApp, BLib, Chore, Flag  use this
+///  DawoApp-extends, BLib, Chore-extends, Flag  use this
 abstract class BaseStruct {
   String name;
-  String info; //  TODO  change to:  infoMM
+  String info; //  using now Map:  say
+  Map<String, String> say;
   String motto;
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
@@ -267,12 +268,46 @@ class Member {
 ///  Base for this class. Representation of an object, that does something.
 class Actor {
   String name = '';
-  Map<String, Map<String, String>> infoM = {};
+  ///  Structure of say-map elsewhere:
+  Map<String,  String> say = {
+    'purpose': '',
+    'lang':  '',
+    'area':  '',
+    'product': '',
+    'sell':  '',
+    'buy':  '',
+    'ask':  '',
+    'always':  '',
+    'newer': ''
+
+  };
 }
 
 ///  Base
 class Action {
   String name = '';
-  Map<String, Map<String, String>> infoM = {};
-}
+
+  Map<String, String> say = {
+    'purpose': '',
+    'lang':  '',
+    'area':  '',
+    'product': '',
+    'sell':  '',
+    'buy':  '',
+    'ask':  '',
+    'always':  '',
+    'newer': '',
+
+  };
+  // IDEA: Map<String, Map<String, String>> reason = {};
+  Map<String, String> reason = {
+    'anti': '',
+    'why': '',
+    'whyNot': '',
+    'plus': '',
+    'minus': '',
+    'desicion': '',
+  };
+
+}  //  ----- Action
 //

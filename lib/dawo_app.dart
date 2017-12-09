@@ -40,19 +40,36 @@ num dawoAppReadiness = 95; //  changed: 2.5.2015
 var appBuf = new StringBuffer(); //  not used here
 
 //  TODO  DawoApp class to reconstruct and maybe split to 2.
-///  Every important dawo Class extends BaseStruct abstract class.
+///  Important dawo Class extends BaseStruct abstract class. (Not Mission!)
 ///  Class that holds 'soul' of THIS dawo app.
+///  Controls Mission-Chore system, #App, & dawo-package development, #Pack.
 class DawoApp extends BaseStruct {
-  String name = 'dawo app';
-  String actor = ':DAWO-APP:';
-  String info = 'giving usable variables to dawo_src.dart';
-  String motto = 'collect them here and rule them..';
+  String name = 'DawoApp';
+  final String actor = ':DAWO-APP:';
+  String info = 'Innovative & educational small data-handler experimentation.';
+
+  /// Fields describe actions in connector and binding.
+  /// This is the language, that app talks in different situations.
+  Map<String, String> say = {
+    'purpose': ':dawoApp :Endage dawo-mission-chore ystem',
+    'lang': ':SAMPKLE :LANG :DAWOLANG :CENTER :CONTROL :ALL :MASTER',
+    'area': ':dawoApp :MISSION  :CHORE :HISTORY',
+    'product': ':dawoApp :CORPORATE :PROMOTION :CHORE',
+    'sell': ':dawoApp :UPGRADE :SPECIAL_MODEL :RENT_ME',
+    'buy': ':dawoApp :EXTRA_VERSION :TIME',
+    'ask': ':dawoApp :WhatEver :WEB_VERSION :LECTURE :EDUCATION',
+    'always': ':dawoApp :Developing :New :Innovation :Suprise',
+    'newer': ':dawoApp :NO :UGLY'
+  };
+  String motto = 'Walk the path of innovation and learning..';
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal; //  like:  ":DAWO-APP:";///  must initialize StringBuffer here
-  String emblem =
-      ':D-A:'; //  or this emblem.StringBuffer buf = new StringBuffer();
-  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  //  like:  ":DAWO-APP:";///  must initialize StringBuffer here
+  String seal;
+  //  or this emblem.StringBuffer buf = new StringBuffer();
+  final String emblem = ':D-A:';
+  // like:  "      ";  3-5-7 empty marks or something visible.
+  String indent;
   String master; //  Object that owns this.
 
   bool _pB = false; //  No printing now.
@@ -65,6 +82,15 @@ class DawoApp extends BaseStruct {
     'work': false,
     'pause': false,
     'done': false,
+  };
+
+  ///  Package material
+  Map<String, String> pack = {
+    'agenda': 'dawoApp rolls missioms',
+    'msg': 'dawoApp-Message..',
+    'develop': 'Under development.. 0 % to:  0.0.6',
+    'version': '0.0.6',
+    '': '',
   };
 
   ///  Organize out.out-buffers to Map for return to package users.
@@ -86,10 +112,10 @@ class DawoApp extends BaseStruct {
   };
 
   ///  App-specified fields.
-  String agenda = 'dawoApp rolls missioms';
-  String msg = 'dawoApp-Message..';
-  String develop = 'Under development.. 0 % to:  0.0.6';
-  String version = '0.0.6';
+  //  String agenda = 'dawoApp rolls missioms';
+  //  String msg = 'dawoApp-Message..';
+  //  String develop = 'Under development.. 0 % to:  0.0.6';
+  //  String version = '0.0.6';
 
   //  Setting value for console
   // printing in flowC / flowS. TODO  hklGTry
@@ -102,6 +128,7 @@ class DawoApp extends BaseStruct {
   void init() {
     //  TODO  Actor:  only one actor for now... But class Actor in alpha.dart
     glb.changeActor(':DAWO-APP:');
+    st['wake'] = true;
     //  TODO  Set some field values.
     _flowC('  -->-da->  DawoApp buffer output initialized  ---', _pB);
 
@@ -240,33 +267,41 @@ class DawoApp extends BaseStruct {
     ///  TODO  buildDawo mission
     ///  Added 3. parameter, forceHeight
     ///  NOTE packDawo gets map printed.
+    print(packDawoMission.placardM);
     List list1 = packDawoMission.report('C:dawoApp-:rM:', true);
-    List info1 =  tl.mapToList(packDawoMission.infoM);
-    devBox('By; dawoApp-:rM:', [list1, info1], 9);
+    List info1 = tl.mapToList(packDawoMission.say);
+    devBox('By; dawoApp-:rM:', [list1, info1], 10);
+    print(packDawoMission.placardM);
 
+    print(helsinkiMission.placardM);
     List list2 = helsinkiMission.report('C:dawoApp-:rM:', _pB);
-    List info2 =  tl.mapToList(helsinkiMission.infoM);
-    devBox('By; dawoApp-:rM:', [list2, info2], 9);
+    List info2 = tl.mapToList(helsinkiMission.say);
+    devBox('By; dawoApp-:rM:', [list2, info2], 10);
 
+    print(dartlangMission.placardM);
     List list3 = dartlangMission.report('C:dawoApp-:rM:', _pB);
-    List info3 =  tl.mapToList(dartlangMission.infoM);
-    devBox('By; dawoApp-:rM:', [list3, info3], 9);
+    List info3 = tl.mapToList(dartlangMission.say);
+    devBox('By; dawoApp-:rM:', [list3, info3], 10);
 
+    print(myMusicMission.placardM);
     List list4 = myMusicMission.report('C:dawoApp-:rM:', _pB);
-    List info4 =  tl.mapToList(myMusicMission.infoM);
-    devBox('By; dawoApp-:rM:', [list4, info4], 9);
+    List info4 = tl.mapToList(myMusicMission.say);
+    devBox('By; dawoApp-:rM:', [list4, info4], 10);
 
+    print(myTimeMission.placardM);
     List list5 = myTimeMission.report('C:dawoApp-:rM:', _pB);
-    List info5 =  tl.mapToList(myTimeMission.infoM);
-    devBox('By; dawoApp-:rM:', [list5, info5], 9);
+    List info5 = tl.mapToList(myTimeMission.say);
+    devBox('By; dawoApp-:rM:', [list5, info5], 10);
 
+    print(nationalParksMission.placardM);
     List list6 = nationalParksMission.report('C:dawoApp-:rM:', _pB);
-    List info6 =  tl.mapToList(nationalParksMission.infoM);
-    devBox('By; dawoApp-:rM:', [list6, info6], 9);
+    List info6 = tl.mapToList(nationalParksMission.say);
+    devBox('By; dawoApp-:rM:', [list6, info6], 10);
+
 
     _flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
     // roll all chores, that are in mission
-  }
+  }  //  -----  appRollMissions
 
   ///  TODO devStream  building stream for dev, using elementary Stream example
   ///  DONE Adding caller-parameter
@@ -277,7 +312,8 @@ class DawoApp extends BaseStruct {
     // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     store.demandStream(
-        ':dawoApp:d-s', [agenda, msg, develop, version, msg], 'appListener');
+      //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
+        ':dawoApp:d-s', tl.mapToList(pack), 'appListener');
     store.demandStream(
         ':dawoApp:d-s', ['First Book', 'My Book', 'Third Book'], 'appListener');
     _flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
@@ -292,7 +328,8 @@ class DawoApp extends BaseStruct {
     // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     store.demandStream(
-        ':dawoApp-r:s:', [agenda, msg, develop, version], 'appListener');
+      //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
+        ':dawoApp-r:s:', tl.mapToList(pack)  , 'appListener');
 
     ///  calling stream on dev.admN list certain items:
     ///  insertAll(int index, Iterable<E> iterable) → void
@@ -376,7 +413,7 @@ class DawoApp extends BaseStruct {
     boxServe.show(boxHeader, 'print');
     boxServe.done(boxHeader);
     print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
-  }
+  }  //  -----  box
 
   ///  Show-method to be developed further.
   ///  //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
@@ -392,6 +429,8 @@ class DawoApp extends BaseStruct {
   ///  After presentation method; done, if #doneB.
   void done() {
     _flowC('-->-da->  DawoApp.done    $info   :: engaged ', _pB);
+    st['wake'] = false;
+    st['done'] = true;
     out.outTl.writeln('out.outTl-dawoApp-done:');
     out.outTMid.writeln('out.outMid-dawoApp-done:');
     out.outTr.writeln('out.outTr-dawoApp-done:');
@@ -406,18 +445,22 @@ class DawoApp extends BaseStruct {
     if (_pB) print(buf);
     //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', _pB);
   }
+  //  Can constructor reach inside a Map?
+  DawoApp(this.name, this.motto);
 
-  DawoApp(this.name, this.agenda);
+  ///  Every important library has it's own flowC function. #Library #Privacy!!
+  ///  Calling print/print-to-buffer function from beta.
+  ///  Getting local variables; Actor and Buffer right.
+  ///  Location of: _flowC inside OR outside of class?
+  void _flowC(String msg, bool p) {
+    ///  call flowServe with #LOCAL variables
+    ///  :DAWO-APP:  is too long.
+    flowServe(':D-A:', out.outTr, msg, p);
+  }
+
 } //  ----------  class DawoApp
 
-///  Every important library has it's own flowC function. #Library #Privacy!!
-///  Calling print/print-to-buffer function from beta.
-///  Getting local variables; Actor and Buffer right.
-void _flowC(String msg, bool p) {
-  ///  call flowServe with #LOCAL variables
-  ///  :DAWO-APP:  is too long.
-  flowServe(':D-A:', out.outTr, msg, p);
-}
+
 
 ///  To print outPutBuffers.  //  not called
 ///  Using new outBufM Map
@@ -444,6 +487,7 @@ void outBuffersPrint(String caller, String notCalled) {
 class DawoHist implements BaseStruct {
   String name = 'dawoHist';
   String info = 'Historical and old stuff of dawo.';
+  Map<String, String> say;
   String motto = 'Keeping this stuff out of dawoApp';
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY

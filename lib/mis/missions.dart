@@ -8,8 +8,8 @@
 // -  HIST:  hkl  8.9.2017
 // -  devNote: 4 pc.
 //
-//  word:  build  38 / 26  pc. Is it too much.
-//  chore:  20 pc
+//  word:  build  46 / 33  pc. Is it too much.
+//  chore:  96 / 20 pc
 
 ///  Renamed library to: missions for 0.0.4.
 library missions;
@@ -54,8 +54,8 @@ void helloMission() {
 ///  for to leave space for innovation and to find different solutions for ops.
 ///  Mission handles acts below -app level, but above chore.
 ///  Mission can include many chores. 7 Chores are build by default.
-///  TODO  Mission has 40 public fields !!
-///  TESTED: when extending BaseStruct: Too many arguments in constructor
+///  TODO  Mission has 31 public members !!
+///  TESTED: when extending BaseStruct: Too many arguments in constructor.
 class Mission {
 // #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
@@ -66,54 +66,71 @@ class Mission {
 
   /// #NEXT: Carry values to scoutJoin in connector
   /// Fields describe actions in connector and binding.
-  Map<String, String> infoM = {
+  /// Renamed this to: #say.  (  #talk,  or:  #com )
+  /// This is the language, that missions and other objects talk (in con) .
+  Map<String, String> say = {
     'purpose': ':SAMPLE :ThisMissionBLAA blaa blaa',
     'lang': ':SAMPKLE :LANG :HERE :ARE :ALL :WORDS',
     'area': ':SAMPLE :AREA1  :AREA2',
     'product': ':SAMPLE :PROD1 :PROD2',
-    'offer': ':SAMPLE :OFFER1 :OFFER2 :OFFER3',
+    'sell': ':SAMPLE :OFFER1 :OFFER2 :OFFER3',
     'buy': ':SAMPLE :MATERIAL :TIME',
     'ask': ':SAMPLE :ASK1 :ASK2 :ASK3',
     'always': ':SAMPLE :alwaysX :alwaysY :alwaysZ :SAMPLE',
     'newer': ':SAMPLE :NO :UGLY'
   };
 
+  ///  Instance info used in functions and outer-process calls.
+  Map<String, String> placardM = {
+    'actor': 'SampleMission',
+    'sender': 'SampleMission instance',
+    'receiver': 'SampleReceiver',
+    'command': 'Sample:M:com:',
+    'msg': 'SampleMis-msg:',
+  };
+
+  ///  TODO  Handy one-row info of placardM
+  String placardRow(){
+    String s1 = 'Act:   Send:    Rec:  Com:  msg:   ';
+    return ('Act: ');
+  }
+
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
   String _emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
   String _indent; // like:  "      ";  3-5-7 empty marks or something visible.
 
-  ///  Reference to outPut-buffer don't give much: used only in _flowC(
+  ///  Reference to outPut-buffer, no high-value: used only in _flowC(
   StringBuffer _buf = out.outTMid; //  reference to used output StringBuffer.
-  //  error: The type of buf can not be inferred, because the use of the
-  //  TODO  instance-getter outTMid.
+  //  TODO "error: The type of buf can not be inferred, because the use of the
+  //    instance-getter outTMid".
 
+  ///  Collect all chores in operative entity.
   List<CommonChore> choreL = [];
 
   ///  Create default CommonChores for every Mission.
   ///  We have plenty of these, so let's add them!
   CommonChore learnChr = new CommonChore('LearnChr', 'Yes, I learn');
-  CommonChore joyChr = new CommonChore('JoyChr', 'Yes, I am happy');
+  CommonChore joyChr = new CommonChore('JoyChr', 'Yes, I have Joy');
   CommonChore actChr = new CommonChore('ActChr', 'Yes, I act');
   CommonChore peopleChr = new CommonChore('PeopleChr', 'Get social!');
-  CommonChore placeChr = new CommonChore('PlaceChr', 'Places I will remember');
+  CommonChore placeChr = new CommonChore('PlaceChr', 'Places I go places');
   CommonChore seasonChr = new CommonChore('SeasonChr', 'Seasons differ!');
   CommonChore showChr = new CommonChore('ShowChr', 'Yes, I show');
 
-  /// Changed clayMap to be more complicated:
+  /// Store all data-maps of this mission-instance:
   Map<String, Map<String, String>> clayMap = {};
 
-  //  State Map, Missions upper level state.
+  //  State Map, Missions upper level state, used in init, done.
   Map<String, bool> st = {
-    'wake': true,
+    'wake': false,
     'work': false,
-    'con': false,
+    'con': false,  //  For connector.
     'pause': false,
     'done': false,
   };
 
-  //----op-  variables and methods to handle Mission operations
-  ///  'open'  variables. Make this a Map. ?
+  /// -op-  variables and methods to handle Mission operations
   //  Sub-operations state
   Map<String, bool> _opSt = {
     'wake': true,
@@ -121,9 +138,10 @@ class Mission {
     'pause': false,
     'done': false,
   };
-  int opCount = 0;
+  int _opCount = 0;
 
-  ///  #Idea:  use flags maps to control something     stFlags
+  ///  #LEARN: Project may have some loose-starts, that will eventually fail.
+  ///  #IDEA: _stFlags to control and document some area / entity in Mission.
   Map<String, String> _stFlags = {
     'real': 'no',
     'accepted': 'no',
@@ -137,12 +155,14 @@ class Mission {
   };
 
   /// #Idea? -roll  and  -op : are different level of operations.
-  ///  -roll-  variables.
+  ///  For loop control variables.
   bool _rollDone = false;
+  bool _rollEscape = false;  //  Used in testing and to escape bugs.
   int _rollCount = 0;
+  int _rollMax = 3;  //  Emergency exit from loops.
 
-  /// #Idea?  chore map to give names to  W O R K  -states.
-  /// #Name: Do not want to use "work". Instead: #job.
+  /// #IDEA?  chore map to give names to  W O R K  phases.
+  /// #Name: Phase?  #BTW: Do not want to use "work". Instead: #job.
   Map<int, String> _rollSchedule = {
     1: 'Speed!',
     2: 'Hurry',
@@ -151,16 +171,16 @@ class Mission {
     5: 'Delayed'
   };
 
-  ///  Add #later map to constructor:
+  ///  Add #later map to constructor to get big chunk of data:
   ///  Mission(this.name, this.motto, Map<String,String> _clayM);
   Mission(this.name, this.motto);
 
-  ///  Usage: No
-  ///  Mission loop for all it's Chores. Rumba calls this.
+  ///  Usage: No now.  Name: #Mill !!
+  ///  Mission loops all it's Chores in #Mill like system. Rumba calls this.
   void missionRollChores(String caller) {
     //  Start loop, use choreL to choose one at a time.
     //  Run chore's code against it's master-mission.
-    //  Handle user-actions until: exit.
+    //  Handle user-actions until: done or excape.
   }
 
   //TODO  teamDev *chore*, if is toChore.. should there be outChore, lonChore ?
@@ -175,30 +195,24 @@ class Mission {
     //  code..
   }
 
-  ///  Present info for outer process calls.
-  Map<String, String> placardM = {
-    'actor': 'Mission',
-    'sender': 'Mission instance',
-    'receiver': '',
-    'command': ':M:com:',
-    'msg': 'Mis-msg:',
-  };
 
   ///  Initializing Mission instances fields. Changed to private.
   void _init(String caller) {
     _flowC('-->>-->>-- :M:init:   C: $caller     -->>-->>--    ', _pB);
     placardM['actor'] = name;
     placardM['sender'] = name.substring(0, 8);
+    st['wake'] = true;
+    _rollMax = 3;
     //  TODO  placardM['command'] =
-    //  TODO  placardM['sender'] =
   }
+
 
   ///  Building mission with it's chores.
   void build(String caller) {
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
     //
-    _flowC('-->-m-->         :M:-b:         $name   -->-m-->  ', _pB);
+    _flowC('-->-m-->         :M:b:         $name   -->-m-->  ', _pB);
     _flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', _pB);
     _flowC(':M:build: => :chore.onB:: ', _pB);
 
@@ -211,9 +225,10 @@ class Mission {
     seasonChr.build(_emblem, name);
     showChr.build(_emblem, name);
     _flowC('-->>-->>--  :M:build: calling :connector:  -->>-->>--', _pB);
+    //  Join created object to :CON:connector: system.
     String _nS = name.substring(0, 7);
-    String connectorMsg = ':INFO :ALL M: $_nS : are :READY :FOR :NEXT :EVENT ';
-    connector.scoutJoin(placardM, connectorMsg, ':M:-build:');
+    String connectorMsg = ':INFO :ALL M: $_nS :are :READY :FOR :DAY :EVENT ';
+    connector.scoutJoin(placardM, connectorMsg, ':M:build:');
     connector.roll();
 
     ///  add default chores to choreL and #TODO  forEach.build
@@ -222,13 +237,16 @@ class Mission {
     choreL.addAll(
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
     //  CODE
-    _flowC('   <-m--<--       :M:-b:        done  $name     ', _pB);
+    _flowC('   <-m--<--       :M:b:        done  $name     ', _pB);
   } //  -----  build
+
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission   * * *
   ///  :TEST:  change some variables to private.
+  ///  Action is small class in #alpha (name, say)
   Action _decision;
+  ///  Collecting all decisions.
   Map<String, Map<String, Action>> _decisionChainMM;
 
   ///  ***********************************************************************
@@ -245,92 +263,83 @@ class Mission {
   /// devNote:  function, that OPENS way to use outer resources.
   /// #scout.. system in 15% devState.  NEXT:
   bool scoutInit(int openCount, var openThis) {
-    ///  use resource, equ class
+    ///  use resource, equ class to get practical usable #things.
     _flowC('-->-m-->  :M:scout:$name  scoutInit ', _pB);
     _flowC(':M:scout: opInit-info: Get necessary data for scout-operations. >>',
         _pB);
-    _flowC(
-        '>>  :M:scout:Resource object-simulations from app upper level.', _pB);
+    _flowC('>>  :M:scout:Resource :simulation: from app upper level.', _pB);
     equ.active = true; //  Resource class activate.
     //  scoutOn;
     //  scoutDone;
     //  scoutCount;
 
-    bool _initB = false;
-    //  code to initialize variables in system
+    bool _initB = false;  // _initB used only here.
+    //  //TODO unfinished #IDEA: code to initialize variables in system. #WTF
     return _initB;
   }
 
-  /// devNote:  method, that OPENS scout thins.
+  /// devNote:  method, that OPENS scout things.
   bool scoutOpen(int openCount, var openThis) {
     _flowC('  -->-m-->  :M:scout:$name  scoutOpen  ', _pB);
-    _flowC(
-        '  :M:scout: scoutOpen-info: Open data-tables and resolve queries.>>',
-        _pB);
-    _flowC(
-        '  >>  :M:scout: Schedule area-machine-money resources in time.', _pB);
-    bool _openB = false;
+    _flowC('  :M:scout:open:-info: Open data-tables & resolve queries.>>',_pB);
+    _flowC('  >>  :M:scout:schedule:  :area:machine:money: res in time.', _pB);
+    bool __openB = false; //  mark: __  for private-onlyHere.
     //  code to roll -scoutOpen-   - operations
-    return _openB;
+    return __openB;
   }
 
   ///  Start developing scout roll function
   ///  Eventually scoutRoll handles all these others: init-open-close-schedule..
   ///  scoutRoll call, by: mission_test,  dawo_example
   int scoutRoll(int rollCount, var courierFunc) {
-    _flowC(
-        '    -->-m-->  :M:scout:$name  opRoll    * * * * * * * * * * * * *  ',
-        _pB);
-    _flowC('    :M:scout: scoutRoll-info: Run init-open, &; close & report. >>',
-        _pB);
-    _flowC(
-        '>>  :M:scout: INFO: scout-operationsa are outside chore-world.', _pB);
-    int done = 0;
+    _flowC('    -->-m-->  :M:scout:$name  opRoll    * * * *  * * * * *  ',_pB);
+    _flowC('    :M:scout:Roll:-info: RunInitOpen, &; close & report. >>', _pB);
+    _flowC('>>  :M:scout: INFO : operationsa are outside chore-world.', _pB);
+    int __counter = 0;
     _flowC('-->>-->>--  :M:scoutR: calling :connector:  -->>-->>--', _pB);
 
     ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
+    ///  Eventually close this connector act inside below loop.
     String connectorMsg =
         ':M:-scoutR: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
     //  instead: :M:-scoutR:  change 3. parameter to: name
     connector.scoutJoin(placardM, connectorMsg, name);
     connector.roll();
 
-    //  now this just rolls func rollCount time,  lol
+    //  PLAN: loop inside this function to include #scout and #courier
     for (var i = 0; i < rollCount; i++) {
-      done++;
+      __counter++;
+      ///  Code: Check feedback from environment; something changed?
+      ///  #courier brings something from outside world.
       courierFunc();
     }
     print('-1:run  2:print-cf---3: print:courier:Func.runtimeType- ------');
+    ///  #LEARN:  courier function output:
     print(courierFunc()); //  null
     print(courierFunc); //  Closure: () => void
     print(courierFunc.runtimeType); //  () => void
-    print('-----courier------------- \n');
+    print('----- :courier: ------------- \n');
     print(':M:scoutRoll: :courier:func:  :');
 
-    _flowC('    <-m--<--  :M:scout:  scoutRoll   done c: $done   * * * * * * *',
-        _pB);
-    return done;
+    _flowC('    <-m--<--  :M:scout:roll:  Counter: $__counter   * * *', _pB);
+    return __counter;
   } //  -----  scoutRoll
 
   /// devNote:  method, that CLOSES it's object.
-  /// idea?
+  /// TODO  idea?  move opClose to..?  Usage:  Not used.
   //  int opClose(int openCount, Function openThis) {
   void opClose() {
     equ.active = false;
     _flowC('--<----<-  :M:scout:$name  scoutClose --<----<-', _pB);
-    _flowC(
-        ':M:scout: scoutClose-info: End lof mission-scout operation. >>', _pB);
-    _flowC(
-        '>>:M:scout:close: * Statistics ready, save next-round data. *.', _pB);
+    _flowC(':M:scout:close: -info: End lof mission-scout operation. >>', _pB);
+    _flowC('>>:M:scout:close: Statistics ready, save next-round data.', _pB);
   }
 
   ///  give report of scout statistics
   void scoutReport() {
     _flowC('  --<----<-  :M:scout:$name  scoutReport --<----<-', _pB);
-    _flowC('  :M:scout: scoutReport-info: Report for to check data lists. >>',
-        _pB);
-    _flowC(
-        '  >>  :M:scout: scoutReport: ** Not needed when scheduleBox.**.', _pB);
+    _flowC('  :M:scout:report :info: Report for to check data lists. >>', _pB);
+    _flowC('  >>  :M:scout:report: ** Not needed when: scheduleBox.**.', _pB);
     List<String> _l = [];
     List<String> _l2 = [];
     _l.addAll(tl.bufToList(out.outTMid));
@@ -377,38 +386,37 @@ class Mission {
     return nBuf.toString();
   }
 
-  ///  TODO  quick list.. is it gonna work??
-  ///  Report of mission data.
-  ///  DONE  Make mission-report return list, for box-output.
+  ///  Report of mission data used by: devBox_C: By; dawoApp-:rM:
   List report(String caller, bool detailsB) {
     //  NOTE  If more than 9 Chores, need something else.
     String choreLengthS = choreL.length.toString();
     String choreS = getChoreNamesS();
-
+    String _plcMS = tl.rowFromMap(placardM, 3,0);
     String ps1 = ('**. $name  M: $motto                 .');
     String ps2 = ('** Clause:  $clause                     ');
     String ps3 = ('**  st: $st                                             ');
     String ps4 = ('**  rDone: $_rollDone  rCount: $_rollCount    ');
-    String ps5 = ('**  OpSt: $_opSt   opCount:  $opCount ');
+    String ps5 = ('**  OpSt: $_opSt   opCount:  $_opCount ');
     String ps6 = ('** $_stFlags                                            ');
     String ps7 = ('** rollSchedule: $_rollSchedule  ');
-    String ps8 = ('**  ');
+    String ps8 = ('_________________________________________________________');
     String ps9 = ('** Chrs: $choreLengthS  $choreS    ');
-    String ps10 = ('** _$placardM  _______________________________________');
+    String ps10 = ('PlacardM $_plcMS, 3,0)  _______________________________________');
+    // String ps11 = ('p2 _$placardM  _______________________________________');
     var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
     /* TODO  howTo mapToList
-    print('----------infoM in mission   ----');
+    print('----------say Map in mission   ----');
     List<String> _infoL = [];
-    //  Get infoM Map to list
-    _infoL.addAll(tl.mapToList(infoM));
+    //  Get say Map Map to list
+    _infoL.addAll(tl.mapToList(say));
     _infoL.forEach(print) ;
     */
-    /*  mission infoM structure:
+    /*  mission say structure:
     String px1 = ('purpose                   ');
     String px2 = ('lang':                    ');
     String px3 = ('area':                    ');
     String px4 = ('product                   ');
-    String px5 = ('offer':                   ');
+    String px5 = ('sell':                   ');
     String px6 = ('buy': '                   ');
     String px7 = ('ask': '                   ');
     String px8 = ('always'                   ');
@@ -433,7 +441,6 @@ class Mission {
 //  TODO  teamNext   coming?:   returning some finnish day names aso.
   /// Should include some international values from other languages.
 
-//  Coming.
 //  TODO  teamNext    coming:    Elementary Isolate example
 //  TODO  teamNext    Simple future  sample
 //  TODO  teamNext    Elementary Mixin   sample
@@ -443,9 +450,9 @@ class Mission {
 ///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right;
 ///  Every library / actor has its own flowC function.
+///  Location of: _flowC inside OR outside of class?
 void _flowC(String msg, bool p) {
   ///  Call #common flowServe with #LOCAL variables:
-  ///  :MISSION: is too long.
   flowServe(':M:', out.outTMid, msg, p);
 }
 
@@ -524,23 +531,23 @@ void buildMissions(String caller) {
   _flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', _pB);
 //  for (var x in missionL  ) {   //  NOT NOW !!!
   packDawoMission
-    .._init(':M:-bms:')
-    ..build(':M:-bms:');
+    .._init(':M:bms:')
+    ..build(':M:bms:');
   helsinkiMission
-    .._init(':M:-bms:')
-    ..build(':M:-bms:');
+    .._init(':M:bms:')
+    ..build(':M:bms:');
   dartlangMission
-    .._init(':M:-bms:')
-    ..build(':M:-bms:');
+    .._init(':M:bms:')
+    ..build(':M:bms:');
   myMusicMission
-    .._init(':M:-bms:')
-    ..build(':M:-bms:');
+    .._init(':M:bms:')
+    ..build(':M:bms:');
   myTimeMission
-    .._init(':M:-bms:')
-    ..build(':M:-bms:');
+    .._init(':M:bms:')
+    ..build(':M:bms:');
   nationalParksMission
-    .._init(':M:-bms:')
-    ..build(':M:-bms:');
+    .._init(':M:bms:')
+    ..build(':M:bms:');
 //  };
   _flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- ', _pB);
   //  TODO  make mission-chore report
@@ -554,7 +561,6 @@ void buildMissions(String caller) {
       }
     }
   }
-
   _flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- ', _pB);
 } //  -----  buildMissions
 
