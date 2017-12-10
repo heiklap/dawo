@@ -430,13 +430,14 @@ class DawoApp extends BaseStruct {
   void done() {
     _flowC('-->-da->  DawoApp.done    $info   :: engaged ', _pB);
     st['wake'] = false;
+    st['work'] = false;
     st['done'] = true;
     out.outTl.writeln('out.outTl-dawoApp-done:');
-    out.outTMid.writeln('out.outMid-dawoApp-done:');
+    out.outTMid.writeln('out.outTMid-dawoApp-done:');
     out.outTr.writeln('out.outTr-dawoApp-done:');
-    out.outMTop.writeln('out.outtop-dawoApp-done:');
+    out.outMTop.writeln('out.outMTop-dawoApp-done:');
     out.outMid.writeln('out.outMid-dawoApp-done:');
-    out.outMBot.writeln('out.outBot-dawoApp-done:');
+    out.outMBot.writeln('out.outMBot-dawoApp-done:');
     out.outBl.writeln('out.outBl-dawoApp-done:');
     out.outBr.writeln('out.outBr-dawoApp-done:');
     out.outFooter.writeln('out.outFooter-dawoApp-done:');

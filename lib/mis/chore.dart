@@ -177,7 +177,7 @@ class CommonChore extends BaseStruct {
     /// TODO  Connector, analyzer do not find, or handle #var dynamic.
     //  Join "clients" / Members to opList. placardM mediates necessary info.
     _flowC('-->>-->>--  :chore: calling :connector:  -->>-->>--', _pB);
-    String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
+    String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
     connector.scoutJoin(placardM, connectorMsg, ':Chr:');
     connector.roll();
 
@@ -221,7 +221,7 @@ class CommonChore extends BaseStruct {
     ///  NOTE  placardM is not used.  TODO
     String _retStr;
     print('-->>-->>--  :Ch:-op: calling :connector:  -->>-->>--');
-    String connectorMsg = ':EVERY chore :MAY :CONE :TO :JOIN :TOMORROW :8clock';
+    String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
 
     connector.scoutJoin(placardM, connectorMsg, ':Ch:-op:');
     connector.roll();

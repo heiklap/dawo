@@ -116,7 +116,7 @@ class MissionData {
     myMusicMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
 
     myMusicMission.placardM = {
-      'actor': 'a:mMus:',
+      'actor': 'a:myMus:',
       'sender': 's: myMusicMis',
       'receiver': 'r: :ALL :FRENDS :MUSIC',
       'command': 'cmd: :LISTEN :ENJOY :BUY :RENT',

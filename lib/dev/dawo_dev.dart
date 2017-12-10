@@ -92,6 +92,7 @@ class Dev {
       ..add('NEXT: dawo-State box_serve presentation with 12 boxes.')
       ..add('NEXT: All Dawo-Objects presentation with box_serve.')
       ..add('SOON: Fill placardM with #LANG-like data.')
+      ..add('example shows glb.keyWords-used/rarely-used/important in devBox.')
       ..add('Big changes and modification in mission-connector aso.')
       ..add('infoM renamed: say. in Mission, app, def, alpha, con. ')
       ..add('Mission and dawoApp Modification')

@@ -43,6 +43,99 @@ class GlobalClass {
     'prSt controls global printing states in every object'
   ];
 
+  ///  HowTo track dawo important things in screen-output.
+  List<String> keyWords = [
+    '     #dawo objects  -  keywords-2 : find them in :out:put ',
+    ':A: -  :an: analyzer  affair  :Ar:=AppRoll  agenda-5   ask-14  ',
+    ':B: - :boxServe:  BIND  :BUG:  :DEBUG: ',
+    ':C: connector   :con: :corporate: clause-14 :courier: chore   chrs_?',
+    ':C: camp-0 !!   code-11 ',
+    ':D:3 dawoApp   devBox  :dawolang:analyze:EXTRACTED:  diag  diagonal',
+    ':D:3   DB-8    DAY-45?!',
+    ':E: -   :effort: eff enc=encode  EQU=equipment-5    ',
+    ':F: -   FIND  ',
+    ':G: -    :glb: = Global   GRANT-3',
+    ':H: -   http-5    HTML-9    HINT_?',
+    ':I: -  IDEA    INFO_?    idb-0!?',
+    ':J: -   JSON  '
+    ':K: -',
+    ':L: -  LANG~137  learn-19 ',
+    ':M: mission    Mongo-3    ',
+    ':N: =  NEXT   NOTE  ',
+    ':O: -          (opera-6)  ',
+    ':P: -  PING   peg=screenMark    (plan-24)  ',
+    ':Q: -    QUEST: ',
+    ':R: Rumba     RULE  ',
+    ':S: -   schedule   :scout:Roll say    STREAM  store-1  secret-0 scout-20',
+    ':T: -  team*-45     TEST-10  track-7',
+    ':U: -  :usher:   user-26',
+    ':V: -',
+    ':X: -',
+    ':Y: -',
+    ':Z: -',
+    '::',
+  ];
+
+  ///  HowTo track dawo important things in screen-output.
+  List<String> keyWordsSmall = [
+    '     #dawo objects,   keywords-2   less used & promising. ',
+    ':a: -  ::  adm  ',
+    ':b: - :buf:=buffer     bLib=:OLD:DEPRECATED:   buy-24   sell-7  bus-8',
+    ':c:       C: = caller   clay=data  (carry-3) car-33  chat-1   client-12',
+    ':d:3    dev    decoded    :demand:   deal-1',
+    ':e: -  :ex:=example   ',
+    ':f: -  :flowServe:',
+    ':g: -   ',
+    ':h: -  howTo  hklTry= meTryingSomething    human-2',
+    ':i: -  *inno* -12 ',
+    ':j: -'
+    ':k: -',
+    ':l: -',
+    ':m:     meet-4   myTime-30',
+    ':n: = numbr-Grang-Valid  ',
+    ':o: -  out_=    (opC-23 ?!)    office-9',
+    ':p: -   PLAN:   placardM  pole-3   priority-3   peg=eyeMark',
+    ':q: -',
+    ':r: = report                      ',
+    ':s: - sec  schedule  SOON:   :sh-it-diagL ?? (simulate-2) state-14  ',
+    ':t: -    (try-7)    typedef-17   tempo*-2   time-14 ',
+    ':u: -',
+    ':v: -     value-effort:in#effort',
+    ':w: -     week-9 ',
+    ':x: -',
+    ':y: -',
+    ':z: -',
+    '::',
+  ];
+
+  List<String> dawoTextOutput = [
+     'String rumbaS = rumbaBuf.toString',
+     'String dawoAppS = dawoBuf.toString',
+     'String missionS = packDawoMission.say.toString',
+     'String choreS = packDawoMission.joyChr.buf.toString',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+     '   ',
+
+  ];
+
+  /*
+    String rumbaS = rumbaBuf.toString();  //  void
+    String dawoAppS = dawoBuf.toString();
+    String missionS = packDawoMission.say.toString();
+    String choreS = packDawoMission.joyChr.buf.toString();
+
+   */
+
   ///  Records changes to states
   List<String> actionL = [];
 

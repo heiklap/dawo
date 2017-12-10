@@ -21,8 +21,8 @@ class BoxServe {
   int sw = 195; //  default:  screen width
   int rc = 47; //  default:  row count
   String pm = '-'; //  default
-  List<String> _matrix =
-      new List(); //  (rc);  lets not decide here lists length
+  //  (rc);  lets not decide here lists length
+  List<String> _matrix = new List();
   int _fakeRow = 100; //  Get nice  100 - 147 numbers
   List<String> _resAllocL = []; //  Some extra resource
   ///  Forming vertical line for screen.
@@ -36,7 +36,6 @@ class BoxServe {
   ///  //  TODO  set min-max-maxWidthString values
   void init(int h, w, String _pm) {
     pm = _pm;
-
     ///  Use default, unless parameters are > 0
     if ((h > 0) && (w > 0)) {
       rc = h;

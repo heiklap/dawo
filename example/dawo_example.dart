@@ -66,7 +66,7 @@ Map<String, String> placardM = {
 
 ///  Local variables for this presentation.
 bool _pB = true; //  Boolean value used to control printing.
-String dexS = ':d-ex:'; //  Prefix for print messages and easy find.
+String dexS = ':d:ex:'; //  Prefix for print messages and easy find.
 int dexC = 0; //  counter for activities in this example.
 String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
 
@@ -75,6 +75,7 @@ String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
 ///  Every dart program starts it's execution from main method.
 main() {
   glb.dawoLogo.forEach(print);
+  devBox(':d:ex:main:', [glb.keyWords, glb.keyWordsSmall], 28);
   var sw = new Stopwatch()..start();
   DateTime start = new DateTime.now();
   ///  Call function that adds #actor and #count to this String and prints it.
@@ -107,7 +108,7 @@ main() {
 
   print("Executing dawo_example.dart took: ${sw.elapsed}us");
   DateTime stop = new DateTime.now();
-  print(' \nStoptime::  $stop');
+  print(' \nStopTime::  $stop');
   print(stop.difference(start));
   print('FlowServe calls::   $flowI ');
   boxServeTemplate();
@@ -165,7 +166,7 @@ void connectorOp(String caller) {
 
   connector.scoutJoin(placardM, connectorMsg, ':Dawo:example:');
   connector.roll();
-  connector.box(':d-ex:');
+  connector.box(':d:ex:');
 }
 
 //  TODO  #IDEA: for courier carrier, to do something really nice.
@@ -182,9 +183,9 @@ void exampleMission() {
   packDawoMission.scoutOpen(2, 'second empty parameter');
   //  calls void function that prints a String.
   //  In front of String is line feed, and another String with interpolation.
-  exInfo('\n $dexS-:dw:-ex: -----------  rolling :courier:Message: ------ ');
+  exInfo('\n $dexS-:dw:ex: -----------  rolling :courier:Message: ------ ');
   packDawoMission.scoutRoll(3, courierMessage);
-  exInfo('  - -:dw:-ex: -----  rolling :courier:mission: opFunc  done ---\n');
+  exInfo('  - -:dw:ex: -----  rolling :courier:mission: opFunc  done ---\n');
   packDawoMission.opClose(); //  No  parameters.
   packDawoMission.scoutReport();
   exInfo('    ==<<==<<==    rolling :packDawo:Mission: done    ==<<==<<==');
@@ -214,7 +215,7 @@ void sampleJsonData() {
   exInfo('\n ==>>==>>==   rolling sampleJsonData    ==>>==>>==');
   exInfo('==>>==>>==   encoded - decoded    ==>>==>>==');
   exInfo('==>>==>>==   chore > effort > user_json render   ==>>==>>===');
-  choreToEffortUserJson(':d-ex:');
+  choreToEffortUserJson(':d:ex:');
   exInfo('    ==<<==<<==    encoded - decoded   done    ==<<==<<==');
   exInfo('    ==<<==<<==    rolling sampleJsonData: done    ==<<==<<==');
 }
