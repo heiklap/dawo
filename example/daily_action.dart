@@ -140,7 +140,8 @@ void monday() {
 
   ///  eventually roll init /build / handles the next:
   boxServe.init(16, 125, '_');
-  boxServe.construct(':dailyAction:monday:'); //
+  ///  2 parameter is glb-buffer
+  boxServe.construct(':dailyAction:monday:', ':dailyAction:monday:'); //
 
   //  add connector or other stuff  stuff
   //  boxServe.aBox(17, 20, _items, _w, __l)
@@ -190,7 +191,7 @@ void wednesday() {
 
   ///  eventually roll init /build / handles the next:
   boxServe.init(16, 125, '_');
-  boxServe.construct(':dailyAction:wednesday:'); //
+  boxServe.construct(':dailyAction:wednesday:', ':dailyAction:wednesday:'); //
 
   //  add connector or other stuff  stuff
   //  boxServe.aBox(17, 20, _items, _w, __l)
@@ -234,7 +235,7 @@ void friday() {
   //  :BUG:  hklTry:  195  boxServe.init(36, 175, '_');
   //  :BUG:DEBUG:  175..  try:  195
   boxServe.init(36, 175, '_');
-  boxServe.construct(':dawoHist:dailyAction:friday:');
+  boxServe.construct(':dawoHist:dailyAction:friday:', ':dailyAction:Friday:');
 
   ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
   ///  NOTE: boxLayoutX  in boxServe library.

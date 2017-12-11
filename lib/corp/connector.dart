@@ -390,7 +390,7 @@ class Connector extends BaseStruct {
 
     //  TODO  if change to: 150, it should be visible variable
     boxServe.init(42, 190, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':connector:box:  C: $caller');
+    boxServe.construct(':connector:box:  C: $caller', ':connector:box: $caller');
     int r1 = 2; //  easy x-y pointing
     int r2 = 12;
     int r3 = 20;

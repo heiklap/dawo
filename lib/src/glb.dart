@@ -45,27 +45,28 @@ class GlobalClass {
 
   ///  HowTo track dawo important things in screen-output.
   List<String> keyWords = [
-    '     #dawo objects  -  keywords-2 : find them in :out:put ',
-    ':A: -  :an: analyzer  affair  :Ar:=AppRoll  agenda-5   ask-14  ',
-    ':B: - :boxServe:  BIND  :BUG:  :DEBUG: ',
+    '     #dawo objects  -  keywords-2 : find them in :out:put  (=new-idea) ',
+    '     IDEA:NEW:   chain - hook - gear  ',
+    ':A: -  :an: analyzer  affair  :Ar:=AppRoll  agenda-5  area-21  ask-14  ',
+    ':B: - :boxServe:-9    BIND  :BUG:  :DEBUG: ',
     ':C: connector   :con: :corporate: clause-14 :courier: chore   chrs_?',
     ':C: camp-0 !!   code-11 ',
     ':D:3 dawoApp   devBox  :dawolang:analyze:EXTRACTED:  diag  diagonal',
     ':D:3   DB-8    DAY-45?!',
-    ':E: -   :effort: eff enc=encode  EQU=equipment-5    ',
+    ':E: -   :effort: eff enc=encode  EQU=equipment-5  (envelope-0)  ',
     ':F: -   FIND  ',
     ':G: -    :glb: = Global   GRANT-3',
     ':H: -   http-5    HTML-9    HINT_?',
     ':I: -  IDEA    INFO_?    idb-0!?',
-    ':J: -   JSON  '
+    ':J: -   JSON    join-18-31     '
     ':K: -',
-    ':L: -  LANG~137  learn-19 ',
+    ':L: -  LANG~137  learn-19                (lamp-0)  (legend-0) (letter-0)',
     ':M: mission    Mongo-3    ',
     ':N: =  NEXT   NOTE  ',
-    ':O: -          (opera-6)  ',
+    ':O: -          (opera-6)          ( oath-0) ',
     ':P: -  PING   peg=screenMark    (plan-24)  ',
     ':Q: -    QUEST: ',
-    ':R: Rumba     RULE  ',
+    ':R: Rumba     RULE                                  (ritual-0) ',
     ':S: -   schedule   :scout:Roll say    STREAM  store-1  secret-0 scout-20',
     ':T: -  team*-45     TEST-10  track-7',
     ':U: -  :usher:   user-26',
@@ -82,23 +83,23 @@ class GlobalClass {
     ':a: -  ::  adm  ',
     ':b: - :buf:=buffer     bLib=:OLD:DEPRECATED:   buy-24   sell-7  bus-8',
     ':c:       C: = caller   clay=data  (carry-3) car-33  chat-1   client-12',
-    ':d:3    dev    decoded    :demand:   deal-1',
+    ':d:3    dev    decoded    :demand:   deal-1   devBox-22                ',
     ':e: -  :ex:=example   ',
-    ':f: -  :flowServe:',
+    ':f: -  :flowServe:    film-0 fire-0   fury-2   ',
     ':g: -   ',
     ':h: -  howTo  hklTry= meTryingSomething    human-2',
     ':i: -  *inno* -12 ',
     ':j: -'
     ':k: -',
-    ':l: -',
-    ':m:     meet-4   myTime-30',
-    ':n: = numbr-Grang-Valid  ',
+    ':l: -   level-2-5     link-0      ',
+    ':m:     meet-4    member*-7     myTime-30',
+    ':n: = numbr-Grant-Valid  ',
     ':o: -  out_=    (opC-23 ?!)    office-9',
     ':p: -   PLAN:   placardM  pole-3   priority-3   peg=eyeMark',
     ':q: -',
     ':r: = report                      ',
     ':s: - sec  schedule  SOON:   :sh-it-diagL ?? (simulate-2) state-14  ',
-    ':t: -    (try-7)    typedef-17   tempo*-2   time-14 ',
+    ':t: -    (try-7)    typedef-17   tempo*-2   time-14 task-0  tutor-o     ',
     ':u: -',
     ':v: -     value-effort:in#effort',
     ':w: -     week-9 ',
@@ -139,7 +140,14 @@ class GlobalClass {
   ///  Records changes to states
   List<String> actionL = [];
 
+  ///  For glb:s inner data
   StringBuffer buf = new StringBuffer();
+
+  //  Method saveToGLB from box_serve fills this map.
+  Map<String, StringBuffer> boxServeBuffers = {
+
+  };
+
 
   var register; //  register of objects that participate in Dawo / glb.
   //  Actor: String actor;  //  too important to be a String
@@ -190,7 +198,7 @@ class GlobalClass {
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
     boxServe.init(15, 140, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':glb:box:  C: $caller');
+    boxServe.construct(':glb:box:  C: $caller', ':glb:box:');
 
     boxServe.aHeader(1, 4, '* *  Print-State * * ');
     boxServe.aBox(2, 7, 12, 20, tl.mapToListB(prSt));

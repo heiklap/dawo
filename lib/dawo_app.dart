@@ -366,7 +366,7 @@ class DawoApp extends BaseStruct {
     //  :BUG:  Clear old lists first. ??
 
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':dap:box: '); //  :BUG: C: $caller');
+    boxServe.construct(':dap:box: ', ':dap:box:'); //  :BUG: C: $caller');
 
     int r9 = 9; //  row anchor
 
@@ -595,7 +595,7 @@ class DawoHist implements BaseStruct {
     //  :BUG:  Clear old lists first. ??
 
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':dawoHist:box: '); //  :BUG: C: $caller');
+    boxServe.construct(':dawoHist:box: ', ':dawoHist:box:'); //  :BUG: C: $caller');
 
     int r9 = 9; //  anchor for row.
   }

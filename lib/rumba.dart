@@ -187,18 +187,18 @@ class Rumba {
         .write(devBox('By:RUMBA-DANCE:', [dev.innoN, dev.howToN, dev.secN], 0));
     print('--:R:----  one more funny list test   ------');
     //  TODO  add all boxes to rumbaBuf.
-    devBox(':R-D:', [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
+    devBox(':R:D:', [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
 
     var _ll = out.outBufListsForBox();
     print('\n -:R:--->>-->>-->>  outBuffers    --->>-->>-->>-->>--');
-    rumbaBuf.write(devBox(':R-D:', [_ll[1], _ll[2], _ll[3]], 32));
+    rumbaBuf.write(devBox(':R:D:', [_ll[1], _ll[2], _ll[3]], 32));
     print(' ');
-    devBox(':R-D:', [_ll[4], _ll[5], _ll[6]], 0);
+    devBox(':R:D:', [_ll[4], _ll[5], _ll[6]], 0);
     print(' ');
-    devBox(':R-D:', [_ll[7], _ll[8]], 0);
+    devBox(':R:D:', [_ll[7], _ll[8]], 0);
 
     ///  Header and footer from out-buffers-
-    devBox(':R-D:', [_ll[0], _ll[9]], 0);
+    devBox(':R:D:', [_ll[0], _ll[9]], 0);
     print('--<<--;R:--<<--<<  outBuffers  done --<<--<<--<<--<<-- \n');
     //  flowFind(':RUMBA-DANCE:', '->>-', 35);
     //  flowFind(':RUMBA-DANCE:', 'build', 30);

@@ -112,7 +112,20 @@ main() {
   print(stop.difference(start));
   print('FlowServe calls::   $flowI ');
   boxServeTemplate();
+
+  print('.............. :glb:boxServe:buf: length and names  ..............................');
+  print(glb.boxServeBuffers.length);
+  for (var z in glb.boxServeBuffers.keys) {
+    print(glb.boxServeBuffers[z].length);
+    print(z);
+  }
+  //  glb.boxServeBuffers.keys.forEach(print);
+
+  //print buffer: print(glb.boxServeBuffers[':dawoHist:dailyAction:friday:6']);
+  print('---- main done   ');
 } //  -----  end of main.
+
+
 
 ///  From dailyAction
 void boxServeTemplate(){
@@ -123,8 +136,10 @@ void boxServeTemplate(){
   dawoHist.roll();
   dawoHist.buf.writeln(':dailyAction:friday:');
 
+  ///  TODO  hosTo handle:  in boxServe there are:  title and footer.
   boxServe.init(36, 175, '_');
-  boxServe.construct(':dawoHist:dailyAction:friday:');
+  ///  Table name and glb.buffer name
+  boxServe.construct(':dawoHist:dailyAction:friday:', ':dawoHist:dailyAction:friday:');
 
   ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
   boxLayoutDap(dawoHist, ':dawoHist:dailyAction:friday:');

@@ -16,16 +16,30 @@ import '../alpha.dart';
 import '../src/glb.dart';
 
 ///  Schedule connect, opJoin corporate, bind, binding
+///  Present callers List, Map, text data in row,col in boxes inside a matrix.
 class BoxServe {
+  String testS = ':TEST:BUG:boxServe:';
   int boxCount = 0;
+  //  TODO :BUG:  Matrix fails in certain sw. :Test:  193, 194, 195, 196, 197..
   int sw = 195; //  default:  screen width
   int rc = 47; //  default:  row count
   String pm = '-'; //  default
   //  (rc);  lets not decide here lists length
+  //  title,   rubric
+  //  should be upper level TODO
+  String title = ' **  boxServe Title  **';
+  //  should be upper level TODO
+  String footer = ' **  boxServe Footer  **';
+  String caller; //  should be upper level TODO
+  ///  Will be combination of '$caller $boxCount.toString()'
+  String name = '';
   List<String> _matrix = new List();
+  //  To save matrix AND mediate it to glb.
+  StringBuffer _buf = new StringBuffer();
+  String _bufName = ''; //  Form nice name for glb.buffers.X
   int _fakeRow = 100; //  Get nice  100 - 147 numbers
-  List<String> _resAllocL = []; //  Some extra resource
-  ///  Forming vertical line for screen.
+  List<String> _resAllocL = []; //  Some extra resource, like: equ/Equipment.
+  ///  Forming vertical separator/note line in screen.
   List<String> verticalLineL = []; //  max: rc - 2)
 
   //  Methods to be called from outside class: init, construct, build
@@ -35,7 +49,7 @@ class BoxServe {
   ///  Initialize measure values by parameters
   ///  //  TODO  set min-max-maxWidthString values
   void init(int h, w, String _pm) {
-    pm = _pm;
+    pm = _pm;  //  padMark
     ///  Use default, unless parameters are > 0
     if ((h > 0) && (w > 0)) {
       rc = h;
@@ -47,16 +61,19 @@ class BoxServe {
       //  add to matrix rc items.
       _matrix.add(rowS);
     }
-  } //  -----  init
+  }
 
   ///  Build matrix with top, left, bot
-  void construct(String _caller) {
+  ///  Too bad that users have to call both init and construct and...
+  void construct(String _caller, _GlbBufName) {
+    caller = _caller; //  save it to upper level variable.
+    name = _caller; //  and to name.
+    _bufName = _GlbBufName;
     boxCount++;
     for (var z = 1; z < _matrix.length - 1; z++) {
       //  do not handle first row.
       _fakeRow++;
-      String _fakeRowS = _fakeRow.toString().substring(1,3);
-      //  TODO  take only 2 last numbers to _fakeRowS like 123 = 23
+      String _fakeRowS = _fakeRow.toString().substring(1, 3);
       //  TODO  choose nice background mark for matrix.
       //  pad with low-density mark.   NO: '-'
       _matrix[z] = '$_fakeRowS '.padRight(sw, pm);
@@ -65,7 +82,7 @@ class BoxServe {
     //  TODO  should  get #name in the middle of first line,
     String boxCountS = boxCount.toString();
     String m0ro = ':boxServe:nr: $boxCountS -:C: $_caller-------';
-    int m0roI = m0ro.length;
+    //  no used  int m0roI = m0ro.length;
     String m0row = m0ro.padRight(sw, pm);
     _matrix[0] = m0row;
     //  TODO  StampLeft ' '  // there is pm ! = ' '
@@ -97,9 +114,9 @@ class BoxServe {
     bool error = false;
     String _overWidthS = '';
     String _overLengthS = '';
-    if ((_c + _w > sw ) || (_r + _items > rc) ) {
+    if ((_c + _w > sw) || (_r + _items > rc)) {
       error = true;
-      _overWidth = (_c + _w)  - sw;
+      _overWidth = (_c + _w) - sw;
       print(_overWidth);
       _overLength = (_r + _items) - rc;
       print(_overLength);
@@ -110,9 +127,10 @@ class BoxServe {
       print('W: $_w  Items:  $_items  ');
       print('sw: $sw   ');
       print('Overlength::  $_overLength     OwerWidth::  $_overWidth');
-      _overWidthS = _overWidth.toString();  //assume like: '7'
+      _overWidthS = _overWidth.toString(); //assume like: '7'
       _overLengthS = _overLength.toString(); //  like: '3'
-    };
+    }
+    ;
 
     //  ??  If error-position, parameters should now have changed ??
     tl.boxInList(_r, _c, _items, _w, _l, _matrix);
@@ -122,14 +140,14 @@ class BoxServe {
       verticalWarningL.fillRange(0, _items, _overWidthS);
       //  call: void vertWarning(int _x, _y, count, String _s)
       print('vert warning::  ');
-      vertWarning(_r, _c + _w + 2, _items, _overWidthS);  //  try +1 .. 2
+      vertWarning(_r, _c + _w + 2, _items, _overWidthS); //  try +1 .. 2
       print('_overLengthS::  $_overLengthS ');
       print('horizWarnibg::  ');
       horizWarning(_r + _items - 1, _c, _w, _overLengthS);
       print('error done::');
       //  lay horizontal #VARNING line
-    }  //  -----  error
-  }  //  -----  aBox
+    } //  -----  error
+  } //  -----  aBox
 
   ///   Lay String in a certain place in matrix.
   ///   :QUEST:  This is too complicated, lol.
@@ -151,7 +169,6 @@ class BoxServe {
     }
   }
 
-
   //  Set vertical Warning-line to screen matrix
   void vertWarning(int _x, _y, count, String _s) {
     String _newS;
@@ -165,30 +182,63 @@ class BoxServe {
   //  Set horizontal Warning-line to screen matrix
   void horizWarning(int _x, _y, _width, String _extraS) {
     StringBuffer _b = new StringBuffer();
+
     ///  form String like:  ´7777777777777777'
     for (var x = 0; x < _width; x++) {
       _b.write(_extraS);
     }
-      ///  Fill it to the matrix
-      aHeader(_x, _y, _b.toString());
-    print('horizWarning done::');
+
+    ///  Fill it to the matrix
+    aHeader(_x, _y, _b.toString());
   }
 
-  ///  New show method extracted from done
+  ///  Called by:   User!!  Not from this class.
+  ///  To show matrix AND mediate it to glb.buf
   void show(String _caller, String action) {
     eyeMark14(); //  put 'peg' in row_14, col_0, for table to fill screen.
     print(_matrix.length);
+
     ///  if.. is awkward
     if (action == 'print') _matrix.forEach(print); //  only way!!
     //  return _matrix;  //  if type is: List<String>
+    ///  Save box-buffer to:   glb.boxServeBuffers Map
+    saveToGLB();
+  }
+
+  ///  Called by:  next method, saveToGLB
+  ///  title + _matrix + footer saved to buf.
+  StringBuffer toBuffer() {
+    StringBuffer boo = new StringBuffer();
+    boo.writeln(title);
+    for (var x in _matrix) {
+      boo.writeln(x);
+    }
+    boo.writeln(footer);
+    return boo;
+  }
+
+  ///  Called by:  show()
+  ///  toGLB-Buffer.  Save boxServe matrix to glb-buffers
+  void saveToGLB() {
+    String boxCountS = boxCount.toString();
+    _bufName = '$_bufName$boxCountS';
+    StringBuffer saveBuffer = toBuffer();
+    String sbl = saveBuffer.length.toString();
+    print(
+        '$testS  bufName::  $_bufName      boxCountS:::  $boxCountS     Name:::  $name     BufLength::: $sbl');
+
+    ///  _bufName is combination of '$caller $boxCount.toString()'
+    glb.boxServeBuffers.putIfAbsent(_bufName, () => saveBuffer);
+    print('-<<---saveToGLB  done    ----<<-----  ');
   }
 
   ///  Lets see, if this will eventually be List<String>
   ///  TODO  #deprecated  split in:  show and #done
   void done(String _caller) {
     _matrix.clear();
-    //  message somewhere??
-    //  :BUG: ?? so clear all, to be sure.
+    _buf.clear();
+    name = '';
+    _bufName = '';
     _resAllocL.clear();
     verticalLineL.clear();
     _fakeRow = 100;
@@ -252,6 +302,4 @@ void boxLayoutDap(BaseStruct _model, String _rubric) {
 } //  -----  boxLayoutDab
 
 ///  UsingBaseStruct (connector) fields to set usual fields in boxServe
-void boxLayoutlConnector() {
-
-}
+void boxLayoutlConnector() {}
