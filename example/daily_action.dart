@@ -17,6 +17,7 @@ import 'package:dawo/dawo_app.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
 
+import 'package:dawo/mis/camp.dart';
 import 'package:dawo/mis/chore.dart';
 import 'package:dawo/mis/missions.dart';
 
@@ -126,12 +127,12 @@ void monday() {
   connectorBuf.write('-->>  :dailyAct:monday: connector :opJoin:ping:done  ');
   dartlangMission.report(':monday:', true);
   dartlangMission.learnChr.roll();
-  dartlangMission.scoutInit(2, mondayAct.dailyCourier);
-  dartlangMission.scoutOpen(1, mondayAct.dailyCourier); //  ??   openThis
+  scout.init(2, mondayAct.dailyCourier);
+  scout.open(1, mondayAct.dailyCourier); //  ??   openThis
 
   // PLAY:  #courier func
-  dartlangMission.scoutRoll(3, mondayAct.dailyCourier);
-  dartlangMission.scoutReport();
+  scout.roll(3, mondayAct.dailyCourier);
+  scout.report();
   //  not visible  corporate.
   //  No: private   mondayAct.init();
   //  no: private  mondayAct.build();
@@ -159,7 +160,7 @@ void monday() {
 ///
 void tuesday() {
   print('--------- :day:tuesday:---- helsinkiMission------------------');
-  helsinkiMission.scoutReport();
+  scout.report();
   packDawoMission.report(':dailyAction:test:', false);
 }
 
@@ -177,12 +178,12 @@ void wednesday() {
   connectorBuf.write('-->>  :dailyAct:wednesday: connector :opJoin:ping:done  ');
   myTimeMission.report(':wednesday:', true);
   myTimeMission.learnChr.roll();
-  myTimeMission.scoutInit(2, wednesdayAct.dailyCourier);
-  myTimeMission.scoutOpen(1, wednesdayAct.dailyCourier); //  ??   openThis
+  scout.init(2, wednesdayAct.dailyCourier);
+  scout.open(1, wednesdayAct.dailyCourier); //  ??   openThis
 
   // PLAY:  #courier func
-  myTimeMission.scoutRoll(3, wednesdayAct.dailyCourier);
-  myTimeMission.scoutReport();
+  scout.roll(3, wednesdayAct.dailyCourier);
+  scout.report();
   //  not visible  corporate.
   //  No: private   wednesdayAct.init();
   //  no: private  wednesdayAct.build();

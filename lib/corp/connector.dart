@@ -385,7 +385,7 @@ class Connector extends BaseStruct {
     print('-->>-->>  :connector:box: boxServe  start  -->>-->>--  ');
     List<String> infoL = [
       'Connector joins other object to spheres, like corporate, where they can work together and join messaging.',
-      'Every conScout:ed object carries with it a bunch of information, placardM, and has access to :bind:bing:',
+      'Every :con:Scout:ed object carries with it a bunch of information, placardM, and has access to :bind:bing:',
     ];
 
     //  TODO  if change to: 150, it should be visible variable

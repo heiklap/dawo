@@ -7,6 +7,7 @@ import 'package:dawo/rumba.dart';
 import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/mill.dart';
 import 'package:dawo/mis/missions.dart';
+import 'package:dawo/mis/camp.dart';
 
 import 'package:dawo/mis/chore.dart';
 import 'package:dawo/tools.dart';
@@ -77,14 +78,14 @@ void otherStuff() {
 
   renderMission(':app:chore:play.dart:');
 
-  mission.scoutOpen(1, 'X');
+  scout.open(1, 'X');
 
   //  Do we have hello-function somewhere?
   void helloAppChorePlay() {
     print('helloAppChorePlay');
   }
 
-  mission.scoutRoll(4, helloAppChorePlay);
+  scout.roll(4, helloAppChorePlay);
 
   mission.opClose();  //  no parameters.
 

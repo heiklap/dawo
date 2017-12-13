@@ -109,6 +109,37 @@ class GlobalClass {
     '::',
   ];
 
+  ///  HowTo track dawo important things in screen-output.
+  List<String> goodies = [
+    '    . ',
+    ':a:                                                   ',
+    ':b:                                                   ',
+    ':c:                                                   ',
+    ':d:                                                   ',
+    ':e:                                                   ',
+    ':f:                   #foodFinder                     ',
+    ':g:                                                   ',
+    ':h:                                                   ',
+    ':i:                                                   ',
+    ':j:                                                   ',
+    ':k:                                                   ',
+    ':l:                                                   ',
+    ':m:                                                   ',
+    ':n:                                                   ',
+    ':o:                                                   ',
+    ':p:               my-pundit                           ',
+    ':q:                                                   ',
+    ':r:                                                   ',
+    ':s:                                                   ',
+    ':t:                                                   ',
+    ':u:                                                   ',
+    ':v:                                                   ',
+    ':w:                                                   ',
+    ':x:                                                   ',
+    ':y:                                                   ',
+    ':z:                                                   ',
+    '::'                                                   ','
+  ];
   List<String> dawoTextOutput = [
      'String rumbaS = rumbaBuf.toString',
      'String dawoAppS = dawoBuf.toString',

@@ -15,6 +15,7 @@ class Equipment {
   bool active = false;
   var random = new Random(27);
 
+  ///  Imitating real classes / Just using String-names.
   String area = 'areaR';
   String car = 'carR';
   String law = 'lawR';

@@ -196,6 +196,7 @@ class Mission {
   }
 
 
+  ///  Who's gonna call you?  Ghostbusters?
   ///  Initializing Mission instances fields. Changed to private.
   void _init(String caller) {
     _flowC('-->>-->>-- :M:init:   C: $caller     -->>-->>--    ', _pB);
@@ -258,72 +259,9 @@ class Mission {
   void fireStream() {} //
   ///  ***********************************************************************
 
-  /// Create some scout___ methods, #then: find some job for them.
-  /// Renamed to:  scoutXX
-  /// devNote:  function, that OPENS way to use outer resources.
-  /// #scout.. system in 15% devState.  NEXT:
-  bool scoutInit(int openCount, var openThis) {
-    ///  use resource, equ class to get practical usable #things.
-    _flowC('-->-m-->  :M:scout:$name  scoutInit ', _pB);
-    _flowC(':M:scout: opInit-info: Get necessary data for scout-operations. >>',
-        _pB);
-    _flowC('>>  :M:scout:Resource :simulation: from app upper level.', _pB);
-    equ.active = true; //  Resource class activate.
-    //  scoutOn;
-    //  scoutDone;
-    //  scoutCount;
 
-    bool _initB = false;  // _initB used only here.
-    //  //TODO unfinished #IDEA: code to initialize variables in system. #WTF
-    return _initB;
-  }
 
-  /// devNote:  method, that OPENS scout things.
-  bool scoutOpen(int openCount, var openThis) {
-    _flowC('  -->-m-->  :M:scout:$name  scoutOpen  ', _pB);
-    _flowC('  :M:scout:open:-info: Open data-tables & resolve queries.>>',_pB);
-    _flowC('  >>  :M:scout:schedule:  :area:machine:money: res in time.', _pB);
-    bool __openB = false; //  mark: __  for private-onlyHere.
-    //  code to roll -scoutOpen-   - operations
-    return __openB;
-  }
 
-  ///  Start developing scout roll function
-  ///  Eventually scoutRoll handles all these others: init-open-close-schedule..
-  ///  scoutRoll call, by: mission_test,  dawo_example
-  int scoutRoll(int rollCount, var courierFunc) {
-    _flowC('    -->-m-->  :M:scout:$name  opRoll    * * * *  * * * * *  ',_pB);
-    _flowC('    :M:scout:Roll:-info: RunInitOpen, &; close & report. >>', _pB);
-    _flowC('>>  :M:scout: INFO : operationsa are outside chore-world.', _pB);
-    int __counter = 0;
-    _flowC('-->>-->>--  :M:scoutR: calling :connector:  -->>-->>--', _pB);
-
-    ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
-    ///  Eventually close this connector act inside below loop.
-    String connectorMsg =
-        ':M:-scoutR: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
-    //  instead: :M:-scoutR:  change 3. parameter to: name
-    connector.scoutJoin(placardM, connectorMsg, name);
-    connector.roll();
-
-    //  PLAN: loop inside this function to include #scout and #courier
-    for (var i = 0; i < rollCount; i++) {
-      __counter++;
-      ///  Code: Check feedback from environment; something changed?
-      ///  #courier brings something from outside world.
-      courierFunc();
-    }
-    print('-1:run  2:print-cf---3: print:courier:Func.runtimeType- ------');
-    ///  #LEARN:  courier function output:
-    print(courierFunc()); //  null
-    print(courierFunc); //  Closure: () => void
-    print(courierFunc.runtimeType); //  () => void
-    print('----- :courier: ------------- \n');
-    print(':M:scoutRoll: :courier:func:  :');
-
-    _flowC('    <-m--<--  :M:scout:roll:  Counter: $__counter   * * *', _pB);
-    return __counter;
-  } //  -----  scoutRoll
 
   /// devNote:  method, that CLOSES it's object.
   /// TODO  idea?  move opClose to..?  Usage:  Not used.
@@ -335,38 +273,7 @@ class Mission {
     _flowC('>>:M:scout:close: Statistics ready, save next-round data.', _pB);
   }
 
-  ///  give report of scout statistics
-  void scoutReport() {
-    _flowC('  --<----<-  :M:scout:$name  scoutReport --<----<-', _pB);
-    _flowC('  :M:scout:report :info: Report for to check data lists. >>', _pB);
-    _flowC('  >>  :M:scout:report: ** Not needed when: scheduleBox.**.', _pB);
-    List<String> _l = [];
-    List<String> _l2 = [];
-    _l.addAll(tl.bufToList(out.outTMid));
-    for (var x = 0; x < _l.length; x++) {
-      ///  Add all ':M:scout:' to _l2.
-      if (_l[x].indexOf(':M:scout:') > 0) {
-        _l2.add(_l[x]);
-      }
-    }
-    /*
-    ///  Test report output
-    print('-->-->  ********* :M: op-Report ******************************* ');
-    print('OpOn   $opOn   opDone:  $opDone   ');
-    print('opCount:   $opCount   ');
-    String _lS = _l.length.toString();
-    String _l2S = _l2.length.toString();
-    print('---- Both lists lengths:  -----------------');
-    print('L1:  $_lS');
-    print('L2:  $_l2S');
-    print('---- _l:  -----------------');
-    _l.forEach(print);
-    print('---- _l2:  -----------------');
-    _l2.forEach(print);
-    print(' ');
-    print('    <--<--  ********** :M: op-Report ************************** ');
-    */
-  }
+
 
   //  -------------------------    show  aso. methods   --------------------
   ///  Present all info of this class / app.

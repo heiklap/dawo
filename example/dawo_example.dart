@@ -18,6 +18,7 @@ import 'package:dawo/dawo_app.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
 
+import 'package:dawo/mis/camp.dart';
 import 'package:dawo/mis/chore.dart';
 import 'package:dawo/mis/missions.dart';
 
@@ -194,15 +195,15 @@ void exampleMission() {
   exInfo('\n ==>>==>>==   rolling :packDawo:Mission:    ==>>==>>==');
 
   ///  Eventually opRoll handles all these others.
-  packDawoMission.scoutInit(1, 'empty parameter');
-  packDawoMission.scoutOpen(2, 'second empty parameter');
+  scout.init(1, 'empty parameter');
+  scout.open(2, 'second empty parameter');
   //  calls void function that prints a String.
   //  In front of String is line feed, and another String with interpolation.
   exInfo('\n $dexS-:dw:ex: -----------  rolling :courier:Message: ------ ');
-  packDawoMission.scoutRoll(3, courierMessage);
+  scout.roll(3, courierMessage);
   exInfo('  - -:dw:ex: -----  rolling :courier:mission: opFunc  done ---\n');
   packDawoMission.opClose(); //  No  parameters.
-  packDawoMission.scoutReport();
+  scout.report();
   exInfo('    ==<<==<<==    rolling :packDawo:Mission: done    ==<<==<<==');
   //  When you print row below, you can see all methods.
   //  packDawoMission.

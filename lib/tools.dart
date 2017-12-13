@@ -155,6 +155,7 @@ class Tools {
   ///  Fill list-box-data in big matrix List, in r, _c coordinates.
   ///  change to bool!
   boxInList(
+      //:BUG:DEBUG:  if field-length <_w  => rangeError in called functions.
       int _r, int _c, _asked, _w, List<String> boxL, List<String> masterL) {
 
     //  new parameters _asked, _w :  items and asked output width
@@ -215,11 +216,46 @@ class Tools {
   }
 
   ///  Return list<String> from map<String, String>.
+  List<String> mapToFineList(Map<String, String> thisMap, int _kl, _vl) {
+    //  parameters int _kl, _vl for value and key lengths in "table"
+    List<String> _l = [];
+    thisMap.forEach((k, v) {
+      //  Truncate or padRight it
+      //  Must guarantee to length and minimum
+      String _ks = '';
+      String _vs = '';
+      if (k.length < _kl) {
+        _ks = k.padRight(_kl + 1);  //  ? + 1
+      } else {
+        _ks = k.substring(0,_kl);  //  but it may be shorter
+      };
+
+      if (v.length < _vl){
+        _vs = v.padRight(_vl + 1);
+      } else {
+        _vs = v.substring(0,_vl);  //  but it may be shorter
+      };
+      String _s = '';
+      _s = '$_ks-$_vs';
+      _l.add(_s);
+
+    }  // --  thisMap
+    );  //  --  forEach k v
+        return _l;
+    }  //  --  maptofineList
+
+    /*
+
+
+      */
+
+
+  ///  Return list<String> from map<String, String>.
   List<String> mapToList(Map<String, String> thisMap) {
     List<String> _l = [];
     thisMap.forEach((k, v) {
       String _s = '';
-      _s = '$k, $v';
+      _s = '$k-$v';
       _l.add(_s);
     });
     return _l;

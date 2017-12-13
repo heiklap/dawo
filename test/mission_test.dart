@@ -2,6 +2,7 @@
 ///  dawo version:  0.0.5  6.11.2017
 //
 
+import 'package:dawo/mis/camp.dart';
 import 'package:dawo/mis/missions.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/dawo_app.dart';
@@ -26,20 +27,20 @@ void main() {
 
   //  At the end renderMission() is playing another mission.
   //  myMission is used here only to play opX
-  myMission.scoutRoll(3, courierGreetings);
+  scout.roll(3, courierGreetings);
   print('  rolling mission op-functions  ');
 
   ///  Eventually opRoll handles all these others.
   //  myMission.opInit(1, 'empty parameter');
-  myMission.scoutInit(1, 'empty parameter');
-  myMission.scoutOpen(2, 'second empty parameter');
-  myMission.scoutOpen(2, 'second empty parameter');
-  myMission.scoutRoll(3, courierGreetings);
+  scout.init(1, 'empty parameter');
+  scout.open(2, 'second empty parameter');
+  scout.open(2, 'second empty parameter');
+  scout.roll(3, courierGreetings);
 
   //  is now in shower   myMission.scheduleBox(':t-m:');
   scheduleBox.roll(':t-m:');
 
-  myMission.scoutReport();
+  scout.report();
   //  Close is last one in row.
   myMission.opClose();
 
