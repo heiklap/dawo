@@ -87,7 +87,7 @@ void otherStuff() {
 
   scout.roll(4, helloAppChorePlay);
 
-  mission.opClose();  //  no parameters.
+  scout.close();  //  no parameters.
 
   //  ch.render();
   devHelp.line('render Chore');

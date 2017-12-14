@@ -115,11 +115,11 @@ class Rumba {
         ///  duplicating this to get ListOverArea-message
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
 
-        connector.scoutJoin(placardM, ':USHER :LOOP :START', ':R:u:');
+        connector.join(placardM, ':USHER :LOOP :START', ':R:u:');
         connector.roll();
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
 
-        connector.scoutJoin(placardM, ':NEXT :CONNECT :TO :SCOUT', ':R:u:');
+        connector.join(placardM, ':NEXT :CONNECT :TO :SCOUT', ':R:u:');
         connector.roll();
 
         /// ----------------------  usher loop code  ---------------------
@@ -132,7 +132,7 @@ class Rumba {
 
           ///  duplicating this to get ListOverArea-message
           print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
-          connector.scoutJoin(placardM, ':RUMBA :3 :TEST :CON', ':R:u:');
+          connector.join(placardM, ':RUMBA :3 :TEST :CON', ':R:u:');
           connector.roll();
           connector.box(':R:.do:');
 
@@ -172,7 +172,7 @@ class Rumba {
       print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
       connectorMsg = ':ALL :DO :ANSWER ;FAST => :HOW:MANY #Process :ON ?';
 
-      connector.scoutJoin(placardM, connectorMsg, ':R:done:');
+      connector.join(placardM, connectorMsg, ':R:done:');
       connector.roll();
 
       doneRumba(); //  --  Do it only once now.

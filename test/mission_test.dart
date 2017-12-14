@@ -42,7 +42,7 @@ void main() {
 
   scout.report();
   //  Close is last one in row.
-  myMission.opClose();
+  scout.close();
 
   print('----- :m-t:  :mission:opReport and opClose done----');
   // :bug:  this fails, calling renderMission in mission.dart

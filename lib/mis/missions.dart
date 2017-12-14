@@ -90,7 +90,7 @@ class Mission {
   };
 
   ///  TODO  Handy one-row info of placardM
-  String placardRow(){
+  String placardRow() {
     String s1 = 'Act:   Send:    Rec:  Com:  msg:   ';
     return ('Act: ');
   }
@@ -125,7 +125,7 @@ class Mission {
   Map<String, bool> st = {
     'wake': false,
     'work': false,
-    'con': false,  //  For connector.
+    'con': false, //  For connector.
     'pause': false,
     'done': false,
   };
@@ -157,9 +157,9 @@ class Mission {
   /// #Idea? -roll  and  -op : are different level of operations.
   ///  For loop control variables.
   bool _rollDone = false;
-  bool _rollEscape = false;  //  Used in testing and to escape bugs.
+  bool _rollEscape = false; //  Used in testing and to escape bugs.
   int _rollCount = 0;
-  int _rollMax = 3;  //  Emergency exit from loops.
+  int _rollMax = 3; //  Emergency exit from loops.
 
   /// #IDEA?  chore map to give names to  W O R K  phases.
   /// #Name: Phase?  #BTW: Do not want to use "work". Instead: #job.
@@ -195,7 +195,6 @@ class Mission {
     //  code..
   }
 
-
   ///  Who's gonna call you?  Ghostbusters?
   ///  Initializing Mission instances fields. Changed to private.
   void _init(String caller) {
@@ -206,7 +205,6 @@ class Mission {
     _rollMax = 3;
     //  TODO  placardM['command'] =
   }
-
 
   ///  Building mission with it's chores.
   void build(String caller) {
@@ -229,7 +227,11 @@ class Mission {
     //  Join created object to :CON:connector: system.
     String _nS = name.substring(0, 7);
     String connectorMsg = ':INFO :ALL M: $_nS :are :READY :FOR :DAY :EVENT ';
-    connector.scoutJoin(placardM, connectorMsg, ':M:build:');
+
+    //  TODO  scout  ? connector.scoutJoin(placardM
+    //  instead of ':M:build:' putting name to join-call.
+    connector.join(placardM, connectorMsg, name);
+
     connector.roll();
 
     ///  add default chores to choreL and #TODO  forEach.build
@@ -241,12 +243,12 @@ class Mission {
     _flowC('   <-m--<--       :M:b:        done  $name     ', _pB);
   } //  -----  build
 
-
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission   * * *
   ///  :TEST:  change some variables to private.
   ///  Action is small class in #alpha (name, say)
   Action _decision;
+
   ///  Collecting all decisions.
   Map<String, Map<String, Action>> _decisionChainMM;
 
@@ -258,22 +260,6 @@ class Mission {
   void chainStream() {} //  real stream, slow answer.
   void fireStream() {} //
   ///  ***********************************************************************
-
-
-
-
-
-  /// devNote:  method, that CLOSES it's object.
-  /// TODO  idea?  move opClose to..?  Usage:  Not used.
-  //  int opClose(int openCount, Function openThis) {
-  void opClose() {
-    equ.active = false;
-    _flowC('--<----<-  :M:scout:$name  scoutClose --<----<-', _pB);
-    _flowC(':M:scout:close: -info: End lof mission-scout operation. >>', _pB);
-    _flowC('>>:M:scout:close: Statistics ready, save next-round data.', _pB);
-  }
-
-
 
   //  -------------------------    show  aso. methods   --------------------
   ///  Present all info of this class / app.
@@ -298,7 +284,7 @@ class Mission {
     //  NOTE  If more than 9 Chores, need something else.
     String choreLengthS = choreL.length.toString();
     String choreS = getChoreNamesS();
-    String _plcMS = tl.rowFromMap(placardM, 3,0);
+    String _plcMS = tl.rowFromMap(placardM, 3, 0);
     String ps1 = ('**. $name  M: $motto                 .');
     String ps2 = ('** Clause:  $clause                     ');
     String ps3 = ('**  st: $st                                             ');
@@ -308,7 +294,8 @@ class Mission {
     String ps7 = ('** rollSchedule: $_rollSchedule  ');
     String ps8 = ('_________________________________________________________');
     String ps9 = ('** Chrs: $choreLengthS  $choreS    ');
-    String ps10 = ('PlacardM $_plcMS, 3,0)  _______________________________________');
+    String ps10 =
+        ('PlacardM $_plcMS, 3,0)  _______________________________________');
     // String ps11 = ('p2 _$placardM  _______________________________________');
     var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
     /* TODO  howTo mapToList
@@ -364,16 +351,16 @@ void _flowC(String msg, bool p) {
 }
 
 ///  Create Mission class instances.
-var packDawoMission = new Mission('packDawo mission', 'Build Dawo package');
-var helsinkiMission = new Mission('Helsinki-mission', 'Presenting Helsinki');
-var dartlangMission = new Mission('Dartlang mission', 'Learn dartlang');
+var packDawoMission = new Mission('PackDawoMission', 'Build Dawo package.');
+var helsinkiMission = new Mission('HelsinkiMission', 'Presenting Helsinki.');
+var dartlangMission = new Mission('DartlangMission', 'Learn dartlang.');
 
 var myMusicMission =
-    new Mission('My-Music mission', 'Play and share good music');
+    new Mission('MyMusicMission', 'Play and share good music.');
 var myTimeMission = new Mission(
-    'MyTime mission', 'Spend at least one hour in a week with reasonable way');
-var nationalParksMission = new Mission(
-    'Finlands national park mission', 'Present beautiful finish nature');
+    'MyTimeMission', 'Spend at least one hour in a week with reasonable way.');
+var nationalParksMission =
+    new Mission('NationalParksMission', 'Presenting beautiful finish nature.');
 
 ///  Show missions and their chores.
 void missionChoreReport(String caller) {
@@ -392,7 +379,7 @@ void buildMissions(String caller) {
   dev.admN.add('>>ADM:CHECK-IN  build-Missions  >>');
 
   ///  Start of new dawoMission.
-  ///  packDawo Mission.
+  ///  packDawoMission.
   packDawoMission.clayMap.addAll(getClayMap('packDawo'));
   out.outMTop.writeln('out.outMTop-buildMission: packDawo');
 

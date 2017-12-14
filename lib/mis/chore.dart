@@ -178,7 +178,7 @@ class CommonChore extends BaseStruct {
     //  Join "clients" / Members to opList. placardM mediates necessary info.
     _flowC('-->>-->>--  :chore: calling :connector:  -->>-->>--', _pB);
     String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
-    connector.scoutJoin(placardM, connectorMsg, ':Chr:');
+    connector.join(placardM, connectorMsg, ':Chr:');
     connector.roll();
 
     //  run #op, for single operation
@@ -223,7 +223,7 @@ class CommonChore extends BaseStruct {
     print('-->>-->>--  :Ch:-op: calling :connector:  -->>-->>--');
     String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
 
-    connector.scoutJoin(placardM, connectorMsg, ':Ch:-op:');
+    connector.join(placardM, connectorMsg, ':Ch:-op:');
     connector.roll();
 
     ///  Make placard in shape.

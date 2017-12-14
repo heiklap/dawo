@@ -3,7 +3,9 @@
 ///  ##  camp lib with camp and scout classes.
 /// * dawo version:  0.0.6.  13.12.2017  -  devState:  30%
 /// * GitHub:.
-/// * State:  schema
+/// * Missions and Chores can use connector-services, from corporate-side
+/// * to join to Camp-Scout system, whereas corporate side can also use
+/// * camp-scout system to use mis-side equipment and effort.
 //Moving here stuff from mission
 
 library camp;
@@ -16,7 +18,8 @@ import '../beta.dart';
 
 import '../corp/connector.dart';
 
-///  Scout was ready and easy..  Finding some use of this.
+///  Scout was ready and easy.. so adopted it for connector.scoutJoin
+///  Finding later some use of class Camp.
 class Camp {}
 
 //  var camp = new Camp();
@@ -27,17 +30,17 @@ class Scout {
   String motto = 'Join all together in camp and scout';
   String clause; //  Combination of #LANG words in sentence.
 
-  /// This is the language, that missions and other objects talk (in con) .
+  /// Language, that scout uses when connecting other objects (in con) .
   Map<String, String> say = {
-    'purpose': 'scout:SAMPLE :ThisMissionBLAA blaa blaa',
-    'lang': 'scout:SAMPKLE :LANG :HERE :ARE :ALL :WORDS',
-    'area': 'scout:SAMPLE :AREA1  :AREA2',
-    'product': 'scout:SAMPLE :PROD1 :PROD2',
-    'sell': 'scout:SAMPLE :OFFER1 :OFFER2 :OFFER3',
-    'buy': 'scout:SAMPLE :MATERIAL :TIME',
-    'ask': 'scout:SAMPLE :ASK1 :ASK2 :ASK3',
-    'always': 'scout:SAMPLE :alwaysX :alwaysY :alwaysZ :SAMPLE',
-    'newer': 'scout:SAMPLE :NO :UGLY'
+    'purpose': 'scout: :JOIN :OBJECTS :TOGETHER',
+    'lang': ':LANG :HERE :COME :OTHERS :CAMP',
+    'area': ':CAMP :CAMP1  :CAMP2',
+    'product': 'scout: :CONNET :OFER2T :TIME :CONTACT',
+    'sell': 'scout: : TREK :JOURNEY :VOYAGE',
+    'buy': 'scout: :MATERIAL :TIME :ENERGY :FOOD',
+    'ask': ':CUSTOMERS :COMMUNITY :COMMON',
+    'always': 'scout: :camp :frendly :contact',
+    'newer': 'scout: :NO :UGLY'
   };
 
   ///  Instance info used in functions and outer-process calls.
@@ -96,7 +99,7 @@ class Scout {
     String connectorMsg =
         ':scout:R: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
     //
-    connector.scoutJoin(placardM, connectorMsg, name);
+    connector.join(placardM, connectorMsg, name);
     connector.roll();
 
     //  PLAN: loop inside this function to include #scout and #courier
@@ -134,6 +137,15 @@ class Scout {
         _l2.add(_l[x]);
       }
     }
+  }
+
+  //  int opClose(int openCount, Function openThis) {
+  //  TODO  scout  not used
+  void close() {
+    equ.active = false;
+    _flowC('--<----<-  scout:$name  scoutClose --<----<-', _pB);
+    _flowC(':scout:close: -info: End of scout operation. >>', _pB);
+    _flowC('>>:scout:close: Statistics ready, save next-round data.', _pB);
   }
 
   ///  Calling print/print-to-buffer function from beta.

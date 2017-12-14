@@ -49,7 +49,7 @@ class BoxServe {
   ///  Initialize measure values by parameters
   ///  //  TODO  set min-max-maxWidthString values
   void init(int h, w, String _pm) {
-    pm = _pm;  //  padMark
+    pm = _pm; //  padMark
     ///  Use default, unless parameters are > 0
     if ((h > 0) && (w > 0)) {
       rc = h;
@@ -169,7 +169,8 @@ class BoxServe {
     }
   }
 
-  //  Set vertical Warning-line to screen matrix
+  //  aBox calls warnings in case of over-length-width box in matrix.
+  //  Set vertical Warning-line for over-sized-box to screen matrix
   void vertWarning(int _x, _y, count, String _s) {
     String _newS;
     int toX = _x + count;

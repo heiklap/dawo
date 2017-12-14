@@ -8,34 +8,34 @@
 ///  method String weightString(String _aS) checks #C messages
 ///   dawo version:   0.0.6.  27.11.2017  * READY-STATE: for  0.0.6 version> 0%
 ///
-/// * devState: 10%
+/// * devState: 30%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
 /// #name:  connector ..is not nice. change to: ______ ??
+/// #unite-6  merge-0  mix-0  blend-0  pool-0    unify-0
 /// #name: placard : 1 !!
-/// Connector is in deeply planning state. We know, that app -
-/// mission - chore work together in same sphere, and there must be something,
-/// that they have in common; abstraction layer, in which they must
-/// work together.
+
+/// App -mission - chore work together in same sphere, and there is something,
+/// that they have in common; abstraction layer, in which they work together.
 ///
 /// * Every #little operation is "connector-operation", and connector has
 /// * knowledge for all of them and can interact with them.
 /// * Sending messages between objects. Stance, approach
 /// * "Connector-operations" have access to certain up-level variables.
 /// *   * * *   companions in process  * * *
-/// * Using :affair: class to operate, maybe for :corporate:
-/// * #LANG : command-words to give behaviour to actions.
+/// * Using :affair: class to operate, for :corporate: or :mission: system.
+/// * #LANG : command-words to give regulated behaviour to user actions.
 /// * ADD IS-GLOBAL bool field to :affair: classes.
-/// * Connector classes might have precedence in Mill-op.
+/// * Connector might change objects precedence in Mill-op.
 /// * Might trig some action in their connected sister-operations.
 //  * Find common interests, i've been here.. follow-me, give-take
-/// * Other objects also handle things connected to this. So connector might
+/// * In roll -> loop should be phase where :con:objects are checked.
 
 //  NOTE:
 //  devNote: tracking begins.
 
 library connector;
 
-//  TOD  import 'dart:intl';
+//  TODO  import 'dart:intl';
 
 ///  path dependency
 import 'package:dawolang/dawolang.dart' as d_lang;
@@ -97,13 +97,9 @@ String connectorMotto = 'connecting app, mission, chore; mediating them';
 * MAYBE: Incoming commands have certain form. Classes?  Strings?
 * MAYBE: Access to #GOAL aso. variables.
 * MAYBE:
-* MAYBE:
 *
 * NOT:  Handle #area #resource #time #money aso. properties.
 * NOT:
-* NOT:
-
-
 
  */
 ///  ***********************************************************************
@@ -129,7 +125,19 @@ class Connector extends BaseStruct {
   String name = 'connector class';
   String info = 'App - mission - chore conScout #corporate.process via #LANG';
   //  TODO  #lang  won for connector
-  Map<String, String> say = {};
+  ///  Connector might be a technical thing, not needing a say map. Or?
+  Map<String, String> say = {
+    'purpose': 'con: technical',
+    'lang': ':LANG :LISTEN',
+    'area': ':TO-camp : TO-scout',
+    'product': ':MEDIATE',
+    'sell': 'con: BIND :PING',
+    'buy': 'con: :NO',
+    'ask': ':placard :msg',
+    'always': ':MEMBER :MSG :COM',
+    'newer': 'con::NO :UGLY'
+  };
+
   String motto = 'Give objects long, powerful extra hand.';
 
   ///  devNote: IDEA: Fields for to better shape outPut stuff in console.
@@ -156,7 +164,16 @@ class Connector extends BaseStruct {
     'done': false,
   };
 
-  //  For future use
+  ///  Describing con join-solve procedure.
+  Map<String, String> phaseM = {
+    'say': ':con: talks its own #LANG and takes members and analyzes theirs.',
+    'join': ':Members :join: to :M:scout: OR :corporate: affair system.',
+    'solve': 'Data is accessable in :camp:scout: & #say handled by #LANG.',
+    'ping': 'Matched #say by #LANG is :ping:ed to Members concerned. ',
+    'camp': 'Camp is ready to act and its resources are available.',
+  };
+
+  ///  In #LANG & say system accrued #SCHEDULE and #EFFORT rules
   Map<String, String> answerPoleM = {
     'Who?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
     'What?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
@@ -167,7 +184,7 @@ class Connector extends BaseStruct {
   };
 
   //
-  //  For future use
+  ///  ///  In #LANG & say system accrued #SCHEDULE and #EFFORT rules
   Map<String, String> workPoleM = {
     'Always': '_ _ _ _ _ _ _ _ _ _ _ ',
     'Newer': '_ _ _ _ _ _ _ _ _ _ _ ',
@@ -203,15 +220,13 @@ class Connector extends BaseStruct {
     ///  code
   }
 
-
-
   ///  Giving nice report of connections.
   List report() {
     print('--->------>------ connector report:: ------>----------->---------');
     buf.writeln('con:report::  ');
     List<List<String>> _dbL = new List();
     List<List<String>> _dbL2 = new List();
-    _dbL.addAll([tl.mapToListO(scoutM), joinLog]);
+    _dbL.addAll([tl.mapToListO(joinM), joinLog]);
     //  Add message list: for in-coming messages: inMsgL
     _dbL2.addAll([inMsgL, bind.bindL]);
     print('--------------- connector report devBox:: -------------------');
@@ -238,68 +253,72 @@ class Connector extends BaseStruct {
   ///  Member is a class in alpha, not used here.
   ///  If everybody extends BaseStruct, it could be used here.
   ///  For connector to be able to refer callers data
-  Map<String, Mission> scoutM = {
-    'packDawo mission': packDawoMission,
-    'Helsinki-mission': dartlangMission,
-    'Dartlang mission': dartlangMission,
-    'My-Music mission': myMusicMission,
+  Map<String, Mission> joinM = {
+    'PackDawoMission': packDawoMission,
+    'HelsinkiMission': dartlangMission,
+    'DartlangMission': dartlangMission,
+    'MyMusicMission': myMusicMission,
     'MyTime mission': myTimeMission,
-    'Finlands national park mission': nationalParksMission
+    'NationalParksMission': nationalParksMission
     // old  'cM-1': 'First :con:Member:test:',
     // 'cM-2': 'Second :con:Member:test:',
   };
 
-  //  Direct reach via scoutM to clients placardM and clause data-
-  //  Solve inMsg String to extract parts of command.
-  void scoutSolve(String inMsg, caller) {
+  ///  Direct reach via joinM to clients placardM and clause data-
+  ///  Solve inMsg String to extract parts of command.
+  void joinSolve(String inMsg, caller) {
     //  if caller is registered Mission:
-    if(scoutM.containsKey(caller)) {
-      List<String> scoutInfoL = [
-        '**  PLAN: scoutSolve has access to all #joined members data, and it',
+    if (joinM.containsKey(caller)) {
+      List<String> joinInfoL = [
+        '**  PLAN: :join:Solve: has access to all #joined members data, and it',
         'resolves callers #FIND calls serching #clause #info and #motto fields',
         'by #LANG and #RULE keywords and mediates answer and act to caller.',
         ''
       ];
 
-      print('----->--- scoutSolve C: $caller  --->------------->---------');
-      scoutInfoL.forEach(print);
-      print(tl.mapToListO(scoutM));
+      print(
+          '\n ----->--- :join:Solve: C: $caller  --->------------->---------');
+      joinInfoL.forEach(print);
+      print(tl.mapToListO(joinM));
       print('------------- info map: -----------------------');
-      scoutM[caller].say.forEach((k,v) => print('$k $v'));
+      joinM[caller].say.forEach((k, v) => print('$k $v'));
       print('-------- name: motto:  -----------------------');
-      print(scoutM[caller].name);
-      print(scoutM[caller].motto);
+      print(joinM[caller].name);
+      print(joinM[caller].motto);
       print('------------- report -----------------------');
-      List<String> _l = scoutM[caller].report(':scoutSolve:', false);  //  no details
+      List<String> _l =
+          joinM[caller].report(':scoutSolve:', false); //  no details
       _l.forEach(print);
       print('--------placardM: ----------------------------');
-      print(scoutM[caller].placardM);
+      print(joinM[caller].placardM);
 
-      print('--<------ scoutSolve   done  ----<-------------<---------');
+      print('--<------ :join:Solve:   done  ----<-------------<--------- \n');
     }
     //  get #findThisThing, announce it
-    //  search scoutM / forEach / clause-info-motto for: / findWord
+    //  search joinM / forEach / clause-info-motto for: / findWord
     //  Match Word #time #area
     //  If found:  Sender & receiver/all are in same area
-    //  Answer #Match scoutM, to give them to do their own actions
+    //  Answer #Match joinM, to give them to do their own actions
     //  Add Joins and Binds to 2-week, year and connect-table
     //  Done this search.
-  }  //  -----  scoutSolve
+  } //  -----  joinSolve
 
-  ///  Join "clients" / Members to scoutList. placardM mediates necessary info.
+  ///  Join "clients" / Members to scoutList OR afair. placardM mediates necessary info.
   ///  Usage: mission, dawoApp, rumba, chore, dawo_example
-  void scoutJoin(Map<String, String> plcM, String inMsg, caller) {
-    buf.writeln('con:scoutJoin: starting by:$caller  ');
-    //  TODO : if #caller is in scoutM
+  ///  Changed this to common-proc, you can join scout OR affair OR x
+  ///  TODO parameter for to join  scout R affair OR x
+  void join(Map<String, String> plcM, String inMsg, caller) {
+    buf.writeln('con:join: starting by:$caller  ');
+    //  TODO : if #caller is in joinM
     //  else:  caller is Rumba, Chore or example
     ///  Operations register to Connector with placardM.
 
     ///  Using Analyzer class from dawolang. TODO: get clause from caller.
-    d_lang.an.analyzeStrS(inMsg,d_lang.lb.wordList);
-    print(':dawolang:analyze:watch:check:');
-    //  TODO  Output!!  '..:debug:dawolang:print:.:connector;scoutJoin:...');
-    //  TODO  Stop keeping placard here: get: scoutM.find.placardM
-    //  Placard here is unnecessary, after scoutSolve has access viu scoutM
+    d_lang.an.analyzeStrS(inMsg, d_lang.lb.wordList);
+    print(':dawolang:analyze:watch:check: in :con:join:');
+    //  TODO  Output!!  '..:debug:dawolang:print:.:connector;join:...');
+    //  TODO  Stop keeping placard here: get: joinM.find.placardM
+    //  Placard here is unnecessary, after scoutSolve has access viu joinM
     String actorS = plcM['actor'];
     String senderS = plcM['sender'];
     String receiverS = plcM['receiver'];
@@ -308,7 +327,8 @@ class Connector extends BaseStruct {
     String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
     _flowC(':CN:  $_S', _pB);
 
-    scoutSolve(inMsg, caller);
+    ///  call to previuous method.
+    joinSolve(inMsg, caller);
     String joinLogS = '$emblem :je: $actorS $comS $msgS $senderS';
     joinLog.add(joinLogS);
 
@@ -325,20 +345,21 @@ class Connector extends BaseStruct {
       bind.mark(actorS, senderS, receiverS, comS, msgS, inMsg);
       print('--<<-------- bindingM - done -----------------\n');
       _flowC('operationMapPrint OR shortMapPrin  $info', _pB);
-      print('** :C:scoutJoint:  operationMapPrint OR shortMapPrint plcM   **');
+      print('** :C:joint:  operationMapPrint OR shortMapPrint plcM   **');
       //  tl.operationMapPrint(plcM);
       tl.shortMapPrint(plcM);
       print('--<<-------- plcM  ------------------------');
-      //  TODO  connector  add scoutM    add  BindingM
+      //  TODO  connector  add joinM    add  BindingM
     }
-    _flowC(':CN: --<<--<<:connector:scoutJoin done  C:$caller  <<--<<--', _pB);
-  } //  -----  scoutJoin
+    _flowC(':CN: --<<--<<:connector:join: done  C:$caller  <<--<<--', _pB);
+  } //  -----  join
 
   ///  Here goes normal init-build-roll-show-done -round. No loop.
   ///  Method for setting class field values to their run-time-values.
   ///  Called by: roll.
   void init() {
     buf.writeln('$_bm ---  Connector buffer output initialized  ---');
+
     ///  TODO  Move this row to dawoApp? Using LexiconBase class from dawolang.
     d_lang.lb.build(':call:WG:-:dawolang:  :by:dawo-:connector:');
     //  Set fields values, mostly lists and maps.
@@ -390,7 +411,8 @@ class Connector extends BaseStruct {
 
     //  TODO  if change to: 150, it should be visible variable
     boxServe.init(42, 190, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':connector:box:  C: $caller', ':connector:box: $caller');
+    boxServe.construct(
+        ':connector:box:  C: $caller', ':connector:box: $caller');
     int r1 = 2; //  easy x-y pointing
     int r2 = 12;
     int r3 = 20;
@@ -411,44 +433,40 @@ class Connector extends BaseStruct {
     boxServe.aHeader(r1, m1 + 6, '* connector  buf  *');
     boxServe.aBox(r1 + 1, m1, 39, 33, tl.bufToList(buf));
 
-    boxServe.aHeader(7, m2, '*Connector-*');
-    boxServe.aBox(8, m2, 6, 10, ['Connector', 'box-method', 'Clause', clause]);
+    boxServe.aHeader(6, m2, '* :con:phases: *');
+    boxServe.aBox(7, m2 - 1, 5, 63, tl.mapToFineList(phaseM, 5, 57));
 
-    boxServe.aHeader(7, m3, '*: con:say Map *');
-    boxServe.aBox(8, m3, 6, 14, tl.mapToList(say));
+    boxServe.aBox(4, 125, 12, 20, tl.mapToFineList(equ.months, 3, 17));
 
-    boxServe.aHeader(4, m4, '*Called:*');
-    boxServe.aBox(7, m4, 6, 10, ['Mission', 'Chore', 'Corporate', 'Example']);
+    boxServe.aBox(4, 105, 13, 22, tl.mapToFineList(equ.twoWeeks, 4, 14));
 
-    boxServe.aBox(4, 125, 12, 14, equ.months);
-
-    //boxServe.aHeader(r2, m4 + 4, ' *  conScoutM  * ');
-    //  NoWork!??  Try absolute   boxServe.aHeader(r3 - 6, m2, ' *  conScoutM  * ');
+    //boxServe.aHeader(r2, m4 + 4, ' *  conjoinM  * ');
+    //  NoWork!??  Try absolute   boxServe.aHeader(r3 - 6, m2, ' *  conjoinM  * ');
     //  Try absolute address::
-    boxServe.aHeader(12, 44, ' *  conScoutMember  * ');
-    //boxServe.aBox(r2 + 1, m4 + 1, 6, 21, tl.mapToListO(scoutM));
-    boxServe.aBox(r3 - 7, m2, 12, 50, tl.mapToListO(scoutM));
+    boxServe.aHeader(13, 44, ' *  conjoinMember  * ');
+    //boxServe.aBox(r2 + 1, m4 + 1, 6, 21, tl.mapToListO(joinM));
+    boxServe.aBox(r3 - 6, m2, 12, 50, tl.mapToListO(joinM));
 
     //boxServe.aBox(r3 - 7, m2, 12, 50, joinLog);
     //TODO  Error ??
     boxServe.aBox(2, 150, 12, 38, joinLog);
 
-    boxServe.aBox(r3 -3, m4 - 5, 12, 50, inMsgL);
+    boxServe.aBox(r3 - 3, m4 - 5, 12, 50, inMsgL);
 
     //  TODO  resource / samples add something
 
-    boxServe.aBox(r4, m2, 6, 9,
-        ['Mon   ', 'Tue   ', 'Wed   ', 'Thu   ', 'Fri   ', 'WE   ']);
+    boxServe.aHeader(31, 100, '*: con:say Map *');
+    boxServe.aBox(32, 100, 8, 42, tl.mapToFineList(say, 8, 34));
 
-    boxServe.aHeader(r3 - 1, m3 - 5, '     * answerPole *  ');
-    boxServe.aBox(r3, m3 - 5, 6, 18, tl.mapToList(answerPoleM));
+    boxServe.aHeader(r4 - 1, m2 - 5, '     * workPole  *  ');
+    boxServe.aBox(r4, m2, 6, 23, tl.mapToList(workPoleM));
 
-    boxServe.aHeader(r4 - 4, m3 - 5, '     * workPole  *  ');
-    boxServe.aBox(r4 - 3, m3 - 5, 6, 23, tl.mapToList(workPoleM));
+    boxServe.aHeader(r4 - 1, m3, '     * answerPole *  ');
+    boxServe.aBox(r4, m3, 6, 18, tl.mapToList(answerPoleM));
 
-    boxServe.vertLine(r2, m2, 7); //  clause
-    boxServe.vertLine(4, m4, 15); //  header & next
-    boxServe.vertLine(r4, m2, 6); //   days
+    boxServe.vertLine(r2 + 1, m2, 7); //  joinMember
+    boxServe.vertLine(4, m4 + 6, 13); //  2-weeks
+    boxServe.vertLine(r4, m2, 6); //   workPole
     boxServe.vertLine(2, 149, 29); //  Up-right edge
 
     boxServe.show(':connector:box:', 'print');

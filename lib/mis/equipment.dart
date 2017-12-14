@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## equipment  :  material resources for Mission and Chore.
 ///  * No objects, but:  String-values for simple demo and presentation.
-///  * Dawo version 0.0.6  -  27.11.2017    ready state for 0.0.7 : 0%
+///  * Dawo version 0.0.6  -  27.11.2017    devState : 30 %
 ///  * Instance as:  equ
 ///
 
@@ -38,76 +38,94 @@ class Equipment {
   }
 
   ///  representation on aerial entities
-  List<String> areas = [
-    'Area-Hall',
-    'A-Warehouse',
-    'A-Factory',
-    'pipe Storage',
-    'Car-Park',
-    'Garden',
-    'Yard',
-    'Electric-center'
-  ];
+  Map<String, String> areas = {
+    'Area-Hall': '_ _ _ _ _ _ _ _ _ _ ',
+    'A-Warehouse': '_ _ _ _ _ _ _ _ _ _ ',
+    'A-Factory': '_ _ _ _ _ _ _ _ _ _ ',
+    'pipe Storage': '_ _ _ _ _ _ _ _ _ _ ',
+    'Car-Park': '_ _ _ _ _ _ _ _ _ _ ',
+    'Garden': '_ _ _ _ _ _ _ _ _ _ ',
+    'Yard': '_ _ _ _ _ _ _ _ _ _ ',
+    'Electric-center': '_ _ _ _ _ _ _ _ _ _ '
+  };
 
   ///  That's what you drive.
-  List<String> cars = [
-    'Rover',
-    'ToyotaPic',
-    'Toyota',
-    'Saab',
-    'Sisu',
-    'Mercedes',
-    'Volksawgen',
-    'Volvo',
-    'Ford'
-  ];
+  Map<String, String> cars = {
+    'Rover': '_ _ _ _ _ _ _ _ _ _ ',
+    'ToyotaPic': '_ _ _ _ _ _ _ _ _ _ ',
+    'Toyota': '_ _ _ _ _ _ _ _ _ _ ',
+    'Saab': '_ _ _ _ _ _ _ _ _ _ ',
+    'Sisu': '_ _ _ _ _ _ _ _ _ _ ',
+    'Mercedes': '_ _ _ _ _ _ _ _ _ _ ',
+    'Volksawgen': '_ _ _ _ _ _ _ _ _ _ ',
+    'Volvo': '_ _ _ _ _ _ _ _ _ _ ',
+    'Ford': '_ _ _ _ _ _ _ _ _ _ '
+  };
 
   ///  Might be better from intl? package.  Do it Map.
-  List<String> months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
+  Map<String, String> months = {
+    'January': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'February': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'March': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'April': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'May': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'June': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'July': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'August': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'September': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'October': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'November': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+    'December': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+  };
 
   ///  Nice little towns from civilized world.
-  List<String> officeCities = [
-    'Tampere Office',
-    'Helsinki Warehouse',
-    'Oulu Main',
-    'Rovaniemi Office',
-    'Berlin Office',
-    'London Office'
-  ];
+  Map<String, String> officeCities = {
+    'Tampere Office': '_ _ _ _ _ _ _ _ _ _ ',
+    'Helsinki Warehouse': '_ _ _ _ _ _ _ _ _ _ ',
+    'Oulu Main': '_ _ _ _ _ _ _ _ _ _ ',
+    'Rovaniemi Office': '_ _ _ _ _ _ _ _ _ _ ',
+    'Berlin Office': '_ _ _ _ _ _ _ _ _ _ ',
+    'London Office': '_ _ _ _ _ _ _ _ _ _ '
+  };
 
   ///
-  List<String> programAreas = [
-    'Web',
-    'Server',
-    'Isolate',
-    'Async',
-    'HTTP',
-    'Mongo'
-  ];
+  Map<String, String> programAreas = {
+    'Web': '_ _ _ _ _ _ _ _ _ _ ',
+    'Server': '_ _ _ _ _ _ _ _ _ _ ',
+    'Isolate': '_ _ _ _ _ _ _ _ _ _ ',
+    'Async': '_ _ _ _ _ _ _ _ _ _ ',
+    'HTTP': '_ _ _ _ _ _ _ _ _ _ ',
+    'Mongo': '_ _ _ _ _ _ _ _ _ _ ',
+  };
 
   ///  How about 3-letter abbreviations?
-  List<String> weekDays = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
-  ];
+  Map<String, String> weekDays = {
+    'Monday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Tuesday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Wednesday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Thursday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Friday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Saturday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Sunday': '_ _ _ _ _ _ _ _ _ _ ',
+  };
+
+  ///
+  Map<String, String> twoWeeks = {
+    'Monday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Tuesday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Wednesday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Thursday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Friday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Saturday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Sunday': '_ _ _ _ _ _ _ _ _ _ ',
+    'Monday2': '_ _ _ _ _ _ _ _ _ _ ',
+    'Tuesday2': '_ _ _ _ _ _ _ _ _ _ ',
+    'Wednesday2': '_ _ _ _ _ _ _ _ _ _ ',
+    'Thursday2': '_ _ _ _ _ _ _ _ _ _ ',
+    'Friday2': '_ _ _ _ _ _ _ _ _ _ ',
+    'Saturday2': '_ _ _ _ _ _ _ _ _ _ ',
+    'Sunday2': '_ _ _ _ _ _ _ _ _ _ ',
+  };
 
   ///  simulation: Produce nice-looking allocation-list of resources.
   List<String> allocate(int _r, int _c) {

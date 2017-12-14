@@ -5,7 +5,7 @@
 ///  in client side.  This file might eventually fade out.
 ///  * dawo version: 0.0.6  27.11.2017.  devState: 90%
 ///  *      GitHub: yes.
-///  * NEXT: Study, what can not be moved to box_serve.
+///  * DONE  #deprecated deleted_ rows 300 - 350
 ///  * SCHEDULE might deserve it's own class.
 ///  * SCHEDULE: No hurry, 0.1.X
 // * Hist:hkl  3.11.2017  0.0.4  presentation tools for dawo
@@ -283,12 +283,12 @@ class ScheduleBox {
       '**  Presenting available objects in scope.  **'
     ]);
     anchorBox(6, 5, 100, 100, ['IDEA:', 'IDEA:', 'NOTE:', 'NOTE:']);
-    anchorBox(3, 80, 100, 100, equ.officeCities);
-    anchorBox(12, 10, 100, 100, equ.areas);
-    anchorBox(10, 82, 100, 100, equ.cars);
-    anchorBox(26, 8, 100, 100, equ.weekDays);
-    anchorBox(22, 60, 100, 100, equ.months);
-    anchorBox(33, 44, 100, 100, equ.programAreas);
+    anchorBox(3, 80, 100, 100, tl.mapToFineList(equ.officeCities, 10, 10));
+    anchorBox(12, 10, 100, 100, tl.mapToFineList(equ.areas, 8, 10));
+    anchorBox(10, 82, 100, 100, tl.mapToFineList(equ.cars, 10, 10));
+    anchorBox(26, 8, 100, 100, tl.mapToFineList(equ.weekDays, 4, 14));
+    anchorBox(22, 60, 100, 100, tl.mapToFineList(equ.months, 10, 22));
+    anchorBox(33, 44, 100, 100, tl.mapToFineList(equ.programAreas, 8, 10));
     anchorBox(1, 123, 100, 100, _resAllocL);
     //  Usable resources: toolsActiveM, toolsSpeedM,status
     eyeMark14(); //  mark 'peg' to put screen table to screen.
@@ -302,153 +302,6 @@ class ScheduleBox {
 } //  -----  class ScheduleBox
 
 var scheduleBox = new ScheduleBox();
-
-/*  ScheduleCon deprecated;  use: connector.box
-///  Schedule connect, opJoin corporate, bind, binding
-class ScheduleCon {
-  /*
-  //  TODO  should create and use _pB and flowC class here?
-  flowC('--<----<-  :M:op:  scheduleBox --<----<-', _pB);
-  flowC(':M:op: scheduleBox-info: Report for to check data lists. >>', _pB);
-  flowC('>> :M:op: scheduleBox: **Not needed when scheduleBox is on.**.', _pB);
-  */
-  int _sw = 195; //  screen width
-  static int _rc = 47; //  row count
-  List<String> _matrix = new List(_rc);
-  int _colPos = 100;
-  List<String> _resAllocL = [];
-
-  ///  ******************************************************************
-  void init() {
-    ///  Call equ class and it's allocate method to get resource List
-
-    equ.init(':M:scheduleBox'); //  int _r, int _c
-    _resAllocL.addAll(equ.allocate(36, 40)); //  width (_c) not used yet.
-  }
-
-  ///  ******************************************************************
-  void build(String _caller) {
-    for (var z = 1; z < _matrix.length; z++) {
-      //  do not handle first row.
-      _colPos++;
-      //  TODO  choose nice background mark for matrix.
-      //  pad with low-density mark.
-      _matrix[z] = '$_colPos '.padRight(_sw, '-');
-    }
-    _matrix[0] =
-        '--m-schedule--$_caller--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
-
-    ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
-    _matrix[_rc - 1] =
-        '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
-
-
-
-    void anchorBox(int _r, int _c, _items, _w, List __l) {
-      tl.boxInList(_r, _c, _items, _w, __l, _matrix);
-      //NO #print:  print(_matrix);
-    }
-
-
-
-    ///   Lay String in a certain place in matrix.
-    ///   :QUEST:  This is too complicated, lol.
-    void lHeader(int _r, _c, String s) {
-      String _s1 = _matrix[_r].substring(0, _c);
-      int _pos = _s1.length;
-      int _length = _matrix[_r].length;
-      String _s3 = _matrix[_r].substring(_pos + s.length, _length);
-      _matrix[_r] = '$_s1$s$_s3';
-    }
-
-    ///  Marks left of console screen to put table in convenient place for to see.
-    void eyeMark14(){
-      int pegC = min(_matrix.length,14);
-      lHeader(pegC , 0, 'peg');  //  Lay "screen-watch-anchor"
-    }
-
-    List<String> verticalLineL = [];
-    verticalLineL.addAll(tl.strToList('|', _rc - 2));
-
-    ///  ******************************************************************
-    anchorBox(1, 40, 100, 100, [
-      '* Objects work together after :bind: #connector joins them to system. *',
-      '**  #Caller have accessed :corporate:process: public resources,  **'
-    ]);
-
-    tl.bufToList(connector.buf).forEach(print);
-
-    //  bufL.addAll(tl.bufToList(connector.buf));
-    //  Add :con: work-flow list 44 items 26 wide on left of screen
-    anchorBox(1, 3, 44, 26, connector.buf.toString().split('\n'));
-    anchorBox(1, 3, 44, 26, ['1', '2', '3', '4']);
-
-    //anchorBox(4, 32, 100, 100 ,['CORPORATE:', 'connect:', 'Bing:', 'opCon:']);
-    lHeader(4, 32, 'corp:phase');
-    anchorBox(5, 32, 8, 100, tl.mapToList(corporate.phaseM));
-
-    //anchorBox(3, 80, equ.officeCities);
-    lHeader(4, 47, '* :corp:placardM 7 *');
-    //  new parameters 3 and 4: _items, _w ( width of text)
-    //  100, 100 is often harmless guess, but too long list breaks.
-    anchorBox(5, 47, 7, 100, corporate.placardM.values.toList());
-
-    lHeader(4, 70, '* :corp:orderM 7 *');
-    anchorBox(5, 68, 7, 19, tl.mapToList(corporate.orderM));
-
-    lHeader(4, 101, '* :corp:jobM 7*');
-    anchorBox(5, 101, 7, 100, tl.mapToList(corporate.jobM));
-
-    lHeader(13, 32, '=======================================================');
-    lHeader(13, 87, '====================================');
-    lHeader(13, 32, ' bindingM:bind: first ');
-    anchorBox(14, 32, 18, 28, tl.mapToList(bind.bindingM['first']));
-
-    lHeader(13, 62, ' bindingM:bind: all ');
-    anchorBox(14, 62, 18, 28, tl.mapToList(bind.bindingM['all']));
-
-    lHeader(13, 90, ' bindingM:bind: name ');
-    anchorBox(14, 92, 18, 26, tl.mapToList(bind.bindingM['name']));
-
-    //
-    anchorBox(38, 101, 100, 100,
-        ['Some more', 'connector', 'info here', 'will come']);
-
-    anchorBox(33, 32, 100, 100, equ.months);
-    anchorBox(38, 60, 100, 100, equ.weekDays);
-
-    lHeader(33, 93, '  *      conMemberM  *  ');
-    anchorBox(34, 89, 12, 32, tl.mapToListO(connector.memberM));
-
-    //  lHeader(1, 123, '*  connector.joinLog *');
-    anchorBox(1, 123, 14, 50, connector.joinLog);
-
-    //  lHeader(10, 123, '*  bind.bindL *');
-    anchorBox(16, 123, 14, 50, bind.bindL);
-
-    //  lHeader(20, 123, '*  connector.inMsgL *');
-    anchorBox(31, 123, 14, 50, connector.inMsgL);
-
-    //  Add screen-high-2 vertical lines marked with: |
-    anchorBox(1, 30, 47, 1, verticalLineL);
-    anchorBox(1, 173, 47, 1, verticalLineL);
-    anchorBox(1, 124, 47, 1, verticalLineL);
-    // NOTE: 1-2 length items in lists are not R-L-padded
-    eyeMark14();  //  mark 'peg' to put screen table to screen.
-    //  Usable resources: toolsActiveM, toolsSpeedM,status
-  }
-
-  ///  ******************************************************************
-  void roll(String _caller) {
-    init();
-    build(_caller);
-    _matrix.forEach(print);
-  }
-} //  -----  class ScheduleBox
-
-var scheduleCon = new ScheduleCon();
-//  -----  ScheduleCon deprecated;  use: connector.box
-*/
 
 ///  Gets some small data from effortLM based on parameters.
 List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {

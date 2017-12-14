@@ -180,7 +180,7 @@ void exInfo(String msg) {
 ///  Place where :corporate:  :opCom:  and :connector: play together.
 void connectorOp(String caller) {
 
-  connector.scoutJoin(placardM, connectorMsg, ':Dawo:example:');
+  connector.join(placardM, connectorMsg, ':Dawo:example:');
   connector.roll();
   connector.box(':d:ex:');
 }
@@ -202,7 +202,7 @@ void exampleMission() {
   exInfo('\n $dexS-:dw:ex: -----------  rolling :courier:Message: ------ ');
   scout.roll(3, courierMessage);
   exInfo('  - -:dw:ex: -----  rolling :courier:mission: opFunc  done ---\n');
-  packDawoMission.opClose(); //  No  parameters.
+  scout.close(); //  No  parameters.
   scout.report();
   exInfo('    ==<<==<<==    rolling :packDawo:Mission: done    ==<<==<<==');
   //  When you print row below, you can see all methods.

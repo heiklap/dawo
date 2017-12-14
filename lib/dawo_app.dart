@@ -240,7 +240,7 @@ class DawoApp extends BaseStruct {
     //
     print('-->>-->>--  :dawoapp: calling :connector:  -->>-->>--');
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
-    connector.scoutJoin(betaPlacardM, connectorMsg, ':D:app:');
+    connector.join(betaPlacardM, connectorMsg, ':D:app:');
     connector.roll();
 
     appRollMissions(':DA:-roll:'); //

@@ -119,7 +119,7 @@ void monday() {
   dartlangMission.showInfo();
   dartlangMission.report(':dailyAct:monday:', true);
   //  Decide, how reasonable is put these functions inside a class.
-  connector.scoutJoin(
+  connector.join(
       mondayAct.placardM, ':actMonday:msg:', ':dailyAction:monday:');
   //  ':dailyAct:monday:', ':receiver:all:', ':key:dailyAct:monday:', ':da:msg:'
   connector.ping(':dailyAct:monday:', ':receiver:all:', ':key:dailyAct:monday:',
@@ -170,7 +170,7 @@ void wednesday() {
   myTimeMission.showInfo();
   myTimeMission.report(':dailyAct:wednesday:', true);
   //  Decide, how reasonable is put these functions inside a class.
-  connector.scoutJoin(
+  connector.join(
       wednesdayAct.placardM, ':actWednesday:msg:', ':dailyAction:wednesday:');
   //  ':dailyAct:wednesday:', ':receiver:all:', ':key:dailyAct:wednesday:', ':da:msg:'
   connector.ping(':dailyAct:wednesday:', ':receiver:all:', ':key:dailyAct:wednesday:',
@@ -255,7 +255,7 @@ void friday() {
   boxServe.aHeader(25, 130, '* connector memberM * ');
   // "30,142" = 2 errors               134 brings error
   //  boxServe.aBox(30,142, 14, 40, tl.mapToListO(connector.scoutM));
-  boxServe.aBox(26,132, 14, 40, tl.mapToListO(connector.scoutM));
+  boxServe.aBox(26,132, 14, 40, tl.mapToListO(connector.joinM));
   //  OK  boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
  //OK boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
 
