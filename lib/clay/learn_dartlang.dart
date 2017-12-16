@@ -154,6 +154,7 @@ class LearnDartlang {
         'Mirror is good if you are 1% of Dart users and do not mind of AOT.',
     'num': ' ',
     'Object': ' ',
+    'Obsevatory': 'When you launch your app in debug mode, it should print an URL that allows you to access Observatoryt',
     'Publish': ' ',
     'Queue': ' ',
     'R': ' ',

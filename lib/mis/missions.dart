@@ -230,7 +230,7 @@ class Mission {
 
     //  TODO  scout  ? connector.scoutJoin(placardM
     //  instead of ':M:build:' putting name to join-call.
-    connector.join(placardM, connectorMsg, name);
+    connector.join(name, placardM, connectorMsg, name);
 
     connector.roll();
 

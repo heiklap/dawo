@@ -1,6 +1,8 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  bind   #LANG and #CLAUSE based bindings between objects.
+/// * Bind object to certain state or project or resource.
+/// * Bind to certain event-waiting or information flow.
 /// *  Using #resolve library with #dawolang to solve bind-literal-Strings.
 /// *  dawo version:  0.0.6.  27.11.2017.
 /// *  GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/bind.dart
@@ -20,8 +22,11 @@ class Bind {
   String emblem = ':bind:'; //  header for messages.
   StringBuffer buf = new StringBuffer();
 
-  ///  List of #LANG and #CLAUSE based String-bindings between objects.
-  List<String> bindL = ['*  :bind: bind-list  *'];
+  ///  Map of #LANG and #CLAUSE based String-bindings between objects.
+  Map<String, String> bindM = {
+    'Bind_1': '*  :bind: bind-Map  *',
+  };
+
 
   ///  Share / answer type of bind-actions.
   Map<String, String> bindTypes = {
@@ -76,7 +81,8 @@ class Bind {
 
     /// TODO  :bind: _inMsg string to binding system
     /// GET:   C:PING:all: C:BIND:all  from inMsg to catch :first:all:name:
-    bindL.add('   $_inMsg');
+    /// TODO  Just a throw:  actorS, _inMsg
+    bindM.putIfAbsent(actorS, _inMsg);
     //  Map<String, Member>
     //  TODO  should both bind and connector have memberM ?
     bindMembM.putIfAbsent(bindNameS, () => comS);

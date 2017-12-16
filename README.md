@@ -75,7 +75,8 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
 - mis/chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
       of other, bigger, same kind of library.
 - mis/effort.dart : Human activities, chores sub, main user-activity and presentation.
-- mis/equipment.dart : Controlling material resources for Mission and Chore.      
+- mis/equipment.dart : Controlling material resources for Mission and Chore. 
+-mis/camp : Scout class has connected objects stuff.     
       
 - corp-folder has corporate, affair, resolve and store classes.      
 - corp/connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them. 

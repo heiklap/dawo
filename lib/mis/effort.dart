@@ -64,7 +64,6 @@ class Effort {
   ///  testing... difference between  .  and ..
   void makeGoalM() {
     goalM
-
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
       ..putIfAbsent('Project 0.0.1 Plan', () => 'V:3 E:2 D:1 ')
       ..putIfAbsent('Github  clean', () => 'V:3 E:5 D:3 ')
@@ -77,7 +76,6 @@ class Effort {
   /// adding data to List
   void makePlanM() {
     planM
-
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
       ..putIfAbsent('Plain idea', () => 'V:3 E:3 D:6 ')
       ..putIfAbsent('Accepted schema', () => 'V:5 E:1 D:3 ')
@@ -117,7 +115,6 @@ class Effort {
   ///  Function for adding data to this List.
   void makeTempoM() {
     tempoM
-
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
       ..putIfAbsent('Largo     leveästi', () => 'V:3 E:2 D:0 ')
       ..putIfAbsent('Lento     hitaasti ', () => 'V:2 E:3 D:0 ')
@@ -290,6 +287,7 @@ class Effort {
     tl.boxInList(15, 1, 100, 100, _lHuman, diagonalL);
     tl.boxInList(14, 0, 100, 100, ['peg'], diagonalL);
     tl.boxInList(1, 30, 100, 100, [':effort:get:diagonal:list:'], diagonalL);
+      tl.boxInList(1, 170, 100, 100, ['dartlang app  Dawo 0.0.6'], diagonalL);
 
     print(diagonalL.length);
     diagonalL.forEach(print);

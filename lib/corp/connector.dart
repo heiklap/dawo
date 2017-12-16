@@ -228,7 +228,7 @@ class Connector extends BaseStruct {
     List<List<String>> _dbL2 = new List();
     _dbL.addAll([tl.mapToListO(joinM), joinLog]);
     //  Add message list: for in-coming messages: inMsgL
-    _dbL2.addAll([inMsgL, bind.bindL]);
+    _dbL2.addAll([inMsgL, tl.mapToList(bind.bindM)]);
     print('--------------- connector report devBox:: -------------------');
     //  presenting devBox in 2 x 2 table.
     devBox(':con:r:1:', _dbL, 0);
@@ -264,6 +264,9 @@ class Connector extends BaseStruct {
     // 'cM-2': 'Second :con:Member:test:',
   };
 
+  //TODO  joinLatest  iterator  for to get say-map aso.
+  String joinLast = 'NoneJoinedYet';
+
   ///  Direct reach via joinM to clients placardM and clause data-
   ///  Solve inMsg String to extract parts of command.
   void joinSolve(String inMsg, caller) {
@@ -286,12 +289,11 @@ class Connector extends BaseStruct {
       print(joinM[caller].name);
       print(joinM[caller].motto);
       print('------------- report -----------------------');
-      List<String> _l =
-          joinM[caller].report(':scoutSolve:', false); //  no details
+      //  no details
+      List<String> _l = joinM[caller].report(':scoutSolve:', false);
       _l.forEach(print);
       print('--------placardM: ----------------------------');
       print(joinM[caller].placardM);
-
       print('--<------ :join:Solve:   done  ----<-------------<--------- \n');
     }
     //  get #findThisThing, announce it
@@ -307,7 +309,10 @@ class Connector extends BaseStruct {
   ///  Usage: mission, dawoApp, rumba, chore, dawo_example
   ///  Changed this to common-proc, you can join scout OR affair OR x
   ///  TODO parameter for to join  scout R affair OR x
-  void join(Map<String, String> plcM, String inMsg, caller) {
+  ///  TODO parameter to get mission.name  for  lastJoin:ed
+  void join(String name, Map<String, String> plcM, String inMsg, caller) {
+    ///  Save caller-objects name for box aso.
+    joinLast = name;
     buf.writeln('con:join: starting by:$caller  ');
     //  TODO : if #caller is in joinM
     //  else:  caller is Rumba, Chore or example
@@ -327,7 +332,7 @@ class Connector extends BaseStruct {
     String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
     _flowC(':CN:  $_S', _pB);
 
-    ///  call to previuous method.
+    ///  call to previous method.
     joinSolve(inMsg, caller);
     String joinLogS = '$emblem :je: $actorS $comS $msgS $senderS';
     joinLog.add(joinLogS);
@@ -406,7 +411,7 @@ class Connector extends BaseStruct {
     print('-->>-->>  :connector:box: boxServe  start  -->>-->>--  ');
     List<String> infoL = [
       'Connector joins other object to spheres, like corporate, where they can work together and join messaging.',
-      'Every :con:Scout:ed object carries with it a bunch of information, placardM, and has access to :bind:bing:',
+      'Every :con:Scout:ed object comes with a #LANG info like: #say and placardM, and has access to :bind:bing:',
     ];
 
     //  TODO  if change to: 150, it should be visible variable
@@ -443,20 +448,32 @@ class Connector extends BaseStruct {
     //boxServe.aHeader(r2, m4 + 4, ' *  conjoinM  * ');
     //  NoWork!??  Try absolute   boxServe.aHeader(r3 - 6, m2, ' *  conjoinM  * ');
     //  Try absolute address::
-    boxServe.aHeader(13, 44, ' *  conjoinMember  * ');
+    boxServe.aHeader(13, 44, ' *  conJoinMember  * ');
     //boxServe.aBox(r2 + 1, m4 + 1, 6, 21, tl.mapToListO(joinM));
     boxServe.aBox(r3 - 6, m2, 12, 50, tl.mapToListO(joinM));
 
     //boxServe.aBox(r3 - 7, m2, 12, 50, joinLog);
     //TODO  Error ??
-    boxServe.aBox(2, 150, 12, 38, joinLog);
+    boxServe.aBox(2, 150, 18, 38, joinLog);
 
     boxServe.aBox(r3 - 3, m4 - 5, 12, 50, inMsgL);
 
     //  TODO  resource / samples add something
 
-    boxServe.aHeader(31, 100, '*: con:say Map *');
-    boxServe.aBox(32, 100, 8, 42, tl.mapToFineList(say, 8, 34));
+    boxServe.aHeader(30, 100, '*: con:say Map *');
+    boxServe.aBox(31, 100, 9, 42, tl.mapToFineList(say, 8, 34));
+
+    ///  TODO  Get from joinM Just-joined-say map
+    ///  Now using new #name field and parameter via con.join
+    //  if (name  notIn joinM) blaa blaa blaa
+      Map<String, String> sayLatest = joinM['DartlangMission'].say;
+     //  Error:bug:  every object to not have say-map
+    // Map<String, String> sayLatest = joinM[name].say;
+    //  TODO  use map joinM directly without copying it here
+
+    boxServe.aHeader(30, 144, '*: Now: $name :say *');
+    boxServe.aBox(31, 142, 9, 42, tl.mapToFineList(sayLatest, 8, 34));
+
 
     boxServe.aHeader(r4 - 1, m2 - 5, '     * workPole  *  ');
     boxServe.aBox(r4, m2, 6, 23, tl.mapToList(workPoleM));
@@ -467,7 +484,7 @@ class Connector extends BaseStruct {
     boxServe.vertLine(r2 + 1, m2, 7); //  joinMember
     boxServe.vertLine(4, m4 + 6, 13); //  2-weeks
     boxServe.vertLine(r4, m2, 6); //   workPole
-    boxServe.vertLine(2, 149, 29); //  Up-right edge
+    boxServe.vertLine(2, 149, 28); //  Up-right edge
 
     boxServe.show(':connector:box:', 'print');
     boxServe.done(':connector:box:');
@@ -515,7 +532,7 @@ class Connector extends BaseStruct {
 
 ///  Create instance of Connector.
 Connector connector =
-    new Connector('DawoAppconnector', 'Connection operations');
+    new Connector('DawoAppConnector', 'Connection operations');
 
 ///  Construct almost same class: but for collecting data.
 ///  Would like to extend this from Connector: class, but it do not have

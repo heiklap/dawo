@@ -20,12 +20,9 @@ import 'package:dawo/rumba.dart';
 
 import 'package:dawo/mis/camp.dart';
 import 'package:dawo/mis/chore.dart';
-import 'package:dawo/mis/missions.dart';
-
 
 import 'package:dawo/corp/bind.dart';
 import 'package:dawo/corp/connector.dart';
-//  import 'package:dawo/tools.dart';
 import 'package:dawo/src/glb.dart';
 import 'package:dawo/src/box_serve.dart';
 
@@ -88,9 +85,6 @@ main() {
   glb.box(dexS);
 
   exInfo('==>>==>>==   dawo_example  awesome: ${awesome.isAwesome}');
-
-  //  example of empty function, that can be modified to do #things!!
-  noteToMe();
 
   ///  All connector activity is marked with: :connector: in output.
   //  exInfo('==>>==>>==   dawo_example calling :connector:    ==>>==>>==');
@@ -180,7 +174,7 @@ void exInfo(String msg) {
 ///  Place where :corporate:  :opCom:  and :connector: play together.
 void connectorOp(String caller) {
 
-  connector.join(placardM, connectorMsg, ':Dawo:example:');
+  connector.join('DawoExample', placardM, connectorMsg, ':Dawo:example:');
   connector.roll();
   connector.box(':d:ex:');
 }
@@ -244,29 +238,6 @@ void connectorExampleReport() {
   exInfo('    ==<<==<<==    :connector: report done    ==<<==<<==');
 }
 
-///
-/*  #deprecated:  use connector.box
-void schedulePlay() {
-  exInfo('==>>==>>==   calling :schedule:play:    ==>>==>>==');
-  scheduleCon.roll('$dexS');
-  exInfo('    ==<<==<<==    :schedule:play: done    ==<<==<<==');
-}
-*/
-
-/// Empty, or message method
-void noteToMe() {
-  /*
-  //  lol  You can not access local private variables.
-  dawoApp.printControl(false);  //  no top-level getter dawoApp ??
-  connector._pB = false;
-  dev._pB = false;
-  mill._pB = false;
-  missions._pB = false;
-  shower._pB = false;
-  tools._pB = false;
-  rumba._pB = false;
- */
-}
 
 ///  For to check variables visibility.
 void wordPlay() {

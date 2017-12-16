@@ -26,7 +26,7 @@ class Camp {}
 
 ///
 class Scout {
-  String name = ':cout';
+  String name = 'Scout';
   String motto = 'Join all together in camp and scout';
   String clause; //  Combination of #LANG words in sentence.
 
@@ -99,7 +99,7 @@ class Scout {
     String connectorMsg =
         ':scout:R: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
     //
-    connector.join(placardM, connectorMsg, name);
+    connector.join(name, placardM, connectorMsg, name);
     connector.roll();
 
     //  PLAN: loop inside this function to include #scout and #courier

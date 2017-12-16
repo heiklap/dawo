@@ -31,7 +31,7 @@ import 'dart:math';
 ///  TODO  Add better row / height decision.
 ///  #QUEST : Maybe these 2-3-4 devBox functions can be combined to one, and
 ///  handle 2-3-4 with parameters. Did it once, but was ugly.
-///  TODO  Make return type: StringBuffer
+///  TODO  Make this a class.  Add: Dartlang app  DAWO 0.0.6 to row[o]end
 StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
   StringBuffer _retBuf = new StringBuffer();
   final int sW = 210; //  Screen width.
@@ -72,15 +72,18 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
     int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
     ///  To get nice little header String in top-left corner.
     //  Widen this later to screen-width.
-    String topRim = '_devBox_C: $caller __';
-    String botRim = '____'; //  Widen this later to screen-width.
-    String padTopRim = topRim.padRight(sW, '_');
-    String padBotRim = botRim.padRight(sW, '_');
-    topRim = padTopRim;
-    botRim = padBotRim;
+    String tr1 = '_devBox_C: $caller __';
+    int tr1Length = tr1.length;
+    String dawoLogoS = '_Dartlang app  DAWO 0.0.6_';
+    int dawoLogoLength = dawoLogoS.length;
+    //  :BUG: makes about 6 wide column error in box
+    String padTopRim = tr1.padRight(sW - (dawoLogoLength + 6), '_');
+    String topRim = padTopRim + dawoLogoS;
 
-    ///  howTo String:  these two lines has no effect:
-    topRim.padRight(sW, '_'); //  (sW, '_');
+
+    String botRim = '____'; //  Widen this later to screen-width.
+    String padBotRim = botRim.padRight(sW, '_');
+    botRim = padBotRim;
     botRim.padRight(sW, '_'); //  (sW, '_');
 
     ///  build two / three-List in parameter -case box;
@@ -258,7 +261,7 @@ class ScheduleBox {
           '$_colPos '.padRight(_sw, '-'); //  pad with low-density mark.
     }
     _matrix[0] =
-        '--m-schedule--$_caller--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+        '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 0.0.6 -';
 
     ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
     _matrix[_rc - 1] =

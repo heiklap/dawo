@@ -84,7 +84,10 @@ class BoxServe {
     String m0ro = ':boxServe:nr: $boxCountS -:C: $_caller-------';
     //  no used  int m0roI = m0ro.length;
     String m0row = m0ro.padRight(sw, pm);
+    //  TODO  should produce String:  'DAWO 0.0.6'
+    //  String logoS = '$dawoApp.name $dawoApp.version';
     _matrix[0] = m0row;
+    aHeader(0, sw - 27, 'Dartlang app  DAWO 0.0.6');
     //  TODO  StampLeft ' '  // there is pm ! = ' '
     ///  Last row of matrix for range-10 marks; NOTE: rc - 1
     String bRowLong =

@@ -45,6 +45,8 @@ var appBuf = new StringBuffer(); //  not used here
 ///  Controls Mission-Chore system, #App, & dawo-package development, #Pack.
 class DawoApp extends BaseStruct {
   String name = 'DawoApp';
+  String version = '0.0.6';
+  String by = 'HKL';
   final String actor = ':DAWO-APP:';
   String info = 'Innovative & educational small data-handler experimentation.';
 
@@ -240,7 +242,7 @@ class DawoApp extends BaseStruct {
     //
     print('-->>-->>--  :dawoapp: calling :connector:  -->>-->>--');
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
-    connector.join(betaPlacardM, connectorMsg, ':D:app:');
+    connector.join(name, betaPlacardM, connectorMsg, ':D:app:');
     connector.roll();
 
     appRollMissions(':DA:-roll:'); //

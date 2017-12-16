@@ -36,7 +36,7 @@ StringBuffer dailyBuf = new StringBuffer();
 ///  TODO  Word:  too much "act"  here, use different term
 ///  - effect, impact,   doing!!
 class DailyAction {
-  String name = 'dailyAction';
+  String name = 'DailyAction';
 
   ///  Present info for outer process calls.
   Map<String, String> placardM = {
@@ -119,7 +119,7 @@ void monday() {
   dartlangMission.showInfo();
   dartlangMission.report(':dailyAct:monday:', true);
   //  Decide, how reasonable is put these functions inside a class.
-  connector.join(
+  connector.join('DailyActionMonday',
       mondayAct.placardM, ':actMonday:msg:', ':dailyAction:monday:');
   //  ':dailyAct:monday:', ':receiver:all:', ':key:dailyAct:monday:', ':da:msg:'
   connector.ping(':dailyAct:monday:', ':receiver:all:', ':key:dailyAct:monday:',
@@ -170,7 +170,7 @@ void wednesday() {
   myTimeMission.showInfo();
   myTimeMission.report(':dailyAct:wednesday:', true);
   //  Decide, how reasonable is put these functions inside a class.
-  connector.join(
+  connector.join('DailyActionWednesday',
       wednesdayAct.placardM, ':actWednesday:msg:', ':dailyAction:wednesday:');
   //  ':dailyAct:wednesday:', ':receiver:all:', ':key:dailyAct:wednesday:', ':da:msg:'
   connector.ping(':dailyAct:wednesday:', ':receiver:all:', ':key:dailyAct:wednesday:',

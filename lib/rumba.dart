@@ -31,6 +31,7 @@ class Rumba {
   ///  boolean values for controlling loop; run now only once.
   ///  Eventually these values are triggered to false-state by sub-programs,
   ///  or some value / event in subprograms, but for now, this (fake)-done
+  String name = 'Rumba';
   bool rumbaB = false;
   bool usherB = false;
   bool dawoAppB = false;
@@ -115,11 +116,11 @@ class Rumba {
         ///  duplicating this to get ListOverArea-message
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
 
-        connector.join(placardM, ':USHER :LOOP :START', ':R:u:');
+        connector.join(name, placardM, ':USHER :LOOP :START', ':R:u:');
         connector.roll();
         print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
 
-        connector.join(placardM, ':NEXT :CONNECT :TO :SCOUT', ':R:u:');
+        connector.join(name, placardM, ':NEXT :CONNECT :TO :SCOUT', ':R:u:');
         connector.roll();
 
         /// ----------------------  usher loop code  ---------------------
@@ -132,7 +133,7 @@ class Rumba {
 
           ///  duplicating this to get ListOverArea-message
           print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
-          connector.join(placardM, ':RUMBA :3 :TEST :CON', ':R:u:');
+          connector.join(name ,placardM, ':RUMBA :3 :TEST :CON', ':R:u:');
           connector.roll();
           connector.box(':R:.do:');
 
@@ -172,7 +173,7 @@ class Rumba {
       print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
       connectorMsg = ':ALL :DO :ANSWER ;FAST => :HOW:MANY #Process :ON ?';
 
-      connector.join(placardM, connectorMsg, ':R:done:');
+      connector.join(name, placardM, connectorMsg, ':R:done:');
       connector.roll();
 
       doneRumba(); //  --  Do it only once now.
