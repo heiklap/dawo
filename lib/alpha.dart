@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Model structures, base classes, that are used everywhere in dawo:
 /// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
-/// * dawo version:   0.0.6.  27.11.2017
+/// * dawo version:   0.0.7.  18.12.2017
 //
 // * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
 //  devNote:  No notes.
@@ -268,18 +268,18 @@ class Member {
 ///  Base for this class. Representation of an object, that does something.
 class Actor {
   String name = '';
-  ///  Structure of say-map elsewhere:
-  Map<String,  String> say = {
-    'purpose': '',
-    'lang':  '',
-    'area':  '',
-    'product': '',
-    'sell':  '',
-    'buy':  '',
-    'ask':  '',
-    'always':  '',
-    'newer': ''
 
+  ///  Structure of say-map elsewhere:
+  Map<String, String> say = {
+    'purpose': '',
+    'lang': '',
+    'area': '',
+    'product': '',
+    'sell': '',
+    'buy': '',
+    'ask': '',
+    'always': '',
+    'newer': ''
   };
 }
 
@@ -289,15 +289,14 @@ class Action {
 
   Map<String, String> say = {
     'purpose': '',
-    'lang':  '',
-    'area':  '',
+    'lang': '',
+    'area': '',
     'product': '',
-    'sell':  '',
-    'buy':  '',
-    'ask':  '',
-    'always':  '',
+    'sell': '',
+    'buy': '',
+    'ask': '',
+    'always': '',
     'newer': '',
-
   };
   // IDEA: Map<String, Map<String, String>> reason = {};
   Map<String, String> reason = {
@@ -308,6 +307,5 @@ class Action {
     'minus': '',
     'desicion': '',
   };
-
-}  //  ----- Action
+} //  ----- Action
 //

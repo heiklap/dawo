@@ -8,14 +8,35 @@ Tracking possible bigger steps in dawo:
 0.3.0  Simple web_app, in gitHub.            |
 0.4.0  Equipment, connector and M:op.        |
 0.5.0
-0.6.0                                        |  separate dawo_continuum package
-0.7.0  Local storage, HTTP_server, JSON.     |  dawo_mill operative
+0.6.0                                        |
+0.7.0  Connector, say, scout-class.          |
 0.8.0  Simple web_app, in gitHub.            |
 0.9.0  Angel server and MongoDB.             |  User input in web_app
-0.9.0  Client / users.                       |  *
-
+0.9.0  Client / users.                       |  dawo_mill operative
+separate dawo_continuum package
 _________________________________________________________________________
 
+ Add parameter #name to con.join.
+ Equipment aso many Lists changed to maps.
+ Fill placardM with #LANG-like data.
+ Regularize mission names for connector.join /solve.
+ scout moved out from mission to library camp / Scout class.
+ boxServe; modifys & save 6 buf to glb.boxServeBuffers for Web.
+ example shows glb.keyWords-used/rarely-used/important in devBox
+ Big changes and modification in mission-connector aso.
+ infoM renamed: say. in Mission, app, def, alpha, con.
+ Mission and dawoApp Modification.
+ Mission report modified + rollSchedule, stFlags, placardM aso.
+ Mission infoM modified, filled for each M in missions_data.
+ st-Map fields wake & work, prefious: off  on.
+ scoutSolve sketch: access to placardM and clause via memberM.
+ All opX in mission, and opJoin in connector, renamed to: scoutX
+ Pubspec: io: ^0.3.0, http: http_server: any, browser: ^0.10.0+2
+ boxServe boxCount to hdr and *p e g* to mark row 14 for screen.
+ boxServe template used to add BaseStruct fields to matrix.
+ Simulate user actions: with: #dayActions, use boxServe template
+ Dev class clean and separate class devHelp.
+ Mission: Fix render:BUG: and gave name variable more visibility
 Published: 27.11.2017,   0.0.6 Version
 High-level connections and common procedures between objects
 using #placard, glb, commonOp, clause and states.

@@ -4,7 +4,7 @@
 /// * Bind object to certain state or project or resource.
 /// * Bind to certain event-waiting or information flow.
 /// *  Using #resolve library with #dawolang to solve bind-literal-Strings.
-/// *  dawo version:  0.0.6.  27.11.2017.
+/// *  dawo version:  0.0.7. - 18.12.2017
 /// *  GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/bind.dart
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
@@ -26,7 +26,6 @@ class Bind {
   Map<String, String> bindM = {
     'Bind_1': '*  :bind: bind-Map  *',
   };
-
 
   ///  Share / answer type of bind-actions.
   Map<String, String> bindTypes = {

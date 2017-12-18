@@ -4,9 +4,10 @@
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dawo version:  0.0.6 :  27.11.2017
-/// * ReadyState:  for version 0.0.7.  -  0%  in GitHub : yes
+/// * dawo version:  0.0.7.  18.12.2017
+/// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
+/// * Problem: dawoApp not instantiated; no access to dawo.version aso.
 // hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   basic status of dawo
 //
 
@@ -45,7 +46,7 @@ var appBuf = new StringBuffer(); //  not used here
 ///  Controls Mission-Chore system, #App, & dawo-package development, #Pack.
 class DawoApp extends BaseStruct {
   String name = 'DawoApp';
-  String version = '0.0.6';
+  String version = '0.0.7';
   String by = 'HKL';
   final String actor = ':DAWO-APP:';
   String info = 'Innovative & educational small data-handler experimentation.';
@@ -90,8 +91,8 @@ class DawoApp extends BaseStruct {
   Map<String, String> pack = {
     'agenda': 'dawoApp rolls missioms',
     'msg': 'dawoApp-Message..',
-    'develop': 'Under development.. 0 % to:  0.0.6',
-    'version': '0.0.6',
+    'develop': 'Under development.. 0 % to:  0.0.7',
+    'version': '0.0.7',
     '': '',
   };
 
@@ -116,8 +117,8 @@ class DawoApp extends BaseStruct {
   ///  App-specified fields.
   //  String agenda = 'dawoApp rolls missioms';
   //  String msg = 'dawoApp-Message..';
-  //  String develop = 'Under development.. 0 % to:  0.0.6';
-  //  String version = '0.0.6';
+  //  String develop = 'Under development.. 0 % to:  0.0.7';
+  //  String version = '0.0.7';
 
   //  Setting value for console
   // printing in flowC / flowS. TODO  hklGTry
@@ -300,10 +301,9 @@ class DawoApp extends BaseStruct {
     List info6 = tl.mapToList(nationalParksMission.say);
     devBox('By; dawoApp-:rM:', [list6, info6], 10);
 
-
     _flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
     // roll all chores, that are in mission
-  }  //  -----  appRollMissions
+  } //  -----  appRollMissions
 
   ///  TODO devStream  building stream for dev, using elementary Stream example
   ///  DONE Adding caller-parameter
@@ -314,8 +314,10 @@ class DawoApp extends BaseStruct {
     // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     store.demandStream(
-      //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
-        ':dawoApp:d-s', tl.mapToList(pack), 'appListener');
+        //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
+        ':dawoApp:d-s',
+        tl.mapToList(pack),
+        'appListener');
     store.demandStream(
         ':dawoApp:d-s', ['First Book', 'My Book', 'Third Book'], 'appListener');
     _flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
@@ -330,8 +332,10 @@ class DawoApp extends BaseStruct {
     // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
     //  calling it with dawoApp class properties
     store.demandStream(
-      //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
-        ':dawoApp-r:s:', tl.mapToList(pack)  , 'appListener');
+        //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
+        ':dawoApp-r:s:',
+        tl.mapToList(pack),
+        'appListener');
 
     ///  calling stream on dev.admN list certain items:
     ///  insertAll(int index, Iterable<E> iterable) → void
@@ -415,7 +419,7 @@ class DawoApp extends BaseStruct {
     boxServe.show(boxHeader, 'print');
     boxServe.done(boxHeader);
     print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
-  }  //  -----  box
+  } //  -----  box
 
   ///  Show-method to be developed further.
   ///  //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
@@ -448,6 +452,7 @@ class DawoApp extends BaseStruct {
     if (_pB) print(buf);
     //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', _pB);
   }
+
   //  Can constructor reach inside a Map?
   DawoApp(this.name, this.motto);
 
@@ -460,10 +465,7 @@ class DawoApp extends BaseStruct {
     ///  :DAWO-APP:  is too long.
     flowServe(':D-A:', out.outTr, msg, p);
   }
-
 } //  ----------  class DawoApp
-
-
 
 ///  To print outPutBuffers.  //  not called
 ///  Using new outBufM Map
@@ -597,7 +599,8 @@ class DawoHist implements BaseStruct {
     //  :BUG:  Clear old lists first. ??
 
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':dawoHist:box: ', ':dawoHist:box:'); //  :BUG: C: $caller');
+    boxServe.construct(
+        ':dawoHist:box: ', ':dawoHist:box:'); //  :BUG: C: $caller');
 
     int r9 = 9; //  anchor for row.
   }

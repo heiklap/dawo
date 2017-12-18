@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Chore for organizing work flow.  Version:  0.0.6.  -  27.11.2017
-///  Ready-state: for 0.0.7 : 0%   In  GitHub:   yes
+///  ##  Chore for organizing work flow.  Version:  0.0.7.  18.12.2017
+///  devState : 25 %  -   In  GitHub:   yes
 ///
 ///  Primary functionality: get notes-list aso data from input/clay
 ///  incoming data (clayIn) comes from customer. coders OR sample aso.
@@ -222,6 +222,7 @@ class CommonChore extends BaseStruct {
     String _retStr;
     print('-->>-->>--  :Ch:-op: calling :connector:  -->>-->>--');
     String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
+
     ///  new parameter name; do we get it to right chore name?
     connector.join(name, placardM, connectorMsg, ':Ch:-op:');
     connector.roll();
@@ -312,7 +313,7 @@ class CommonChore extends BaseStruct {
   ///  constructor
   ///  TODO  should add #master field for mission, that owns this chore?
   CommonChore(this.name, this.info);
-}  //  -----  CommonChore class
+} //  -----  CommonChore class
 
 ///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right.

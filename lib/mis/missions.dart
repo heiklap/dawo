@@ -3,8 +3,8 @@
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  Version 0.0.6 :  27.11.2017  -  ready_state for 0.0.7  :  0 %
-/// *  devState : unknown  -  PLAN:  cleaning
+/// *  Version 0.0.7.  18.12.2017
+/// *  devState : 25 % / unknown  -  PLAN:  cleaning
 // -  HIST:  hkl  8.9.2017
 // -  devNote: 4 pc.
 //

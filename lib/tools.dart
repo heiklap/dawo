@@ -5,7 +5,7 @@
 ///  stuff is most valuable to beginner programmers, and developing this has
 ///  taken time. Fixing bugs only when something throws.
 /// * Also some #stamp date-time aso. functions.
-/// * dawo version:  0.0.6 :  27.11.2017    READY-STATE for  0.0.7   0 %
+/// * dawo version:  0.0.7.  18.12.2017    devState : 50 %
 /// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
 /// * in GIT:  yes.  Blog post:  should b.
 /// * PLAN:  develop some _private inside functions and variables.??
@@ -156,12 +156,17 @@ class Tools {
   ///  change to bool!
   boxInList(
       //:BUG:DEBUG:  if field-length <_w  => rangeError in called functions.
-      int _r, int _c, _asked, _w, List<String> boxL, List<String> masterL) {
-
+      int _r,
+      int _c,
+      _asked,
+      _w,
+      List<String> boxL,
+      List<String> masterL) {
     //  new parameters _asked, _w :  items and asked output width
     if (_w < longestItemInList(boxL)) {
       shortenItemsInList(boxL, _w);
     }
+
     ///  Only >2 width lists are padded
     if (_w > 2) padListRL(boxL, _w, ' ', ' ');
     int _take = min(boxL.length, _asked); //  All or asked amount.
@@ -206,11 +211,11 @@ class Tools {
   String rowFromMap(Map<String, String> thisMap, int kw, vw) {
     StringBuffer b = new StringBuffer();
     thisMap.forEach((k, v) {
-      String _kS = k;  //  key-String,  value_String
+      String _kS = k; //  key-String,  value_String
       String _vS = v;
-      if (kw > 0) _kS = k.substring(0,kw);
-      if (vw > 0) _vS = k.substring(0,vw);
-      b.write('$_kS: $_vS  ');  //  write modified key-value to buffer
+      if (kw > 0) _kS = k.substring(0, kw);
+      if (vw > 0) _vS = k.substring(0, vw);
+      b.write('$_kS: $_vS  '); //  write modified key-value to buffer
     });
     return b.toString();
   }
@@ -225,30 +230,30 @@ class Tools {
       String _ks = '';
       String _vs = '';
       if (k.length < _kl) {
-        _ks = k.padRight(_kl + 1);  //  ? + 1
+        _ks = k.padRight(_kl + 1); //  ? + 1
       } else {
-        _ks = k.substring(0,_kl);  //  but it may be shorter
-      };
+        _ks = k.substring(0, _kl); //  but it may be shorter
+      }
+      ;
 
-      if (v.length < _vl){
+      if (v.length < _vl) {
         _vs = v.padRight(_vl + 1);
       } else {
-        _vs = v.substring(0,_vl);  //  but it may be shorter
-      };
+        _vs = v.substring(0, _vl); //  but it may be shorter
+      }
+      ;
       String _s = '';
       _s = '$_ks-$_vs';
       _l.add(_s);
+    } // --  thisMap
+        ); //  --  forEach k v
+    return _l;
+  } //  --  maptofineList
 
-    }  // --  thisMap
-    );  //  --  forEach k v
-        return _l;
-    }  //  --  maptofineList
-
-    /*
+  /*
 
 
       */
-
 
   ///  Return list<String> from map<String, String>.
   List<String> mapToList(Map<String, String> thisMap) {

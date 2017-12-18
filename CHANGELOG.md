@@ -1,4 +1,6 @@
 # Changelog
+## 0.0.7
+ - Connector - scout.join
 ## 0.0.6
  - Box_serve console presentation.
 ## 0.0.5

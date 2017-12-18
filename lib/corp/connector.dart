@@ -6,7 +6,7 @@
 ///  using #LANG -specific commands to configure their proceedings.
 ///  using #dawolang package in path dependency
 ///  method String weightString(String _aS) checks #C messages
-///   dawo version:   0.0.6.  27.11.2017  * READY-STATE: for  0.0.6 version> 0%
+///   dawo version:   0.0.7. - 18.12.2017  * devState : 15 %
 ///
 /// * devState: 30%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
@@ -466,14 +466,13 @@ class Connector extends BaseStruct {
     ///  TODO  Get from joinM Just-joined-say map
     ///  Now using new #name field and parameter via con.join
     //  if (name  notIn joinM) blaa blaa blaa
-      Map<String, String> sayLatest = joinM['DartlangMission'].say;
-     //  Error:bug:  every object to not have say-map
+    Map<String, String> sayLatest = joinM['DartlangMission'].say;
+    //  Error:bug:  every object to not have say-map
     // Map<String, String> sayLatest = joinM[name].say;
     //  TODO  use map joinM directly without copying it here
 
     boxServe.aHeader(30, 144, '*: Now: $name :say *');
     boxServe.aBox(31, 142, 9, 42, tl.mapToFineList(sayLatest, 8, 34));
-
 
     boxServe.aHeader(r4 - 1, m2 - 5, '     * workPole  *  ');
     boxServe.aBox(r4, m2, 6, 23, tl.mapToList(workPoleM));

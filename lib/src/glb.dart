@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  glb   keeping important everybody-uses variables and constants.
-/// * dawo version:  0.0.6.  27.11.2017  -  devState:  10%
+/// * dawo version:  0.0.7.  18.12.2017  -  devState:  10%
 /// * GitHub: yes.
 /// * State:  schema
 //
@@ -59,12 +59,12 @@ class GlobalClass {
     ':H: -   http-5    HTML-9    HINT_?',
     ':I: -  IDEA    INFO_?    idb-0!?',
     ':J: -   JSON    join-18-31     '
-    ':K: -',
+        ':K: -',
     ':L: -  LANG~137  learn-19                (lamp-0)  (legend-0) (letter-0)',
     ':M: mission    Mongo-3    ',
     ':N: =  NEXT   NOTE  ',
     ':O: -          (opera-6)          ( oath-0) ',
-    ':P: -  PING-13   p e g=screenMark    (plan-24)   pool-0   ',
+    ':P: -  PING-13   p e g=screenMark    (plan-24)   pool-0 :promo:  ',
     ':Q: -    QUEST: ',
     ':R: Rumba     RULE-13                                  (ritual-0) ',
     ':S: -   schedule   :scout:Roll say    STREAM  store-1  secret-0 scout-20',
@@ -80,7 +80,7 @@ class GlobalClass {
   ///  HowTo track dawo important things in screen-output.
   List<String> keyWordsSmall = [
     '     #dawo objects,   keywords-2   less used & promising. ',
-    ':a: -  ::  adm  ',
+    ':a: -  ::  adm :ad: :advertising: ',
     ':b: - :buf:=buffer     bLib=:OLD:DEPRECATED:   buy-24   sell-7  bus-8',
     ':b: -                      blend-0   ',
     ':c:       C: = caller   clay=data  (carry-3) car-33  chat-1   client-12',
@@ -91,7 +91,7 @@ class GlobalClass {
     ':h: -  howTo  hklTry= meTryingSomething    human-2',
     ':i: -  *inno* -12 ',
     ':j: -'
-    ':k: -',
+        ':k: -',
     ':l: -   level-2-5     link-0      ',
     ':m:     meet-4    member*-7 merge-0  mix-0    myTime-30',
     ':n: = numbr-Grant-Valid  ',
@@ -139,26 +139,25 @@ class GlobalClass {
     ':x:                                                   ',
     ':y:                                                   ',
     ':z:                                                   ',
-    '::'                                                   ','
+    '::' ','
   ];
   List<String> dawoTextOutput = [
-     'String rumbaS = rumbaBuf.toString',
-     'String dawoAppS = dawoBuf.toString',
-     'String missionS = packDawoMission.say.toString',
-     'String choreS = packDawoMission.joyChr.buf.toString',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-     '   ',
-
+    'String rumbaS = rumbaBuf.toString',
+    'String dawoAppS = dawoBuf.toString',
+    'String missionS = packDawoMission.say.toString',
+    'String choreS = packDawoMission.joyChr.buf.toString',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
   ];
 
   /*
@@ -176,10 +175,7 @@ class GlobalClass {
   StringBuffer buf = new StringBuffer();
 
   //  Method saveToGLB from box_serve fills this map.
-  Map<String, StringBuffer> boxServeBuffers = {
-
-  };
-
+  Map<String, StringBuffer> boxServeBuffers = {};
 
   var register; //  register of objects that participate in Dawo / glb.
   //  Actor: String actor;  //  too important to be a String

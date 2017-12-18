@@ -1,16 +1,18 @@
-# dawo 0.0.6
+# dawo 0.0.7
 
 Learning Dart; by building complicated Dart package with many libraries. Organizing it, finding it's 
 inner connections and developing multipurpose methods.
 Beginner Dart programmers kickoff to learn by developing a glorious package. Latest code in GitHub: https://github.com/heiklap/dawo
 - Read: /doc/hist_versions.txt in gitHub to see full changes to this, and coming versions.
 - Blog: http://dawopack.blogspot.fi/search/label/dawo 
-- Dawo is using my other package: dawolang: 0.0.1, for word recognition in connector.
+- Dependencies:  Dawo is using my other package: dawolang: 0.0.1, for word recognition in connector.
 ## Usage
     // Mission Class has wide access to data, since they have instances of
-    // Chore classes inside them, in choresL : List<CommmonChore>
-    
+    // Chore classes inside them, in choresL : List<CommmonChore>   
     // Example files here rolls only once, without loops, and output their data in console.
+    // To run dawoApp in rumba demands two imports:
+    import 'package:dawo/rumba.dart';
+    import 'package:dawo/dawo_app.dart';
     var dawoApp = new DawoApp('Play-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
     var rumba = new Rumba();
 
@@ -34,9 +36,6 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
  
  0.0.1  demonstrates how data is messy, when it is not inside classes. But you have direct 
  instant access to every piece of it. Check for pollution of public namespace!!
- 
- 0.0.2 version was to weed out some of the material and create a couple of classes.
-     Theme : baseStructure, base_lib, dawo_mill, connector, learn/code_snippets
      
  0.0.3 Was for building first control-flow structure (Rumba.dance) to use Class-data inside app.
      Theme:  Present different Mission ( = Client / customer) data and small, elementary work-flow.
@@ -44,13 +43,12 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
      
  0.0.4 Version
      Theme:  Statistics, output, variation, versatility, documentation in doc-folder.
-     dawo_example.dart gives 11 screen-full data output.
+     dawo_example.dart gives 11 -36 screen-full data output.
      
  0.0.5 High level connections between objects, placard, glb, commonOp and states.    
  0.0.6 box_serve presentation and corporate.     
- 0.0.7  Basic idea and orientation of package to resolve.
- 0.0.8  Incubator idea: -move first too big parts to independent packages.
-        Maybe  chore(process)  and  team
+ 0.0.7 Connector and #say language, scout class and join.
+
  
 
 ## Files;
@@ -76,7 +74,7 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
       of other, bigger, same kind of library.
 - mis/effort.dart : Human activities, chores sub, main user-activity and presentation.
 - mis/equipment.dart : Controlling material resources for Mission and Chore. 
--mis/camp : Scout class has connected objects stuff.     
+- mis/camp : Scout class has connected objects stuff.     
       
 - corp-folder has corporate, affair, resolve and store classes.      
 - corp/connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them. 
@@ -111,7 +109,7 @@ Creating Dawo variables in new file:
     
     Add to your pubspec.yaml:
     dependencies:
-      dawo: 0.0.6
+      dawo: 0.0.7
       
     dev_dependencies:
       browser: ^0.10.0

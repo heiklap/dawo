@@ -3,7 +3,7 @@
 ///  ##  Shower  -  presentation info and data screens.
 ///  New box_serve makes this better: makes only frames and keep clients data
 ///  in client side.  This file might eventually fade out.
-///  * dawo version: 0.0.6  27.11.2017.  devState: 90%
+///  * dawo version: 0.0.7.  18.12.2017.  devState: 90%
 ///  *      GitHub: yes.
 ///  * DONE  #deprecated deleted_ rows 300 - 350
 ///  * SCHEDULE might deserve it's own class.
@@ -31,7 +31,7 @@ import 'dart:math';
 ///  TODO  Add better row / height decision.
 ///  #QUEST : Maybe these 2-3-4 devBox functions can be combined to one, and
 ///  handle 2-3-4 with parameters. Did it once, but was ugly.
-///  TODO  Make this a class.  Add: Dartlang app  DAWO 0.0.6 to row[o]end
+///  TODO  Make this a class.  Add: Dartlang app  DAWO 0.0.7 to row[o]end
 StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
   StringBuffer _retBuf = new StringBuffer();
   final int sW = 210; //  Screen width.
@@ -74,12 +74,11 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
     //  Widen this later to screen-width.
     String tr1 = '_devBox_C: $caller __';
     int tr1Length = tr1.length;
-    String dawoLogoS = '_Dartlang app  DAWO 0.0.6_';
+    String dawoLogoS = '_Dartlang app  DAWO 0.0.7_';
     int dawoLogoLength = dawoLogoS.length;
     //  :BUG: makes about 6 wide column error in box
     String padTopRim = tr1.padRight(sW - (dawoLogoLength + 6), '_');
     String topRim = padTopRim + dawoLogoS;
-
 
     String botRim = '____'; //  Widen this later to screen-width.
     String padBotRim = botRim.padRight(sW, '_');
@@ -261,7 +260,7 @@ class ScheduleBox {
           '$_colPos '.padRight(_sw, '-'); //  pad with low-density mark.
     }
     _matrix[0] =
-        '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 0.0.6 -';
+        '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 0.0.7 -';
 
     ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
     _matrix[_rc - 1] =
@@ -295,7 +294,7 @@ class ScheduleBox {
     anchorBox(1, 123, 100, 100, _resAllocL);
     //  Usable resources: toolsActiveM, toolsSpeedM,status
     eyeMark14(); //  mark 'peg' to put screen table to screen.
-  }  //  -----  build
+  } //  -----  build
 
   void roll(String _caller) {
     init();
@@ -491,8 +490,10 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
       '  - Finally this data is best when get by server to client. -';
   List<String> _ol = [':sh-it-diagM-   First Item  $infoS1 $infoS2 $infoS3'];
   String topLine = tl.strMark('>', _sw);
+  String emptyLine = tl.strMark('_', _sw);
   String botLine = tl.strMark('<', _sw);
   _ol.add(topLine);
+  _ol.add(emptyLine);
   for (var x = 0; x < _ilM.length; x++) {
     ///  Loop to handle all map values
     for (var y in _ilM[x].keys) {
@@ -513,6 +514,7 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
     String _nlS2 = _nlS + '.';
     _ol.add(_nlS2); //TODO  Make something more visible and useful.
   } //  -----------------    All incoming lists.3
+  _ol.add(emptyLine);
   _ol.add(botLine);
   return _ol; //  ---------- return type:   List<String>
 }

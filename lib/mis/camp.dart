@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  camp lib with camp and scout classes.
-/// * dawo version:  0.0.6.  13.12.2017  -  devState:  30%
+/// * dawo version:  0.0.7.  18.12.2017  -  devState:  30%
 /// * GitHub:.
 /// * Missions and Chores can use connector-services, from corporate-side
 /// * to join to Camp-Scout system, whereas corporate side can also use

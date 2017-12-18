@@ -3,9 +3,9 @@
 ///  ##  Effort : data-in / out - working frame for chore user.
 /// * ONLY  chore.dart should import this. 70% of user-activity is here.
 /// * User adds or changes his own data to effort Maps.
-/// * dawo version:  0.0.6 : 27.11.2017.    ready-state for 0.0.7 :  0 %
+/// * dawo version:  0.0.7.  18.12.2017
 /// * NEXT version: Add SplayTreeSet,  and  LinkedHashSet
-/// * devState : 25%  -  PLAN: 007 : 30%
+/// * devState : 25%  -  PLAN: 008 : 30%
 // devNote:  Collecting here habit / human-like objects.
 // Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
 //
@@ -64,6 +64,7 @@ class Effort {
   ///  testing... difference between  .  and ..
   void makeGoalM() {
     goalM
+
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
       ..putIfAbsent('Project 0.0.1 Plan', () => 'V:3 E:2 D:1 ')
       ..putIfAbsent('Github  clean', () => 'V:3 E:5 D:3 ')
@@ -76,6 +77,7 @@ class Effort {
   /// adding data to List
   void makePlanM() {
     planM
+
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
       ..putIfAbsent('Plain idea', () => 'V:3 E:3 D:6 ')
       ..putIfAbsent('Accepted schema', () => 'V:5 E:1 D:3 ')
@@ -115,6 +117,7 @@ class Effort {
   ///  Function for adding data to this List.
   void makeTempoM() {
     tempoM
+
       ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
       ..putIfAbsent('Largo     leveästi', () => 'V:3 E:2 D:0 ')
       ..putIfAbsent('Lento     hitaasti ', () => 'V:2 E:3 D:0 ')
@@ -282,12 +285,12 @@ class Effort {
     tl.boxInList(18, 1, 100, 100, _l5, diagonalL);
 
     ///  Adding json-to-List data to diagonalL matrix.
-    tl.boxInList(28, 33, 100, 100, _lBus, diagonalL);
-    tl.boxInList(25, 65, 100, 100, _lFury, diagonalL);
+    tl.boxInList(26, 65, 100, 100, _lFury, diagonalL);
+    tl.boxInList(29, 33, 100, 100, _lBus, diagonalL);
     tl.boxInList(15, 1, 100, 100, _lHuman, diagonalL);
     tl.boxInList(14, 0, 100, 100, ['peg'], diagonalL);
     tl.boxInList(1, 30, 100, 100, [':effort:get:diagonal:list:'], diagonalL);
-      tl.boxInList(1, 170, 100, 100, ['dartlang app  Dawo 0.0.6'], diagonalL);
+    tl.boxInList(1, 170, 100, 100, ['dartlang app  Dawo 0.0.7'], diagonalL);
 
     print(diagonalL.length);
     diagonalL.forEach(print);

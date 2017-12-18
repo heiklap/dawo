@@ -3,7 +3,7 @@
 ///  ##  Rumba : Loop, that runs dawoApp and some other stuff.
 ///  Runs it's loops forced, only once, without possibility of user action.
 ///  * Primary functionality:  loop, inside it: dawoApp
-///  * dawo version:  0.0.6 :  27.11.2017  -   functionality: 70%
+///  * dawo version:  0.0.7.  18.12.2017 -   functionality: 70%
 ///  * in GitHub :  yes  NEXT: parameters for output?
 ///  * NEXT: bool values, that stop loops #FromInside dawo-app.
 ///  * If program parts have a certain amount of 'self consciousness' or other
@@ -133,7 +133,7 @@ class Rumba {
 
           ///  duplicating this to get ListOverArea-message
           print('-->>-->>--  :rumba:usher: calling :connector:  -->>-->>--');
-          connector.join(name ,placardM, ':RUMBA :3 :TEST :CON', ':R:u:');
+          connector.join(name, placardM, ':RUMBA :3 :TEST :CON', ':R:u:');
           connector.roll();
           connector.box(':R:.do:');
 

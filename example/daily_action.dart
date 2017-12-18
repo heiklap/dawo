@@ -3,7 +3,7 @@
 ///  ##  DailyAction  simulation of dawo events
 ///  * QUEST:  howTo use and name dailyAct class.
 ///  * HINT:  Run this for one day by commenting days out;  like  //  friday()
-/// * dawo version:  0.0.6.  -  27.11.2017  -   devState: 0 %
+/// * dawo version:  0.0.7. - 18.12.2017  -   devState: 0 %
 /// * GitHub:
 /// * Connect:  #Schedule  #Week  #Month  from:  #equ
 // * Hist:hkl  27.11.2017  -  0.0.6
@@ -106,11 +106,11 @@ void main() {
   ///  gives too long and messy output.
   dawoApp.roll();
   print('------------- :dailyAction: start  -----------------------');
-      monday();
-      tuesday();
-      wednesday();
-      thursday();
-    friday();
+  monday();
+  tuesday();
+  wednesday();
+  thursday();
+  friday();
 }
 
 ///  Play with mission-op  and connector  courier aso.
@@ -119,8 +119,8 @@ void monday() {
   dartlangMission.showInfo();
   dartlangMission.report(':dailyAct:monday:', true);
   //  Decide, how reasonable is put these functions inside a class.
-  connector.join('DailyActionMonday',
-      mondayAct.placardM, ':actMonday:msg:', ':dailyAction:monday:');
+  connector.join('DailyActionMonday', mondayAct.placardM, ':actMonday:msg:',
+      ':dailyAction:monday:');
   //  ':dailyAct:monday:', ':receiver:all:', ':key:dailyAct:monday:', ':da:msg:'
   connector.ping(':dailyAct:monday:', ':receiver:all:', ':key:dailyAct:monday:',
       ':da:msg:');
@@ -141,6 +141,7 @@ void monday() {
 
   ///  eventually roll init /build / handles the next:
   boxServe.init(16, 125, '_');
+
   ///  2 parameter is glb-buffer
   boxServe.construct(':dailyAction:monday:', ':dailyAction:monday:'); //
 
@@ -170,12 +171,13 @@ void wednesday() {
   myTimeMission.showInfo();
   myTimeMission.report(':dailyAct:wednesday:', true);
   //  Decide, how reasonable is put these functions inside a class.
-  connector.join('DailyActionWednesday',
-      wednesdayAct.placardM, ':actWednesday:msg:', ':dailyAction:wednesday:');
+  connector.join('DailyActionWednesday', wednesdayAct.placardM,
+      ':actWednesday:msg:', ':dailyAction:wednesday:');
   //  ':dailyAct:wednesday:', ':receiver:all:', ':key:dailyAct:wednesday:', ':da:msg:'
-  connector.ping(':dailyAct:wednesday:', ':receiver:all:', ':key:dailyAct:wednesday:',
-      ':da:msg:');
-  connectorBuf.write('-->>  :dailyAct:wednesday: connector :opJoin:ping:done  ');
+  connector.ping(':dailyAct:wednesday:', ':receiver:all:',
+      ':key:dailyAct:wednesday:', ':da:msg:');
+  connectorBuf
+      .write('-->>  :dailyAct:wednesday: connector :opJoin:ping:done  ');
   myTimeMission.report(':wednesday:', true);
   myTimeMission.learnChr.roll();
   scout.init(2, wednesdayAct.dailyCourier);
@@ -247,7 +249,6 @@ void friday() {
   boxServe.aHeader(16, 90, '* connector inMsgLog * ');
   boxServe.aBox(17, 85, 18, 50, connector.inMsgL);
 
-
   //  :BUB:DEBUG:
   // RANGE ERROR!! boxServe.aBox(17, 138, 14, 40, tl.mapToListO(connector.scoutM));
   // RANGE ERROR! boxServe.aBox(17, 138, 14, 40, tl.mapToListO(connector.scoutM));
@@ -255,9 +256,9 @@ void friday() {
   boxServe.aHeader(25, 130, '* connector memberM * ');
   // "30,142" = 2 errors               134 brings error
   //  boxServe.aBox(30,142, 14, 40, tl.mapToListO(connector.scoutM));
-  boxServe.aBox(26,132, 14, 40, tl.mapToListO(connector.joinM));
+  boxServe.aBox(26, 132, 14, 40, tl.mapToListO(connector.joinM));
   //  OK  boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
- //OK boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
+  //OK boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
 
   boxServe.show(':dailyAction:test:', 'print');
   boxServe.done(':dailyAction:test:');

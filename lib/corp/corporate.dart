@@ -3,7 +3,7 @@
 ///  ##  Corporate,  enterprise-like entity.
 ///  * Holds: Affairs, Stores, takes Order's, makes Jobs in phases.
 ///  * previous: #common operate from beta.dart aso. is here
-///   * Dawo version:   0.0.6.  27.11.2017
+///   * Dawo version:   0.0.7.  - 18.12.2017
 ///  * devState:  10%,   PLAN:  do simple demo / presentation.
 ///
 //

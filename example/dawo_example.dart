@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  *  dawo_example   dawo version   0.0.6.  -  27.11.2017
+///  *  dawo_example   dawo version   0.0.7. - 18.12.2017
 ///  *  dawo_example creates 28 screens of console output data presentation.
 ///  * Find:  :con: :connector: :opCom:  :corporate:
 
@@ -23,6 +23,7 @@ import 'package:dawo/mis/chore.dart';
 
 import 'package:dawo/corp/bind.dart';
 import 'package:dawo/corp/connector.dart';
+import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/src/glb.dart';
 import 'package:dawo/src/box_serve.dart';
 
@@ -74,8 +75,10 @@ String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
 main() {
   glb.dawoLogo.forEach(print);
   devBox(':d:ex:main:', [glb.keyWords, glb.keyWordsSmall], 28);
+  devBox('By:dev:versions:', [dev.later, dev.version008], 0);
   var sw = new Stopwatch()..start();
   DateTime start = new DateTime.now();
+
   ///  Call function that adds #actor and #count to this String and prints it.
   exInfo('==>>==>>==   dawo_example    ==>>==>>==');
 
@@ -95,8 +98,7 @@ main() {
 
   exampleMethodsPlay(); //  Add more 13 screens output.
   bind.report('$dexS');
-  dawoApp.box(dexS);  //  2. time here-
-
+  dawoApp.box(dexS); //  2. time here-
 
   connectorOp(dexS);
   exInfo('    ==<<==<<==    dawo_example done    ==<<==<<==');
@@ -108,7 +110,8 @@ main() {
   print('FlowServe calls::   $flowI ');
   boxServeTemplate();
 
-  print('.............. :glb:boxServe:buf: length and names  ..............................');
+  print(
+      '.............. :glb:boxServe:buf: length and names  ..............................');
   print(glb.boxServeBuffers.length);
   for (var z in glb.boxServeBuffers.keys) {
     print(glb.boxServeBuffers[z].length);
@@ -120,10 +123,8 @@ main() {
   print('---- main done   ');
 } //  -----  end of main.
 
-
-
 ///  From dailyAction
-void boxServeTemplate(){
+void boxServeTemplate() {
   print('---------- :boxServe:dawoLogo: :temporary:hack:   ----------------');
   DawoHist dawoHist = new DawoHist();
   dawoHist.init();
@@ -133,8 +134,10 @@ void boxServeTemplate(){
 
   ///  TODO  hosTo handle:  in boxServe there are:  title and footer.
   boxServe.init(36, 175, '_');
+
   ///  Table name and glb.buffer name
-  boxServe.construct(':dawoHist:dailyAction:friday:', ':dawoHist:dailyAction:friday:');
+  boxServe.construct(
+      ':dawoHist:dailyAction:friday:', ':dawoHist:dailyAction:friday:');
 
   ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
   boxLayoutDap(dawoHist, ':dawoHist:dailyAction:friday:');
@@ -173,7 +176,6 @@ void exInfo(String msg) {
 
 ///  Place where :corporate:  :opCom:  and :connector: play together.
 void connectorOp(String caller) {
-
   connector.join('DawoExample', placardM, connectorMsg, ':Dawo:example:');
   connector.roll();
   connector.box(':d:ex:');
@@ -237,7 +239,6 @@ void connectorExampleReport() {
   connector.report();
   exInfo('    ==<<==<<==    :connector: report done    ==<<==<<==');
 }
-
 
 ///  For to check variables visibility.
 void wordPlay() {

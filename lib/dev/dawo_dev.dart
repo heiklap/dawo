@@ -3,7 +3,7 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
-/// * dawo version:  0.0.6.  -  27.11.2017  -   devState: 15 %
+/// * dawo version:  0.0.7. - 18.12.2017  -   devState: 15 %
 /// * GitHub: yes  29.11.2014
 //
 // * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
@@ -67,6 +67,38 @@ class Dev {
   List<String> howToN = ['* * Team HowTo notes: * * '];
   List<String> secN = ['* * Team sec notes: * * '];
 
+
+  List<String> later = [
+      '   * * *  next List to plan Dawo 009 aso changes.   * * * ',
+      'LATER: Internal systematics. Most critical improvements.',
+      'LATER: ?   UI?                                              ?.',
+      'LATER: Real work-flow for chore',
+      'LATER: Choose mission / chore at start.',
+      'LATER: DB  propably Mongo                                         .',
+      'LATER: Corporation:  :ad:promo: real store & resolve :ind:bing: ',
+      'LATER: Server-client. Simple server and propably Angel package         ',
+      'LATER: Make debBox a class; long functions are hard to manage.',
+      'LATER: Local storage for user own data.                                 ',
+      'LATER: WEB presentation, dawo-web-hooks for here-is-text-output.',
+      'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ',
+  ];
+
+  List<String> version008 = [
+    '   * * *  plan Dawo 008changes.   * * * ',
+    '008: :BIND:PING: simulation :promo: -in boxServe   ',
+    '008: User :promo:simulated data for #dayActions. Server-client ?.',
+    '008: #LANG #say simulation /:ad: advertising commercial.             ',
+    '008: ouput clean after: con  corp console schedule.',
+    '008: more dawoApp class and output, clean and reshape.',
+    '008: ? dawo-State boxServe presentation with 12 boxes.',
+    '008: All Dawo-Objects presentation with box_serve.',
+    '008: :ad: Advertising / simulation for only-commercial-version stuff.',
+    '008: SOON: LOOP: say - analyze - con - effort - affair - schedule.',
+    '008: Example: #Huilo: #Hypertext Unfrendly-Incursion-Level #Observer.',
+    '008: ?  howTo get #versin, #name to devBox aso?  via dev or dawoApp    ?',
+    '008: ?   Fixes and modifications to previuous version.             ?',
+  ];
+
   ///  To add developer notes.
   void addNote(List l, String s) {
     l.add(s);
@@ -85,8 +117,8 @@ class Dev {
     doneL
       ..add('   * * *  doneL to keep track of daily Dawo changes.   * * * ')
       ..add('NEXT: Internal systematics. Most critical improvements.')
-      ..add('NEXT: User simulated data for #dayActions. Server-client ?.')
-      ..add('NEXT; SearchList of important dawo terms to example-file :con:m:')
+      ..add('NEXT: User :promo: simulated data #dayActions. Server-client ?.')
+      ..add('NEXT: SearchList of important dawo terms to example-file :con:m:')
       ..add('NEXT: ouput clean after: con - corp console schedule.')
       ..add('NEXT: more dawoApp class and output, clean and reshape.')
       ..add('NEXT: dawo-State box_serve presentation with 12 boxes.')
@@ -95,6 +127,7 @@ class Dev {
       ..add('SOON: LOOP: say - analyze - con - effort - affair - schedule.')
       ..add('NEXT:0.1 #Huilo: #Hypertext Unfrendly-Incursion-Level #Observer.')
       ..add('NEXT: Example new mission: useful, chore: #FoodFinder, #pundit  ')
+      ..add('Moving from 0.0.6 to 0.0.7. 18.12.2017, Git and Pub.')
       ..add('Add parameter #name to con.join.')
       ..add('Equipment aso many Lists changed to maps.')
       ..add('Fill placardM with #LANG-like data')
@@ -197,11 +230,13 @@ class Dev {
         ['Restrict use of certain methods.', 'Create up-level pass-word.']);
   }
 
+  ///  callers: no usages.
   ///  More demonstrative devBox presentation method.
   void showNotes(String caller) {
     print('\n ------->>-->>--  dev.showNotes  by: $caller ------->>-->>--   ');
     devBox('By:dev:', [dev.admN, dev.devN], 0);
     devBox('By:dev:', [dev.innoN, dev.howToN, dev.secN], 0);
+    devBox('By:dev:versions:', [dev.later, dev.version008], 0);
     print('--<<--<<------------  dev.showNotes  --<<--<<------------ \n  ');
   }
 

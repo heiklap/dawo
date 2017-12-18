@@ -3,7 +3,7 @@
 /// ## Store is, or simulates: shop, or market place, serving and selling.
 /// Here it is stream-based.
 ///  * Here are streams, supply and demand, all in store, and they: deliver.
-///  * dawo version: 0.0.6  27.11.2017.  devState: 3%
+///  * dawo version: 0.0.7. - 18.12.2017  devState: 3%
 ///  * NEXT: when main methods are sync, it is hard to find practical usage.
 ///  * NEXT: try box_serve for output-
 ///  * OutPut:  :demand:stream: search gives 15 results in output.

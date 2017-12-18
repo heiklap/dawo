@@ -2,10 +2,9 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  bind :  solving literal searches by customer (bind) wishes.
 ///  * find: memberM.placardM/clause / bindItem => response.bing.caller
-///  * dawo version: 0.0.6  27.11.2017.   READY-STATE  for version 0.0.7  0%
-///  *      GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/resolve.dart
+///  * dawo version: 0.0.7. - 18.12.2017
+///  * GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/resolve.dart
 ///  * devState: schema  5%  -  PLAN: no time.
-///  * NEXT:  0.0.7  small rebuild and practical use-case: #dailyWork
 //  Hist:hkl  19.11.2017  Moved stuff out from connector.
 
 // * * * *    Start using RegExp in String operations.  * * * *
