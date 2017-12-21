@@ -37,6 +37,7 @@ class BoxServe {
   //  To save matrix AND mediate it to glb.
   StringBuffer _buf = new StringBuffer();
   String _bufName = ''; //  Form nice name for glb.buffers.X
+  ///  #QUEST:  can this be made with #generator function?
   int _fakeRow = 100; //  Get nice  100 - 147 numbers
   List<String> _resAllocL = []; //  Some extra resource, like: equ/Equipment.
   ///  Forming vertical separator/note line in screen.
@@ -145,7 +146,7 @@ class BoxServe {
       print('vert warning::  ');
       vertWarning(_r, _c + _w + 2, _items, _overWidthS); //  try +1 .. 2
       print('_overLengthS::  $_overLengthS ');
-      print('horizWarnibg::  ');
+      print('horizWarnig::  ');
       horizWarning(_r + _items - 1, _c, _w, _overLengthS);
       print('error done::');
       //  lay horizontal #VARNING line

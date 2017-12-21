@@ -215,7 +215,7 @@ class Tools {
       String _vS = v;
       if (kw > 0) _kS = k.substring(0, kw);
       if (vw > 0) _vS = k.substring(0, vw);
-      b.write('$_kS: $_vS  '); //  write modified key-value to buffer
+      b.write('$_kS $_vS  '); //  write modified key-value to buffer
     });
     return b.toString();
   }
@@ -243,7 +243,7 @@ class Tools {
       }
       ;
       String _s = '';
-      _s = '$_ks-$_vs';
+      _s = '$_ks $_vs';
       _l.add(_s);
     } // --  thisMap
         ); //  --  forEach k v
@@ -260,7 +260,7 @@ class Tools {
     List<String> _l = [];
     thisMap.forEach((k, v) {
       String _s = '';
-      _s = '$k-$v';
+      _s = '$k$v';
       _l.add(_s);
     });
     return _l;
@@ -272,6 +272,17 @@ class Tools {
     thisMap.forEach((k, v) {
       String _s = '';
       _s = '$k, $v';
+      _l.add(_s);
+    });
+    return _l;
+  }
+
+  ///  Return list<String> from map<String, Int>.
+  List<String> mapToListI(Map<String, int> thisMap) {
+    List<String> _l = [];
+    thisMap.forEach((k, v) {
+      String _s = '';
+      _s = '$k $v';
       _l.add(_s);
     });
     return _l;

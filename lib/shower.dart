@@ -26,13 +26,17 @@ import 'dart:math';
 
 //  TODO :  21 matches,  add one more to make it even count.
 
+///  devBox is and example of a funny way to solve a problem, It works, but:
+///  it is NotElegant.  It is not best way to solve matrix - addBox problem.
+///  This should be deprecated; boxServe is much more elegant.
 ///  Show Lists, like devNotes in nice column-box in console.
 ///  Can now handle 2, 3 and 4 column cases, and is common-usage function.
 ///  TODO  Add better row / height decision.
 ///  #QUEST : Maybe these 2-3-4 devBox functions can be combined to one, and
 ///  handle 2-3-4 with parameters. Did it once, but was ugly.
 ///  TODO  Make this a class.  Add: Dartlang app  DAWO 0.0.7 to row[o]end
-StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
+///  190 rows.  Add header and footer in List<String> _hfL
+StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList, int forceHeight) {
   StringBuffer _retBuf = new StringBuffer();
   final int sW = 210; //  Screen width.
   String borderS = ' | '; //  In 4 columns is smaller.
@@ -113,6 +117,8 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
       tuneColumnList(bColonList, columnTwoWidth);
 
       /// Combine short List-rows to #Long-String and add borderMarks.
+      /// Add header and footer Strings
+      twoBoxL.add(_hfL[0]);
       twoBoxL.add(topRim);
       for (var c = 0; c < twoBoxHeight; c++) {
         String firstData = aColonList[c];
@@ -121,9 +127,13 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
         twoBoxL.add(longS);
       }
       twoBoxL.add(botRim);
+      twoBoxL.add(_hfL[1]);
       twoBoxL.forEach(print);
       //  Write it all to StringBuffer;
+      //  _retBuf.writeAll(twoBoxL);
+      _retBuf.write(_hfL[0]);
       _retBuf.writeAll(twoBoxL);
+      _retBuf.write(_hfL[1]);
       _retBuf.write(' ');
       print(' ');
     } //  --  inList length == 2
@@ -153,6 +163,8 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
       tuneColumnList(eColonList, columnThreeWidth);
 
       ///  Form the actual matrix for printing.
+      //  add header and footer
+      twoBoxL.add(_hfL[0]);
       threeBoxL.add(topRim);
       for (var c = 0; c < threeBoxHeight; c++) {
         String fData = cColonList[c];
@@ -162,6 +174,7 @@ StringBuffer devBox(String caller, List<List<String>> inList, int forceHeight) {
             '$borderS $fData $borderS $sData $borderS $tData $borderS';
         threeBoxL.add(longS);
       }
+      twoBoxL.add(_hfL[1]);
       threeBoxL.add(botRim);
       threeBoxL.forEach(print);
       //  Write it all to StringBuffer;
@@ -411,9 +424,7 @@ List<String> effortTable(
       }
     }
   }
-
   List<String> sL = [];
-
   //  TODO  check for int 1-9
   //  Add to sL in numeric-high order
 
@@ -432,6 +443,7 @@ List<String> effortTable(
   return _retL;
 } //  -----  effortTable
 
+///  NO!!!  Testing if we can #deprecated this
 ///  Screen-sized matrix pierced with staggered list elements.
 ///  TODO  change all box-methods to use Map<String,String>
 ///  Usage: Who is calling this:  Effort-ShowUserDiagonal
@@ -463,13 +475,16 @@ List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
       _ol.add(ts);
       //  empty String
     } //  ---------------    Items in one list.
-    cInd + 6; //  extra tick.
+    cInd + 6; //  extra tick to move column-pos 6 right.
     _ol.add(
         '.--------------------------------'); //TODO  Make something more visible and useful.
   } //  -----------------    All incoming lists.3
   return _ol;
 } //  -----  iterableDiagonal
 
+
+
+///  NO success::  No usages??  Trying to comment this out!!
 ///  List and Map versions of this method
 ///  Version, that uses Map in incoming data.  ******************** map ***
 ///  Screen-sized matrix pierced with staggered list elements.
@@ -518,5 +533,6 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
   _ol.add(botLine);
   return _ol; //  ---------- return type:   List<String>
 }
+
 
 //

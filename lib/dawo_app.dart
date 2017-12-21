@@ -70,7 +70,7 @@ class DawoApp extends BaseStruct {
   //  like:  ":DAWO-APP:";///  must initialize StringBuffer here
   String seal;
   //  or this emblem.StringBuffer buf = new StringBuffer();
-  final String emblem = ':D-A:';
+  final String emblem = ':DA:';
   // like:  "      ";  3-5-7 empty marks or something visible.
   String indent;
   String master; //  Object that owns this.
@@ -247,8 +247,8 @@ class DawoApp extends BaseStruct {
     connector.roll();
 
     appRollMissions(':DA:-roll:'); //
-    rollStream(':D-A:roll:2');
-    devStream(':D-A:roll:3'); //  TODO  Temp  devStream rolled
+    rollStream(':DA:roll:2');
+    devStream(':DA:roll:3'); //  TODO  Temp  devStream rolled
     show('noPrint, buf, test');
     done();
     //  code here
@@ -271,35 +271,35 @@ class DawoApp extends BaseStruct {
     ///  Added 3. parameter, forceHeight
     ///  NOTE packDawo gets map printed.
     print(packDawoMission.placardM);
-    List list1 = packDawoMission.report('C:dawoApp-:rM:', true);
-    List info1 = tl.mapToList(packDawoMission.say);
-    devBox('By; dawoApp-:rM:', [list1, info1], 10);
+    List list1 = packDawoMission.report('C:dawoApp:rM:', true);
+    List info1 = tl.mapToFineList(packDawoMission.say, 10, 80);
+    devBox('By; dawoApp:rM:', ['* header *', '* footer *'], [list1, info1], 10);
     print(packDawoMission.placardM);
 
     print(helsinkiMission.placardM);
-    List list2 = helsinkiMission.report('C:dawoApp-:rM:', _pB);
-    List info2 = tl.mapToList(helsinkiMission.say);
-    devBox('By; dawoApp-:rM:', [list2, info2], 10);
+    List list2 = helsinkiMission.report('C:dawoApp:rM:', _pB);
+    List info2 = tl.mapToFineList(helsinkiMission.say, 10, 80);
+    devBox('By; dawoApp:rM:', ['* header *', '* footer *'], [list2, info2], 10);
 
     print(dartlangMission.placardM);
-    List list3 = dartlangMission.report('C:dawoApp-:rM:', _pB);
-    List info3 = tl.mapToList(dartlangMission.say);
-    devBox('By; dawoApp-:rM:', [list3, info3], 10);
+    List list3 = dartlangMission.report('C:dawoApp:rM:', _pB);
+    List info3 = tl.mapToFineList(dartlangMission.say, 10, 80);
+    devBox('By; dawoApp:rM:', ['* header *', '* footer *'], [list3, info3], 10);
 
     print(myMusicMission.placardM);
-    List list4 = myMusicMission.report('C:dawoApp-:rM:', _pB);
-    List info4 = tl.mapToList(myMusicMission.say);
-    devBox('By; dawoApp-:rM:', [list4, info4], 10);
+    List list4 = myMusicMission.report('C:dawoApp:rM:', _pB);
+    List info4 = tl.mapToFineList(myMusicMission.say, 10, 80);
+    devBox('By; dawoApp:rM:', ['* header *', '* footer *'], [list4, info4], 10);
 
     print(myTimeMission.placardM);
-    List list5 = myTimeMission.report('C:dawoApp-:rM:', _pB);
-    List info5 = tl.mapToList(myTimeMission.say);
-    devBox('By; dawoApp-:rM:', [list5, info5], 10);
+    List list5 = myTimeMission.report('C:dawoApp:rM:', _pB);
+    List info5 = tl.mapToFineList(myTimeMission.say, 10, 80);
+    devBox('By; dawoApp:rM:', ['* header *', '* footer *'], [list5, info5], 10);
 
     print(nationalParksMission.placardM);
-    List list6 = nationalParksMission.report('C:dawoApp-:rM:', _pB);
-    List info6 = tl.mapToList(nationalParksMission.say);
-    devBox('By; dawoApp-:rM:', [list6, info6], 10);
+    List list6 = nationalParksMission.report('C:dawoApp:rM:', _pB);
+    List info6 = tl.mapToFineList(nationalParksMission.say, 10, 80);
+    devBox('By; dawoApp:rM:', ['* header *', '* footer *'], [list6, info6], 10);
 
     _flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
     // roll all chores, that are in mission
@@ -333,7 +333,7 @@ class DawoApp extends BaseStruct {
     //  calling it with dawoApp class properties
     store.demandStream(
         //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
-        ':dawoApp-r:s:',
+        ':dawoAppr:s:',
         tl.mapToList(pack),
         'appListener');
 
@@ -351,31 +351,32 @@ class DawoApp extends BaseStruct {
     //  When using : StrInList in tools:
     //  _queryL.addAll(tl.StrInList(dev.admN, 'schedule'));
     //  store demandStream acts nicely with 0-length list
-    store.demandStream(':dawoApp-r:s:ADM:', _queryL, 'appListener');
+    store.demandStream(':dawoAppr:s:ADM:', _queryL, 'appListener');
     //  TODO Stream: meaningful : streams from doneL / devN important
     _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }
 
   ///  Calling boxServe-class for info.
   void box(String caller) {
-    buf.writeln(':dapp:box:start: C:$caller 123456789-23456789-23456788');
-    print('-->>-->>-- :dapp:box:start: C:$caller  -->>-->>-- ');
+    buf.writeln(':da:box:start: C:$caller 123456789-23456789-23456788');
+    print('-->>-->>-- :da:box:start: C:$caller  -->>-->>-- ');
     //  use: boxServe  OR  create own class here
     //  TODO  set min-max values
     final int _sw = 190; //  screen width, changed later =>
     final int _rc = 37; //  row count
     //  ???  Keep matrix here on callers side all the time
     List<String> _dapMatrix = new List(_rc);
-    String boxHeader = ':dap:box:';
+    String boxHeader = ':da:box:';
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
     //  :BUG:  Clear old lists first. ??
 
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':dap:box: ', ':dap:box:'); //  :BUG: C: $caller');
+    boxServe.construct(':da:box: ', ':da:box:'); //  :BUG: C: $caller');
 
     int r9 = 9; //  row anchor
 
+    ///  Method cascades makes this look nicer.
     boxServe.aHeader(1, 4, '* *  States * * ');
     boxServe.aBox(2, 7, 6, 16, tl.mapToListB(st));
 
@@ -463,7 +464,7 @@ class DawoApp extends BaseStruct {
   void _flowC(String msg, bool p) {
     ///  call flowServe with #LOCAL variables
     ///  :DAWO-APP:  is too long.
-    flowServe(':D-A:', out.outTr, msg, p);
+    flowServe(':DA:', out.outTr, msg, p);
   }
 } //  ----------  class DawoApp
 
@@ -471,7 +472,7 @@ class DawoApp extends BaseStruct {
 ///  Using new outBufM Map
 ///  TODO  Make this show in proper screen areas with devBox.
 void outBuffersPrint(String caller, String notCalled) {
-  print(' -->>-->>----  :D-A:   out.outBuffers  by: $caller  -->>-->>-- ');
+  print(' -->>-->>----  :DA:   out.outBuffers  by: $caller  -->>-->>-- ');
   int i = 0;
   int mLength = out.outBufM.length;
   for (var x = 0; x < mLength; x++) {
@@ -484,7 +485,7 @@ void outBuffersPrint(String caller, String notCalled) {
     print('* * * * * * * * * *    $_bufNameS   done  * * * * * * *  ');
   }
 
-  print('     --<<--<<----  :D-A:   out.outBuffers  C: $caller  done ');
+  print('     --<<--<<----  :DA:   out.outBuffers  C: $caller  done ');
 }
 
 ///  Keeping historical aso. info about dawo.

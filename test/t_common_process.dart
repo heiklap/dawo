@@ -10,7 +10,7 @@ import 'package:dawo/mis/chore.dart';
 
 void main() {
   print('............ t_common_process  ..................................');
-  var ch = new CommonChore('testChoreProcess', 'text process');
+  var ch = new CommonChore('testChoreProcess', ':tCommonProcess:', 'text process');
   print('............ t_common_process  ..................................');
   ch.buf.writeln(' t_common_process rolling  ');
   print('............ t_common_process  next: ch_roll  ..................');

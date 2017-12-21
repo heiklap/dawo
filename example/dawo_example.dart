@@ -17,9 +17,11 @@ import 'package:dawo/beta.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
+import 'package:dawo/tools.dart';
 
 import 'package:dawo/mis/camp.dart';
 import 'package:dawo/mis/chore.dart';
+import 'package:dawo/mis/missions.dart';
 
 import 'package:dawo/corp/bind.dart';
 import 'package:dawo/corp/connector.dart';
@@ -46,7 +48,7 @@ var awesome = new Awesome();
 //  awesome.
 
 //  Used once here to run method roll()
-var ch = new CommonChore('ChoreInDawoExample', 'Test-Chore');
+var ch = new CommonChore('ChoreInDawoExample','dawoExample', 'Test-Chore');
 
 //  create classes, that do not already have an instance inside dawo::
 var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
@@ -74,8 +76,8 @@ String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
 ///  Every dart program starts it's execution from main method.
 main() {
   glb.dawoLogo.forEach(print);
-  devBox(':d:ex:main:', [glb.keyWords, glb.keyWordsSmall], 28);
-  devBox('By:dev:versions:', [dev.later, dev.version008], 0);
+  devBox(':d:ex:main:', ['* header *', '* footer *'], [glb.keyWords, glb.keyWordsSmall], 28);
+  devBox('By:dev:versions:',['* header *', '* footer *'],  [tl.mapToFineList(dev.later, 75, 20) ,tl.mapToFineList(dev.version008 , 75, 20)], 0);
   var sw = new Stopwatch()..start();
   DateTime start = new DateTime.now();
 
@@ -109,15 +111,15 @@ main() {
   print(stop.difference(start));
   print('FlowServe calls::   $flowI ');
   boxServeTemplate();
-
-  print(
-      '.............. :glb:boxServe:buf: length and names  ..............................');
+  packDawoMission.joyChr.box(':dawoExample:call:joyChr:box:');
+  print('.......... :glb:boxServe:buf: length and names  ................');
   print(glb.boxServeBuffers.length);
   for (var z in glb.boxServeBuffers.keys) {
     print(glb.boxServeBuffers[z].length);
     print(z);
   }
   //  glb.boxServeBuffers.keys.forEach(print);
+
 
   //print buffer: print(glb.boxServeBuffers[':dawoHist:dailyAction:friday:6']);
   print('---- main done   ');
@@ -200,6 +202,7 @@ void exampleMission() {
   exInfo('  - -:dw:ex: -----  rolling :courier:mission: opFunc  done ---\n');
   scout.close(); //  No  parameters.
   scout.report();
+
   exInfo('    ==<<==<<==    rolling :packDawo:Mission: done    ==<<==<<==');
   //  When you print row below, you can see all methods.
   //  packDawoMission.
@@ -211,6 +214,7 @@ void lonelySampleChore() {
 
   ///  Sample lonely Chore, that is created here
   ch.roll();
+  ch.box(':app:chore:play:');
   exInfo('    ==<<==<<==    rolling lonelySampleChore: done    ==<<==<<==');
 }
 

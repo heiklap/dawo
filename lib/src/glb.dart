@@ -52,7 +52,7 @@ class GlobalClass {
     ':C: connector   :con: :corporate: clause-14 :courier: chore   chrs_?',
     ':C: camp-0 !!   code-11 ',
     ':D:3 dawoApp   devBox  :dawolang:analyze:EXTRACTED:  diag  diagonal',
-    ':D:3   DB-8    DAY-45?!',
+    ':D:3   DB-8    DAY-45?!  !?:done:0    ',
     ':E: -   :effort: eff enc=encode  EQU=equipment-5  (envelope-0)  ',
     ':F: -   FIND  ',
     ':G: -    :glb: = Global   GRANT-3',

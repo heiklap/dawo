@@ -110,13 +110,13 @@ class Mission {
 
   ///  Create default CommonChores for every Mission.
   ///  We have plenty of these, so let's add them!
-  CommonChore learnChr = new CommonChore('LearnChr', 'Yes, I learn');
-  CommonChore joyChr = new CommonChore('JoyChr', 'Yes, I have Joy');
-  CommonChore actChr = new CommonChore('ActChr', 'Yes, I act');
-  CommonChore peopleChr = new CommonChore('PeopleChr', 'Get social!');
-  CommonChore placeChr = new CommonChore('PlaceChr', 'Places I go places');
-  CommonChore seasonChr = new CommonChore('SeasonChr', 'Seasons differ!');
-  CommonChore showChr = new CommonChore('ShowChr', 'Yes, I show');
+  CommonChore learnChr = new CommonChore('LearnChr', ':masterName:', 'Yes, I learn');
+  CommonChore joyChr = new CommonChore('JoyChr', ':masterName:', 'Yes, I have Joy');
+  CommonChore actChr = new CommonChore('ActChr', ':masterName:', 'Yes, I act');
+  CommonChore peopleChr = new CommonChore('PeopleChr', ':masterName:', 'Get social!');
+  CommonChore placeChr = new CommonChore('PlaceChr', ':masterName:', 'Places I go places');
+  CommonChore seasonChr = new CommonChore('SeasonChr', ':masterName:', 'Seasons differ!');
+  CommonChore showChr = new CommonChore('ShowChr',':masterName:',  'Yes, I show');
 
   /// Store all data-maps of this mission-instance:
   Map<String, Map<String, String>> clayMap = {};
@@ -124,8 +124,8 @@ class Mission {
   //  State Map, Missions upper level state, used in init, done.
   Map<String, bool> st = {
     'wake': false,
-    'work': false,
-    'con': false, //  For connector.
+    'work': false,  //true when build is done.
+    'con': false, //  For connector.  in build: true.
     'pause': false,
     'done': false,
   };
@@ -208,8 +208,10 @@ class Mission {
 
   ///  Building mission with it's chores.
   void build(String caller) {
+    st['work'] = true;
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
+    //  print(':BUG:DEBUG:build:Mission:build:  $name  C: $caller');
     //
     _flowC('-->-m-->         :M:b:         $name   -->-m-->  ', _pB);
     _flowC('-->-m-->    construct default Chores. For: $name -->-m-->  ', _pB);
@@ -233,7 +235,7 @@ class Mission {
     connector.join(name, placardM, connectorMsg, name);
 
     connector.roll();
-
+    st['con'] = true;
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
     _flowC('-->-m-->    choreL add-all:  $name       ', _pB);
@@ -322,7 +324,10 @@ class Mission {
     ///  glorious coding. Once again;  choreL and default chores
     if (detailsB) {
       print('\n *** :M: report details : choreL : For mission: $name ***');
-      choreL.forEach((x) => print(x.rowInfo()));
+      choreL.forEach((x) {
+        //  print(x.rowInfo());
+        x.reportList('MissionReport:').forEach(print);
+      });
 
       print('\n *** :M: report details clayMap chores For mission: $name ***');
       //  clayMap.forEach((k, v) => print('$k, $v'));
@@ -331,6 +336,10 @@ class Mission {
     }
     return _l;
   } //  ----------  report
+  ///  all done-methods should rename to:  terminate
+  void done(){
+    print(':BUG:ERROR:  Mission do not have :done: method.in.use');
+  }  // Not used, not called.
 
 //  TODO  teamNext   coming?:   returning some finnish day names aso.
   /// Should include some international values from other languages.

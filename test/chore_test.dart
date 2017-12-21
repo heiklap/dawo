@@ -20,7 +20,7 @@ void main() {
 
 void testChore() {
   print('==>>==>>==== ch_chore test commonChore roll ==>>==>>==== ');
-  var ch = new CommonChore('test-chore', 'test-chore-info');
+  var ch = new CommonChore('test-chore', ':testChore:', 'test-chore-info');
   ch.buf.writeln('hello world');
 
   print('\n -----------  clay List test  ----------------------');
@@ -60,11 +60,11 @@ void testPackDawoChore() {
   List<String> _fl = packDawoMission.choreL[5].reportList(':chore-test:');
   List<String> _gl = packDawoMission.choreL[6].reportList(':chore-test:');
 
-  devBox('By:CHORE-TEST:', [_al, _bl], 10);
-  devBox('By:CHORE-TEST:', [_cl, _dl], 10);
-  devBox('By:CHORE-TEST:', [_el, _fl, _gl], 10);
+  devBox('By:CHORE-TEST:', ['* header *', '* footer *'], [_al, _bl], 10);
+  devBox('By:CHORE-TEST:', ['* header *', '* footer *'], [_cl, _dl], 10);
+  devBox('By:CHORE-TEST:', ['* header *', '* footer *'], [_el, _fl, _gl], 10);
   print('------------  chore-test chores devBox done -------------------- \n');
-  devBox('By:CHORE-TEST:', [_cl, _dl, _al, _bl], 10);
+  devBox('By:CHORE-TEST:', ['* header *', '* footer *'], [_cl, _dl, _al, _bl], 10);
 
   print('---- one more  chore-test chores devBox done ------------------- \n');
   print('............. by test chore  ..........................');

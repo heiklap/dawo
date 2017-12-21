@@ -134,7 +134,7 @@ class LearnDartlang {
     'c': ' ',
     'Class': ' ',
     'd': ' ',
-    'e': ' ',
+    'exclusive': 'When I forget everything dart, and remember just 1 thing, this thing is: endIndex is exclusive. ',
     'Function': ' ',
     'Fail': ' ',
     'Type Generic': 'Because Darts generic types are covariant... ',

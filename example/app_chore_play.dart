@@ -1,6 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  app_chore_play.dart   version:  0.0.6.  27.11.2017
+//  hist:  7.9.2017
 
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/rumba.dart';
@@ -18,13 +19,55 @@ var mill = new Mill();
 
 var mission = new Mission('mission-class', 'test-in:de-test.dart');
 
-var ch = new CommonChore('chore-class', 'Testing in app-bLib-chore-play');
+var ch = new CommonChore('chore-class', 'appChorePlay', 'Testing in app-bLib-chore-play');
 
 var dawoApp = new DawoApp(':example ', 'Just rumbaTest.dart');
 var rumba = new Rumba();
 
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
+  //  choreStuff();
+    usualChoreStuff();  //  rumba.dance(dawoApp);  dawoApp.roll();
+  //  otherStuff();
+  //  2.5 screen output =>
+
+  helsinkiMission.joyChr.roll();
+  helsinkiMission.joyChr.box(':app:chore:play:');
+
+  packDawoMission.learnChr.roll();
+  packDawoMission.learnChr.box(':app:chore:play:example:');
+
+  dartlangMission.peopleChr.roll();
+  dartlangMission.peopleChr.box(':app:chore:play:example:');
+
+  myTimeMission.actChr.roll();
+  myTimeMission.actChr.box(':app:chore:play:example:');
+
+  myMusicMission.placeChr.roll();
+  myMusicMission.placeChr.box(':app:chore:play:example:');
+
+  nationalParksMission.seasonChr.roll();
+  nationalParksMission.seasonChr.box(':app:chore:play:example:');
+}
+
+
+void choreStuff(){
+  // using ch Chore
+  ch.roll();
+  ch.info;
+  ch.rowInfo();
+  ch.reportList(':app:chore:play:example:');
+  print(ch.say);
+  ch.opCom();
+  ch.opJoint();
+  print(ch.st);
+}
+
+
+
+
+void usualChoreStuff() {
+
   String xs = '';
   xs = tl.changeLetter('1234567890', 5, 'x');
   print(xs);

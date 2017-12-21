@@ -67,37 +67,47 @@ class Dev {
   List<String> howToN = ['* * Team HowTo notes: * * '];
   List<String> secN = ['* * Team sec notes: * * '];
 
+  ///  Changed from List to Map in 0.0.7. version
+  ///  Changes #maybe planned to dawoPackage.
+  ///  V: 1-9 = value, E = effort,  D:  = done
+  Map<String, String> later = {
+      '   * * *  next List to plan Dawo 009 aso changes.   * * * ': '--- --- --- ',
+      'LATER: Internal systematics. Most critical improvements.': 'V:5 E:6 D:0',
+      'LATER: ?   UI?                                              ?.': 'V:5 E:5 D:0',
+      'LATER: FLOW:  Real work-flow for chore': 'V:5 E:8 D:0',
+      'LATER: UI:  Choose mission / chore at start.': 'V:5 E:8 D:0',
+      'LATER: DB  propably Mongo There is Pub package                    .': 'V:5 E:6 D:0',
+      'LATER: :ad:promo: Corporation:   real store & resolve :bind:bing: ': 'V:6 E:6 D:0',
+      'LATER: Server-client. Simple server - client.                     ': 'V:2 E:2 D:0',
+      'LATER: Server-client.  Angel package          ': 'V:6 E:3 D:0',
+      'LATER: FIX: Make debBox a class; long functions are hard to manage.': 'V:1 E:8 D:-1',
+      'LATER: DB: Local storage for user own data.                   ': 'V:5 E:4 D:0',
+      'LATER: WEB presentation, dawo-web-hooks for here-is-text-output.': 'V:7 E:8 D:0',
+      'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ': 'V:5 E:4 D:0',
+};
 
-  List<String> later = [
-      '   * * *  next List to plan Dawo 009 aso changes.   * * * ',
-      'LATER: Internal systematics. Most critical improvements.',
-      'LATER: ?   UI?                                              ?.',
-      'LATER: Real work-flow for chore',
-      'LATER: Choose mission / chore at start.',
-      'LATER: DB  propably Mongo                                         .',
-      'LATER: Corporation:  :ad:promo: real store & resolve :ind:bing: ',
-      'LATER: Server-client. Simple server and propably Angel package         ',
-      'LATER: Make debBox a class; long functions are hard to manage.',
-      'LATER: Local storage for user own data.                                 ',
-      'LATER: WEB presentation, dawo-web-hooks for here-is-text-output.',
-      'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ',
-  ];
-
-  List<String> version008 = [
-    '   * * *  plan Dawo 008changes.   * * * ',
-    '008: :BIND:PING: simulation :promo: -in boxServe   ',
-    '008: User :promo:simulated data for #dayActions. Server-client ?.',
-    '008: #LANG #say simulation /:ad: advertising commercial.             ',
-    '008: ouput clean after: con  corp console schedule.',
-    '008: more dawoApp class and output, clean and reshape.',
-    '008: ? dawo-State boxServe presentation with 12 boxes.',
-    '008: All Dawo-Objects presentation with box_serve.',
-    '008: :ad: Advertising / simulation for only-commercial-version stuff.',
-    '008: SOON: LOOP: say - analyze - con - effort - affair - schedule.',
-    '008: Example: #Huilo: #Hypertext Unfrendly-Incursion-Level #Observer.',
-    '008: ?  howTo get #versin, #name to devBox aso?  via dev or dawoApp    ?',
-    '008: ?   Fixes and modifications to previuous version.             ?',
-  ];
+  ///  Changed from List to Map in 0.0.7. version
+  ///  ///  V: 1-9 = value, E = effort,  D:  = done
+  ///  Changes likely planned to dawoPackage after 0.0.7 version.
+  Map<String, String> version008 = {
+    '   * * *  plan Dawo 008changes.   * * * ': 'V:3 E:3 D:0',
+    '008: :BIND:PING: simulation :promo: :demo:  -in boxServe   ': 'V:3 E:3 D:0',
+    '008: User :promo:simulated :data for #dayActions. Server-client ?.': 'V:3 E:3 D:0',
+    '008: :demo: #LANG #say simulation /:ad: advertising commercial .             ': 'V:3 E:3 D:0',
+    '008: Clean: :ouput clean after: :con  corp console schedule.': 'V:3 E:3 D:0',
+    '008: Show: ? dawo-State boxServe :presentation: with 12 boxes.': 'V:3 E:3 D:0',
+    '008: Show: ll Dawo-Objects :presentation: with box_serve.': 'V:7 E:5 D:0',
+    '008: :demo::ad: Advertising / simulate  for only-commercial-version stuff.': 'V:8 E:6 D:0',
+    '008: LOOP:  SOON:  say - analyze - con - effort - affair - schedule.': 'V:8 E:6 D:0',
+    '008: Example: #Huilo: #Hypertext Unfrendly-Incursion-Level #Observer.': 'V:5 E:3 D:0',
+    '008: HowTo get #version, #name to devBox aso?  via dev or dawoApp    ?': 'V:2 E:3 D:0',
+    '008: Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
+    '008: MessFix:   Fixes and modifications to previuous version.             ?': 'V:2 E:6 D:0',
+    '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
+    '008++ Chore modification: Part: 1.             ?': 'V:5 E:7 D:2',
+    '008++devBox  Added header and footer rows.             ?': 'V:1 E:1 D:9',
+    '008++ListToMap: dawoDev version008 and later are now Maps.             ?': 'V:1 E:1 D:9',
+};
 
   ///  To add developer notes.
   void addNote(List l, String s) {
@@ -234,9 +244,10 @@ class Dev {
   ///  More demonstrative devBox presentation method.
   void showNotes(String caller) {
     print('\n ------->>-->>--  dev.showNotes  by: $caller ------->>-->>--   ');
-    devBox('By:dev:', [dev.admN, dev.devN], 0);
-    devBox('By:dev:', [dev.innoN, dev.howToN, dev.secN], 0);
-    devBox('By:dev:versions:', [dev.later, dev.version008], 0);
+    devBox('By:dev:', ['* header *', '* footer *'], [dev.admN, dev.devN], 0);
+    devBox('By:dev:', ['* header *', '* footer *'], [dev.innoN, dev.howToN, dev.secN], 0);
+    //  :debug: is 75, 20  good??
+    devBox('By:dev:versions:', ['* header *', '* footer *'], [tl.mapToFineList(dev.later, 75, 20) ,tl.mapToFineList(dev.version008 , 75, 20)], 0);
     print('--<<--<<------------  dev.showNotes  --<<--<<------------ \n  ');
   }
 

@@ -231,8 +231,8 @@ class Connector extends BaseStruct {
     _dbL2.addAll([inMsgL, tl.mapToList(bind.bindM)]);
     print('--------------- connector report devBox:: -------------------');
     //  presenting devBox in 2 x 2 table.
-    devBox(':con:r:1:', _dbL, 0);
-    devBox(':con:r:2:', _dbL2, 0);
+    devBox(':con:r:1:', ['* header *', '* footer *'], _dbL, 0);
+    devBox(':con:r:2:', ['* header *', '* footer *'], _dbL2, 0);
     print('--<----------<--- connector report done ---<--------------<-----');
     return ['this', 'list', 'is', 'vain']; //  No need for list??
   }
