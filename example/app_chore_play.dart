@@ -15,22 +15,42 @@ import 'package:dawo/tools.dart';
 
 //  creating instances of classes in upper level
 
+///  Mill is not functional yet
 var mill = new Mill();
 
 var mission = new Mission('mission-class', 'test-in:de-test.dart');
 
+///  NOTE:  chore #master field must have name of mission-with-say field.
 var ch = new CommonChore('chore-class', 'appChorePlay', 'Testing in app-bLib-chore-play');
 
+///  Soon (in next version) instance of dawoApp is created inside Dawo
 var dawoApp = new DawoApp(':example ', 'Just rumbaTest.dart');
 var rumba = new Rumba();
 
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
   //  choreStuff();
-    usualChoreStuff();  //  rumba.dance(dawoApp);  dawoApp.roll();
+  //  usualChoreStuff();  // including:  rumba.dance(dawoApp);  dawoApp.roll();
+
+  ///  This is independent command, and can run alone.
+  //  but it is obligatory / demand for chore.render.
+    dawoApp.roll(); //  hklTry
+
+  ///  NOTE:  can this be run independently:  Yes, if :
+  ///  master in chore is set to: existing mission with say-field.
+  ///  render-function in chore.dart
+  renderChore();
+
+  //  sixChoreBox();
   //  otherStuff();
   //  2.5 screen output =>
+}
 
+
+
+void sixChoreBox() {
+
+  print('-->-->--  6 chore ;roll:box:  -->-->--');
   helsinkiMission.joyChr.roll();
   helsinkiMission.joyChr.box(':app:chore:play:');
 
@@ -48,6 +68,8 @@ main() {
 
   nationalParksMission.seasonChr.roll();
   nationalParksMission.seasonChr.box(':app:chore:play:example:');
+
+  print('--<--<--  6 chore ;roll:box:  done --<--<--');
 }
 
 

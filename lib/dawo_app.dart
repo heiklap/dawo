@@ -48,7 +48,7 @@ class DawoApp extends BaseStruct {
   String name = 'DawoApp';
   String version = '0.0.7';
   String by = 'HKL';
-  final String actor = ':DAWO-APP:';
+  final String actor = ':DAWO:APP:';
   String info = 'Innovative & educational small data-handler experimentation.';
 
   /// Fields describe actions in connector and binding.
@@ -150,31 +150,31 @@ class DawoApp extends BaseStruct {
     initChoreSystem(); //  just ome notes to chore...
 
     /// Write something #WakeUpSleepyHead to all out.out-buffers.
-    out.outHeader.writeln('* * * :out.outHeader:buf: -dawoApp-build:  * * * ');
-    out.outTl.writeln('* * * :out.outTl:buf:  -dawoApp-build:  * * * ');
-    out.outTMid.writeln('* * * :out.outTMid:buf:  -dawoApp-build:  * * * ');
-    out.outTr.writeln('* * * :out.outTr:buf:   -dawoApp-build:  * * * ');
+    out.outHeader.writeln('* * * :out.outHeader:buf: :dawoApp:build:  * * * ');
+    out.outTl.writeln('* * * :out.outTl:buf:  :dawoApp:build:  * * * ');
+    out.outTMid.writeln('* * * :out.outTMid:buf:  :dawoApp:build:  * * * ');
+    out.outTr.writeln('* * * :out.outTr:buf:   :dawoApp:build:  * * * ');
 
-    out.outMTop.writeln('* * * :out.outMTop:buf  -dawoApp-build:  * * * ');
-    out.outMid.writeln('* * * :out.outMid:buf:  -dawoApp-build:  * * * ');
-    out.outMBot.writeln('* * * :out.outMBot:buf:  -dawoApp-build:  * * * ');
+    out.outMTop.writeln('* * * :out.outMTop:buf  :dawoApp:build:  * * * ');
+    out.outMid.writeln('* * * :out.outMid:buf:  :dawoApp:build:  * * * ');
+    out.outMBot.writeln('* * * :out.outMBot:buf:  :dawoApp:build:  * * * ');
 
-    out.outBl.writeln('* * * :out.outBl:buf  -dawoApp-build:  * * * ');
-    out.outBr.writeln('* * * :out.outBr:buf:  -dawoApp-build:  * * * ');
-    out.outFooter.writeln('* * * :out.outFooter:buf: -dawoApp-build:  * * * ');
+    out.outBl.writeln('* * * :out.outBl:buf  :dawoApp:build:  * * * ');
+    out.outBr.writeln('* * * :out.outBr:buf:  :dawoApp:build:  * * * ');
+    out.outFooter.writeln('* * * :out.outFooter:buf: :dawoApp:build:  * * * ');
 
     out.outHeader.writeln('       * * * : app-roll stuff:  * * * ');
     out.outTl.writeln('       * * * : rumba stuff :  * * * ');
-    out.outTMid.writeln('* * * : mission stuff:  -dawoApp-build:  * * * ');
+    out.outTMid.writeln('* * * : mission stuff:  :dawoApp:build:  * * * ');
     out.outTr.writeln('* * * : dawoApp stuff :  * * * ');
 
-    out.outMTop.writeln('* * * :packDawo stuff : -dawoApp-build:  * * * ');
-    out.outMid.writeln('     * * * :dartlang stuff:  -dawoApp-build:  * * * ');
-    out.outMBot.writeln('   * * * : helsinki stuff:  -dawoApp-build:  * * * ');
+    out.outMTop.writeln('* * * :packDawo stuff : :dawoApp:build:  * * * ');
+    out.outMid.writeln('     * * * :dartlang stuff:  :dawoApp:build:  * * * ');
+    out.outMBot.writeln('   * * * : helsinki stuff:  :dawoApp:build:  * * * ');
 
-    out.outBl.writeln('* * * : myMusic-stuff :  -dawoApp-build:  * * * ');
-    out.outBr.writeln('* * * : myTime stuff :  -dawoApp-build:  * * * ');
-    out.outFooter.writeln('* * * :natParks stuff: -dawoApp-build:  * * * ');
+    out.outBl.writeln('* * * : myMusic-stuff :  :dawoApp:build:  * * * ');
+    out.outBr.writeln('* * * : myTime stuff :  :dawoApp:build:  * * * ');
+    out.outFooter.writeln('* * * :natParks stuff: :dawoApp:build:  * * * ');
     _flowC('  --<-da-<  :da:b:  build done', _pB);
   }
 
@@ -250,6 +250,7 @@ class DawoApp extends BaseStruct {
     rollStream(':DA:roll:2');
     devStream(':DA:roll:3'); //  TODO  Temp  devStream rolled
     show('noPrint, buf, test');
+    box(':dawo:app:roll:');
     done();
     //  code here
     return outMapBuffers;
@@ -333,7 +334,7 @@ class DawoApp extends BaseStruct {
     //  calling it with dawoApp class properties
     store.demandStream(
         //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
-        ':dawoAppr:s:',
+        ':dawoApp:rs:',
         tl.mapToList(pack),
         'appListener');
 
@@ -351,7 +352,7 @@ class DawoApp extends BaseStruct {
     //  When using : StrInList in tools:
     //  _queryL.addAll(tl.StrInList(dev.admN, 'schedule'));
     //  store demandStream acts nicely with 0-length list
-    store.demandStream(':dawoAppr:s:ADM:', _queryL, 'appListener');
+    store.demandStream(':dawoApp:rs:ADM:', _queryL, 'appListener');
     //  TODO Stream: meaningful : streams from doneL / devN important
     _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }

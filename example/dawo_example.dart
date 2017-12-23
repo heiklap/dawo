@@ -48,7 +48,8 @@ var awesome = new Awesome();
 //  awesome.
 
 //  Used once here to run method roll()
-var ch = new CommonChore('ChoreInDawoExample','dawoExample', 'Test-Chore');
+///  2. parameter must be class with name and say properties
+var ch = new CommonChore('ChoreInDawoExample','myMusicMission', 'Test-Chore');
 
 //  create classes, that do not already have an instance inside dawo::
 var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
@@ -77,7 +78,7 @@ String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
 main() {
   glb.dawoLogo.forEach(print);
   devBox(':d:ex:main:', ['* header *', '* footer *'], [glb.keyWords, glb.keyWordsSmall], 28);
-  devBox('By:dev:versions:',['* header *', '* footer *'],  [tl.mapToFineList(dev.later, 75, 20) ,tl.mapToFineList(dev.version008 , 75, 20)], 0);
+  devBox('By:dev:versions:',['* header *', '* footer *'],  [tl.mapToFineList(dev.later, 75, 20) ,tl.mapToFineList(dev.version008 , 75, 20)], 20);
   var sw = new Stopwatch()..start();
   DateTime start = new DateTime.now();
 
@@ -214,6 +215,8 @@ void lonelySampleChore() {
 
   ///  Sample lonely Chore, that is created here
   ch.roll();
+  ///  TODO  This chore do not have master field set.
+  ch.master = 'MyMusicMission';
   ch.box(':app:chore:play:');
   exInfo('    ==<<==<<==    rolling lonelySampleChore: done    ==<<==<<==');
 }

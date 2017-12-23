@@ -39,7 +39,10 @@ bool _pB = false; //  true for chore_test.dart;
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
 ///  buildMissions() fills this list. It is outside of the Class.
-List<Mission> missionL = [];
+//  List<Mission> missionL = []; deprecated => Map<String, Mission> missionM
+Map<String, Mission> missionM = {
+
+};
 
 /// NOTE:  Chore-list is inside this class.  Most outside activity to Chore, is
 /// accessed via Mission-class.
@@ -61,6 +64,9 @@ class Mission {
 // you avoid mess, that occurs, when class is used in mixin's.
 
   String name;
+  String toString(){
+    return name;
+  }
   String motto;
   String clause; //  Combination of #LANG words in sentence.
 
@@ -374,9 +380,9 @@ var nationalParksMission =
 ///  Show missions and their chores.
 void missionChoreReport(String caller) {
   print('-->>-->>----:M:  missionChoreReport  caller: $caller');
-  for (var x in missionL) {
-    print(x.name);
-    print(x.choreL);
+  for (var x in missionM.keys) {
+    print(missionM[x].name);
+    print(missionM[x].choreL);
   }
   print('--<<--<<----  missionChoreReport done caller: $caller');
 }
@@ -411,6 +417,7 @@ void buildMissions(String caller) {
   ///  new missionData.roll
   missionData.roll();
 
+  /*
   ///  Add Mission-objects to upper-level missionL List.
   missionL.addAll([
     packDawoMission,
@@ -420,19 +427,27 @@ void buildMissions(String caller) {
     myTimeMission,
     nationalParksMission
   ]);
+  */
+
+    ///  Add Mission-objects to upper-level missionM Map.
+    missionM.putIfAbsent('PackDawoMission', () => packDawoMission);
+    missionM.putIfAbsent('HelsinkiMission', () => helsinkiMission);
+    missionM.putIfAbsent('DartlangMission', () => dartlangMission);
+    missionM.putIfAbsent('MyMusicMission', () => myMusicMission);
+    missionM.putIfAbsent('MyTimeMission', () => myTimeMission);
+    missionM.putIfAbsent('NationalParksMission', () => nationalParksMission);
+
 
   /// .build adds default Chore's to missions
-  _flowC('-->-m-->    missionL forEach print-choreL   -->-m-->  ', _pB);
-//  hklTry   missionL.forEach((x) => x.build);
-  //  missionL.forEach(print);  //  =>  Instance of 'Mission'
+  _flowC('-->-m-->    missionM :all: print-choreL   -->-m-->  ', _pB);
 
   ///  Calling mission-chore report
   if (_pB) missionChoreReport('By: MissionBuildMissions');
 
-  _flowC('  <-m--<--  missionL forEach print-choreL   done   <-m--<--', _pB);
+  _flowC('  <-m--<--  missionM :all:print-choreL   done   <-m--<--', _pB);
 
-  _flowC('-->-m-->      missionL.forEach.build    -->-m-->  ', _pB);
-//  for (var x in missionL  ) {   //  NOT NOW !!!
+  _flowC('-->-m-->      missionM  :all:   build    -->-m-->  ', _pB);
+//  for (var x in missionM.keys  ) {   //  NOT NOW !!!
   packDawoMission
     .._init(':M:bms:')
     ..build(':M:bms:');
@@ -452,19 +467,19 @@ void buildMissions(String caller) {
     .._init(':M:bms:')
     ..build(':M:bms:');
 //  };
-  _flowC('  <-m--<--  missionL-forEach-build done   <-m--<-- ', _pB);
+  _flowC('  <-m--<--  missionM  :all:  build done   <-m--<-- ', _pB);
   //  TODO  make mission-chore report
   if (_pB) {
-    for (var x in missionL) {
-      String _misName = x.name;
+    for (var x in missionM.keys) {
+      String _misName = x;
       print('mis-name:  $_misName ');
-      for (var z in x.choreL) {
+      for (var z in missionM[x].choreL) {
         String _chrName = z.name;
         print('choreName:   $_chrName');
       }
     }
   }
-  _flowC('  <-m--<--  missionL forEach print-choreL done AGAIN <----<-- ', _pB);
+  _flowC('  <-m--<--  missionM forEach print-choreL done AGAIN <----<-- ', _pB);
 } //  -----  buildMissions
 
 ///  Creating instance of Mission and using it's methods.

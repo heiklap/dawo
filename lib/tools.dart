@@ -14,6 +14,7 @@
 library tools.dart;
 
 import 'dart:math';
+import 'package:intl/intl.dart';
 
 ///  Was statistics and getter practice.
 num toolsReadiness = 96;
@@ -405,7 +406,6 @@ class Tools {
 
     String formattedYmd = formatterYmd.format(now);
     //  print(formattedYmd); // something like 2013-04-20
-
     //  Hms
     var formatterHms = new DateFormat('Hms');
     String formattedHms = formatterHms.format(now);
@@ -416,7 +416,20 @@ class Tools {
     */
     //  testDateSlug();
     //  return dateTimeStampNow;
+    //  TODO  Handle 'Start::' aso. with String parameter.
     return 'Start::  $start ';
+  }
+
+  ///  Look at the comments in previous function.
+  ///  Output like:  2017-12-23  08:47:27
+  String stampDateTimePlain() {
+    var now = new DateTime.now();
+    var formatterYmd = new DateFormat('yyyy-MM-dd');
+    String formattedYmd = formatterYmd.format(now);
+    var formatterHms = new DateFormat('Hms');
+    String formattedHms = formatterHms.format(now);
+    var dateTimeStampNow = (' $formattedYmd  $formattedHms ');
+    return dateTimeStampNow;
   }
 
   ///  Small sleep-methods, to get time, to see, what is happening in tests.

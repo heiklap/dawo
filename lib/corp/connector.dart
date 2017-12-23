@@ -255,7 +255,7 @@ class Connector extends BaseStruct {
   ///  For connector to be able to refer callers data
   Map<String, Mission> joinM = {
     'PackDawoMission': packDawoMission,
-    'HelsinkiMission': dartlangMission,
+    'HelsinkiMission': helsinkiMission,
     'DartlangMission': dartlangMission,
     'MyMusicMission': myMusicMission,
     'MyTime mission': myTimeMission,

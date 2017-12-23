@@ -104,6 +104,10 @@ class Dev {
     '008: Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previuous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
+    '008++ INTL Tools stampDateTimePlain for:2017-12-23  08:47:27 ': 'V:1 E:1 D:7',
+    '008++ Chore: SCHEMA: flux: actions and answers in common roll-mill-loop ': 'V:8 E:8 D:1',
+    '008++ Chore modification: Part: 2. + box and example.': 'V:4 E:4 D:2',
+    '008++ Chore master-field to get Mission.say Mp for box.': 'V:3 E:2 D:7',
     '008++ Chore modification: Part: 1.             ?': 'V:5 E:7 D:2',
     '008++devBox  Added header and footer rows.             ?': 'V:1 E:1 D:9',
     '008++ListToMap: dawoDev version008 and later are now Maps.             ?': 'V:1 E:1 D:9',
@@ -230,6 +234,7 @@ class Dev {
       'Priority: rumba and web.',
       'Create all instances in the  ?? ri? lib.'
     ]);
+    innoN.add('Order - obey fields for master - servant objects. #chore.');
     innoN.addAll(['-Counters?', 'Mongo-DB', 'Indexed-DB', 'User-class']);
     innoN.add('#CallChain, to track call-route of every current command.');
     howToN

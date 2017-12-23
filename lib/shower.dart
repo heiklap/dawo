@@ -26,7 +26,7 @@ import 'dart:math';
 
 //  TODO :  21 matches,  add one more to make it even count.
 
-///  devBox is and example of a funny way to solve a problem, It works, but:
+///  devBox is an example of a funny way to solve a problem, It works, but:
 ///  it is NotElegant.  It is not best way to solve matrix - addBox problem.
 ///  This should be deprecated; boxServe is much more elegant.
 ///  Show Lists, like devNotes in nice column-box in console.
@@ -78,7 +78,9 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
     //  Widen this later to screen-width.
     String tr1 = '_devBox_C: $caller __';
     int tr1Length = tr1.length;
-    String dawoLogoS = '_Dartlang app  DAWO 0.0.7_';
+    ///  To get: time:  2017-12-23  09:02:16     _Dartlang app  DAWO 0.0.7
+    String _timeNow = tl.stampDateTimePlain();
+    String dawoLogoS = 'time: $_timeNow    _Dartlang app  DAWO 0.0.7_';
     int dawoLogoLength = dawoLogoS.length;
     //  :BUG: makes about 6 wide column error in box
     String padTopRim = tr1.padRight(sW - (dawoLogoLength + 6), '_');
