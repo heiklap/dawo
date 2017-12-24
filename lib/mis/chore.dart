@@ -180,7 +180,7 @@ class CommonChore extends BaseStruct {
     'campSay': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _',
     ///  Camp get answers and act to it.
     'campGet': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
-    /// add / read   effort table; get picture of yur capabilities.
+    /// add / read   effort table; get picture of your capabilities.
     'effort': ':EFF:',
     /// add / read / use  schedule; get your share of #time.
     'schedule': 'Checkd: _ _ _ _ _ _ _ _ _ _ _ _',

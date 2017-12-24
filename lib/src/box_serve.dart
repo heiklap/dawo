@@ -10,6 +10,8 @@
 library box_serve;
 
 import 'dart:math'; //  for min
+
+import '../dawo_app.dart';
 import '../tools.dart';
 //  import '../shower.dart';
 import '../alpha.dart';
@@ -90,7 +92,8 @@ class BoxServe {
     _matrix[0] = m0row;
     String _timeNow = tl.stampDateTimePlain();
     aHeader(0, sw - 57, 'time: $_timeNow');
-    aHeader(0, sw - 27, 'Dartlang app  DAWO 0.0.7');
+    String _version = dawoApp.version;  //  0.0.7+
+    aHeader(0, sw - 27, 'Dartlang app  DAWO $_version ');
     //  TODO  StampLeft ' '  // there is pm ! = ' '
     ///  Last row of matrix for range-10 marks; NOTE: rc - 1
     String bRowLong =
@@ -107,6 +110,20 @@ class BoxServe {
     int pegC = _matrix.length;
     aHeader(min(pegC, 14), 0, 'peg'); //  Lay "screen-watch-anchor"
   }
+
+  ///  Marks left of console screen to put table in convenient place for to see.
+  ///  :BUG:DEBUG: Over-lines-marking makes some rows 2-3 marks longer.
+  void rowMark12() {
+    int pegC = _matrix.length;
+    /// Lay row-12 length marker, like:  ___197
+    int row12Length = _matrix[12].length;
+    String _s = row12Length.toString();
+    String row12 = _matrix[12] + _s;
+    _matrix[12] = row12;
+    _matrix[11] = _matrix[11] + sw.toString();
+  }
+
+
 
   //  Fill list-data in matrix in r, _c coordinates.
   //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
@@ -203,6 +220,7 @@ class BoxServe {
   ///  To show matrix AND mediate it to glb.buf
   void show(String _caller, String action) {
     eyeMark14(); //  put 'peg' in row_14, col_0, for table to fill screen.
+    rowMark12(); //  put 175 at the end of row 12
     print(_matrix.length);
 
     ///  if.. is awkward

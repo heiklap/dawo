@@ -249,7 +249,7 @@ class Tools {
     } // --  thisMap
         ); //  --  forEach k v
     return _l;
-  } //  --  maptofineList
+  } //  --  mapToFineList
 
   /*
 

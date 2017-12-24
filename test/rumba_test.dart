@@ -16,8 +16,9 @@ void main() {
 ///  smallest possible way to build and run
 void playRumbaTest() {
   print('\n -----------  play rumba test  ----------------------');
-  var dawoApp = new DawoApp(':play-rumba-test', 'Just rumbaTest.dart');
 
+  dawoApp.name = ':play-rumba-test:';
+  dawoApp.motto = 'Just rumbaTest.dart';
   var rumba = new Rumba();
 
   // we got buffer here

@@ -18,10 +18,11 @@ String msg = 'greetings from mission_test.dart';
 //  TODO  Better hello-function, to do something real.
 void courierGreetings() => print('* * :M:Test:courier:Greetings  *');
 
-//  :debug:  assuming this is #must:
-// No?    var dawoApp = new DawoApp('mission-test-app', 'solve mission test.');
 
 void main() {
+  ///  Instance of dawoApp is already created inside package.
+  dawoApp.name = ':dawoApp:';
+  dawoApp.motto = 'Testing in mission-test-app';
   //  :debug:  assuming this is #must:
   //  No?  dawoApp.appRollMissions('mission_test.dart');
 

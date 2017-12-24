@@ -26,7 +26,9 @@ import 'package:dawo/corp/connector.dart';
 import 'package:dawo/tools.dart';
 import 'package:dawo/src/box_serve.dart';
 
-DawoApp dawoApp = new DawoApp(':dailyAction:test:', 'By: :dailyAction:test:');
+//  Instance is not created here beginning from 12-2017  0.0.7+
+//  DawoApp dawoApp = new DawoApp(':dailyAction:test:', 'By: :dailyAction:test:');
+
 var dawoHist = new DawoHist();
 
 StringBuffer dailyBuf = new StringBuffer();
@@ -98,6 +100,9 @@ DailyAction fridayAct = new DailyAction();
 
 ///
 void main() {
+  dawoApp.name = ':dawpApp:dailyAction:';
+  dawoApp.motto = 'By: :dailyAction:test:';
+
   print('------------- :dawoApp:Roll: start  -----------------------');
   //  this proves, that dawoApp.appRollMissions is elementary for chores aso.
   //  But other functionality plays without it.

@@ -13,7 +13,10 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
     // To run dawoApp in rumba demands two imports:
     import 'package:dawo/rumba.dart';
     import 'package:dawo/dawo_app.dart';
-    var dawoApp = new DawoApp('Play-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
+    ///  Instance of dawoApp is already created inside package.
+    dawoApp.name = 'Play-rumba:dawoApp';
+    dawoApp.motto = 'By: dawo_example: dawoApp rolls missioms');
+  
     var rumba = new Rumba();
 
     // This returns in addition a StringBuffer, that is not used here.
@@ -91,10 +94,8 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
     
 Creating Dawo variables in new file:
 
-    //  create instances of classes::
-    var dap = new DawoApp('exampleApp', 'Testing in dawo_example');
     // play with them in IDE:
-    dap.   //  dot notation gives you hint of classes properties.
+    dawoApp.   //  dot notation gives you hint of classes properties.
     var mission = new Mission('#name','#state');  //  #state  ? :)
     mission.
  

@@ -14,6 +14,7 @@
 library shower.dart;
 
 //  import 'beta.dart';
+import 'dawo_app.dart';
 import 'tools.dart';
 
 import 'corp/connector.dart';
@@ -80,7 +81,8 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
     int tr1Length = tr1.length;
     ///  To get: time:  2017-12-23  09:02:16     _Dartlang app  DAWO 0.0.7
     String _timeNow = tl.stampDateTimePlain();
-    String dawoLogoS = 'time: $_timeNow    _Dartlang app  DAWO 0.0.7_';
+    String _version = dawoApp.version;  //  0.0.7+
+    String dawoLogoS = 'time: $_timeNow    _Dartlang app  DAWO $_version ';
     int dawoLogoLength = dawoLogoS.length;
     //  :BUG: makes about 6 wide column error in box
     String padTopRim = tr1.padRight(sW - (dawoLogoLength + 6), '_');

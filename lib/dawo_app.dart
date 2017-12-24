@@ -4,7 +4,7 @@
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dawo version:  0.0.7.  18.12.2017
+/// * dawo version:  0.0.7+  18.12.2017
 /// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * Problem: dawoApp not instantiated; no access to dawo.version aso.
@@ -46,7 +46,7 @@ var appBuf = new StringBuffer(); //  not used here
 ///  Controls Mission-Chore system, #App, & dawo-package development, #Pack.
 class DawoApp extends BaseStruct {
   String name = 'DawoApp';
-  String version = '0.0.7';
+  String version = '0.0.7+';
   String by = 'HKL';
   final String actor = ':DAWO:APP:';
   String info = 'Innovative & educational small data-handler experimentation.';
@@ -73,7 +73,7 @@ class DawoApp extends BaseStruct {
   final String emblem = ':DA:';
   // like:  "      ";  3-5-7 empty marks or something visible.
   String indent;
-  String master; //  Object that owns this.
+  String master; //  Object that owns this. No-One.
 
   bool _pB = false; //  No printing now.
   StringBuffer buf = new StringBuffer();
@@ -87,14 +87,18 @@ class DawoApp extends BaseStruct {
     'done': false,
   };
 
-  ///  Package material
+
+  ///  Package material:
   Map<String, String> pack = {
     'agenda': 'dawoApp rolls missioms',
     'msg': 'dawoApp-Message..',
-    'develop': 'Under development.. 0 % to:  0.0.7',
-    'version': '0.0.7',
+    // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 bLib:demandStream Listened
+    'develop': 'Under development.. 0 % to:  0.0.7+ ',
+   // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 bLib:demandStream Listened
+    'pack: version': ' pack: 0.0.7+ ',
     '': '',
   };
+
 
   ///  Organize out.out-buffers to Map for return to package users.
   Map<String, StringBuffer> outMapBuffers = {
@@ -115,10 +119,10 @@ class DawoApp extends BaseStruct {
   };
 
   ///  App-specified fields.
-  //  String agenda = 'dawoApp rolls missioms';
+  //  String agenda = 'dawoApp rolls missions';
   //  String msg = 'dawoApp-Message..';
-  //  String develop = 'Under development.. 0 % to:  0.0.7';
-  //  String version = '0.0.7';
+  //  String develop = 'Under development.. 0 % to:  0.0.7+ ';
+  //  String version = '0.0.7+ ';
 
   //  Setting value for console
   // printing in flowC / flowS. TODO  hklGTry
@@ -246,16 +250,18 @@ class DawoApp extends BaseStruct {
     connector.join(name, betaPlacardM, connectorMsg, ':D:app:');
     connector.roll();
 
-    appRollMissions(':DA:-roll:'); //
+    appRollMissions(':DA:roll:'); //
     rollStream(':DA:roll:2');
     devStream(':DA:roll:3'); //  TODO  Temp  devStream rolled
     show('noPrint, buf, test');
     box(':dawo:app:roll:');
+    ///  This is not "terminate".
     done();
     //  code here
     return outMapBuffers;
   }
 
+  ///  This is mandatory for Mission-Chore system to work.
   ///  Roll missions in missionL AND every chore in them.
   void appRollMissions(String caller) {
     String _msg = '-->-da-> app rollMissions  C: $caller -->>-->>----';
@@ -325,9 +331,9 @@ class DawoApp extends BaseStruct {
   }
 
   ///  calling beta demandStream, elementary Stream example
-  ///
+  ///  TODO  Make usage of this async and somebody to wait it.
   ///  #TODO  make this use #iterable parameter; dev.admN / where #ALL
-  ///
+  ///  Usage:  roll-method above.
   void rollStream(String _cl) {
     _flowC('--- :stream:beg dawoApp rollStream started by: $_cl    ---', _pB);
     // demandStream('dawoApp', ['34 TIMES', 'No any times', 'Occasionally 7 times'], 'appListener' );
@@ -357,7 +363,7 @@ class DawoApp extends BaseStruct {
     _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }
 
-  ///  Calling boxServe-class for info.
+  ///  Using boxServe-class for to construct this info-box.
   void box(String caller) {
     buf.writeln(':da:box:start: C:$caller 123456789-23456789-23456788');
     print('-->>-->>-- :da:box:start: C:$caller  -->>-->>-- ');
@@ -468,6 +474,9 @@ class DawoApp extends BaseStruct {
     flowServe(':DA:', out.outTr, msg, p);
   }
 } //  ----------  class DawoApp
+
+///  Create an instance of DawoApp
+var dawoApp = new DawoApp('dawoApp', 'Holding Missions.');
 
 ///  To print outPutBuffers.  //  not called
 ///  Using new outBufM Map

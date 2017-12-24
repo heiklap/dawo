@@ -24,11 +24,15 @@ var mission = new Mission('mission-class', 'test-in:de-test.dart');
 var ch = new CommonChore('chore-class', 'appChorePlay', 'Testing in app-bLib-chore-play');
 
 ///  Soon (in next version) instance of dawoApp is created inside Dawo
-var dawoApp = new DawoApp(':example ', 'Just rumbaTest.dart');
+//  Beginning 23.12.2017 instance of DawoApp is created inside package.
+//  var dawoApp = new DawoApp(':example ', 'Just rumbaTest.dart');
 var rumba = new Rumba();
 
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
+  dawoApp.name = ':dawpApp:example:';
+  dawoApp.motto = 'Testing in app-bLib-chore-play';
+
   //  choreStuff();
   //  usualChoreStuff();  // including:  rumba.dance(dawoApp);  dawoApp.roll();
 
