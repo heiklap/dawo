@@ -184,8 +184,7 @@ Out out = new Out();
 
 //  TODO  bring here from dawoApp serialized outBuffersPrint - function
 
-///  Starter class for most dawo classes
-///  DawoApp-extends, BLib, Chore-extends, Flag  use this
+//  Chore-extends, DawoHist implements. Flag  use this
 abstract class BaseStruct {
   String name;
   String info; //  using now Map:  say
@@ -210,13 +209,7 @@ abstract class BaseStruct {
     'pause': false,
     'done': false,
   };
-  /*
-  ///  controlling objects state, working-condition-state values
-  bool offB;
-  bool onB;
-  bool pauseB;
-  bool doneB;
-  */
+
 
   //  TODO  Add fields for incoming and outgoing data.
   //  var clayIn;

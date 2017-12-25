@@ -5,9 +5,12 @@
 import 'dart:html';
 
 import 'package:dawo/dawo.dart';
+import 'package:dawo/dawo_app.dart';
 
 void main() {
   print('-------------------  main running  ------------------------------');
+  dawoApp.init(':main.dart:', ':presenting:bin:folder:');
+  dawoApp.roll();
 
   /// just calling some dawo methods;
   String s = renderDawo().toString();

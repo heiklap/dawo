@@ -93,8 +93,8 @@ void testPackDawoChore() {
 void testRumba() {
   print('\n ==>>==>>==== ch_chore test test_rumba ==>>==>>==== ');
   ///  Instance is already inside dawo-package.
-  dawoApp.name = 'dawoApp-test-Rumba';
-  dawoApp.motto = 'Just choreTest.dart';
+  ///
+  dawoApp.init('dawoApp-test-Rumba', 'Just choreTest.dart');
 
   var rumba = new Rumba();
   rumba.dance(dawoApp);

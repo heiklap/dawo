@@ -79,8 +79,7 @@ String connectorMsg = ':ORDER of :OUTER process is :ANY KIND ';
 ///  In dawo package there is no main-function. Only in example files.
 ///  Every dart program starts it's execution from main method.
 main() {
-  dawoApp.name = 'dawoApp';
-  dawoApp.motto = 'Testing in dawo_example';
+  dawoApp.init(':dawo_example:','Testing in dawo_example' );
 
   glb.dawoLogo.forEach(print);
   devBox(':d:ex:main:', ['* header *', '* footer *'], [glb.keyWords, glb.keyWordsSmall], 28);

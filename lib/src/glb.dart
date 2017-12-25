@@ -70,7 +70,7 @@ class GlobalClass {
     ':S:-0  -   schedule-43  scout-27 :scout:Roll say  STREAM  store-4  secret-0 ',
     ':T: -!!  task-0!!   team*-45     TEST-10  track-7  time:29   TODO-1 ',
     ':U: -  :usher:   user-26',
-    ':V: -',
+    ':V: -             vigilant-new   ',
     ':W: -        WTF-2  ',
     ':X: -',
     ':Y: -',

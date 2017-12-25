@@ -21,8 +21,8 @@ void courierGreetings() => print('* * :M:Test:courier:Greetings  *');
 
 void main() {
   ///  Instance of dawoApp is already created inside package.
-  dawoApp.name = ':dawoApp:';
-  dawoApp.motto = 'Testing in mission-test-app';
+  dawoApp.init(':mission_test:','Testing in mision_test_app' );
+
   //  :debug:  assuming this is #must:
   //  No?  dawoApp.appRollMissions('mission_test.dart');
 

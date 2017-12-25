@@ -14,8 +14,7 @@ void main() {
   //TODO  error
   var missionH = new Mission('mission inDT', 'test');
   print(missionH.name);
-  dawoApp.name = 'd-app';
-  dawoApp.motto = 'Testing in dawo_test';
+  dawoApp.init('d-app','Testing in dawo_test');
 
 
   dawoApp.info; //  String

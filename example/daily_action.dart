@@ -100,8 +100,7 @@ DailyAction fridayAct = new DailyAction();
 
 ///
 void main() {
-  dawoApp.name = ':dawpApp:dailyAction:';
-  dawoApp.motto = 'By: :dailyAction:test:';
+  dawoApp.init(':dawpApp:dailyAction:','By: :dailyAction:test:' );
 
   print('------------- :dawoApp:Roll: start  -----------------------');
   //  this proves, that dawoApp.appRollMissions is elementary for chores aso.

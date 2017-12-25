@@ -22,8 +22,9 @@ num toolsReadiness = 96;
 ///  Buffer also outside class, for testing and adding visibility.
 var toolsBuf = new StringBuffer();
 
-///  instantiated as: tl  Very handy, you gonna like it!
+///  Class Tools is instantiated as: tl  Very handy, you gonna like it!
 class Tools {
+  ///  QUEST: can this be done in one row?
   ///  Return iterable List from StringBuffer.
   List<String> bufToList(StringBuffer buf) {
     List<String> _l = new List();
@@ -80,7 +81,7 @@ class Tools {
     return l;
   }
 
-  ///  :QUEST:  ??
+  ///  :QUEST:  ??  Make it better with regExp?
   ///  Change letter/s in a String
   String changeLetter(String inS, int pos, String newS) {
     //print(inS);

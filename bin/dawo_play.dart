@@ -10,8 +10,7 @@ void main() {
   print('\n Hello world from dawo package! ');
   print('Presenting dawo data in console. \n');
   //  Constructor asks name and agenda.
-  var dawoApp =
-      new DawoApp('dawoApp in bin', 'Showing dawo activity in bin folder');
+  dawoApp.init('dawoApp in bin', 'Showing dawo activity in bin folder');
   var rumba = new Rumba();
   rumba.dance(dawoApp);
 }

@@ -44,12 +44,16 @@ var appBuf = new StringBuffer(); //  not used here
 ///  Important dawo Class extends BaseStruct abstract class. (Not Mission!)
 ///  Class that holds 'soul' of THIS dawo app.
 ///  Controls Mission-Chore system, #App, & dawo-package development, #Pack.
-class DawoApp extends BaseStruct {
-  String name = 'DawoApp';
-  String version = '0.0.7+';
-  String by = 'HKL';
+///  Stop using: extends BaseStruct: constructor / init is not handy
+class DawoApp  {
+  final String name = 'DawoApp';
+  final String version = '0.0.7+';
+  final String by = 'HKL';
   final String actor = ':DAWO:APP:';
-  String info = 'Innovative & educational small data-handler experimentation.';
+  final String info = 'Innovative & educational small data-handler experimentation.';
+  ///  Fields used in init
+  String user = ':User:of:dawoApp:';
+  String motto = 'Walk the path of innovation and learning..';
 
   /// Fields describe actions in connector and binding.
   /// This is the language, that app talks in different situations.
@@ -64,7 +68,7 @@ class DawoApp extends BaseStruct {
     'always': ':dawoApp :Developing :New :Innovation :Suprise',
     'newer': ':dawoApp :NO :UGLY'
   };
-  String motto = 'Walk the path of innovation and learning..';
+
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  like:  ":DAWO-APP:";///  must initialize StringBuffer here
@@ -73,7 +77,6 @@ class DawoApp extends BaseStruct {
   final String emblem = ':DA:';
   // like:  "      ";  3-5-7 empty marks or something visible.
   String indent;
-  String master; //  Object that owns this. No-One.
 
   bool _pB = false; //  No printing now.
   StringBuffer buf = new StringBuffer();
@@ -132,9 +135,12 @@ class DawoApp extends BaseStruct {
   }
 
   ///  Initialize class values to beginning state.
-  void init() {
+  ///  Start using parameters:  String _user, _motto  ?
+  void init(String _user, _motto) {
     //  TODO  Actor:  only one actor for now... But class Actor in alpha.dart
     glb.changeActor(':DAWO-APP:');
+    user = _user;
+    motto = _motto;
     st['wake'] = true;
     //  TODO  Set some field values.
     _flowC('  -->-da->  DawoApp buffer output initialized  ---', _pB);
@@ -144,7 +150,7 @@ class DawoApp extends BaseStruct {
   }
 
   ///  Method for setting class in working condition.
-  void build(String emblem, String master) {
+  void build(String emblem) {
     ///  NOTE empty parameter now, not used. For chore.build.
     st['wake'] = true; //  sleep-state ends
     st['work'] = true; //   working state begins
@@ -242,8 +248,8 @@ class DawoApp extends BaseStruct {
     //  build already does this  dev.buildNotes();
     _flowC(':da:b: DawoApp::roll    $info   :: roll engaged ', _pB);
 
-    init(); //  calling init and build methods in this class
-    build(':DAWO-APP:', 'DAWO-APP-MASTER:');
+    // done by user  init(); //  calling init and build methods in this class
+    build(':DAWO-APP:');
     //
     print('-->>-->>--  :dawoapp: calling :connector:  -->>-->>--');
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
@@ -313,7 +319,7 @@ class DawoApp extends BaseStruct {
   } //  -----  appRollMissions
 
   ///  TODO devStream  building stream for dev, using elementary Stream example
-  ///  DONE Adding caller-parameter
+  ///  NAME:  Change to:  fix** ?
   ///  TODO  WHO IS CALLING THIS ?  roll method above.
   void devStream(String caller) {
     _flowC('--:stream:beg dawoApp rollStream started by: $caller   --', _pB);
@@ -389,8 +395,8 @@ class DawoApp extends BaseStruct {
 
     boxServe.aHeader(1, 60, ' *  DAWO APP INFO  *');
 
-    boxServe.aHeader(2, 22, 'Info:');
-    boxServe.aBox(2, 30, 2, 48, ['$info', '$motto']);
+    boxServe.aBox(2, 22, 4, 7, ['name:', 'Info:', 'User:', 'Motto:']);
+    boxServe.aBox(2, 30, 4, 48, ['$name', '$info', '$user', '$motto']);
 
     boxServe.aBox(2, 80, 4, 20, ['Agenda', 'Develop', 'Msg:', 'Versions']);
     boxServe.aBox(2, 92, 5, 20, ['______', '________', '______', '____']);
@@ -461,8 +467,9 @@ class DawoApp extends BaseStruct {
     //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', _pB);
   }
 
-  //  Can constructor reach inside a Map?
-  DawoApp(this.name, this.motto);
+  //  Changed using new fields user and purpose.
+  //  Stop using constructor
+  //  DawoApp(this.user, this.motto);
 
   ///  Every important library has it's own flowC function. #Library #Privacy!!
   ///  Calling print/print-to-buffer function from beta.
@@ -475,8 +482,8 @@ class DawoApp extends BaseStruct {
   }
 } //  ----------  class DawoApp
 
-///  Create an instance of DawoApp
-var dawoApp = new DawoApp('dawoApp', 'Holding Missions.');
+///  Create an instance of DawoApp. With default constructor.
+var dawoApp = new DawoApp();
 
 ///  To print outPutBuffers.  //  not called
 ///  Using new outBufM Map

@@ -14,9 +14,7 @@ void main() {
 ///  smallest possible way to build and run
 void playRumbaTest() {
   print('\n -----------  play rumba test  ----------------------');
-
-  dawoApp.name = ':dawoApp:';
-  dawoApp.motto = 'Testing in list_test';
+  dawoApp.init(':list_test:','Testing in list_test' );
 
   var rumba = new Rumba();
 

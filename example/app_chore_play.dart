@@ -30,8 +30,7 @@ var rumba = new Rumba();
 
 ///  use and show App, dawoFlag, BLib-class and Chore
 main() {
-  dawoApp.name = ':dawpApp:example:';
-  dawoApp.motto = 'Testing in app-bLib-chore-play';
+  dawoApp.init(':app_chore_play:','Testing in app_chore_play' );
 
   //  choreStuff();
   //  usualChoreStuff();  // including:  rumba.dance(dawoApp);  dawoApp.roll();

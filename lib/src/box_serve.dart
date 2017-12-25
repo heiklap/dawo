@@ -111,11 +111,11 @@ class BoxServe {
     aHeader(min(pegC, 14), 0, 'peg'); //  Lay "screen-watch-anchor"
   }
 
-  ///  Marks left of console screen to put table in convenient place for to see.
+  ///  Lay row-12 length marker, like:  ___197 on right edge.
+  ///  Mark row-11 with real sw value.
   ///  :BUG:DEBUG: Over-lines-marking makes some rows 2-3 marks longer.
   void rowMark12() {
-    int pegC = _matrix.length;
-    /// Lay row-12 length marker, like:  ___197
+    int pegC = _matrix.length;  // for:  min(pegC, (12)
     int row12Length = _matrix[12].length;
     String _s = row12Length.toString();
     String row12 = _matrix[12] + _s;

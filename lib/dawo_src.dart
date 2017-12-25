@@ -85,12 +85,12 @@ StringBuffer renderDawo() {
   var renderBuffer = new StringBuffer();
   renderBuffer.writeln('\n ------ renderBuffer starting  ------------ \n');
 
-  var dawoApp = new DawoApp('dawoTestApp', 'in void renderDawo ');
-
+  dawoApp.init('dawoTestApp', 'in void renderDawo ');
   dawoApp.pack['agenda']; //  Just naming it.
 
   /// Just another instance, shorter, for testing.
-  var da = new DawoApp('dawoApp', 'playing in renderDawo-function');
+  var da = new DawoApp();
+  da.init('dawoApp', 'playing in renderDawo-function');
   var mill = new Mill();
   renderBuffer.writeln(da.info);
   mill.userChoice;

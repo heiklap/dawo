@@ -103,6 +103,7 @@ class Dev {
     '008: Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
+    '008++DawoApp stops extending BaseStruct. Default constructor, new init.': 'V:5 E:4 D:0',
     '008++ get #version, #name to devBox aso:  via dawoApp    ?': 'V:2 E:3 D:0',
     '008++ DawoApp: Instance dawoApp created and fields used inside package.': 'V:5 E:2 D:1',
     '008++ INTL Tools stampDateTimePlain for:2017-12-23  08:47:27 ': 'V:1 E:1 D:7',

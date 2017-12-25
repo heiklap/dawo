@@ -33,8 +33,7 @@ void main() {
   print('------ testing dev class and variables  ------------');
   print('\n -----------  play rumba test  ----------------------');
 
-  dawoApp.name = 'play-rumba-test';
-  dawoApp.motto = 'Just rumbaTest.dart';
+  dawoApp.init(':play-rumba-test:','Just rumbaTest.dart');
 
   var rumba = new Rumba();
 
