@@ -63,7 +63,7 @@ class Mission {
 // #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
 
-  String name;
+  String name = '';
   String toString(){
     return name;
   }

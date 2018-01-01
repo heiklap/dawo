@@ -79,7 +79,7 @@ Map getClay(String _mapS) {
 ///  Example of library usage: dawo_app can be accessed from here,
 ///  but users of package can access it only by importing it.
 
-///  All render.. functions are tests or example-like files.
+///  Almost all render.. functions are tests or example-like files.
 StringBuffer renderDawo() {
   print('\n ---------------  renderDawo rolling -------------------------');
   var renderBuffer = new StringBuffer();

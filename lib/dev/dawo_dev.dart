@@ -52,6 +52,19 @@ class Dev {
   ///  msg named in dev
   String coderBlame = '';
 
+  /// This is the language, that missions and other objects talk (in con) .
+  Map<String, String> say = {
+    'purpose': ':dev  :This :development :dawoBuilding :learn',
+    'lang': ':SAMPLE :LANG :dartlang :dawolang :ALL :WORDS',
+    'area': ' :adm :dev  :sec  :inno :other :howTo :learn',
+    'product': ':dev  :PROD1 :PROD2',
+    'sell': ':dev  :CODE :TIME :EFFORT :EQU',
+    'buy': ':dev  :ADVICE :TIME :CODE',
+    'ask': ':dev  :Stack :Gitter :Dartisans  :think',
+    'always': ':dev  :alwaysX :alwaysY :alwaysZ :dev ',
+    'newer': ':dev  :NO :UGLY'
+  };
+
   ///  Generic list to keep and handle all devNotes
   List<DevMessage> devMessageL = []; //  not used
   //  To collect range aso. errors.
@@ -80,7 +93,7 @@ class Dev {
       'LATER: :ad:promo: Corporation:   real store & resolve :bind:bing: ': 'V:6 E:6 D:0',
       'LATER: Server-client. Simple server - client.                     ': 'V:2 E:2 D:0',
       'LATER: Server-client.  Angel package          ': 'V:6 E:3 D:0',
-      'LATER: FIX: Make debBox a class; long functions are hard to manage.': 'V:1 E:8 D:-1',
+      'LATER: FIX: Make devBox a class; long functions are hard to manage.': 'V:1 E:8 D:-1',
       'LATER: DB: Local storage for user own data.                   ': 'V:5 E:4 D:0',
       'LATER: WEB presentation, dawo-web-hooks for here-is-text-output.': 'V:7 E:8 D:0',
       'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ': 'V:5 E:4 D:0',
@@ -103,7 +116,8 @@ class Dev {
     '008: Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
-    '008++DawoApp stops extending BaseStruct. Default constructor, new init.': 'V:5 E:4 D:0',
+    '008++ Treaty-class to missions auction, used by daily_action.dart example.': 'V:7 E:8 D:6',
+    '008++ DawoApp stops extending BaseStruct. Default constructor, new init.': 'V:5 E:4 D:0',
     '008++ get #version, #name to devBox aso:  via dawoApp    ?': 'V:2 E:3 D:0',
     '008++ DawoApp: Instance dawoApp created and fields used inside package.': 'V:5 E:2 D:1',
     '008++ INTL Tools stampDateTimePlain for:2017-12-23  08:47:27 ': 'V:1 E:1 D:7',

@@ -20,9 +20,7 @@ import '../src/glb.dart';
 ///  Schedule connect, opJoin corporate, bind, binding
 ///  Present callers List, Map, text data in row,col in boxes inside a matrix.
 class BoxServe {
-  String testS = ':TEST:BUG:boxServe:';
   int boxCount = 0;
-  //  TODO :BUG:  Matrix fails in certain sw. :Test:  193, 194, 195, 196, 197..
   int sw = 195; //  default:  screen width
   int rc = 47; //  default:  row count
   String pm = '-'; //  default
@@ -50,8 +48,9 @@ class BoxServe {
   //  build('$_caller :roll:');
 
   ///  Initialize measure values by parameters
-  ///  //  TODO  set min-max-maxWidthString values
-  void init(int h, w, String _pm) {
+  ///  TODO  set min-max-maxWidthString values
+  /// Min rows is 4 !!   Min width is NOW:  55= NO!!   65 = YES!!
+  void init(int h, int w, String _pm) {
     pm = _pm; //  padMark
     ///  Use default, unless parameters are > 0
     if ((h > 0) && (w > 0)) {
@@ -96,34 +95,33 @@ class BoxServe {
     aHeader(0, sw - 27, 'Dartlang app  DAWO $_version ');
     //  TODO  StampLeft ' '  // there is pm ! = ' '
     ///  Last row of matrix for range-10 marks; NOTE: rc - 1
+    ///  Made bRowLon a little longer.
     String bRowLong =
-        '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70-----';
-    //  :BUG: Solved?  TODO  Make sure that this row is ==  sw !!!
-    //.substring(0, sw);
+        '---------10--------20--------30--------40--------50--------60--------70--------80--------90--------00--------10--------20--------30--------40--------50--------60--------70--------80--------90--------00--------10--------20----';
     String bRow = bRowLong.substring(0, sw);
     _matrix[rc - 1] = bRow;
-    //   '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
+    //   '---------10--------20--------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
   } //  -----  construct
 
   ///  Marks left of console screen to put table in convenient place for to see.
   void eyeMark14() {
     int pegC = _matrix.length;
-    aHeader(min(pegC, 14), 0, 'peg'); //  Lay "screen-watch-anchor"
+    //  boxServe.aHeader(min((boxServe.rc - 2), 14), 0, 'peg');
+    aHeader(min((pegC - 2), 14), 0, 'peg'); //  Lay "screen-watch-anchor"
   }
 
   ///  Lay row-12 length marker, like:  ___197 on right edge.
   ///  Mark row-11 with real sw value.
   ///  :BUG:DEBUG: Over-lines-marking makes some rows 2-3 marks longer.
   void rowMark12() {
-    int pegC = _matrix.length;  // for:  min(pegC, (12)
-    int row12Length = _matrix[12].length;
+    //  To act for small boxes!!
+    int level = min(12, rc - 2);
+    int row12Length = _matrix[level].length;
     String _s = row12Length.toString();
-    String row12 = _matrix[12] + _s;
-    _matrix[12] = row12;
-    _matrix[11] = _matrix[11] + sw.toString();
+    String row12 = _matrix[level] + _s;
+    _matrix[level] = row12;
+    _matrix[level - 1] = _matrix[level - 1] + sw.toString();
   }
-
-
 
   //  Fill list-data in matrix in r, _c coordinates.
   //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
@@ -219,11 +217,13 @@ class BoxServe {
   ///  Called by:   User!!  Not from this class.
   ///  To show matrix AND mediate it to glb.buf
   void show(String _caller, String action) {
-    eyeMark14(); //  put 'peg' in row_14, col_0, for table to fill screen.
+    //  put 'peg' in row_14, col_0, for table to fill screen.
+    eyeMark14();
     rowMark12(); //  put 175 at the end of row 12
     print(_matrix.length);
 
     ///  if.. is awkward
+    ///  TODO  Parameter int _indent, for to set column / left margin in print.
     if (action == 'print') _matrix.forEach(print); //  only way!!
     //  return _matrix;  //  if type is: List<String>
     ///  Save box-buffer to:   glb.boxServeBuffers Map
@@ -249,8 +249,9 @@ class BoxServe {
     _bufName = '$_bufName$boxCountS';
     StringBuffer saveBuffer = toBuffer();
     String sbl = saveBuffer.length.toString();
+    //  spamming,  away:  Name:::  $name
     print(
-        '$testS  bufName::  $_bufName      boxCountS:::  $boxCountS     Name:::  $name     BufLength::: $sbl');
+        '  bufName::  $_bufName      boxCountS:::  $boxCountS     BufLength::: $sbl');
 
     ///  _bufName is combination of '$caller $boxCount.toString()'
     glb.boxServeBuffers.putIfAbsent(_bufName, () => saveBuffer);
@@ -322,9 +323,9 @@ void boxLayoutDap(BaseStruct _model, String _rubric) {
   ]);
 
   boxServe.aBox(3, 110, 5, 62, glb.dawoLogo);
-  //  Lay "screen-watch-peg"
-  //  howTo access rowCount for min(boxServe.rc,15) ??
-  boxServe.aHeader(min(boxServe.rc, 14), 0, 'peg');
+  //  Lay "screen-watch-peg"to set box to fill the screen.
+  //  To allow use of < 14 boxes: (boxServe.rc - 2)
+  boxServe.aHeader(min((boxServe.rc - 2), 14), 0, 'peg');
 } //  -----  boxLayoutDab
 
 ///  UsingBaseStruct (connector) fields to set usual fields in boxServe

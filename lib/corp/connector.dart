@@ -403,7 +403,7 @@ class Connector extends BaseStruct {
   void box(String caller) {
     buf.writeln('con:box:start:  ');
     //  use: boxServe  OR  create own class here
-    final int _sw = 195; //  screen width, changed later =>
+    final int _sw = 194; //  default screen width, changed later =>
     final int _rc = 47; //  row count
     //  ???  Keep matrix here on callers side all the time
     List<String> _conMatrix = new List(_rc);
@@ -415,7 +415,8 @@ class Connector extends BaseStruct {
     ];
 
     //  TODO  if change to: 150, it should be visible variable
-    boxServe.init(42, 190, '_'); //  rows, width or: 0 = use default 47, 195
+    ///:BOX:WAS:  190, now  205
+    boxServe.init(42, 198, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(
         ':connector:box:  C: $caller', ':connector:box: $caller');
     int r1 = 2; //  easy x-y pointing

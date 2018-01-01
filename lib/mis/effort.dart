@@ -225,7 +225,7 @@ class Effort {
   void getDiagonalList(String caller) {
     print('-->>--   effort : getDiagonalList    -->>-->>  ');
     List<String> diagonalL = [];
-    diagonalL.addAll(iterableDiagonalM(effortLM, 205));
+    diagonalL.addAll(iterableDiagonalM(effortLM, 197));
 
     ///  Three lists used to hold box-shaped effort-data from effort-maps.
     List<String> _l1 = ['* Valuable: *'];

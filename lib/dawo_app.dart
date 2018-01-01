@@ -255,8 +255,9 @@ class DawoApp  {
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
     connector.join(name, betaPlacardM, connectorMsg, ':D:app:');
     connector.roll();
-
-    appRollMissions(':DA:roll:'); //
+    ///  appRollMissions is mandatory for Mission-Chore system to work.
+    ///  Made private with: _  =>   _appRollMissions.
+    _appRollMissions(':DA:roll:'); //
     rollStream(':DA:roll:2');
     devStream(':DA:roll:3'); //  TODO  Temp  devStream rolled
     show('noPrint, buf, test');
@@ -269,7 +270,7 @@ class DawoApp  {
 
   ///  This is mandatory for Mission-Chore system to work.
   ///  Roll missions in missionL AND every chore in them.
-  void appRollMissions(String caller) {
+  void _appRollMissions(String caller) {
     String _msg = '-->-da-> app rollMissions  C: $caller -->>-->>----';
     _flowC('$_msg', _pB);
     // roll BLib-class (mission) actually List of missions!
@@ -371,18 +372,17 @@ class DawoApp  {
 
   ///  Using boxServe-class for to construct this info-box.
   void box(String caller) {
-    buf.writeln(':da:box:start: C:$caller 123456789-23456789-23456788');
+    buf.writeln(':da:box:start: C:$caller 123456789-23456789-23456789');
     print('-->>-->>-- :da:box:start: C:$caller  -->>-->>-- ');
     //  use: boxServe  OR  create own class here
     //  TODO  set min-max values
-    final int _sw = 190; //  screen width, changed later =>
+    final int _sw = 198; //  screen width, changed later =>
     final int _rc = 37; //  row count
     //  ???  Keep matrix here on callers side all the time
     List<String> _dapMatrix = new List(_rc);
     String boxHeader = ':da:box:';
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
-    //  :BUG:  Clear old lists first. ??
 
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':da:box: ', ':da:box:'); //  :BUG: C: $caller');
@@ -607,7 +607,8 @@ class DawoHist implements BaseStruct {
     print('-->>-->>-- :dawoHist:box:start: C:$caller  -->>-->>-- ');
     //  use: boxServe  OR  create own class here
     //  TODO  set min-max values
-    final int _sw = 190; //  screen width, changed later =>
+    //  :BOX:SW:  was 190
+    final int _sw = 200; //  screen width, changed later =>
     final int _rc = 37; //  row count
     //  ???  Keep matrix here on callers side all the time
     List<String> _dawoHistMatrix = new List(_rc);
@@ -615,8 +616,8 @@ class DawoHist implements BaseStruct {
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
     //  :BUG:  Clear old lists first. ??
-
-    boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
+    //  :BOX:SW:  was 190
+    boxServe.init(_rc, 200, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(
         ':dawoHist:box: ', ':dawoHist:box:'); //  :BUG: C: $caller');
 

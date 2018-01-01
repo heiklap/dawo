@@ -431,7 +431,8 @@ class CommonChore extends BaseStruct {
     int bufLength = buf.length;
     int choreBufLength = choreBuf.length;
     ///  Give shapes for screen matrix.
-    boxServe.init(42, 190, '_'); //  rows, width or: 0 = use default 47, 195
+    ///  :BOX:WAS:  190
+    boxServe.init(42, 198, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':chr:box: ', ':chr:box:'); //  :BUG: C: $caller');
     ///  Place String-header in wanted place.
     boxServe.aHeader(1, 5, 'Name: $name');

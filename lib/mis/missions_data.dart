@@ -34,10 +34,10 @@ class MissionData {
       'lang': ':packDawo :LANG :HERE :ARE :ALL :WORDS :FIND_MORE :SAVE',
       'area': ':packDawo :WEB  :MOBILE :CL aso :SERVER :CLIENT :DB',
       'product': ':packDawo :dawolang :dawo :huilo :punch :parley aso',
-      'sell': ':packDawo :BuyME :RentME :SendMe :HireMe',
-      'buy': ':packDawo :ADVIDCE :TIME :MyTime',
+      'sell': ':packDawo :BuyME :RentME :SendMe :HireMe :Power',
+      'buy': ':packDawo :ADVIDCE :TIME :MyTime :Projects',
       'ask': ':packDawo :Stack :GITTER :ASK3',
-      'always': ':packDawo :alwaysX :alwaysY :alwaysZ :packDawo',
+      'always': ':packDawo :alwaysX :alwaysY :alwaysZ :packDawo :FRENDLY',
       'newer': ':packDawo :NO :UGLY :HUILO :ANGRY :SORROW'
     };
 
@@ -80,8 +80,8 @@ class MissionData {
 
     //
     dartlangMission.say = {
-      'purpose': ':dartlangMis :WebProgramming :Tools :library :api',
-      'lang': ':dlMis :EASY :FAMILIAR :NEW :EFFECTIVE :WEB :',
+      'purpose': ':dartlangMis :Learn :WebProgramming :Tools :library :api',
+      'lang': ':dlMis :LANG :EASY :FAMILIAR :NEW :EFFECTIVE :WEB :',
       'area': ':dlMis :WEB  :MOBILE :CL aso :SERVER :CLIENT :DB',
       'product':
           ':dlMis :LANGUAGE :API :TOOLS :COMMUNITY :HELP :FLUTTER :ANGULAR',

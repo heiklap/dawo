@@ -135,11 +135,14 @@ class LearnDartlang {
     'Class': ' ',
     'd': ' ',
     'exclusive': 'When I forget everything dart, and remember just 1 thing, this thing is: endIndex is exclusive. ',
+    'Explicit': 'Stated clearly, leaving no space for hesitation or doubt.',
     'Function': ' ',
     'Fail': ' ',
     'Type Generic': 'Because Darts generic types are covariant... ',
     'Type Subtyping':
         'Usually, subtyping is written using the "<:" operator: Apple <: Fruit.',
+    'Haters': 'Haters are gonna hate. Their fortress do not survive without hate.'
+    'Not knowledge on bet, but money.',
     'http': 'With http you always have to import http/browser_client.dart.',
     'i': ' ',
     'Instance': ' ',
@@ -149,15 +152,17 @@ class LearnDartlang {
     'l': ' ',
     'Match': ' ',
     'Method Overloading':
-        'method overloading. I think this is also considered for the future. Wasn not possible in Dart 1.x because of optional types',
+        'method overloading. I think this is also considered for the future.'
+            'Was not possible in Dart 1.x because of optional types',
     'Mirror':
         'Mirror is good if you are 1% of Dart users and do not mind of AOT.',
+    'null': ' Getting dart:core null clean was about two days of work, while also battling a cold. That iss not a lot of effort.',
     'num': ' ',
     'Object': ' ',
     'Obsevatory':
         'When you launch your app in debug mode, it should print an URL that allows you to access Observatory',
-    'Publish': ' ',
-    'Queue': ' ',
+    'Publish': 'Milestone, relief. Stops development of package for three days. ',
+    'Queue': 'cattle herd from a narrow gate. ',
     'R': ' ',
     'Strong mode':
         '..optional in the first version of the language. Integrated part of the second.',

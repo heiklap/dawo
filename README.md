@@ -1,5 +1,8 @@
 # dawo 0.0.7
 
+    https://img.shields.io/pub/v/box2d.svg
+https://pub.dartlang.org/packages/dawo
+
 Learning Dart; by building complicated Dart package with many libraries. Organizing it, finding it's 
 inner connections and developing multipurpose methods.
 Beginner Dart programmers kickoff to learn by developing a glorious package. Latest code in GitHub: https://github.com/heiklap/dawo
