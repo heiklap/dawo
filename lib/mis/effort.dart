@@ -63,9 +63,8 @@ class Effort {
 
   ///  testing... difference between  .  and ..
   void makeGoalM() {
+    ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
     goalM
-
-      ///  Values: V: = Value, E: = effort, M: = mess,  D: = done.
       ..putIfAbsent('Project 0.0.1 Plan', () => 'V:3 E:2 D:1 ')
       ..putIfAbsent('Github  clean', () => 'V:3 E:5 D:3 ')
       ..putIfAbsent('HTML  Pages', () => 'V:6 E:7 D:2 ')
@@ -90,12 +89,12 @@ class Effort {
   /// adding data to List
   void makePhaseM() {
     phaseM
-      ..putIfAbsent('PhaseUnknown', () => 'V:0 E:3 D:0 ')
-      ..putIfAbsent('PhaseGetInfo', () => 'V:2 E:8 D:5 ')
-      ..putIfAbsent('PhaseMakePlan', () => 'V:7 E:7 D:0 ')
-      ..putIfAbsent('phaseMtart', () => 'V:8 E:8 D:0 ')
-      ..putIfAbsent('PhaseInSt', () => 'V:3 E:6 D:0 ')
-      ..putIfAbsent('PhaseDone', () => 'V:9 E:8 D:7 ');
+      ..putIfAbsent('PhaseUnknown', () => 'V:0 trying E:3 D:0 ')
+      ..putIfAbsent('PhaseGetInfo', () => 'V:2 E:8 some D:5 ')
+      ..putIfAbsent('PhaseMakePlan', () => 'V:7 test E:7 D:0 ')
+      ..putIfAbsent('phaseMtart', () => 'V:8 Substring E:8 D:0 ')
+      ..putIfAbsent('PhaseInSt', () => 'V:3 E:6 should D:0 ')
+      ..putIfAbsent('PhaseDone', () => 'V:9 work here E:8 well  D:7 ');
     //  phaseM.forEach(print);
     print(phaseM);
   }
@@ -129,7 +128,7 @@ class Effort {
     print(tempoM);
   }
 
-  ///  Rendering and presenting user-data Lists.
+  ///  Rendering and presenting user-data Lists. Called by: chore.
   void makeAllLists(String caller) {
     _effPrint('- >> - show of eff, effort class -- dawo Lists, C: $caller  -');
     ifPrint('- >> - show of eff, effort class -- dawo Lists, C: $caller  ---');
@@ -227,6 +226,26 @@ class Effort {
     List<String> diagonalL = [];
     diagonalL.addAll(iterableDiagonalM(effortLM, 197));
 
+    //  ***************************************************************
+    //  **  print('--------- tl.valuesInStr and eff.effortLM test  ------');
+    //  **  List<List<int>> intL = [];
+    //  **  intL.addAll(tl.valuesInStr(eff.effortLM, 'V:', 'D:'));
+    //  **  intL.forEach(print);
+    //  **  intL.clear();
+
+    //  ** print('----- tl.valuesInStr phaseM with Strings in.  test  ------');
+    // **  example howTo extract only int values, like: [3, 4] [4, 5] ..
+    List<List<int>> phaseIntL = [];
+    List<Map<String, String>> tmpM = [];
+    tmpM.add(eff.phaseM);
+    //  now we got phaseM as only Map in List<Map<String, String>>
+    phaseIntL.addAll(tl.valuesInStr(tmpM, 'V:', 'D:'));
+    List<String> phaseIntLStr = ['* phaseM *'];
+
+    phaseIntLStr.addAll(tl.listListIntToListString(phaseIntL));
+    //  phaseIntL.forEach(print);
+    //  ***************************************************************
+
     ///  Three lists used to hold box-shaped effort-data from effort-maps.
     List<String> _l1 = ['* Valuable: *'];
     List<String> _l2 = ['* Effort: *'];
@@ -283,6 +302,9 @@ class Effort {
 
     tl.boxInList(18, 39, 100, 100, _l4, diagonalL);
     tl.boxInList(18, 1, 100, 100, _l5, diagonalL);
+
+    ///  TODO  new  phaseIntLStr List with 5, 7 ..  3, 6  aso values
+    tl.boxInList(26, 166, 100, 100, phaseIntLStr, diagonalL);
 
     ///  Adding json-to-List data to diagonalL matrix.
     tl.boxInList(26, 65, 100, 100, _lFury, diagonalL);

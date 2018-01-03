@@ -486,7 +486,7 @@ class Connector extends BaseStruct {
     boxServe.vertLine(r4, m2, 6); //   workPole
     boxServe.vertLine(2, 149, 28); //  Up-right edge
 
-    boxServe.show(':connector:box:', 'print');
+    boxServe.show(':connector:box:', 'print', 2);
     boxServe.done(':connector:box:');
     print('--<<--<<  :connector:box: boxServe  done  --<<--<<--  ');
   }

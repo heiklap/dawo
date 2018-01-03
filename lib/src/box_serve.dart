@@ -216,15 +216,22 @@ class BoxServe {
 
   ///  Called by:   User!!  Not from this class.
   ///  To show matrix AND mediate it to glb.buf
-  void show(String _caller, String action) {
+  void show(String _caller, String action, int margin) {
     //  put 'peg' in row_14, col_0, for table to fill screen.
+    //  Is this enough?  handles  0 - 8 - 27?
+    String _margin = ''.padRight(margin, ' ');
     eyeMark14();
     rowMark12(); //  put 175 at the end of row 12
     print(_matrix.length);
 
     ///  if.. is awkward
     ///  TODO  Parameter int _indent, for to set column / left margin in print.
-    if (action == 'print') _matrix.forEach(print); //  only way!!
+    if (action == 'print') {
+      for (var x in _matrix) {
+        print('$_margin$x');
+        //  only way!!
+      }
+    }
     //  return _matrix;  //  if type is: List<String>
     ///  Save box-buffer to:   glb.boxServeBuffers Map
     saveToGLB();

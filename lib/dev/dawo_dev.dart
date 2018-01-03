@@ -116,6 +116,7 @@ class Dev {
     '008: Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
+    '008++ Margin to boxServe, small fixes aso. ': 'V:1 E:2 D:2',
     '008++ Treaty-class to missions auction, used by daily_action.dart example.': 'V:7 E:8 D:6',
     '008++ DawoApp stops extending BaseStruct. Default constructor, new init.': 'V:5 E:4 D:0',
     '008++ get #version, #name to devBox aso:  via dawoApp    ?': 'V:2 E:3 D:0',
@@ -335,7 +336,7 @@ class DevMessage {
 } //--------------------------------------------------  class end DevMessage
 
 ///  Creating instance of (mostly unused) DevMessage class:
-///  dm  would be better.
+///  dm  would be better.  Usage:  not used.
 var devM = new DevMessage();
 
 ///  Creating Glorious :) DevTest class; implement it as:  new dt()
@@ -460,7 +461,7 @@ class DevHelp {
 //
 
 ///  Renamed class to: devHelp in 0.0.3.
-///  TODO  devHelp  dh  would be nice name.
+///  TODO  devHelp  dh  would be nice name. Usage:  not used.
 var devHelp = new DevHelp(); //  Usage: example/app_chore_play.dart
 
 ///  #howTo do these?

@@ -430,7 +430,7 @@ class DawoApp  {
     boxServe.vertLine(1, 139, 23); //  Up-right edge
     boxServe.aHeader(1, 120, '* Actions *');
 
-    boxServe.show(boxHeader, 'print');
+    boxServe.show(boxHeader, 'print', 4);
     boxServe.done(boxHeader);
     print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
   } //  -----  box

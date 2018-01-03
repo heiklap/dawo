@@ -322,12 +322,12 @@ class ScheduleBox {
 
 var scheduleBox = new ScheduleBox();
 
+///  QUEST:  there is surely better algorithm for this
 ///  Gets some small data from effortLM based on parameters.
 List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
   print('-->>-->>getRecommendation in effort  -->>-->>-- ');
   //  _w parameter is for KEY field width.
   //  TODO  add width check / repair for too long _w value
-  //  #QUEST:  There surely is better way to do this.
   List<String> _retL = [];
 
   for (var x = 0; x < _inlM.length; x++) {
@@ -355,7 +355,7 @@ List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
             String _s2 = _inlM[x][y].substring(iVpos, iVpos + 3);
             String _s3 = _inlM[x][y].substring(iEpos, iEpos + 3);
             String _sAdd = ('$_s1 $_s2 $_s3');
-            _retL.add(_sAdd);
+            _retL.add(_sAdd);  //  like:  PhaseDone V:9 E:8
           }
         }
       } //  --  tl.isNumber(checkS)

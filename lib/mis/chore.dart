@@ -483,7 +483,7 @@ class CommonChore extends BaseStruct {
     boxServe.aHeader(32, 154, '  *     Chore     Phases   *     ');
     boxServe.aBox(33, 150, 6, 40, tl.mapToFineList(phase, 18, 20));
     ///  Present it on screen and save to glb-buffer.
-    boxServe.show(':box:Chore:', 'print');
+    boxServe.show(':box:Chore:', 'print', 0);
     ///  Set boxServe ready for next user: clear data.
     boxServe.done(':box:Chore:');
   }

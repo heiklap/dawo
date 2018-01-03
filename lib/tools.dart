@@ -9,6 +9,8 @@
 /// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
 /// * in GIT:  yes.  Blog post:  should b.
 /// * PLAN:  develop some _private inside functions and variables.??
+/// * PLAN: ? Move to own directory, tools.
+/// * PLAN: Split: tools_base, tools_tricks, tools_stamps, tools_coll, tools.
 // Hist:  hkl  2014  0.0.1  dawo/lib
 
 library tools.dart;
@@ -98,6 +100,35 @@ class Tools {
     return s4;
   }
 
+  ///  Copied schema from shower.dart highValue List.
+  ///  Demand number 0-9 to be in formats:   X:N,   T:7  U:5 aso.
+  ///  Find 2 int in Strings like:  V:3 E:7  >  3, 7
+  ///  Map value: 'January x-plan is for V:3 and that demands E:7 to complete.'
+  List<List<int>> valuesInStr(
+      List<Map<String, String>> _inlM, String _inS1, _inS2) {
+    List<List<int>> _retL = [];
+    for (var x = 0; x < _inlM.length; x++) {
+      for (var y in _inlM[x].keys) {
+        int _pos1 = _inlM[x][y].indexOf(_inS1); //  like 'V:'
+        int _pos2 = _inlM[x][y].indexOf(_inS2); //  like 'E:'
+
+        int val_1 = -1;
+        int val_2 = -1;
+        //  check if we got 2 numbers and act for it
+        String check1 = _inlM[x][y].substring(_pos1 + 2, _pos1 + 3);
+        if (tl.isNumber(check1)) {
+          val_1 = int.parse(_inlM[x][y].substring(_pos1 + 2, _pos1 + 3));
+        }
+        String check2 = _inlM[x][y].substring(_pos2 + 2, _pos2 + 3);
+        if (tl.isNumber(check2)) {
+          val_2 = int.parse(_inlM[x][y].substring(_pos2 + 2, _pos2 + 3));
+        }
+        _retL.add([val_1, val_2]); //  like: 5, 4  /  -1, 3
+      } //  --  for (var y in _inlM[x].keys)
+    }
+    return _retL;  //  [1,3 ], [5,4], [6,4], [3,8], [9,5] ....
+  }
+
   ///  Return List of items, where #String exist. from dawo-tools.
   List<String> StrInList(List<String> _l, String _s) {
     List<String> _queryL = new List();
@@ -122,6 +153,17 @@ class Tools {
     }
     s = sBuf.toString();
     return s;
+  }
+
+  ///
+  List<String> listListIntToListString(List<List<int>> inL){
+    List<String> retL = [];
+    for (var x in inL){
+      String s = x.toString();
+      retL.add(s);
+    }
+
+    return retL;
   }
 
   ///  Add padLeft & padRight Strings to make this common.

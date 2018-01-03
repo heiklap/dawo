@@ -111,7 +111,7 @@ class Treaty {
   CommonChore inChore;
   CommonChore outChore;
 
-  ///  Present objects info, used din function parameter calls.
+  ///  Present objects info, used in function parameter calls.
   Map<String, String> placardM = {
     'actor': 'DailyAct',
     'sender': '_dailyTreaty:dayX:',
@@ -332,7 +332,7 @@ class Treaty {
     //  Get basic bunch of day data.
     _dayLayout();
 
-    boxServe.show(':daily:Treaty:  $name ', 'print');
+    boxServe.show(':daily:Treaty:  $name ', 'print', 8);
     boxServe.done(':daily:Treaty:  $name ');
 
     //  TODO  Bids to week - #auction.
@@ -350,7 +350,7 @@ class Treaty {
     //  Get basic bunch of data.
     _dayLayout();
     //  _bargainLayout();  //  when it is ready
-    boxServe.show(' :bargain:daily:Treaty:  $name ', 'print');
+    boxServe.show(' :bargain:daily:Treaty:  $name ', 'print', 22);
     boxServe.done(' :bargain:daily:Treaty:  $name ');
     //  TODO  Bids to add to week - #auction.
   }

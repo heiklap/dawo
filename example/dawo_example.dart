@@ -149,7 +149,7 @@ void boxServeTemplate() {
 
   ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
   boxLayoutDap(dawoHist, ':dawoHist:dailyAction:friday:');
-  boxServe.show(':dailyAction:test:', 'print');
+  boxServe.show(':dailyAction:test:', 'print', 3);
   boxServe.done(':dailyAction:test:');
 }
 

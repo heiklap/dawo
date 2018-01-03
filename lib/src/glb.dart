@@ -68,7 +68,7 @@ class GlobalClass {
     ':Q: -    QUEST-13 ',
     ':R:-27  Rumba-8-54     RULE-13                                  (ritual-0) ',
     ':S:-0  -   schedule-43  scout-27 :scout:Roll say  STREAM  store-4  secret-0 ',
-    ':T: -!!  task-0!!   team*-45     TEST-10  track-7  time:29   TODO-1 ',
+    ':T: -!!   task-0!!   team*-45     TEST-10  track-7  time:29   TODO-1 ',
     ':U: -  :usher:   user-26',
     ':V: -             vigilant-new   ',
     ':W: -        WTF-2  ',
@@ -111,37 +111,7 @@ class GlobalClass {
     '::',
   ];
 
-  ///  HowTo track dawo important things in screen-output.
-  List<String> goodies = [
-    '    . ',
-    ':a:                                                   ',
-    ':b:                                                   ',
-    ':c:                                                   ',
-    ':d:                                                   ',
-    ':e:                                                   ',
-    ':f:                   #foodFinder                     ',
-    ':g:                                                   ',
-    ':h:                                                   ',
-    ':i:                                                   ',
-    ':j:                                                   ',
-    ':k:                                                   ',
-    ':l:                                                   ',
-    ':m:                                                   ',
-    ':n:                                                   ',
-    ':o:                                                   ',
-    ':p:               my-pundit                           ',
-    ':q:                                                   ',
-    ':r:                                                   ',
-    ':s:                                                   ',
-    ':t:                                                   ',
-    ':u:                                                   ',
-    ':v:                                                   ',
-    ':w:                                                   ',
-    ':x:                                                   ',
-    ':y:                                                   ',
-    ':z:                                                   ',
-    '::' ','
-  ];
+
   List<String> dawoTextOutput = [
     'String rumbaS = rumbaBuf.toString',
     'String dawoAppS = dawoBuf.toString',
@@ -265,7 +235,7 @@ class GlobalClass {
     boxServe.vertLine(1, 139, 13); //  Up-right edge
     boxServe.aHeader(1, 120, '* Actions *');
 
-    boxServe.show(boxHeader, 'print');
+    boxServe.show(boxHeader, 'print', 28);
     boxServe.done(boxHeader);
     print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
   }

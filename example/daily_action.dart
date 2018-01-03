@@ -121,7 +121,7 @@ void weekBox(String caller) {
   boxServe.aBox(2, 107, 46, 70, weekSayL);
 
   ///  Save to buffer and print in screen.
-  boxServe.show(':box:week:bundle:', 'print');
+  boxServe.show(':box:week:bundle:', 'print', 2);
 
   ///  Set boxServe ready for next user: clear data.
   boxServe.done(':box:week:bundle:');
@@ -216,7 +216,7 @@ void monday(Mission _mission) {
   boxServe.construct(':daily:bundle:monday:', ':daily:bundle:monday:'); //
   //  add connector or other stuff  stuff
   //  boxServe.aBox(17, 20, _items, _w, __l)
-  boxServe.show(':daily:bundle:monday:', 'print');
+  boxServe.show(':daily:bundle:monday:', 'print', 6);
   boxServe.done(':daily:bundle:monday:test:');
 
   _mission.actChr.box(':daily:bundle:monday:M:actChr:');
@@ -297,7 +297,7 @@ void wednesday(Mission _mission) {
   boxServe.construct(':daily:bundle:wednesday:', ':daily:bundle:wednesday:'); //
   //  add connector or other stuff  stuff
   //  boxServe.aBox(17, 20, _items, _w, __l)
-  boxServe.show(':daily:bundle:wednesday:', 'print');
+  boxServe.show(':daily:bundle:wednesday:', 'print', 6);
   boxServe.done(':daily:bundle:wednesday:test:');
 
   ///  Maybe at the end of week we get enough connector events.
@@ -355,7 +355,7 @@ void friday(Mission _mission) {
   //  OK  boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
   //OK boxServe.aBox(2, 2, 14, 40, tl.mapToListO(connector.scoutM));
 
-  boxServe.show(':daily:bundle:test:', 'print');
+  boxServe.show(':daily:bundle:test:', 'print', 6);
   boxServe.done(':daily:bundle:test:');
 
   fridayBundle.logM
