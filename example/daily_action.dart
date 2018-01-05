@@ -137,14 +137,24 @@ void main() {
   // but it runs important: _appRollMissions method.
   dawoApp.roll();
 
-  ///  appRollMissions is mandatory for Mission-Chore system to work,
-  ///  _appRollMissions(String caller)  !!  private method.
+  Map<String, String> daInfo1 = {
+    '1.  ': 'appRollMissions is mandatory for Mission-Chore system to work,',
+    '2.  ': '_appRollMissions(String caller)  !!  private method.',
+  };
+   List <String> daInfo1L = boxServe.infoBox(daInfo1, 6, 65, 30);
+  daInfo1L.forEach(print);
+  print(' ');
 
-  //  This proves, that dawoApp.appRollMissions is elementary for chores aso.
-  //  But other functionality plays without it.
-  ///  Pick Mission from missionM Map with String literal key.
-  //  One of these:     PackDawoMission, HelsinkiMission, DartlangMission,
-  //  MyMusicMission, MyTimeMission, NationalParksMission
+  Map<String, String> daInfo2 = {
+    '1.  ': 'This proves, that dawoApp.appRollMissions is elementary for chores aso.',
+    '2.  ': 'But other functionality plays without it.',
+    '3.  ': 'Pick Mission from missionM Map with String literal key.',
+    '4.  ': 'One of these:     PackDawoMission, HelsinkiMission, DartlangMission,',
+    '5.  ': 'MyMusicMission, MyTimeMission, NationalParksMission',
+  };
+
+  List <String> daInfo2L = boxServe.infoBox(daInfo2, 6, 70, 40);
+  daInfo2L.forEach(print);
 
   //  variable not used!!
   var wMission = pickMission('PackDawoMission');

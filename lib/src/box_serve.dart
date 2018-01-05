@@ -123,6 +123,47 @@ class BoxServe {
     _matrix[level - 1] = _matrix[level - 1] + sw.toString();
   }
 
+  /// Small lined box using optional parameter in function.
+  /// First: shaping map in tools, tl, library for k, v, widths.
+  List infoBox(Map<String,String> inM, int _k, _v, [int margin]){
+    List<String> infoL = tl.mapToFineList(inM, _k, _v);
+    String _sideMark = '|';
+
+    String indent = '';
+
+    int width = tl.longestItemInList(infoL);
+    //  QUEST: It can not be this hard :)
+    String _ruler = '|'.padRight(width + 1, '=');
+    String _sr = ('$_ruler$_sideMark');
+    String _ruler2 = _sr;
+
+    String _rulerHeader = '|==:infoBox:='.padRight(width + 1, '=');
+    String _srHeader = ('$_rulerHeader$_sideMark');
+    String _rulerHeader2 = _srHeader;
+
+    //  No margin, if optional parameter not set.
+    if(margin != null ) {
+      indent = ''.padRight(margin, ' ');
+    }
+    List<String> infoL2 = [];
+    int _length = infoL.length;
+    infoL2 .add('$indent$_rulerHeader2');
+    for (var x = 0; x < _length; x++){
+
+      String _s;
+      if (infoL[x].length > width ) _s = infoL[x].substring(0,width);
+      if (infoL[x].length < width ) _s = infoL[x].padRight(width, ' ');
+      if (infoL[x].length == width ) _s = infoL[x];
+      String _sideMark = '|';
+      String _s2 = '$_sideMark$_s$_sideMark';
+      infoL2.add('$indent$_s2');
+      infoL2.add('$indent$_ruler2');
+    }
+
+    /// Returned list includes possible margin.
+    return infoL2;
+  }
+
   //  Fill list-data in matrix in r, _c coordinates.
   //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
   //  TODO :BUG: :QUEST: Error check for over-sized lists: do not work always.

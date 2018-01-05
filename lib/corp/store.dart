@@ -15,6 +15,7 @@
 library store;
 
 import 'dart:async';
+import '../src/box_serve.dart';
 
 ///
 class Store {
@@ -43,6 +44,14 @@ class Store {
     // Subscribe to the streams events.
     stream.listen((value) {
       //
+      Map<String, String> _answerM = {
+        '1. ': '---:river: :stream: #phase:1 bLib:demandStream Listened     ---',
+        '2. ': '   :demand:stream: #phase:2:value:  $value',
+        '3. ': '---  :stream: #phase:3:ok  caller: $caller        OK    ---',
+      };
+      List<String> infoTwo = boxServe.infoBox(_answerM, 8, 65, 49);
+      infoTwo.forEach(print);
+
       print('\n--- :stream: #phase:1 bLib:demandStream Listened     ---');
       print("   :demand:stream: #phase:2:value:  $value"); // onData handler
       print('---  :stream: #phase:3:ok  caller: $caller        OK    --- \n');

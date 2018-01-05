@@ -126,6 +126,16 @@ main() {
   }
   //  glb.boxServeBuffers.keys.forEach(print);
 
+  //  testing infoBox in boxServe
+  //  infoBox(Map<String,String> inM, int _k, _v, [int margin]){
+  //  using:  dawoApp.say.
+  /// NOTE  all Map to List rows, here 8, are printed.
+  List<String> infoOne = boxServe.infoBox(dawoApp.say, 8, 57, 9);
+  infoOne.forEach(print);
+ //   packDawoMission.say
+  print('----  second info box  ----');
+  List<String> infoTwo = boxServe.infoBox(packDawoMission.say, 8, 40, 19);
+  infoTwo.forEach(print);
 
   //print buffer: print(glb.boxServeBuffers[':dawoHist:dailyAction:friday:6']);
   print('---- main done   ');

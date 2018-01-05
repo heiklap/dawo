@@ -16,6 +16,7 @@ import '../tools.dart';
 import '../alpha.dart';
 import '../beta.dart';
 
+import '../src/box_serve.dart';
 import '../corp/connector.dart';
 
 ///  Scout was ready and easy.. so adopted it for connector.scoutJoin
@@ -111,7 +112,12 @@ class Scout {
       courierFunc();
     }
     print('-1:run  2:print-cf---3: print:courier:Func.runtimeType- ------');
-
+    Map<String, String> courierM = {
+      '1-2 ': '-1:run  2:print-cf--',
+      '3:  ': '- print:courier:Func.runtimeType-',
+    };
+    List<String> courierL = boxServe.infoBox(courierM, 8, 35, 29);
+    courierL.forEach(print);
     ///  #LEARN:  courier function output:
     print(courierFunc()); //  null
     print(courierFunc); //  Closure: () => void

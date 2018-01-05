@@ -58,15 +58,15 @@ class DawoApp  {
   /// Fields describe actions in connector and binding.
   /// This is the language, that app talks in different situations.
   Map<String, String> say = {
-    'purpose': ':dawoApp :Endage dawo-mission-chore ystem',
-    'lang': ':SAMPKLE :LANG :DAWOLANG :CENTER :CONTROL :ALL :MASTER',
-    'area': ':dawoApp :MISSION  :CHORE :HISTORY',
-    'product': ':dawoApp :CORPORATE :PROMOTION :CHORE',
-    'sell': ':dawoApp :UPGRADE :SPECIAL_MODEL :RENT_ME',
-    'buy': ':dawoApp :EXTRA_VERSION :TIME',
-    'ask': ':dawoApp :WhatEver :WEB_VERSION :LECTURE :EDUCATION',
-    'always': ':dawoApp :Developing :New :Innovation :Suprise',
-    'newer': ':dawoApp :NO :UGLY'
+    'purpose': ':dawoApp :engage :TextBased dawo-mission-chore system',
+    'lang': ':SAMPKLE :LANG :DAWOLANG :TALK :CONTROL :COMMAND :MASTER',
+    'area': ':MISSION  :CHORE :APP :HISTORY :CORPORATE :WEB :SERVER :CL',
+    'product': ':CORPORATE :PROMOTION :DEV :CHORE',
+    'sell': ':UPGRADE :SPECIAL_MODEL :RENT_ME :PRO-VERSION ;',
+    'buy': ':ADVICE :FREE-CODE :EXTRA_VERSION :TIME',
+    'ask': ':WhatEver :WEB_VERSION :LECTURE :EDUCATION',
+    'always': ':Developing :New :Innovation :Suprise :Enthusiasm ',
+    'newer': ':NO :UGLY :HUILO :FUDD :SAD :GIVE-UP'
   };
 
 
@@ -329,11 +329,11 @@ class DawoApp  {
     //  calling it with dawoApp class properties
     store.demandStream(
         //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
-        ':dawoApp:d-s',
+        ':dawoApp:river:',
         tl.mapToList(pack),
         'appListener');
     store.demandStream(
-        ':dawoApp:d-s', ['First Book', 'My Book', 'Third Book'], 'appListener');
+        ':dawoApp:river:', ['First Book', 'My Book', 'Third Book'], 'appListener');
     _flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
   }
 
@@ -347,7 +347,7 @@ class DawoApp  {
     //  calling it with dawoApp class properties
     store.demandStream(
         //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
-        ':dawoApp:rs:',
+        ':dawoApp:river:',
         tl.mapToList(pack),
         'appListener');
 
@@ -365,7 +365,7 @@ class DawoApp  {
     //  When using : StrInList in tools:
     //  _queryL.addAll(tl.StrInList(dev.admN, 'schedule'));
     //  store demandStream acts nicely with 0-length list
-    store.demandStream(':dawoApp:rs:ADM:', _queryL, 'appListener');
+    store.demandStream(':dawoApp:river:ADM:', _queryL, 'appListener');
     //  TODO Stream: meaningful : streams from doneL / devN important
     _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }

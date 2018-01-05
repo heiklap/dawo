@@ -45,6 +45,8 @@ import 'bind.dart';
 
 import '../mis/missions.dart';
 
+import '../src/box_serve.dart';
+
 import '../alpha.dart';
 import '../beta.dart';
 import 'package:dawo/src/box_serve.dart';
@@ -319,8 +321,13 @@ class Connector extends BaseStruct {
     ///  Operations register to Connector with placardM.
 
     ///  Using Analyzer class from dawolang. TODO: get clause from caller.
-    d_lang.an.analyzeStrS(inMsg, d_lang.lb.wordList);
-    print(':dawolang:analyze:watch:check: in :con:join:');
+    String analyzeS = '';
+    ///  NOTE: this returns a String
+    analyzeS = d_lang.an.analyzeStrS(inMsg, d_lang.lb.wordList);
+    List<String> analyzeL = boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 8, 140, 15);
+    //  analyzeL.addAll(boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 8, 100, 15));
+    analyzeL.forEach(print);
+    print(':con:join:Call > :dawolang:analyze:watch:check: in ');
     //  TODO  Output!!  '..:debug:dawolang:print:.:connector;join:...');
     //  TODO  Stop keeping placard here: get: joinM.find.placardM
     //  Placard here is unnecessary, after scoutSolve has access viu joinM

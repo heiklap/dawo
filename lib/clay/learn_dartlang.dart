@@ -1,5 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+//  Copyright do not concern #dartlang language stuff.
 ///  # dawo clay dartlang_guide.
 ///  * presenting data for dawo-chore system, mostly Maps.
 //  dawo version:   0.0.6  27.11.2017
@@ -45,6 +46,7 @@ class LearnDartlang {
         'The <…> notation marks List as a generic (or parameterized) type. Types (generic or not) let you document and annotate your code, making your intent clearer.',
     'Asynchrony':
         'asynchronous: return after setting up a possibly time-consuming operation (such as I/O), without waiting for that operation to complete.',
+     'Threads': 'There is a significant cost to switching threads that has nothing to do with Dart or isolates.',
     'Typedefs':
         'A typedef, or function-type alias, gives a function type a name that you can use when declaring fields and return types.',
     'Comments':
