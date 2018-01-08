@@ -1,4 +1,6 @@
 # Changelog
+## 0.0.75
+ - Chore and Mission modification.
 ## 0.0.7
  - Connector - scout.join
 ## 0.0.6

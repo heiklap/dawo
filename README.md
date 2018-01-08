@@ -1,8 +1,9 @@
-# dawo 0.0.7
+# dawo 0.0.75
 
     https://img.shields.io/pub/v/box2d.svg
 https://pub.dartlang.org/packages/dawo
 
+Minor version now; saving efforts now and not modifying documentation and comments. 
 Learning Dart; by building complicated Dart package with many libraries. Organizing it, finding it's 
 inner connections and developing multipurpose methods.
 Beginner Dart programmers kickoff to learn by developing a glorious package. Latest code in GitHub: https://github.com/heiklap/dawo
@@ -19,19 +20,26 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
     ///  Instance of dawoApp is already created inside package.
     dawoApp.name = 'Play-rumba:dawoApp';
     dawoApp.motto = 'By: dawo_example: dawoApp rolls missioms');
+    //  or using init:
+    dawoApp.init(':dawpApp:daily:bundle:', 'By: :daily:bundle:test:');
   
     var rumba = new Rumba();
 
     // This returns in addition a StringBuffer, that is not used here.
     rumba.dance(dawoApp);
     // Example apps presents output-data on windows console in flow, or in two kind of boxes. 
+    
+### Packages shape
+    Purpose and direction of this package: do one clearly restricted thing and do it well.
+    Not commercial program; using promos, demos to imitate realWorld functionality.
+    Extra functionality is done by plugins that connect to other packages.
 
 ### Brainstorming
 
  Get people together, let they present ideas, collect best ideas to libraries and 
  group them meaningfully.
  Start building first new classes, but keep your mind open for intuitive solutions. 
- Leave room and time to resolve, what will be the direction of this package.
+ 
  Practise to use Dawo by finding it's properties in editor, and think their importance in app.
  
  ### Versions
@@ -54,7 +62,7 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
  0.0.5 High level connections between objects, placard, glb, commonOp and states.    
  0.0.6 box_serve presentation and corporate.     
  0.0.7 Connector and #say language, scout class and join.
-
+ 0.0.75 Mission act Map, instance of dawoApp is now created inside app.
  
 
 ## Files;
@@ -141,8 +149,6 @@ See how common namespace might become polluted with unnecessary stuff, and try t
 a way, to organize them/ your variables to meaningful classes.
 
 Like:
-
-    baseLib. 
     goals, teams, temps
     morn, night, day 
     dev, make, init 

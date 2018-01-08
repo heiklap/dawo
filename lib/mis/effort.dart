@@ -3,7 +3,7 @@
 ///  ##  Effort : data-in / out - working frame for chore user.
 /// * ONLY  chore.dart should import this. 70% of user-activity is here.
 /// * User adds or changes his own data to effort Maps.
-/// * dawo version:  0.0.7.  18.12.2017
+/// * dawo version:  version:  0.0.75.  -  8.1.2018.
 /// * NEXT version: Add SplayTreeSet,  and  LinkedHashSet
 /// * devState : 25%  -  PLAN: 008 : 30%
 // devNote:  Collecting here habit / human-like objects.

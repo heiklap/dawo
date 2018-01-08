@@ -6,7 +6,7 @@
 ///  using #LANG -specific commands to configure their proceedings.
 ///  using #dawolang package in path dependency
 ///  method String weightString(String _aS) checks #C messages
-///   dawo version:   0.0.7. - 18.12.2017  * devState : 15 %
+///   dawo version:  0.0.75.  -  8.1.2018  * devState : 15 %
 ///
 /// * devState: 30%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
@@ -324,7 +324,7 @@ class Connector extends BaseStruct {
     String analyzeS = '';
     ///  NOTE: this returns a String
     analyzeS = d_lang.an.analyzeStrS(inMsg, d_lang.lb.wordList);
-    List<String> analyzeL = boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 8, 140, 15);
+    List<String> analyzeL = boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 18, 140, 15);
     //  analyzeL.addAll(boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 8, 100, 15));
     analyzeL.forEach(print);
     print(':con:join:Call > :dawolang:analyze:watch:check: in ');
@@ -493,9 +493,8 @@ class Connector extends BaseStruct {
     boxServe.vertLine(r4, m2, 6); //   workPole
     boxServe.vertLine(2, 149, 28); //  Up-right edge
 
-    boxServe.show(':connector:box:', 'print', 2);
-    boxServe.done(':connector:box:');
-    print('--<<--<<  :connector:box: boxServe  done  --<<--<<--  ');
+
+
   }
 
   //  TODO  :BUG:Funny:error:

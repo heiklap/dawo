@@ -1,6 +1,6 @@
 name: dawo
 description: Beginner Dart programmers project to learn dartlang by developing a package.
-version: 0.0.7
+version: 0.0.75
 author: Heikki K Lappalainen <heikkiklappalainen@gmail.com.com>
 homepage: https://github.com/heiklap/dawo
 
@@ -18,8 +18,7 @@ dependencies:
   io: "^0.3.0"
   intl: "^0.15.2"
   browser: "^0.10.0+2"
-  dawolang:
-    path: C:\users\Public\ideadart\dawolang
+  dawolang: "^0.0.1"
 
 dev_dependencies:
   test: "^0.12.24+2"

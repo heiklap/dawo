@@ -3,7 +3,7 @@
 ///  ##  Dawo,  learning Dartlang project.
 /// Beginner Dart programmers kickoff to develop a glorious pub package; dawo.
 /// Make it big, complicated; then organize, and make internal systematics.
-/// dawo version:  0.0.7.  18.12.2017
+/// dawo version:  0.0.75.  -  8.1.2018
 ///
 /// Hist: hkl  22.5.2014  0.0.1  dawo/lib, in pub and GitHub
 //  devNote: Dawo, started dev,  nothing special.

@@ -3,8 +3,8 @@
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  Version 0.0.7.  18.12.2017
-/// *  devState : 25 % / unknown  -  PLAN:  cleaning
+/// *  Version version:  0.0.75.  -  8.1.2018.
+/// *  devState : 27 % / unknown  -  PLAN:  cleaning
 // -  HIST:  hkl  8.9.2017
 // -  devNote: 4 pc.
 //
@@ -17,6 +17,8 @@ library missions;
 //  import '../dawo_app.dart';  //  not used
 import '../alpha.dart';
 import '../beta.dart';
+
+import '../src/box_serve.dart';
 
 import 'chore.dart';
 import 'equipment.dart';
@@ -84,6 +86,22 @@ class Mission {
     'ask': ':SAMPLE :ASK1 :ASK2 :ASK3',
     'always': ':SAMPLE :alwaysX :alwaysY :alwaysZ :SAMPLE',
     'newer': ':SAMPLE :NO :UGLY'
+  };
+
+  /// Simulating process-project library with simple map.
+  /// Equipment and Effort classes can also be used for this:
+  /// Equipment equ ..   Effort  eff...
+  ///  Actions events plans and so. Added 6.1.2018
+  Map<String, Map<String, String>> act = {
+    'Goal': {},
+    'Enemy': {},
+    'Frend': {},
+    'Plan': {},
+    'Phase': {},
+    'Mean': {},
+    'Project': {},
+    'Event': {},
+    'Action': {},
   };
 
   ///  Instance info used in functions and outer-process calls.
@@ -276,6 +294,152 @@ class Mission {
     print('''idea:   some basic / flow  functionality, that is too small 
         for packages and too big for tools.dart''');
   }
+
+  ///  Act-map in mission presented using boxServe-class for everybody-to use box-shaped info.
+  void boxAct(String caller) {
+    print('-->>-->>  :mis:box:act: boxServe  start  -->>-->>--  ');
+    _buf.writeln(':mis:box:act:start:  ');
+    final int _sw = 194; //  default screen width, changed later =>
+    final int _rc = 47; //  row count
+
+    String boxHeader = ':mis:box:act:';
+    print('-->>-->>  :mis:box:act: boxServe  start  -->>-->>--  ');
+    List<String> _infoL = [
+      'Mission is connected with other missions in camp Y/ con, and they can work together and join messaging.',
+      'Chores under a mission can connect and use #masters #say and placardM, and has access to :bind:bing:',
+    ];
+
+    boxServe.init(42, 198, '_'); //  rows, width or: 0 = use default 47, 195
+    boxServe.construct(':mis:box:act:  C: $caller', ':mis:box:act: $caller');
+
+    boxServe.aHeader(1, 30, 'clayMap::');
+    ///  Not much informative.
+    boxServe.aHeader(1, 42, clayMap.keys.toString());
+
+    boxServe.aHeader(2, 4, name);
+    boxServe.aHeader(2, 20, choreL.toString());
+    boxServe.aHeader(3, 4, motto);
+    boxServe.aHeader(4, 4, clause);
+
+    boxServe.aBox(3, 84, 2, 100, _infoL);
+
+    boxServe.aBox(6, 4, 8, 76, tl.mapToFineList(say, 8, 68));
+    boxServe.aBox(16, 4, 8, 60, tl.mapToFineList(placardM, 8, 52));
+
+    boxServe.aHeader(25, 4, ' * *  state  * * ');
+    boxServe.aBox(26, 4, 8, 30, tl.mapToListB(st));
+    boxServe.aHeader(33, 4, ' * *  opSt  * * ');
+    boxServe.aBox(34, 4, 8, 30, tl.mapToListB(_opSt));
+
+
+    boxServe.aHeader(15, 35, '  Enemy  ');
+    //  Coordinates: 16, 35.  8 items 30 width.  Map key: 6, value 24
+    boxServe.aBox(16, 35, 8, 50, tl.mapToFineList(act['Enemy'], 6, 40));
+
+    boxServe.aHeader(23, 35, '  Frend  ');
+    //  parameters:  boxServe.aBox(_r, _c, _items, _w, _l)
+    boxServe.aBox(24, 35, 8, 50, tl.mapToFineList(act['Frend'], 6, 40));
+
+    boxServe.aHeader(31, 35, '  Project  ');
+    boxServe.aBox(32, 35, 8, 50, tl.mapToFineList(act['Project'], 6, 40));
+
+    //  --------------
+    boxServe.aHeader(6, 87, '  Phase  ');
+    boxServe.aBox(7, 87, 8, 30, tl.mapToFineList(act['Phase'], 6, 40));
+
+    boxServe.aHeader(14, 87, '  Mean  ');
+    boxServe.aBox(15, 87, 8, 30, tl.mapToFineList(act['Mean'], 6, 40));
+
+    boxServe.aHeader(22, 87, '  Event  ');
+    boxServe.aBox(23, 87, 8, 30, tl.mapToFineList(act['Event'], 6, 40));
+
+    boxServe.aHeader(30, 87, '  Action ');
+    boxServe.aBox(31, 87, 8, 30, tl.mapToFineList(act['Action'], 6, 40));
+
+    //  **  top right **
+    boxServe.aHeader(7, 160, '  Goals  ');
+    boxServe.aBox(8, 160, 8, 33, tl.mapToFineList(act["Goal"], 6, 24));
+
+    boxServe.aHeader(16, 160, '  Plan  ');
+    boxServe.aBox(17, 160, 8, 33, tl.mapToFineList(act['Plan'], 6, 24));
+
+    boxServe.aHeader(24, 175, ' * *  KnofHow  * * ');
+    boxServe.aHeader(34, 175, ' * *  Effort  * * ');
+    /*
+    'Goal': {
+    'Enemy':
+    'Frend':
+    'Project'
+    'Plan': {
+    'Phase':
+    'Mean': {
+    'Event':
+    'Action':
+        */
+
+    boxServe.show(':mis:box:act:', 'print', 2);
+    boxServe.done(':mis:box:act:');
+    print('--<<--<<  :mis:box:act: boxServe  done  --<<--<<--  ');
+  }
+
+
+  ///  Mission box-info.
+  void box(String caller) {
+    print('-->>-->>  :mis:box: boxServe  start  -->>-->>--  ');
+    _buf.writeln(':mis:box:start:  ');
+    final int _sw = 194; //  default screen width, changed later =>
+    final int _rc = 47; //  row count
+
+    String boxHeader = ':mis:box:';
+    print('-->>-->>  :mis:box: boxServe  start  -->>-->>--  ');
+    List<String> _infoL = [
+      'Mission is connected with other missions in camp Y/ con, and they can work together and join messaging.',
+      'Chores under a mission can connect and use #masters #say and placardM, and has access to :bind:bing:',
+    ];
+
+    boxServe.init(42, 198, '_'); //  rows, width or: 0 = use default 47, 195
+    boxServe.construct(':mis:box:  C: $caller', ':mis:box: $caller');
+
+    boxServe.aHeader(1, 30, 'clayMap::');
+    ///  Not much informative.
+    boxServe.aHeader(1, 42, clayMap.keys.toString());
+
+    boxServe.aHeader(2, 4, name);
+    boxServe.aHeader(2, 20, choreL.toString());
+    boxServe.aHeader(3, 4, motto);
+    boxServe.aHeader(4, 4, clause);
+
+    boxServe.aBox(3, 84, 2, 100, _infoL);
+
+    boxServe.aBox(6, 4, 8, 76, tl.mapToFineList(say, 9, 68));
+    boxServe.aBox(16, 4, 8, 45, tl.mapToFineList(placardM, 8, 37));
+
+    boxServe.aHeader(25, 4, ' * *  state  * * ');
+    boxServe.aBox(26, 4, 8, 30, tl.mapToListB(st));
+    boxServe.aHeader(33, 4, ' * *  opSt  * * ');
+    boxServe.aBox(34, 4, 8, 30, tl.mapToListB(_opSt));
+
+
+    //  parameters:  boxServe.aBox(_r, _c, _items, _w, _l)
+
+    boxServe.aHeader(5, 140, ' * *  Measures  * * ');
+    boxServe.aHeader(14, 140, ' * *  phenomenon  * * ');
+    boxServe.aHeader(24, 140, ' * *  KnofHow  * * ');
+    boxServe.aHeader(34, 140, ' * *  Effort  * * ');
+
+    //  boxServe.aBox(_r, _c, _items, _w, _l)
+    //  boxServe.aBox(_r, _c, _items, _w, _l)
+    //  boxServe.aBox(_r, _c, _items, _w, _l)
+
+    boxServe.aHeader(7, 160, '* mission  buf  *');
+    boxServe.aBox(8, 160, 34, 33, tl.bufToList(_buf));
+
+
+    boxServe.show(':mis:box:', 'print', 2);
+    boxServe.done(':mis:box:');
+    print('--<<--<<  :mis:box: boxServe  done  --<<--<<--  ');
+  }
+
 
   ///  For report: To get Chore class names in String.
   String getChoreNamesS() {

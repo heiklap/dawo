@@ -3,7 +3,7 @@
 /// ##  Daily:Bundle:  presentation and simulation of dawo events
 /// *
 /// * HINT:  Run this for one day, by commenting days out;  like  //  friday()
-/// * dawo version:  0.0.7. - 18.12.2017  -   devState: 40 %
+/// * dawo version:  0.0.75.  -  8.1.2018.  -   devState: 40 %
 /// * GitHub:    rows:  550
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
 // * Hist:hkl  27.11.2017  -  0.0.6
@@ -197,6 +197,19 @@ void monday(Mission _mission) {
   //  hlTry:  set mission inside class.
   mondayBundle.outsider = _mission;
 
+  //  Filling act_map with sample act data from dawo_action_model:
+  _mission.act = {
+    'Goal': {'Unemployment': '- 10 %', 'Production': '+ 8 %', 'Export': '+ 6 %', 'Invests': '+ 8 %'},
+    'Enemy': {'Crime': 'MagnitskyAct', 'TaxParadise': 'Dirty money', 'Stupidity': 'x', 'Laziness': 'y', 'Other': 'z'},
+    'Frend': {'Frend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Project': {'Project:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Plan': {'Plan:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Phase': {'Phase:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Mean': {'Mean:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Event': {'Event:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Action': {'Act:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+  };
+
   _mission.showInfo();
   _mission.report(':daily:Bundle:monday:', true);
   //  Is it reasonable to put these functions inside a class?!
@@ -207,6 +220,7 @@ void monday(Mission _mission) {
       ':key:daily:Bundle:monday:', ':da:msg:');
   connectorBuf.write('-->>  :daily:Act:monday: connector :opJoin:ping:done  ');
   _mission.report(':monday:', true);
+  _mission.boxAct(':day:monday:');
   _mission.learnChr.roll();
   scout.init(2, mondayBundle.dailyCourier);
   scout.open(1, mondayBundle.dailyCourier); //  ??   openThis
@@ -260,6 +274,7 @@ void tuesday(Mission _mission) {
   ///  Report for Mission from parameter.  _ is just for clarity.
   _mission.report(':daily:bundle:test:', true);
   _mission.joyChr.box(':daily:bundle::day:tuesday:');
+  _mission.box(':day:tuesday:example:');
   tuesdayBundle.logM
       .putIfAbsent('Day tuesday done', () => 'msg: in :daily:work:');
   weekSayL.addAll(tl.mapToFineList(_mission.say, 7, 55));
@@ -272,6 +287,19 @@ void wednesday(Mission _mission) {
   wednesdayBundle.logM
       .putIfAbsent('Day wednesday beginning', () => 'msg: in :daily:work:');
   wednesdayBundle.outsider = _mission;
+
+  //  Filling act_map with sample act data from dawo_action_model:
+  _mission.act = {
+    'Goal': {'Unemployment': '- 10 %', 'Production': '+ 8 %', 'Export': '+ 6 %', 'Invests': '+ 8 %'},
+    'Enemy': {'Crime': 'MagnitskyAct', 'TaxParadise': 'Dirty money', 'Stupidity': 'x', 'Laziness': 'y', 'Other': 'z'},
+    'Frend': {'Frend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Project': {'Project:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Plan': {'Plan:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Phase': {'Phase:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Mean': {'Mean:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Event': {'Event:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Action': {'Act:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+  };
 
   ///  Using mission directly by it's instance, not by function parameter.
   myTimeMission.showInfo();
@@ -313,6 +341,7 @@ void wednesday(Mission _mission) {
   ///  Maybe at the end of week we get enough connector events.
   connector.box('daily:act:wednesday:');
   _mission.peopleChr.box('daily:Bundle:wednesday:');
+  _mission.boxAct(':day:wednesday:');
 
   ///  NEXT:  boxServe #myTime
   wednesdayBundle.logM

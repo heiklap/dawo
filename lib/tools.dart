@@ -5,7 +5,7 @@
 ///  stuff is most valuable to beginner programmers, and developing this has
 ///  taken time. Fixing bugs only when something throws.
 /// * Also some #stamp date-time aso. functions.
-/// * dawo version:  0.0.7.  18.12.2017    devState : 50 %
+/// * dawo version:  version:  0.0.75.  -  8.1.2018    devState : 50 %
 /// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
 /// * in GIT:  yes.  Blog post:  should b.
 /// * PLAN:  develop some _private inside functions and variables.??

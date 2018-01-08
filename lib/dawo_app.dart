@@ -4,7 +4,7 @@
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dawo version:  0.0.7+  18.12.2017
+/// * dawo version:  0.0.75.  -  8.1.2018
 /// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * Problem: dawoApp not instantiated; no access to dawo.version aso.
@@ -47,7 +47,7 @@ var appBuf = new StringBuffer(); //  not used here
 ///  Stop using: extends BaseStruct: constructor / init is not handy
 class DawoApp  {
   final String name = 'DawoApp';
-  final String version = '0.0.7+';
+  final String version = '0.0.75';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   final String info = 'Innovative & educational small data-handler experimentation.';
@@ -98,7 +98,7 @@ class DawoApp  {
     // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 bLib:demandStream Listened
     'develop': 'Under development.. 0 % to:  0.0.7+ ',
    // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 bLib:demandStream Listened
-    'pack: version': ' pack: 0.0.7+ ',
+    'pack: version': ' pack: 0.0.75 ',
     '': '',
   };
 
@@ -125,7 +125,7 @@ class DawoApp  {
   //  String agenda = 'dawoApp rolls missions';
   //  String msg = 'dawoApp-Message..';
   //  String develop = 'Under development.. 0 % to:  0.0.7+ ';
-  //  String version = '0.0.7+ ';
+  //  String version = '0.0.75 ';
 
   //  Setting value for console
   // printing in flowC / flowS. TODO  hklGTry

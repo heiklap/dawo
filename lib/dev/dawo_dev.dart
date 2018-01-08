@@ -3,7 +3,7 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
-/// * dawo version:  0.0.7. - 18.12.2017  -   devState: 15 %
+/// * dawo version:  0.0.75.  -  8.1.2018.  -   devState: 15 %
 /// * GitHub: yes  29.11.2014
 //
 // * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
@@ -84,19 +84,22 @@ class Dev {
   ///  Changes #maybe planned to dawoPackage.
   ///  V: 1-9 = value, E = effort,  D:  = done
   Map<String, String> later = {
-      '   * * *  next List to plan Dawo 009 aso changes.   * * * ': '--- --- --- ',
-      'LATER: Internal systematics. Most critical improvements.': 'V:5 E:6 D:0',
-      'LATER: ?   UI?                                              ?.': 'V:5 E:5 D:0',
-      'LATER: FLOW:  Real work-flow for chore': 'V:5 E:8 D:0',
-      'LATER: UI:  Choose mission / chore at start.': 'V:5 E:8 D:0',
-      'LATER: DB  propably Mongo There is Pub package                    .': 'V:5 E:6 D:0',
-      'LATER: :ad:promo: Corporation:   real store & resolve :bind:bing: ': 'V:6 E:6 D:0',
-      'LATER: Server-client. Simple server - client.                     ': 'V:2 E:2 D:0',
-      'LATER: Server-client.  Angel package          ': 'V:6 E:3 D:0',
-      'LATER: FIX: Make devBox a class; long functions are hard to manage.': 'V:1 E:8 D:-1',
-      'LATER: DB: Local storage for user own data.                   ': 'V:5 E:4 D:0',
-      'LATER: WEB presentation, dawo-web-hooks for here-is-text-output.': 'V:7 E:8 D:0',
-      'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ': 'V:5 E:4 D:0',
+    '   * * *  next List to plan Dawo 009 aso changes.   * * * ': '--- --- --- ',
+    'Plugin: DB  propably Mongo There is Pub package                    .': 'V:5 E:6 D:0',
+    'Plugin: Server-client.  Angel package          ': 'V:6 E:3 D:0',
+    'Plugin: DB: Local storage for user own data.                   ': 'V:5 E:4 D:0',
+    'LATER: Internal systematics. Most critical improvements.': 'V:5 E:6 D:0',
+
+    'LATER: FLOW:  Real work-flow for chore': 'V:5 E:8 D:0',
+    'LATER: ?   UI?                                              ?.': 'V:5 E:5 D:0',
+    'LATER: UI:  Choose mission / chore at start.': 'V:5 E:8 D:0',
+
+    'LATER: :ad:promo: Corporation:   real store & resolve :bind:bing: ': 'V:6 E:6 D:0',
+    'LATER: Server-client. Simple server - client.                     ': 'V:2 E:2 D:0',
+    'LATER: FIX: Make devBox a class; long functions are hard to manage.': 'V:1 E:8 D:-1',
+
+    'LATER: WEB presentation, dawo-web-hooks for here-is-text-output.': 'V:7 E:8 D:0',
+    'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ': 'V:5 E:4 D:0',
 };
 
   ///  Changed from List to Map in 0.0.7. version
@@ -116,21 +119,25 @@ class Dev {
     '008: Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
-    '00': 'V:0 E:0 D:0',
-    '008': 'V:0 E:0 D:0',
-    '008++ infoBox in boxServe for framed strings with indent margin in cl.': 'V:5 E:7 D:4',
-    '008++ Margin to boxServe, small fixes aso. ': 'V:1 E:2 D:2',
-    '008++ Treaty-class to missions auction, used by daily_action.dart example.': 'V:7 E:8 D:6',
-    '008++ DawoApp stops extending BaseStruct. Default constructor, new init.': 'V:5 E:4 D:0',
-    '008++ get #version, #name to devBox aso:  via dawoApp    ?': 'V:2 E:3 D:0',
-    '008++ DawoApp: Instance dawoApp created and fields used inside package.': 'V:5 E:2 D:1',
-    '008++ INTL Tools stampDateTimePlain for:2017-12-23  08:47:27 ': 'V:1 E:1 D:7',
-    '008++ Chore: SCHEMA: flux: actions and answers in common roll-mill-loop ': 'V:8 E:8 D:1',
-    '008++ Chore modification: Part: 2. + box and example.': 'V:4 E:4 D:2',
-    '008++ Chore master-field to get Mission.say Map for box.': 'V:3 E:2 D:7',
-    '008++ Chore modification: Part: 1.             ?': 'V:5 E:7 D:2',
-    '008++devBox  Added header and footer rows.             ?': 'V:1 E:1 D:9',
-    '008++ListToMap: dawoDev version008 and later are now Maps.             ?': 'V:1 E:1 D:9',
+  };
+
+  ///  Minor update
+  Map<String, String> version0075 = {
+    '0075++ Begin to change minor version:   0.0.75.  -  8.1.2018': 'V:1 E:2 D:3',
+    '0075++ box and boxAct in mission, and Map<String, Map<String, String>> act': 'V:6 E:4 D:3',
+    '0075++ infoBox in boxServe for framed strings with indent margin in cl.': 'V:5 E:7 D:4',
+    '0075++ Margin to boxServe, small fixes aso. ': 'V:1 E:2 D:2',
+    '0075++ Treaty-class to missions auction, used by daily_action.dart example.': 'V:7 E:8 D:6',
+    '0075++ DawoApp stops extending BaseStruct. Default constructor, new init.': 'V:5 E:4 D:0',
+    '0075++ get #version, #name to devBox aso:  via dawoApp    ?': 'V:2 E:3 D:0',
+    '0075++ DawoApp: Instance dawoApp created and fields used inside package.': 'V:5 E:2 D:1',
+    '0075++ INTL Tools stampDateTimePlain for:2017-12-23  08:47:27 ': 'V:1 E:1 D:7',
+    '0075++ Chore: SCHEMA: flux: actions and answers in common roll-mill-loop ': 'V:8 E:8 D:1',
+    '0075++ Chore modification: Part: 2. + box and example.': 'V:4 E:4 D:2',
+    '0075++ Chore master-field to get Mission.say Map for box.': 'V:3 E:2 D:7',
+    '0075++ Chore modification: Part: 1.             ?': 'V:5 E:7 D:2',
+    '0075++devBox  Added header and footer rows.             ?': 'V:1 E:1 D:9',
+    '0075++ListToMap: dawoDev version008 and later are now Maps.             ?': 'V:1 E:1 D:9',
 };
 
   ///  To add developer notes.

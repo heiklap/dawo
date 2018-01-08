@@ -3,7 +3,7 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dawo version:  0.0.7.  18.12.2017.   devState:  60%
+/// * dawo version:  0.0.75.  -  8.1.2018   devState:  60%
 /// * GitHub: yes
 //
 

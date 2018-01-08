@@ -3,7 +3,7 @@
 ///  ##  Sample file made by Dart.  "Home of dawo libraries."
 /// * Badly treated and would deserve more love than I have to give.
 /// * Might serve as a collector or central for it's sub-libraries.
-/// * dawo version: 0.0.7 :  18.12.2017  READY-STATE: for 0.0.7 : 0 %
+/// * dawo version: 0.0.75.  -  8.1.2018  devState : 20 %
 /// *
 // * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
 ///
