@@ -91,6 +91,6 @@ void testAllStreams() {
 
   print('   * * *    Streams are all in going      * * * ');
 
-  print('   * * *    Streams are not my frends    * * * \n');
+  print('   * * *    Streams are not my friends    * * * \n');
   dt.end('main ends  $thisModule');
 }

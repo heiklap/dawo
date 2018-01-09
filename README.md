@@ -62,7 +62,8 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
  0.0.5 High level connections between objects, placard, glb, commonOp and states.    
  0.0.6 box_serve presentation and corporate.     
  0.0.7 Connector and #say language, scout class and join.
- 0.0.75 Mission act Map, instance of dawoApp is now created inside app.
+
+ 0.0.75 Mission act Map. Instance of dawoApp is now created inside app.
  
 
 ## Files;
@@ -134,9 +135,10 @@ Creating Dawo variables in new file:
     import 'package:dawo/dawo_app.dart';    
       
     main() {
-      //  Create classes as above. Or copy code from: Usage:
+      //  Create or init classes as above. Or copy code from: Usage:
       
-      var dawoApp = new DawoApp('Pplay-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
+      dawoApp.init(Pplay-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
+      //  var dawoApp = new DawoApp('Play-rumba:dawoApp', 'By: dawo_example: dawoApp rolls missioms');
       var rumba = new Rumba();
       rumba.dance(dawoApp);
     }

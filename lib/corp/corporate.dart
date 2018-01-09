@@ -66,7 +66,7 @@ class Corporate {
   ///  Other users are calling process with their own placard.
   Map<String, String> placardM = {
     'actor': 'Corporation',
-    'sender': 'Our corp frendly',
+    'sender': 'Our corp friendly',
     'receiver': 'Customers',
     'command': 'Buy new products:',
     'msg': 'New season coming.',

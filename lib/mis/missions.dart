@@ -40,8 +40,7 @@ bool _pB = false; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
-///  buildMissions() fills this list. It is outside of the Class.
-//  List<Mission> missionL = []; deprecated => Map<String, Mission> missionM
+///  buildMissions() fills this Map. It is outside of the Class.
 Map<String, Mission> missionM = {
 
 };
@@ -74,7 +73,6 @@ class Mission {
 
   /// #NEXT: Carry values to scoutJoin in connector
   /// Fields describe actions in connector and binding.
-  /// Renamed this to: #say.  (  #talk,  or:  #com )
   /// This is the language, that missions and other objects talk (in con) .
   Map<String, String> say = {
     'purpose': ':SAMPLE :ThisMissionBLAA blaa blaa',
@@ -95,7 +93,7 @@ class Mission {
   Map<String, Map<String, String>> act = {
     'Goal': {},
     'Enemy': {},
-    'Frend': {},
+    'Friend': {},
     'Plan': {},
     'Phase': {},
     'Mean': {},
@@ -336,9 +334,9 @@ class Mission {
     //  Coordinates: 16, 35.  8 items 30 width.  Map key: 6, value 24
     boxServe.aBox(16, 35, 8, 50, tl.mapToFineList(act['Enemy'], 6, 40));
 
-    boxServe.aHeader(23, 35, '  Frend  ');
+    boxServe.aHeader(23, 35, '  Friend  ');
     //  parameters:  boxServe.aBox(_r, _c, _items, _w, _l)
-    boxServe.aBox(24, 35, 8, 50, tl.mapToFineList(act['Frend'], 6, 40));
+    boxServe.aBox(24, 35, 8, 50, tl.mapToFineList(act['Friend'], 6, 40));
 
     boxServe.aHeader(31, 35, '  Project  ');
     boxServe.aBox(32, 35, 8, 50, tl.mapToFineList(act['Project'], 6, 40));
@@ -368,7 +366,7 @@ class Mission {
     /*
     'Goal': {
     'Enemy':
-    'Frend':
+    'Friend':
     'Project'
     'Plan': {
     'Phase':

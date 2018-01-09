@@ -40,7 +40,7 @@ class Scout {
     'sell': 'scout: : TREK :JOURNEY :VOYAGE',
     'buy': 'scout: :MATERIAL :TIME :ENERGY :FOOD',
     'ask': ':CUSTOMERS :COMMUNITY :COMMON',
-    'always': 'scout: :camp :frendly :contact',
+    'always': 'scout: :camp :friendly :contact',
     'newer': 'scout: :NO :UGLY'
   };
 

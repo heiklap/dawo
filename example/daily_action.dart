@@ -201,7 +201,7 @@ void monday(Mission _mission) {
   _mission.act = {
     'Goal': {'Unemployment': '- 10 %', 'Production': '+ 8 %', 'Export': '+ 6 %', 'Invests': '+ 8 %'},
     'Enemy': {'Crime': 'MagnitskyAct', 'TaxParadise': 'Dirty money', 'Stupidity': 'x', 'Laziness': 'y', 'Other': 'z'},
-    'Frend': {'Frend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Friend': {'Friend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
     'Project': {'Project:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
     'Plan': {'Plan:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
     'Phase': {'Phase:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
@@ -292,7 +292,7 @@ void wednesday(Mission _mission) {
   _mission.act = {
     'Goal': {'Unemployment': '- 10 %', 'Production': '+ 8 %', 'Export': '+ 6 %', 'Invests': '+ 8 %'},
     'Enemy': {'Crime': 'MagnitskyAct', 'TaxParadise': 'Dirty money', 'Stupidity': 'x', 'Laziness': 'y', 'Other': 'z'},
-    'Frend': {'Frend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
+    'Friend': {'Friend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
     'Project': {'Project:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
     'Plan': {'Plan:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
     'Phase': {'Phase:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},

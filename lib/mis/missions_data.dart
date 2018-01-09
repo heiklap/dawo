@@ -37,7 +37,7 @@ class MissionData {
       'sell': ':packDawo :BuyME :RentME :SendMe :HireMe :Power',
       'buy': ':packDawo :ADVIDCE :TIME :MyTime :Projects',
       'ask': ':packDawo :Stack :GITTER :ASK3',
-      'always': ':packDawo :alwaysX :alwaysY :alwaysZ :packDawo :FRENDLY',
+      'always': ':packDawo :alwaysX :alwaysY :alwaysZ :packDawo :FRIENDLY',
       'newer': ':packDawo :NO :UGLY :HUILO :ANGRY :SORROW'
     };
 
@@ -88,7 +88,7 @@ class MissionData {
       'sell': ':dlMis :Power :Learn :Help :Info :Examples',
       'buy': ':dlMis :Jobs :License :Projects :PushRequests :',
       'ask': ':dlMis :GitHub :Stack :Gitter :GPlus :Misc',
-      'always': ':dlMis :FREE :FRENDLY :EASY :FAST :',
+      'always': ':dlMis :FREE :FRIENDLY :EASY :FAST :',
       'newer': ':dlMis :HUILO :BAD :UGLY :SORROW :ANGRY :UNTRUST :'
     };
     dartlangMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
@@ -118,7 +118,7 @@ class MissionData {
     myMusicMission.placardM = {
       'actor': 'a:myMus:',
       'sender': 's: myMusicMis',
-      'receiver': 'r: :ALL :FRENDS :MUSIC',
+      'receiver': 'r: :ALL :FRIENDS :MUSIC',
       'command': 'cmd: :LISTEN :ENJOY :BUY :RENT',
       'msg': 'msg: myMusicMsg :MUSIC :SINGING ',
     };
@@ -155,7 +155,7 @@ class MissionData {
       'buy': ':npMis :RENT_COTTAGE :RENT_CAR :RENT_QUIDE :BUY_READY_TRIP',
       'ask': ':npMis :MAP :INFO :QUIDE :ROOM :DANGER :FIRST_HELP',
       'always': ':npMis :Healthy :Cheap :Special :Fendly :',
-      'newer': ':npMis :NO :UGLY :HUILO :Shit :Hostile :Unfrendly'
+      'newer': ':npMis :NO :UGLY :HUILO :Shit :Hostile :Unfriendly'
     };
     nationalParksMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
 

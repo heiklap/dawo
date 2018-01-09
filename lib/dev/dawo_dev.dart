@@ -115,7 +115,7 @@ class Dev {
     '008: Show: ll Dawo-Objects :presentation: with box_serve.': 'V:7 E:5 D:0',
     '008: :demo::ad: Advertising / simulate  for only-commercial-version stuff.': 'V:8 E:6 D:0',
     '008: LOOP:  SOON:  say - analyze - con - effort - affair - schedule.': 'V:8 E:6 D:0',
-    '008: Example: #Huilo: #Hypertext Unfrendly-Incursion-Level #Observer.': 'V:5 E:3 D:0',
+    '008: Example: #Huilo: #Hypertext Unfriendly-Incursion-Level #Observer.': 'V:5 E:3 D:0',
     '008: Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
@@ -123,6 +123,7 @@ class Dev {
 
   ///  Minor update
   Map<String, String> version0075 = {
+    '0075 Rolled to Pub and GitHub. Tests and docs unchecked to save lobour.':  'V:2 E:3 D:3',
     '0075++ Begin to change minor version:   0.0.75.  -  8.1.2018': 'V:1 E:2 D:3',
     '0075++ box and boxAct in mission, and Map<String, Map<String, String>> act': 'V:6 E:4 D:3',
     '0075++ infoBox in boxServe for framed strings with indent margin in cl.': 'V:5 E:7 D:4',
@@ -166,7 +167,7 @@ class Dev {
       ..add('NEXT: All Dawo-Objects presentation with box_serve.')
       ..add('Maybe:  Make debBox a class')
       ..add('SOON: LOOP: say - analyze - con - effort - affair - schedule.')
-      ..add('NEXT:0.1 #Huilo: #Hypertext Unfrendly-Incursion-Level #Observer.')
+      ..add('NEXT:0.1 #Huilo: #Hypertext Unfriendly-Incursion-Level #Observer.')
       ..add('NEXT: Example new mission: useful, chore: #FoodFinder, #pundit  ')
       ..add('Moving from 0.0.6 to 0.0.7. 18.12.2017, Git and Pub.')
       ..add('Add parameter #name to con.join.')

@@ -23,7 +23,7 @@ StringBuffer batonMsg = new StringBuffer();
 int batonCount = 0;
 
 StringBuffer streamBuf = new StringBuffer();
-String streamMotto = 'Streams are not my frends :-|  ';
+String streamMotto = 'Streams are not my friends :-|  ';
 
 ///TODO  teamNext   PLAN:    Use futures for outPut
 //------------------------------------------------functions
