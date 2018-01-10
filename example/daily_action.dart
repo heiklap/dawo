@@ -14,16 +14,15 @@ library dailyBundle;
 
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/shower.dart';
+import 'package:dawo/tools.dart';
 
 import 'package:dawo/mis/camp.dart';
 import 'package:dawo/mis/chore.dart';
-//  import 'package:dawo/mis/equipment.dart';
 import 'package:dawo/mis/missions.dart';
 import 'package:dawo/mis/treaty.dart';
 
-//  import 'package:dawo/corp/bind.dart';
+import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/corp/connector.dart';
-import 'package:dawo/tools.dart';
 import 'package:dawo/src/box_serve.dart';
 
 //  Instance is not created here beginning from 12-2017  0.0.7+

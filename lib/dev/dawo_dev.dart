@@ -11,8 +11,18 @@
 
 library dawo_dev.dart;
 
+import '../alpha.dart';
 import '../shower.dart';
 import '../tools.dart';
+
+import '../src/box_serve.dart';
+import '../beta.dart';
+
+part 'aide.dart';
+part 'dawo_hist.dart';
+part 'dev_notes.dart';
+part 'envoy.dart';
+
 
 //TODO  name   PROBLEMS, when using too common names:
 //   devTest   =   22  times     CHANGE:   test  ! ??
@@ -65,8 +75,8 @@ class Dev {
     'newer': ':dev  :NO :UGLY'
   };
 
-  ///  Generic list to keep and handle all devNotes
-  List<DevMessage> devMessageL = []; //  not used
+  ///  Generic list to keep and handle all envoyMessages
+  List<Envoy> envoyL = []; //  not used
   //  To collect range aso. errors.
   List<String> errorLog = ['* dev errorLog  *'];
 
@@ -84,7 +94,7 @@ class Dev {
   ///  Changes #maybe planned to dawoPackage.
   ///  V: 1-9 = value, E = effort,  D:  = done
   Map<String, String> later = {
-    '   * * *  next List to plan Dawo 009 aso changes.   * * * ': '--- --- --- ',
+    '   * * *  next List to plan Dawo 009 aso changes.   * * * ': 'Value, Effort, Done',
     'Plugin: DB  propably Mongo There is Pub package                    .': 'V:5 E:6 D:0',
     'Plugin: Server-client.  Angel package          ': 'V:6 E:3 D:0',
     'Plugin: DB: Local storage for user own data.                   ': 'V:5 E:4 D:0',
@@ -102,6 +112,21 @@ class Dev {
     'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ': 'V:5 E:4 D:0',
 };
 
+  Map<String, String> dreams = {
+    'Completed: Maybe feb 2019.': 'No pressure.',
+    'Plans for 2018  ': 'Value, Effort, Done',
+    '1.0.0 Complete Web app. Maybe Angular.': 'V:9 E:9 D:0',
+    '0.9.0 Mill, elementary presentaton.': 'V:9 E:8 D:0',
+    '0.8.0 Test cleaning, benchmarks, overall celaning': 'V:5 E:4 D:0',
+    '0.7.0 Clay data and Chores interconnecting.': 'V:5 E:6 D:0',
+    '0.6.0 Server framework, likely Dart Angel by Toby.': 'V:5 E:4 D:0',
+    '0.5.0 JSON import all data.': 'V:5 E:4 D:0',
+    '0.4.0 Elementary WEB show.': 'V:5 E:7 D:0',
+    '0.3.0 Simple server, localStorage, DB, maybe Mongo.': 'V:5 E:4 D:0',
+    '0.2.0 Demos and Plugins to simulate commercial app.': 'V:4 E:4 D:0',
+    '0.1.0 Elementary CL / console app.': 'V:5 E:4 D:0',
+  };
+
   ///  Changed from List to Map in 0.0.7. version
   ///  ///  V: 1-9 = value, E = effort,  D:  = done
   ///  Changes likely planned to dawoPackage after 0.0.7 version.
@@ -116,14 +141,15 @@ class Dev {
     '008: :demo::ad: Advertising / simulate  for only-commercial-version stuff.': 'V:8 E:6 D:0',
     '008: LOOP:  SOON:  say - analyze - con - effort - affair - schedule.': 'V:8 E:6 D:0',
     '008: Example: #Huilo: #Hypertext Unfriendly-Incursion-Level #Observer.': 'V:5 E:3 D:0',
-    '008: Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
+    '008++ Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
+    '008++ dev class reshape, new Class names: aide, hist and envoy.': 'V:4 E:3 D:3',
   };
 
-  ///  Minor update
+  ///  Minor update, at the end no docs checked, no test, not every file updated.
   Map<String, String> version0075 = {
-    '0075 Rolled to Pub and GitHub. Tests and docs unchecked to save lobour.':  'V:2 E:3 D:3',
+    '0075 Rolled to Pub and GitHub. Tests and docs unchecked to save labour.':  'V:2 E:3 D:3',
     '0075++ Begin to change minor version:   0.0.75.  -  8.1.2018': 'V:1 E:2 D:3',
     '0075++ box and boxAct in mission, and Map<String, Map<String, String>> act': 'V:6 E:4 D:3',
     '0075++ infoBox in boxServe for framed strings with indent margin in cl.': 'V:5 E:7 D:4',
@@ -328,152 +354,6 @@ var devTestStreamData = ['devTestStream, for notes and testing',
 var devTestStream = new Stream.fromIterable(devTestStreamData);
 */
 
-///  NOTE: Messages might be something that demand immediately action.
-///  For more complicated cases of note-message-handling.
-class DevMessage {
-  var messageL = ['* * *  DevMessages   * * *', '', ''];
-
-  ///  Map for devMessages.
-  Map<String, String> messageM = {'': ''};
-  void messageAdd() => print('addNewMessage();');
-
-  void show() => print('Showing all Dev-messages..');
-//  #Code #Sample
-//  add code:
-//  devTestStream.join('New one')         //  add some streams
-//    .join(String 'Second one')
-//    .add('we are shutting down!');
-// ('New note joined to devStream');
-} //--------------------------------------------------  class end DevMessage
-
-///  Creating instance of (mostly unused) DevMessage class:
-///  dm  would be better.  Usage:  not used.
-var devM = new DevMessage();
-
-///  Creating Glorious :) DevTest class; implement it as:  new dt()
-///  Collect all my own devTests inside a class.
-///  howTo avoid calling it devTest.devTest  lol
-class DevHelp {
-  //  TODO  DevHelp Constructor: add constructor: (String user, String x)
-
-  /// For future use:  map for testing  dev. #NotUsed
-  Map<String, String> normMap = {
-    'dawo': 'coding dawo',
-    'rest': 'coffee Time',
-    'dawoColl': 'W O R K..ing hours',
-    'dawoEngine': 'riding home'
-  };
-
-  ///  Function for to print devTestMap.  Looks funny :)
-  void normMapShow() {
-    print(' \n ------------>>-->>-- devHelp norms  ------------>>-->>--');
-    //  Using here new Tools, tl class.
-    normMap.forEach(tl.printSS); //  from tools.dart
-    print(' \n --<<--<<------------ devHelp norms  --<<--<<------------');
-  }
-
-//  TODO  teamDev: PLAN:  make all 6 tests use same name with
-//         parameters: Test, Msg, Line, Begin, End, Return
-
-  /// TODO  teamDev:   Should this be named to devTestInfo ??  devInfo ??
-  /// report testers info
-  num devTest(String unit, String whoDoneThis) {
-    if (dev.devTestPhase) {
-      DateTime now = new DateTime.now();
-      String _s30 = '                              ';
-      print('$_s30  DEVELOPMENT TEST --------------------------------------');
-      print('$_s30  Testing $unit  Test n:o:  $dev.devTestCount');
-      print('$_s30  Tester:  $whoDoneThis');
-      print('$_s30  dev test ended    Time: $now ');
-      print('');
-
-//  TODO  aSync stream     devTestStream.
-      //  NOTE: Dubious to use dev-class here?
-      dev.devTestCount++;
-    }
-    return dev.devTestCount;
-  }
-
-  /// NOTE  team-team   developers can send messages to each others in test printings
-  /// Simple message to track run and development
-  devMsg(String unit, String whoDoneThis) {
-    if (dev.devTestPhase) {
-      DateTime now = new DateTime.now();
-      String _s30 = '                              ';
-      print('$_s30  Developers message -----------------------------------');
-      print('$_s30  Testing:  $unit Tester:  $whoDoneThis  ');
-      print('$_s30  dev msg over:    Time: $now ');
-      print('');
-    }
-  }
-
-  ///  This is (messy) function that is used to run other function in tests
-  ///  it is called:     tf(testSomething);
-  ///  Problems:   null method do not have... call
-  void tf(var rf) {
-    String _s = rf;
-    var _sType = rf.runtimeType;
-
-//TODO  Function  getter  There is no such getter 'runTimeType' in 'Function'
-//  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
-
-    print('b  b  b  b  b  b  b  b  b  b  b  b  b     Beginning:   $_s');
-    rf();
-    print('runtime type:   $_sType');
-    print('e  e  e  e  e  e  e  e  e  e  e  e  e  e   End of +   $_s');
-    print('');
-  }
-
-//  TODO  teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
-
-  ///  Dynamic-parameter-function, that is used to run other function in tests.
-  ///  It is  called:     tfDyn(testSomething);
-  ///  TODO  Check these String / type errors.
-  void tfDyn(var rf) {
-    //A value of type 'toString' cannot be assigned to a variable of type 'String'
-    String _s = rf.toString;
-
-    //  Can we get runtime type toString?
-    String _sType = rf.runTimeType();
-    //TODO
-    //  There is no such getter 'runTimeType' in 'Function'
-    //  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
-    print('------------>>-->>--    Beginning:   $_s');
-    print(_sType);
-    rf();
-    print('--<<--<<------------    End of test  \n');
-  }
-
-  /// TODO  teamDev Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
-
-  ///  Present simple message while testing.
-  void line(String module) {
-    print('------------>>-->>--     Beginning:  $module ');
-    print('');
-  }
-
-  ///  Present simple DONE message after all tests are done.
-  void done(String module) {
-    print('--<<--<<------------    $module --<<--<<------------');
-    print('All tests done  \n');
-  }
-
-  ///  Notate single test end.
-  void end(String module) {
-    print('--<<--<<------------    End of The:  $module  \n');
-  }
-
-  ///  Notate all tests ended.
-  void endAll(String module) {
-    print('--<<--<<------------  $module endAll  --<<--<<------------');
-    print('All tests ended, back to main.dart  \n ');
-  }
-} //  --------  end of class DawoDevTest
-//
-
-///  Renamed class to: devHelp in 0.0.3.
-///  TODO  devHelp  dh  would be nice name. Usage:  not used.
-var devHelp = new DevHelp(); //  Usage: example/app_chore_play.dart
 
 ///  #howTo do these?
 void addDawoDevNotes() {

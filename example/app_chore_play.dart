@@ -123,24 +123,24 @@ void usualChoreStuff() {
 void otherStuff() {
   print('==>>==>>====  app_blib_chore example otherStuff ==>>==>>====');
   var dawoHist = new DawoHist(); //  new DawoHist class.
-  devHelp..line('dawoAppRoll');
+  aide..line('dawoAppRoll');
   dawoApp.roll();
 
   //  get something out of these??
-  devHelp.line('appMap, flagMap, appPhase,dawo001');
+  aide.line('appMap, flagMap, appPhase,dawo001');
   dawoHist.appMap; //  just to name it
   millMap; //  from mill.
   dawoHist.appPhaseM;
   dawoHist.dawo003;
 
   //  mill.render();
-  devHelp.line('dawoFlags');
+  aide.line('dawoFlags');
   mill.roll();
 
   //  wanna more: play them
   //  mill.
 
-  devHelp.line('bLib');
+  aide.line('bLib');
 
   renderMission(':app:chore:play.dart:');
 
@@ -156,7 +156,7 @@ void otherStuff() {
   scout.close(); //  no parameters.
 
   //  ch.render();
-  devHelp.line('render Chore');
+  aide.line('render Chore');
   renderChore();
 
   print('==<<==<<====  app_blib_chore example otherStuff ==<<==<<====');
