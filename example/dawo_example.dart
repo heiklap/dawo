@@ -51,7 +51,7 @@ var awesome = new Awesome();
 
 //  Used once here to run method roll()
 ///  2. parameter must be class with name and say properties
-var ch = new CommonChore('ChoreInDawoExample','myMusicMission', 'Test-Chore');
+var ch = new BlanketChore('ChoreInDawoExample','myMusicMission', 'Test-Chore');
 
 //  create classes, that do not already have an instance inside dawo::
 //  Instance is not created here beginning from 12-2017  0.0.7+
@@ -84,7 +84,7 @@ main() {
   glb.dawoLogo.forEach(print);
   devBox(':d:ex:main:', ['* header *', '* footer *'], [glb.keyWords, glb.keyWordsSmall], 28);
   devBox('By:dev:versions:',['* header *', '* footer *'],  [tl.mapToFineList(dev.later, 75, 20) ,tl.mapToFineList(dev.version008 , 75, 20)], 24);
-  devBox('By:dev:versions:',['* header *', '* footer *'],  [tl.mapToFineList(dev.dreams, 75, 20) ,tl.mapToFineList(dev.version0075 , 75, 20)], 24);
+  devBox('By:dev:versions:',['* header *', '* footer *'],  [tl.mapToFineList(dev.plugins, 75, 20) ,tl.mapToFineList(dev.version0075 , 75, 20)], 24);
 
   var sw = new Stopwatch()..start();
   DateTime start = new DateTime.now();

@@ -20,7 +20,7 @@ void main() {
 
 void testChore() {
   print('==>>==>>==== ch_chore test commonChore roll ==>>==>>==== ');
-  var ch = new CommonChore('test-chore', ':testChore:', 'test-chore-info');
+  var ch = new BlanketChore('test-chore', ':testChore:', 'test-chore-info');
   ch.buf.writeln('hello world');
 
   print('\n -----------  clay List test  ----------------------');

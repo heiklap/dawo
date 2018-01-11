@@ -307,9 +307,9 @@ class Connector extends BaseStruct {
     //  Done this search.
   } //  -----  joinSolve
 
-  ///  Join "clients" / Members to scoutList OR afair. placardM mediates necessary info.
+  ///  Join "clients" / Members to scoutList OR affair. placardM mediates necessary info.
   ///  Usage: mission, dawoApp, rumba, chore, dawo_example
-  ///  Changed this to common-proc, you can join scout OR affair OR x
+  ///  You can join scout OR affair OR x
   ///  TODO parameter for to join  scout R affair OR x
   ///  TODO parameter to get mission.name  for  lastJoin:ed
   void join(String name, Map<String, String> plcM, String inMsg, caller) {

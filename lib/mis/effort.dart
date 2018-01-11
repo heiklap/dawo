@@ -25,15 +25,15 @@ String typeDefTestS = 'typeDefTestString not used now.';
 //  TODO  typeDefSuccess
 // typedef void _EffPrint(String msg);
 
-///  howTo: howToMap:  Common method to print a map.  HowToPrintMap:
+///  howTo: howToMap:  Method to print a map.  HowToPrintMap:
 void effortOperationMapPrint(Map thisMap) {
   thisMap.forEach((k, v) {
     print('$k, $v');
   });
 }
 
-///  Effort class controls resources, that are not common, but individual
-///  for chore.  Common resources are in equ with mission.
+///  Effort class controls resources, that are meant for chore.
+///  Common resources are in equ with mission.
 ///  Effort is working-screen for user, with in and out-data.
 class Effort {
   String name = 'Chore-Effort class.';

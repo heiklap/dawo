@@ -42,7 +42,7 @@ class Resolve {
   var _dh; //  data handle, ALL
   var _dhC; //  data handle, current #client
   //  Definition, how Client requests are handled, preferences aso.
-  var _rh; //  common rule handle
+  var _rh; //  rule handle.
   var _rhC; //  rule handle, #Client
   //  Priority system in word-search.
   var _phC; //  preference handle, #Client

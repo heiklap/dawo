@@ -303,7 +303,7 @@ class DawoApp {
     ///  Create List, that is used in Stream.
     List<String> _queryL = ['* First _queryL item *'];
 
-    //  TODO  make common procedure for to find #Lang #word's.
+    //  TODO  find #Lang #word's function, make it.
     for (var x = 0; x < dev.admN.length; x++) {
       if (dev.admN[x].indexOf('schedule') > -1) {
         _queryL.add(dev.admN[x]);

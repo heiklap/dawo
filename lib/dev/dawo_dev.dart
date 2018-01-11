@@ -112,7 +112,7 @@ class Dev {
     'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ': 'V:5 E:4 D:0',
 };
 
-  Map<String, String> dreams = {
+  Map<String, String> plugins = {
     'Completed: Maybe feb 2019.': 'No pressure.',
     'Plans for 2018  ': 'Value, Effort, Done',
     '1.0.0 Complete Web app. Maybe Angular.': 'V:9 E:9 D:0',
@@ -120,7 +120,7 @@ class Dev {
     '0.8.0 Test cleaning, benchmarks, overall celaning': 'V:5 E:4 D:0',
     '0.7.0 Clay data and Chores interconnecting.': 'V:5 E:6 D:0',
     '0.6.0 Server framework, likely Dart Angel by Toby.': 'V:5 E:4 D:0',
-    '0.5.0 JSON import all data.': 'V:5 E:4 D:0',
+    '0.5.0 PLUG: JSON import all data.': 'V:5 E:4 D:0',
     '0.4.0 Elementary WEB show.': 'V:5 E:7 D:0',
     '0.3.0 Simple server, localStorage, DB, maybe Mongo.': 'V:5 E:4 D:0',
     '0.2.0 Demos and Plugins to simulate commercial app.': 'V:4 E:4 D:0',
@@ -144,6 +144,7 @@ class Dev {
     '008++ Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
+    '008:++ CommonChore renamed> BlanketChore, Chore.op > popularJoint.': 'V:3 E:1 D:3',
     '008++ dev class reshape, new Class names: aide, hist and envoy.': 'V:4 E:3 D:3',
   };
 

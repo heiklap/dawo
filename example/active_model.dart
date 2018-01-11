@@ -19,7 +19,7 @@ import 'package:dawo/mis/missions.dart';
 
 var fm = new Mission('FinlandMission', 'Keeping am ActiveModel');
 ///   constructor:  this.name, this.master, this.info
-var am = new CommonChore('ChoreActiveModel', 'FinlandMission', 'ActiveModel for Finlands TaxParadice money loundry.');
+var am = new BlanketChore('ChoreActiveModel', 'FinlandMission', 'ActiveModel for Finlands TaxParadice money loundry.');
 
 ///
 void fmBoxAct(){

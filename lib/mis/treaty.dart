@@ -108,8 +108,8 @@ class Treaty {
   Mission outsider;
 
   //  Usage:  no.   Missions default chores, that they are using here (PLAN).
-  CommonChore inChore;
-  CommonChore outChore;
+  BlanketChore inChore;
+  BlanketChore outChore;
 
   ///  Present objects info, used in function parameter calls.
   Map<String, String> placardM = {
@@ -165,7 +165,7 @@ class Treaty {
     //  weekSayL.addAll(tl.mapToFineList(insider.say, 15, 45));
     print('    ---- $name    :dailyTreaty:method:revel:ownStuff:');
 
-    ///  To find common words in insider / outsider say maps.
+    ///  To find words used by both in insider / outsider say maps.
     bilateralL.addAll(bilateral());
     boxDay(':daily:Treaty:revel:', rows, sw);
     //  PLAN:  use boxBargain, maybe with: 16, 140 size.

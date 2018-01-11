@@ -10,22 +10,20 @@
 ///  code:  Put your actual code inside Chore.  Chore has also outside-class
 ///  functions.  In normal operation Chore engages #FLUX (In plan phase)
 ///  100s of times to access: Outer Dawo actions and answers in pervasive
-///  common roll-mill-say-join-loop where all #LANG references will be resolved.
+///  roll-mill-say-join-loop where all #LANG references will be resolved.
 ///
 ///   ## *chore* became eventually its own, independent package, and it did fly
 ///   out of dawo 1915, with it's own wings. Here will be small version of it.
 ///   Chore is again growing big, but with different means.
 ///
-///  hkl  6.5.2014  0.0.1  dawo/lib   Common   "w o r k  flow"  methods for dawo
+///   hist: hkl  6.5.2014  0.0.1  dawo/lib  "w o r k  flow"  methods for dawo
 ///
 //
 
-///  idea:   Place ALL common  W O R K  procedures here.
+///  idea:   Place ALL  W O R K  procedures here.
 ///  Automatic-  life-cycle / W O R K / messages and rolling.
 ///  NOTE  chore do not have own named out-buffer
 
-//  TODO  chore  Build simple plugin or usage-case for chore.
-//  TODO  chore  NEXT, make (common-purpose ?) Chr -class.??
 
 library chore;
 
@@ -59,7 +57,7 @@ bool pBNotNow = false; //  Not printing now.
 int _flowServeCount = 0;
 
 ///  Chores that operate in common area, outside Mission class.
-List<CommonChore> choreComL = [];
+List<BlanketChore> choreComL = [];
 
 ///  TODO  devNote: ==   #chore, that is always in dawoApp
 ///  So dawoApp uses chore to maintain it's work-projects.
@@ -78,8 +76,8 @@ void initChoreSystem() {
 }
 
 ///  Many important dawo classes are extending Alpha class.
-class CommonChore extends BaseStruct {
-  String name = 'Common Chore class  ';
+class BlanketChore extends BaseStruct {
+  String name = 'Blanket Chore class  ';
   String toString() {
     return name;
   }
@@ -114,7 +112,7 @@ class CommonChore extends BaseStruct {
     ///  NOTE: init-build-roll calls are not yet orderly planned in 0.0.7.
     'build': 0,
     'roll': 0,
-    'flux': 0, //  #say flow, aso: common bind-bing & 12 others flow.
+    'flux': 0, //  #say flow, aso: bind-bing & 12 others flow.
   };
 
   ///  Small description of Chore-object used in boxes.
@@ -146,7 +144,7 @@ class CommonChore extends BaseStruct {
 
   ///  Dawo active objects are continuously running #action-loop, where their
   ///  act is checked and evaluated against other users #say actions.
-  ///  Answers to common say-bind-bing-analyze-camp-schedule-handle-use loop,
+  ///  Answers to say-bind-bing-analyze-camp-schedule-handle-use loop,
   ///  And return values from #Community via #Mill
   ///  These fields correspond to loop-action-loop mill-loop functions.
   Map<String, String> action = {
@@ -205,11 +203,11 @@ class CommonChore extends BaseStruct {
     'BeginInitRoll': '_ _ _ _ _ _ _ _ ',
     'decision': '_ _ _ _ _ _ _ _ ',
     'streams': '_ _ _ _ _ _ _ _ ',
-    'opCom': 'OP:_ _ _ _ _ _ _ _ ',
-    'opJoint': 'OP:_ _ _ _ _ _ _ _ ',
-    'op': 'OP:_ _ _ _ _ _ _ _ ',
+    'popularCom': ':p:OP:_ _ _ _ _ _ _ _ ',
+    'popularJoint': ':p:OP:_ _ _ _ _ _ _ _ ',
+    'popular': ':p:OP:_ _ _ _ _ _ _ _ ',
     'assign': '_ _ _ _ _ _ _ _ ',
-    'com WTF?': 'common? _ _ _ _ ',
+    'com': 'command _ _ _ _ ',
     'pro WTF?': 'process?_ _ _ _ ',
     'chore': '_ _ _ _ _ _ _ _ ',
     '*GRANT*': '*Outer-Commands* ',
@@ -315,7 +313,7 @@ class CommonChore extends BaseStruct {
     //  we have also instance of Action class: decision.
 
     //  run #op, for single operation
-    op(placardM); //  Actually map is yet not used there.
+    popular(placardM); //  Actually map is yet not used there.
     //  loop
     buf.writeln(':ch:buf: :chore:rtoll: done for $name ');
     show('no-print, buf, test');
@@ -344,50 +342,45 @@ class CommonChore extends BaseStruct {
   ///  Operations with other Chores in choreComL List.
   ///  Chore might use #connector to communicate with other Chores.
   ///  Chore might send new material to it's substance in #connecctor.
-  opCom() {}
+  popularCom() {}
 
   ///  Second version of above
-  ///  Also connector has method of this name.
   ///  Might unite with other chores in special activities.
-  void opJoint() {}
+  void popularJoint() {}
 
   ///  Individual Chore's connector-operations are done here.
-  ///  Common operation with placard-Map  is in beta.
-  String op(Map<String, String> _pcM) {
-    _flowC('-->  ch roll=>op:  $name -->---->', _pB);
+  String popular(Map<String, String> _pcM) {
+    _flowC('-->  ch roll=>:popular:  $name -->---->', _pB);
 
     ///  NOTE  placardM is not used.  TODO
     String _retStr;
-    print('-->>-->>--  :Ch:-op: calling :connector:  -->>-->>--');
+    print('-->>-->>--  :Ch:popular: calling :connector:  -->>-->>--');
     String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
 
     ///  new parameter name; do we get it to right chore name?
-    connector.join(name, placardM, connectorMsg, ':Ch:-op:');
+    connector.join(name, placardM, connectorMsg, ':Ch:popular:');
     connector.roll();
 
     ///  Make placard in shape.
-    ///  calls commonProcess with #placard
     ///  TODO  operation class instance
-    ///  TODO  Constructor: add eventually constructor
     ///  order: #actor #sender #receiver #command #msg
-    var chOpClass =
+    var chPopularClass =
         new Affair(name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
     //  use buffer somewhere
     StringBuffer _retBuf = new StringBuffer();
-    _retBuf.writeln('_retBuf in chore-op method is ready...');
+    _retBuf.writeln('_retBuf in chore-popular method is ready...');
 
-    ///  Mediate command to common process (in beta) with info from chore.
-    ///  TODO  Mediate clay-stuff itemL to commonProcess
+    ///  TODO  Mediate clay-stuff itemL to Process
     ///  With actual command:
     ///  Add placardM to parameters
     _retBuf.write(
-        corporate.process(':Ch-Op:', chOpClass, placardM, assignComProChore));
-    print('\n ---------- chore-Op and common process  ----------------------');
+        corporate.process(':Ch:popular:', chPopularClass, placardM, assignComProChore));
+    print('\n ---------- :chore:popular: and  process  ----------------------');
     print(_retBuf);
 
-    print('------------ chore-Op and common process  done  -------------- \n');
-    buf.writeln(':ch:buf: :op: for chore: $name  done');
-    _flowC('<-- ch roll-op: $name  done <----<--', _pB);
+    print('------------ :chore:popular: and  process  done  -------------- \n');
+    buf.writeln(':ch:buf: :popular: for chore: $name  done');
+    _flowC('<-- ch roll-popular: $name  done <----<--', _pB);
     return _retStr;
   }
 
@@ -472,7 +465,7 @@ class CommonChore extends BaseStruct {
     boxServe.aBox(5, 83, 6, 27, tl.mapToFineList(agenda, 5, 20));
 
     boxServe.aHeader(4, 124,
-        ' :flux:  Outer Dawo actions and answers in common roll-mill-loop ');
+        ' :flux:  Outer Dawo actions and answers in roll-mill-loop ');
     boxServe.aBox(5, 119, 22, 70, tl.mapToFineList(action, 10, 60));
 
     boxServe.vertLine(32, 107, 7); //  plans aso.
@@ -512,9 +505,9 @@ class CommonChore extends BaseStruct {
   ///  :connector:  to mediate to :affair: and do :bind:
   ///  TODO  Name: #Assign  This should have same name in all libraries?
   String assignComProChore() {
-    _flowC('   **  resource sharer assignChore > CommonProcess    ***', _pB);
+    _flowC('   **  resource sharer assignChore > Process    ***', _pB);
     buf.writeln(':ch:buf:  :assign:comPro called for $name  ');
-    return ('   **  resource sharer assignChore > CommonProcess   ***');
+    return ('   **  resource sharer assignChore > Process   ***');
   }
 
   ///  Calling print/print-to-buffer function from beta.
@@ -530,8 +523,8 @@ class CommonChore extends BaseStruct {
   }
 
   ///  constructor; master is mandatory for Chore to use masters fields.
-  CommonChore(this.name, this.master, this.info);
-} //  -----  CommonChore class
+  BlanketChore(this.name, this.master, this.info);
+} //  -----  BlanketChore class
 
 ///  * * * *   Functions that are outside of chore class    * * * *
 ///  * * * *   chore-instances will use these actively(?)   * * * *
@@ -566,7 +559,7 @@ void _flowCOuter(String msg, bool p) {
 ///  Handling outer-functions feedback and saving it to
 ///  =>  Map<String, String> operations value-field.
 ///  To be seen: How complicated is to handle stuff outside class.
-void handler(String _key, _inS, CommonChore chr, var _act) {
+void handler(String _key, _inS, BlanketChore chr, var _act) {
   ///  TODO  no idea what this is doing, so just change it.
   //  announce value field changed.
   //  so: ':tGR:_ _ _ _ _ _ _ _ ' changed to:  ':tGR: OK _ _ _ _ _ '
@@ -576,7 +569,7 @@ void handler(String _key, _inS, CommonChore chr, var _act) {
 }
 
 ///  Function named like this, should act with highest priority.
-void topGrant(CommonChore chr, var _act) {
+void topGrant(BlanketChore chr, var _act) {
   String _result = 'Act:TG';
   //  code to get wanted _result
   handler('topGrant', _result, chr, _act);
@@ -584,7 +577,7 @@ void topGrant(CommonChore chr, var _act) {
 }
 
 /// USAGE:    Execution of EVENT is meant to be slowed-up.. as long as possible.
-void lowGrant(CommonChore chr, var _act) {
+void lowGrant(BlanketChore chr, var _act) {
   ///  String to be returned for Chore.box.
   String _result = 'Act: LowG';
   //  code to get wanted _result
@@ -593,7 +586,7 @@ void lowGrant(CommonChore chr, var _act) {
 }
 
 ///  USAGE PLAN:    Run occasionally / timely, in sidebar.
-void sideGrant(CommonChore chr, var _act) {
+void sideGrant(BlanketChore chr, var _act) {
   String _result = 'ActSideG';
   //  code to get wanted _result
   handler('sideGrant', _result, chr, _act);
@@ -612,24 +605,24 @@ void startChore(var roller, var aLog, var xList, var yChore, var zSignal) {
 }
 
 ///  main   W O R K   routines
-void doChore(CommonChore chr, var _act) {
+void doChore(BlanketChore chr, var _act) {
   _flowCOuter(' :FLOW:doChore -->  Actual  W O R K   code here...', _pB);
 }
 
 /// United chore   W O R K   routines.
-void uniteChore(CommonChore chr, var _act) {
+void uniteChore(BlanketChore chr, var _act) {
   _flowCOuter(
       ' :FLOW:uniteChore -->  Combined Chore  W O R K   code here...', _pB);
 }
 
 ///   routines, after W O R K   is done
-void endChore(CommonChore chr, var _act) {
+void endChore(BlanketChore chr, var _act) {
   _flowCOuter('<-- endChore  execution scheduled, when  WORK is done', _pB);
 }
 
 ///  Quick hack to run effort from test aso files.
 ///  This is only access to effort.
-///  TODO  dd parameters:  CommonChore chr, var _act
+///  TODO  dd parameters:  BlanketChore chr, var _act
 void choreEffort(String caller) {
   //  Add ability to choose between user-data in effort.
   eff.build(':chEf:');
@@ -643,7 +636,7 @@ void choreEffort(String caller) {
 }
 
 ///  QuickHack
-///  TODO  add parameters:  CommonChore chr, var _act
+///  TODO  add parameters:  BlanketChore chr, var _act
 void choreToEffortUserJson(String caller) {
   effortCallingUserJson(':chore:-callRenderUserJson:');
 }
@@ -663,7 +656,7 @@ StringBuffer renderChore() {
 
 //  var superChore = new SuperChore();
   var ch =
-      new CommonChore('ChoreInRenderChore', 'renderChore', 'Testing-Chore');
+      new BlanketChore('ChoreInRenderChore', 'renderChore', 'Testing-Chore');
   ch.master = 'PackDawoMission';
   print(ch.info);
   print(ch.master);

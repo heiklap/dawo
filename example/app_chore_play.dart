@@ -21,7 +21,7 @@ var mill = new Mill();
 var mission = new Mission('mission-class', 'test-in:de-test.dart');
 
 ///  NOTE:  chore #master field must have name of mission-with-say field.
-var ch = new CommonChore('chore-class', 'appChorePlay', 'Testing in app-bLib-chore-play');
+var ch = new BlanketChore('chore-class', 'appChorePlay', 'Testing in app-bLib-chore-play');
 
 ///  Soon (in next version) instance of dawoApp is created inside Dawo
 //  Beginning 23.12.2017 instance of DawoApp is created inside package.
@@ -83,8 +83,8 @@ void choreStuff(){
   ch.rowInfo();
   ch.reportList(':app:chore:play:example:');
   print(ch.say);
-  ch.opCom();
-  ch.opJoint();
+  ch.popularCom();
+  ch.popularJoint();
   print(ch.st);
 }
 

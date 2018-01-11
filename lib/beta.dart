@@ -170,7 +170,7 @@ String betaClause(var placard) {
 }
 
 /// ..  or is it class BetaPlacard ?
-///  Placard: Common form of information, that is in hand for every operation.
+///  Placard: Uniform information, that is in hand for every operation.
 ///  Model for #id-data in joint handshake method.
 ///  Usage:  dawo_app uses this in :roll:con:opJoin
 ///  * *  this is supposed to keep #CurrentUser.. at least by dawo_app.

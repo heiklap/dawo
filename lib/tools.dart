@@ -166,7 +166,7 @@ class Tools {
     return retL;
   }
 
-  ///  Add padLeft & padRight Strings to make this common.
+  ///  Add padLeft & padRight Strings to make this more useful.
   ///  Pad List right and left with: _leS, _raS and make all even length
   void padListRL(List<String> _l, int _w, String _leS, _raS) {
     //  Add new parameter, asked width: _w

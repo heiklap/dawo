@@ -128,17 +128,17 @@ class Mission {
   //    instance-getter outTMid".
 
   ///  Collect all chores in operative entity.
-  List<CommonChore> choreL = [];
+  List<BlanketChore> choreL = [];
 
-  ///  Create default CommonChores for every Mission.
+  ///  Create default BlanketChores for every Mission.
   ///  We have plenty of these, so let's add them!
-  CommonChore learnChr = new CommonChore('LearnChr', ':masterName:', 'Yes, I learn');
-  CommonChore joyChr = new CommonChore('JoyChr', ':masterName:', 'Yes, I have Joy');
-  CommonChore actChr = new CommonChore('ActChr', ':masterName:', 'Yes, I act');
-  CommonChore peopleChr = new CommonChore('PeopleChr', ':masterName:', 'Get social!');
-  CommonChore placeChr = new CommonChore('PlaceChr', ':masterName:', 'Places I go places');
-  CommonChore seasonChr = new CommonChore('SeasonChr', ':masterName:', 'Seasons differ!');
-  CommonChore showChr = new CommonChore('ShowChr',':masterName:',  'Yes, I show');
+  BlanketChore learnChr = new BlanketChore('LearnChr', ':masterName:', 'Yes, I learn');
+  BlanketChore joyChr = new BlanketChore('JoyChr', ':masterName:', 'Yes, I have Joy');
+  BlanketChore actChr = new BlanketChore('ActChr', ':masterName:', 'Yes, I act');
+  BlanketChore peopleChr = new BlanketChore('PeopleChr', ':masterName:', 'Get social!');
+  BlanketChore placeChr = new BlanketChore('PlaceChr', ':masterName:', 'Places I go places');
+  BlanketChore seasonChr = new BlanketChore('SeasonChr', ':masterName:', 'Seasons differ!');
+  BlanketChore showChr = new BlanketChore('ShowChr',':masterName:',  'Yes, I show');
 
   /// Store all data-maps of this mission-instance:
   Map<String, Map<String, String>> clayMap = {};
@@ -211,7 +211,7 @@ class Mission {
   ///  Mediating calls to outside executor process. (?)
   ///  Name: choreBus ?  choreRoute ?
   ///  Usage: no
-  void toChore(CommonChore _chore) {
+  void toChore(BlanketChore _chore) {
     String motto = 'mediating process to chore..';
     assert(motto.substring(10, 17) == 'process');
     //  code..
@@ -523,7 +523,7 @@ class Mission {
 ///  Every library / actor has its own flowC function.
 ///  Location of: _flowC inside OR outside of class?
 void _flowC(String msg, bool p) {
-  ///  Call #common flowServe with #LOCAL variables:
+  ///  Call flowServe with #LOCAL variables:
   flowServe(':M:', out.outTMid, msg, p);
 }
 
@@ -647,7 +647,7 @@ void buildMissions(String caller) {
 ///  Creating instance of Mission and using it's methods.
 ///  All render_X functions are for test and presentation.
 void renderMission(String caller) {
-  //  TODO:  too much of:  Instance of 'CommonChore'
+  //  TODO:  too much of:  Instance of 'BlanketChore'
   //  helsinkiMission.  //  NOTE    #analyzer  is slow
   //  Testing some imaginary mission.
   var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');

@@ -31,7 +31,7 @@ import 'dart:math';
 ///  it is NotElegant.  It is not best way to solve matrix - addBox problem.
 ///  This should be deprecated; boxServe is much more elegant.
 ///  Show Lists, like devNotes in nice column-box in console.
-///  Can now handle 2, 3 and 4 column cases, and is common-usage function.
+///  Can now handle 2, 3 and 4 column cases, and is very useful function.
 ///  TODO  Add better row / height decision.
 ///  #QUEST : Maybe these 2-3-4 devBox functions can be combined to one, and
 ///  handle 2-3-4 with parameters. Did it once, but was ugly.
@@ -244,7 +244,7 @@ void scheduleBoxDeprecated(String _caller) {} //  -----  scheduleBox
 
 ///  Made this to be not a function, but a class 16.11.2017
 ///  Data-table of outside resources grouped in time.  Equipment-class. equ
-///  Can be developed to common-usage, when getting left and right area data
+///  Can be developed more handy, when getting left and right area data
 ///  in parameters. #Plan  Resource, Equipment, Time
 ///  Big amount of data relative to the code : multipurpose is unprofitable.
 class ScheduleBox {
@@ -298,7 +298,7 @@ class ScheduleBox {
     }
 
     anchorBox(3, 5, 100, 100, [
-      '**  Mission-op development experience; common usable stuff',
+      '**  Mission-op development experience; highly usable stuff',
       '**  Presenting available objects in scope.  **'
     ]);
     anchorBox(6, 5, 100, 100, ['IDEA:', 'IDEA:', 'NOTE:', 'NOTE:']);

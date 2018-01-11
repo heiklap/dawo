@@ -10,7 +10,7 @@ import 'package:dawo/mis/chore.dart';
 
 void main() {
   print('............ t_common_process  ..................................');
-  var ch = new CommonChore('testChoreProcess', ':tCommonProcess:', 'text process');
+  var ch = new BlanketChore('testChoreProcess', ':tCommonProcess:', 'text process');
   print('............ t_common_process  ..................................');
   ch.buf.writeln(' t_common_process rolling  ');
   print('............ t_common_process  next: ch_roll  ..................');
@@ -18,7 +18,7 @@ void main() {
   ch.roll();
   print('............ t_common_process  ..................................');
 
-  ch.op(ch.placardM);
+  ch.popular(ch.placardM);
   print('............ t_common_process  done .............................');
   print(ch.info);
   print('............ t_common_process  done All:done  ...................');
