@@ -49,6 +49,7 @@ class DawoApp {
   final String version = '0.0.75+';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
+
   final String info =
       'Innovative & educational small data-handler experimentation.';
 
@@ -68,6 +69,30 @@ class DawoApp {
     'ask': ':WhatEver :WEB_VERSION :LECTURE :EDUCATION',
     'always': ':Developing :New :Innovation :Suprise :Enthusiasm ',
     'newer': ':NO :UGLY :HUILO :FUDD :SAD :GIVE-UP'
+  };
+
+  ///  Most important parts of Dawo.
+  Map<String, String> part = {
+    'Rumba': 'For runninbg dawoApp',
+    'Glb': 'Global variables',
+    'Mission-Chore-Camp': 'Framework.',
+    'Corp': 'Corporate-Connect-Store',
+  };
+
+  ///  Yes there is, for app.
+  Map<String, String> plan = {
+    'out-Buf': 'Buffer names display',
+    'GLB 2': 'Global variables',
+    'Plan 3': 'Mission active change.',
+    'River': 'Stream:river: info.',
+  };
+
+  ///  References and examples.
+  Map<String, String> client = {
+    'ActiveModel': 'For runninbg dawoApp',
+    'Huilo': '#Hypertext Unwanted-Incursion-Level #observer',
+    'Daily': 'Framework for daily observations.',
+    'Corporate-Connect-Store': 'Money.',
   };
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
@@ -135,6 +160,7 @@ class DawoApp {
     st['wake'] = true;
     //  if buffer set:
     //  _flowC('  -->-da->  DawoApp buffer output initialized  ---', _pB);
+    buf.writeln(':da:init: done  ');
     _flowC('  --<-da-<    :da:i: init done', _pB);
   }
 
@@ -147,6 +173,9 @@ class DawoApp {
     ///  Build DevNotes.
     dev.buildNotes('By: :D:-A:', 'In Dawo:App-Build');
     initChoreSystem(); //  just ome notes to chore...
+
+    //  NOTE:  out must be built!!  for outBufM to get map-buffers.
+    out.build();
 
     /// Write something #WakeUpSleepyHead to all out.out-buffers.
     out.outHeader.writeln('* * * :out.outHeader:buf: :dawoApp:build:  * * * ');
@@ -174,12 +203,14 @@ class DawoApp {
     out.outBl.writeln('* * * : myMusic-stuff :  :dawoApp:build:  * * * ');
     out.outBr.writeln('* * * : myTime stuff :  :dawoApp:build:  * * * ');
     out.outFooter.writeln('* * * :natParks stuff: :dawoApp:build:  * * * ');
+    buf.writeln(':da:build: done  ');
     _flowC('  --<-da-<  :da:b:  build done', _pB);
   }
 
   ///  #run-like method
   ///  return:  Map<String, StringBuffer> out.outMapBuffers
   Map<String, StringBuffer> roll() {
+    buf.writeln(':da:roll: started  ');
     //  Calling:  dev/dev_notes.dart
     fillNotes();
     //  build already does this::  dev.buildNotes();
@@ -215,6 +246,7 @@ class DawoApp {
   ///  Roll missions in missionL AND every chore in them.
   void _appRollMissions(String caller) {
     String _msg = '-->-da-> app rollMissions  C: $caller -->>-->>----';
+    buf.writeln(':da:app:roll:missions:   ');
     _flowC('$_msg', _pB);
     _flowC('  ***  :DAWO-:APP:  MISSIONS   ***  ', _pB);
 
@@ -332,52 +364,60 @@ class DawoApp {
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':da:box: ', ':da:box:');
 
-    int r9 = 9; //  row anchor
-
     ///  Method cascades would make this look nicer.
     boxServe.aHeader(1, 4, '* *  States * * ');
     ///  row, column, list-items, width.
-    boxServe.aBox(2, 7, 6, 16, tl.mapToListB(st));
+    boxServe.aBox(2, 5, 6, 16, tl.mapToListB(st));
 
     boxServe.aHeader(1, 60, ' *  DAWO APP INFO  *');
 
-    boxServe.aBox(2, 22, 4, 7, ['name:', 'Info:', 'User:', 'Motto:']);
-    boxServe.aBox(2, 30, 4, 48, ['$name', '$info', '$user', '$motto']);
+    boxServe.aBox(2, 22, 4, 7, ['name:', 'Version:', 'By:', 'User:']);
+    boxServe.aBox(2, 30, 4, 48, ['$name', '$version', '$by', '$user']);
     ///  TODO  Bring real data.
-    boxServe.aBox(2, 80, 4, 20, ['Agenda', 'Develop', 'Msg:', 'Versions']);
-    boxServe.aBox(2, 92, 5, 20, ['______', '________', '______', '____']);
+    boxServe.aBox(2, 48, 4, 60, ['Info', 'Motto:']);
+    boxServe.aBox(2, 48, 5, 60, [info, motto]);
 
-    boxServe.aHeader(r9 - 2, 7, 'Buffer:');
-    //  List 28 items, 38 width. Note handy split = toList -method.
-    boxServe.aBox(r9 - 1, 6, 28, 38, buf.toString().split('\n'));
-    boxServe.vertLine(r9 - 1, 5, 28); //  phases
+    String bufSize = buf.length.toString();
+    boxServe.aHeader(7, 7, 'Buffer:  size: $bufSize');
+    //  List 10 items, 38 width. Note handy split = toList -method.
+    boxServe.aBox(8, 6, 10, 38, buf.toString().split('\n'));
 
-    boxServe.aHeader(r9, 50, '* Plans: *');
+    String appBufSize = appBuf.length.toString();
+    boxServe.aHeader(20, 7, 'appBuffer:  size: $appBufSize');
+    //  List 10 items, 38 width. Note handy split = toList -method.
+    boxServe.aBox(21, 6, 10, 38, appBuf.toString().split('\n'));
+
+    ///  out. default Buffers and their sizes.
+    Map<String, String> outBufMapShow = new Map();
+    outBufMapShow = outBuffersInfoMap('here', 'here again');
+    String _s;
+    _s = outBufMapShow.length.toString();
+    boxServe.aHeader(23, 7, 'outBuffer:  size: $_s');
+    //  List 10 items, 38 width. Note handy split = toList -method.
+    boxServe.aBox(24, 6, 10, 38, tl.mapToFineList(outBufMapShow, 20, 12));
+
+
+    boxServe.vertLine(8, 5, 28); //  phases
+
+    boxServe.aHeader(2, 117, '*    say    *');
+    boxServe.aBox(3, 117, 9, 70, tl.mapToFineList(say, 8, 60));
+
+
+    boxServe.aHeader(4, 50, '*  Parts *');
+    boxServe.aBox(5, 50, 5, 30, tl.mapToList(part));
+
+    boxServe.aHeader(4, 83, '* Plans: *');
     boxServe
-        .aBox(r9 + 1, 50, 4, 20, ['Plans: ', 'More plans', 'xxxx', 'yyyyy']);
-    boxServe.vertLine(r9, 49, 7); //   plans
+        .aBox(5, 83, 4, 28, tl.mapToFineList(plan, 6, 25));
 
-    boxServe.aHeader(r9, 80, '* reserved *');
-    ///  More simulated data.
-    boxServe.aBox(r9 + 1, 80, 5, 15, [
-      'A',
-      'B',
-      'C',
-      'C',
-    ]);
-
-    boxServe.aHeader(r9, 100, '* Clients *');
-    boxServe.aBox(r9 + 1, 100, 5, 15, [
-      'State',
-      'Set',
-      'Puf',
-      'Print',
-    ]);
+    boxServe.aHeader(12, 50, '* Clients.    Examples *');
+    boxServe.aBox(13, 50, 5, 63, tl.mapToFineList(client, 12, 46));
+    boxServe.vertLine(2, 49, 16); //   parts plans clients
 
     ///  At the end print some vertical lines.
-    boxServe.vertLine(1, 117, 23); //  Up-right edge
-    boxServe.vertLine(1, 139, 23); //  Up-right edge
-    boxServe.aHeader(1, 120, '* Actions *');
+    boxServe.vertLine(13, 117, 23); //  right middle
+    boxServe.vertLine(13, 139, 23); //  right+ middle+
+    boxServe.aHeader(13, 120, '* Actions *');
     ///  'print' makes this visible in screen.  Margin: 4.
     boxServe.show(boxHeader, 'print', 4);
     boxServe.done(boxHeader);
@@ -389,6 +429,7 @@ class DawoApp {
   void show(String action) {
     if (_pB) {
       print('-->>-->>----  dawoApp show -->>-->>----');
+      buf.writeln(':da:show:  ');
       print(buf);
       print(out.outTr);
       print('--<<--<<----  dawoApp show done --<<--<<----');
@@ -398,6 +439,7 @@ class DawoApp {
   ///  After presentation method; done, if #doneB.
   void done() {
     _flowC('-->-da->  DawoApp.done    $info   :: engaged ', _pB);
+    buf.writeln(':da:done: done  ');
     //  st['wake'] = false;
     st['work'] = false;
     st['done'] = true;
@@ -438,18 +480,30 @@ var dawoApp = new DawoApp();
 ///  Using new outBufM Map
 ///  TODO  Make this show in proper screen areas with devBox.
 void outBuffersPrint(String caller, String notCalled) {
+
   print(' -->>-->>----  :DA:   out.outBuffers  by: $caller  -->>-->>-- ');
   int i = 0;
   int mLength = out.outBufM.length;
   for (var x = 0; x < mLength; x++) {
     String _bufNameS = out.outBufM.keys.elementAt(i);
     i++;
-    print('\n * * * * * * * * * *    $_bufNameS   * * * * * * * * * *  ');
-
+    print('\n * buf * * * * * * *    $_bufNameS   * * * * * * * * * *  ');
     print(out.outBufM[_bufNameS]); //  print
-
-    print('* * * * * * * * * *    $_bufNameS   done  * * * * * * *  ');
+    print('* buf * * * * * * *    $_bufNameS   done  * * * * * * *  ');
   }
 
-  print('     --<<--<<----  :DA:   out.outBuffers  C: $caller  done ');
+  print('     --<<--<<----  :DA:   out.outBuffers  C: $caller  done \n \n');
+}
+
+Map<String,String> outBuffersInfoMap(String caller, String notCalled) {
+  Map<String,String> _retM = {};
+  int i = 0;
+  int mLength = out.outBufM.length;
+  for (var x = 0; x < mLength; x++) {
+    String _bufNameS = out.outBufM.keys.elementAt(i);
+    String _bufLengthS = out.outBufM[_bufNameS].length.toString();
+    _retM.putIfAbsent(_bufNameS, () => _bufLengthS);
+    i++;
+  }
+  return _retM;
 }

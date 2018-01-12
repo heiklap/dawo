@@ -141,6 +141,7 @@ class Dev {
     '008: :demo::ad: Advertising / simulate  for only-commercial-version stuff.': 'V:8 E:6 D:0',
     '008: LOOP:  SOON:  say - analyze - con - effort - affair - schedule.': 'V:8 E:6 D:0',
     '008: Example: #Huilo: #Hypertext Unfriendly-Incursion-Level #Observer.': 'V:5 E:3 D:0',
+    '008++ dawoApp.box method got new fields and functionality. boxServe Bug.': ' V:2 E:5 D:04',
     '008++ Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',

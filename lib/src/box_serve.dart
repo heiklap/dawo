@@ -51,6 +51,12 @@ class BoxServe {
   ///  TODO  set min-max-maxWidthString values
   /// Min rows is 4 !!   Min width is NOW:  55= NO!!   65 = YES!!
   void init(int h, int w, String _pm) {
+
+    if (_matrix.length > 0){
+      print('* * * *  :DEBUG:BUG  _matrix length > 0  * * * * * * * * * * *  ');
+    }
+
+
     pm = _pm; //  padMark
     ///  Use default, unless parameters are > 0
     if ((h > 0) && (w > 0)) {

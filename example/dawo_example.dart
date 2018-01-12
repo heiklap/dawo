@@ -56,7 +56,7 @@ var ch = new BlanketChore('ChoreInDawoExample','myMusicMission', 'Test-Chore');
 //  create classes, that do not already have an instance inside dawo::
 //  Instance is not created here beginning from 12-2017  0.0.7+
 //  var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
-//    'By: dawo_example.dart: dawoApp rolls missioms');
+//    'By: dawo_example.dart: dawoApp rolls missions');
 var rumba = new Rumba();
 
 ///  Data fields:
@@ -138,6 +138,16 @@ main() {
   print('----  second info box  ----');
   List<String> infoTwo = boxServe.infoBox(packDawoMission.say, 8, 40, 19);
   infoTwo.forEach(print);
+  //  TODO  out.done
+
+
+  ///  Nice-looking name- size- info of default buffers.
+  Map<String,String> _xM = new Map();
+  _xM = outBuffersInfoMap(':dawoExample', 'Not used parameeter');
+  print('....... printing outBufMap map  ....................');
+  _xM.forEach((k, v) {print('$k $v');   });
+  print(tl.mapToFineList(_xM, 20, 20));
+  print('....... printing outBufMap map  done ....................');
 
   //print buffer: print(glb.boxServeBuffers[':dawoHist:dailyAction:friday:6']);
   print('---- main done   ');
@@ -241,8 +251,8 @@ void lonelySampleChore() {
 ///
 void sampleDawoBuffers() {
   exInfo('\n ==>>==>>==   rolling sampleDawoBuffers    ==>>==>>==');
-  out.outBuffersSizes('dawo_example');
-  outBuffersPrint('$dexS dawo_example', 'no-prevent-printing');
+  out.outBuffersSizes(':dawoExample:');
+  outBuffersPrint('$dexS dawoExample', 'no-prevent-printing');
   exInfo('    ==<<==<<==    rolling sampleDawoBuffers: done    ==<<==<<==');
 }
 
