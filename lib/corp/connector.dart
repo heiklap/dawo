@@ -425,7 +425,7 @@ class Connector extends BaseStruct {
     ///:BOX:WAS:  190, now  205
     boxServe.init(42, 198, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(
-        ':connector:box:  C: $caller', ':connector:box: $caller');
+        ':con:box:', ':con:box: $caller');
     int r1 = 2; //  easy x-y pointing
     int r2 = 12;
     int r3 = 20;
@@ -493,8 +493,8 @@ class Connector extends BaseStruct {
     boxServe.vertLine(r4, m2, 6); //   workPole
     boxServe.vertLine(2, 149, 28); //  Up-right edge
 
-
-
+    boxServe.show(':con:', 'print', 1);
+    boxServe.done(':con:');
   }
 
   //  TODO  :BUG:Funny:error:

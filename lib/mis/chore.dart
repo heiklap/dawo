@@ -476,9 +476,9 @@ class BlanketChore extends BaseStruct {
     boxServe.aHeader(32, 154, '  *     Chore     Phases   *     ');
     boxServe.aBox(33, 150, 6, 40, tl.mapToFineList(phase, 18, 20));
     ///  Present it on screen and save to glb-buffer.
-    boxServe.show(':box:Chore:', 'print', 0);
+    boxServe.show(':box:Chr:', 'print', 0);
     ///  Set boxServe ready for next user: clear data.
-    boxServe.done(':box:Chore:');
+    boxServe.done(':box:Chr:');
   }
 
   ///  Get info of Chore in one row.
@@ -638,7 +638,7 @@ void choreEffort(String caller) {
 ///  QuickHack
 ///  TODO  add parameters:  BlanketChore chr, var _act
 void choreToEffortUserJson(String caller) {
-  effortCallingUserJson(':chore:-callRenderUserJson:');
+  effortCallingUserJson(':chore::callRenderUserJson:');
 }
 
 ///  example / testing chore ----------------------------------------------

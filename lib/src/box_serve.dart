@@ -20,7 +20,8 @@ import '../src/glb.dart';
 ///  Schedule connect, opJoin corporate, bind, binding
 ///  Present callers List, Map, text data in row,col in boxes inside a matrix.
 class BoxServe {
-  int boxCount = 0;
+  int boxNum = 0;
+  String boxNumS = '';
   int sw = 195; //  default:  screen width
   int rc = 47; //  default:  row count
   String pm = '-'; //  default
@@ -31,8 +32,10 @@ class BoxServe {
   //  should be upper level TODO
   String footer = ' **  boxServe Footer  **';
   String caller; //  should be upper level TODO
-  ///  Will be combination of '$caller $boxCount.toString()'
+  ///  Will be combination of '$caller $boxNum.toString()'
+  ///
   String name = '';
+  Map<String, List<String>> logM = {};
   List<String> _matrix = new List();
   //  To save matrix AND mediate it to glb.
   StringBuffer _buf = new StringBuffer();
@@ -51,7 +54,9 @@ class BoxServe {
   ///  TODO  set min-max-maxWidthString values
   /// Min rows is 4 !!   Min width is NOW:  55= NO!!   65 = YES!!
   void init(int h, int w, String _pm) {
-
+    boxNum++;
+    boxNumS = boxNum.toString();
+    //  if boxes forgot to run DONE !!
     if (_matrix.length > 0){
       print('* * * *  :DEBUG:BUG  _matrix length > 0  * * * * * * * * * * *  ');
     }
@@ -69,6 +74,7 @@ class BoxServe {
       //  add to matrix rc items.
       _matrix.add(rowS);
     }
+    logM.putIfAbsent(boxNumS, () => ['$boxNumS INIT']);
   }
 
   ///  Build matrix with top, left, bot
@@ -77,7 +83,7 @@ class BoxServe {
     caller = _caller; //  save it to upper level variable.
     name = _caller; //  and to name.
     _bufName = _GlbBufName;
-    boxCount++;
+
     for (var z = 1; z < _matrix.length - 1; z++) {
       //  do not handle first row.
       _fakeRow++;
@@ -88,8 +94,8 @@ class BoxServe {
     }
     ; //  <=  ;  dartFormatter is sometimes funny
     //  TODO  should  get #name in the middle of first line,
-    String boxCountS = boxCount.toString();
-    String m0ro = ':boxServe:nr: $boxCountS  :cib: $_caller   ';
+    boxNumS = boxNum.toString();
+    String m0ro = ':boxServe:nr: $boxNumS  :cib: $_caller   ';
     //  no used  int m0roI = m0ro.length;
     String m0row = m0ro.padRight(sw, pm);
     //  TODO  should produce String:  'DAWO 0.0.7'
@@ -107,6 +113,7 @@ class BoxServe {
     String bRow = bRowLong.substring(0, sw);
     _matrix[rc - 1] = bRow;
     //   '---------10--------20--------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
+    logM[boxNumS].addAll([name, 'CTRCT']);
   } //  -----  construct
 
   ///  Marks left of console screen to put table in convenient place for to see.
@@ -282,6 +289,7 @@ class BoxServe {
     //  return _matrix;  //  if type is: List<String>
     ///  Save box-buffer to:   glb.boxServeBuffers Map
     saveToGLB();
+    logM[boxNumS].addAll([_caller, 'SHOW']);
   }
 
   ///  Called by:  next method, saveToGLB
@@ -299,18 +307,19 @@ class BoxServe {
   ///  Called by:  show()
   ///  toGLB-Buffer.  Save boxServe matrix to glb-buffers
   void saveToGLB() {
-    String boxCountS = boxCount.toString();
-    _bufName = '$_bufName$boxCountS';
+    String boxNumS = boxNum.toString();
+    _bufName = '$_bufName$boxNumS';
     StringBuffer saveBuffer = toBuffer();
     String sbl = saveBuffer.length.toString();
     //  spamming,  away:  Name:::  $name
     print(
-        '  bufName::  $_bufName      boxCountS:::  $boxCountS     BufLength::: $sbl');
+        '  bufName::  $_bufName      boxNumS:::  $boxNumS     BufLength::: $sbl');
 
-    ///  _bufName is combination of '$caller $boxCount.toString()'
+    ///  _bufName is combination of '$caller $boxNum.toString()'
     glb.boxServeBuffers.putIfAbsent(_bufName, () => saveBuffer);
     //  TODO  result:  N_added,  length_now
     print('-<<---saveToGLB  done    ----<<-----  ');
+    logM[boxNumS].add('svGLB');
   }
 
   ///  Lets see, if this will eventually be List<String>
@@ -323,6 +332,7 @@ class BoxServe {
     _resAllocL.clear();
     verticalLineL.clear();
     _fakeRow = 100;
+    logM[boxNumS].add('DONE');
   }
 
   ///  TODO : Constructor, to give shapes and measures
@@ -383,4 +393,4 @@ void boxLayoutDap(BaseStruct _model, String _rubric) {
 } //  -----  boxLayoutDab
 
 ///  UsingBaseStruct (connector) fields to set usual fields in boxServe
-void boxLayoutlConnector() {}
+void boxLayOutConnector() {}

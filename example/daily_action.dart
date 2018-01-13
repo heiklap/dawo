@@ -87,7 +87,7 @@ void weekBox(String caller) {
 
   ///  Define shapes for week-screen matrix.
   boxServe.init(52, 192, '_'); //  rows, width or: 0 = use default 47, 195
-  boxServe.construct(':bargain:week: ', ':daily:bundle:box:week:');
+  boxServe.construct(':bargain:week:', ':daily:bundle:box:week:');
 
   boxServe.aHeader(0, 80, ' *  dawo  week-marketPlace  * ');
 

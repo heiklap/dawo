@@ -141,10 +141,11 @@ class Dev {
     '008: :demo::ad: Advertising / simulate  for only-commercial-version stuff.': 'V:8 E:6 D:0',
     '008: LOOP:  SOON:  say - analyze - con - effort - affair - schedule.': 'V:8 E:6 D:0',
     '008: Example: #Huilo: #Hypertext Unfriendly-Incursion-Level #Observer.': 'V:5 E:3 D:0',
-    '008++ dawoApp.box method got new fields and functionality. boxServe Bug.': ' V:2 E:5 D:04',
-    '008++ Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
     '008: MessFix:   Fixes and modifications to previous version.             ?': 'V:2 E:6 D:0',
     '008: Mission-chore:   Nice run example in dawoApp.             ?': 'V:5 E:4 D:0',
+    '008++ dBox shows Map for: boxes done INIT, CONSTR, sGLB, SHOW, DONE -info. ': 'V:2 E:2 D:2',
+    '008++ Clean: more dawoApp class and output, clean and reshape.': 'V:3 E:3 D:0',
+    '008++ dawoApp.box method got new fields and functionality. boxServe Bug.': ' V:2 E:5 D:04',
     '008:++ CommonChore renamed> BlanketChore, Chore.op > popularJoint.': 'V:3 E:1 D:3',
     '008++ dev class reshape, new Class names: aide, hist and envoy.': 'V:4 E:3 D:3',
   };

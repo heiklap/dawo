@@ -414,11 +414,20 @@ class DawoApp {
     boxServe.aBox(13, 50, 5, 63, tl.mapToFineList(client, 12, 46));
     boxServe.vertLine(2, 49, 16); //   parts plans clients
 
+    List<String> boxLogL = [];
+    ///  dBox shows Map for: boxes done INIT, CONSTRUCT, sGLB, SHOW, DONE -info.
+    for (var x in boxServe.logM.keys) {
+      boxLogL.add(boxServe.logM[x].toString());
+    }
+    boxServe.aHeader(20, 140, '* Box users. init  construct  show  done *');
+    boxServe.aBox(21, 140, 12, 55, boxLogL);
+
     ///  At the end print some vertical lines.
     boxServe.vertLine(13, 117, 23); //  right middle
     boxServe.vertLine(13, 139, 23); //  right+ middle+
     boxServe.aHeader(13, 120, '* Actions *');
     ///  'print' makes this visible in screen.  Margin: 4.
+    ///
     boxServe.show(boxHeader, 'print', 4);
     boxServe.done(boxHeader);
     print('--<<--<<  $boxHeader boxServe  done  --<<--<<--  ');

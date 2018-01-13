@@ -108,7 +108,7 @@ main() {
 
   exampleMethodsPlay(); //  Add more 13 screens output.
   bind.report('$dexS');
-  dawoApp.box(dexS); //  2. time here-
+  //  extra   dawoApp.box(dexS); //  2. time here-
 
   connectorOp(dexS);
   exInfo('    ==<<==<<==    dawo_example done    ==<<==<<==');
@@ -118,7 +118,7 @@ main() {
   print(' \nStopTime::  $stop');
   print(stop.difference(start));
   print('FlowServe calls::   $flowI ');
-  boxServeTemplate();
+  boxHistTemplate();
   packDawoMission.joyChr.box(':dawoExample:call:joyChr:box:');
   print('.......... :glb:boxServe:buf: length and names  ................');
   print(glb.boxServeBuffers.length);
@@ -149,30 +149,42 @@ main() {
   print(tl.mapToFineList(_xM, 20, 20));
   print('....... printing outBufMap map  done ....................');
 
+  print('....... printing boxServe logM print  ....................');
+  Map<String, List<String>> _logM = {};
+  for (var x in boxServe.logM.keys) {
+    print(x);
+    print(boxServe.logM[x]);
+  }
+
+
+  print('....... printing boxServe logM print  done ....................');
+  dawoApp.box(dexS); //  3. time here-
+
+
   //print buffer: print(glb.boxServeBuffers[':dawoHist:dailyAction:friday:6']);
   print('---- main done   ');
 } //  -----  end of main.
 
-///  From dailyAction
-void boxServeTemplate() {
+///  Dawo history play and box
+void boxHistTemplate() {
   print('---------- :boxServe:dawoLogo: :temporary:hack:   ----------------');
   DawoHist dawoHist = new DawoHist();
   dawoHist.init();
   dawoHist.build('_emblemString', '_masterString');
   dawoHist.roll();
-  dawoHist.buf.writeln(':dailyAction:friday:');
+  dawoHist.buf.writeln(':dawoHist:template:');
 
   ///  TODO  hosTo handle:  in boxServe there are:  title and footer.
   boxServe.init(36, 175, '_');
 
   ///  Table name and glb.buffer name
   boxServe.construct(
-      ':dawoHist:dailyAction:friday:', ':dawoHist:dailyAction:friday:');
+      ':dHst:dAc:tmpl:', ':dawoHist:template:');
 
   ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
-  boxLayoutDap(dawoHist, ':dawoHist:dailyAction:friday:');
-  boxServe.show(':dailyAction:test:', 'print', 3);
-  boxServe.done(':dailyAction:test:');
+  boxLayoutDap(dawoHist, ':dawoHist:template:');
+  boxServe.show(':dHst:', 'print', 3);
+  boxServe.done(':dHst:');
 }
 
 ///  To allow easy-run of these 8 separated activities.

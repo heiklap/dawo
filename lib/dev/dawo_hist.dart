@@ -124,12 +124,12 @@ class DawoHist implements BaseStruct {
     //  :BOX:SW:  was 190
     boxServe.init(_rc, 200, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(
-        ':dawoHist:box: ', ':dawoHist:box:'); //  :BUG: C: $caller');
+        ':dhst:box: ', ':dHst:'); //  :BUG: C: $caller');
     print(':BUG:DEBUG: dawoHist:box is not called * * * ');
     int r9 = 9; //  anchor for row.
-    boxServe.show(':box:dawoHist:', 'print', 0);
+    boxServe.show(':box:dHst:', 'print', 0);
     ///  Set boxServe ready for next user: clear data.
-    boxServe.done(':box:dawoHist:');
+    boxServe.done(':box:dHst:');
   }
 
   ///  Presentation method.

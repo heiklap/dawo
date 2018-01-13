@@ -197,7 +197,7 @@ class GlobalClass {
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
     boxServe.init(15, 140, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':glb:box:  C: $caller', ':glb:box:');
+    boxServe.construct(':glb:box:', ':glb:box: C: $caller');
 
     boxServe.aHeader(1, 4, '* *  Print-State * * ');
     boxServe.aBox(2, 7, 12, 20, tl.mapToListB(prSt));
