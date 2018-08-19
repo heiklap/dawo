@@ -21,14 +21,14 @@ var mill = new Mill();
 var mission = new Mission('mission-class', 'test-in:de-test.dart');
 
 ///  NOTE:  chore #master field must have name of mission-with-say field.
-var ch = new BlanketChore('chore-class', 'appChorePlay', 'Testing in app-bLib-chore-play');
+var ch = new BlanketChore('chore-class', 'appChorePlay', 'Testing in app-chore-play');
 
 ///  Soon (in next version) instance of dawoApp is created inside Dawo
 //  Beginning 23.12.2017 instance of DawoApp is created inside package.
 //  var dawoApp = new DawoApp(':example ', 'Just rumbaTest.dart');
 var rumba = new Rumba();
 
-///  use and show App, dawoFlag, BLib-class and Chore
+///  use and show App, dawoFlag and Chore
 main() {
   dawoApp.init(':app_chore_play:','Testing in app_chore_play' );
 
@@ -96,7 +96,7 @@ void usualChoreStuff() {
   String xs = '';
   xs = tl.changeLetter('1234567890', 5, 'x');
   print(xs);
-  print('==>>==>>====  app_blib_chore example  ==>>==>>====');
+  print('==>>==>>====  app_chore_play example  ==>>==>>====');
   //  TODO Bug: ALREADY INITIALIZED BUILD CHORE
 
   rumba.dance(dawoApp);
@@ -104,7 +104,7 @@ void usualChoreStuff() {
   //  getting something from classes
   print('da-Info::   $dawoApp.info');
   print('mill-active::  $mill.active');
-  print('bLibInfo::  $mission.blInfo');
+  print('Mission_blInfo::  $mission.blInfo');
   print('ch-info::   $ch.info');
 
   //  building all functionality in function::
@@ -121,7 +121,7 @@ void usualChoreStuff() {
 //  all happens here, just presentation
 //  classes are not interacting aso.
 void otherStuff() {
-  print('==>>==>>====  app_blib_chore example otherStuff ==>>==>>====');
+  print('==>>==>>====  app_chore_play example otherStuff ==>>==>>====');
   var dawoHist = new DawoHist(); //  new DawoHist class.
   aide..line('dawoAppRoll');
   dawoApp.roll();
@@ -140,7 +140,7 @@ void otherStuff() {
   //  wanna more: play them
   //  mill.
 
-  aide.line('bLib');
+  aide.line('Other_stuff');
 
   renderMission(':app:chore:play.dart:');
 
@@ -159,7 +159,7 @@ void otherStuff() {
   aide.line('render Chore');
   renderChore();
 
-  print('==<<==<<====  app_blib_chore example otherStuff ==<<==<<====');
+  print('==<<==<<====  app_chore_play example otherStuff ==<<==<<====');
 }
 
 //

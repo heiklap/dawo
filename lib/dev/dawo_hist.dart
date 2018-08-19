@@ -28,7 +28,7 @@ class DawoHist implements BaseStruct {
   String indent; // like:  "      ";  3-5-7 empty marks or something visible.
   String master = ':dawoApp:'; //  Object that owns this.
 
-  bool _pB = true; //  yes / no printing now.
+  bool _pB = true; //  yes / no   ..  printing now.
   StringBuffer buf = new StringBuffer();
 
   ///  4 var to control connectors state, working-condition-state values.
@@ -113,10 +113,10 @@ class DawoHist implements BaseStruct {
     //  use: boxServe  OR  create own class here
     //  TODO  set min-max values
     //  :BOX:SW:  was 190
-    final int _sw = 200; //  screen width, changed later =>
+    //  unused::  final int _sw = 200; //  screen width, changed later =>
     final int _rc = 37; //  row count
     //  ???  Keep matrix here on callers side all the time
-    List<String> _dawoHistMatrix = new List(_rc);
+    //  unused::  List<String> _dawoHistMatrix = new List(_rc);
     String boxHeader = ':dawoHist:box:';
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
@@ -126,14 +126,16 @@ class DawoHist implements BaseStruct {
     boxServe.construct(
         ':dhst:box: ', ':dHst:'); //  :BUG: C: $caller');
     print(':BUG:DEBUG: dawoHist:box is not called * * * ');
-    int r9 = 9; //  anchor for row.
+    //  unused::  int r9 = 9; //  anchor for row.
     boxServe.show(':box:dHst:', 'print', 0);
     ///  Set boxServe ready for next user: clear data.
     boxServe.done(':box:dHst:');
   }
 
   ///  Presentation method.
-  void show(String action) {}
+  void show(String action) {
+    _pB;   //  print-Bool   controls printing
+  }
   //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
 
   ///  Close method.
@@ -142,7 +144,7 @@ class DawoHist implements BaseStruct {
   ///  Every important library has it's own flowC function. #Library #Privacy!!
   ///  Calling print/print-to-buffer function from beta.
   ///  Getting local variables; Actor and Buffer right.
-  void _flowC(String msg, bool p) {
+  void flowC(String msg, bool p) {
     ///  call flowServe with #LOCAL variables
     ///  :dawoHist:  is too long.
     flowServe(':d:Hist:', buf, msg, p);

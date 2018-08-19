@@ -14,6 +14,8 @@
 
 library dawo_src; //  naming this to _src...
 
+
+///  hklTry::  #export all
 ///  Data ( #clay ) is in clay-folder.
 import 'clay/clay_roll.dart';
 
@@ -106,6 +108,8 @@ StringBuffer renderDawo() {
 
   renderBuffer.writeln('------- renderBuffer data--------------------- \n');
   var missionY = new Mission('mission in dawo_src-render', 'test-mission');
+  missionY.name;
+  missionY.done();
   //Private:  no access and no need for it.  missionY._opCount;
 
   renderBuffer.writeln('--------renderBuffer done -------------------- \n');

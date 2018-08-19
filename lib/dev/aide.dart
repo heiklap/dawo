@@ -1,11 +1,14 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  aide,  helper class
+///  ##  aide,  helper class is a developer tool.
 ///  Primary functionality:  Help in developing.
 /// * dawo version:  0.0.75+.  -  9.1.2018
 /// * devState : 10%    in GitHub : yes
+/// * variables tf & rf seems to bee acronyms for: testFunction & runFunction
 // hist>  9.1.2018  Separated from dawoApp.
 //
+
+//  TODO  handle tf and rf variables:  10 x
 
 
 part of dawo_dev.dart;
@@ -88,17 +91,17 @@ class Aide {
   ///  Dynamic-parameter-function, that is used to run other function in tests.
   ///  It is  called:     tfDyn(testSomething);
   ///  TODO  Check these String / type errors.
-  void tfDyn(var rf) {
+  void tfDyn(String rf()) {
     //A value of type 'toString' cannot be assigned to a variable of type 'String'
-    String _s = rf.toString;
+    String _s = rf();
 
-    //  Can we get runtime type toString?
-    String _sType = rf.runTimeType();
+    //  howTo get runtime type of function rf()?
+    //  String _sType = rf.runTimeType();
     //TODO
     //  There is no such getter 'runTimeType' in 'Function'
     //  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
     print('------------>>-->>--    Beginning:   $_s');
-    print(_sType);
+    //  print(_sType);
     rf();
     print('--<<--<<------------    End of test  \n');
   }

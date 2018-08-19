@@ -13,8 +13,13 @@
 library dawo;
 
 //  If you are using dawo right here:
-//  import 'dawo_app.dart';
+//  import 'dawo_app.dart';Plan something instead
 
+//  TODO  #coma  Content-marketing, cheatSheet to present functionality
+//  TODO  Build: import build_runner
+//  import 'package:build_runner/build_runner.dart';
+
+///  now, 14.4.20188 dawo_src exports all / many files
 export 'package:dawo/dawo_src.dart';
 
 ///  Buffer also outside class, for testing and adding visibility.

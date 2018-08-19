@@ -50,7 +50,7 @@ class GlobalClass {
     ':A: -  :an: analyzer  affair  :Ar:=AppRoll  agenda-5  area-21  ask-14  ',
     ':B:-13 Build-67 - :boxServe:-9    BIND  :BUG:  :DEBUG: ',
     ':C: connector   :con: :corporate: clause-14 :courier: chore   chrs_?',
-    ':C: camp-0 !!  Channel  code-11   :cib:=CallerInBox',
+    ':C: camp-0 !!  Channel  code-11   :cib:=CallerInBox  coma',
     ':D:3 dawoApp   devBox  :dawolang:analyze:EXTRACTED:  diag  diagonal',
     ':D:3   DB-8    DAY-45?!  !?:done:0   doctor-o ',
     ':E: -   :effort: eff enc=encode  EQU=equipment-5  (envelope-0)  ',
@@ -65,6 +65,7 @@ class GlobalClass {
     ':N:         =  NEXT   NOTE-38  ',
     ':O: -          (opera-6)          ( oath-0) ',
     ':P: -  PING-13   p e g=screenMark    (plan-24)   pool-0 :promo: PDCA ',
+    ':P2: -  POC-proof of concept.    ',
     ':Q: -    QUEST-13 ',
     ':R:-27  Rumba-8-54     RULE-13                                  (ritual-0) ',
     ':S:-0  -   schedule-43  scout-27 :scout:Roll say  STREAM  store-4  secret-0 ',
@@ -97,11 +98,11 @@ class GlobalClass {
     ':m:     meet-4    member*-7 merge-0  mix-0    myTime-30',
     ':n: = numbr-Grant-Valid  ',
     ':o: -  out_=    (opC-23 ?!)    office-9',
-    ':p: -   PLAN:   placardM  plug-0  pole-3   priority-3   p e g=eyeMark',
+    ':p: -   PLAN:   placardM  plug-0  pole-3   priority-3   p e g=eyeMark   peek  poke',
     ':q: -',
-    ':r: = report                 round-13     ',
+    ':r: = report                 round-13   rural   ',
     ':s: - sec  schedule  SOON:   :sh-it-diagL ?? (simulate-2) state-14  ',
-    ':t: -    (try-7)    typedef-17   tempo*-2   time-14  tutor-o     ',
+    ':t: -   tale  (try-7)    typedef-17   tempo*-2   time-14  tutor-o     ',
     ':u: -       unite-6      unify-0',
     ':v: -     value-effort:in#effort',
     ':w: -     week-9 ',
@@ -189,10 +190,10 @@ class GlobalClass {
   void box(String caller) {
     buf.writeln(':glb:box:start:  ');
     //  use: boxServe  OR  create own class here
-    final int _sw = 140; //  screen width, changed later =>
-    final int _rc = 15; //  row count
+    //  unused::  final int _sw = 140; //  screen width, changed later =>
+    // unused::  final int _rc = 15; //  row count
     //  ???  Keep matrix here on callers side all the time
-    List<String> _glbMatrix = new List(_rc);
+    //  unused::  List<String> _glbMatrix = new List(_rc);
     String boxHeader = ':glb:box:';
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');

@@ -6,11 +6,12 @@ homepage: https://github.com/heiklap/dawo
 
 
 environment:
-  sdk: '>=1.23.0-dev.11.5 <2.0.0'
-
-web:
-  compiler:
-    debug: dartdevc
+  sdk: '<=2.0.0-dev.68.0 <2.0.0'
+  #sdk: '2.0.0-dev.63.0'
+#TODO  is  "dartdevc" needed when build_runner??
+#web:
+#  compiler:
+#    debug: dartdevc
 
 dependencies:
   http: ^0.11.3+16
@@ -22,3 +23,6 @@ dependencies:
 
 dev_dependencies:
   test: "^0.12.24+2"
+  build_runner: any
+  build_test: any
+  build_web_compilers: any

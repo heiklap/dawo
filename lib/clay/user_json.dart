@@ -33,7 +33,7 @@ class UserJson {
 //  new t.fromJson(...);
   ///  Example: Simulating user imported data with: JSON.  //  in dart:convert
   ///  #dartFMT has funny way to write JSON
-  var encoded = JSON.encode([
+  var encoded = json.encode([
     1,
     2,
     {"a": null}
@@ -42,19 +42,19 @@ class UserJson {
   ///  output: [1,2,{"a":null}]  length:  16
 
   ///  output:  [foo, {bar: 499}]  length:  2
-  var decoded = JSON.decode('["foo", { "bar": 499 }]');
+  var decoded = json.decode('["foo", { "bar": 499 }]');
 
-  var dpIn = JSON.encode([
+  var dpIn = json.encode([
     "dpStart",
     {"inData": 5}
   ]);
-  var dpOut = JSON.decode('["dpNext", { "outFormData": 7 }]');
+  var dpOut = json.decode('["dpNext", { "outFormData": 7 }]');
 
-  ///  **************   JSON  example material      **************************
+  ///  **************   json  example material      **************************
 
-  ///  **************   JSON  example material      **************************
+  ///  **************   json  example material      **************************
   ///  Simulating two user-data.
-  var busJSONEnc = JSON.encode([
+  var busJSONEnc = json.encode([
     "dBus37",
     {"outCode": 521},
     "dBus38",
@@ -62,12 +62,12 @@ class UserJson {
     "dBus39",
     {"outCode": 437}
   ]);
-  var furyJSONEnc = JSON.encode([
+  var furyJSONEnc = json.encode([
     "dpEncNext",
     {"outFormData": 7}
   ]);
 
-  var humanInEnc = JSON.encode([
+  var humanInEnc = json.encode([
     "front",
     {"hr4": 3, "hr5": 2},
 //    "mid",
@@ -76,9 +76,9 @@ class UserJson {
     {"mr6": 5, "mr12": 7}
   ]);
 
-  ///  Two var that are planned to be used for user-in JSON data.
-  var busJSONDec = JSON.decode('["dpFirst", { "outBusData": 7 }]');
-  var furyJSONDec = JSON.decode('["dpFirst", { "outFuryData": 3 }]');
+  ///  Two var that are planned to be used for user-in json data.
+  var busJSONDec = json.decode('["dpFirst", { "outBusData": 7 }]');
+  var furyJSONDec = json.decode('["dpFirst", { "outFuryData": 3 }]');
 } //  -----   class UserJson
 
 var userJson = new UserJson();
@@ -89,7 +89,7 @@ void renderUserJson(String caller) {
   //  Crete only-here instance.
   var uj = new UserJson();
   //  encode(Object value, { dynamic toEncodable(object) }) → String
-  //  Converts value to a JSON string.
+  //  Converts value to a json string.
 
   //  decode(String source, { dynamic reviver(key, value) }) → dynamic
   //  Parses the string and returns the resulting Json object.
@@ -100,7 +100,7 @@ void renderUserJson(String caller) {
   print(uj.decoded);
   print(uj.decoded.length);
 
-  print('- encode: Converts value to a JSON string.::');
+  print('- encode: Converts value to a json string.::');
   print(uj.dpIn);
   print([
     "dpStart",

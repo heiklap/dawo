@@ -411,11 +411,14 @@ class Connector extends BaseStruct {
     buf.writeln('con:box:start:  ');
     //  use: boxServe  OR  create own class here
     final int _sw = 194; //  default screen width, changed later =>
+    _sw;  //  To mark unUsed
     final int _rc = 47; //  row count
     //  ???  Keep matrix here on callers side all the time
     List<String> _conMatrix = new List(_rc);
+    _conMatrix;   //  Mark #unUsed
+
     String boxHeader = ':connector:box:';
-    print('-->>-->>  :connector:box: boxServe  start  -->>-->>--  ');
+    print('-->>-->>  $boxHeader  boxServe  start  -->>-->>--  ');
     List<String> infoL = [
       'Connector joins other object to spheres, like corporate, where they can work together and join messaging.',
       'Every :con:Scout:ed object comes with a #LANG info like: #say and placardM, and has access to :bind:bing:',
@@ -508,6 +511,7 @@ class Connector extends BaseStruct {
       print(':buffer: is printed');
       print(buf);
     }
+    _clB;  //  to mark it used
   }
 
   ///  close method
@@ -534,6 +538,11 @@ class Connector extends BaseStruct {
 
   ///  constructor
   Connector(this.name, this.info);
+
+  //  To mark unused local variables in Connector class
+  void useUnused(){
+
+  }
 }
 
 ///  Create instance of Connector.

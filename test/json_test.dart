@@ -35,11 +35,11 @@ void myCars() {
   String s;
   s = myObj.toString();
   print(s);
-  print('----  myCars  -----myObjD = JSON . decode::  ');
+  print('----  myCars  -----myObjD = json . decode::  ');
   //  hklTry  make this a List.
 
-  //var myObjD = JSON.decode('["mc", {name: John, age: 30, cars: [{name: Ford, models: [Fiesta, Focus, Mustang]}, {name: BMW, models: [320, X3, X5]}, {name: Fiat, models: [500, Panda]}]}]');
-  var myObjD = JSON.decode(
+  //var myObjD = json.decode('["mc", {name: John, age: 30, cars: [{name: Ford, models: [Fiesta, Focus, Mustang]}, {name: BMW, models: [320, X3, X5]}, {name: Fiat, models: [500, Panda]}]}]');
+  var myObjD = json.decode(
       '{"name":"John","age":30,"cars": [{ "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] }, { "name":"BMW", "models":[ "320", "X3", "X5" ] }, { "name":"Fiat", "models":[ "500", "Panda" ] }]}');
   print(myObjD);
   print('----  myCars  -----myObjD name::');
@@ -59,7 +59,7 @@ void myCars() {
 
 void fooBar() {
   print('\n------  fooBar  ----------');
-  var decoded = JSON.decode('["foo", { "bar": 499 }]');
+  var decoded = json.decode('["foo", { "bar": 499 }]');
   print(decoded); //  Decoded is a List.
   print(decoded[0]); // This is a String.
   String s = decoded[0];
@@ -75,9 +75,9 @@ void fooBar() {
 void car() {
   print('\n------  car  ----------');
   var myObj =
-      JSON.decode('["foo", { "name": "499", "cars": "Fiat Ford BMW" }]');
+      json.decode('["foo", { "name": "499", "cars": "Fiat Ford BMW" }]');
   //  hklTry  more complicated map
-  //  var myObj = JSON.decode('["foo", { "name": "499", {"car1": "Fiat",  "car2" : "Ford", "car3" : "BMW"} }]');
+  //  var myObj = json.decode('["foo", { "name": "499", {"car1": "Fiat",  "car2" : "Ford", "car3" : "BMW"} }]');
   //  Map testM =  {"car1": "Fiat",  "car2" : "Ford", "car3" : "BMW"};
 
   //type '_InternalLinkedHashMap<String, dynamic>' is not a subtype of type 'String' of 'y' where
@@ -98,7 +98,7 @@ void car() {
 }
 
 void playDecode() {
-  var myObj = JSON.decode('{ "name":"John", "age":30, "car":null }');
+  var myObj = json.decode('{ "name":"John", "age":30, "car":null }');
   String x;
   print(myObj.toString());
   print(myObj);

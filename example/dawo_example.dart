@@ -150,7 +150,7 @@ main() {
   print('....... printing outBufMap map  done ....................');
 
   print('....... printing boxServe logM print  ....................');
-  Map<String, List<String>> _logM = {};
+  // unused::  Map<String, List<String>> _logM = {};
   for (var x in boxServe.logM.keys) {
     print(x);
     print(boxServe.logM[x]);

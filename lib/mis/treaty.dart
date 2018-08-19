@@ -263,13 +263,14 @@ class Treaty {
   void _show() {
     logM.putIfAbsent('Show: $name', () => '$msg in :daily:work:');
     // boxServe.show(':dailyTreaty:monday:', 'print');
+    _weekLayOut();
     print('    ---- $name    :dailyTreaty:method:show:');
     //  Run _objects show / .box method
     //  insider.box();
   }
 
   ///  Model layout for basic fields.
-  void _dayLayout() {
+  void _dayLayOut() {
     ///  Place String-header in wanted place.
     boxServe.aHeader(1, 32, ':daily:Treaty:box:');
     String _s = insider.name;
@@ -317,7 +318,7 @@ class Treaty {
   }
 
   ///  Model layout for basic fields.
-  void _weekLayout() {}
+  void _weekLayOut() {}
 
   ///  For day events,  weekBox collects all days.
   ///  PLAN:  Very small day-info-box, for.. routine day info / events.
@@ -330,9 +331,9 @@ class Treaty {
     boxServe.init(_r, _w, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':day:$name ', ':daily:Treaty:box:');
     //  Get basic bunch of day data.
-    _dayLayout();
+    _dayLayOut();
 
-    boxServe.show(':daily:Treaty:  $name ', 'print', 8);
+    boxServe.show(':daily:Treaty: buf: $bufLength  $name ', 'print', 8);
     boxServe.done(':daily:Treaty:  $name ');
 
     //  TODO  Bids to week - #auction.
@@ -348,10 +349,10 @@ class Treaty {
     boxServe.init(16, 140, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':bargain:$name ', ':daily:Treaty:box:');
     //  Get basic bunch of data.
-    _dayLayout();
+    _dayLayOut();
     //  _bargainLayout();  //  when it is ready
     boxServe.show(' :bargain:daily:Treaty:  $name ', 'print', 22);
-    boxServe.done(' :bargain:daily:Treaty:  $name ');
+    boxServe.done(' :bargain:daily:Treaty: buf: $bufLength  $name ');
     //  TODO  Bids to add to week - #auction.
   }
 

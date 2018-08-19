@@ -21,7 +21,7 @@ import '../beta.dart';
 import '../src/box_serve.dart';
 
 import 'chore.dart';
-import 'equipment.dart';
+//  import 'equipment.dart';
 
 import '../dev/dawo_dev.dart';
 import '../tools.dart';
@@ -113,8 +113,8 @@ class Mission {
 
   ///  TODO  Handy one-row info of placardM
   String placardRow() {
-    String s1 = 'Act:   Send:    Rec:  Com:  msg:   ';
-    return ('Act: ');
+    String _pRow = 'Act:   Send:    Rec:  Com:  msg:   ';
+    return (_pRow);
   }
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
@@ -182,6 +182,13 @@ class Mission {
   bool _rollEscape = false; //  Used in testing and to escape bugs.
   int _rollCount = 0;
   int _rollMax = 3; //  Emergency exit from loops.
+  //  TODO  To mark / handle #unUsed variables
+  void rollHandle(){
+    _rollEscape = true;
+    print('----------------  rollHandle/ unUsed  -------');
+    print(_rollEscape);
+    print(_rollMax);
+  }
 
   /// #IDEA?  chore map to give names to  W O R K  phases.
   /// #Name: Phase?  #BTW: Do not want to use "work". Instead: #job.
@@ -271,10 +278,11 @@ class Mission {
   ///  * * *    in beta, chore and mission   * * *
   ///  :TEST:  change some variables to private.
   ///  Action is small class in #alpha (name, say)
-  Action _decision;
+  Action decision;  //  Change it to public::  _decision
 
   ///  Collecting all decisions.
-  Map<String, Map<String, Action>> _decisionChainMM;
+  ///  TODO  Map _decisionChainMM  Change it to public !!
+  Map<String, Map<String, Action>> decisionChainMM = new Map();
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
@@ -299,9 +307,12 @@ class Mission {
     _buf.writeln(':mis:box:act:start:  ');
     final int _sw = 194; //  default screen width, changed later =>
     final int _rc = 47; //  row count
+    //  To use #unUsed
+    _sw;
+    _rc;
 
     String boxHeader = ':mis:box:act:';
-    print('-->>-->>  :mis:box:act: boxServe  start  -->>-->>--  ');
+    print('-->>-->>  $boxHeader  boxServe  start  -->>-->>--  ');
     List<String> _infoL = [
       'Mission is connected with other missions in camp Y/ con, and they can work together and join messaging.',
       'Chores under a mission can connect and use #masters #say and placardM, and has access to :bind:bing:',
@@ -387,9 +398,12 @@ class Mission {
     _buf.writeln(':mis:box:start:  ');
     final int _sw = 194; //  default screen width, changed later =>
     final int _rc = 47; //  row count
+    //  to use #unUsed
+    _sw;
+    _rc;
 
     String boxHeader = ':mis:box:';
-    print('-->>-->>  :mis:box: boxServe  start  -->>-->>--  ');
+    print('-->>-->>  $boxHeader  boxServe  start  -->>-->>--  ');
     List<String> _infoL = [
       'Mission is connected with other missions in camp Y/ con, and they can work together and join messaging.',
       'Chores under a mission can connect and use #masters #say and placardM, and has access to :bind:bing:',
@@ -508,6 +522,10 @@ class Mission {
   void done(){
     print(':BUG:ERROR:  Mission do not have :done: method.in.use');
   }  // Not used, not called.
+
+void useUnused(){
+    _indent;  //  use it.  Meant to style output margin.
+}
 
 //  TODO  teamNext   coming?:   returning some finnish day names aso.
   /// Should include some international values from other languages.

@@ -123,7 +123,7 @@ void weekBox(String caller) {
   boxServe.show(':box:week:bundle:', 'print', 2);
 
   ///  Set boxServe ready for next user: clear data.
-  boxServe.done(':box:week:bundle:');
+  boxServe.done(':box:week:bundle:  bufLength:: $bufLength');
 } //  -----  weekBox.
 
 ///  Main method is starting-point of every Dart application-
@@ -157,6 +157,7 @@ void main() {
 
   //  variable not used!!
   var wMission = pickMission('PackDawoMission');
+  wMission.toString();  // just use it..
 
   print('------------- :daily:bundle: start  -----------------------');
 

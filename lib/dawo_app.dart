@@ -118,9 +118,9 @@ class DawoApp {
   Map<String, String> package = {
     'agenda': 'Data-handling app package',
     'msg': 'This is a process for learning.',
-    // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 bLib:demandStream Listened
+    // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 :demandStream Listened
     'develop': 'Under development.. from 0.0.7+ to 0.1.0.',
-    // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 bLib:demandStream Listened
+    // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 demandStream Listened
     'pack: version': 'Version: 0.0.75+ ',
     'pub': 'Published 8.1.2018',
   };
@@ -443,6 +443,11 @@ class DawoApp {
       print(out.outTr);
       print('--<<--<<----  dawoApp show done --<<--<<----');
     }
+  }
+  
+  //  #coma  Content-marketing, cheatSheet to present functionality
+  void coma(){
+    //
   }
 
   ///  After presentation method; done, if #doneB.

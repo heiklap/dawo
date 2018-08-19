@@ -140,6 +140,7 @@ class LearnDartlang {
     'Explicit': 'Stated clearly, leaving no space for hesitation or doubt.',
     'Function': ' ',
     'Fail': ' ',
+    'Flutter': 'flutter comes down to the fact that it has rational and simple rules around layouts positioning.',
     'Type Generic': 'Because Darts generic types are covariant... ',
     'Type Subtyping':
         'Usually, subtyping is written using the "<:" operator: Apple <: Fruit.',
@@ -166,8 +167,10 @@ class LearnDartlang {
     'Publish': 'Milestone, relief. Stops development of package for three days. ',
     'Queue': 'cattle herd from a narrow gate. ',
     'R': ' ',
+
     'Strong mode':
         '..optional in the first version of the language. Integrated part of the second.',
+    'Strong mode2': 'analyzer: stronge-mode should be in analysis_options.yaml',
     'T': ' ',
     'This':
         'The only time you need to use this. is when a local variable with the same name shadows the member you want to access.',
