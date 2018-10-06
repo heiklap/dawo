@@ -1,13 +1,12 @@
 name: dawo
 description: Beginner Dart programmers project to learn dartlang by developing a package.
-version: 0.0.75
+version: 0.0.78
 author: Heikki K Lappalainen <heikkiklappalainen@gmail.com.com>
 homepage: https://github.com/heiklap/dawo
 
 
 environment:
-  sdk: '<=2.0.0-dev.68.0 <2.0.0'
-  #sdk: '2.0.0-dev.63.0'
+  sdk: '>=2.0.0 <3.0.0'
 #TODO  is  "dartdevc" needed when build_runner??
 #web:
 #  compiler:
@@ -18,11 +17,8 @@ dependencies:
   http_server: ^0.9.6
   io: "^0.3.0"
   intl: "^0.15.2"
-  browser: "^0.10.0+2"
-  dawolang: "^0.0.1"
+  dawolang: ^0.0.2
 
 dev_dependencies:
-  test: "^0.12.24+2"
   build_runner: any
-  build_test: any
   build_web_compilers: any

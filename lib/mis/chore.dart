@@ -243,6 +243,7 @@ class BlanketChore extends BaseStruct {
   ///  Initialize class for ready-to-use: Method for setting class field values.
   void init() {
     _flowC('--> C-init $name  -->---->--', _pB);
+
     extra['init']++;
     String __name = name.toUpperCase();
     String _name = ':$__name :';
@@ -413,7 +414,8 @@ class BlanketChore extends BaseStruct {
     String _s8 = '** ';
     String _s9 = '** ';
     String _s10 = '** ______________________________________________________';
-    List _l = [_s1, _s2, _s3, _s4, _s5, _s6, _s7, _s8, _s9, _s10];
+    ///  fix2.0.0
+    List<String> _l = [_s1, _s2, _s3, _s4, _s5, _s6, _s7, _s8, _s9, _s10];
     buf.writeln(':ch:buf: :report: done for chore:  $name  ');
     return _l;
   }

@@ -8,7 +8,8 @@ import 'package:dawo/dawo_app.dart';
 
 import 'package:dawo/mis/missions.dart';
 
-import 'package:test/test.dart';
+//  Used version of Dart 2.0.0 seems now to be incompatible with test.
+//  import 'package:test/test.dart';
 
 void main() {
   //TODO  error
@@ -19,6 +20,7 @@ void main() {
 
   dawoApp.info; //  String
 
+  /*
   group('A group of tests', () {
     Awesome awesome;
 
@@ -30,6 +32,7 @@ void main() {
       expect(awesome.isAwesome, isTrue);
     });
   });
+  */
   print('--  some variables  --');
 
   //  error in library building; away temporarily

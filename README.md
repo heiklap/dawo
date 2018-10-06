@@ -1,12 +1,14 @@
-# dawo 0.0.75
+# dawo 0.0.78
 
     https://img.shields.io/pub/v/box2d.svg
 https://pub.dartlang.org/packages/dawo
 
-Minor version now; saving efforts now and not modifying documentation and comments. 
-Learning Dart; by building complicated Dart package with many libraries. Organizing it, finding it's 
-inner connections and developing multipurpose methods.
-Beginner Dart programmers kickoff to learn by developing a glorious package. Latest code in GitHub: https://github.com/heiklap/dawo
+Minor update to be dart2 compatible. 
+Dawo is beginner Dart programmers project to learn Dart by developing a glorious package.
+- Complicated and copious  spectrum of classes, functions and methods sets creator and user to situation where must 
+take challenging effort to manage and exploit all the features. Here is plenty of room for imagination and ideas. For
+beginner programmes this is one way to simulate real-world development stress.
+- Latest code in GitHub: https://github.com/heiklap/dawo
 - Read: /doc/hist_versions.txt in gitHub to see full changes to this, and coming versions.
 - Blog: http://dawopack.blogspot.fi/search/label/dawo 
 - Dependencies:  Dawo is using my other package: dawolang: 0.0.1, for word recognition in connector.
@@ -63,8 +65,8 @@ Beginner Dart programmers kickoff to learn by developing a glorious package. Lat
  0.0.6 box_serve presentation and corporate.     
  0.0.7 Connector and #say language, scout class and join.
 
- 0.0.75 Mission act Map. Instance of dawoApp is now created inside app.
- 
+ 0.0.75 Mission act Map. Instance of dawoApp is now created inside app. 
+ 0.0.78 Updated to be dart2 compatible.
 
 ## Files;
 ### code_snippets, learn / copy-paste stuff:

@@ -126,7 +126,7 @@ class Tools {
         _retL.add([val_1, val_2]); //  like: 5, 4  /  -1, 3
       } //  --  for (var y in _inlM[x].keys)
     }
-    return _retL;  //  [1,3 ], [5,4], [6,4], [3,8], [9,5] ....
+    return _retL; //  [1,3 ], [5,4], [6,4], [3,8], [9,5] ....
   }
 
   ///  Return List of items, where #String exist. from dawo-tools.
@@ -156,9 +156,9 @@ class Tools {
   }
 
   ///
-  List<String> listListIntToListString(List<List<int>> inL){
+  List<String> listListIntToListString(List<List<int>> inL) {
     List<String> retL = [];
-    for (var x in inL){
+    for (var x in inL) {
       String s = x.toString();
       retL.add(s);
     }
@@ -274,16 +274,19 @@ class Tools {
       String _ks = '';
       String _vs = '';
       if (k.length < _kl) {
-        _ks = k.padRight(_kl + 1); //  ? + 1
+        //  ? + 1
+        _ks = k.padRight(_kl + 1);
       } else {
-        _ks = k.substring(0, _kl); //  but it may be shorter
+        //  but it may be shorter
+        _ks = k.substring(0, _kl);
       }
       ;
 
       if (v.length < _vl) {
         _vs = v.padRight(_vl + 1);
       } else {
-        _vs = v.substring(0, _vl); //  but it may be shorter
+        //  but it may be shorter
+        _vs = v.substring(0, _vl);
       }
       ;
       String _s = '';

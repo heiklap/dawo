@@ -181,7 +181,8 @@ class BoxServe {
   //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
   //  TODO :BUG: :QUEST: Error check for over-sized lists: do not work always.
   ///  Add all list element to matrix in _r, _c WITH _items in _w-width.
-  void aBox(int _r, _c, _items, _w, List _l) {
+  ///  fix2.0.0  List<String>
+  void aBox(int _r, _c, _items, _w, List<String> _l) {
     //  If not know list length / wanted items and width, try 100. lol
     //  TODO  Truncate items and length, if List outOfMatrix borders
     int _overWidth = 0;

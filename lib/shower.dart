@@ -74,7 +74,8 @@ class ScheduleBox {
     //  Fill list-data in matrix in r, _c coordinates.
     //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
     //  new parameters:  _items, _w
-    void anchorBox(int _r, int _c, _items, _w, List __l) {
+    ///  fix2.0.0
+    void anchorBox(int _r, int _c, _items, _w, List<String> __l) {
       tl.boxInList(_r, _c, _items, _w, __l, _matrix);
       //NO #print:  print(_matrix);
     }

@@ -39,7 +39,7 @@ bool _betaPB = true; //  control for printing.
 //  Typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
 
 void ifPrint(Object obj, bool _b) {
-  /*   Flags in glb.st Map, that control printing of diferent things.
+  /*   Flags in glb.st Map, that control printing of different things.
   'flow' : false,  //  false prevents all "flow" printing via flowServe();
   //  Shorten output 2 screens.
   'buf' : false,  // TODO   controls bufPrint
