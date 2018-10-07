@@ -4,18 +4,12 @@ version: 0.0.78
 author: Heikki K Lappalainen <heikkiklappalainen@gmail.com.com>
 homepage: https://github.com/heiklap/dawo
 
-
 environment:
   sdk: '>=2.0.0 <3.0.0'
-#TODO  is  "dartdevc" needed when build_runner??
-#web:
-#  compiler:
-#    debug: dartdevc
 
 dependencies:
-  http: ^0.11.3+16
-  http_server: ^0.9.6
-  io: "^0.3.0"
+  # http: ^0.12.0
+  # http_server: ^0.9.6
   intl: "^0.15.2"
   dawolang: ^0.0.2
 
