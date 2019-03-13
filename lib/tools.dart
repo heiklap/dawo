@@ -142,8 +142,8 @@ class Tools {
 
   ///  Return String from List of Strings.
   String listToString(List<String> _l) {
+    print('>>----:dawo:tools:--:listToString:---- >>');
     print(_l);
-    print(_l[0]);
     String s;
     StringBuffer sBuf = new StringBuffer();
     for (var x = 0; x < _l.length; x++) {
@@ -151,6 +151,7 @@ class Tools {
       sBuf.write(_l[x]);
       sBuf.write(' ');
     }
+    print('<< -----------------------------------  <<');
     s = sBuf.toString();
     return s;
   }

@@ -9,6 +9,7 @@
 //  devNote: Dawo, started dev,  nothing special.
 //  My other package:  dawolang:    //  pub 0.0.1 or path dependency.
 //      path: C:\..\Public\..\dawolang
+//  pub run build_runner build --output build
 
 library dawo;
 
