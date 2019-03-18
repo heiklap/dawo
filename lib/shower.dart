@@ -3,7 +3,7 @@
 ///  ##  Shower  -  presentation info and data screens.
 ///  New box_serve makes this better: makes only frames and keep clients data
 ///  in client side.  This file might eventually fade out.
-///  * dawo version: 0.0.75.  -  8.1.2018.  devState: 90%
+///  * dawo version: 0.0.8.  -  13.3.2019.  devState: 90%
 ///  *      GitHub: yes.
 ///  * DONE  #deprecated deleted_ rows 300 - 350
 ///  * SCHEDULE might deserve it's own class.
@@ -12,7 +12,6 @@
 //
 
 library shower.dart;
-
 
 //  import 'beta.dart';
 import 'dawo_app.dart';
@@ -26,9 +25,7 @@ import 'mis/equipment.dart';
 //  import 'corp/bind.dart';
 import 'dart:math';
 
-
 part 'src/dev_box.dart';
-
 
 ///  Made this to be not a function, but a class 16.11.2017
 ///  Data-table of outside resources grouped in time.  Equipment-class. equ
@@ -185,7 +182,10 @@ List<String> effortTable(
       ;
 
       //  Found String?
-      if ((_ilM[x][y].indexOf(_sf) > -1)) {
+      //  analysis, rep 2 hints:  l-188 c-12: Use contains instead of indexOf
+      //  Old way:  if ((_ilM[x][y].indexOf(_sf) > -1)) {
+      //  New way using #contains:
+      if ((_ilM[x][y]).contains(_sf)) {
         ///  separating index finding.
         int iSub = _ilM[x][y].indexOf(_sf);
         //  Are we over right edge of list.item?
@@ -224,7 +224,10 @@ List<String> effortTable(
   for (var x = 9; x > -1; x--) {
     String sx = x.toString();
     for (var y in _l) {
-      if (y.indexOf(sx) > -1) {
+      //  analysis, rep 2 hints:  l-228 c-11: Use contains instead of indexOf
+      //  Old way:  if (y.indexOf(sx) > -1) {
+      //  New way using #contains:
+      if (y.contains(sx)) {
         sL.add(y);
       }
     }

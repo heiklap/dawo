@@ -2,15 +2,11 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dev_box  -  presentation in 2-3-4 column boxes.
 ///
-///  * dawo version: 0.0.75+.  -  13.1.2018.  devState: 90%
+///  * dawo version: 0.0.8.  -  13.3.2019.  devState: 90%
 ///  *      GitHub: yes.
 //
 
-
-
 part of shower.dart;
-
-
 
 //  TODO :  21 matches,  add one more to make it even count.
 
@@ -66,6 +62,7 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
     ///  To get nice little header String in top-left corner.
     //  Widen this later to screen-width.
     String tr1 = '_devBox_C: $caller __';
+
     ///  for to trim rows items nicely
     //  notUsed:   int tr1Length = tr1.length;
 

@@ -2,7 +2,7 @@
 ///  Some useful copy-paste stuff for learning simple functions.
 ///  GOAL: find common, reusable elements for control-flow, and develop
 ///  names, and ideas.  In GitHub, for to be able to modify while on-The-Road.
-///  * dawo version:    0.0.6.  27.11.2017
+///  * dawo version:    0.0.8.  13.3.2019
 ///  * devState%  60%  -   in gitHub:   yes
 ///  * This serves as example:  What can you develop from these ideas..?
 ///  *  Words:  batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
@@ -240,7 +240,8 @@ if (name) {
 /// TODO  teamNext     NOT-READY.   PLAN:  yes.. but what?
 void isBoolLoop() {
   String name = '';
-  if (name != null && !name.isEmpty) {
+  //  Fixed:  line 243 col 23: Use isNotEmpty for Iterables and Maps.
+  if (name != null && name.isNotEmpty) {
     print(' yes this is name');
   } else {
     print('tryAgain');

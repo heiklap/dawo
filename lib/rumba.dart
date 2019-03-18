@@ -3,7 +3,7 @@
 ///  ##  Rumba : Loop, that runs dawoApp and some other stuff.
 ///  Runs it's loops forced, only once, without possibility of user action.
 ///  * Primary functionality:  loop, inside it: dawoApp
-///  * dawo version:  0.0.75.  -  8.1.2018   functionality: 70%
+///  * dawo version:  0.0.8.  -  13.3.2019.   functionality: 70%
 ///  * in GitHub :  yes  NEXT: parameters for output?
 ///  * NEXT: bool values, that stop loops #FromInside dawo-app.
 ///  * If program parts have a certain amount of 'self consciousness' or other
@@ -183,16 +183,19 @@ class Rumba {
 
     /// --  usher loop
     //  No need, it is in next:  dev.showNotes(':RUMBA:');
-    rumbaBuf.write(devBox('By:RUMBA-DANCE:', ['* header *', '* footer *'], [dev.admN, dev.devN], 0));
-    rumbaBuf
-        .write(devBox('By:RUMBA-DANCE:', ['* header *', '* footer *'], [dev.innoN, dev.howToN, dev.secN], 0));
+    rumbaBuf.write(devBox('By:RUMBA-DANCE:', ['* header *', '* footer *'],
+        [dev.admN, dev.devN], 0));
+    rumbaBuf.write(devBox('By:RUMBA-DANCE:', ['* header *', '* footer *'],
+        [dev.innoN, dev.howToN, dev.secN], 0));
     print('--:R:----  one more funny list test   ------');
     //  TODO  add all boxes to rumbaBuf.
-    devBox(':R:D:', ['* header *', '* footer *'], [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
+    devBox(':R:D:', ['* header *', '* footer *'],
+        [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
 
     var _ll = out.outBufListsForBox();
     print('\n -:R:--->>-->>-->>  outBuffers    --->>-->>-->>-->>--');
-    rumbaBuf.write(devBox(':R:D:', ['* header *', '* footer *'], [_ll[1], _ll[2], _ll[3]], 32));
+    rumbaBuf.write(devBox(
+        ':R:D:', ['* header *', '* footer *'], [_ll[1], _ll[2], _ll[3]], 32));
     print(' ');
     devBox(':R:D:', ['* header *', '* footer *'], [_ll[4], _ll[5], _ll[6]], 0);
     print(' ');

@@ -4,7 +4,7 @@
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dawo version:  0.0.78.  -  8.1.2018
+/// * dawo version:  0.0.8.  -  18.3.2019
 /// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * dawoApp instantiated inside app; it now has access to dawo.version aso.
@@ -46,7 +46,7 @@ var appBuf = new StringBuffer(); //  not used here
 ///  Controls Mission-Chore system, #App, & dawo-package development, #Pack.
 class DawoApp {
   final String name = 'DawoApp';
-  final String version = '0.0.78+';
+  final String version = '0.0.8+';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
 
@@ -121,7 +121,7 @@ class DawoApp {
     // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 :demandStream Listened
     'develop': 'Under development.. from 0.0.7+ to 0.1.0.',
     // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 demandStream Listened
-    'pack: version  ': 'Version: 0.0.78+ ',
+    'pack: version  ': 'Version: 0.0.8+ ',
     'pub': 'Published 8.1.2018',
   };
 
@@ -366,6 +366,7 @@ class DawoApp {
 
     ///  Method cascades would make this look nicer.
     boxServe.aHeader(1, 4, '* *  States * * ');
+
     ///  row, column, list-items, width.
     boxServe.aBox(2, 5, 6, 16, tl.mapToListB(st));
 
@@ -373,6 +374,7 @@ class DawoApp {
 
     boxServe.aBox(2, 22, 4, 7, ['name:', 'Version:', 'By:', 'User:']);
     boxServe.aBox(2, 30, 4, 48, ['$name', '$version', '$by', '$user']);
+
     ///  TODO  Bring real data.
     boxServe.aBox(2, 48, 4, 60, ['Info', 'Motto:']);
     boxServe.aBox(2, 48, 5, 60, [info, motto]);
@@ -396,25 +398,23 @@ class DawoApp {
     //  List 10 items, 38 width. Note handy split = toList -method.
     boxServe.aBox(24, 6, 10, 38, tl.mapToFineList(outBufMapShow, 20, 12));
 
-
     boxServe.vertLine(8, 5, 28); //  phases
 
     boxServe.aHeader(2, 117, '*    say    *');
     boxServe.aBox(3, 117, 9, 70, tl.mapToFineList(say, 8, 60));
 
-
     boxServe.aHeader(4, 50, '*  Parts *');
     boxServe.aBox(5, 50, 5, 30, tl.mapToList(part));
 
     boxServe.aHeader(4, 83, '* Plans: *');
-    boxServe
-        .aBox(5, 83, 4, 28, tl.mapToFineList(plan, 6, 25));
+    boxServe.aBox(5, 83, 4, 28, tl.mapToFineList(plan, 6, 25));
 
     boxServe.aHeader(12, 50, '* Clients.    Examples *');
     boxServe.aBox(13, 50, 5, 63, tl.mapToFineList(client, 12, 46));
     boxServe.vertLine(2, 49, 16); //   parts plans clients
 
     List<String> boxLogL = [];
+
     ///  dBox shows Map for: boxes done INIT, CONSTRUCT, sGLB, SHOW, DONE -info.
     for (var x in boxServe.logM.keys) {
       boxLogL.add(boxServe.logM[x].toString());
@@ -426,6 +426,7 @@ class DawoApp {
     boxServe.vertLine(13, 117, 23); //  right middle
     boxServe.vertLine(13, 139, 23); //  right+ middle+
     boxServe.aHeader(13, 120, '* Actions *');
+
     ///  'print' makes this visible in screen.  Margin: 4.
     ///
     boxServe.show(boxHeader, 'print', 4);
@@ -444,9 +445,9 @@ class DawoApp {
       print('--<<--<<----  dawoApp show done --<<--<<----');
     }
   }
-  
+
   //  #coma  Content-marketing, cheatSheet to present functionality
-  void coma(){
+  void coma() {
     //
   }
 
@@ -494,7 +495,6 @@ var dawoApp = new DawoApp();
 ///  Using new outBufM Map
 ///  TODO  Make this show in proper screen areas with devBox.
 void outBuffersPrint(String caller, String notCalled) {
-
   print(' -->>-->>----  :DA:   out.outBuffers  by: $caller  -->>-->>-- ');
   int i = 0;
   int mLength = out.outBufM.length;
@@ -509,8 +509,8 @@ void outBuffersPrint(String caller, String notCalled) {
   print('     --<<--<<----  :DA:   out.outBuffers  C: $caller  done \n \n');
 }
 
-Map<String,String> outBuffersInfoMap(String caller, String notCalled) {
-  Map<String,String> _retM = {};
+Map<String, String> outBuffersInfoMap(String caller, String notCalled) {
+  Map<String, String> _retM = {};
   int i = 0;
   int mLength = out.outBufM.length;
   for (var x = 0; x < mLength; x++) {

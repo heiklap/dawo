@@ -6,7 +6,7 @@
 ///  using #LANG -specific commands to configure their proceedings.
 ///  using #dawolang package in path dependency
 ///  method String weightString(String _aS) checks #C messages
-///   dawo version:  0.0.75.  -  8.1.2018  * devState : 15 %
+///   dawo version:  0.0.8.  -  13.3.2019  * devState : 15 %
 ///
 /// * devState: 30%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
@@ -321,9 +321,11 @@ class Connector extends BaseStruct {
 
     ///  Using Analyzer class from dawolang. TODO: get clause from caller.
     String analyzeS = '';
+
     ///  NOTE: this returns a String
     analyzeS = d_lang.an.analyzeStrS(inMsg, d_lang.lb.wordList);
-    List<String> analyzeL = boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 18, 140, 15);
+    List<String> analyzeL =
+        boxServe.infoBox({':con:join:dl:an:': '$analyzeS'}, 18, 140, 15);
     //  analyzeL.addAll(boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 8, 100, 15));
     analyzeL.forEach(print);
     print(':con:join:Call > :dawolang:analyze:watch:check: in ');
@@ -410,11 +412,11 @@ class Connector extends BaseStruct {
     buf.writeln('con:box:start:  ');
     //  use: boxServe  OR  create own class here
     final int _sw = 194; //  default screen width, changed later =>
-    _sw;  //  To mark unUsed
+    _sw; //  To mark unUsed
     final int _rc = 47; //  row count
     //  ???  Keep matrix here on callers side all the time
     List<String> _conMatrix = new List(_rc);
-    _conMatrix;   //  Mark #unUsed
+    _conMatrix; //  Mark #unUsed
 
     String boxHeader = ':connector:box:';
     print('-->>-->>  $boxHeader  boxServe  start  -->>-->>--  ');
@@ -426,8 +428,7 @@ class Connector extends BaseStruct {
     //  TODO  if change to: 150, it should be visible variable
     ///:BOX:WAS:  190, now  205
     boxServe.init(42, 198, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(
-        ':con:box:', ':con:box: $caller');
+    boxServe.construct(':con:box:', ':con:box: $caller');
     int r1 = 2; //  easy x-y pointing
     int r2 = 12;
     int r3 = 20;
@@ -510,7 +511,7 @@ class Connector extends BaseStruct {
       print(':buffer: is printed');
       print(buf);
     }
-    _clB;  //  to mark it used
+    _clB; //  to mark it used
   }
 
   ///  close method
@@ -539,9 +540,7 @@ class Connector extends BaseStruct {
   Connector(this.name, this.info);
 
   //  To mark unused local variables in Connector class
-  void useUnused(){
-
-  }
+  void useUnused() {}
 }
 
 ///  Create instance of Connector.

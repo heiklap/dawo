@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Model structures, base classes, that are used everywhere in dawo:
 /// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
-/// * dawo version:   0.0.7.  18.12.2017
+/// * dawo version:   0.0.8.  13.3.2019
 //
 // * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
 //  devNote:  No notes.
@@ -209,7 +209,6 @@ abstract class BaseStruct {
     'pause': false,
     'done': false,
   };
-
 
   //  TODO  Add fields for incoming and outgoing data.
   //  var clayIn;

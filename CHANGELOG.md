@@ -1,4 +1,6 @@
 # Changelog
+## 0.0.8
+ - Health and formatting checks.
 ## 0.0.75
  - Chore and Mission modification.
 ## 0.0.7

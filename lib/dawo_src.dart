@@ -3,7 +3,7 @@
 ///  ##  Sample file made by Dart.  "Home of dawo libraries."
 /// * Badly treated and would deserve more love than I have to give.
 /// * Might serve as a collector or central for it's sub-libraries.
-/// * dawo version: 0.0.75.  -  8.1.2018  devState : 20 %
+/// * dawo version: 0.0.8.  -  13.3.2019  devState : 20 %
 /// *
 // * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
 ///
@@ -13,7 +13,6 @@
 //  TODO  myOwn    Remember this & myOwn-special hashtag & special-projects
 
 library dawo_src; //  naming this to _src...
-
 
 ///  hklTry::  #export all
 ///  Data ( #clay ) is in clay-folder.

@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Chore for organizing work flow.  version:  0.0.75.  -  8.1.2018.
+///  ##  Chore for organizing work flow.  version:  0.0.8.  -  13.3.2019.
 ///  * Sub-ordinate of Mission, with wide operative flow capabilities.
 ///  devState : 27 %  -   In  GitHub:   yes
 ///
@@ -23,7 +23,6 @@
 ///  idea:   Place ALL  W O R K  procedures here.
 ///  Automatic-  life-cycle / W O R K / messages and rolling.
 ///  NOTE  chore do not have own named out-buffer
-
 
 library chore;
 
@@ -59,8 +58,6 @@ int _flowServeCount = 0;
 ///  Chores that operate in common area, outside Mission class.
 List<BlanketChore> choreComL = [];
 
-
-
 ///  TODO  devNote: ==   #chore, that is always in dawoApp
 ///  So dawoApp uses chore to maintain it's work-projects.
 
@@ -87,6 +84,7 @@ class BlanketChore extends BaseStruct {
   String info = 'Chore resolves  W O R K  flow and control ..';
   //  Do not initialize values; just study, what this class got.
   String motto = 'chore handling small jobs as sub-ordinate of mission.';
+
   ///  Used in function calls to bring-in objects permanent String-values.
   String clause; //  Combination of #LANG words in sentence.
 
@@ -98,7 +96,7 @@ class BlanketChore extends BaseStruct {
   ///  Master field is used in boxes to access Master-objects data.
   String master; //  mission, that owns this chore. Like : 'packDawoMission'
   ///  get other same-group chores via master/Mission choreL, or via up-level choreL list.
-  var sister;   //  Not used in 0.0.7.
+  var sister; //  Not used in 0.0.7.
 
   ///  Control and describe Chores state during it's life-cycle.
   Map<String, bool> st = {
@@ -111,6 +109,7 @@ class BlanketChore extends BaseStruct {
   ///  4 var to control connectors state, working-condition-state values.
   Map<String, int> extra = {
     'init': 0,
+
     ///  NOTE: init-build-roll calls are not yet orderly planned in 0.0.7.
     'build': 0,
     'roll': 0,
@@ -128,6 +127,7 @@ class BlanketChore extends BaseStruct {
   ///  Abstract plan of Chore's contacts.
   var circle; //  Other Chores or objects, that this Chore can join.
   void join(circle) {}
+
   ///  Row data describing work-flow and life-cycle events.
   StringBuffer buf = new StringBuffer();
 
@@ -155,45 +155,62 @@ class BlanketChore extends BaseStruct {
 
     ///  Privilege aso for ?? roll
     'msgRoll': 'SAMPLE: :3 :RollOK :NoErrors :readyNEXT',
+
     /// #Usher is upper-level worker / handy-man in #Rumba; => send message.
     'msgUsher': 'SAMPLE: :U:favorite :U:ok',
 
     /// mill messages, to controller of main roll-loop
     'msgMill': 'SAMPLE: :MillDone _MillOK _Mill-oneWaiting',
+
     /// To spheres where this object is: bind to /  users activities
     'bindTo': ':common :buyRound :MaterialRound :StoreInfo',
+
     /// This.objects special say, that is used in action loop by this user.say
     /// May be checked by #dawolang => circulate msg via/ from an analyze #LANG
     'say': ':ADD:    ADD:    ADD:',
 
     ///Message to master, who owns this object
     'master': ':MASTER:Ask    :MASTER:Say    :MASTER:',
+
     ///Use plan field, if exists, to #SAY in loop => connect to other plans.
     'plan': ':PLAN:    :PLAN:    :PLAN:',
+
     /// #Connector action in user.con joined
     'conJoin': 'Seeking connector Join log.',
+
     ///  #Corporate action => camp or affair.
     'affair': ':AFFAIR:get    :AFFAIR:say  ',
+
     /// Get and handle con answer.
     'conMsg': ':con:answer _ _ _ _ _ _ _ _ _ _ _ _ _',
+
     /// Talk in Corporate camp system.
     'campSay': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _',
+
     ///  Camp get answers and act to it.
     'campGet': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+
     /// add / read   effort table; get picture of your capabilities.
     'effort': ':EFF:',
+
     /// add / read / use  schedule; get your share of #time.
     'schedule': 'Checkd: _ _ _ _ _ _ _ _ _ _ _ _',
+
     /// add / read / use   get your share of #resources
     'resource': ':RES: _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+
     /// Equipment:  you need some.
     'equ': ':EQU: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+
     /// handle ping - send, read, react: direct connection to other users aso.
     'ping': ':PING: _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
+
     /// statistics; for records.
     'stats': ':OK:___  :BUSY: ___    Re-Run_ _ _ _ _ ',
+
     /// leave message; there might be some kind of post-box.
     'tell': ':leavedMsg: _ _ _ _ _ _ _ _ _ ',
+
     /// roll.control,  flow and log. End-activities of #flux
     'log': ':log: _ _ _ _ _ _ _ _ _ _ _ _ _ _',
   };
@@ -330,6 +347,7 @@ class BlanketChore extends BaseStruct {
   ///  Action class from alpha; name, sayM, reasonM.
   ///  Might serve #LANG phrase to reason for made decisions.
   Action decision = new Action();
+
   ///  Map to collect all Actions.
   Map<String, Map<String, Action>> decisionChainMM;
 
@@ -376,8 +394,8 @@ class BlanketChore extends BaseStruct {
     ///  TODO  Mediate clay-stuff itemL to Process
     ///  With actual command:
     ///  Add placardM to parameters
-    _retBuf.write(
-        corporate.process(':Ch:popular:', chPopularClass, placardM, assignComProChore));
+    _retBuf.write(corporate.process(
+        ':Ch:popular:', chPopularClass, placardM, assignComProChore));
     print('\n ---------- :chore:popular: and  process  ----------------------');
     print(_retBuf);
 
@@ -395,7 +413,7 @@ class BlanketChore extends BaseStruct {
     ///  :TEST: :glb:ifPrint:  Is false: so should not print buf.
     if (glb.prSt['buf']) {
       print('bbbbbbbbbb chore.show  choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
-      print(glb.prSt['buf']);  //  true or false
+      print(glb.prSt['buf']); //  true or false
       print(choreBuf);
       print('bbbbbbbbbb chore.show  choreBuf done bbbbbbbbbbbbbbbbbbbbbb');
     }
@@ -416,6 +434,7 @@ class BlanketChore extends BaseStruct {
     String _s8 = '** ';
     String _s9 = '** ';
     String _s10 = '** ______________________________________________________';
+
     ///  fix2.0.0
     List<String> _l = [_s1, _s2, _s3, _s4, _s5, _s6, _s7, _s8, _s9, _s10];
     buf.writeln(':ch:buf: :report: done for chore:  $name  ');
@@ -427,6 +446,7 @@ class BlanketChore extends BaseStruct {
     buf.writeln(':ch:buf:  box called for chore:  $name ');
     int bufLength = buf.length;
     int choreBufLength = choreBuf.length;
+
     ///  Give shapes for screen matrix.
     ///  :BOX:WAS:  190
     boxServe.init(42, 198, '_'); //  rows, width or: 0 = use default 47, 195
@@ -468,8 +488,8 @@ class BlanketChore extends BaseStruct {
     boxServe.aHeader(4, 83, ' * Agenda: con Msg: :bind: * ');
     boxServe.aBox(5, 83, 6, 27, tl.mapToFineList(agenda, 5, 20));
 
-    boxServe.aHeader(4, 124,
-        ' :flux:  Outer Dawo actions and answers in roll-mill-loop ');
+    boxServe.aHeader(
+        4, 124, ' :flux:  Outer Dawo actions and answers in roll-mill-loop ');
     boxServe.aBox(5, 119, 22, 70, tl.mapToFineList(action, 10, 60));
 
     boxServe.vertLine(32, 107, 7); //  plans aso.
@@ -479,8 +499,10 @@ class BlanketChore extends BaseStruct {
     boxServe.vertLine(32, 150, 7); //   phase
     boxServe.aHeader(32, 154, '  *     Chore     Phases   *     ');
     boxServe.aBox(33, 150, 6, 40, tl.mapToFineList(phase, 18, 20));
+
     ///  Present it on screen and save to glb-buffer.
     boxServe.show(':box:Chr:', 'print', 0);
+
     ///  Set boxServe ready for next user: clear data.
     boxServe.done(':box:Chr:');
   }

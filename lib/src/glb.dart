@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  glb   keeping important everybody-uses variables and constants.
-/// * dawo version:  0.0.75.  -  8.1.2018  -  devState:  13%
+/// * dawo version:  0.0.8.  -  13.3.2019.  -  devState:  13%
 /// * GitHub: yes.
 /// * State:  schema
 //
@@ -93,7 +93,7 @@ class GlobalClass {
     ':h: -  howTo  hklTry= meTryingSomething    human-2',
     ':i: -  *inno* -12 ',
     ':j: -'
-    ':k: -',
+        ':k: -',
     ':l: -   level-2-5     link-0   :LAB:-0   ',
     ':m:     meet-4    member*-7 merge-0  mix-0    myTime-30',
     ':n: = numbr-Grant-Valid  ',
@@ -111,7 +111,6 @@ class GlobalClass {
     ':z: -',
     '::',
   ];
-
 
   List<String> dawoTextOutput = [
     'String rumbaS = rumbaBuf.toString',

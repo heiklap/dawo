@@ -2,14 +2,12 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  envoy,  messenger
 ///  PLAN maybe:  Sending permanent active messages between objects
-/// * dawo version:  0.0.75+.  -  9.1.2018
+/// * dawo version:  0.0.8.  -  13.3.2019.
 /// * devState : 2%    in GitHub : yes
 // hist>  9.1.2018  Separated from dawoDev.
 //
 
-
 part of dawo_dev.dart;
-
 
 ///  NOTE: Messages might be something that demand immediately action.
 ///  For more complicated cases of note-message-handling.

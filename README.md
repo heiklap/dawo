@@ -1,9 +1,9 @@
-# dawo 0.0.78
+# dawo 0.0.8
 
     https://img.shields.io/pub/v/box2d.svg
 https://pub.dartlang.org/packages/dawo
 
-Minor update to be dart2 compatible. 
+Fixed health suggestions and formatting issues and some small changes. 
 Dawo is beginner Dart programmers project to learn Dart by developing a glorious package.
 - Complicated and copious  spectrum of classes, functions and methods sets creator and user to situation where must 
 take challenging effort to manage and exploit all the features. Here is plenty of room for imagination and ideas. For
@@ -67,6 +67,8 @@ beginner programmes this is one way to simulate real-world development stress.
 
  0.0.75 Mission act Map. Instance of dawoApp is now created inside app. 
  0.0.78 Updated to be dart2 compatible.
+ 
+ 0.0.8  Fixed health suggestions and additional 21 files with analysis or formatting issues.
 
 ## Files;
 ### code_snippets, learn / copy-paste stuff:

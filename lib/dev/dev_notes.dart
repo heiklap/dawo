@@ -2,14 +2,12 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  devNotes class
 ///  Primary functionality:  Keep dev data.
-/// * dawo version:  0.0.75+.  -  9.1.2018
+/// * dawo version:  0.0.8.  -  13.3.2019.
 /// * devState : 25%    in GitHub : yes
 // hist>  9.1.2018  Separated from dawoApp.
 //
 
-
 part of dawo_dev.dart;
-
 
 ///  Roll, next, calls this.
 void fillNotes() {
@@ -63,5 +61,3 @@ void fillNotes() {
     ..add(':Ar:  Keep #Track of extra iterators in notes.')
     ..add(':Ar:  #encrypt ed notes not allowed.');
 }
-
-

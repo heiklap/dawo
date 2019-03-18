@@ -3,7 +3,7 @@
 //  Copyright do not concern #dartlang language stuff.
 ///  # dawo clay dartlang_guide.
 ///  * presenting data for dawo-chore system, mostly Maps.
-//  dawo version:   0.0.6  27.11.2017
+//  dawo version:   0.0.8  13.3.2019
 
 library learnDartlang;
 
@@ -46,7 +46,8 @@ class LearnDartlang {
         'The <…> notation marks List as a generic (or parameterized) type. Types (generic or not) let you document and annotate your code, making your intent clearer.',
     'Asynchrony':
         'asynchronous: return after setting up a possibly time-consuming operation (such as I/O), without waiting for that operation to complete.',
-     'Threads': 'There is a significant cost to switching threads that has nothing to do with Dart or isolates.',
+    'Threads':
+        'There is a significant cost to switching threads that has nothing to do with Dart or isolates.',
     'Typedefs':
         'A typedef, or function-type alias, gives a function type a name that you can use when declaring fields and return types.',
     'Comments':
@@ -136,16 +137,19 @@ class LearnDartlang {
     'c': ' ',
     'Class': ' ',
     'd': ' ',
-    'exclusive': 'When I forget everything dart, and remember just 1 thing, this thing is: endIndex is exclusive. ',
+    'exclusive':
+        'When I forget everything dart, and remember just 1 thing, this thing is: endIndex is exclusive. ',
     'Explicit': 'Stated clearly, leaving no space for hesitation or doubt.',
     'Function': ' ',
     'Fail': ' ',
-    'Flutter': 'flutter comes down to the fact that it has rational and simple rules around layouts positioning.',
+    'Flutter':
+        'flutter comes down to the fact that it has rational and simple rules around layouts positioning.',
     'Type Generic': 'Because Darts generic types are covariant... ',
     'Type Subtyping':
         'Usually, subtyping is written using the "<:" operator: Apple <: Fruit.',
-    'Haters': 'Haters are gonna hate. Their fortress do not survive without hate.'
-    'Not knowledge on bet, but money.',
+    'Haters':
+        'Haters are gonna hate. Their fortress do not survive without hate.'
+        'Not knowledge on bet, but money.',
     'http': 'With http you always have to import http/browser_client.dart.',
     'i': ' ',
     'Instance': ' ',
@@ -156,18 +160,19 @@ class LearnDartlang {
     'Match': ' ',
     'Method Overloading':
         'method overloading. I think this is also considered for the future.'
-            'Was not possible in Dart 1.x because of optional types',
+        'Was not possible in Dart 1.x because of optional types',
     'Mirror':
         'Mirror is good if you are 1% of Dart users and do not mind of AOT.',
-    'null': ' Getting dart:core null clean was about two days of work, while also battling a cold. That iss not a lot of effort.',
+    'null':
+        ' Getting dart:core null clean was about two days of work, while also battling a cold. That iss not a lot of effort.',
     'num': ' ',
     'Object': ' ',
     'Obsevatory':
         'When you launch your app in debug mode, it should print an URL that allows you to access Observatory',
-    'Publish': 'Milestone, relief. Stops development of package for three days. ',
+    'Publish':
+        'Milestone, relief. Stops development of package for three days. ',
     'Queue': 'cattle herd from a narrow gate. ',
     'R': ' ',
-
     'Strong mode':
         '..optional in the first version of the language. Integrated part of the second.',
     'Strong mode2': 'analyzer: stronge-mode should be in analysis_options.yaml',

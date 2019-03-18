@@ -3,7 +3,7 @@
 /// ## Store is, or simulates: shop, or market place, serving and selling.
 /// Here it is stream-based.
 ///  * Here are streams, supply and demand, all in store, and they: deliver.
-///  * dawo version: 0.0.7. - 18.12.2017  devState: 3%
+///  * dawo version: 0.0.8. - 13.3.2019    devState: 3%
 ///  * NEXT: when main methods are sync, it is hard to find practical usage.
 ///  * NEXT: try box_serve for output-
 ///  * OutPut:  :demand:stream: search gives 15 results in output.
@@ -45,7 +45,8 @@ class Store {
     stream.listen((value) {
       //
       Map<String, String> _answerM = {
-        '1. ': '---:river: :stream: #phase:1 store:demandStream Listened     ---',
+        '1. ':
+            '---:river: :stream: #phase:1 store:demandStream Listened     ---',
         '2. ': '   :demand:stream: #phase:2:value:  $value',
         '3. ': '---  :stream: #phase:3:ok  caller: $caller        OK    ---',
       };

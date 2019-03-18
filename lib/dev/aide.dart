@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  aide,  helper class is a developer tool.
 ///  Primary functionality:  Help in developing.
-/// * dawo version:  0.0.75+.  -  9.1.2018
+/// * dawo version:  0.0.8+.  -  13.3.2019
 /// * devState : 10%    in GitHub : yes
 /// * variables tf & rf seems to bee acronyms for: testFunction & runFunction
 // hist>  9.1.2018  Separated from dawoApp.
@@ -10,9 +10,7 @@
 
 //  TODO  handle tf and rf variables:  10 x
 
-
 part of dawo_dev.dart;
-
 
 ///  Helper class, previous name; devHelp
 class Aide {

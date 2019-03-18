@@ -3,7 +3,7 @@
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  Version version:  0.0.75.  -  8.1.2018.
+/// *  Version version:  0.0.8.  -  13.3.2019.
 /// *  devState : 27 % / unknown  -  PLAN:  cleaning
 // -  HIST:  hkl  8.9.2017
 // -  devNote: 4 pc.
@@ -41,9 +41,7 @@ bool _pB = false; //  true for chore_test.dart;
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
 ///  buildMissions() fills this Map. It is outside of the Class.
-Map<String, Mission> missionM = {
-
-};
+Map<String, Mission> missionM = {};
 
 /// NOTE:  Chore-list is inside this class.  Most outside activity to Chore, is
 /// accessed via Mission-class.
@@ -65,9 +63,10 @@ class Mission {
 // you avoid mess, that occurs, when class is used in mixin's.
 
   String name = '';
-  String toString(){
+  String toString() {
     return name;
   }
+
   String motto;
   String clause; //  Combination of #LANG words in sentence.
 
@@ -132,13 +131,20 @@ class Mission {
 
   ///  Create default BlanketChores for every Mission.
   ///  We have plenty of these, so let's add them!
-  BlanketChore learnChr = new BlanketChore('LearnChr', ':masterName:', 'Yes, I learn');
-  BlanketChore joyChr = new BlanketChore('JoyChr', ':masterName:', 'Yes, I have Joy');
-  BlanketChore actChr = new BlanketChore('ActChr', ':masterName:', 'Yes, I act');
-  BlanketChore peopleChr = new BlanketChore('PeopleChr', ':masterName:', 'Get social!');
-  BlanketChore placeChr = new BlanketChore('PlaceChr', ':masterName:', 'Places I go places');
-  BlanketChore seasonChr = new BlanketChore('SeasonChr', ':masterName:', 'Seasons differ!');
-  BlanketChore showChr = new BlanketChore('ShowChr',':masterName:',  'Yes, I show');
+  BlanketChore learnChr =
+      new BlanketChore('LearnChr', ':masterName:', 'Yes, I learn');
+  BlanketChore joyChr =
+      new BlanketChore('JoyChr', ':masterName:', 'Yes, I have Joy');
+  BlanketChore actChr =
+      new BlanketChore('ActChr', ':masterName:', 'Yes, I act');
+  BlanketChore peopleChr =
+      new BlanketChore('PeopleChr', ':masterName:', 'Get social!');
+  BlanketChore placeChr =
+      new BlanketChore('PlaceChr', ':masterName:', 'Places I go places');
+  BlanketChore seasonChr =
+      new BlanketChore('SeasonChr', ':masterName:', 'Seasons differ!');
+  BlanketChore showChr =
+      new BlanketChore('ShowChr', ':masterName:', 'Yes, I show');
 
   /// Store all data-maps of this mission-instance:
   Map<String, Map<String, String>> clayMap = {};
@@ -146,7 +152,7 @@ class Mission {
   //  State Map, Missions upper level state, used in init, done.
   Map<String, bool> st = {
     'wake': false,
-    'work': false,  //true when build is done.
+    'work': false, //true when build is done.
     'con': false, //  For connector.  in build: true.
     'pause': false,
     'done': false,
@@ -183,7 +189,7 @@ class Mission {
   int _rollCount = 0;
   int _rollMax = 3; //  Emergency exit from loops.
   //  TODO  To mark / handle #unUsed variables
-  void rollHandle(){
+  void rollHandle() {
     _rollEscape = true;
     print('----------------  rollHandle/ unUsed  -------');
     print(_rollEscape);
@@ -238,6 +244,7 @@ class Mission {
   ///  Building mission with it's chores.
   void build(String caller) {
     st['work'] = true;
+
     ///  Create default Chore's for everyMission: done in Class!
     ///  build default Chores:
     //  print(':BUG:DEBUG:build:Mission:build:  $name  C: $caller');
@@ -265,6 +272,7 @@ class Mission {
 
     connector.roll();
     st['con'] = true;
+
     ///  add default chores to choreL and #TODO  forEach.build
     //  Short way:   choreL.forEach(build);
     _flowC('-->-m-->    choreL add-all:  $name       ', _pB);
@@ -278,7 +286,7 @@ class Mission {
   ///  * * *    in beta, chore and mission   * * *
   ///  :TEST:  change some variables to private.
   ///  Action is small class in #alpha (name, say)
-  Action decision;  //  Change it to public::  _decision
+  Action decision; //  Change it to public::  _decision
 
   ///  Collecting all decisions.
   ///  TODO  Map _decisionChainMM  Change it to public !!
@@ -322,6 +330,7 @@ class Mission {
     boxServe.construct(':mis:box:act:  C: $caller', ':mis:box:act: $caller');
 
     boxServe.aHeader(1, 30, 'clayMap::');
+
     ///  Not much informative.
     boxServe.aHeader(1, 42, clayMap.keys.toString());
 
@@ -339,7 +348,6 @@ class Mission {
     boxServe.aBox(26, 4, 8, 30, tl.mapToListB(st));
     boxServe.aHeader(33, 4, ' * *  opSt  * * ');
     boxServe.aBox(34, 4, 8, 30, tl.mapToListB(_opSt));
-
 
     boxServe.aHeader(15, 35, '  Enemy  ');
     //  Coordinates: 16, 35.  8 items 30 width.  Map key: 6, value 24
@@ -391,7 +399,6 @@ class Mission {
     print('--<<--<<  :mis:box:act: boxServe  done  --<<--<<--  ');
   }
 
-
   ///  Mission box-info.
   void box(String caller) {
     print('-->>-->>  :mis:box: boxServe  start  -->>-->>--  ');
@@ -413,6 +420,7 @@ class Mission {
     boxServe.construct(':mis:box:  C: $caller', ':mis:box: $caller');
 
     boxServe.aHeader(1, 30, 'clayMap::');
+
     ///  Not much informative.
     boxServe.aHeader(1, 42, clayMap.keys.toString());
 
@@ -431,7 +439,6 @@ class Mission {
     boxServe.aHeader(33, 4, ' * *  opSt  * * ');
     boxServe.aBox(34, 4, 8, 30, tl.mapToListB(_opSt));
 
-
     //  parameters:  boxServe.aBox(_r, _c, _items, _w, _l)
 
     boxServe.aHeader(5, 140, ' * *  Measures  * * ');
@@ -446,12 +453,10 @@ class Mission {
     boxServe.aHeader(7, 160, '* mission  buf  *');
     boxServe.aBox(8, 160, 34, 33, tl.bufToList(_buf));
 
-
     boxServe.show(':mis:box:', 'print', 2);
     boxServe.done(':mis:box:');
     print('--<<--<<  :mis:box: boxServe  done  --<<--<<--  ');
   }
-
 
   ///  For report: To get Chore class names in String.
   String getChoreNamesS() {
@@ -518,14 +523,15 @@ class Mission {
     }
     return _l;
   } //  ----------  report
-  ///  all done-methods should rename to:  terminate
-  void done(){
-    print(':BUG:ERROR:  Mission do not have :done: method.in.use');
-  }  // Not used, not called.
 
-void useUnused(){
-    _indent;  //  use it.  Meant to style output margin.
-}
+  ///  all done-methods should rename to:  terminate
+  void done() {
+    print(':BUG:ERROR:  Mission do not have :done: method.in.use');
+  } // Not used, not called.
+
+  void useUnused() {
+    _indent; //  use it.  Meant to style output margin.
+  }
 
 //  TODO  teamNext   coming?:   returning some finnish day names aso.
   /// Should include some international values from other languages.
@@ -609,14 +615,13 @@ void buildMissions(String caller) {
   ]);
   */
 
-    ///  Add Mission-objects to upper-level missionM Map.
-    missionM.putIfAbsent('PackDawoMission', () => packDawoMission);
-    missionM.putIfAbsent('HelsinkiMission', () => helsinkiMission);
-    missionM.putIfAbsent('DartlangMission', () => dartlangMission);
-    missionM.putIfAbsent('MyMusicMission', () => myMusicMission);
-    missionM.putIfAbsent('MyTimeMission', () => myTimeMission);
-    missionM.putIfAbsent('NationalParksMission', () => nationalParksMission);
-
+  ///  Add Mission-objects to upper-level missionM Map.
+  missionM.putIfAbsent('PackDawoMission', () => packDawoMission);
+  missionM.putIfAbsent('HelsinkiMission', () => helsinkiMission);
+  missionM.putIfAbsent('DartlangMission', () => dartlangMission);
+  missionM.putIfAbsent('MyMusicMission', () => myMusicMission);
+  missionM.putIfAbsent('MyTimeMission', () => myTimeMission);
+  missionM.putIfAbsent('NationalParksMission', () => nationalParksMission);
 
   /// .build adds default Chore's to missions
   _flowC('-->-m-->    missionM :all: print-choreL   -->-m-->  ', _pB);

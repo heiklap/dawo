@@ -3,7 +3,7 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dawo version:  0.0.75.  -  8.1.2018   devState:  60%
+/// * dawo version:  0.0.8.  -  13.3.2019.   devState:  60%
 /// * GitHub: yes
 //
 
@@ -57,10 +57,9 @@ class BoxServe {
     boxNum++;
     boxNumS = boxNum.toString();
     //  if boxes forgot to run DONE !!
-    if (_matrix.length > 0){
+    if (_matrix.length > 0) {
       print('* * * *  :DEBUG:BUG  _matrix length > 0  * * * * * * * * * * *  ');
     }
-
 
     pm = _pm; //  padMark
     ///  Use default, unless parameters are > 0
@@ -103,7 +102,7 @@ class BoxServe {
     _matrix[0] = m0row;
     String _timeNow = tl.stampDateTimePlain();
     aHeader(0, sw - 57, 'time: $_timeNow');
-    String _version = dawoApp.version;  //  0.0.7+
+    String _version = dawoApp.version; //  0.0.7+
     aHeader(0, sw - 27, 'Dartlang app  DAWO $_version ');
     //  TODO  StampLeft ' '  // there is pm ! = ' '
     ///  Last row of matrix for range-10 marks; NOTE: rc - 1
@@ -138,7 +137,7 @@ class BoxServe {
 
   /// Small lined box using optional parameter in function.
   /// First: shaping map in tools, tl, library for k, v, widths.
-  List infoBox(Map<String,String> inM, int _k, _v, [int margin]){
+  List infoBox(Map<String, String> inM, int _k, _v, [int margin]) {
     List<String> infoL = tl.mapToFineList(inM, _k, _v);
     String _sideMark = '|';
 
@@ -155,18 +154,17 @@ class BoxServe {
     String _rulerHeader2 = _srHeader;
 
     //  No margin, if optional parameter not set.
-    if(margin != null ) {
+    if (margin != null) {
       indent = ''.padRight(margin, ' ');
     }
     List<String> infoL2 = [];
     int _length = infoL.length;
-    infoL2 .add('$indent$_rulerHeader2');
-    for (var x = 0; x < _length; x++){
-
+    infoL2.add('$indent$_rulerHeader2');
+    for (var x = 0; x < _length; x++) {
       String _s;
-      if (infoL[x].length > width ) _s = infoL[x].substring(0,width);
-      if (infoL[x].length < width ) _s = infoL[x].padRight(width, ' ');
-      if (infoL[x].length == width ) _s = infoL[x];
+      if (infoL[x].length > width) _s = infoL[x].substring(0, width);
+      if (infoL[x].length < width) _s = infoL[x].padRight(width, ' ');
+      if (infoL[x].length == width) _s = infoL[x];
       String _sideMark = '|';
       String _s2 = '$_sideMark$_s$_sideMark';
       infoL2.add('$indent$_s2');

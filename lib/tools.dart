@@ -5,7 +5,7 @@
 ///  stuff is most valuable to beginner programmers, and developing this has
 ///  taken time. Fixing bugs only when something throws.
 /// * Also some #stamp date-time aso. functions.
-/// * dawo version:  version:  0.0.75.  -  8.1.2018    devState : 50 %
+/// * dawo version:  0.0.8.  -  13.3.2019.    devState : 50 %
 /// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
 /// * in GIT:  yes.  Blog post:  should b.
 /// * PLAN:  develop some _private inside functions and variables.??
@@ -133,7 +133,8 @@ class Tools {
   List<String> StrInList(List<String> _l, String _s) {
     List<String> _queryL = new List();
     for (var x = 0; x < _l.length; x++) {
-      if (_l[x].indexOf(_s) > -1) {
+      //  using now #contains instead of: if (_l[x].indexOf(_s) > -1)
+      if (_l[x].contains(_s)) {
         _queryL.add(_l[x]);
       }
     }
@@ -386,7 +387,8 @@ class Tools {
   ///  is it number?
   bool isNumber(String _s) {
     bool retB = false;
-    if ('0123456789'.indexOf(_s) > -1) {
+    //  using #contains, instead of if   ('0123456789'.indexOf(_s) > -1)
+    if ('0123456789'.contains(_s)) {
       retB = true;
       //  print('------------yep, is number');
     }

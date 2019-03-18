@@ -2,15 +2,12 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawoHist class
 ///  Primary functionality:  Keep historic dev data.
-/// * dawo version:  0.0.75+.  -  9.1.2018
+/// * dawo version:  0.0.8.  -  13.3.2019.
 /// * devState : 25%    in GitHub : yes
 // hist>  9.1.2018  Separated from dawoApp.
 //
 
-
 part of dawo_dev.dart;
-
-
 
 ///  Keeping historical aso. info about dawo.
 ///  Just testing: implements, here.
@@ -123,18 +120,18 @@ class DawoHist implements BaseStruct {
     //  :BUG:  Clear old lists first. ??
     //  :BOX:SW:  was 190
     boxServe.init(_rc, 200, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(
-        ':dhst:box: ', ':dHst:'); //  :BUG: C: $caller');
+    boxServe.construct(':dhst:box: ', ':dHst:'); //  :BUG: C: $caller');
     print(':BUG:DEBUG: dawoHist:box is not called * * * ');
     //  unused::  int r9 = 9; //  anchor for row.
     boxServe.show(':box:dHst:', 'print', 0);
+
     ///  Set boxServe ready for next user: clear data.
     boxServe.done(':box:dHst:');
   }
 
   ///  Presentation method.
   void show(String action) {
-    _pB;   //  print-Bool   controls printing
+    _pB; //  print-Bool   controls printing
   }
   //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
 
