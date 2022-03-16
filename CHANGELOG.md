@@ -1,6 +1,10 @@
 # Changelog
+## 0.1.0
+ - Migrating to null safety.
 ## 0.0.8
  - Health and formatting checks.
+## 0.0.78
+ - Updated to be dart2 compatible.
 ## 0.0.75
  - Chore and Mission modification.
 ## 0.0.7

@@ -31,12 +31,13 @@ class BoxServe {
   String title = ' **  boxServe Title  **';
   //  should be upper level TODO
   String footer = ' **  boxServe Footer  **';
-  String caller; //  should be upper level TODO
+  String caller = ''; //  should be upper level TODO
   ///  Will be combination of '$caller $boxNum.toString()'
   ///
   String name = '';
+  //  TODO  null  List can here be NULL  ??
   Map<String, List<String>> logM = {};
-  List<String> _matrix = new List();
+  List<String> _matrix = [];
   //  To save matrix AND mediate it to glb.
   StringBuffer _buf = new StringBuffer();
   String _bufName = ''; //  Form nice name for glb.buffers.X
@@ -57,7 +58,8 @@ class BoxServe {
     boxNum++;
     boxNumS = boxNum.toString();
     //  if boxes forgot to run DONE !!
-    if (_matrix.length > 0) {
+    //  line 60 col 9: Use isNotEmpty instead of length
+    if (_matrix.isNotEmpty) {
       print('* * * *  :DEBUG:BUG  _matrix length > 0  * * * * * * * * * * *  ');
     }
 
@@ -112,7 +114,11 @@ class BoxServe {
     String bRow = bRowLong.substring(0, sw);
     _matrix[rc - 1] = bRow;
     //   '---------10--------20--------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
-    logM[boxNumS].addAll([name, 'CTRCT']);
+
+    //  howTo NULL : the method addAll can not unconditionally inwoked, bedause receiver can be null
+    //  hklTry adding ! to the target   logM[boxNumS].addAll([name, 'CTRCT']);
+    //  howTo NULL  OK Watch This if it works
+    logM[boxNumS]!.addAll([name, 'CTRCT']);
   } //  -----  construct
 
   ///  Marks left of console screen to put table in convenient place for to see.
@@ -137,7 +143,9 @@ class BoxServe {
 
   /// Small lined box using optional parameter in function.
   /// First: shaping map in tools, tl, library for k, v, widths.
-  List infoBox(Map<String, String> inM, int _k, _v, [int margin]) {
+  /// If the parameter can’t be null, then either provide a default value:
+  ///  howTo NULL       void f([int x = 1]) {}
+  List<String> infoBox(Map<String, String> inM, int _k, _v, [int margin = 0]) {
     List<String> infoL = tl.mapToFineList(inM, _k, _v);
     String _sideMark = '|';
 
@@ -154,14 +162,15 @@ class BoxServe {
     String _rulerHeader2 = _srHeader;
 
     //  No margin, if optional parameter not set.
-    if (margin != null) {
+    //  The operand can't be NULL so the condition is always true
+
       indent = ''.padRight(margin, ' ');
-    }
+
     List<String> infoL2 = [];
     int _length = infoL.length;
     infoL2.add('$indent$_rulerHeader2');
     for (var x = 0; x < _length; x++) {
-      String _s;
+      String _s = '';
       if (infoL[x].length > width) _s = infoL[x].substring(0, width);
       if (infoL[x].length < width) _s = infoL[x].padRight(width, ' ');
       if (infoL[x].length == width) _s = infoL[x];
@@ -180,7 +189,13 @@ class BoxServe {
   //  TODO :BUG: :QUEST: Error check for over-sized lists: do not work always.
   ///  Add all list element to matrix in _r, _c WITH _items in _w-width.
   ///  fix2.0.0  List<String>
-  void aBox(int _r, _c, _items, _w, List<String> _l) {
+
+  ///  howTo NULL  integer  num   deault value:  [x = 0]
+  // void aBox(int _r, _c, _items, _w, List<String> _l) {
+  //  howTo NULL  int give default value
+  //  NO  void aBox([int _r = 0], [int  _c = 0], [_items = 0], _w, List<String> _l) {
+  //  NO  void aBox([int _r = 0, int  _c = 0, _items = 0]  _w, List<String> _l) {
+    void aBox(int _r, int _c, int _items, int _w, List<String> _l) {
     //  If not know list length / wanted items and width, try 100. lol
     //  TODO  Truncate items and length, if List outOfMatrix borders
     int _overWidth = 0;
@@ -192,7 +207,14 @@ class BoxServe {
       error = true;
       _overWidth = (_c + _w) - sw;
       print(_overWidth);
+      //  howTo NULL  cast num toInt
+      // noComprendo    _overLength = (_r + _items) - rc;
+      //  _overLength = (_r + _items) - rc;
+      //  NO  _overLength = (((_r + _items).toInt) (- rc).toInt;
+      //  hklTry:  do not know, how it is now OK ????
+      //  maybe caller:   int _r, int _c, int _items, int _w,
       _overLength = (_r + _items) - rc;
+
       print(_overLength);
       print('W: $_w  Items:  $_items  ');
 
@@ -210,14 +232,24 @@ class BoxServe {
     tl.boxInList(_r, _c, _items, _w, _l, _matrix);
     if (error) {
       //  lay vertical #VARNING line !!!
-      List<String> verticalWarningL = new List(_items);
+      //  howTo NULL  List:  use List.generate  or  .filled
+      //  howTo List.generate  external factory List.generate(int length, E generator(int index)
+      //  /// .generate   Creates an unmodifiable list containing all [elements].
+      // NO  List<String> verticalWarningL = new List.generate(_items, 0);
+      //  ..
+      //  external factory List.filled(int length, E fill, {bool growable = false});
+      //  hklTry:   List<String> verticalWarningL = new List(_items);
+      List<String> verticalWarningL = new List.filled(_items, '');
+
+
       verticalWarningL.fillRange(0, _items, _overWidthS);
       //  call: void vertWarning(int _x, _y, count, String _s)
       print('vert warning::  ');
       vertWarning(_r, _c + _w + 2, _items, _overWidthS); //  try +1 .. 2
       print('_overLengthS::  $_overLengthS ');
       print('horizWarnig::  ');
-      horizWarning(_r + _items - 1, _c, _w, _overLengthS);
+
+      horizWarning(   (_r + _items - 1).toInt()   , _c, _w, _overLengthS);
       print('error done::');
       //  lay horizontal #VARNING line
     } //  -----  error
@@ -236,7 +268,7 @@ class BoxServe {
   //  Set vertical line to screen matrix
   void vertLine(int _x, _y, count) {
     String _newS;
-    int toX = _x + count;
+    int toX = (_x + count).toInt();  //  howTo   NULL check  YES
     for (var x = _x; x < toX; x++) {
       _newS = tl.changeLetter(_matrix[x], _y, '|');
       _matrix[x] = _newS;
@@ -247,7 +279,10 @@ class BoxServe {
   //  Set vertical Warning-line for over-sized-box to screen matrix
   void vertWarning(int _x, _y, count, String _s) {
     String _newS;
-    int toX = _x + count;
+    int toX = 0;
+    //  howTo NULL   cast it to int.. yes, WORKS
+    toX = (_x + count).toInt();
+
     for (var x = _x; x < toX; x++) {
       _newS = tl.changeLetter(_matrix[x], _y, _s);
       _matrix[x] = _newS;
@@ -275,7 +310,8 @@ class BoxServe {
     String _margin = ''.padRight(margin, ' ');
     eyeMark14();
     rowMark12(); //  put 175 at the end of row 12
-    print(_matrix.length);
+    String _s = _matrix.length.toString();
+    print(' $_s  dawo-boxServe-show matrixLength.');
 
     ///  if.. is awkward
     ///  TODO  Parameter int _indent, for to set column / left margin in print.
@@ -288,7 +324,9 @@ class BoxServe {
     //  return _matrix;  //  if type is: List<String>
     ///  Save box-buffer to:   glb.boxServeBuffers Map
     saveToGLB();
-    logM[boxNumS].addAll([_caller, 'SHOW']);
+    //  howTo NULL   hklTry    add null check to the target:  !  OK  workds
+    //  logM[boxNumS].addAll([_caller, 'SHOW']);
+    logM[boxNumS]!.addAll([_caller, 'SHOW']);
   }
 
   ///  Called by:  next method, saveToGLB
@@ -318,7 +356,8 @@ class BoxServe {
     glb.boxServeBuffers.putIfAbsent(_bufName, () => saveBuffer);
     //  TODO  result:  N_added,  length_now
     print('-<<---saveToGLB  done    ----<<-----  ');
-    logM[boxNumS].add('svGLB');
+    // OK     howTo NULL   add null check ! to the tarrget
+    logM[boxNumS]!.add('svGLB');
   }
 
   ///  Lets see, if this will eventually be List<String>
@@ -331,7 +370,8 @@ class BoxServe {
     _resAllocL.clear();
     verticalLineL.clear();
     _fakeRow = 100;
-    logM[boxNumS].add('DONE');
+    //  howTo NULL   add ! to target
+    logM[boxNumS]!.add('DONE');
   }
 
   ///  TODO : Constructor, to give shapes and measures

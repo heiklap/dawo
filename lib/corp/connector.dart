@@ -150,7 +150,7 @@ class Connector extends BaseStruct {
   ///  clause walks with objects in process call and carries list of words.
   ///  Combination of #LANG words in sentence.
   String clause = ":DO :HINT :FIND :AREA :JOIN :OPEN :RULE";
-  String master; //  Object that owns this. Now only a String.
+  String master = ''; //  Object that owns this. Now only a String.
 
   // Buffer inside class to keep String-data for output.
   StringBuffer buf = new StringBuffer();
@@ -203,7 +203,9 @@ class Connector extends BaseStruct {
 
   ///  #New: #Gear Something turns around this.
   ///  the sail pivots around the axis of a virtually static mast
-  Object pivot;
+  ///  NULL  non-nullable instance field pivot must be initialized
+  ///  hklTry:  make it explicitly:  Object
+  Object pivot = Object();
 
   //  typedef void _ConPrint(String msg); // announced outside of class
   //  _ConPrint
@@ -225,8 +227,8 @@ class Connector extends BaseStruct {
   List report() {
     print('--->------>------ connector report:: ------>----------->---------');
     buf.writeln('con:report::  ');
-    List<List<String>> _dbL = new List();
-    List<List<String>> _dbL2 = new List();
+    List<List<String>> _dbL = [];
+    List<List<String>> _dbL2 = [];
     _dbL.addAll([tl.mapToListO(joinM), joinLog]);
     //  Add message list: for in-coming messages: inMsgL
     _dbL2.addAll([inMsgL, tl.mapToList(bind.bindM)]);
@@ -240,7 +242,7 @@ class Connector extends BaseStruct {
 
   ///  Connector basic activity, keep list of Members / their operations.
   ///  devNote: Or should it be something smaller? abstract class ModelPlacard?
-  List<Affair> opL = new List();
+  List<Affair> opL = [];
 
   ///  List for #C information. Used for devBox reporting.
   List<String> joinLog = ['* :connector:joinLog:  *'];
@@ -285,16 +287,22 @@ class Connector extends BaseStruct {
       joinInfoL.forEach(print);
       print(tl.mapToListO(joinM));
       print('------------- info map: -----------------------');
-      joinM[caller].say.forEach((k, v) => print('$k $v'));
+      //  howTo NULL Map hklTry:  OK
+      //  NO  joinM[caller].say!.forEach((k, v) => print('$k $v'));
+      joinM[caller]!.say.forEach((k, v) => print('$k $v'));
+
       print('-------- name: motto:  -----------------------');
-      print(joinM[caller].name);
-      print(joinM[caller].motto);
+      //  howTo NULL   hklTry:
+      print(joinM[caller]!.name);
+      print(joinM[caller]!.motto);
+
       print('------------- report -----------------------');
       //  no details
-      List<String> _l = joinM[caller].report(':scoutSolve:', false);
+      // howTo NULL   hklTry:
+      List<String> _l = joinM[caller]!.report(':scoutSolve:', false);
       _l.forEach(print);
       print('--------placardM: ----------------------------');
-      print(joinM[caller].placardM);
+      print(joinM[caller]!.placardM);
       print('--<------ :join:Solve:   done  ----<-------------<--------- \n');
     }
     //  get #findThisThing, announce it
@@ -332,11 +340,15 @@ class Connector extends BaseStruct {
     //  TODO  Output!!  '..:debug:dawolang:print:.:connector;join:...');
     //  TODO  Stop keeping placard here: get: joinM.find.placardM
     //  Placard here is unnecessary, after scoutSolve has access viu joinM
-    String actorS = plcM['actor'];
-    String senderS = plcM['sender'];
-    String receiverS = plcM['receiver'];
-    String comS = plcM['command'];
-    String msgS = plcM['msg'];
+    //  howTo NULL String Map
+    //  hklTry: do no null String
+    String actorS = '';
+    actorS = plcM['actor'].toString();  //  hklTry: cast to String
+
+    String senderS = plcM['sender'].toString();  //  hklTry: cast to String
+    String receiverS = plcM['receiver'].toString();  //  hklTry: cast to String
+    String comS = plcM['command'].toString();  //  hklTry: cast to String
+    String msgS = plcM['msg'].toString();  //  hklTry: cast to String
     String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
     _flowC(':CN:  $_S', _pB);
 
@@ -415,7 +427,10 @@ class Connector extends BaseStruct {
     _sw; //  To mark unUsed
     final int _rc = 47; //  row count
     //  ???  Keep matrix here on callers side all the time
-    List<String> _conMatrix = new List(_rc);
+    //  The default List constructor is not available, when NULL  safety is enabled
+    //  howTo NULL List  OK:  .filled
+    List<String> _conMatrix = new List.filled(_rc, '');
+
     _conMatrix; //  Mark #unUsed
 
     String boxHeader = ':connector:box:';
@@ -477,7 +492,8 @@ class Connector extends BaseStruct {
     ///  TODO  Get from joinM Just-joined-say map
     ///  Now using new #name field and parameter via con.join
     //  if (name  notIn joinM) blaa blaa blaa
-    Map<String, String> sayLatest = joinM['DartlangMission'].say;
+    //  howTo NULL  Map OK
+    Map<String, String> sayLatest = joinM['DartlangMission']!.say;
     //  Error:bug:  every object to not have say-map
     // Map<String, String> sayLatest = joinM[name].say;
     //  TODO  use map joinM directly without copying it here
@@ -537,6 +553,8 @@ class Connector extends BaseStruct {
   }
 
   ///  constructor
+  ///  NULL  error:   .toString();  //  hklTry: cast to String
+  ///
   Connector(this.name, this.info);
 
   //  To mark unused local variables in Connector class

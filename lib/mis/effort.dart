@@ -312,7 +312,7 @@ class Effort {
     tl.boxInList(15, 1, 100, 100, _lHuman, diagonalL);
     tl.boxInList(14, 0, 100, 100, ['peg'], diagonalL);
     tl.boxInList(1, 30, 100, 100, [':effort:get:diagonal:list:'], diagonalL);
-    tl.boxInList(1, 170, 100, 100, ['dartlang app  Dawo 0.0.7+'], diagonalL);
+    tl.boxInList(1, 170, 100, 100, ['dartlang app  Dawo 0.1.0+'], diagonalL);
 
     print(diagonalL.length);
     diagonalL.forEach(print);

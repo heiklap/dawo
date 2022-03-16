@@ -63,7 +63,7 @@ class Resolve {
 
   ///  Find and keep user priority, preference aso.
   String userPreference() {
-    String _s;
+    String _s = '';
     return _s;
   }
 

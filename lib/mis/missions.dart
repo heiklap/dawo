@@ -63,12 +63,15 @@ class Mission {
 // you avoid mess, that occurs, when class is used in mixin's.
 
   String name = '';
+
+  //  TODO  ? To what object is referenced?
+  //  should be  this.Mission
   String toString() {
     return name;
   }
 
-  String motto;
-  String clause; //  Combination of #LANG words in sentence.
+  String motto = '';
+  String clause = ''; //  Combination of #LANG words in sentence.
 
   /// #NEXT: Carry values to scoutJoin in connector
   /// Fields describe actions in connector and binding.
@@ -89,6 +92,7 @@ class Mission {
   /// Equipment and Effort classes can also be used for this:
   /// Equipment equ ..   Effort  eff...
   ///  Actions events plans and so. Added 6.1.2018
+  ///  TODO  Check usage  and fill-Map
   Map<String, Map<String, String>> act = {
     'Goal': {},
     'Enemy': {},
@@ -119,7 +123,7 @@ class Mission {
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
   String _emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
-  String _indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String _indent = ''; // like:  "      ";  3-5-7 empty marks or something visible.
 
   ///  Reference to outPut-buffer, no high-value: used only in _flowC(
   StringBuffer _buf = out.outTMid; //  reference to used output StringBuffer.
@@ -285,8 +289,8 @@ class Mission {
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission   * * *
   ///  :TEST:  change some variables to private.
-  ///  Action is small class in #alpha (name, say)
-  Action decision; //  Change it to public::  _decision
+  ///  Action is small class in #alpha (name, 2 Maps: say, reason)
+  Action decision = Action(); //  Change it to public::  _decision
 
   ///  Collecting all decisions.
   ///  TODO  Map _decisionChainMM  Change it to public !!
@@ -351,34 +355,35 @@ class Mission {
 
     boxServe.aHeader(15, 35, '  Enemy  ');
     //  Coordinates: 16, 35.  8 items 30 width.  Map key: 6, value 24
-    boxServe.aBox(16, 35, 8, 50, tl.mapToFineList(act['Enemy'], 6, 40));
+    //  howTo NULL  13 errors
+    boxServe.aBox(16, 35, 8, 50, tl.mapToFineList(act['Enemy']!, 6, 40));
 
     boxServe.aHeader(23, 35, '  Friend  ');
     //  parameters:  boxServe.aBox(_r, _c, _items, _w, _l)
-    boxServe.aBox(24, 35, 8, 50, tl.mapToFineList(act['Friend'], 6, 40));
+    boxServe.aBox(24, 35, 8, 50, tl.mapToFineList(act['Friend']!, 6, 40));
 
     boxServe.aHeader(31, 35, '  Project  ');
-    boxServe.aBox(32, 35, 8, 50, tl.mapToFineList(act['Project'], 6, 40));
+    boxServe.aBox(32, 35, 8, 50, tl.mapToFineList(act['Project']!, 6, 40));
 
     //  --------------
     boxServe.aHeader(6, 87, '  Phase  ');
-    boxServe.aBox(7, 87, 8, 30, tl.mapToFineList(act['Phase'], 6, 40));
+    boxServe.aBox(7, 87, 8, 30, tl.mapToFineList(act['Phase']!, 6, 40));
 
     boxServe.aHeader(14, 87, '  Mean  ');
-    boxServe.aBox(15, 87, 8, 30, tl.mapToFineList(act['Mean'], 6, 40));
+    boxServe.aBox(15, 87, 8, 30, tl.mapToFineList(act['Mean']!, 6, 40));
 
     boxServe.aHeader(22, 87, '  Event  ');
-    boxServe.aBox(23, 87, 8, 30, tl.mapToFineList(act['Event'], 6, 40));
+    boxServe.aBox(23, 87, 8, 30, tl.mapToFineList(act['Event']!, 6, 40));
 
     boxServe.aHeader(30, 87, '  Action ');
-    boxServe.aBox(31, 87, 8, 30, tl.mapToFineList(act['Action'], 6, 40));
+    boxServe.aBox(31, 87, 8, 30, tl.mapToFineList(act['Action']!, 6, 40));
 
     //  **  top right **
     boxServe.aHeader(7, 160, '  Goals  ');
-    boxServe.aBox(8, 160, 8, 33, tl.mapToFineList(act["Goal"], 6, 24));
+    boxServe.aBox(8, 160, 8, 33, tl.mapToFineList(act["Goal"]!, 6, 24));
 
     boxServe.aHeader(16, 160, '  Plan  ');
-    boxServe.aBox(17, 160, 8, 33, tl.mapToFineList(act['Plan'], 6, 24));
+    boxServe.aBox(17, 160, 8, 33, tl.mapToFineList(act['Plan']!, 6, 24));
 
     boxServe.aHeader(24, 175, ' * *  KnofHow  * * ');
     boxServe.aHeader(34, 175, ' * *  Effort  * * ');
@@ -469,7 +474,7 @@ class Mission {
   }
 
   ///  Report of mission data used by: devBox_C: By; dawoApp-:rM:
-  List report(String caller, bool detailsB) {
+  List<String> report(String caller, bool detailsB) {
     //  NOTE  If more than 9 Chores, need something else.
     String choreLengthS = choreL.length.toString();
     String choreS = getChoreNamesS();
@@ -486,7 +491,11 @@ class Mission {
     String ps10 =
         ('PlacardM $_plcMS, 3,0)  _______________________________________');
     // String ps11 = ('p2 _$placardM  _______________________________________');
-    var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
+
+    //var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
+    List<String> _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
+
+
     /* TODO  howTo mapToList
     print('----------say Map in mission   ----');
     List<String> _infoL = [];
@@ -567,8 +576,13 @@ var nationalParksMission =
 void missionChoreReport(String caller) {
   print('-->>-->>----:M:  missionChoreReport  caller: $caller');
   for (var x in missionM.keys) {
-    print(missionM[x].name);
-    print(missionM[x].choreL);
+    //  howTo NULL check  hklTry
+    String nameS = missionM[x]!.name;
+    //  Just to name it
+    nameS;
+    //  howTo NULL print mission-String-name
+    print(missionM[x]!.name);
+    print(missionM[x]!.choreL);
   }
   print('--<<--<<----  missionChoreReport done caller: $caller');
 }
@@ -658,7 +672,8 @@ void buildMissions(String caller) {
     for (var x in missionM.keys) {
       String _misName = x;
       print('mis-name:  $_misName ');
-      for (var z in missionM[x].choreL) {
+      //  howTo NULL
+      for (var z in missionM[x]!.choreL) {
         String _chrName = z.name;
         print('choreName:   $_chrName');
       }

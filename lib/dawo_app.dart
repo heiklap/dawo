@@ -97,11 +97,11 @@ class DawoApp {
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  like:  ":DAWO:APP:";///  must initialize StringBuffer here
-  String seal;
+  String seal = '';
   //  or this emblem.StringBuffer buf = new StringBuffer();
   final String emblem = ':DA:';
   // like:  "      ";  3-5-7 empty marks or something visible.
-  String indent;
+  String indent = '';
 
   bool _pB = false; //  No printing now. use printControl to change it.
   StringBuffer buf = new StringBuffer();
@@ -119,7 +119,7 @@ class DawoApp {
     'agenda': 'Data-handling app package',
     'msg': 'This is a process for learning.',
     // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 :demandStream Listened
-    'develop': 'Under development.. from 0.0.7+ to 0.1.0.',
+    'develop': 'Under development.. from 0.0.8+ to 0.1.0.',
     // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 demandStream Listened
     'pack: version  ': 'Version: 0.0.8+ ',
     'pub': 'Published 8.1.2018',
@@ -258,39 +258,68 @@ class DawoApp {
     print(packDawoMission.placardM);
 
     ///  Send 2 lists to devBox to get nice screen printing.
-    List list1 = packDawoMission.report('C:dawoApp:rM:', true);
-    List info1 = tl.mapToFineList(packDawoMission.say, 10, 80);
+    List<String> list1 = [];
+    list1.addAll(packDawoMission.report('C:dawoApp:rM:', true)); //   = packDawoMission.report('C:dawoApp:rM:', true);
+
+    //  NULL   Make it explicitly non nullable
+    List<String> info1 = [];
+    //  hklTry
+    //  List info1 = tl.mapToFineList(packDawoMission.say, 10, 80);
+    info1.addAll(tl.mapToFineList(packDawoMission.say, 10, 80));  // = tl.mapToFineList(packDawoMission.say, 10, 80);
+
     devBox(
         'By; :dawoApp:rM:', ['* header *', '* footer *'], [list1, info1], 10);
     print(packDawoMission.placardM);
 
     print(helsinkiMission.placardM);
-    List list2 = helsinkiMission.report('C:dawoApp:rM:', _pB);
-    List info2 = tl.mapToFineList(helsinkiMission.say, 10, 80);
+    List<String> list2 = [];
+    list2.addAll(helsinkiMission.report('C:dawoApp:rM:', _pB));
+
+
+    List<String> info2 = [];
+    info2.addAll(tl.mapToFineList(helsinkiMission.say, 10, 80));
     devBox(
         'By; :dawoApp:rM:', ['* header *', '* footer *'], [list2, info2], 10);
 
     print(dartlangMission.placardM);
-    List list3 = dartlangMission.report('C:dawoApp:rM:', _pB);
-    List info3 = tl.mapToFineList(dartlangMission.say, 10, 80);
+    List<String> list3 = [];
+    list3.addAll(dartlangMission.report('C:dawoApp:rM:', _pB));
+
+
+    List<String> info3 = [];
+    info3.addAll(tl.mapToFineList(dartlangMission.say, 10, 80));
     devBox(
         'By; :dawoApp:rM:', ['* header *', '* footer *'], [list3, info3], 10);
 
     print(myMusicMission.placardM);
-    List list4 = myMusicMission.report('C:dawoApp:rM:', _pB);
-    List info4 = tl.mapToFineList(myMusicMission.say, 10, 80);
+    List<String> list4 = [];
+    list4.addAll(myMusicMission.report('C:dawoApp:rM:', _pB));
+
+
+    List<String> info4 = [];
+    info4.addAll(tl.mapToFineList(myMusicMission.say, 10, 80));
     devBox(
         'By; :dawoApp:rM:', ['* header *', '* footer *'], [list4, info4], 10);
 
     print(myTimeMission.placardM);
-    List list5 = myTimeMission.report('C:dawoApp:rM:', _pB);
-    List info5 = tl.mapToFineList(myTimeMission.say, 10, 80);
+    List<String> list5 = [];
+    list5.addAll(myTimeMission.report('C:dawoApp:rM:', _pB));
+
+
+    List<String> info5 = [];
+    info5.addAll(tl.mapToFineList(myTimeMission.say, 10, 80));
+
+
     devBox(
         'By; :dawoApp:rM:', ['* header *', '* footer *'], [list5, info5], 10);
 
     print(nationalParksMission.placardM);
-    List list6 = nationalParksMission.report('C:dawoApp:rM:', _pB);
-    List info6 = tl.mapToFineList(nationalParksMission.say, 10, 80);
+    List<String> list6 = [];
+    list6.addAll(nationalParksMission.report('C:dawoApp:rM:', _pB));
+
+
+    List<String> info6 = [];
+    info6.addAll(tl.mapToFineList(nationalParksMission.say, 10, 80));
     devBox(
         'By; :dawoApp:rM:', ['* header *', '* footer *'], [list6, info6], 10);
 
@@ -337,7 +366,8 @@ class DawoApp {
 
     //  TODO  find #Lang #word's function, make it.
     for (var x = 0; x < dev.admN.length; x++) {
-      if (dev.admN[x].indexOf('schedule') > -1) {
+      //  HealthIssue:  line 340 col 11: Use contains instead of indexOf
+      if (dev.admN[x].contains('schedule')) {
         _queryL.add(dev.admN[x]);
       }
     }
@@ -514,8 +544,14 @@ Map<String, String> outBuffersInfoMap(String caller, String notCalled) {
   int i = 0;
   int mLength = out.outBufM.length;
   for (var x = 0; x < mLength; x++) {
-    String _bufNameS = out.outBufM.keys.elementAt(i);
-    String _bufLengthS = out.outBufM[_bufNameS].length.toString();
+
+    String _bufNameS = '';
+    _bufNameS = out.outBufM.keys.elementAt(i);
+    //  howTo NULL
+    String _bufLengthS = '';
+    //  howTo NULL buffer  using:   Map<String, StringBuffer> outBufM
+    _bufLengthS = out.outBufM[_bufNameS]!.length.toString();
+
     _retM.putIfAbsent(_bufNameS, () => _bufLengthS);
     i++;
   }

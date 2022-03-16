@@ -241,7 +241,9 @@ if (name) {
 void isBoolLoop() {
   String name = '';
   //  Fixed:  line 243 col 23: Use isNotEmpty for Iterables and Maps.
-  if (name != null && name.isNotEmpty) {
+  //  The operand cant be null, so the condition is always true
+  //  TODO  Fix or remove condition
+  if (name.isNotEmpty) {
     print(' yes this is name');
   } else {
     print('tryAgain');
@@ -255,7 +257,9 @@ void oneRowIf() {
   recurse(List items) {
     //  function not used
     //  The function 'recurse' is not used
-    if (items == null || items.isEmpty) return;
+    //  TODO  null  The operand can't be null, so the condition is always true.
+    //  remove, or ..
+    if (items.isEmpty) return;
     // …
   }
 

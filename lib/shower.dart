@@ -42,7 +42,7 @@ class ScheduleBox {
   */
   int _sw = 195; //  screen width
   static int _rc = 40; //  row count
-  List<String> _matrix = new List(_rc);
+  List<String> _matrix = new List.filled(_rc, '');
   int _colPos = 100;
   List<String> _resAllocL = [];
 
@@ -62,7 +62,7 @@ class ScheduleBox {
           '$_colPos '.padRight(_sw, '-'); //  pad with low-density mark.
     }
     _matrix[0] =
-        '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 0.0.7 -';
+        '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 0.1.0 -';
 
     ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
     _matrix[_rc - 1] =
@@ -118,18 +118,23 @@ List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
 
   for (var x = 0; x < _inlM.length; x++) {
     for (var y in _inlM[x].keys) {
-      int iVPos = _inlM[x][y].indexOf('V:');
-      int iEPos = _inlM[x][y].indexOf('E:');
+      //  howTo NULL int
+      //  NO   int iVPos! = _inlM[x][y].indexOf('V:');
+      int iVPos = 0;
+      iVPos =_inlM[x][y]!.indexOf('V:');
+
+      int iEPos = _inlM[x][y]!.indexOf('E:');
 
       int iVal = -1;
       int iEff = -1;
       //  check if we got 2 numbers.
-      String checkS = _inlM[x][y].substring(iVPos + 2, iVPos + 3);
+      //  howTo NULL int
+      String checkS = _inlM[x][y]!.substring(iVPos + 2, iVPos + 3);
       if (tl.isNumber(checkS)) {
-        iVal = int.parse(_inlM[x][y].substring(iVPos + 2, iVPos + 3));
-        String checkS = _inlM[x][y].substring(iEPos + 2, iEPos + 3);
+        iVal = int.parse(_inlM[x][y]!.substring(iVPos + 2, iVPos + 3));
+        String checkS = _inlM[x][y]!.substring(iEPos + 2, iEPos + 3);
         if (tl.isNumber(checkS)) {
-          iEff = int.parse(_inlM[x][y].substring(iEPos + 2, iEPos + 3));
+          iEff = int.parse(_inlM[x][y]!.substring(iEPos + 2, iEPos + 3));
 
           //  check for high value-effort coefficient.
           //  copy positive-value-efforts to new map
@@ -138,8 +143,8 @@ List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
             //  print('------------ iVal - iEff > 0 -----------------------');
             String _s1 = y.substring(0, _w); // Map key of _w width.
             ///  Copy  :  V:3 E:9  like string.
-            String _s2 = _inlM[x][y].substring(iVPos, iVPos + 3);
-            String _s3 = _inlM[x][y].substring(iEPos, iEPos + 3);
+            String _s2 = _inlM[x][y]!.substring(iVPos, iVPos + 3);
+            String _s3 = _inlM[x][y]!.substring(iEPos, iEPos + 3);
             String _sAdd = ('$_s1 $_s2 $_s3');
             _retL.add(_sAdd); //  like:  PhaseDone V:9 E:8
           }
@@ -176,7 +181,8 @@ List<String> effortTable(
     // 'Seek every map for search-criteria'
     for (var y in _ilM[x].keys) {
       //  Zero / short length check. Is it needed?
-      if (_ilM[x][y].length < 2) {
+      //  howTo NULL
+      if (_ilM[x][y]!.length < 2) {
         print('ALERT::    _ilM[x][y].length < 2   ********************');
       }
       ;
@@ -185,18 +191,19 @@ List<String> effortTable(
       //  analysis, rep 2 hints:  l-188 c-12: Use contains instead of indexOf
       //  Old way:  if ((_ilM[x][y].indexOf(_sf) > -1)) {
       //  New way using #contains:
-      if ((_ilM[x][y]).contains(_sf)) {
+      //  howTo NULL ok
+      if ((_ilM[x][y]!).contains(_sf)) {
         ///  separating index finding.
-        int iSub = _ilM[x][y].indexOf(_sf);
+        int iSub = _ilM[x][y]!.indexOf(_sf);
         //  Are we over right edge of list.item?
-        if ((iSub + 3) >= _ilM[x][y].length) {
+        if ((iSub + 3) >= _ilM[x][y]!.length) {
           print('ALERT:: iSub +3  >  _ilM[x][y].length   **************');
         }
         ;
 
         //  TODO  check for: not to be out of range.
         //  print(_ilM[x][y].substring(iSub ,iSub+3));
-        _foundS = _ilM[x][y].substring(iSub, iSub + 3);
+        _foundS = _ilM[x][y]!.substring(iSub, iSub + 3);
 
         ///  Drive String manipulation in order, for to be sure.
         ///  Surely shorter way might exist.
@@ -311,7 +318,8 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
       cInd = cInd + cStep;
       ts = _s.padLeft(cInd, '_');
       //  Must get key AND value to String : hklTry  glorious: y
-      _s = (ts + y + ' ' + _ilM[x][y]);
+      //  howTo NULL
+      _s = (ts + y + ' ' + _ilM[x][y]!);
       //Not needed: current item length   int _wl = _ilM[x][y].length;
       ts = _s.padRight((_sw), '_'); //  to be visible: _
       _ol.add(ts);

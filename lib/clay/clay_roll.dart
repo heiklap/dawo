@@ -1,7 +1,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawo clay  main library
 ///  presenting incoming data for dawo-chore / mission system
-///  dawo version:    0.0.6.  27.11.2017
+///  dawo version:    0.1.0.  23.9.2020
 
 //
 library clayRoll;
@@ -25,9 +25,11 @@ List<String> clayMapL = [
 
 //  TODO : start using all maps: in list: List<Map<String,String>>
 ///  return asked Map
-Map getClayMap(String _command) {
+///  Adding strict types.
+///  Suppose Map must be like: Map<String, Map<String, String>>
+Map<String, Map<String, String>> getClayMap(String _command) {
   String command = _command;
-  Map _retM = {};
+  Map<String, Map<String, String>> _retM = {};
   switch (command) {
     case 'packDawo':
       _retM = packDawoClay();

@@ -1,6 +1,6 @@
-# dawo 0.0.8
+# dawo 0.1.0
 
-    https://img.shields.io/pub/v/box2d.svg
+    
 https://pub.dartlang.org/packages/dawo
 
 Fixed health suggestions and formatting issues and some small changes. 
@@ -69,6 +69,7 @@ beginner programmes this is one way to simulate real-world development stress.
  0.0.78 Updated to be dart2 compatible.
  
  0.0.8  Fixed health suggestions and additional 21 files with analysis or formatting issues.
+ 0.1.0  Migrating to null safety.
 
 ## Files;
 ### code_snippets, learn / copy-paste stuff:

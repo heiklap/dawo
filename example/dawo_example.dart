@@ -123,7 +123,11 @@ main() {
   print('.......... :glb:boxServe:buf: length and names  ................');
   print(glb.boxServeBuffers.length);
   for (var z in glb.boxServeBuffers.keys) {
-    print(glb.boxServeBuffers[z].length);
+    //  howTo NULL
+    //  The property 'length' can't be unconditionally accessed because the receiver can be 'null'.
+    //  Try making the access conditional (using '?.') or adding a null check to the target ('!').
+    //  hklTry: NULL  OK  with .?
+    print(glb.boxServeBuffers[z]?.length);
     print(z);
   }
   //  glb.boxServeBuffers.keys.forEach(print);
@@ -132,7 +136,12 @@ main() {
   //  infoBox(Map<String,String> inM, int _k, _v, [int margin]){
   //  using:  dawoApp.say.
   /// NOTE  all Map to List rows, here 8, are printed.
-  List<String> infoOne = boxServe.infoBox(dawoApp.say, 8, 57, 9);
+  /// hklTry:   create List first
+  ///
+  List<String> infoOne = [];
+  //  List<String> infoOne = boxServe.infoBox(dawoApp.say, 8, 57, 9);
+  infoOne.addAll(boxServe.infoBox(dawoApp.say, 8, 57, 9));  //  ;
+
   infoOne.forEach(print);
  //   packDawoMission.say
   print('----  second info box  ----');

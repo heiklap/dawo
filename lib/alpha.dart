@@ -20,7 +20,7 @@ class Out {
   //  Quest: shorter way?
   ///  Return iterable List from StringBuffer. Also in tools.
   List<String> bufToList(StringBuffer buf) {
-    List<String> _l = new List();
+    List<String> _l = [];
     String _s = buf.toString();
     _l.addAll(_s.split('\n'));
     return _l;
@@ -62,17 +62,17 @@ class Out {
   };
   //  = new List
   List<List<String>> outBufListsForBox() {
-    List<List<String>> _ll = new List();
-    List<String> outHeaderBufL = new List();
-    List<String> outTlBufL = new List();
-    List<String> outTMidBufL = new List();
-    List<String> outTrBufL = new List();
-    List<String> outMTopBufL = new List();
-    List<String> outMidBufL = new List();
-    List<String> outMBotBufL = new List();
-    List<String> outBlBufL = new List();
-    List<String> outBrBufL = new List();
-    List<String> outFooterBufL = new List();
+    List<List<String>> _ll = [];
+    List<String> outHeaderBufL = [];
+    List<String> outTlBufL = [];
+    List<String> outTMidBufL = [];
+    List<String> outTrBufL = [];
+    List<String> outMTopBufL = [];
+    List<String> outMidBufL = [];
+    List<String> outMBotBufL = [];
+    List<String> outBlBufL = [];
+    List<String> outBrBufL = [];
+    List<String> outFooterBufL = [];
 
     outHeaderBufL.addAll(bufToList(outHeader));
     outTlBufL.addAll(bufToList(outTl));
@@ -186,20 +186,20 @@ Out out = new Out();
 
 //  Chore-extends, DawoHist implements. Flag  use this
 abstract class BaseStruct {
-  String name;
-  String info; //  using now Map:  say
-  Map<String, String> say;
-  String motto;
+  String name = '';
+  String info = ''; //  using now Map:  say
+  Map<String, String> say = {};
+  String motto = '';
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
-  String clause; //  Combination of #LANG words in sentence.
+  String clause = ''; //  Combination of #LANG words in sentence.
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal; //  like:  ":DAWO-APP:";
-  String emblem; //  or this emblem.
-  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
-  String master; //  Object that owns this.
+  String seal = ''; //  like:  ":DAWO-APP:";
+  String emblem = ''; //  or this emblem.
+  String indent = ''; // like:  "      ";  3-5-7 empty marks or something visible.
+  String master = ''; //  Object that owns this.
 
-  StringBuffer buf;
+  StringBuffer buf = new StringBuffer();
 
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
@@ -236,11 +236,11 @@ abstract class BaseStruct {
 ///  or at-least gives it as parameter, to functions.
 abstract class BasePlacard {
   //  Order: #actor #sender #receiver #command #msg
-  String actor;
-  String sender;
-  String receiver;
-  String command;
-  String msg;
+  String actor = '';
+  String sender = '';
+  String receiver = '';
+  String command = '';
+  String msg = '';
 }
 
 ///  base class that serves objects that can have members.

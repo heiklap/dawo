@@ -48,7 +48,8 @@ var dawoHist = new DawoHist();
 ///  Just in case.  Used by vMission,  but  nobody uses it.
 Mission pickMission(String _choice) {
   Mission _retMission;
-  _retMission = missionM[_choice];
+  //  howTo Mission   lol  ! did it
+  _retMission = missionM[_choice]!;
   return _retMission;
 }
 

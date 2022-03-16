@@ -44,6 +44,24 @@ import 'missions.dart';
 import '../src/glb.dart';
 import '../clay/clay_roll.dart';
 
+/*  howTo Map increment
+https://stackoverflow.com/questions/56943363/dart-map-increment-the-value-of-a-key
+extension CustomUpdation on Map<dynamic, int> {
+  int increment(dynamic key) {
+    return update(key, (value) => ++value, ifAbsent: () => 1);
+  }
+}
+
+void main() {
+  final map = <String, int>{};
+  map.increment("foo");
+  map.increment("bar");
+  map.increment("foo");
+  print(map); // {foo: 2, bar: 1}
+}
+ */
+
+
 ///  using - getters -example
 num dawLibWorkReadiness = 94; // for version  0.0.1
 
@@ -72,7 +90,7 @@ void initChoreSystem() {
   dev.innoN.add(':INIT-CHORE: :CHECK-IN: testing.');
   dev.howToN.add(':INIT-CHORE: :CHECK-IN: testing.');
   dev.secN.add(':INIT-CHORE: :CHECK-IN: testing.');
-}
+}     //     -----     initChoreSystem
 
 ///  Many important dawo classes are extending Alpha class.
 class BlanketChore extends BaseStruct {
@@ -86,15 +104,15 @@ class BlanketChore extends BaseStruct {
   String motto = 'chore handling small jobs as sub-ordinate of mission.';
 
   ///  Used in function calls to bring-in objects permanent String-values.
-  String clause; //  Combination of #LANG words in sentence.
+  String clause = ''; //  Combination of #LANG words in sentence.
 
   ///  devNote: PLAN: Three fields for to better shape outPut stuff in console.
-  String seal; //   No usage
-  String emblem; //  or this emblem.  like:  ":DAWO:APP:";
-  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String seal = ''; //   No usage
+  String emblem = ''; //  or this emblem.  like:  ":DAWO:APP:";
+  String indent = ''; // like:  "      ";  3-5-7 empty marks or something visible.
 
   ///  Master field is used in boxes to access Master-objects data.
-  String master; //  mission, that owns this chore. Like : 'packDawoMission'
+  String master = ''; //  mission, that owns this chore. Like : 'packDawoMission'
   ///  get other same-group chores via master/Mission choreL, or via up-level choreL list.
   var sister; //  Not used in 0.0.7.
 
@@ -107,7 +125,9 @@ class BlanketChore extends BaseStruct {
   };
 
   ///  4 var to control connectors state, working-condition-state values.
-  Map<String, int> extra = {
+  ///  howTo Null  hklTry  static Map  or final
+  final Map<String, int> extra = {
+  //  static Map<String, int> extra = {
     'init': 0,
 
     ///  NOTE: init-build-roll calls are not yet orderly planned in 0.0.7.
@@ -213,7 +233,7 @@ class BlanketChore extends BaseStruct {
 
     /// roll.control,  flow and log. End-activities of #flux
     'log': ':log: _ _ _ _ _ _ _ _ _ _ _ _ _ _',
-  };
+  };     //     -----     action
 
   ///  Value-fields of this Map refer to return-values of operations, that
   ///  outer- and inner-Chore commands, like #flux produce.
@@ -239,7 +259,7 @@ class BlanketChore extends BaseStruct {
     'endChore': '_ _ _ _ _ _ _ _ ',
     'choreEffort': '_ _ _ _ _ _ _ _ ',
     'choreToEffort': '_ _ _ _ _ _ _ _ ',
-  };
+  };     //     -----     operations
 
   ///  V:= Value, E:= effort in Chore development
   Map<String, String> plan = {
@@ -248,7 +268,7 @@ class BlanketChore extends BaseStruct {
     '3. V:5 E:5': 'Git part-2 dev _ _ _ _ _ _ _',
     '4. V:6 E:6': 'Make example packDawo_ _ _ _ _ _ _',
     '5. ': 'Something wlse_ _ _ _ _ _ _',
-  };
+  };     //     -----     plan
 
   ///  Phases of Chore development
   Map<String, String> phase = {
@@ -257,13 +277,34 @@ class BlanketChore extends BaseStruct {
     'Outside Functions': 'Not used 0 % _ _ _ _ _',
     'Slave Functions': 'Connect master _ _ _ _ _',
     'Mil-Loop-say': 'Headers done 5 %_ _ _ _ _ _ _',
-  };
+  };     //     -----     phase
 
   ///  Initialize class for ready-to-use: Method for setting class field values.
   void init() {
     _flowC('--> C-init $name  -->---->--', _pB);
 
-    extra['init']++;
+    //  howTo NULL  Map
+    //  extra['init'] ++;
+    //  hklTry NO  extra!['init']! ++;
+    //  NO  extra!['init'] ++?;
+    //  Map<String, int> extra  'init': 0,
+    //  howTo Map:  only 4 properties usable   extra.['init'].
+    //  TODO  hkl:  find in tour dartlang
+    //  https://stackoverflow.com/questions/56943363/dart-map-increment-the-value-of-a-key
+    //  from Punch::
+    if(extra.containsKey('init') ) {
+      //  TODO howToMap increment
+      int _i = 0;
+      //  howTo Null Map
+      _i = extra['init']!;
+      extra['init'] = _i;
+      //  extra['init']!++;
+    }  //  --  if
+
+    // extra['init'].toInt()++;
+    //  extra['init']! ++;
+    //  extra['init'] =  33;
+
     String __name = name.toUpperCase();
     String _name = ':$__name :';
     //  Actor in glb has not any use.
@@ -272,7 +313,7 @@ class BlanketChore extends BaseStruct {
     buf.writeln(':ch:buf: init for name: $name done');
     //  Set-fields values done.
     _flowC('<-- ch init done  $name --<----<--', _pB);
-  }
+  }     //     -----     init
 
   ///  TODO  Chore gets emblem and master from mission in build. Are they right
   ///  Method for setting class in working condition.
@@ -280,7 +321,8 @@ class BlanketChore extends BaseStruct {
   void build(String _emblem, String _master) {
     _flowC('--> chore $name build  -->---->--', _pB);
     //  print(':BUG:DEBUG:build:chore:build: $name'); ? build 2X?
-    extra['build']++;
+    //  howTo NULL Map
+    //  TODO  away  extra['build']++;
     emblem = _emblem; //  set master and emblem fields.
     master = _master;
     //  TODO  Initialized 2X?  Where?
@@ -290,14 +332,15 @@ class BlanketChore extends BaseStruct {
     st['wake'] = true; //  sleep-state ends
     st['work'] = true; //   app is in on
     _flowC('<--  chore build  $name done --<----<-- ', _pB);
-  }
+  }     //     -----     build
 
   ///  #run-like method
   ///  If this or one of it's sub-operations conduct #connector-operations,
   ///  it might be annotated in function parameter.
   void roll() {
     _flowC('--> :ch:roll:  $name -->---->--', _pB);
-    extra['roll']++;
+    //  howTo NULL Map++
+    //  TODO  Away   extra['roll' ++;
     _flowC(':ch:roll:  $info   :: roll engaged ', _pB);
     print(':ch:roll:  $info   :: roll engaged :TEST:DEBUG:');
 
@@ -340,7 +383,7 @@ class BlanketChore extends BaseStruct {
     done();
     //  code here
     _flowC('<-- :ch:roll: $name  done --<----<--', _pB);
-  }
+  }     //     -----     roll
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission  * * *
@@ -349,7 +392,7 @@ class BlanketChore extends BaseStruct {
   Action decision = new Action();
 
   ///  Map to collect all Actions.
-  Map<String, Map<String, Action>> decisionChainMM;
+  Map<String, Map<String, Action>> decisionChainMM  = {};
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
@@ -374,7 +417,7 @@ class BlanketChore extends BaseStruct {
     _flowC('-->  ch roll=>:popular:  $name -->---->', _pB);
 
     ///  NOTE  placardM is not used.  TODO
-    String _retStr;
+    String _retStr = '';
     print('-->>-->>--  :Ch:popular: calling :connector:  -->>-->>--');
     String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
 
@@ -403,7 +446,7 @@ class BlanketChore extends BaseStruct {
     buf.writeln(':ch:buf: :popular: for chore: $name  done');
     _flowC('<-- ch roll-popular: $name  done <----<--', _pB);
     return _retStr;
-  }
+  }     //     -----     popular
 
   ///  Usual presentation method.
   ///  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
@@ -411,7 +454,8 @@ class BlanketChore extends BaseStruct {
     _flowC('--> ch show:  $name -->---->--', _pB);
     //  print(buf);
     ///  :TEST: :glb:ifPrint:  Is false: so should not print buf.
-    if (glb.prSt['buf']) {
+    ///  howTo NULL Map  OK,  add !
+    if (glb.prSt['buf']!) {
       print('bbbbbbbbbb chore.show  choreBuf bbbbbbbbbbbbbbbbbbbbbbbbbbb');
       print(glb.prSt['buf']); //  true or false
       print(choreBuf);
@@ -419,7 +463,7 @@ class BlanketChore extends BaseStruct {
     }
     buf.writeln(':ch:buf: :show: done for chore: $name  ');
     _flowC('<-- ch show: $name  done --<----<--', _pB);
-  }
+  }     //     -----     phase
 
   ///  Report of chore.
   List<String> reportList(String caller) {
@@ -439,7 +483,7 @@ class BlanketChore extends BaseStruct {
     List<String> _l = [_s1, _s2, _s3, _s4, _s5, _s6, _s7, _s8, _s9, _s10];
     buf.writeln(':ch:buf: :report: done for chore:  $name  ');
     return _l;
-  }
+  }     //     -----     reprtList
 
   ///  Console present Map and List aso. data in screen-matrix.
   void box(String caller) {
@@ -480,7 +524,8 @@ class BlanketChore extends BaseStruct {
 
     boxServe.aHeader(10, 66, ' * Master    $master     say * ');
     //  Get Map-say from master:  missionL[$master].say
-    boxServe.aBox(11, 62, 9, 52, tl.mapToFineList(missionM[master].say, 6, 46));
+    //  howTo NULL Map   say    add !
+    boxServe.aBox(11, 62, 9, 52, tl.mapToFineList(missionM[master]!.say, 6, 46));
 
     //  boxServe.aHeader(20, 44, '* Chore Operations *');
     boxServe.aBox(20, 45, 22, 53, tl.mapToFineList(operations, 13, 40));
@@ -505,7 +550,7 @@ class BlanketChore extends BaseStruct {
 
     ///  Set boxServe ready for next user: clear data.
     boxServe.done(':box:Chr:');
-  }
+  }     //     -----     box
 
   ///  Get info of Chore in one row.
   String rowInfo() {
@@ -513,7 +558,7 @@ class BlanketChore extends BaseStruct {
     String _s = '$name  m: $motto $st.toString ';
     buf.writeln(':ch:buf: :rowInfo: called for chore: $name');
     return _s;
-  }
+  }     //     -----     rowInfo
 
   ///  close-method. This is not: terminate.
   void done() {
@@ -525,7 +570,7 @@ class BlanketChore extends BaseStruct {
     buf.writeln(':ch:buf:  done called for chore:  $name');
 
     _flowC('<-- chore.done    ok   --<----<--', _pB);
-  }
+  }     //     -----     done
 
   ///  PLAN: For to share stuff with  :affair: command in #operations
   ///  :connector:  to mediate to :affair: and do :bind:
@@ -534,7 +579,7 @@ class BlanketChore extends BaseStruct {
     _flowC('   **  resource sharer assignChore > Process    ***', _pB);
     buf.writeln(':ch:buf:  :assign:comPro called for $name  ');
     return ('   **  resource sharer assignChore > Process   ***');
-  }
+  }     //     -----     assignComProChore
 
   ///  Calling print/print-to-buffer function from beta.
   ///  FlowCall : Getting local variables; Actor and Buffer right.
@@ -546,9 +591,10 @@ class BlanketChore extends BaseStruct {
 
     //change it for testing   flowServe(':CH:', choreBuf, msg, p);
     flowServe(':CH:', buf, msg, p);
-  }
+  }     //     -----     _flowC
 
   ///  constructor; master is mandatory for Chore to use masters fields.
+  ///   was error:  decisionChainMM must be initialized  OK
   BlanketChore(this.name, this.master, this.info);
 } //  -----  BlanketChore class
 
@@ -566,7 +612,7 @@ void _flowCOuter(String msg, bool p) {
 
   //change it for testing   flowServe(':CH:', choreBuf, msg, p);
   flowServe(':CH:', choreBuf, msg, p);
-}
+}     //     -----     _flowCOuter
 
 //---------------------------------------------------------------
 ///  #QUEST: Construct functions outside of Chore and use them for something.
@@ -590,9 +636,11 @@ void handler(String _key, _inS, BlanketChore chr, var _act) {
   //  announce value field changed.
   //  so: ':tGR:_ _ _ _ _ _ _ _ ' changed to:  ':tGR: OK _ _ _ _ _ '
   //  chr.operations[_key].padRight(7, '  $_inS');     //= 'Changed:  $_inS';
-  chr.operations[_key] = chr.operations[_key] + '  $_inS';
+  // howTo NULL + can not be;  receiver can be NULL
+  //  OK  chr.operations[_key] = chr.operations[_key]! + '  $_inS';
+  chr.operations[_key] = chr.operations[_key]! + '  $_inS';
   //  should do _act
-}
+}     //     -----     handler
 
 ///  Function named like this, should act with highest priority.
 void topGrant(BlanketChore chr, var _act) {
@@ -671,7 +719,7 @@ void choreToEffortUserJson(String caller) {
 ///  Should show use-case of all Chore inner and outer methods.
 StringBuffer renderChore() {
   print('-->-->--  renderChore  :roll:box:  -->-->--');
-  StringBuffer _retBuf;
+  StringBuffer _retBuf = new StringBuffer();
 //TODO  temporary variables for to get this to work
   String _actS = 'Action String';
   var _roller;

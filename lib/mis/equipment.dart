@@ -32,7 +32,8 @@ class Equipment {
   ///
   void init(String caller) {
     print('-->-->   **  resource-init by:  $caller   ****');
-    if (resL.length == 0) {
+    //  line 35 col 9: Use isEmpty instead of length
+    if (resL.isEmpty) {
       resL.addAll([area, car, law, machine, money, office, people, time]);
     }
   }

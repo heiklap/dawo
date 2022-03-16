@@ -102,14 +102,19 @@ class Treaty {
   /// Object that has placardM, say, and clause.
   //  Two Missions act here:
   //  1. Mission that is set in constructor, and is "master" here.
-  Mission insider;
+  //  hklTry use  constructor: Mission(this.name, this.motto);
+  Mission insider = Mission(':insider:treaty:Mission:', ':ITM:Motto:');
   //  Mission misInsideClass;
   /// 2. Mission, that is set in "week-day-bundle" functions, and acts like a guest.
-  Mission outsider;
+  Mission outsider = Mission(':outsider:treaty:Mission:', ':OTM:Motto:');
 
   //  Usage:  no.   Missions default chores, that they are using here (PLAN).
-  BlanketChore inChore;
-  BlanketChore outChore;
+  //  constructor:   BlanketChore(this.name, this.master, this.info)
+  BlanketChore inChore = new BlanketChore('*nameBChore', '*masterBChore* ', '*infoBChore*');
+
+  ///  hkltry error  Constructor has 3fields
+  ///   BlanketChore(this.name, this.master, this.info)
+  BlanketChore outChore = BlanketChore('*name outChore* ', '*master outChore* ', '* infoOutChore*');
 
   ///  Present objects info, used in function parameter calls.
   Map<String, String> placardM = {
@@ -192,17 +197,21 @@ class Treaty {
     String _word = '';
     //  Find if objects have same interests in say-map
     for (var x in insider.say.keys) {
-      List<String> wordL = outsider.say[x].split(' ');
+      //  howTo NULL data toList from Map
+      //  hklTry:
+      List<String> wordL = outsider.say[x]!.split(' ');
+
       print(':outsider:wordL:  $wordL    ');
       //  leave first word out.  like: packDawo, Dartlang, aso
       for (var _wC = 1; _wC < wordL.length; _wC++) {
-        if (x.indexOf(_word) > -1) {
+        //  line 199 col 13: Use contains instead of indexOf
+        if (x.contains(_word)) {
           _word = wordL[_wC];
           String _ni = insider.name.substring(0, 3);
           String _no = outsider.name.substring(0, 3);
           String _nb = ('$_ni:$_no');
 
-          String _sb = bilateralM[x];
+          String _sb = bilateralM[x].toString();
 
           ///  Update map value with new word
           bilateralM[x] = ('$_sb$_nb  ');
@@ -289,29 +298,29 @@ class Treaty {
 
     //  hklTry:
 
-    String _s2 = insider.say['lang'];
+    String _s2 = insider.say['lang'].toString();
     boxServe.aBox(2, 32, 1, 68, [':mis:lang:   $_s2']);
-    String _s3 = insider.say['buy'];
+    String _s3 = insider.say['buy'].toString();
     boxServe.aBox(3, 32, 1, 68, [':mis.buy:   $_s3']);
     String _s4 = insider.clause;
     boxServe.aBox(4, 32, 1, 68, [':clause:   $_s4']);
 
     boxServe.aHeader(6, 78, ' :out: / :in: common names ');
-
+    //  howTo NULL OK    .toString()
     String _o5 = outsider.name;
     boxServe.aHeader(6, 4, ' :out:name:   $_o5');
-    String _o6 = outsider.say['lang'];
+    String _o6 = outsider.say['lang'].toString();
     boxServe.aBox(7, 4, 1, 68, [':lang:   $_o6']);
-    String _o7 = outsider.say['sell'];
+    String _o7 = outsider.say['sell'].toString();
     boxServe.aBox(8, 4, 1, 68, [':sell:   $_o7']);
-    String _o8 = outsider.say['buy'];
+    String _o8 = outsider.say['buy'].toString();
     boxServe.aBox(9, 4, 1, 68, [':buy:   $_o8']);
 
-    String _o9 = outsider.say['area'];
+    String _o9 = outsider.say['area'].toString();
     boxServe.aBox(10, 4, 1, 68, [':area:   $_o9']);
-    String _o10 = outsider.say['product'];
+    String _o10 = outsider.say['product'].toString();
     boxServe.aBox(11, 4, 1, 68, [':prod:   $_o10']);
-    String _o11 = outsider.say['purpose'];
+    String _o11 = outsider.say['purpose'].toString();
     boxServe.aBox(12, 4, 1, 68, [':purp:   $_o11']);
 
     boxServe.aBox(7, 70, 8, 32, bilateralL);

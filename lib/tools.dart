@@ -29,7 +29,7 @@ class Tools {
   ///  QUEST: can this be done in one row?
   ///  Return iterable List from StringBuffer.
   List<String> bufToList(StringBuffer buf) {
-    List<String> _l = new List();
+    List<String> _l = [];
     String _s = buf.toString();
     _l.addAll(_s.split('\n'));
     return _l;
@@ -109,19 +109,27 @@ class Tools {
     List<List<int>> _retL = [];
     for (var x = 0; x < _inlM.length; x++) {
       for (var y in _inlM[x].keys) {
-        int _pos1 = _inlM[x][y].indexOf(_inS1); //  like 'V:'
-        int _pos2 = _inlM[x][y].indexOf(_inS2); //  like 'E:'
+        //  howTo NULL indexOf
+        int _pos1 = _inlM[x][y]!.indexOf(_inS1); //  like 'V:'
+        int _pos2 = _inlM[x][y]!.indexOf(_inS2); //  like 'E:'
 
         int val_1 = -1;
         int val_2 = -1;
         //  check if we got 2 numbers and act for it
-        String check1 = _inlM[x][y].substring(_pos1 + 2, _pos1 + 3);
+        //  howTo NULL  hklTry  new String
+        //  String check = _inlM[x][y].substring(_pos1 + 2, _pos1 + 3);
+        //  2 String fields for check
+        String check1 = '';   //  make String instance
+        //  OK with !
+        check1 = _inlM[x][y]!.substring(_pos1 + 2, _pos1 + 3);
+
         if (tl.isNumber(check1)) {
-          val_1 = int.parse(_inlM[x][y].substring(_pos1 + 2, _pos1 + 3));
+          val_1 = int.parse(_inlM[x][y]!.substring(_pos1 + 2, _pos1 + 3));
         }
-        String check2 = _inlM[x][y].substring(_pos2 + 2, _pos2 + 3);
+        //  hklTry: !
+        String check2 = _inlM[x][y]!.substring(_pos2 + 2, _pos2 + 3);
         if (tl.isNumber(check2)) {
-          val_2 = int.parse(_inlM[x][y].substring(_pos2 + 2, _pos2 + 3));
+          val_2 = int.parse(_inlM[x][y]!.substring(_pos2 + 2, _pos2 + 3));
         }
         _retL.add([val_1, val_2]); //  like: 5, 4  /  -1, 3
       } //  --  for (var y in _inlM[x].keys)
@@ -131,7 +139,7 @@ class Tools {
 
   ///  Return List of items, where #String exist. from dawo-tools.
   List<String> StrInList(List<String> _l, String _s) {
-    List<String> _queryL = new List();
+    List<String> _queryL = [];
     for (var x = 0; x < _l.length; x++) {
       //  using now #contains instead of: if (_l[x].indexOf(_s) > -1)
       if (_l[x].contains(_s)) {
@@ -217,8 +225,8 @@ class Tools {
     if (_w > 2) padListRL(boxL, _w, ' ', ' ');
     int _take = min(boxL.length, _asked); //  All or asked amount.
     //  Take to var, how many items was left out.
-
-    int leftOver = boxL.length - _asked; // count not printed items
+    //  Strict type, use:  toInt
+    int leftOver = (boxL.length - _asked).toInt(); // count not printed items
     if (leftOver > 0) {
       String _loS = leftOver.toString();
       String _loS2 =
@@ -266,6 +274,24 @@ class Tools {
     return b.toString();
   }
 
+ //  howTo Map increment
+//  https://stackoverflow.com/questions/56943363/dart-map-increment-the-value-of-a-key
+//** flutter:  extension CustomUpdation on Map<dynamic, int> {
+//** flutter:    int increment(dynamic key) {
+//** flutter:      return update(key, (value) => ++value, ifAbsent: () => 1);
+//** flutter:    }
+//** flutter:  }
+
+  /*
+void main() {
+  final map = <String, int>{};
+  map.increment("foo");
+  map.increment("bar");
+  map.increment("foo");
+  print(map); // {foo: 2, bar: 1}
+}
+ */
+
   ///  Return list<String> from map<String, String>.
   List<String> mapToFineList(Map<String, String> thisMap, int _kl, _vl) {
     //  parameters int _kl, _vl for value and key lengths in "table"
@@ -298,6 +324,7 @@ class Tools {
         ); //  --  forEach k v
     return _l;
   } //  --  mapToFineList
+
 
   /*
 
@@ -337,6 +364,17 @@ class Tools {
     return _l;
   }
 
+  ///  Return list<String> from map<String, Int>.
+  Map<String, String> map_SI_toMapSS(Map<String, int> thisMap) {
+    Map<String, String> _rM = {};
+    thisMap.forEach((k, v) {
+     //  _rM.putIfAbsent(k, () => null);
+      ///  :hkl:fix:  4.9.2020
+     _rM.putIfAbsent(k, () => v.toString());
+    });
+    return _rM;
+  }
+
   ///  TODO Trying to handle String, Mission with this for connector
   ///  Is #Object enough?
   ///  Return list<String> from map<String, Bool>.
@@ -360,10 +398,18 @@ class Tools {
     List<String> nameL = _map.keys.toList();
     for (var x = 0; x < _length; x++) {
       String name = nameL[x];
-      int _l = _map[name].length;
+      //  howTo NULL int num :  int _l   OR: ready value  int _l = 0;
+      //  NO-toInt   int _l = _map[name].length.toInt();
+      int _l = 0;
+      //  howTo NULL Map-field-length    noComprendo
+      //  OK with  !  and  toInt()
+      _l = _map[name]!.length.toInt();
+
+
       print('\n mapName: $name -------------- length: $_l -----------------');
       //  TODO  Return map in sort-order: value.
-      _map[name].forEach((k, v) => print('$k, $v'));
+      //  howTo NULL Map  ! OK
+      _map[name]!.forEach((k, v) => print('$k, $v'));
     }
   }
 
@@ -374,10 +420,12 @@ class Tools {
     List<String> nameL = _map.keys.toList();
     for (var x = 0; x < _length; x++) {
       String name = nameL[x];
-      int _l = _map[name].length;
+      //  howTo NULL int
+      int _l = _map[name]!.length;
       print('\n mapName: $name -------------------------------');
       for (var z = 0; z < _l; z++) {
-        print(_map[name][z]);
+        //  howTo NULL  Map-index  OK
+        print(_map[name]![z]);
       }
       print(_map[x]);
     }
@@ -490,17 +538,23 @@ class Tools {
     do {} while (new DateTime.now().compareTo(goalTime) < 0);
   }
 
-  ///  Sleep method with time and optional info.
-  void sleepMS(int waitingTime, [bool info]) {
-//var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
+  ///  Sleep method with time and optional infoB boolean for info-printing.
+  ///  the parameter infoB can't cant have a value 'null' because of its tye,
+  ///  but  implicit default value = null
+  ///  try adding explicit non-null default value or the 'required' modifier
+  ///  OK Done
+  ///  void sleepMS(int waitingTime, [bool infoB]) {
+  ///  callers:  No usages found
+  void sleepMS(int waitingTime, [bool infoB = false]) {
+  //  var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
     var goalTime =
         new DateTime.now().add(new Duration(milliseconds: waitingTime));
-    bool _info = info;
-    if (_info) (print('Waiting for  $waitingTime'));
+    bool _infoB = infoB;
+    if (_infoB) (print('Waiting for  $waitingTime'));
     do {
       //  var timeNow = new DateTime.now();
     } while (new DateTime.now().compareTo(goalTime) < 0);
-    if (_info) (print('waiting time over over'));
+    if (_infoB) (print('waiting time over over'));
   }
 
 //  Some sample maps for #teamNext use.

@@ -86,7 +86,12 @@ class Bind {
     //  TODO  should both bind and connector have memberM ?
     bindMembM.putIfAbsent(bindNameS, () => comS);
 
-    bindingM['all'].putIfAbsent(senderS, () => receiverS);
+    //  howTo NULL Map putIfAbsent
+    //  The property 'length' can't be unconditionally accessed because the receiver can be 'null'.
+    //  Try making the access conditional (using '?.') or adding a null check to the target ('!').
+    // hklTry: NULL OK     bindingM['all'].putIfAbsent(senderS, () => receiverS);
+    ///  The argument type 'Map<dynamic, dynamic>' can't be assigned to the parameter type 'Map<String, String>'
+    bindingM['all']?.putIfAbsent(senderS, () => receiverS);
     // Map<String, Map<String, String>>
 
     print(rowReport());

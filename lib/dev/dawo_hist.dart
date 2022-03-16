@@ -14,15 +14,15 @@ part of dawo_dev.dart;
 class DawoHist implements BaseStruct {
   String name = 'dawoHist';
   String info = 'Historical and old stuff of dawo.';
-  Map<String, String> say;
+  Map<String, String> say = {};
   String motto = 'Keeping this stuff out of dawoApp';
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
-  String clause; //  Combination of #LANG words in sentence.
+  String clause = ''; //  Combination of #LANG words in sentence.
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal; //  like:  ":DAWO:HIST:";
+  String seal = ''; //  like:  ":DAWO:HIST:";
   String emblem = ':dawoHist:'; //  or this emblem.
-  String indent; // like:  "      ";  3-5-7 empty marks or something visible.
+  String indent = ''; // like:  "      ";  3-5-7 empty marks or something visible.
   String master = ':dawoApp:'; //  Object that owns this.
 
   bool _pB = true; //  yes / no   ..  printing now.
@@ -37,7 +37,7 @@ class DawoHist implements BaseStruct {
     'done': false,
   };
 
-  String thisVersion; //  users announce their version of dawo
+  String thisVersion = ''; //  users announce their version of dawo
   String latestChange = '23.3.2017. th.12.15';
 
   /// Map to hold development status of this app / version.

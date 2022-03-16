@@ -24,12 +24,12 @@ class Affair {
   //  Alpha is known here.  beta-PlacardM is known also.
 
   String actor = ':No usage yet:'; //  Too important to be a String.
-  String sender;
-  String receiver;
+  String sender = '';
+  String receiver = '';
 
   /// Question:  Can it be a function?
-  String cmd;
-  String msg;
+  String cmd = '';
+  String msg = '';
 
   var actorState;
 
@@ -41,7 +41,7 @@ class Affair {
 
   ///  Other alternatives to main #actor.
   //
-  //
+  //  NOTE  First record:  'FirstActor'
   Map<String, Map<String, String>> placardMM = {
     'FirstActor': {
       'actor': 'first',
@@ -77,15 +77,18 @@ class Affair {
   var decisionChain;
   var callChain; //  Give objects ability to know route, that called it.
 
-  ///
+  ///  Usage   not used
+  ///  NOTE:  it is  MM
+  ///  This is called:  placardMM['FirstActor']
   void init(Map<String, String> _placardM) {
     print(' ***************  affair class-init  *********');
     _placardM.forEach((k, v) => print('$k, $v'));
-    actor = _placardM['actor'];
-    sender = _placardM['sender'];
-    receiver = _placardM['receiver'];
-    cmd = _placardM['command'];
-    msg = _placardM['msg'];
+    //  howTo NULL  Map  OK  .toString();
+    actor = _placardM['actor'].toString();
+    sender = _placardM['sender'].toString();
+    receiver = _placardM['receiver'].toString();
+    cmd = _placardM['command'].toString();
+    msg = _placardM['msg'].toString();
   }
 
   var operation; //  Collecting grate ideas.

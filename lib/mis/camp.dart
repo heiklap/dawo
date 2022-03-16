@@ -29,7 +29,7 @@ class Camp {}
 class Scout {
   String name = 'Scout';
   String motto = 'Join all together in camp and scout';
-  String clause; //  Combination of #LANG words in sentence.
+  String clause = ''; //  Combination of #LANG words in sentence.
 
   /// Language, that scout uses when connecting other objects (in con) .
   Map<String, String> say = {
@@ -116,7 +116,10 @@ class Scout {
       '1-2 ': '-1:run  2:print-cf--',
       '3:  ': '- print:courier:Func.runtimeType-',
     };
-    List<String> courierL = boxServe.infoBox(courierM, 8, 35, 29);
+    //  hklTry:
+    //  List<String> courierL = boxServe.infoBox(courierM, 8, 35, 29);
+    List<String> courierL = [];
+    courierL.addAll(boxServe.infoBox(courierM, 8, 35, 29));
     courierL.forEach(print);
 
     ///  #LEARN:  courier function output:

@@ -78,8 +78,14 @@ void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   String _flowIS = 'opC:$flowIS';
   String header = 'fs:'; //  $pr:  If want true / false.
   String text = '$actor$header$_flowIS $msg ';
+
+  //  Try checking that value is not NULL, before using it in a condition
   //  && glb.st['flow']  /   Shortens output from 24 to 22 screens.
-  if (pr && glb.prSt['flow']) print(text); // When needed  :flowServe:test:
+  //  HowTo  NULL Condition  OK
+  //  howTo NULL  error: a nullable expression can't be used as a condition
+  //  if (pr && glb.prSt['flow']) print(text); // When needed  :flowServe:test:
+  if (pr && glb.prSt['flow']!) print(text); // When needed  :flowServe:test:
+
   // DONE:  Now _buf comes from caller in parameters.
   buf.writeln('$text');
   //  buf.writeln('$actor $_flowIS $msg');
@@ -92,7 +98,7 @@ void flowFind(String caller, String _fs, int len) {
   print('lllllllllllllllllllllllll  flowList  c: $caller  llllllllllll');
   print(' Seeking: $_fs');
   int foundC = 0;
-  List<String> flowList = new List();
+  List<String> flowList = [];
 
   ///  Find all "flow-process' Strings
   int bufC = 0;
@@ -203,7 +209,7 @@ void getOperationInfoOnParameters() {
 StringBuffer renderBeta(String caller) {
   print('\n ================= render beta C: $caller ======================');
   _flowC(':beta:renderBeta:', _betaPB);
-  StringBuffer _retBuf;
+  StringBuffer _retBuf = StringBuffer();
 
   String assignBetaRender() {
     print('   **  betaRender assignBetaRender > :corporate:process:    ***');

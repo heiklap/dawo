@@ -103,8 +103,9 @@ class Corporate {
   ///  Call:    _retBuf.write(
   //  corporate.process(':Ch-Op:', chOpClass, placardM, assignComProChore));
   ///  Shaping everybody-to-use functionality for..
+  ///  Map explicitly make it <String, String>
   StringBuffer process(
-      String by, Affair _affairOp, Map placardM, Function _assigned) {
+      String by, Affair _affairOp, Map<String, String> placardM, Function _assigned) {
     ///  NOTE  callers placardM is here now.
     print(':corporate: process begins:');
     String infoS1 =
@@ -147,6 +148,10 @@ class Corporate {
     _li3.add('  3. part done in :corporate:process. ');
 
     ///  Mediating placardM to affairOp
+    ///  howTo NULL Map =  change parameter to Map<String, String>
+    ///  The argument type 'Map<dynamic, dynamic>' can't be assigned to
+    ///  the parameter type 'Map<String, String>'
+    ///  DONE;  map explicitly: 'Map<String, String>'
     _affairOp.init(placardM);
 
     List<String> _li4 = [];

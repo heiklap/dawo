@@ -26,7 +26,7 @@ void testSuperStream() {
   print(':stream: calling');
 
   var hklTryListen = "hklTryListen";
-  presentSuperStream(letterList, hklTryListen);
+  lSS.presentSuperStream(lSS.letterList, hklTryListen);
   print(':stream: call done');
 }
 
@@ -38,25 +38,25 @@ void testAllStreams() {
   //TODO  what is StreamListener??
   //  just any value
   var hklTryListen = "hklTryListen";
-  presentSuperStream(letterList, hklTryListen);
+  lSS.presentSuperStream(lSS.letterList, hklTryListen);
 
   /// hklTry:
-  presentHyperStream(stringList, 'hklListening:', 'hkl-receiver');
+  lSS.presentHyperStream(lSS.stringList, 'hklListening:', 'hkl-receiver');
 
   dt.line('***  Stream: presentStreamBase  $thisModule');
 
   ///  OK
-  presentStreamBase();
+  lSS.presentStreamBase();
 
   dt.line('***  Stream: presentStreamExmpl  $thisModule');
 
   ///
-  presentStreamExmpl();
+  lSS.presentStreamExmpl();
 
   dt.line('***  Stream: presentBroadcastStream  $thisModule');
 
   ///
-  presentBroadcastStream();
+  lSS.presentBroadcastStream();
 
   dt.line('***  Stream: presentStreamTransform  $thisModule');
 
@@ -77,17 +77,17 @@ void testAllStreams() {
   dt.line('***  Stream: presentSingleValueStream  $thisModule');
 
   ///
-  presentSingleValueStream();
+  lSS.presentSingleValueStream();
 
   dt.line('***  Stream: presentUnsubscribeFromStream  $thisModule');
 
   ///
-  presentUnsubscribeFromStream();
+  lSS.presentUnsubscribeFromStream();
 
   dt.line('***  Stream: presentGenericStream  $thisModule');
 
   ///
-  presentGenericStream();
+  lSS.presentGenericStream();
 
   print('   * * *    Streams are all in going      * * * ');
 
