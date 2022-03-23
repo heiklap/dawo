@@ -149,7 +149,7 @@ class LearnDartlang {
         'Usually, subtyping is written using the "<:" operator: Apple <: Fruit.',
     'Haters':
         'Haters are gonna hate. Their fortress do not survive without hate.'
-        'Not knowledge on bet, but money.',
+            'Not knowledge on bet, but money.',
     'http': 'With http you always have to import http/browser_client.dart.',
     'i': ' ',
     'Instance': ' ',
@@ -160,7 +160,7 @@ class LearnDartlang {
     'Match': ' ',
     'Method Overloading':
         'method overloading. I think this is also considered for the future.'
-        'Was not possible in Dart 1.x because of optional types',
+            'Was not possible in Dart 1.x because of optional types',
     'Mirror':
         'Mirror is good if you are 1% of Dart users and do not mind of AOT.',
     'null':

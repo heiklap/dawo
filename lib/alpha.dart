@@ -196,7 +196,8 @@ abstract class BaseStruct {
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   String seal = ''; //  like:  ":DAWO-APP:";
   String emblem = ''; //  or this emblem.
-  String indent = ''; // like:  "      ";  3-5-7 empty marks or something visible.
+  String indent =
+      ''; // like:  "      ";  3-5-7 empty marks or something visible.
   String master = ''; //  Object that owns this.
 
   StringBuffer buf = new StringBuffer();

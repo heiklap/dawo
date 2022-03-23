@@ -110,11 +110,13 @@ class Treaty {
 
   //  Usage:  no.   Missions default chores, that they are using here (PLAN).
   //  constructor:   BlanketChore(this.name, this.master, this.info)
-  BlanketChore inChore = new BlanketChore('*nameBChore', '*masterBChore* ', '*infoBChore*');
+  BlanketChore inChore =
+      new BlanketChore('*nameBChore', '*masterBChore* ', '*infoBChore*');
 
   ///  hkltry error  Constructor has 3fields
   ///   BlanketChore(this.name, this.master, this.info)
-  BlanketChore outChore = BlanketChore('*name outChore* ', '*master outChore* ', '* infoOutChore*');
+  BlanketChore outChore =
+      BlanketChore('*name outChore* ', '*master outChore* ', '* infoOutChore*');
 
   ///  Present objects info, used in function parameter calls.
   Map<String, String> placardM = {

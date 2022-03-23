@@ -164,7 +164,7 @@ class BoxServe {
     //  No margin, if optional parameter not set.
     //  The operand can't be NULL so the condition is always true
 
-      indent = ''.padRight(margin, ' ');
+    indent = ''.padRight(margin, ' ');
 
     List<String> infoL2 = [];
     int _length = infoL.length;
@@ -195,7 +195,7 @@ class BoxServe {
   //  howTo NULL  int give default value
   //  NO  void aBox([int _r = 0], [int  _c = 0], [_items = 0], _w, List<String> _l) {
   //  NO  void aBox([int _r = 0, int  _c = 0, _items = 0]  _w, List<String> _l) {
-    void aBox(int _r, int _c, int _items, int _w, List<String> _l) {
+  void aBox(int _r, int _c, int _items, int _w, List<String> _l) {
     //  If not know list length / wanted items and width, try 100. lol
     //  TODO  Truncate items and length, if List outOfMatrix borders
     int _overWidth = 0;
@@ -241,7 +241,6 @@ class BoxServe {
       //  hklTry:   List<String> verticalWarningL = new List(_items);
       List<String> verticalWarningL = new List.filled(_items, '');
 
-
       verticalWarningL.fillRange(0, _items, _overWidthS);
       //  call: void vertWarning(int _x, _y, count, String _s)
       print('vert warning::  ');
@@ -249,7 +248,7 @@ class BoxServe {
       print('_overLengthS::  $_overLengthS ');
       print('horizWarnig::  ');
 
-      horizWarning(   (_r + _items - 1).toInt()   , _c, _w, _overLengthS);
+      horizWarning((_r + _items - 1).toInt(), _c, _w, _overLengthS);
       print('error done::');
       //  lay horizontal #VARNING line
     } //  -----  error
@@ -268,7 +267,7 @@ class BoxServe {
   //  Set vertical line to screen matrix
   void vertLine(int _x, _y, count) {
     String _newS;
-    int toX = (_x + count).toInt();  //  howTo   NULL check  YES
+    int toX = (_x + count).toInt(); //  howTo   NULL check  YES
     for (var x = _x; x < toX; x++) {
       _newS = tl.changeLetter(_matrix[x], _y, '|');
       _matrix[x] = _newS;

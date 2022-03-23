@@ -119,7 +119,7 @@ class Tools {
         //  howTo NULL  hklTry  new String
         //  String check = _inlM[x][y].substring(_pos1 + 2, _pos1 + 3);
         //  2 String fields for check
-        String check1 = '';   //  make String instance
+        String check1 = ''; //  make String instance
         //  OK with !
         check1 = _inlM[x][y]!.substring(_pos1 + 2, _pos1 + 3);
 
@@ -274,7 +274,7 @@ class Tools {
     return b.toString();
   }
 
- //  howTo Map increment
+  //  howTo Map increment
 //  https://stackoverflow.com/questions/56943363/dart-map-increment-the-value-of-a-key
 //** flutter:  extension CustomUpdation on Map<dynamic, int> {
 //** flutter:    int increment(dynamic key) {
@@ -325,7 +325,6 @@ void main() {
     return _l;
   } //  --  mapToFineList
 
-
   /*
 
 
@@ -368,9 +367,9 @@ void main() {
   Map<String, String> map_SI_toMapSS(Map<String, int> thisMap) {
     Map<String, String> _rM = {};
     thisMap.forEach((k, v) {
-     //  _rM.putIfAbsent(k, () => null);
+      //  _rM.putIfAbsent(k, () => null);
       ///  :hkl:fix:  4.9.2020
-     _rM.putIfAbsent(k, () => v.toString());
+      _rM.putIfAbsent(k, () => v.toString());
     });
     return _rM;
   }
@@ -404,7 +403,6 @@ void main() {
       //  howTo NULL Map-field-length    noComprendo
       //  OK with  !  and  toInt()
       _l = _map[name]!.length.toInt();
-
 
       print('\n mapName: $name -------------- length: $_l -----------------');
       //  TODO  Return map in sort-order: value.
@@ -546,7 +544,7 @@ void main() {
   ///  void sleepMS(int waitingTime, [bool infoB]) {
   ///  callers:  No usages found
   void sleepMS(int waitingTime, [bool infoB = false]) {
-  //  var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
+    //  var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
     var goalTime =
         new DateTime.now().add(new Duration(milliseconds: waitingTime));
     bool _infoB = infoB;

@@ -104,8 +104,8 @@ class Corporate {
   //  corporate.process(':Ch-Op:', chOpClass, placardM, assignComProChore));
   ///  Shaping everybody-to-use functionality for..
   ///  Map explicitly make it <String, String>
-  StringBuffer process(
-      String by, Affair _affairOp, Map<String, String> placardM, Function _assigned) {
+  StringBuffer process(String by, Affair _affairOp,
+      Map<String, String> placardM, Function _assigned) {
     ///  NOTE  callers placardM is here now.
     print(':corporate: process begins:');
     String infoS1 =

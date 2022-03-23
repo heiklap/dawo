@@ -50,7 +50,7 @@ class LearnStreamSync {
 //  dlData.add(7);
 //  dlStream.
     print('***  nothing to see here  ***');
-  }     //     -----     addToStream
+  } //     -----     addToStream
 
   ///  PLAN:  some functions with long names..
   void presentStreamCreate() {}
@@ -71,7 +71,7 @@ class LearnStreamSync {
       print("Super Received: $value"); // onData handler
       print('---           OK           --- \n');
     });
-  }     //     -----     presentSuperStream
+  } //     -----     presentSuperStream
 
   ///  String?  streamReceiver  "hyperStream"  makes it better
   void presentHyperStream(var sData, var sListen, String sReceiver) {
@@ -87,7 +87,7 @@ class LearnStreamSync {
       print('---            OK          --- \n ');
     });
     //Study it here:    stream.
-  }     //     -----     presentHyperStream
+  } //     -----     presentHyperStream
 
   ///    basic stream example...
   void presentStreamBase() {
@@ -103,7 +103,7 @@ class LearnStreamSync {
     });
     //NOTE: using name: stream, gives you too wide amount of values- Study this:
     // _psbStream.   contrary to using:   stream
-  }     //     -----     presentStreamBase
+  } //     -----     presentStreamBase
 
 //  stream = new Stream.fromIterable([1,2,3,4,5]);
 //  stream.first.then((value) => print("stream.first: $value"));  // 1
@@ -123,7 +123,7 @@ class LearnStreamSync {
           (value) => print("SUCCESS_4_:: stream.isEmpty: $value")) // false
       ..length
           .then((value) => print("SUCCESS_5_:: stream.length: $value")); // 5
-  }     //     -----     presentStreamExmpl
+  } //     -----     presentStreamExmpl
 
   ///    samples of broadcast stream
   void presentBroadcastStream() {
@@ -157,7 +157,7 @@ class LearnStreamSync {
         .listen((value) => print("pBS:: skipWhile: $value")); // skipWhile: 3
     // skipWhile: 4
     // skipWhile: 5
-  }     //     -----     presentBroadcastStream
+  } //     -----     presentBroadcastStream
 
   ///   howToNote:   how to add to stream.. with streamController !!
   void presentStreamTransform() {
@@ -183,6 +183,7 @@ class LearnStreamSync {
 
     //  Just use it: watch properties.
     transformer.runtimeType;
+
     /// transform the stream and listen to its output
     ///  TODO  check Null update NNBD for new functioning code year 2022
     ///  TODO  Temporarily away
@@ -190,7 +191,7 @@ class LearnStreamSync {
     //** AWAY       //  howTo Stream transformer
     //** AWAY       .transform(transformer)
     //** AWAY       .listen((value) => print("listen: $value"));
-  }     //     -----     presentStreamTransform
+  } //     -----     presentStreamTransform
 
 //TODO  bin  note   no io-operations allowed in HTML
   void presentFileStream() {
@@ -203,7 +204,7 @@ class LearnStreamSync {
           onDone: () => print("Finished reading data"));
  */
     print('***   nothing hyet here  *** \n');
-  }     //     -----     presentFileStream
+  } //     -----     presentFileStream
 
   ///  ..
   void presentStreamValidate() {
@@ -220,7 +221,7 @@ class LearnStreamSync {
 
     broadcastStream.contains(4).then(
         (result) => print("Contains 4?: $result  \n  --  OK  --  \n")); // true
-  }     //     -----     presentStreamValidate
+  } //     -----     presentStreamValidate
 
   ///
   void presentSingleValueStream() {
@@ -234,7 +235,7 @@ class LearnStreamSync {
         .then((value) =>
             print("\n  single value: $value  \n ---    OK  ----  \n "));
     // outputs: single value: 1
-  }     //     -----     presentSingleValueStream
+  } //     -----     presentSingleValueStream
 
   ///   more stream methods
   void presentUnsubscribeFromStream() {
@@ -248,7 +249,7 @@ class LearnStreamSync {
     });
     subscription.onError((err) => print("error: $err"));
     subscription.onDone(() => print("done"));
-  }     //     -----     presentUnsubscribeFromStream
+  } //     -----     presentUnsubscribeFromStream
 
   ///  ..
   void presentGenericStream() {
@@ -259,7 +260,7 @@ class LearnStreamSync {
       // value must be an int
       print("listen: $value  \n  ---   OK  --- \n");
     });
-  }     //     -----     presentGenericStream
+  } //     -----     presentGenericStream
 
   ///  TODO  HTML  not allowed in VM
   ///

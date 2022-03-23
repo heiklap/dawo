@@ -121,7 +121,7 @@ List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
       //  howTo NULL int
       //  NO   int iVPos! = _inlM[x][y].indexOf('V:');
       int iVPos = 0;
-      iVPos =_inlM[x][y]!.indexOf('V:');
+      iVPos = _inlM[x][y]!.indexOf('V:');
 
       int iEPos = _inlM[x][y]!.indexOf('E:');
 

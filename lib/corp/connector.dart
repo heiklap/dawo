@@ -343,12 +343,12 @@ class Connector extends BaseStruct {
     //  howTo NULL String Map
     //  hklTry: do no null String
     String actorS = '';
-    actorS = plcM['actor'].toString();  //  hklTry: cast to String
+    actorS = plcM['actor'].toString(); //  hklTry: cast to String
 
-    String senderS = plcM['sender'].toString();  //  hklTry: cast to String
-    String receiverS = plcM['receiver'].toString();  //  hklTry: cast to String
-    String comS = plcM['command'].toString();  //  hklTry: cast to String
-    String msgS = plcM['msg'].toString();  //  hklTry: cast to String
+    String senderS = plcM['sender'].toString(); //  hklTry: cast to String
+    String receiverS = plcM['receiver'].toString(); //  hklTry: cast to String
+    String comS = plcM['command'].toString(); //  hklTry: cast to String
+    String msgS = plcM['msg'].toString(); //  hklTry: cast to String
     String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
     _flowC(':CN:  $_S', _pB);
 

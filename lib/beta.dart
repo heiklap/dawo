@@ -31,7 +31,7 @@ import 'src/glb.dart'; //  for glb.. & printControl.
 import 'alpha.dart';
 
 //  TODO  Final readiness.  this is not
-final num betaReadiness = 2; //  readiness for  version  0.0.1
+final num betaReadiness = 2; //  readiness for  version  0.2.0
 int flowI = 0; // flow-counter.
 bool _betaPB = true; //  control for printing.
 

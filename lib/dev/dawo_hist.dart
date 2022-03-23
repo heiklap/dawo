@@ -22,7 +22,8 @@ class DawoHist implements BaseStruct {
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   String seal = ''; //  like:  ":DAWO:HIST:";
   String emblem = ':dawoHist:'; //  or this emblem.
-  String indent = ''; // like:  "      ";  3-5-7 empty marks or something visible.
+  String indent =
+      ''; // like:  "      ";  3-5-7 empty marks or something visible.
   String master = ':dawoApp:'; //  Object that owns this.
 
   bool _pB = true; //  yes / no   ..  printing now.
@@ -46,7 +47,8 @@ class DawoHist implements BaseStruct {
     'devSituation': 'Ready to Publish',
 
     ///  Find, where in my test-folders is THIS  version used?
-    'version': '0.0.3',
+    'version': '0.2.0',
+    //  'version': '0.0.3',
     'published': 'Yes, Pub',
 
     ///  next-version-info might be useful for my different tests and devNotes

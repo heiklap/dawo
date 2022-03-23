@@ -123,7 +123,8 @@ class Mission {
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
   String _emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
-  String _indent = ''; // like:  "      ";  3-5-7 empty marks or something visible.
+  String _indent =
+      ''; // like:  "      ";  3-5-7 empty marks or something visible.
 
   ///  Reference to outPut-buffer, no high-value: used only in _flowC(
   StringBuffer _buf = out.outTMid; //  reference to used output StringBuffer.
@@ -494,7 +495,6 @@ class Mission {
 
     //var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
     List<String> _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
-
 
     /* TODO  howTo mapToList
     print('----------say Map in mission   ----');
