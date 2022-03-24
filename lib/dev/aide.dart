@@ -2,10 +2,10 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  aide,  helper class is a developer tool.
 ///  Primary functionality:  Help in developing.
-/// * dawo version:  0.0.8+.  -  13.3.2019
+/// * dawo version:   0.3.0.  23.3.2022.
 /// * devState : 10%    in GitHub : yes
 /// * variables tf & rf seems to bee acronyms for: testFunction & runFunction
-// hist>  9.1.2018  Separated from dawoApp.
+///  hist>  9.1.2018  Separated from dawoApp.
 //
 
 //  TODO  handle tf and rf variables:  10 x
@@ -35,8 +35,8 @@ class Aide {
 //  TODO  teamDev: PLAN:  make all 6 tests use same name with
 //         parameters: Test, Msg, Line, Begin, End, Return
 
-  /// TODO  teamDev:   Should this be named to devTestInfo ??  devInfo ??
-  /// report testers info
+  ///  TODO  teamDev:   Should this be named to devTestInfo ??  devInfo ??
+  ///  report testers info
   num devTest(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
       DateTime now = new DateTime.now();
@@ -47,15 +47,15 @@ class Aide {
       print('$_s30  dev test ended    Time: $now ');
       print('');
 
-//  TODO  aSync stream     devTestStream.
+      //  TODO  aSync stream     devTestStream.
       //  NOTE: Dubious to use dev-class here?
       dev.devTestCount++;
     }
     return dev.devTestCount;
   }
 
-  /// NOTE  team-team   developers can send messages to each others in test printings
-  /// Simple message to track run and development
+  ///  NOTE  team-team   developers can send messages to each others in test printings
+  ///  Simple message to track run and development
   devMsg(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
       DateTime now = new DateTime.now();
@@ -74,8 +74,8 @@ class Aide {
     String _s = rf;
     var _sType = rf.runtimeType;
 
-//TODO  Function  getter  There is no such getter 'runTimeType' in 'Function'
-//  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
+  //  TODO  Function  getter  There is no such getter 'runTimeType' in 'Function'
+  //  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
 
     print('b  b  b  b  b  b  b  b  b  b  b  b  b     Beginning:   $_s');
     rf();
@@ -84,7 +84,7 @@ class Aide {
     print('');
   }
 
-//  TODO  teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
+  //  TODO  teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
   ///  Dynamic-parameter-function, that is used to run other function in tests.
   ///  It is  called:     tfDyn(testSomething);

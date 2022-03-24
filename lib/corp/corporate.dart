@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Corporate,  enterprise-like entity.
 ///  * Holds: Affairs, Stores, takes Order's, makes Jobs in phases.
-///   * Dawo version:   0.0.7.  - 18.12.2017
+///  * dawo version:   0.3.0.  23.3.2022
 ///  * devState:  10%,   PLAN:  do simple demo / presentation.
 ///
 //
@@ -27,7 +27,7 @@ class Corporate {
   ///  All the stores, that this corporate owns.
   Map<String, Store> storeM = {'Store-1': store};
 
-  //  Some Map to simulate activity
+  ///  Some Map to simulate activity
   Map<String, String> phaseM = {
     '1': 'Ask',
     '2': 'Join',
@@ -39,7 +39,7 @@ class Corporate {
     '8': 'bye',
   };
 
-  //  Some Map to simulate activity
+  ///  Some Map to simulate activity
   Map<String, String> orderM = {
     'Header': 'Corp orderM',
     'o:Start': 'Corp Start',
@@ -81,7 +81,7 @@ class Corporate {
 
   ///  Change "Automatic messages" to buf messages.
   String paramToStr(var sender, receiver, op, msg) {
-//  Or return List.
+  //  Or return List.
     String s = sender.toString();
     String r = receiver.toString();
     String o = op.toString();
@@ -101,7 +101,7 @@ class Corporate {
 
   ///  caller:  chore-op
   ///  Call:    _retBuf.write(
-  //  corporate.process(':Ch-Op:', chOpClass, placardM, assignComProChore));
+  ///  corporate.process(':Ch-Op:', chOpClass, placardM, assignComProChore));
   ///  Shaping everybody-to-use functionality for..
   ///  Map explicitly make it <String, String>
   StringBuffer process(String by, Affair _affairOp,

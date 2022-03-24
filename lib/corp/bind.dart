@@ -4,7 +4,7 @@
 /// * Bind object to certain state or project or resource.
 /// * Bind to certain event-waiting or information flow.
 /// *  Using #resolve library with #dawolang to solve bind-literal-Strings.
-/// *  dawo version:  0.0.7. - 18.12.2017
+/// *  dawo version:   0.3.0  23.3.2022
 /// *  GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/bind.dart
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
@@ -38,19 +38,19 @@ class Bind {
   ///  Members, that are participating in this Bind.
   ///  Member is also a class in alpha.
   ///  #PLAN:  eventually this will be Object Member. Or reference to Chore.
-  //  Map<String, Member> bindMembM = {};  Not object yet.
-  //  This might be <BaseStruct>  for Chore to be able to join
-  //  Usage: Only here
+  ///  Map<String, Member> bindMembM = {};  Not object yet.
+  ///  This might be <BaseStruct>  for Chore to be able to join
+  ///  Usage: Only here
   Map<String, String> bindMembM = {
     'bMemb-1': 'First member in bind',
     'bMemb-2': 'Second member in bind:',
   };
 
   ///  Eventually this will be object - object
-  //  Map<String, Map<dynamic, dynamic>> bindingM = {};
+  ///  Map<String, Map<dynamic, dynamic>> bindingM = {};
   ///  Structure and usage of this map is not yet clear.Data is like:
   ///  Dawo example D-ex-loops
-  //   Rumba instance All sub
+  ///   Rumba instance All sub
   ///  Usage: shower: show,
   Map<String, Map<String, String>> bindingM = {
     'all': {'Try': ':bind:1', 'Test': ':bind:2'},
@@ -64,11 +64,11 @@ class Bind {
     buf.write('* * *    $emblem  Class bind is ready. * * *  ');
   }
 
-  //  Connect Members action to one or many other Members action.
-  //  eventually this will be: var / dynamic / command...
-  //String bind(var senderProcess, var receiverProcess, var thing, String msg)
+  ///  Connect Members action to one or many other Members action.
+  ///  eventually this will be: var / dynamic / command...
+  ///  String bind(var senderProcess, var receiverProcess, var thing, String msg)
   ///  Usage:  opJoin is calling this
-  //String bind(String sProcess, String rProcess, String thing, String msg) {
+  ///  String bind(String sProcess, String rProcess, String thing, String msg) {
   String mark(String actorS, senderS, receiverS, comS, msgS, _inMsg) {
     _flowC(':bind:-mark-  -->>-->>--  :bind:  C::Chr:  -->>-->>--', true);
     //  Idea: Have some binding-models and types.
@@ -89,7 +89,7 @@ class Bind {
     //  howTo NULL Map putIfAbsent
     //  The property 'length' can't be unconditionally accessed because the receiver can be 'null'.
     //  Try making the access conditional (using '?.') or adding a null check to the target ('!').
-    // hklTry: NULL OK     bindingM['all'].putIfAbsent(senderS, () => receiverS);
+    //  hklTry: NULL OK     bindingM['all'].putIfAbsent(senderS, () => receiverS);
     ///  The argument type 'Map<dynamic, dynamic>' can't be assigned to the parameter type 'Map<String, String>'
     bindingM['all']?.putIfAbsent(senderS, () => receiverS);
     // Map<String, Map<String, String>>

@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  devNotes class
 ///  Primary functionality:  Keep dev data.
-/// * dawo version:  0.0.8.  -  13.3.2019.
+/// * dawo version:   0.3.0.  23.3.2022.
 /// * devState : 25%    in GitHub : yes
 // hist>  9.1.2018  Separated from dawoApp.
 //
@@ -19,7 +19,7 @@ void fillNotes() {
     ..add(':Ar: :Word: Testing: #ALL #NoAction.')
     ..add(':Ar: :Word: Testing: #ALL #NoAction.')
     ..add(':Ar: :#ORDER: Short names for coders to use.');
-
+  ///
   dev.devN
     ..add(':Ar: :TDev: Habits: keep 3 day off before new version.')
     ..add(':Ar: :TDev: Connect: Try to get :feedback: #Area.')
@@ -30,7 +30,7 @@ void fillNotes() {
     ..add(':Ar: :YES: list for only-allowed #Words for team.')
     ..add(':Ar: :SHOW: method; parameter to give #Find this.')
     ..add(':Ar: :TEST:  Benchmark.');
-
+  ///
   dev.innoN
     ..add('full of extensions, macros, rules, and more.  bazel')
     ..add(':Ar: Incremented #Number in new notes.')
@@ -41,7 +41,7 @@ void fillNotes() {
     ..add(':Ar: Words: ##Carry : R:mediate message to #receiver.')
     ..add(':Ar: Phraseology.')
     ..add(':Ar: #LowLevel talk for dev folks.');
-
+  ///
   dev.howToN
     ..add(':Ar: howTo fetch data via HTTP.')
     ..add(':Ar: howTo   getfirst  changeable web pages.')
@@ -49,7 +49,7 @@ void fillNotes() {
     ..add(':Ar: howTo Classify devNotes by value.')
     ..add(':Ar: howTo Add notes last in to list?')
     ..add(':Ar: howTo Send #ALERT #ALL -note => to every List?');
-
+  ///
   dev.secN
     ..add(':Ar: #Numbers for #Event:s and #Msg :s. ')
     ..add(':Ar: #FlowC call check for extra innder calls.')

@@ -3,7 +3,7 @@
 ///  ##  dawo : data-in : user specific data in JSON format.
 ///  Learning to import JSON decoded / encoded data.
 ///  Eventually these are imported by server-client / DB system.
-///  * dawo version:  0.0.6 :  27.11.2017.    devState: 10%
+///  * dawo version:   0.3.0  23.3.2022 :.    devState: 10%
 ///  * NEXT: 0.1.X  Personalize for different missions / search by #clause
 ///  * NEXT: 0.1.X   Data extracted from #chunk by caller name of #search.
 ///  * NEXT: 0.1.X  Object check if JSON / DB data is available.

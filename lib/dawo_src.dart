@@ -3,7 +3,7 @@
 ///  ##  Sample file made by Dart.  "Home of dawo libraries."
 /// * Badly treated and would deserve more love than I have to give.
 /// * Might serve as a collector or central for it's sub-libraries.
-/// * dawo version: 0.0.8.  -  13.3.2019  devState : 20 %
+/// * dawo version:   0.3.0.  23.3.2022.  devState : 20 %
 /// *
 // * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
 ///
@@ -116,7 +116,7 @@ StringBuffer renderDawo() {
   print('---------------  renderDawo * done *  --------------------- \n');
 
   return renderBuffer;
-}
+}     //     -----      renderDawo
 
 ///  Fast test for rumba.
 void renderRumba() {

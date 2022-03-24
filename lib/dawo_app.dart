@@ -4,7 +4,7 @@
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dawo version:  0.0.8.  -  18.3.2019
+/// * dawo version:   0.3.0.  23.3.2022.
 /// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * dawoApp instantiated inside app; it now has access to dawo.version aso.
@@ -45,16 +45,18 @@ var appBuf = new StringBuffer(); //  not used here
 ///  Class that holds 'soul' of THIS dawo app.
 ///  Controls Mission-Chore system, #App, & dawo-package development, #Pack.
 class DawoApp {
+  ///
   final String name = 'DawoApp';
   final String version = '0.2.0';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
-
+  ///
   final String info =
       'Innovative & educational small data-handler experimentation.';
 
   ///  Fields filled in init: user and motto;
   String user = ':User:of:dawoApp:';
+  ///
   String motto = 'Walk the path of innovation and learning..';
 
   /// Fields describe actions in connector and binding.
@@ -96,14 +98,14 @@ class DawoApp {
   };
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  //  like:  ":DAWO:APP:";///  must initialize StringBuffer here
+  ///  like:  ":DAWO:APP:";///  must initialize StringBuffer here
   String seal = '';
-  //  or this emblem.StringBuffer buf = new StringBuffer();
+  ///  or this emblem.StringBuffer buf = new StringBuffer();
   final String emblem = ':DA:';
-  // like:  "      ";  3-5-7 empty marks or something visible.
+  /// like:  "      ";  3-5-7 empty marks or something visible.
   String indent = '';
-
-  bool _pB = false; //  No printing now. use printControl to change it.
+  ///  No printing now. use printControl to change it.
+  bool _pB = false;
   StringBuffer buf = new StringBuffer();
 
   ///  4 Map variables to indicate dawoApp's state / working-condition.
@@ -162,7 +164,7 @@ class DawoApp {
     //  _flowC('  -->-da->  DawoApp buffer output initialized  ---', _pB);
     buf.writeln(':da:init: done  ');
     _flowC('  --<-da-<    :da:i: init done', _pB);
-  }
+  }     //     -----     init
 
   ///  Method for further building app and mission system in working condition.
   void build(String emblem) {
@@ -205,7 +207,7 @@ class DawoApp {
     out.outFooter.writeln('* * * :natParks stuff: :dawoApp:build:  * * * ');
     buf.writeln(':da:build: done  ');
     _flowC('  --<-da-<  :da:b:  build done', _pB);
-  }
+  }     //     -----     init
 
   ///  #run-like method
   ///  return:  Map<String, StringBuffer> out.outMapBuffers
@@ -240,7 +242,7 @@ class DawoApp {
     done();
     //  code here
     return outMapBuffers;
-  }
+  }     //     -----     roll
 
   ///  This is mandatory for Mission-Chore system to work.
   ///  Roll missions in missionL AND every chore in them.
@@ -321,7 +323,7 @@ class DawoApp {
 
     _flowC('      --<----<-- app rollMissions  C: $caller --<----<--', _pB);
     // roll all chores, that are in mission
-  } //  -----  appRollMissions
+  }      //     -----     appRollMissions
 
   ///  TODO devStream  building stream for dev, using elementary Stream example
   ///  NAME:  Change to:  fix** ?
@@ -339,7 +341,7 @@ class DawoApp {
     store.demandStream(':dawoApp:river:',
         ['First Book', 'My Book', 'Third Book'], 'appListener');
     _flowC('--- :stream:end dawoApp rollStream done     ---', _pB);
-  }
+  }     //     -----     devStream
 
   ///  calling beta demandStream, elementary Stream example
   ///  TODO  Make usage of this async and somebody to wait it.
@@ -373,7 +375,7 @@ class DawoApp {
     store.demandStream(':dawoApp:river:ADM:', _queryL, 'appListener');
     //  TODO Stream: meaningful : streams from doneL / devN important
     _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
-  }
+  }     //     -----     rollStream
 
   ///  Using boxServe-class for to construct this info-box.
   void box(String caller) {
@@ -458,7 +460,7 @@ class DawoApp {
     boxServe.show(boxHeader, 'print', 4);
     boxServe.done(boxHeader);
     print('--<<--<<  $boxHeader boxServe  done  --<<--<<--  ');
-  } //  -----  box
+  }      //     -----     box
 
   ///  Show-method to be developed further.
   ///  actions like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
@@ -470,7 +472,7 @@ class DawoApp {
       print(out.outTr);
       print('--<<--<<----  dawoApp show done --<<--<<----');
     }
-  }
+  }     //     -----     show
 
   //  #coma  Content-marketing, cheatSheet to present functionality
   void coma() {
@@ -497,7 +499,7 @@ class DawoApp {
     _flowC('  --<-da-<  :da:d: --  DawoApp buffer output app: done  --', _pB);
     if (_pB) print(buf);
     //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', _pB);
-  }
+  }     //     -----     done
 
   //  Changed using new fields user and purpose.
   //  Stop using constructor
@@ -512,10 +514,10 @@ class DawoApp {
     ///  :DAWO:APP:  is too long.
     flowServe(':DA:', out.outTr, msg, p);
   }
-} //  ----------  class DawoApp
+}      //     -----     class DawoApp
 
 ///  Create an instance of DawoApp. With default constructor.
-var dawoApp = new DawoApp();
+DawoApp dawoApp = DawoApp();
 
 ///  To print outPutBuffers.  //  not called
 ///  Using new outBufM Map
@@ -533,8 +535,9 @@ void outBuffersPrint(String caller, String notCalled) {
   }
 
   print('     --<<--<<----  :DA:   out.outBuffers  C: $caller  done \n \n');
-}
+}     //     -----     outBuffersPrint
 
+///
 Map<String, String> outBuffersInfoMap(String caller, String notCalled) {
   Map<String, String> _retM = {};
   int i = 0;
@@ -551,4 +554,4 @@ Map<String, String> outBuffersInfoMap(String caller, String notCalled) {
     i++;
   }
   return _retM;
-}
+}     //     -----     outBuffersInfoMap

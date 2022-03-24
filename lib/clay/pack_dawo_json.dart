@@ -1,8 +1,10 @@
 ///  JSON data for packDawo.  -  dawo version  0.0.6 : 27.11.2017
 ///  While waiting for server-client to import json.data
+///  dawo version:   0.3.0  23.3.2022 :
 
 library packDawoJson;
 
+///  Json model data
 class PdJson {
   var myFriends = {
     "name": "John",

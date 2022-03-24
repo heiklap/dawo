@@ -3,7 +3,7 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
-/// * dawo version:  0.0.8.  -  13.3.2019.  -   devState: 15 %
+/// * dawo version:   0.3.0.  23.3.2022.  -   devState: 15 %
 /// * GitHub: yes  29.11.2014
 //
 // * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
@@ -23,7 +23,7 @@ part 'dawo_hist.dart';
 part 'dev_notes.dart';
 part 'envoy.dart';
 
-//TODO  name   PROBLEMS, when using too common names:
+//   TODO  name   PROBLEMS, when using too common names:
 //   devTest   =   22  times     CHANGE:   test  ! ??
 //   devNote   = 2/16 times
 //   cod*          10 times
@@ -51,7 +51,7 @@ class Dev {
   bool devTestPhase = true; // set this false in production. (newer)
 
   ///  two members (persons) of devTest team:
-//  TODO  teamAdm team_members..  should they be in... team_staff..
+  //  TODO  teamAdm team_members..  should they be in... team_staff..
   String coderNight = 'Late Night Coder ';
   String coderMorn = 'Earlymorn Coffeeman ';
 
@@ -76,7 +76,7 @@ class Dev {
 
   ///  Generic list to keep and handle all envoyMessages
   List<Envoy> envoyL = []; //  not used
-  //  To collect range aso. errors.
+  ///  To collect range aso. errors.
   List<String> errorLog = ['* dev errorLog  *'];
 
   ///  To handy keep track of fast changes in code:
@@ -117,6 +117,7 @@ class Dev {
         'V:5 E:4 D:0',
   };
 
+  ///  Map
   Map<String, String> plugins = {
     'Completed: Maybe feb 2019.': 'No pressure.',
     'Plans for 2018  ': 'Value, Effort, Done',
@@ -133,7 +134,7 @@ class Dev {
   };
 
   ///  Changed from List to Map in 0.0.7. version
-  ///  ///  V: 1-9 = value, E = effort,  D:  = done
+  ///  V: 1-9 = value, E = effort,  D:  = done
   ///  Changes likely planned to dawoPackage after 0.0.7 version.
   Map<String, String> version008 = {
     '   * * *  plan Dawo 008changes.   * * * ': 'V:3 E:3 D:0',
@@ -371,12 +372,13 @@ class Dev {
 } //  -----  class dev
 
 ///  Create instance of class Dev.
-var dev = new Dev();
+var dev = Dev();
 
-//TODO  teamHowTo lists: add:   automatize adding notes to lists?
-//TODO  teamInno  notes:  automatic roll of createNotes.? no; events..?
+//  TODO  teamHowTo lists: add:   automatize adding notes to lists?
+//  TODO  teamInno  notes:  automatic roll of createNotes.? no; events..?
 
-//TODO  teamHowTo stream    define a stream transformer
+//  TODO  teamHowTo stream    define a stream transformer
+
 /*
 var transformer = new StreamTransformer.fromHandlers(handleData: (value, sink) {
 // create two new values from the original value
@@ -387,8 +389,8 @@ sink.add("Message: $value")
 // transform the stream and listen to its output
 stream.transform(transformer).listen((value) => print("listen: $value"));
 
-//TODO  teamEdu  devNotes..  instead of TO-DO-notes..
-//TODO  teamEdu  ..for to not spam dawo package with -notes
+//  TODO  teamEdu  devNotes..  instead of TO-DO-notes..
+//  TODO  teamEdu  ..for to not spam dawo package with -notes
 
 var devTestStreamData = ['devTestStream, for notes and testing',
                          'Next note.. aso'

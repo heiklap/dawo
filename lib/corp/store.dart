@@ -1,13 +1,13 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// ## Store is, or simulates: shop, or market place, serving and selling.
-/// Here it is stream-based.
+///  Here it is stream-based.
 ///  * Here are streams, supply and demand, all in store, and they: deliver.
-///  * dawo version: 0.0.8. - 13.3.2019    devState: 3%
+///  * dawo version:   0.3.0.  23.3.2022.    devState: 3%
 ///  * NEXT: when main methods are sync, it is hard to find practical usage.
 ///  * NEXT: try box_serve for output-
 ///  * OutPut:  :demand:stream: search gives 15 results in output.
-//  history: 2017.11.13.   development-state: 5%
+///  history: 2017.11.13.   development-state: 5%
 //
 // TODO  all methods are:  supplyX and  demandX
 //

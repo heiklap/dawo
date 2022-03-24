@@ -1,9 +1,9 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
-/// * #Helsinki, dynamic center of inspiration and innovations.
+///  * #Helsinki, dynamic center of inspiration and innovations.
 ///  * dawo clay helsinki_guide: links and methods for active living.
 ///  * presenting data for Dawo chore-effort system
 ///  * devState: 60%   -  PLAN:
-///  * dawo version:   0.0.6  27.11.2017
+///  * dawo version:   0.3.0  23.3.2022
 
 library helsinkiGuide;
 
@@ -17,7 +17,7 @@ bool pB = false;
 class HelsinkiGuide {
   String name = 'Helsinki Guide class';
 
-  ///  forming new kind of map, to keep more information
+  ///  Map for information
   Map<String, Map<String, String>> helsinkiClayM = {};
 
   Map<String, String> attractionM = {
@@ -45,7 +45,7 @@ class HelsinkiGuide {
         'http://www.visithelsinki.fi/en/see-and-experience/sights-and-attractions/tori-quarters'
   };
 
-  ///  clay outdoor map of Helsinki
+  ///  Clay outdoor map of Helsinki
   Map<String, String> outdoorM = {
     'Arabianranta':
         'http://www.visithelsinki.fi/fi/nae-ja-koe/nahtavyydet/arabianranta',
@@ -105,6 +105,7 @@ class HelsinkiGuide {
     'Konala': 'http://www.kaupunginosat.net/konala/konala/kotikaupunkipolut',
   };
 
+  ///  Seasons
   Map<String, String> seasonM = {
     'Winter': 'Talvi ',
     'Spring': 'Kevät ',
@@ -112,6 +113,7 @@ class HelsinkiGuide {
     'Autumn': 'Syksy Helsingissä'
   };
 
+  ///  Events Map
   Map<String, String> eventM = {' ': ' ', 'a': ' ', 'b': ' '};
 
   ///  Is effort Map here convenient?
@@ -121,6 +123,7 @@ class HelsinkiGuide {
     'hg-em-3': 'Go for it!'
   };
 
+  ///
   void buildMaps(String caller) {
     flowC('--  building Helsinki maps  c: $caller --', pB);
     helsinkiClayM.addAll({

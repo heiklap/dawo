@@ -1,16 +1,18 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+//
 ///  # dawo clay  myTime
 ///  * Presenting data for dawo-myTimeMission and it's chore system.
 ///  * All missions can (PLAN:) contact and co-work other objects in dawo.
 ///  * PLAN: connect to outside time-management and productivity tools.
-///  * version:   0.0.6 :  27.11.2017  -  devState: 30%
+///  * version:   0.3.0  23.3.2022  -  devState: 30%
 
 //
 library myTime;
 
-///
+///  MyTime class
 class MyTime {
+  ///  name
   String name = 'My Time class';
 
   ///
@@ -65,7 +67,7 @@ class MyTime {
   }
 } //  -----  class MyTime
 
-///
+///  render-function
 void renderWorkingWeek() {
   var wW = new MyTime();
   wW.dayM;

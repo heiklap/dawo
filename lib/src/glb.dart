@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  glb   keeping important everybody-uses variables and constants.
-/// * dawo version:  0.0.8.  -  13.3.2019.  -  devState:  13%
+/// * dawo version:   0.3.0.  23.3.2022.  -  devState:  13%
 /// * GitHub: yes.
 /// * State:  schema
 //
@@ -19,7 +19,9 @@ class GlobalClass {
   // to that - output?.writeln(“some message”). Depending on the context,
   // output = new StringBuffer() or output = stdout. Grabbed.
   var signature;
+  ///
   var output;
+  ///
   var input;
 
   ///  5 x 56 logo
@@ -37,7 +39,7 @@ class GlobalClass {
   'D   D        A AAAA A       W  W   W          O      O',
   'DDDD        A        A       W   W              OOOO',
   */
-
+  ///
   List<String> infoL = [
     'glb   keeping important everybody-uses variables and constants.',
     'prSt controls global printing states in every object'
@@ -112,6 +114,7 @@ class GlobalClass {
     '::',
   ];
 
+  ///
   List<String> dawoTextOutput = [
     'String rumbaS = rumbaBuf.toString',
     'String dawoAppS = dawoBuf.toString',
@@ -145,7 +148,7 @@ class GlobalClass {
   ///  For glb:s inner data
   StringBuffer buf = new StringBuffer();
 
-  //  Method saveToGLB from box_serve fills this map.
+  ///  Method saveToGLB from box_serve fills this map.
   Map<String, StringBuffer> boxServeBuffers = {};
 
   var register; //  register of objects that participate in Dawo / glb.
@@ -244,6 +247,6 @@ class GlobalClass {
   void showInfo() {
     print('\n ***  no code in :glb:  GlobalClass yet :)  *** \n');
   }
-}
+}     //     -----     class GlobalClass
 
-GlobalClass glb = new GlobalClass();
+GlobalClass glb = GlobalClass();

@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Model structures, base classes, that are used everywhere in dawo:
 /// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
-/// * dawo version:   0.0.8.  13.3.2019
+/// * dawo version:   0.3.0.  23.3.2022.
 //
 // * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
 //  devNote:  No notes.
@@ -14,7 +14,8 @@ String alphaMotto = 'Basic rules for building classes';
 
 ///  NOTE abstract classes cant be created with new keyword.
 
-//  Mess, when trying to extend OutBase.
+///  Mess, when trying to extend OutBase.
+///
 class Out {
   String name = 'Out-Class';
   //  Quest: shorter way?
@@ -44,8 +45,7 @@ class Out {
   StringBuffer outFooter = new StringBuffer(); // m -  nParks
 
   ///  List containing all outBuffers for special browser screen areas.
-  ///  Change this to Map<String, StringBuffer> to get names.
-//  List<StringBuffer> outBufL = [
+  ///  Changed this to Map<String, StringBuffer> to get names.
   Map<String, StringBuffer> outBufM = {
     /*  This map is filled in build-method.
     'outHeaderBuf': outHeader,
@@ -60,7 +60,8 @@ class Out {
     'outFooterBuf': outFooter,
     */
   };
-  //  = new List
+
+  ///  = new List:  called in rumba.dart
   List<List<String>> outBufListsForBox() {
     List<List<String>> _ll = [];
     List<String> outHeaderBufL = [];
@@ -135,6 +136,7 @@ class Out {
     print('--------------- outBuffersSizes  C: $caller   :done: ----------');
   }
 
+///
   void build() {
     //  outBufM.put
     outBufM.putIfAbsent('outHeaderBuf', () => outHeader);
@@ -171,11 +173,13 @@ class Out {
       'outFooterBuf',
       () => outFooter,
     );
-  }
-} //  --  class out
+  }     //     -----     void build
 
-///  Creating instance of class.
-Out out = new Out();
+  ///
+}      //     -----  class out
+
+///  Creating instance of class with constructor.
+Out out = Out();
 
 ///  Other buffer-classes are not yet in use.
 //  var outA = new OutBase();  //  app
@@ -187,7 +191,8 @@ Out out = new Out();
 //  Chore-extends, DawoHist implements. Flag  use this
 abstract class BaseStruct {
   String name = '';
-  String info = ''; //  using now Map:  say
+  String info = '';
+  ///  using now Map:  say
   Map<String, String> say = {};
   String motto = '';
 
@@ -196,11 +201,13 @@ abstract class BaseStruct {
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   String seal = ''; //  like:  ":DAWO-APP:";
   String emblem = ''; //  or this emblem.
-  String indent =
-      ''; // like:  "      ";  3-5-7 empty marks or something visible.
-  String master = ''; //  Object that owns this.
+  ///  3-5-7 empty marks or something visible.
+  ///  like:  "      ";
+  String indent = '';
+  ///  Object that owns this.
+  String master = '';
 
-  StringBuffer buf = new StringBuffer();
+  StringBuffer buf = StringBuffer();
 
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
@@ -231,7 +238,9 @@ abstract class BaseStruct {
 
   ///  Close method.
   void done();
-}
+
+  ///
+}     //     -----     abstract class BaseStruct
 
 ///  Every app-mission-chore creates new Placard for EVERY new operation (?)
 ///  or at-least gives it as parameter, to functions.
@@ -274,12 +283,12 @@ class Actor {
     'always': '',
     'newer': ''
   };
-}
+}     //     -----     class Actor
 
 ///  Base
 class Action {
   String name = '';
-
+  ///
   Map<String, String> say = {
     'purpose': '',
     'lang': '',
@@ -291,7 +300,7 @@ class Action {
     'always': '',
     'newer': '',
   };
-  // IDEA: Map<String, Map<String, String>> reason = {};
+  /// IDEA: Map<String, Map<String, String>> reason = {};
   Map<String, String> reason = {
     'anti': '',
     'why': '',
@@ -300,5 +309,6 @@ class Action {
     'minus': '',
     'desicion': '',
   };
-} //  ----- Action
+
+}      //     -----     class Action
 //

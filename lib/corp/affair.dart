@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  affair,  handling small jobs inside corporate.
-/// * dawo version:  0.0.7. - 18.12.2017  -.   devState:  5%
+/// * dawo version:   0.3.0  23.3.2022  -.   devState:  5%
 /// * GitHub:  Yes  -  State:  schema
 /// * PLAN:  0.0.8  small upgrade when common methods are ready.
 //
@@ -23,8 +23,11 @@ import '../alpha.dart';
 class Affair {
   //  Alpha is known here.  beta-PlacardM is known also.
 
+  ///
   String actor = ':No usage yet:'; //  Too important to be a String.
+  ///
   String sender = '';
+  ///
   String receiver = '';
 
   /// Question:  Can it be a function?
@@ -40,8 +43,8 @@ class Affair {
   Map<String, Action> actionM = {};
 
   ///  Other alternatives to main #actor.
-  //
-  //  NOTE  First record:  'FirstActor'
+  ///
+  ///  NOTE  First record:  'FirstActor'
   Map<String, Map<String, String>> placardMM = {
     'FirstActor': {
       'actor': 'first',
@@ -95,7 +98,7 @@ class Affair {
 
   ///  Save cleared placardM to to placardMM
   void save() {}
-
+  ///
   void done() {}
 
   //  Constructor

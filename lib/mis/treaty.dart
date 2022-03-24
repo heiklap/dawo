@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// ##  Treaty:  action-field for two missions; to say and bargain
 /// *
-/// * dawo version:  0.0.7+. - 18.12.2017  -   devState: 40 %
+/// * dawo version:   0.3.0.  23.3.2022.  -   devState: 40 %
 /// * GitHub:
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
 // * Hist:hkl  27.12.2017
@@ -53,6 +53,7 @@ import 'package:dawo/src/box_serve.dart';
 //  import 'package:dawo/corp/connector.dart';
 //  import 'package:dawo/tools.dart';
 
+///
 StringBuffer treatyBuf = new StringBuffer();
 var treatyRandom = new Random(27);
 Map<String, Treaty> treatyM = {};
@@ -60,7 +61,7 @@ Map<String, Treaty> treatyM = {};
 ///
 List<String> bilateralL = [];
 
-//  Fill this later.
+///  Map
 Map<String, String> bilateralM = {
   'purpose': '',
   'lang': '',
@@ -73,7 +74,7 @@ Map<String, String> bilateralM = {
   'newer': '',
 };
 
-//  Fill this later.
+///  Map
 Map<String, String> bilateralWeekM = {
   'purpose': '',
   'lang': '',
@@ -95,6 +96,7 @@ List<String> bilateralWeekL = [''];
 ///  2 Mission objects inside; insider , used:  11 / 16
 ///  and outsider   used:  2 / 3
 class Treaty {
+  ///
   String name = 'DailyTreaty';
   String msg = 'DailyTreatyMsg';
   String day = '';

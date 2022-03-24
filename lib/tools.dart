@@ -5,7 +5,7 @@
 ///  stuff is most valuable to beginner programmers, and developing this has
 ///  taken time. Fixing bugs only when something throws.
 /// * Also some #stamp date-time aso. functions.
-/// * dawo version:  0.0.8.  -  13.3.2019.    devState : 50 %
+/// * dawo version:   0.3.0.  23.3.2022.    devState : 50 %
 /// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
 /// * in GIT:  yes.  Blog post:  should b.
 /// * PLAN:  develop some _private inside functions and variables.??
@@ -135,7 +135,7 @@ class Tools {
       } //  --  for (var y in _inlM[x].keys)
     }
     return _retL; //  [1,3 ], [5,4], [6,4], [3,8], [9,5] ....
-  }
+  }     //     -----     valuesInStr
 
   ///  Return List of items, where #String exist. from dawo-tools.
   List<String> StrInList(List<String> _l, String _s) {
@@ -163,7 +163,7 @@ class Tools {
     print('<< -----------------------------------  <<');
     s = sBuf.toString();
     return s;
-  }
+  }     //     -----     listToString
 
   ///
   List<String> listListIntToListString(List<List<int>> inL) {
@@ -174,7 +174,7 @@ class Tools {
     }
 
     return retL;
-  }
+  }     //     -----     listListIntToListString
 
   ///  Add padLeft & padRight Strings to make this more useful.
   ///  Pad List right and left with: _leS, _raS and make all even length
@@ -192,7 +192,7 @@ class Tools {
       _l[x] = _ss;
       //  Pad every item right with _leS, _raS to length of the longest item.
     }
-  }
+  }     //     -----     padListRL
 
   //  Want to get List items to max certain length.
   void shortenItemsInList(List<String> _l, int _w) {
@@ -246,7 +246,7 @@ class Tools {
       masterL[_r] = '$_s1$_s2$_s3';
       _r++;
     }
-  } //  -----  boxInList
+  }      //     -----     boxInList
 
   ///  Just a note, howTo print a map.
   void operationMapPrint(Map thisMap) {
@@ -323,7 +323,7 @@ void main() {
     } // --  thisMap
         ); //  --  forEach k v
     return _l;
-  } //  --  mapToFineList
+  }      //     -----     mapToFineList
 
   /*
 
@@ -409,7 +409,7 @@ void main() {
       //  howTo NULL Map  ! OK
       _map[name]!.forEach((k, v) => print('$k, $v'));
     }
-  }
+  }     //     -----     printStringMapMap
 
   ///  TODO  did it go right? No.
   ///  print Map<String, Map<String, String>>  map nicely
@@ -427,7 +427,7 @@ void main() {
       }
       print(_map[x]);
     }
-  }
+  }     //     -----     printStringMapMapFail
 
   ///  QUEST:  sure you can do better?
   ///  is it number?
@@ -472,7 +472,7 @@ void main() {
 
     print(' ');
     print(' ');
-  }
+  }     //     -----     printClass
 
 //   dawoMapApps.forEach((k,v) => print('Key:  $k  Value:  $v  '));
 
@@ -525,7 +525,7 @@ void main() {
     String formattedHms = formatterHms.format(now);
     var dateTimeStampNow = (' $formattedYmd  $formattedHms ');
     return dateTimeStampNow;
-  }
+  }     //     -----     stampDateTimePlain
 
   ///  Small sleep-methods, to get time, to see, what is happening in tests.
   void sleepSimple(int waitingTime) {
@@ -553,7 +553,7 @@ void main() {
       //  var timeNow = new DateTime.now();
     } while (new DateTime.now().compareTo(goalTime) < 0);
     if (_infoB) (print('waiting time over over'));
-  }
+  }     //     -----     sleepMS
 
 //  Some sample maps for #teamNext use.
   Map<String, bool> toolsActive = {
@@ -572,6 +572,9 @@ void main() {
     4: 'Slow',
     5: 'Delayed'
   };
-} //  -----  class Tools
 
-Tools tl = new Tools();
+  ///
+}      //     -----     class Tools
+
+///  Making instance with construcgtor
+Tools tl = Tools();

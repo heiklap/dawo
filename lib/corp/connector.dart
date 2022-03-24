@@ -6,7 +6,7 @@
 ///  using #LANG -specific commands to configure their proceedings.
 ///  using #dawolang package in path dependency
 ///  method String weightString(String _aS) checks #C messages
-///   dawo version:  0.0.8.  -  13.3.2019  * devState : 15 %
+///   dawo version:   0.3.0  23.3.2022  * devState : 15 %
 ///
 /// * devState: 30%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
@@ -122,8 +122,11 @@ typedef  _conPrint =  void _conPrint(String msg);
 ///  This class gets same structures from alpha, as other important classes.
 ///  Connecting clients (app-mission-chore) to work together.
 class Connector extends BaseStruct {
-  bool _pB = false; //  false;   //  To control printing in _flowC method.
+  ///  false;   //  To control printing in _flowC method.
+  bool _pB = false;
+  ///
   String name = 'connector class';
+  ///
   String info = 'App - mission - chore conScout #corporate.process via #LANG';
   //  TODO  #lang  won for connector
   ///  Connector might be a technical thing, not needing a say map. Or?
@@ -138,7 +141,7 @@ class Connector extends BaseStruct {
     'always': ':MEMBER :MSG :COM',
     'newer': 'con::NO :UGLY'
   };
-
+  ///
   String motto = 'Give objects long, powerful extra hand.';
 
   ///  devNote: IDEA: Fields for to better shape outPut stuff in console.
@@ -150,9 +153,10 @@ class Connector extends BaseStruct {
   ///  clause walks with objects in process call and carries list of words.
   ///  Combination of #LANG words in sentence.
   String clause = ":DO :HINT :FIND :AREA :JOIN :OPEN :RULE";
+  ///
   String master = ''; //  Object that owns this. Now only a String.
 
-  // Buffer inside class to keep String-data for output.
+  /// Buffer inside class to keep String-data for output.
   StringBuffer buf = new StringBuffer();
   String _bm = 'cb- '; //  marking all buf rows.
 
@@ -184,8 +188,7 @@ class Connector extends BaseStruct {
     'Why?': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',
   };
 
-  //
-  ///  ///  In #LANG & say system accrued #SCHEDULE and #EFFORT rules
+  ///  In #LANG & say system accrued #SCHEDULE and #EFFORT rules
   Map<String, String> workPoleM = {
     'Always': '_ _ _ _ _ _ _ _ _ _ _ ',
     'Newer': '_ _ _ _ _ _ _ _ _ _ _ ',
@@ -207,8 +210,8 @@ class Connector extends BaseStruct {
   ///  hklTry:  make it explicitly:  Object
   Object pivot = Object();
 
-  //  typedef void _ConPrint(String msg); // announced outside of class
-  //  _ConPrint
+  ///  typedef void _ConPrint(String msg); // announced outside of class
+  ///  _ConPrint
   void _conPrint(String msg) {
     if (_pB) print(':_conPrint$emblem $_pB  $msg');
   }
@@ -516,9 +519,9 @@ class Connector extends BaseStruct {
     boxServe.done(':con:');
   }
 
-  //  TODO  :BUG:Funny:error:
+  ///  TODO  :BUG:Funny:error:
   ///  Presentation method. Trying list as a parameter.
-  //  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
+  ///  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
   void show(String action) {
     //  TODO  Make forced print
     bool _clB = false;
@@ -541,9 +544,9 @@ class Connector extends BaseStruct {
 
   ///  TODO  typedef  print function
   ///  typedef int Compare<T>(T a, T b);
-  //  typedef _conPrint(String msg);
-  //   typedef  _conPrint =  void _conPrint(String msg){
-  //   if (_pB) print(msg);  }
+  ///  typedef _conPrint(String msg);
+  ///  typedef  _conPrint =  void _conPrint(String msg){
+  ///  if (_pB) print(msg);  }
 
   void _flowC(String msg, bool prnB) {
     ///  Call flowServe with #LOCAL variables.
@@ -553,8 +556,6 @@ class Connector extends BaseStruct {
   }
 
   ///  constructor
-  ///  NULL  error:   .toString();  //  hklTry: cast to String
-  ///
   Connector(this.name, this.info);
 
   //  To mark unused local variables in Connector class
@@ -562,8 +563,7 @@ class Connector extends BaseStruct {
 }
 
 ///  Create instance of Connector.
-Connector connector =
-    new Connector('DawoAppConnector', 'Connection operations');
+Connector connector = Connector('DawoAppConnector', 'Connection operations');
 
 ///  Construct almost same class: but for collecting data.
 ///  Would like to extend this from Connector: class, but it do not have

@@ -3,7 +3,7 @@
 //  Copyright do not concern #dartlang language stuff.
 ///  # dawo clay dartlang_guide.
 ///  * presenting data for dawo-chore system, mostly Maps.
-//  dawo version:   0.0.8  13.3.2019
+//  dawo version:   0.3.0  23.3.2022
 
 library learnDartlang;
 

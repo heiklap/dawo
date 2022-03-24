@@ -1,7 +1,8 @@
-// is governed by a BSD-style license that can be found in the LICENSE file.
+/// is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawo clay  main library
 ///  presenting incoming data for dawo-chore / mission system
-///  dawo version:    0.1.0.  23.9.2020
+///  dawo version:    0.3.0.  clean  23.3.2022
+///  word: clay 79
 
 //
 library clayRoll;
@@ -23,10 +24,8 @@ List<String> clayMapL = [
   'nationalParks'
 ];
 
-//  TODO : start using all maps: in list: List<Map<String,String>>
 ///  return asked Map
-///  Adding strict types.
-///  Suppose Map must be like: Map<String, Map<String, String>>
+///  Suppose Map must be type: Map<String, Map<String, String>>
 Map<String, Map<String, String>> getClayMap(String _command) {
   String command = _command;
   Map<String, Map<String, String>> _retM = {};
@@ -55,7 +54,7 @@ Map<String, Map<String, String>> getClayMap(String _command) {
   return _retM;
 }
 
-///  use new, complicated Map
+///  'get' type Map functoon
 Map<String, Map<String, String>> packDawoClay() {
   Map<String, Map<String, String>> _retM = {};
   var packDawo = new PackDawo();
@@ -68,7 +67,8 @@ Map<String, Map<String, String>> packDawoClay() {
 Map<String, Map<String, String>> helsinkiGuideClay() {
   Map<String, Map<String, String>> _retM = {};
   var helsinkiGuide = new HelsinkiGuide();
-  helsinkiGuide.buildMaps('Clay-Roll - helsinkiGuideClay'); //  get all maps..
+  //  get all maps..
+  helsinkiGuide.buildMaps('Clay-Roll - helsinkiGuideClay');
   _retM.addAll(helsinkiGuide.helsinkiClayM);
   return _retM;
 }

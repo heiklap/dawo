@@ -2,7 +2,7 @@
 ///  This do not bring any value to dawoApp.  Just sample code-snippets.
 ///  NOTE:  Only some of these streams are executed, when called in row,
 ///  but however, they work.
-/// * dawo version:  0.0.6  -  27.11.2017  -  in gitHub : yes
+/// * dawo version:   0.3.0  23.3.2022  -  in gitHub : yes
 /// * READY-STATE:    for 0.0.7 : 0%
 /// *  NEXT:  modify these, connect to classes and lists. use stream_channel pack
 ///   Examples pasted from:   https://www.dartlang.org/docs/tutorials/streams/
@@ -17,7 +17,7 @@ import 'dart:async';
 ///  getters..
 num dawLibStreamReadiness = 90; // readiness for version 0.0.1
 
-///TODO  every stream-function adds own message to batonMsg and ++ batonCount
+///  TODO  every stream-function adds own message to batonMsg and ++ batonCount
 ///  So we can at the end see, what had happened
 StringBuffer batonMsg = new StringBuffer();
 int batonCount = 0;
@@ -25,7 +25,7 @@ int batonCount = 0;
 StringBuffer streamBuf = new StringBuffer();
 String streamMotto = 'Streams are not my friends :-|  ';
 
-///TODO  teamNext   PLAN:    Use futures for outPut
+///  TODO  teamNext   PLAN:    Use futures for outPut
 //------------------------------------------------functions
 /*  Stack example : To get a value from a Future:
 Future foo() async {
@@ -59,7 +59,7 @@ class LearnStreamSync {
   void presentStreamListen() {}
 
   ///  ..
-//TODO  aSync stream   is there something special in "superStream"   ??
+///  TODO  aSync stream   is there something special in "superStream"   ??
   void presentSuperStream(var streamData, var streamListen) {
 //  var data = streamData; // some sample data
     var stream = new Stream.fromIterable(streamData); // create the stream
@@ -193,7 +193,8 @@ class LearnStreamSync {
     //** AWAY       .listen((value) => print("listen: $value"));
   } //     -----     presentStreamTransform
 
-//TODO  bin  note   no io-operations allowed in HTML
+
+///  TODO  bin  note   no io-operations allowed in HTML
   void presentFileStream() {
 /* ERROR   The class 'File' does not have a default constructor
   File file = new File("some_file.txt");
@@ -203,7 +204,7 @@ class LearnStreamSync {
           onError: (error) => print("Error, could not open file"),
           onDone: () => print("Finished reading data"));
  */
-    print('***   nothing hyet here  *** \n');
+    print('***   nothing yet here  *** \n');
   } //     -----     presentFileStream
 
   ///  ..

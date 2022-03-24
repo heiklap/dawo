@@ -2,19 +2,22 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawoHist class
 ///  Primary functionality:  Keep historic dev data.
-/// * dawo version:  0.0.8.  -  13.3.2019.
+/// * dawo version:   0.3.0.  23.3.2022.
 /// * devState : 25%    in GitHub : yes
-// hist>  9.1.2018  Separated from dawoApp.
-//
+/// hist>  9.1.2018  Separated from dawoApp.
+//  V:  0.2.0  Only Format - DartFormat
+//  V:  0.3.0  Modify comments, style and clarity
 
 part of dawo_dev.dart;
 
 ///  Keeping historical aso. info about dawo.
 ///  Just testing: implements, here.
 class DawoHist implements BaseStruct {
+  ///
   String name = 'dawoHist';
   String info = 'Historical and old stuff of dawo.';
   Map<String, String> say = {};
+  ///
   String motto = 'Keeping this stuff out of dawoApp';
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
@@ -22,8 +25,8 @@ class DawoHist implements BaseStruct {
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   String seal = ''; //  like:  ":DAWO:HIST:";
   String emblem = ':dawoHist:'; //  or this emblem.
-  String indent =
-      ''; // like:  "      ";  3-5-7 empty marks or something visible.
+  // like:  "      ";  3-5-7 empty marks or something visible.
+  String indent = '';
   String master = ':dawoApp:'; //  Object that owns this.
 
   bool _pB = true; //  yes / no   ..  printing now.
@@ -38,10 +41,12 @@ class DawoHist implements BaseStruct {
     'done': false,
   };
 
+  ///
   String thisVersion = ''; //  users announce their version of dawo
+  ///
   String latestChange = '23.3.2017. th.12.15';
 
-  /// Map to hold development status of this app / version.
+  ///  Map to hold development status of this app / version.
   Map<String, String> dawo003 = {
     'devStateNum': '99% to  0.0.3',
     'devSituation': 'Ready to Publish',

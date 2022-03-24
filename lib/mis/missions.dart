@@ -3,7 +3,7 @@
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  Version version:  0.0.8.  -  13.3.2019.
+/// *  dawo version:   0.3.0.  23.3.2022.
 /// *  devState : 27 % / unknown  -  PLAN:  cleaning
 // -  HIST:  hkl  8.9.2017
 // -  devNote: 4 pc.
@@ -69,7 +69,7 @@ class Mission {
   String toString() {
     return name;
   }
-
+  ///
   String motto = '';
   String clause = ''; //  Combination of #LANG words in sentence.
 
@@ -187,13 +187,13 @@ class Mission {
     'autoWork': 'no'
   };
 
-  /// #Idea? -roll  and  -op : are different level of operations.
+  ///  #Idea? -roll  and  -op : are different level of operations.
   ///  For loop control variables.
   bool _rollDone = false;
   bool _rollEscape = false; //  Used in testing and to escape bugs.
   int _rollCount = 0;
   int _rollMax = 3; //  Emergency exit from loops.
-  //  TODO  To mark / handle #unUsed variables
+  ///  TODO  To mark / handle #unUsed variables
   void rollHandle() {
     _rollEscape = true;
     print('----------------  rollHandle/ unUsed  -------');
@@ -223,7 +223,7 @@ class Mission {
     //  Handle user-actions until: done or excape.
   }
 
-  //TODO  teamDev *chore*, if is toChore.. should there be outChore, lonChore ?
+  //   TODO  teamDev *chore*, if is toChore.. should there be outChore, lonChore ?
   ///  beta's connection to chore (package) (?)
   ///  *chore* is separate library, which controls *job* :s
   ///  Mediating calls to outside executor process. (?)

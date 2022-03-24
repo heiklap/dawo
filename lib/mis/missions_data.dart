@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
-/// * Mission data.  Dawo version  0.0.7.  18.12.2017
+/// * Mission data.  dawo version:   0.3.0.  23.3.2022.
 //
 
 part of missions;
@@ -50,11 +50,11 @@ class MissionData {
       'command': 'cmd: :JOIN :BUY',
       'msg': 'msg: :LEARN :RENT :LECTURE :DAWO ',
     };
-
+    ///
     packDawoMission.clause =
         'packDawo :ALL :QUEST :HELP :FIND :DATA :CODE :FREE';
 
-    //
+    ///
     helsinkiMission.say = {
       'purpose': ':helsinkiMis: :ThisMissionBLAA blaa blaa',
       'lang': ':HMis: :LANG :STADI :SUOMI :ME :OPI :TULE :TAIDE :TIEDE :TALOUS',
@@ -69,7 +69,7 @@ class MissionData {
       'newer': ':HMis: :FEAR :MISTRUST :CRIME : :HUILO'
     };
     helsinkiMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
-
+    ///
     helsinkiMission.placardM = {
       'actor': 'a:hMis ',
       'sender': 's: hMis ',
@@ -78,7 +78,7 @@ class MissionData {
       'msg': 'msg:hMis ',
     };
 
-    //
+    ///
     dartlangMission.say = {
       'purpose': ':dartlangMis :Learn :WebProgramming :Tools :library :api',
       'lang': ':dlMis :LANG :EASY :FAMILIAR :NEW :EFFECTIVE :WEB :',
@@ -101,7 +101,7 @@ class MissionData {
       'msg': 'msg: dartlang.org',
     };
 
-    //
+    ///
     myMusicMission.say = {
       'purpose': ':myMusicMis :JOY :ENTERTAINMENT :COMMUNITY :',
       'lang': ':mmMis :HEAR :LISTEN :MY :ListenMe :Train :HighLevel :Practice',
@@ -114,7 +114,7 @@ class MissionData {
       'newer': ':mmMis :NO :UGLY :HUILO :Disappointment :Fear'
     };
     myMusicMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
-
+    ///
     myMusicMission.placardM = {
       'actor': 'a:myMus:',
       'sender': 's: myMusicMis',
@@ -123,7 +123,7 @@ class MissionData {
       'msg': 'msg: myMusicMsg :MUSIC :SINGING ',
     };
 
-    //
+    ///
     myTimeMission.say = {
       'purpose': ':myTime :Effectiveness :SYSTEM :ORDER ',
       'lang': ':myTime :TIME :NOW :SOON :NEWER :SAVE :WASTE',
@@ -136,7 +136,7 @@ class MissionData {
       'newer': ':myTime :NO :Hurry :UnOrder :Fussy :HUILO :Rush'
     };
     myTimeMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
-
+    ///
     myTimeMission.placardM = {
       'actor': 'a: ',
       'sender': 's: ',
@@ -145,7 +145,7 @@ class MissionData {
       'msg': 'msg: ',
     };
 
-    //
+    ///
     nationalParksMission.say = {
       'purpose': ':natParkMis :Movement :Freshment :Health :Nature',
       'lang': ':npMis :LANG :HERE :COME :VISIT :ENJOY :WALK',
@@ -159,7 +159,7 @@ class MissionData {
     };
     nationalParksMission.clause = ':ALL :QUEST :HELP :FIND :DATA :CODE';
 
-    //
+    ///
     nationalParksMission.placardM = {
       'actor': 'a: ',
       'sender': 's: ',
@@ -175,4 +175,4 @@ class MissionData {
 } //  -----  MissionData
 
 ///
-var missionData = new MissionData();
+MissionData missionData = MissionData();

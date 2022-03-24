@@ -3,7 +3,7 @@
 ///  Bunch of simple functions, acting variously, mostly boolean conditions.
 ///  Including some funny logical-naming-errors, where name do not correspond to
 ///  functionality.  Seeking common, reusable functions.
-/// *  dawo version:    0.0.6.  27.11.2017
+/// *  dawo version:   0.3.0  23.3.2022
 /// *  devState:  50%    in gitHub:  YES  22.04.2015
 /// *  PLAN:  Total check for logic.
 //
@@ -196,8 +196,8 @@ bool alDente(var myConditionFunc, var yourConditionFunc, bool condition) {
 }
 
 ///  alDenteXxx   functions roll until condition is set (but no more than 3 times)
-//TODO  teamAdm  Function :  seems to be too complicated
-//TODO  teamAdm  logic not checked.  So... very good material for classroom
+//  TODO  teamAdm  Function :  seems to be too complicated
+//  TODO  teamAdm  logic not checked.  So... very good material for classroom
 bool alDenteOne(var myConditionFunc, var yourConditionFunc, bool condition) {
 //NOTE:  should function parameters be bool?  Add msg-String parameter
   //  supposing; condition =  false..   at the beginning => don't execute
@@ -224,7 +224,7 @@ bool alDenteOne(var myConditionFunc, var yourConditionFunc, bool condition) {
 }
 
 ///  functions roll until condition is set (but no more than 3 times)
-//TODO  teamAdm Function :  hkl   too complicated
+///  TODO  teamAdm Function :  hkl   too complicated
 ///  logic not checked    lol
 bool alDenteThree(var fFunc, var sFunc, bool condition) {
   //  supposing; condition =   false at the beginning.
@@ -249,7 +249,7 @@ bool alDenteThree(var fFunc, var sFunc, bool condition) {
 }
 
 ///  functions roll until condition is set (but no more than 3 times)
-//TODO  teamDev   Function : Make this async.    too complicated for nowOn..
+///  TODO  teamDev   Function : Make this async.    too complicated for nowOn..
 ///  nothing async here                 but in next version
 bool alDenteAsync(var fFunc, var sFunc, bool condition) {
   //  supposing; condition =   false at the beginning.
@@ -274,7 +274,7 @@ bool alDenteAsync(var fFunc, var sFunc, bool condition) {
   return condition;
 }
 
-//TODO  teamDev  Future   make some return-value and isolate..in next version
+///  TODO  teamDev  Future   make some return-value and isolate..in next version
 ///  purpose:    roll function inside isolate
 ///  nothing isolate here yet
 void isolateFuncTwo(bool condition) {
@@ -289,7 +289,7 @@ void isolateFuncTwo(bool condition) {
 }
 
 ///  alDente  functions roll until condition is set true
-//TODO  control:   catch the loops inside both functions
+///  TODO  control:   catch the loops inside both functions
 ///  and make these run parallel / aSync  &   'long'  logic
 void alDenteLong(var firstFunction, var secondFunction, bool conduct) {
   ///WORD:  conduct:    finish lang:    käytös, menettelytapa, hoito, johto
@@ -325,7 +325,7 @@ void alDenteShort(var boolFuncOne, var boolFuncTwo, bool fulfill) {
   } while (!_fulfill);
 }
 
-//TODO teamNext  Function  NOT-READY  Make: functions that DO NOT make alDente
+///  TODO teamNext  Function  NOT-READY  Make: functions that DO NOT make alDente
 void alDenteNot(var firstFunction, var secondFunction, bool clause) {
   bool _clause = clause;
   num _counter = 0;

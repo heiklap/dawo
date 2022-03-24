@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## equipment  :  material resources for Mission and Chore.
 ///  * No objects, but:  String-values for simple demo and presentation.
-///  * Dawo version:  0.0.75.  -  8.1.2018    devState : 30 %
+///  * dawo version:   0.3.0.  23.3.2022.    devState : 30 %
 ///  * Instance as:  equ
 ///
 
@@ -12,21 +12,26 @@ import 'dart:math';
 
 ///  Material and name resources for Missions and Chore.
 class Equipment {
+  ///
   bool active = false;
   var random = new Random(27);
 
   ///  Imitating real classes / Just using String-names.
   String area = 'areaR';
+  ///
   String car = 'carR';
   String law = 'lawR';
+  ///
   String machine = 'machineR';
   String money = 'moneyR';
+  ///
   String office = 'officeR';
   String people = 'peopleR';
   String time = 'timeR';
-
+  ///
   String notAvailable = 'notR';
   String unknown = 'unknownR';
+  ///
   List<String> resL = [];
 
   ///
@@ -130,8 +135,8 @@ class Equipment {
 
   ///  simulation: Produce nice-looking allocation-list of resources.
   List<String> allocate(int _r, int _c) {
-    //  TODO  use _c variable to control width
-    //  init();  must be done somewhere.
+    ///  TODO  use _c variable to control width
+    ///  init();  must be done somewhere.
     List<String> _l = [];
     StringBuffer _sB = new StringBuffer();
     _l.add(
@@ -163,4 +168,4 @@ class Equipment {
 }
 
 ///  Creating instance with short handy name.
-var equ = new Equipment();
+Equipment equ = Equipment();

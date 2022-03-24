@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## packDawoMission   Data for mission-chore system.
 ///  * Tracking and helping development of dawo package.
-///  * dawo version:   0.0.6 :  27.11.2017  -  devState : 8%
+///  * dawo version:   0.3.0  23.3.2022 :  -  devState : 8%
 ///  * PLAN: ?
 
 library packDawo;
@@ -12,16 +12,20 @@ class PackDawoHook {
   String name = 'This is class PackDawoHook';
 }
 
+///
 var packDawoHook = new PackDawoHook();
 
+///
 String dawoHook() {
   return 'This is dawo-hook';
 }
 
+///
 String dawoPole() {
   return 'This is a dawo pole';
 }
 
+///
 String dawoFlag() {
   return 'This is a dawo flag';
 }
@@ -31,6 +35,7 @@ class PackDawoPole {
   String name = 'This is class PackDawoPole';
 }
 
+///
 var packDawoPole = new PackDawoPole();
 
 ///
@@ -103,7 +108,7 @@ class PackDawo {
     '15': '',
   };
 
-  //  TODO  Copy-Paste data from dawo_dew or get_data from there.
+  ///  TODO  Copy-Paste data from dawo_dew or get_data from there.
   Map<String, String> vers006 = {
     '1': 'V:N E:N  Copy-Paste data from dawo_dew or get_data from there.',
     '2': '',
@@ -122,6 +127,7 @@ class PackDawo {
     '15': '',
   };
 
+  ///
   void buildMaps() {
     packDawoClayM.addAll({
       'Version 0.0.4': vers004,
@@ -142,12 +148,14 @@ var moodJSON = {'name': '', 'mood': 'dart', 'level': 'good'};
 ///  sample data from: http://json-schema.org/example/card.json
 var profitJSON = {'name': '', 'skill': 'dart', 'level': 'good'};
 
+///
 var learnToLoveJSON = {
   'use': 'Use it regularly',
   'learn': 'Basics',
   'dogfood': 'Eat it'
 };
 
+///
 var responseJSON = {
   "status": 1,
   "content": {"sessionid": "4c86cf1acac07811db6ec670e0b9cdd2"}
@@ -179,6 +187,7 @@ var dawoMenu = JSON.decode('[
 ]');
 */
 
+///
 void renderDawoMenu() {
   //  dawoMenu.menu.popup.menuitem[1].value;
 }

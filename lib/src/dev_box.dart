@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dev_box  -  presentation in 2-3-4 column boxes.
 ///
-///  * dawo version: 0.0.8.  -  13.3.2019.  devState: 90%
+///  * dawo version:   0.3.0.  23.3.2022.  devState: 90%
 ///  *      GitHub: yes.
 //
 
@@ -224,4 +224,4 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
 
   devBoxBuild(); //  Call build-function.
   return _retBuf;
-} //  ----------  devBox
+}      //     -----     devBox

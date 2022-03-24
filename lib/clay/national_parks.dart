@@ -2,15 +2,16 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  # dawo clay: Finlands national parks.
 ///  * Presenting data for dawo-Mission and it's chore system.
-///  * dawo version:   0.0.6 :  27.11.2017
+///  * dawo version:   0.3.0  23.3.2022 :  27.11.2017
 
 //
 library nationalParksFinland;
 
 ///
 class NationalParks {
+  ///  name
   String name = 'National Parks of Finland class';
-
+  ///  Map
   Map<String, Map<String, String>> nationalParksClayM = {};
 
   ///  Map of Finlands national parks for Chore
@@ -61,7 +62,7 @@ class NationalParks {
         'Valkmusa s extensive natural open bogs give visitors a chance to wind down and see, hear, smell and even taste nature all around.     http://www.nationalparks.fi/valkmusanp'
   };
 
-  ///
+  ///  Method buildMaps
   void buildMaps() {
     nationalParksClayM.addAll({'Finlands National Parks': parksM});
   }

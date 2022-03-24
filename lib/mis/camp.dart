@@ -1,12 +1,12 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  camp lib with camp and scout classes.
-/// * dawo version:  0.0.8.  -  13.3.2019.  -  devState:  30%
+/// * dawo version:   0.3.0.  23.3.2022.  -  devState:  30%
 /// * GitHub:.
 /// * Missions and Chores can use connector-services, from corporate-side
 /// * to join to Camp-Scout system, whereas corporate side can also use
 /// * camp-scout system to use mis-side equipment and effort.
-//Moving here stuff from mission
+///  Moving here stuff from mission
 
 library camp;
 
@@ -23,10 +23,11 @@ import '../corp/connector.dart';
 ///  Finding later some use of class Camp.
 class Camp {}
 
-//  var camp = new Camp();
+//  camp = Camp();
 
 ///
 class Scout {
+  ///
   String name = 'Scout';
   String motto = 'Join all together in camp and scout';
   String clause = ''; //  Combination of #LANG words in sentence.
@@ -52,13 +53,13 @@ class Scout {
     'command': 'scout:com:',
     'msg': ':scout:msg:',
   };
+  ///  for print
+  bool _pB = false;
 
-  bool _pB = false; //  for print
-
-  /// Create some scout___ methods, #then: find some job for them.
-  /// Renamed to:  scoutXX
-  /// devNote:  function, that OPENS way to use outer resources.
-  /// #scout.. system in 15% devState.  NEXT:
+  ///  Create some scout___ methods, #then: find some job for them.
+  ///  Renamed to:  scoutXX
+  ///  devNote:  function, that OPENS way to use outer resources.
+  ///  #scout.. system in 15% devState.  NEXT:
   bool init(int openCount, var openThis) {
     ///  use resource, equ class to get practical usable #things.
     _flowC('-->-m-->  :M:scout:$name  scoutInit ', _pB);
@@ -149,8 +150,8 @@ class Scout {
     }
   }
 
-  //  int opClose(int openCount, Function openThis) {
-  //  TODO  scout  not used
+  ///  int opClose(int openCount, Function openThis) {}
+  ///  TODO  scout  not used
   void close() {
     equ.active = false;
     _flowC('--<----<-  scout:$name  scoutClose --<----<-', _pB);
@@ -165,4 +166,6 @@ class Scout {
   }
 } //  -----  scout class
 
-var scout = new Scout();
+Scout scout = Scout();
+
+

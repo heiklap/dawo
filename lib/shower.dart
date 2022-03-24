@@ -3,7 +3,7 @@
 ///  ##  Shower  -  presentation info and data screens.
 ///  New box_serve makes this better: makes only frames and keep clients data
 ///  in client side.  This file might eventually fade out.
-///  * dawo version: 0.0.8.  -  13.3.2019.  devState: 90%
+///  * dawo version:   0.3.0.  23.3.2022..  devState: 90%
 ///  *      GitHub: yes.
 ///  * DONE  #deprecated deleted_ rows 300 - 350
 ///  * SCHEDULE might deserve it's own class.
@@ -40,26 +40,29 @@ class ScheduleBox {
   flowC(':M:op: scheduleBox-info: Report for to check data lists. >>', _pB);
   flowC('>> :M:op: scheduleBox: **Not needed when scheduleBox is on.**.', _pB);
   */
-  int _sw = 195; //  screen width
-  static int _rc = 40; //  row count
+  ///  screen width
+  int _sw = 195;
+  ///  row count
+  static int _rc = 40;
+  ///  Create empty-String list with counted items
   List<String> _matrix = new List.filled(_rc, '');
   int _colPos = 100;
   List<String> _resAllocL = [];
 
+  ///
   void init() {
     ///  Call equ class and it's allocate method to get resource List
-
     equ.init(':M:scheduleBox');
     _resAllocL.addAll(equ.allocate(36, 40)); //  width var not used yet.
   }
-
+  ///
   void build(String _caller) {
     for (var z = 1; z < _matrix.length; z++) {
       //  do not handle first row.
       _colPos++;
       //  TODO  choose nice background mark for matrix.
-      _matrix[z] =
-          '$_colPos '.padRight(_sw, '-'); //  pad with low-density mark.
+      //  pad with low-density mark.
+      _matrix[z] = '$_colPos '.padRight(_sw, '-');
     }
     _matrix[0] =
         '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 0.1.0 -';
@@ -75,7 +78,7 @@ class ScheduleBox {
     void anchorBox(int _r, int _c, _items, _w, List<String> __l) {
       tl.boxInList(_r, _c, _items, _w, __l, _matrix);
       //NO #print:  print(_matrix);
-    }
+    }     //     -----      anchorBox
 
     ///  Marks left of console screen to put table in convenient place for to see.
     void eyeMark14() {
@@ -98,15 +101,17 @@ class ScheduleBox {
     //  Usable resources: toolsActiveM, toolsSpeedM,status
     eyeMark14(); //  mark 'peg' to put screen table to screen.
   } //  -----  build
-
+  ///
   void roll(String _caller) {
     init();
     build(_caller);
     _matrix.forEach(print);
-  }
-} //  -----  class ScheduleBox
+  }     //     -----     roll
 
-var scheduleBox = new ScheduleBox();
+}      //     -----     class ScheduleBox
+
+///  Create instance with constructor
+ScheduleBox scheduleBox = ScheduleBox();
 
 ///  QUEST:  there is surely better algorithm for this
 ///  Gets some small data from effortLM based on parameters.
@@ -162,7 +167,7 @@ List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
   print('returning list:: n-values:  $_c ');
   _retLTake.forEach(print);
   return _retLTake;
-}
+}     //     -----     highValue
 
 ///  Gets some small data from effortLM based on parameters.
 List<String> effortTable(
@@ -244,7 +249,7 @@ List<String> effortTable(
   print(_retL);
   print('------------------------ effortTable done-----------------------');
   return _retL;
-} //  -----  effortTable
+}      //     -----     effortTable
 
 ///  NO!!!  Testing if we can #deprecated this
 ///  Screen-sized matrix pierced with staggered list elements.
@@ -283,7 +288,7 @@ List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
         '.--------------------------------'); //TODO  Make something more visible and useful.
   } //  -----------------    All incoming lists.3
   return _ol;
-} //  -----  iterableDiagonal
+}      //     -----     iterableDiagonal
 
 ///  NO success::  No usages??  Trying to comment this out!!
 ///  List and Map versions of this method
@@ -334,6 +339,6 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
   _ol.add(emptyLine);
   _ol.add(botLine);
   return _ol; //  ---------- return type:   List<String>
-}
+}     //     -----     iterableDiagonalM
 
 //

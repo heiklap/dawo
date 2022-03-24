@@ -3,7 +3,7 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dawo version:  0.0.8.  -  13.3.2019.   devState:  60%
+/// * dawo version:   0.3.0.  23.3.2022.   devState:  60%
 /// * GitHub: yes
 //
 
@@ -20,32 +20,45 @@ import '../src/glb.dart';
 ///  Schedule connect, opJoin corporate, bind, binding
 ///  Present callers List, Map, text data in row,col in boxes inside a matrix.
 class BoxServe {
+  ///
   int boxNum = 0;
+  ///
   String boxNumS = '';
-  int sw = 195; //  default:  screen width
-  int rc = 47; //  default:  row count
-  String pm = '-'; //  default
-  //  (rc);  lets not decide here lists length
-  //  title,   rubric
-  //  should be upper level TODO
+  ///  default:  box-in-screen width
+  int sw = 195;
+  ///  default:  box-row-count
+  int rc = 47;
+
+  ///  default pad-mark for to fill empty matrix cells
+  String pm = '-';
+  ///  (rc);  lets not decide here lists length
+  ///  title,   rubric
+  ///  should be upper level TODO
   String title = ' **  boxServe Title  **';
-  //  should be upper level TODO
+  ///  should be upper level TODO
   String footer = ' **  boxServe Footer  **';
-  String caller = ''; //  should be upper level TODO
+  ///  should be upper level TODO
+  String caller = '';
+
   ///  Will be combination of '$caller $boxNum.toString()'
   ///
   String name = '';
-  //  TODO  null  List can here be NULL  ??
+  ///  TODO  null  List can here be NULL  ??
   Map<String, List<String>> logM = {};
   List<String> _matrix = [];
-  //  To save matrix AND mediate it to glb.
+  ///  To save matrix AND mediate it to glb.
   StringBuffer _buf = new StringBuffer();
-  String _bufName = ''; //  Form nice name for glb.buffers.X
+
+  ///  Form nice name for glb.buffers.X
+  String _bufName = '';
   ///  #QUEST:  can this be made with #generator function?
-  int _fakeRow = 100; //  Get nice  100 - 147 numbers
-  List<String> _resAllocL = []; //  Some extra resource, like: equ/Equipment.
+  ///  Get nice  100 - 147 numbers
+  int _fakeRow = 100;
+  //  Some extra resource, like: equ/Equipment.
+  List<String> _resAllocL = [];
   ///  Forming vertical separator/note line in screen.
-  List<String> verticalLineL = []; //  max: rc - 2)
+  ///  max: rc - 2)
+  List<String> verticalLineL = [];
 
   //  Methods to be called from outside class: init, construct, build
   //  construct('$_caller :roll:');
@@ -53,7 +66,7 @@ class BoxServe {
 
   ///  Initialize measure values by parameters
   ///  TODO  set min-max-maxWidthString values
-  /// Min rows is 4 !!   Min width is NOW:  55= NO!!   65 = YES!!
+  ///  Min rows is 4 !!   Min width is NOW:  55= NO!!   65 = YES!!
   void init(int h, int w, String _pm) {
     boxNum++;
     boxNumS = boxNum.toString();
@@ -76,7 +89,7 @@ class BoxServe {
       _matrix.add(rowS);
     }
     logM.putIfAbsent(boxNumS, () => ['$boxNumS INIT']);
-  }
+  }     //     -----     init
 
   ///  Build matrix with top, left, bot
   ///  Too bad that users have to call both init and construct and...
@@ -119,13 +132,14 @@ class BoxServe {
     //  hklTry adding ! to the target   logM[boxNumS].addAll([name, 'CTRCT']);
     //  howTo NULL  OK Watch This if it works
     logM[boxNumS]!.addAll([name, 'CTRCT']);
-  } //  -----  construct
+  }      //     -----     construct
 
   ///  Marks left of console screen to put table in convenient place for to see.
   void eyeMark14() {
     int pegC = _matrix.length;
     //  boxServe.aHeader(min((boxServe.rc - 2), 14), 0, 'peg');
-    aHeader(min((pegC - 2), 14), 0, 'peg'); //  Lay "screen-watch-anchor"
+    //  Lay "screen-watch-anchor"
+    aHeader(min((pegC - 2), 14), 0, 'peg');
   }
 
   ///  Lay row-12 length marker, like:  ___197 on right edge.
@@ -141,9 +155,9 @@ class BoxServe {
     _matrix[level - 1] = _matrix[level - 1] + sw.toString();
   }
 
-  /// Small lined box using optional parameter in function.
-  /// First: shaping map in tools, tl, library for k, v, widths.
-  /// If the parameter can’t be null, then either provide a default value:
+  ///  Small lined box using optional parameter in function.
+  ///  First: shaping map in tools, tl, library for k, v, widths.
+  ///  If the parameter can’t be null, then either provide a default value:
   ///  howTo NULL       void f([int x = 1]) {}
   List<String> infoBox(Map<String, String> inM, int _k, _v, [int margin = 0]) {
     List<String> infoL = tl.mapToFineList(inM, _k, _v);
@@ -182,19 +196,18 @@ class BoxServe {
 
     /// Returned list includes possible margin.
     return infoL2;
-  }
+  }     //     -----     infoBox
 
-  //  Fill list-data in matrix in r, _c coordinates.
-  //  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
-  //  TODO :BUG: :QUEST: Error check for over-sized lists: do not work always.
+  ///  Fill list-data in matrix in r, _c coordinates.
+  ///  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
+  ///  TODO :BUG: :QUEST: Error check for over-sized lists: do not work always.
   ///  Add all list element to matrix in _r, _c WITH _items in _w-width.
   ///  fix2.0.0  List<String>
-
   ///  howTo NULL  integer  num   deault value:  [x = 0]
-  // void aBox(int _r, _c, _items, _w, List<String> _l) {
-  //  howTo NULL  int give default value
-  //  NO  void aBox([int _r = 0], [int  _c = 0], [_items = 0], _w, List<String> _l) {
-  //  NO  void aBox([int _r = 0, int  _c = 0, _items = 0]  _w, List<String> _l) {
+  ///  void aBox(int _r, _c, _items, _w, List<String> _l) {
+  ///  howTo NULL  int give default value
+  ///  NO  void aBox([int _r = 0], [int  _c = 0], [_items = 0], _w, List<String> _l) {
+  ///  NO  void aBox([int _r = 0, int  _c = 0, _items = 0]  _w, List<String> _l) {
   void aBox(int _r, int _c, int _items, int _w, List<String> _l) {
     //  If not know list length / wanted items and width, try 100. lol
     //  TODO  Truncate items and length, if List outOfMatrix borders
@@ -208,7 +221,7 @@ class BoxServe {
       _overWidth = (_c + _w) - sw;
       print(_overWidth);
       //  howTo NULL  cast num toInt
-      // noComprendo    _overLength = (_r + _items) - rc;
+      //  noComprendo    _overLength = (_r + _items) - rc;
       //  _overLength = (_r + _items) - rc;
       //  NO  _overLength = (((_r + _items).toInt) (- rc).toInt;
       //  hklTry:  do not know, how it is now OK ????
@@ -235,7 +248,7 @@ class BoxServe {
       //  howTo NULL  List:  use List.generate  or  .filled
       //  howTo List.generate  external factory List.generate(int length, E generator(int index)
       //  /// .generate   Creates an unmodifiable list containing all [elements].
-      // NO  List<String> verticalWarningL = new List.generate(_items, 0);
+      //  NO  List<String> verticalWarningL = new List.generate(_items, 0);
       //  ..
       //  external factory List.filled(int length, E fill, {bool growable = false});
       //  hklTry:   List<String> verticalWarningL = new List(_items);
@@ -252,7 +265,7 @@ class BoxServe {
       print('error done::');
       //  lay horizontal #VARNING line
     } //  -----  error
-  } //  -----  aBox
+  }      //     -----     aBox
 
   ///   Lay String in a certain place in matrix.
   ///   :QUEST:  This is too complicated, lol.
@@ -264,7 +277,7 @@ class BoxServe {
     _matrix[_r] = '$_s1$s$_s3';
   }
 
-  //  Set vertical line to screen matrix
+  ///  Set vertical line to screen matrix
   void vertLine(int _x, _y, count) {
     String _newS;
     int toX = (_x + count).toInt(); //  howTo   NULL check  YES
@@ -274,8 +287,8 @@ class BoxServe {
     }
   }
 
-  //  aBox calls warnings in case of over-length-width box in matrix.
-  //  Set vertical Warning-line for over-sized-box to screen matrix
+  ///  aBox calls warnings in case of over-length-width box in matrix.
+  ///  Set vertical Warning-line for over-sized-box to screen matrix
   void vertWarning(int _x, _y, count, String _s) {
     String _newS;
     int toX = 0;
@@ -286,9 +299,9 @@ class BoxServe {
       _newS = tl.changeLetter(_matrix[x], _y, _s);
       _matrix[x] = _newS;
     }
-  }
+  }     //     -----     vertWarning
 
-  //  Set horizontal Warning-line to screen matrix
+  ///  Set horizontal Warning-line to screen matrix
   void horizWarning(int _x, _y, _width, String _extraS) {
     StringBuffer _b = new StringBuffer();
 
@@ -299,7 +312,7 @@ class BoxServe {
 
     ///  Fill it to the matrix
     aHeader(_x, _y, _b.toString());
-  }
+  }     //     -----      horizWarning
 
   ///  Called by:   User!!  Not from this class.
   ///  To show matrix AND mediate it to glb.buf
@@ -326,7 +339,7 @@ class BoxServe {
     //  howTo NULL   hklTry    add null check to the target:  !  OK  workds
     //  logM[boxNumS].addAll([_caller, 'SHOW']);
     logM[boxNumS]!.addAll([_caller, 'SHOW']);
-  }
+  }     //     -----     show
 
   ///  Called by:  next method, saveToGLB
   ///  title + _matrix + footer saved to buf.
@@ -338,7 +351,7 @@ class BoxServe {
     }
     boo.writeln(footer);
     return boo;
-  }
+  }     //     -----      toBuffer
 
   ///  Called by:  show()
   ///  toGLB-Buffer.  Save boxServe matrix to glb-buffers
@@ -357,7 +370,7 @@ class BoxServe {
     print('-<<---saveToGLB  done    ----<<-----  ');
     // OK     howTo NULL   add null check ! to the tarrget
     logM[boxNumS]!.add('svGLB');
-  }
+  }     //     -----     saveToGLB
 
   ///  Lets see, if this will eventually be List<String>
   ///  TODO  #deprecated  split in:  show and #done
@@ -371,7 +384,7 @@ class BoxServe {
     _fakeRow = 100;
     //  howTo NULL   add ! to target
     logM[boxNumS]!.add('DONE');
-  }
+  }     //     -----     done
 
   ///  TODO : Constructor, to give shapes and measures
 
@@ -428,7 +441,7 @@ void boxLayoutDap(BaseStruct _model, String _rubric) {
   //  Lay "screen-watch-peg"to set box to fill the screen.
   //  To allow use of < 14 boxes: (boxServe.rc - 2)
   boxServe.aHeader(min((boxServe.rc - 2), 14), 0, 'peg');
-} //  -----  boxLayoutDab
+}      //     -----     boxLayoutDab
 
 ///  UsingBaseStruct (connector) fields to set usual fields in boxServe
 void boxLayOutConnector() {}

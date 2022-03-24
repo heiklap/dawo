@@ -1,6 +1,6 @@
 /// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 /// is governed by a BSD-style license that can be found in the LICENSE file.
-///  dawo version  :  0.0.7.  18.12.2017
+///  dawo version:   0.3.0.  23.3.2022.
 
 /*  NOTE: Pub
 By convention, implementation code is placed under lib/src. Code under lib/src
@@ -13,7 +13,7 @@ part of dawo_src;
 // TODO: Put public facing types in this file.
 
 ///  buffer also outside class, for testing and adding visibility
-var awesomeBuf = new StringBuffer();
+StringBuffer awesomeBuf = StringBuffer();
 
 /// This file is originally created by Dart tools
 /// Checks if you are awesome. Spoiler: you are.

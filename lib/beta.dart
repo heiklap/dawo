@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## Modeling joint, reusable controls and operations for libraries.
-///  dawo/beta,  dawo version:   0.0.7.  18.12.2017
+///  dawo/beta,  dawo version:   0.3.0.  23.3.2022.
 ///  devState   40 %   in GIT  Yes
 ///
 ///  Time to start thinking 6.th floor's machinery, when you are only just
@@ -30,14 +30,16 @@ library beta;
 import 'src/glb.dart'; //  for glb.. & printControl.
 import 'alpha.dart';
 
-//  TODO  Final readiness.  this is not
+///  TODO  Final readiness.  this is not
 final num betaReadiness = 2; //  readiness for  version  0.2.0
 int flowI = 0; // flow-counter.
-bool _betaPB = true; //  control for printing.
+///  control for printing.
+bool _betaPB = true;
 
 //  hklTry this out now.
 //  Typedef FlowServe(String actor, StringBuffer buf, String msg, bool pr);
 
+///  ifPrint function
 void ifPrint(Object obj, bool _b) {
   /*   Flags in glb.st Map, that control printing of different things.
   'flow' : false,  //  false prevents all "flow" printing via flowServe();
@@ -55,13 +57,13 @@ void ifPrint(Object obj, bool _b) {
   */
   ///  TODO Can this print buf, map, list, String?
   if (_b) print(obj);
-}
+}     //     -----     ifPrint
 
-/// * *  This is main f-Print, that handles all flowC call from every library.
-/// Do not look out unprofessionally and spam your code with print-clauses!
-/// Instead use: flow !!
-//  Actor and buf are not needed in parameter !!  They are get from caller.
-//  void flow(String actor, StringBuffer buf, String msg, bool pr)
+///  * *  This is main f-Print, that handles all flowC call from every library.
+///  Do not look out unprofessionally and spam your code with print-clauses!
+///  Instead use: flow !!
+///  Actor and buf are not needed in parameter !!  They are get from caller.
+///  void flow(String actor, StringBuffer buf, String msg, bool pr)
 ///  DONE:  To avoid messing with buffer and actor HOORAY: used local flowC().
 ///  ALL  local flowC() calls this flowServe()
 void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
@@ -76,7 +78,8 @@ void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
 
   ///  Added opC: to flow-counter for easy search.
   String _flowIS = 'opC:$flowIS';
-  String header = 'fs:'; //  $pr:  If want true / false.
+  //  ?? WHAT?   $pr:  If want true / false.
+  String header = 'fs:';
   String text = '$actor$header$_flowIS $msg ';
 
   //  Try checking that value is not NULL, before using it in a condition
@@ -91,7 +94,7 @@ void flowServe(String actor, StringBuffer buf, String msg, bool pr) {
   //  buf.writeln('$actor $_flowIS $msg');
   //  Code here.
   //  Form nice String (for print and/or buf) that describes ongoing operation.
-}
+}     //     -----     flowServe
 
 ///  Find String in out-buffers;
 void flowFind(String caller, String _fs, int len) {
@@ -136,7 +139,7 @@ void flowFind(String caller, String _fs, int len) {
   // No for Map   if (_betaPB) outBufM.forEach(print); //  Not output for now.
   if (_betaPB)
     out.outBufM.forEach((k, v) => print('$k, $v')); //  Not output for now.
-} //  ----- flowFind
+}      //     -----     flowFind
 
 ///  Calling print/print-to-buffer function from library: beta.
 ///  Getting local variables; Actor and Buffer right.
@@ -147,9 +150,9 @@ void _flowC(String msg, bool betaPB) {
   flowServe(':beta:flC:$betaPB ', betaBuf, msg, betaPB);
 }
 
-//  TODO  typedef SPrint, comment away.
-// typedef void SPrint(String msg);
-//  typedef SPrint(String msg);
+///  TODO  typedef SPrint, comment away.
+///  typedef void SPrint(String msg);
+///  typedef SPrint(String msg);
 void sPrint(String msg) {
   if (_betaPB) print(':sPrint:  $msg');
 }
@@ -197,7 +200,7 @@ class Stock {
   var supply;
   var demand;
   //  void passage, entry
-}
+}     //     -----     class Stock
 
 ///  IDEA: flow command through function, that records it's info for op-system
 ///  Name for this heart of big-clocking-system ?
@@ -205,7 +208,7 @@ void getOperationInfoOnParameters() {
   ///
 }
 
-///  Usual presentation / play function.
+///  Usual presentation / play / test  function.
 StringBuffer renderBeta(String caller) {
   print('\n ================= render beta C: $caller ======================');
   _flowC(':beta:renderBeta:', _betaPB);
@@ -219,6 +222,6 @@ StringBuffer renderBeta(String caller) {
   assignBetaRender();
   print('================= renderBeta : done  C: $caller ============ \n');
   return _retBuf;
-}
+}     //     -----     renderBeta
 
 //

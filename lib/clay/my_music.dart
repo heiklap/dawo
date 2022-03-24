@@ -3,17 +3,18 @@
 ///  # dawo clay  myMusic
 ///  * Presenting data for dawo musicMission -chore system in music area.
 ///  * Includes simple Map data, that may be presented by objects box-method.
-///  * version:   0.0.6  27.11.2017
+///  * version:   0.3.0  23.3.2022
 
 //
 library myMusic;
 
 ///
 class MyMusic {
+  ///  name
   String name = 'My Music class';
-
+  ///  myMusicClayM Map
   Map<String, Map<String, String>> myMusicClayM = {};
-
+  ///  myMusicM Map
   Map<String, String> myMusicM = {
     'Ukraine National Anthem': 'https://www.youtube.com/watch?v=bHzHlSLhtmM',
     'Vera Lynn: The White Cliffs of Dover':
@@ -30,7 +31,7 @@ class MyMusic {
         'https://www.youtube.com/watch?v=bR9zAoOcJ0E',
   };
 
-  ///  my Instruments
+  ///  my Instruments Map
   Map<String, String> myInstrumentM = {
     'Guitar Steel': 'Yamaha Guitar',
     'Guitar Nylon': 'Yamaha Guitar',
@@ -42,7 +43,7 @@ class MyMusic {
     'Accordion': 'Pelimanni harmonikka'
   };
 
-  ///  my favorite artists
+  ///  my favorite artists Map
   Map<String, String> myArtistM = {
     'Joan Baez': 'https://en.wikipedia.org/wiki/Joan_Baez',
     'Donovan': 'https://en.wikipedia.org/wiki/Donovan',
@@ -54,7 +55,7 @@ class MyMusic {
     'Lili-Babs': 'https://en.wikipedia.org/wiki/Lill-Babs',
   };
 
-  ///  my music genres
+  ///  my music genres Map
   Map<String, String> myGenreM = {
     'Country': 'Hank Williams and old stuff',
     'Blues': 'All goes',
@@ -63,6 +64,7 @@ class MyMusic {
   };
 
   ///  music Genres from: https://en.wikipedia.org/wiki/List_of_popular_music_genres
+  ///  musicGenreM Map
   Map<String, String> musicGenreM = {
     '1': '	African',
     '2	': 'Asian',
@@ -84,7 +86,7 @@ class MyMusic {
     '16	': 'Rock'
   };
 
-  ///
+  ///  Method buildMaps
   void buildMaps() {
     myMusicClayM.addAll({
       'myMusic': myMusicM,
@@ -96,7 +98,7 @@ class MyMusic {
   }
 } //  -----  MyMusic Class
 
-///
+///  For play and exercise
 void renderWorkingMusic() {
   var myMusic = new MyMusic();
   myMusic.myArtistM.forEach((k, v) => print('$k, $v'));

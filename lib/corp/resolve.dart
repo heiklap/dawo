@@ -2,10 +2,10 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  bind :  solving literal searches by customer (bind) wishes.
 ///  * find: memberM.placardM/clause / bindItem => response.bing.caller
-///  * dawo version: 0.0.7. - 18.12.2017
+///  * dawo version:   0.3.0.  23.3.2022
 ///  * GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/resolve.dart
 ///  * devState: schema  5%  -  PLAN: no time.
-//  Hist:hkl  19.11.2017  Moved stuff out from connector.
+///  Hist:hkl  19.11.2017  Moved stuff out from connector.
 
 // * * * *    Start using RegExp in String operations.  * * * *
 /*  #CODE  from:  https://www.dartlang.org/guides/libraries/library-tour
@@ -15,10 +15,10 @@ Strings are immutable objects, which means you can create them but you can’t c
 var greetingTemplate = 'Hello, NAME!';
 var greeting = greetingTemplate
     .replaceAll(new RegExp('NAME'), 'Bob');
-
 assert(greeting !=
     greetingTemplate); // greetingTemplate didn't change.
  */
+
 library resolve;
 
 //  import '../tools.dart';
@@ -38,17 +38,17 @@ class Resolve {
 
   ///  Variables:  PLAN:  ALL NEEDED HANDLE_DATA IS IN CALLER SIDE.
   var _uh; //  user handle
-
+  ///
   var _dh; //  data handle, ALL
   var _dhC; //  data handle, current #client
-  //  Definition, how Client requests are handled, preferences aso.
+  ///  Definition, how Client requests are handled, preferences aso.
   var _rh; //  rule handle.
   var _rhC; //  rule handle, #Client
-  //  Priority system in word-search.
+  ///  Priority system in word-search.
   var _phC; //  preference handle, #Client
-  //  Outside library that is used or clients own library.
+  ///  Outside library that is used or clients own library.
   var _dl; //  handle to #LANG  maybe #dawolang
-
+  ///
   var _zyld; //  Outside data zylinder.
 
   ///  Client sends all handles at initialization.
@@ -69,12 +69,12 @@ class Resolve {
 
   ///  Find and keep user priority, preference aso.
   String userData() {
-    //  Store user variables to up-level vars.
+    ///  Store user variables to up-level vars.
     return '';
   }
 
   /// 3 #LANG specific commands, that configure objects behaviour in relation
-  /// to other objects.
+  ///   to other objects.
   ///  TODO  Name for next 3 fields might be opTouche aso.
   ///  Solve one unambiguous textual find-decide problem.
   ///  NOTE: might be separate Touche class.
@@ -106,6 +106,7 @@ class Resolve {
 ///  Instance, although I remember reserving #res word for something else.
 var resolve = new Resolve();
 
+///
 void renderResolve() {
   ///  Just to name variables here for to avoid unused error.
   resolve._uh; //  user handle

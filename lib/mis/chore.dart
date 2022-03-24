@@ -1,6 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  Chore for organizing work flow.  version:  0.0.8.  -  13.3.2019.
+///  ##  Chore for organizing work flow.
+///  dawo version:   0.3.0.  23.3.2022.
 ///  * Sub-ordinate of Mission, with wide operative flow capabilities.
 ///  devState : 27 %  -   In  GitHub:   yes
 ///
@@ -66,7 +67,7 @@ num dawLibWorkReadiness = 94; // for version  0.0.1
 
 ///  This is for ALL chores,
 StringBuffer choreBuf = new StringBuffer();
-
+///
 bool _pB = false; //  Not printing now.
 ///  TODO  Temporary hack.
 bool pBNotNow = false; //  Not printing now.
@@ -97,19 +98,21 @@ class BlanketChore extends BaseStruct {
   String toString() {
     return name;
   }
-
+  ///
   String info = 'Chore resolves  W O R K  flow and control ..';
-  //  Do not initialize values; just study, what this class got.
+  ///  Do not initialize values; just study, what this class got.
   String motto = 'chore handling small jobs as sub-ordinate of mission.';
 
   ///  Used in function calls to bring-in objects permanent String-values.
   String clause = ''; //  Combination of #LANG words in sentence.
 
   ///  devNote: PLAN: Three fields for to better shape outPut stuff in console.
-  String seal = ''; //   No usage
-  String emblem = ''; //  or this emblem.  like:  ":DAWO:APP:";
-  String indent =
-      ''; // like:  "      ";  3-5-7 empty marks or something visible.
+  ///  No usage
+  String seal = '';
+  ///  or this emblem.  like:  ":DAWO:APP:";
+  String emblem = '';
+  /// like:  "      ";  3-5-7 empty marks or something visible.
+  String indent = '';
 
   ///  Master field is used in boxes to access Master-objects data.
   String master =
@@ -147,12 +150,13 @@ class BlanketChore extends BaseStruct {
 
   ///  Abstract plan of Chore's contacts.
   var circle; //  Other Chores or objects, that this Chore can join.
+  ///
   void join(circle) {}
 
   ///  Row data describing work-flow and life-cycle events.
   StringBuffer buf = new StringBuffer();
 
-  //TODO  deliberated error to find error in build usage.
+  ///  TODO  deliberated error to find error in build usage.
   bool errorInBX = false; // TODO  temporary, to find error
 
   ///  Serializing objects msg's dawo uses placardM
@@ -400,7 +404,9 @@ class BlanketChore extends BaseStruct {
   ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
+  ///
   void chainStream() {} //  real stream, slow answer.
+  ///
   void fireStream() {} //  NOTE: Should use StreamChannel package.
   ///  ***********************************************************************
 

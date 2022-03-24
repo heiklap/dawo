@@ -3,11 +3,11 @@
 ///  ##  Effort : data-in / out - working frame for chore user.
 /// * ONLY  chore.dart should import this. 70% of user-activity is here.
 /// * User adds or changes his own data to effort Maps.
-/// * dawo version:  version:  0.0.75.  -  8.1.2018.
+/// * dawo version:   0.3.0.  23.3.2022.
 /// * NEXT version: Add SplayTreeSet,  and  LinkedHashSet
 /// * devState : 25%  -  PLAN: 008 : 30%
-// devNote:  Collecting here habit / human-like objects.
-// Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
+///  devNote:  Collecting here habit / human-like objects.
+///  Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
 //
 
 library effort;
@@ -19,6 +19,7 @@ import '../clay/user_json.dart';
 //  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;
 bool _pB = true;
+///
 String typeDefTestS = 'typeDefTestString not used now.';
 
 //  TODO  typedef _effPrint  Deleted 15.11.
@@ -37,7 +38,7 @@ void effortOperationMapPrint(Map thisMap) {
 ///  Effort is working-screen for user, with in and out-data.
 class Effort {
   String name = 'Chore-Effort class.';
-
+  ///
   String motto = 'User activity and datain-out functionality in Chore.';
 
 //  team-howTo add map fields to list...   example
@@ -100,7 +101,7 @@ class Effort {
   }
 
   ///  Every team might have it's saying on subjects.
-  /// Filling teamActM List
+  ///  Filling teamActM List
   void makeTeams() {
     teamActM
       ..putIfAbsent('teamAdmAct', () => 'V:3 E:9 D:1 ')
@@ -156,10 +157,10 @@ class Effort {
   ///  Get diagonal presentation of all user-data Lists
   List<Map<String, String>> effortLM = [];
 
-  //  TODO  typedef _effPrint
+  ///  TODO  typedef _effPrint
   ///  announced outside class:  typedef void _effPrint(String msg);
-//  typedef _effPrint(String msg);
-  // _EffPrint _effPrint(String msg) {
+  ///  typedef _effPrint(String msg);
+  ///  _EffPrint _effPrint(String msg) {
   void _effPrint(String msg) {
     if (_pB) print(':_effPrint:$_pB  $msg $typeDefTestS');
   }
@@ -344,7 +345,7 @@ class Effort {
 ///  Creating instance of effort class.
 ///  From now on there is ONLY ONE instance of Effort class.
 ///  All it's activity is rolled via chore.dart
-var eff = new Effort();
+Effort eff = Effort();
 
 ///  Chaining calls to serve userJson.
 void effortCallingUserJson(String caller) {
