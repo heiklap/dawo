@@ -45,7 +45,7 @@ class ScheduleBox {
   ///  row count
   static int _rc = 40;
   ///  Create empty-String list with counted items
-  List<String> _matrix = new List.filled(_rc, '');
+  List<String> _matrix = List.filled(_rc, '');
   int _colPos = 100;
   List<String> _resAllocL = [];
 

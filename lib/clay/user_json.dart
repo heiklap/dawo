@@ -81,13 +81,13 @@ class UserJson {
   var furyJSONDec = json.decode('["dpFirst", { "outFuryData": 3 }]');
 } //  -----   class UserJson
 
-var userJson = new UserJson();
+UserJson userJson = UserJson();
 
 ///  Only a presentation function.
 void renderUserJson(String caller) {
   print('  -->-->  renderUserJson started  called by: $caller   -->--> ');
   //  Crete only-here instance.
-  var uj = new UserJson();
+  UserJson uj = UserJson();
   //  encode(Object value, { dynamic toEncodable(object) }) → String
   //  Converts value to a json string.
 

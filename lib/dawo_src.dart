@@ -3,7 +3,7 @@
 ///  ##  Sample file made by Dart.  "Home of dawo libraries."
 /// * Badly treated and would deserve more love than I have to give.
 /// * Might serve as a collector or central for it's sub-libraries.
-/// * dawo version:   0.3.0.  23.3.2022.  devState : 20 %
+/// * dawo version:   0.4.0.  25.3.2022.  devState : 20 %
 /// *
 // * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
 ///
@@ -83,16 +83,16 @@ Map getClay(String _mapS) {
 ///  Almost all render.. functions are tests or example-like files.
 StringBuffer renderDawo() {
   print('\n ---------------  renderDawo rolling -------------------------');
-  var renderBuffer = new StringBuffer();
+  var renderBuffer = StringBuffer();
   renderBuffer.writeln('\n ------ renderBuffer starting  ------------ \n');
 
   dawoApp.init('dawoTestApp', 'in void renderDawo ');
   dawoApp.package['agenda']; //  Just naming it.
 
   /// Just another instance, shorter, for testing.
-  var da = new DawoApp();
+  DawoApp da = DawoApp();
   da.init('dawoApp', 'playing in renderDawo-function');
-  var mill = new Mill();
+  Mill mill = Mill();
   renderBuffer.writeln(da.info);
   mill.userChoice;
 
@@ -106,7 +106,7 @@ StringBuffer renderDawo() {
   //  dawoActive;
 
   renderBuffer.writeln('------- renderBuffer data--------------------- \n');
-  var missionY = new Mission('mission in dawo_src-render', 'test-mission');
+  Mission missionY = Mission('mission in dawo_src-render', 'test-mission');
   missionY.name;
   missionY.done();
   //Private:  no access and no need for it.  missionY._opCount;

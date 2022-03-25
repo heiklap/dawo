@@ -42,7 +42,7 @@ import 'package:dawo/src/box_serve.dart';
 ///  roll :  17  X.
 ///  change to: revel -16 : hurvitella, rellestää, juhlia, hummailla
 
-var dawoHist = new DawoHist();
+DawoHist dawoHist = DawoHist();
 
 ///  Choose one existing mission from missionM, like: 'PackDawoMission'
 ///  Just in case.  Used by vMission,  but  nobody uses it.
@@ -60,25 +60,24 @@ List<String> weekSayL = [];
 ///  Creating instances of Treaty-class for every 5 week day.
 ///  TODO serialize this with: missionsM
 Treaty mondayBundle =
-    new Treaty('mondayBundle', 'Monday running', dartlangMission);
+    Treaty('mondayBundle', 'Monday running', dartlangMission);
 
 ///  scout - packDawoMission, short
 Treaty tuesdayBundle =
-    new Treaty('TuesdayBundle', 'Tuesday running', packDawoMission);
+    Treaty('TuesdayBundle', 'Tuesday running', packDawoMission);
 
 ///  myTime,  one screen
 Treaty wednesdayBundle =
-    new Treaty('WednesdayBundle', 'Wednesday running', myTimeMission);
+    Treaty('WednesdayBundle', 'Wednesday running', myTimeMission);
 
 ///  Empty
 Treaty thursdayBundle =
-    new Treaty('ThursdayBundle', 'Thursday running', helsinkiMission);
+    Treaty('ThursdayBundle', 'Thursday running', helsinkiMission);
 
 ///  dawoHist, box, layOut
 Treaty fridayBundle =
-
     ///  Using treaty-class where missions-chores co-operate.
-    new Treaty('FridayBundle', 'Friday running', nationalParksMission);
+    Treaty('FridayBundle', 'Friday running', nationalParksMission);
 
 ///  PLAN:  5 days collected auction-bilateral data in a box.
 ///  Usage:  main end.
@@ -125,7 +124,7 @@ void weekBox(String caller) {
 
   ///  Set boxServe ready for next user: clear data.
   boxServe.done(':box:week:bundle:  bufLength:: $bufLength');
-} //  -----  weekBox.
+}      //     -----     weekBox.
 
 ///  Main method is starting-point of every Dart application-
 void main() {
@@ -185,7 +184,7 @@ void main() {
   print('--------  bilateralM  --------------------');
   List<String> _l = tl.mapToFineList(bilateralM, 15, 40);
   _l.forEach(print);
-} //  -----  main
+}      //     -----     main
 
 ///  Play with mission-op  and connector  courier aso.
 ///  'mondayBundle', 'Monday running', dartlangMission
@@ -259,7 +258,7 @@ void monday(Mission _mission) {
 
   ///  NEXT:  boxServe #dartlang
   print('--------- :day:monday:done  ----------------------');
-} //  -----  monday
+}      //     -----     monday
 
 ///  #insider is a mission class that is inside Treaty-class.
 ///  xxxBundle is a Treaty class that has these two mission inside it.
@@ -280,7 +279,7 @@ void tuesday(Mission _mission) {
       .putIfAbsent('Day tuesday done', () => 'msg: in :daily:work:');
   weekSayL.addAll(tl.mapToFineList(_mission.say, 7, 55));
   print('--------- :day:tuesday:---- $_mission.name done ------------');
-} //  -----  tuesday
+}      //     -----     tuesday
 
 ///  called here with nationalParksMission,  insider = myTimeMission
 void wednesday(Mission _mission) {
@@ -349,7 +348,7 @@ void wednesday(Mission _mission) {
       .putIfAbsent('Day wednesday done', () => 'msg: in :daily:work:');
   weekSayL.addAll(tl.mapToFineList(_mission.say, 7, 55));
   print('--------- :day:wednesday:done  ----------------------');
-} //  -----  wednesday
+}      //     -----     wednesday
 
 ///  called here with : myMusicMission : insider = helsinkiMission
 void thursday(Mission _mission) {
@@ -364,7 +363,7 @@ void thursday(Mission _mission) {
       .putIfAbsent('Day thursday done', () => 'msg: in :daily:work:');
   weekSayL.addAll(tl.mapToFineList(_mission.say, 7, 55));
   print('--------- :day:thursday: ---done-------------------');
-} //  -----  thursday
+}      //     -----     thursday
 
 ///  called here with : helsinkiMission,  insider = nationalParksMission
 void friday(Mission _mission) {
@@ -403,7 +402,7 @@ void friday(Mission _mission) {
 
   weekSayL.addAll(tl.mapToFineList(_mission.say, 7, 55));
   print('------ :friday: and :FridayBundle: done  -------------------------');
-} //  -----  friday
+}      //     -----     friday
 
 ///  Used on:  friday
 void history() {
@@ -421,6 +420,6 @@ void history() {
   ///  NOTE: boxLayoutX  in boxServe library.
   boxLayoutDap(dawoHist, ':dawoHist:daily:bundle:friday:');
   //  add connector or other stuff  stuff
-}
+}     //     -----     history
 
 //

@@ -11,7 +11,7 @@
 library mill;
 
 ///  Buffer also outside class, for testing and adding visibility.
-var millBuf = new StringBuffer();
+StringBuffer millBuf = StringBuffer();
 
 ///  Will eventually be some kind of #mill, that controls all #job's
 ///  Loop - switch - doWhile bunch of functions and methods
@@ -27,7 +27,7 @@ class Mill {
 
   ///  To keep menu-choice values.
   ///  Like: {'1' : chore1, '2' : chore2}
-  Map<String, Object> jobM = new Map();
+  Map<String, Object> jobM = Map();
   ///
   int jobInQueue = 0;
   ///

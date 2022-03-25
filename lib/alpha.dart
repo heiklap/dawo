@@ -29,20 +29,20 @@ class Out {
 
   ///  Must use static, if this is inside a class
   ///  10 StringBuffers named for output to screen areas.
-  StringBuffer outHeader = new StringBuffer(); //  app - roll
+  StringBuffer outHeader = StringBuffer(); //  app - roll
 
-  StringBuffer outTl = new StringBuffer(); //  rumba
-  StringBuffer outTMid = new StringBuffer(); //  ?  mission
-  StringBuffer outTr = new StringBuffer(); //  dev
+  StringBuffer outTl = StringBuffer(); //  rumba
+  StringBuffer outTMid = StringBuffer(); //  ?  mission
+  StringBuffer outTr = StringBuffer(); //  dev
 
-  StringBuffer outMTop = new StringBuffer(); //  m - packDawo
-  StringBuffer outMid = new StringBuffer(); //  m - dartlang
-  StringBuffer outMBot = new StringBuffer(); //  m - helsinki
+  StringBuffer outMTop = StringBuffer(); //  m - packDawo
+  StringBuffer outMid = StringBuffer(); //  m - dartlang
+  StringBuffer outMBot = StringBuffer(); //  m - helsinki
 
-  StringBuffer outBl = new StringBuffer(); //  m - myMusic
-  StringBuffer outBr = new StringBuffer(); //  m - myTime
+  StringBuffer outBl = StringBuffer(); //  m - myMusic
+  StringBuffer outBr = StringBuffer(); //  m - myTime
 
-  StringBuffer outFooter = new StringBuffer(); // m -  nParks
+  StringBuffer outFooter = StringBuffer(); // m -  nParks
 
   ///  List containing all outBuffers for special browser screen areas.
   ///  Changed this to Map<String, StringBuffer> to get names.
@@ -94,7 +94,7 @@ class Out {
 
   ///  return all out-buffers combined in one buffer.
   StringBuffer outBuffersAll() {
-    StringBuffer _sB = new StringBuffer();
+    StringBuffer _sB = StringBuffer();
     _sB.write(outHeader);
     _sB.write(outTl);
     _sB.write(outTMid);
@@ -189,6 +189,7 @@ Out out = Out();
 //  TODO  bring here from dawoApp serialized outBuffersPrint - function
 
 //  Chore-extends, DawoHist implements. Flag  use this
+///     usage:   chore, connector, box_serve, dawo_hist
 abstract class BaseStruct {
   String name = '';
   String info = '';
@@ -199,8 +200,10 @@ abstract class BaseStruct {
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
   String clause = ''; //  Combination of #LANG words in sentence.
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal = ''; //  like:  ":DAWO-APP:";
-  String emblem = ''; //  or this emblem.
+  /// like:  ":DAWO-APP:";
+  String seal = '';
+  ///  or this emblem.
+  String emblem = '';
   ///  3-5-7 empty marks or something visible.
   ///  like:  "      ";
   String indent = '';
@@ -251,7 +254,7 @@ abstract class BasePlacard {
   String receiver = '';
   String command = '';
   String msg = '';
-}
+}     //     -----     BasePlacard
 
 ///  base class that serves objects that can have members.
 ///  #connector is using this

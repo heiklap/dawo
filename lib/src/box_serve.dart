@@ -47,7 +47,7 @@ class BoxServe {
   Map<String, List<String>> logM = {};
   List<String> _matrix = [];
   ///  To save matrix AND mediate it to glb.
-  StringBuffer _buf = new StringBuffer();
+  StringBuffer _buf = StringBuffer();
 
   ///  Form nice name for glb.buffers.X
   String _bufName = '';
@@ -252,7 +252,7 @@ class BoxServe {
       //  ..
       //  external factory List.filled(int length, E fill, {bool growable = false});
       //  hklTry:   List<String> verticalWarningL = new List(_items);
-      List<String> verticalWarningL = new List.filled(_items, '');
+      List<String> verticalWarningL = List.filled(_items, '');
 
       verticalWarningL.fillRange(0, _items, _overWidthS);
       //  call: void vertWarning(int _x, _y, count, String _s)
@@ -303,7 +303,7 @@ class BoxServe {
 
   ///  Set horizontal Warning-line to screen matrix
   void horizWarning(int _x, _y, _width, String _extraS) {
-    StringBuffer _b = new StringBuffer();
+    StringBuffer _b = StringBuffer();
 
     ///  form String like:  ´7777777777777777'
     for (var x = 0; x < _width; x++) {
@@ -344,7 +344,7 @@ class BoxServe {
   ///  Called by:  next method, saveToGLB
   ///  title + _matrix + footer saved to buf.
   StringBuffer toBuffer() {
-    StringBuffer boo = new StringBuffer();
+    StringBuffer boo = StringBuffer();
     boo.writeln(title);
     for (var x in _matrix) {
       boo.writeln(x);
@@ -390,7 +390,7 @@ class BoxServe {
 
 } //  -----  class BoxServe
 
-BoxServe boxServe = new BoxServe();
+BoxServe boxServe = BoxServe();
 
 ///  TODO  Scope?  Can this reach called fields.
 ///  Using BaseStruct (dawoApp) fields to set usual fields in boxServe

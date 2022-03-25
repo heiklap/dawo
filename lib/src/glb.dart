@@ -146,7 +146,7 @@ class GlobalClass {
   List<String> actionL = [];
 
   ///  For glb:s inner data
-  StringBuffer buf = new StringBuffer();
+  StringBuffer buf = StringBuffer();
 
   ///  Method saveToGLB from box_serve fills this map.
   Map<String, StringBuffer> boxServeBuffers = {};

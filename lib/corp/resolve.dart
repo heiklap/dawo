@@ -104,7 +104,7 @@ class Resolve {
 } //  -----  Resolve class
 
 ///  Instance, although I remember reserving #res word for something else.
-var resolve = new Resolve();
+Resolve resolve = Resolve();
 
 ///
 void renderResolve() {

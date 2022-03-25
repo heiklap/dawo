@@ -3,7 +3,7 @@
 ///  ##  Effort : data-in / out - working frame for chore user.
 /// * ONLY  chore.dart should import this. 70% of user-activity is here.
 /// * User adds or changes his own data to effort Maps.
-/// * dawo version:   0.3.0.  23.3.2022.
+/// * dawo version:   0.4.0.  23.3.2022.
 /// * NEXT version: Add SplayTreeSet,  and  LinkedHashSet
 /// * devState : 25%  -  PLAN: 008 : 30%
 ///  devNote:  Collecting here habit / human-like objects.
@@ -48,19 +48,19 @@ class Effort {
 //  dartMap.forEach((k, v) { myValuesList.add(v); });
 
   ///  Initializing some Lists. No. Lists are more simple.
-//  LinkedHashSet<String> goalL = new LinkedHashSet.from(['a', 'b', 'c']);
+//  LinkedHashSet<String> goalL = LinkedHashSet.from(['a', 'b', 'c']);
   ///  User-data to control and describe work with chore.
-  Map<String, String> goalM = new Map(); //  No.    LinkedHashSet();
-  Map<String, String> planM = new Map();
-  Map<String, String> phaseM = new Map();
-  Map<String, String> teamActM = new Map();
-  Map<String, String> tempoM = new Map(); // adminNote   not nice name
+  Map<String, String> goalM = Map(); //  No.    LinkedHashSet();
+  Map<String, String> planM = Map();
+  Map<String, String> phaseM = Map();
+  Map<String, String> teamActM = Map();
+  Map<String, String> tempoM = Map(); // adminNote   not nice name
 
   ///  Om hand-written schema was also:
-  Map<String, String> timeM = new Map();
-  Map<String, String> stateM = new Map();
-  Map<String, String> levelM = new Map();
-  Map<String, String> moodM = new Map();
+  Map<String, String> timeM = Map();
+  Map<String, String> stateM = Map();
+  Map<String, String> levelM = Map();
+  Map<String, String> moodM = Map();
 
   ///  testing... difference between  .  and ..
   void makeGoalM() {

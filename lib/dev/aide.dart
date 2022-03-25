@@ -39,7 +39,7 @@ class Aide {
   ///  report testers info
   num devTest(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
-      DateTime now = new DateTime.now();
+      DateTime now = DateTime.now();
       String _s30 = '                              ';
       print('$_s30  DEVELOPMENT TEST --------------------------------------');
       print('$_s30  Testing $unit  Test n:o:  $dev.devTestCount');
@@ -58,7 +58,7 @@ class Aide {
   ///  Simple message to track run and development
   devMsg(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
-      DateTime now = new DateTime.now();
+      DateTime now = DateTime.now();
       String _s30 = '                              ';
       print('$_s30  Developers message -----------------------------------');
       print('$_s30  Testing:  $unit Tester:  $whoDoneThis  ');
@@ -133,4 +133,4 @@ class Aide {
 
 ///  Renamed class to: Aide in 0.0.75+.
 ///  Usage:  example/app_chore_play.dart.
-var aide = new Aide(); //  Usage: example/app_chore_play.dart
+Aide aide = Aide(); //  Usage: example/app_chore_play.dart

@@ -13,7 +13,7 @@ class PackDawoHook {
 }
 
 ///
-var packDawoHook = new PackDawoHook();
+PackDawoHook packDawoHook = PackDawoHook();
 
 ///
 String dawoHook() {
@@ -36,14 +36,14 @@ class PackDawoPole {
 }
 
 ///
-var packDawoPole = new PackDawoPole();
+PackDawoPole packDawoPole = PackDawoPole();
 
 ///
 class PackDawoFlag {
   String name = 'This is class PackDawoFlag';
 }
 
-var packDawoFlag = new PackDawoFlag();
+PackDawoFlag packDawoFlag = PackDawoFlag();
 
 ///
 class PackDawo {

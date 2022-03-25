@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Chore for organizing work flow.
-///  dawo version:   0.3.0.  23.3.2022.
+///  dawo version:   0.4.0.  25.3.2022.
 ///  * Sub-ordinate of Mission, with wide operative flow capabilities.
 ///  devState : 27 %  -   In  GitHub:   yes
 ///
@@ -66,7 +66,7 @@ void main() {
 num dawLibWorkReadiness = 94; // for version  0.0.1
 
 ///  This is for ALL chores,
-StringBuffer choreBuf = new StringBuffer();
+StringBuffer choreBuf = StringBuffer();
 ///
 bool _pB = false; //  Not printing now.
 ///  TODO  Temporary hack.
@@ -154,7 +154,7 @@ class BlanketChore extends BaseStruct {
   void join(circle) {}
 
   ///  Row data describing work-flow and life-cycle events.
-  StringBuffer buf = new StringBuffer();
+  StringBuffer buf = StringBuffer();
 
   ///  TODO  deliberated error to find error in build usage.
   bool errorInBX = false; // TODO  temporary, to find error
@@ -394,7 +394,7 @@ class BlanketChore extends BaseStruct {
   ///  * * *    in beta, chore and mission  * * *
   ///  Action class from alpha; name, sayM, reasonM.
   ///  Might serve #LANG phrase to reason for made decisions.
-  Action decision = new Action();
+  Action decision = Action();
 
   ///  Map to collect all Actions.
   Map<String, Map<String, Action>> decisionChainMM = {};
@@ -435,10 +435,10 @@ class BlanketChore extends BaseStruct {
     ///  Make placard in shape.
     ///  TODO  operation class instance
     ///  order: #actor #sender #receiver #command #msg
-    var chPopularClass =
-        new Affair(name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
+    Affair chPopularClass =
+        Affair(name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
     //  use buffer somewhere
-    StringBuffer _retBuf = new StringBuffer();
+    StringBuffer _retBuf = StringBuffer();
     _retBuf.writeln('_retBuf in chore-popular method is ready...');
 
     ///  TODO  Mediate clay-stuff itemL to Process
@@ -727,7 +727,7 @@ void choreToEffortUserJson(String caller) {
 ///  Should show use-case of all Chore inner and outer methods.
 StringBuffer renderChore() {
   print('-->-->--  renderChore  :roll:box:  -->-->--');
-  StringBuffer _retBuf = new StringBuffer();
+  StringBuffer _retBuf = StringBuffer();
 //TODO  temporary variables for to get this to work
   String _actS = 'Action String';
   var _roller;
@@ -737,8 +737,8 @@ StringBuffer renderChore() {
   var _zSignal;
 
 //  var superChore = new SuperChore();
-  var ch =
-      new BlanketChore('ChoreInRenderChore', 'renderChore', 'Testing-Chore');
+  BlanketChore ch =
+      BlanketChore('ChoreInRenderChore', 'renderChore', 'Testing-Chore');
   ch.master = 'PackDawoMission';
   print(ch.info);
   print(ch.master);

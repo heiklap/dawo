@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  *  dawo_example   dawo version   0.0.7. - 18.12.2017
+///  *  dawo_example   dawo version   0.4.0. - 25.3.2022
 ///  *  dawo_example creates 28 screens of console output data presentation.
 ///  * Find:  :con: :connector: :opCom:  :corporate:
 
@@ -45,19 +45,19 @@ import 'package:dawo/src/box_serve.dart';
 
 //  Made by Google Stagehand automatically, when creating a new package.
 //  This serves as an example of class, and user can develop it further.
-var awesome = new Awesome();
+Awesome  awesome = Awesome();
 //  When you try code below, you can see 6 properties of awesome class.
 //  awesome.
 
 //  Used once here to run method roll()
 ///  2. parameter must be class with name and say properties
-var ch = new BlanketChore('ChoreInDawoExample','myMusicMission', 'Test-Chore');
+BlanketChore ch = BlanketChore('ChoreInDawoExample','myMusicMission', 'Test-Chore');
 
 //  create classes, that do not already have an instance inside dawo::
 //  Instance is not created here beginning from 12-2017  0.0.7+
 //  var dawoApp = new DawoApp(':play-rumba-test:dawoApp',
 //    'By: dawo_example.dart: dawoApp rolls missions');
-var rumba = new Rumba();
+Rumba rumba = Rumba();
 
 ///  Data fields:
 ///  Information of #user for :con:  :opCom: and :corporate:
@@ -86,8 +86,8 @@ main() {
   devBox('By:dev:versions:',['* header *', '* footer *'],  [tl.mapToFineList(dev.later, 75, 20) ,tl.mapToFineList(dev.version008 , 75, 20)], 24);
   devBox('By:dev:versions:',['* header *', '* footer *'],  [tl.mapToFineList(dev.plugins, 75, 20) ,tl.mapToFineList(dev.version0075 , 75, 20)], 24);
 
-  var sw = new Stopwatch()..start();
-  DateTime start = new DateTime.now();
+  var sw = Stopwatch()..start();
+  DateTime start = DateTime.now();
 
   ///  Call function that adds #actor and #count to this String and prints it.
   exInfo('==>>==>>==   dawo_example    ==>>==>>==');
@@ -114,7 +114,7 @@ main() {
   exInfo('    ==<<==<<==    dawo_example done    ==<<==<<==');
 
   print("Executing dawo_example.dart took: ${sw.elapsed}us");
-  DateTime stop = new DateTime.now();
+  DateTime stop = DateTime.now();
   print(' \nStopTime::  $stop');
   print(stop.difference(start));
   print('FlowServe calls::   $flowI ');
@@ -151,7 +151,7 @@ main() {
 
 
   ///  Nice-looking name- size- info of default buffers.
-  Map<String,String> _xM = new Map();
+  Map<String,String> _xM = Map();
   _xM = outBuffersInfoMap(':dawoExample', 'Not used parameeter');
   print('....... printing outBufMap map  ....................');
   _xM.forEach((k, v) {print('$k $v');   });
@@ -172,12 +172,13 @@ main() {
 
   //print buffer: print(glb.boxServeBuffers[':dawoHist:dailyAction:friday:6']);
   print('---- main done   ');
-} //  -----  end of main.
+}      //     -----     end of main.
 
 ///  Dawo history play and box
+///  Caller: main
 void boxHistTemplate() {
   print('---------- :boxServe:dawoLogo: :temporary:hack:   ----------------');
-  DawoHist dawoHist = new DawoHist();
+  DawoHist dawoHist = DawoHist();
   dawoHist.init();
   dawoHist.build('_emblemString', '_masterString');
   dawoHist.roll();
@@ -194,9 +195,10 @@ void boxHistTemplate() {
   boxLayoutDap(dawoHist, ':dawoHist:template:');
   boxServe.show(':dHst:', 'print', 3);
   boxServe.done(':dHst:');
-}
+}     //     -----      boxHistTemplate
 
 ///  To allow easy-run of these 8 separated activities.
+///  Caller:  main
 void exampleMethodsPlay() {
   exampleMission();
 
@@ -214,29 +216,32 @@ void exampleMethodsPlay() {
   sampleJsonData();
   connectorExampleReport();
   //  deprecated  schedulePlay();
-}
+}     //     -----     exampleMethodsPlay
 
 ///  Form  message row to easy-find and print it if: _pB
+///  Callers:   21 x
 void exInfo(String msg) {
   dexC++;
   String dexCS = dexC.toString();
   //  String: -exInfo appended here, as an example. It is 16 times in output.
   String _msg = ' -exInfo $dexS $dexCS $msg';
   if (_pB) print(_msg);
-}
+}     //     -----     exInfo
 
 ///  Place where :corporate:  :opCom:  and :connector: play together.
+///  caller:   main 1
 void connectorOp(String caller) {
   connector.join('DawoExample', placardM, connectorMsg, ':Dawo:example:');
   connector.roll();
   connector.box(':d:ex:');
-}
+}     //     -----     connectorOp
 
 //  TODO  #IDEA: for courier carrier, to do something really nice.
 //  :courier: marks this message carriage functions activity.
 void courierMessage() => print('d-ex-exmpl: * *  :courier: Mission!. * * ');
 
 ///  This class instance has been created in dawo, and it is usable here.
+///  caller:  exampleMethodsPlay
 void exampleMission() {
   exInfo('    ==<<==<<==    roll mission op/ init -open - roll: -close==<<==');
   exInfo('\n ==>>==>>==   rolling :packDawo:Mission:    ==>>==>>==');
@@ -255,9 +260,9 @@ void exampleMission() {
   exInfo('    ==<<==<<==    rolling :packDawo:Mission: done    ==<<==<<==');
   //  When you print row below, you can see all methods.
   //  packDawoMission.
-}
+}     //     -----     exampleMission
 
-///
+///  Caller:  Example Methods Play
 void lonelySampleChore() {
   exInfo('\n ==>>==>>==   rolling lonelySampleChore    ==>>==>>==');
 
@@ -267,17 +272,17 @@ void lonelySampleChore() {
   ch.master = 'MyMusicMission';
   ch.box(':app:chore:play:');
   exInfo('    ==<<==<<==    rolling lonelySampleChore: done    ==<<==<<==');
-}
+}     //     -----     lonelySampleChore
 
-///
+///  Caller   ExampleMethodsPlay
 void sampleDawoBuffers() {
   exInfo('\n ==>>==>>==   rolling sampleDawoBuffers    ==>>==>>==');
   out.outBuffersSizes(':dawoExample:');
   outBuffersPrint('$dexS dawoExample', 'no-prevent-printing');
   exInfo('    ==<<==<<==    rolling sampleDawoBuffers: done    ==<<==<<==');
-}
+}     //     -----     sampleDawoBuffers
 
-///
+///  Caller:  ExampleMethodsPlay
 void sampleJsonData() {
   exInfo('\n ==>>==>>==   rolling sampleJsonData    ==>>==>>==');
   exInfo('==>>==>>==   encoded - decoded    ==>>==>>==');
@@ -285,17 +290,18 @@ void sampleJsonData() {
   choreToEffortUserJson(':d:ex:');
   exInfo('    ==<<==<<==    encoded - decoded   done    ==<<==<<==');
   exInfo('    ==<<==<<==    rolling sampleJsonData: done    ==<<==<<==');
-}
+}     //     -----     sampleJsonData
 
-///
+///  Calller:  ExampleMethodsPlay
 void connectorExampleReport() {
   exInfo('==>>==>>==   calling :connector: report    ==>>==>>==');
 
   connector.report();
   exInfo('    ==<<==<<==    :connector: report done    ==<<==<<==');
-}
+}     //     -----     connectorExampleReport
 
 ///  For to check variables visibility.
+///  Caller:    Not used
 void wordPlay() {
   //  Play with variables: watch something from every file
   //  base
@@ -343,7 +349,7 @@ void wordPlay() {
 
   //  No, too much noise.
   //  printBuffers();
-}
+}     //     -----     wordPlay
 
 ///  Empty not used method.
 void playDawoSrcDart() {}

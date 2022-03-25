@@ -22,7 +22,7 @@ import 'package:intl/intl.dart';
 num toolsReadiness = 96;
 
 ///  Buffer also outside class, for testing and adding visibility.
-var toolsBuf = new StringBuffer();
+StringBuffer toolsBuf = StringBuffer();
 
 ///  Class Tools is instantiated as: tl  Very handy, you gonna like it!
 class Tools {
@@ -154,7 +154,7 @@ class Tools {
     print('>>----:dawo:tools:--:listToString:---- >>');
     print(_l);
     String s;
-    StringBuffer sBuf = new StringBuffer();
+    StringBuffer sBuf = StringBuffer();
     for (var x = 0; x < _l.length; x++) {
       print(_l[x]);
       sBuf.write(_l[x]);
@@ -263,7 +263,7 @@ class Tools {
   ///  Return String from map<String, String>.
   ///  parameters: Key_width: kw, Value_width  vw
   String rowFromMap(Map<String, String> thisMap, int kw, vw) {
-    StringBuffer b = new StringBuffer();
+    StringBuffer b = StringBuffer();
     thisMap.forEach((k, v) {
       String _kS = k; //  key-String,  value_String
       String _vS = v;
@@ -493,7 +493,7 @@ void main() {
 
   //
   String stampDateTime() {
-    var start = new DateTime.now();
+    var start = DateTime.now();
     //  print('Start::  $start ');
     /*
     //NOTE:  dateFormat is in:   intl  package
@@ -518,10 +518,10 @@ void main() {
   ///  Look at the comments in previous function.
   ///  Output like:  2017-12-23  08:47:27
   String stampDateTimePlain() {
-    var now = new DateTime.now();
-    var formatterYmd = new DateFormat('yyyy-MM-dd');
+    var now = DateTime.now();
+    var formatterYmd = DateFormat('yyyy-MM-dd');
     String formattedYmd = formatterYmd.format(now);
-    var formatterHms = new DateFormat('Hms');
+    var formatterHms = DateFormat('Hms');
     String formattedHms = formatterHms.format(now);
     var dateTimeStampNow = (' $formattedYmd  $formattedHms ');
     return dateTimeStampNow;
@@ -532,7 +532,7 @@ void main() {
     //  1000 =  one second
     //var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
     var goalTime =
-        new DateTime.now().add(new Duration(milliseconds: waitingTime));
+        DateTime.now().add(new Duration(milliseconds: waitingTime));
     do {} while (new DateTime.now().compareTo(goalTime) < 0);
   }
 
@@ -546,7 +546,7 @@ void main() {
   void sleepMS(int waitingTime, [bool infoB = false]) {
     //  var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
     var goalTime =
-        new DateTime.now().add(new Duration(milliseconds: waitingTime));
+        DateTime.now().add(new Duration(milliseconds: waitingTime));
     bool _infoB = infoB;
     if (_infoB) (print('Waiting for  $waitingTime'));
     do {

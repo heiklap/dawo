@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dawoHist class
 ///  Primary functionality:  Keep historic dev data.
-/// * dawo version:   0.3.0.  23.3.2022.
+/// * dawo version:   0.4.0.  25.3.2022.
 /// * devState : 25%    in GitHub : yes
 /// hist>  9.1.2018  Separated from dawoApp.
 //  V:  0.2.0  Only Format - DartFormat
@@ -20,17 +20,21 @@ class DawoHist implements BaseStruct {
   ///
   String motto = 'Keeping this stuff out of dawoApp';
 
-  //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
-  String clause = ''; //  Combination of #LANG words in sentence.
+  ///  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
+  ///  Combination of #LANG words in sentence.
+  String clause = '';
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
-  String seal = ''; //  like:  ":DAWO:HIST:";
-  String emblem = ':dawoHist:'; //  or this emblem.
+  ///  like:  ":DAWO:HIST:";
+  String seal = '';
+  ///  or this emblem.
+  String emblem = ':dawoHist:';
   // like:  "      ";  3-5-7 empty marks or something visible.
   String indent = '';
-  String master = ':dawoApp:'; //  Object that owns this.
-
-  bool _pB = true; //  yes / no   ..  printing now.
-  StringBuffer buf = new StringBuffer();
+  ///  Object that owns this.
+  String master = ':dawoApp:';
+//  yes / no   ..  printing now.
+  bool _pB = true;
+  StringBuffer buf = StringBuffer();
 
   ///  4 var to control connectors state, working-condition-state values.
   ///  DONE: This is now a map.
@@ -134,7 +138,7 @@ class DawoHist implements BaseStruct {
 
     ///  Set boxServe ready for next user: clear data.
     boxServe.done(':box:dHst:');
-  }
+  }     //     -----     box
 
   ///  Presentation method.
   void show(String action) {
@@ -153,6 +157,7 @@ class DawoHist implements BaseStruct {
     ///  :dawoHist:  is too long.
     flowServe(':d:Hist:', buf, msg, p);
   }
+
 } //  -----  class DawoHist
 
 //

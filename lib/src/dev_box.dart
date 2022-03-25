@@ -22,7 +22,7 @@ part of shower.dart;
 ///  190 rows.  Add header and footer in List<String> _hfL
 StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
     int forceHeight) {
-  StringBuffer _retBuf = new StringBuffer();
+  StringBuffer _retBuf = StringBuffer();
   final int sW = 210; //  Screen width.
   String borderS = ' | '; //  In 4 columns is smaller.
 

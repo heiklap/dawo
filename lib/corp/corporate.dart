@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Corporate,  enterprise-like entity.
 ///  * Holds: Affairs, Stores, takes Order's, makes Jobs in phases.
-///  * dawo version:   0.3.0.  23.3.2022
+///  * dawo version:   0.4.0.  25.3.2022
 ///  * devState:  10%,   PLAN:  do simple demo / presentation.
 ///
 //
@@ -18,8 +18,14 @@ import 'affair.dart';
 import 'store.dart';
 
 ///  Here objects work together after #connector joins them to system.
+///  usage:
 class Corporate {
-  String name = 'corporate-united';
+  ///
+  String name = '* corporate-united *';
+  ///
+  String motto = '* CorpMotto *';
+  ///
+  String clause = '*CorpClause*';
 
   ///  All the affairs, that this corporate owns.
   Map<String, Affair> affairM = {'dawoApp': affair};
@@ -114,7 +120,7 @@ class Corporate {
     print(infoS1);
     print(infoS2);
     List<String> _li1 = [];
-    StringBuffer _cpBuf = new StringBuffer();
+    StringBuffer _cpBuf = StringBuffer();
     _li1
       ..add('\n -->>-->  corporate.process  #caller: $by cccccccccccp')
       ..add('affairOpsInUse: ___________________________________')
@@ -168,13 +174,17 @@ class Corporate {
     _cpBuf.writeln(':_cpBuf:  <--<<--  :corporate:process done --------\n');
     print('  <--<<--  :corporate:process done cccccccccccccccccccccccccp \n');
     return _cpBuf;
-  }
+  }     //     -----     process
 
   ///  Shaping joint functionality for presentation.
   void show() {
     //  code here
   }
-}
+
+  ///  constructor
+  Corporate(this.name, this.motto, this.clause);
+
+}     //     -----     class Corporate
 
 ///  Creating instance.
-Corporate corporate = new Corporate();
+Corporate corporate = Corporate('corporate-united', 'NorpMotto', 'Corp.Clause');

@@ -3,7 +3,7 @@
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  dawo version:   0.3.0.  23.3.2022.
+/// *  dawo version:   0.4.0.  25.3.2022.
 /// *  devState : 27 % / unknown  -  PLAN:  cleaning
 // -  HIST:  hkl  8.9.2017
 // -  devNote: 4 pc.
@@ -34,7 +34,7 @@ part 'missions_data.dart';
 ///  #NOTE:  #effort is not visible here.  Only in chore.dart.
 
 ///  Buffer also outside class, for testing and adding visibility.
-//  StringBuffer  missionBuf = new StringBuffer();  //  Not used
+//  StringBuffer  missionBuf = StringBuffer();  //  Not used
 
 bool _pB = false; //  true for chore_test.dart;
 
@@ -62,7 +62,7 @@ class Mission {
 // #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
 
-  String name = '';
+  String name = '* Mission Name *';
 
   //  TODO  ? To what object is referenced?
   //  should be  this.Mission
@@ -70,8 +70,9 @@ class Mission {
     return name;
   }
   ///
-  String motto = '';
-  String clause = ''; //  Combination of #LANG words in sentence.
+  String motto = '* Mission Motto *';
+  ///  Combination of #LANG words in sentence.
+  String clause = '';
 
   /// #NEXT: Carry values to scoutJoin in connector
   /// Fields describe actions in connector and binding.
@@ -122,9 +123,10 @@ class Mission {
 
   ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
-  String _emblem = 'M-emblem'; //  like:  ":DAWO-APP:";
-  String _indent =
-      ''; // like:  "      ";  3-5-7 empty marks or something visible.
+  ///  like:  ":DAWO-APP:";
+  String _emblem = 'M-emblem';
+  /// like:  "      ";  3-5-7 empty marks or something visible.
+  String _indent = '';
 
   ///  Reference to outPut-buffer, no high-value: used only in _flowC(
   StringBuffer _buf = out.outTMid; //  reference to used output StringBuffer.
@@ -137,19 +139,19 @@ class Mission {
   ///  Create default BlanketChores for every Mission.
   ///  We have plenty of these, so let's add them!
   BlanketChore learnChr =
-      new BlanketChore('LearnChr', ':masterName:', 'Yes, I learn');
+      BlanketChore('LearnChr', ':masterName:', 'Yes, I learn');
   BlanketChore joyChr =
-      new BlanketChore('JoyChr', ':masterName:', 'Yes, I have Joy');
+      BlanketChore('JoyChr', ':masterName:', 'Yes, I have Joy');
   BlanketChore actChr =
-      new BlanketChore('ActChr', ':masterName:', 'Yes, I act');
+      BlanketChore('ActChr', ':masterName:', 'Yes, I act');
   BlanketChore peopleChr =
-      new BlanketChore('PeopleChr', ':masterName:', 'Get social!');
+      BlanketChore('PeopleChr', ':masterName:', 'Get social!');
   BlanketChore placeChr =
-      new BlanketChore('PlaceChr', ':masterName:', 'Places I go places');
+      BlanketChore('PlaceChr', ':masterName:', 'Places I go places');
   BlanketChore seasonChr =
-      new BlanketChore('SeasonChr', ':masterName:', 'Seasons differ!');
+      BlanketChore('SeasonChr', ':masterName:', 'Seasons differ!');
   BlanketChore showChr =
-      new BlanketChore('ShowChr', ':masterName:', 'Yes, I show');
+      BlanketChore('ShowChr', ':masterName:', 'Yes, I show');
 
   /// Store all data-maps of this mission-instance:
   Map<String, Map<String, String>> clayMap = {};
@@ -171,6 +173,7 @@ class Mission {
     'pause': false,
     'done': false,
   };
+
   int _opCount = 0;
 
   ///  #LEARN: Project may have some loose-starts, that will eventually fail.
@@ -190,16 +193,19 @@ class Mission {
   ///  #Idea? -roll  and  -op : are different level of operations.
   ///  For loop control variables.
   bool _rollDone = false;
-  bool _rollEscape = false; //  Used in testing and to escape bugs.
+  ///  Used in testing and to escape bugs.
+  bool _rollEscape = false;
   int _rollCount = 0;
-  int _rollMax = 3; //  Emergency exit from loops.
+  ///  Emergency exit from loops.
+  int _rollMax = 3;
+
   ///  TODO  To mark / handle #unUsed variables
   void rollHandle() {
     _rollEscape = true;
     print('----------------  rollHandle/ unUsed  -------');
     print(_rollEscape);
     print(_rollMax);
-  }
+  }     //     -----     rollHandle
 
   /// #IDEA?  chore map to give names to  W O R K  phases.
   /// #Name: Phase?  #BTW: Do not want to use "work". Instead: #job.
@@ -211,9 +217,7 @@ class Mission {
     5: 'Delayed'
   };
 
-  ///  Add #later map to constructor to get big chunk of data:
-  ///  Mission(this.name, this.motto, Map<String,String> _clayM);
-  Mission(this.name, this.motto);
+
 
   ///  Usage: No now.  Name: #Mill !!
   ///  Mission loops all it's Chores in #Mill like system. Rumba calls this.
@@ -244,7 +248,7 @@ class Mission {
     st['wake'] = true;
     _rollMax = 3;
     //  TODO  placardM['command'] =
-  }
+  }     //     -----     init
 
   ///  Building mission with it's chores.
   void build(String caller) {
@@ -285,7 +289,7 @@ class Mission {
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
     //  CODE
     _flowC('   <-m--<--       :M:b:        done  $name     ', _pB);
-  } //  -----  build
+  }      //     -----     build
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission   * * *
@@ -295,15 +299,17 @@ class Mission {
 
   ///  Collecting all decisions.
   ///  TODO  Map _decisionChainMM  Change it to public !!
-  Map<String, Map<String, Action>> decisionChainMM = new Map();
+  Map<String, Map<String, Action>> decisionChainMM = Map();
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
   ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
-  void chainStream() {} //  real stream, slow answer.
-  void fireStream() {} //
+  ///  real stream, slow answer.
+  void chainStream() {}
+  ///
+  void fireStream() {}
   ///  ***********************************************************************
 
   //  -------------------------    show  aso. methods   --------------------
@@ -403,7 +409,7 @@ class Mission {
     boxServe.show(':mis:box:act:', 'print', 2);
     boxServe.done(':mis:box:act:');
     print('--<<--<<  :mis:box:act: boxServe  done  --<<--<<--  ');
-  }
+  }     //     -----     boxAct
 
   ///  Mission box-info.
   void box(String caller) {
@@ -462,17 +468,17 @@ class Mission {
     boxServe.show(':mis:box:', 'print', 2);
     boxServe.done(':mis:box:');
     print('--<<--<<  :mis:box: boxServe  done  --<<--<<--  ');
-  }
+  }     //     -----     box
 
   ///  For report: To get Chore class names in String.
   String getChoreNamesS() {
-    StringBuffer nBuf = new StringBuffer();
+    StringBuffer nBuf = StringBuffer();
     for (var x = 0; x < choreL.length; x++) {
       nBuf.write(choreL[x].name);
       nBuf.write(' ');
     }
     return nBuf.toString();
-  }
+  }     //     -----     getChoreNamesS
 
   ///  Report of mission data used by: devBox_C: By; dawoApp-:rM:
   List<String> report(String caller, bool detailsB) {
@@ -531,13 +537,14 @@ class Mission {
       print('************************ :M: report details done   ******** \n ');
     }
     return _l;
-  } //  ----------  report
+  }      //     -----     report
 
   ///  all done-methods should rename to:  terminate
   void done() {
     print(':BUG:ERROR:  Mission do not have :done: method.in.use');
   } // Not used, not called.
 
+  ///
   void useUnused() {
     _indent; //  use it.  Meant to style output margin.
   }
@@ -549,7 +556,12 @@ class Mission {
 //  TODO  teamNext    Simple future  sample
 //  TODO  teamNext    Elementary Mixin   sample
 
-} // --  end class Mission
+  ///  Add #later map to constructor to get big chunk of data:
+  ///  Mission(this.name, this.motto, Map<String,String> _clayM);
+  Mission(this.name, this.motto);
+
+}        //     -----     end class Mission
+
 
 ///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right;
@@ -561,16 +573,16 @@ void _flowC(String msg, bool p) {
 }
 
 ///  Create Mission class instances.
-var packDawoMission = new Mission('PackDawoMission', 'Build Dawo package.');
-var helsinkiMission = new Mission('HelsinkiMission', 'Presenting Helsinki.');
-var dartlangMission = new Mission('DartlangMission', 'Learn dartlang.');
+var packDawoMission = Mission('PackDawoMission', 'Build Dawo package.');
+var helsinkiMission = Mission('HelsinkiMission', 'Presenting Helsinki.');
+var dartlangMission = Mission('DartlangMission', 'Learn dartlang.');
 
 var myMusicMission =
-    new Mission('MyMusicMission', 'Play and share good music.');
-var myTimeMission = new Mission(
+    Mission('MyMusicMission', 'Play and share good music.');
+var myTimeMission = Mission(
     'MyTimeMission', 'Spend at least one hour in a week with reasonable way.');
 var nationalParksMission =
-    new Mission('NationalParksMission', 'Presenting beautiful finish nature.');
+    Mission('NationalParksMission', 'Presenting beautiful finish nature.');
 
 ///  Show missions and their chores.
 void missionChoreReport(String caller) {
@@ -585,7 +597,7 @@ void missionChoreReport(String caller) {
     print(missionM[x]!.choreL);
   }
   print('--<<--<<----  missionChoreReport done caller: $caller');
-}
+}     //     -----     missionChoreReport
 
 ///  Add clay ( data ) maps to missions.
 ///  TODO  Messy function buildMissions.  Clean, organize it.
@@ -680,7 +692,7 @@ void buildMissions(String caller) {
     }
   }
   _flowC('  <-m--<--  missionM forEach print-choreL done AGAIN <----<-- ', _pB);
-} //  -----  buildMissions
+}      //     -----     buildMissions
 
 ///  Creating instance of Mission and using it's methods.
 ///  All render_X functions are for test and presentation.
@@ -688,7 +700,7 @@ void renderMission(String caller) {
   //  TODO:  too much of:  Instance of 'BlanketChore'
   //  helsinkiMission.  //  NOTE    #analyzer  is slow
   //  Testing some imaginary mission.
-  var missionR = new Mission('MissionRender', 'Testing<<inRender<<Lib');
+  var missionR = Mission('MissionRender', 'Testing<<inRender<<Lib');
   String nameS = missionR.name;
   print(':M:render: -->>-->>-- renderMission:$nameS C: $caller ');
   missionR.showInfo();
@@ -711,4 +723,4 @@ void renderMission(String caller) {
   print(missionR._rollCount);
   print(':M:render: <<--<<--   renderMission done  C: $caller --<<--<<-- ');
   _flowC('--  mission: $missionR.name : render done  --', _pB);
-}
+}     //     -----     renderMission

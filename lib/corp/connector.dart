@@ -56,7 +56,7 @@ import '../tools.dart';
 import '../mis/equipment.dart';
 
 ///  Buffering out-data ( #clayOut )
-StringBuffer connectorBuf = new StringBuffer();
+StringBuffer connectorBuf = StringBuffer();
 
 ///  This other motto is just for to get more visibility to word: connector.
 String connectorMotto = 'connecting app, mission, chore; mediating them';
@@ -157,7 +157,7 @@ class Connector extends BaseStruct {
   String master = ''; //  Object that owns this. Now only a String.
 
   /// Buffer inside class to keep String-data for output.
-  StringBuffer buf = new StringBuffer();
+  StringBuffer buf = StringBuffer();
   String _bm = 'cb- '; //  marking all buf rows.
 
   ///  4 var to control connectors state, working-condition-state values.
@@ -432,7 +432,7 @@ class Connector extends BaseStruct {
     //  ???  Keep matrix here on callers side all the time
     //  The default List constructor is not available, when NULL  safety is enabled
     //  howTo NULL List  OK:  .filled
-    List<String> _conMatrix = new List.filled(_rc, '');
+    List<String> _conMatrix = List.filled(_rc, '');
 
     _conMatrix; //  Mark #unUsed
 
@@ -582,7 +582,7 @@ class Collector {
 
 ///  Usual render, presentation, function.
 void renderConnector() {
-  Connector c = new Connector('render-test-connector', 'just for testing');
+  Connector c = Connector('render-test-connector', 'just for testing');
   c.info;
   c._conPrint(':connector: conPrint test in render.');
 }

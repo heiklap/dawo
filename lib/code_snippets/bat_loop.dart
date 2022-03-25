@@ -359,13 +359,13 @@ Map<num, String> batHurry = {
 ///  ..
 void renderBatLoop() {
   //  for testing purposes render class here
-  var batLooper = new BatLooper();
+  BatLooper batLooper = BatLooper();
   print(batLooper.info);
 }
 
 ///   UNTESTED:     tests batLoop functions
 void batLooperTest() {
-  var batLooper = new BatLooper();
+  BatLooper batLooper = BatLooper();
   // batLooper.rainLoop();
   doLine('rain loop no exists..  ');
 

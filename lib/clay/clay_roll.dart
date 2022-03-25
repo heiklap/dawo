@@ -57,7 +57,7 @@ Map<String, Map<String, String>> getClayMap(String _command) {
 ///  'get' type Map functoon
 Map<String, Map<String, String>> packDawoClay() {
   Map<String, Map<String, String>> _retM = {};
-  var packDawo = new PackDawo();
+  PackDawo packDawo = PackDawo();
   packDawo.buildMaps(); //  get all maps..
   _retM.addAll(packDawo.packDawoClayM);
   return _retM;
@@ -66,7 +66,7 @@ Map<String, Map<String, String>> packDawoClay() {
 ///  use new, complicated Map
 Map<String, Map<String, String>> helsinkiGuideClay() {
   Map<String, Map<String, String>> _retM = {};
-  var helsinkiGuide = new HelsinkiGuide();
+  HelsinkiGuide helsinkiGuide = HelsinkiGuide();
   //  get all maps..
   helsinkiGuide.buildMaps('Clay-Roll - helsinkiGuideClay');
   _retM.addAll(helsinkiGuide.helsinkiClayM);
@@ -76,7 +76,7 @@ Map<String, Map<String, String>> helsinkiGuideClay() {
 ///  function returns Map from clay folder
 Map<String, Map<String, String>> learnDartlangClay() {
   Map<String, Map<String, String>> _retM = {};
-  var learnDartlang = new LearnDartlang();
+  LearnDartlang learnDartlang = LearnDartlang();
   learnDartlang.buildMaps();
   _retM.addAll(learnDartlang.dartlangClayM);
   return _retM;
@@ -85,7 +85,7 @@ Map<String, Map<String, String>> learnDartlangClay() {
 ///
 Map<String, Map<String, String>> myMusicClay() {
   Map<String, Map<String, String>> _retM = {};
-  var myMusic = new MyMusic();
+  MyMusic myMusic = MyMusic();
   myMusic.buildMaps();
   _retM.addAll(myMusic.myMusicClayM);
   return _retM;
@@ -94,7 +94,7 @@ Map<String, Map<String, String>> myMusicClay() {
 ///
 Map<String, Map<String, String>> myTimeClay() {
   Map<String, Map<String, String>> _retM = {};
-  var myTime = new MyTime();
+  MyTime myTime = MyTime();
   myTime.buildMaps();
   _retM.addAll(myTime.myTimeClayM);
   return _retM;
@@ -103,7 +103,7 @@ Map<String, Map<String, String>> myTimeClay() {
 ///
 Map<String, Map<String, String>> nationalParksClay() {
   Map<String, Map<String, String>> _retM = {};
-  var nationalParks = new NationalParks();
+  NationalParks nationalParks = NationalParks();
   nationalParks.buildMaps();
   _retM.addAll(nationalParks.nationalParksClayM);
   return _retM;

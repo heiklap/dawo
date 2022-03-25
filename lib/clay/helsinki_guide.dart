@@ -145,7 +145,7 @@ void flowC(String msg, bool pB) {
 }
 
 ///  instance
-var helsinkiGuide = new HelsinkiGuide();
+HelsinkiGuide helsinkiGuide = HelsinkiGuide();
 
 ///  render / presentation-test function
 void renderHelsinkiGuide() {

@@ -24,7 +24,7 @@ import 'corp/connector.dart';
 import 'dev/dawo_dev.dart';
 
 ///  Collecting Rumba output.
-StringBuffer rumbaBuf = new StringBuffer();
+StringBuffer rumbaBuf = StringBuffer();
 
 ///
 class Rumba {

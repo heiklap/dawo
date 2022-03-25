@@ -70,6 +70,7 @@ beginner programmes this is one way to simulate real-world development stress.
  
  0.0.8  Fixed health suggestions and additional 21 files with analysis or formatting issues.
  0.1.0  Migrating to null safety.
+ 0.2.0 - 0.9.0  Series of cleaning, saved in gitHub
 
 ## Files;
 ### code_snippets, learn / copy-paste stuff:

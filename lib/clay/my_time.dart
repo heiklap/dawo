@@ -69,6 +69,6 @@ class MyTime {
 
 ///  render-function
 void renderWorkingWeek() {
-  var wW = new MyTime();
+  MyTime wW = MyTime();
   wW.dayM;
 }

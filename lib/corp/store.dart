@@ -17,15 +17,23 @@ library store;
 import 'dart:async';
 import '../src/box_serve.dart';
 
-///
-class Store {
+  ///
+  class Store {
+  String name = '* Store *';
+  ///
+  String motto = '* Store Motto *';
+
+
+
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
   ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   ///  These are upper-level streams, others are inside classes.
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
+  ///
   void chainStream() {} //  real stream, slow answer.
+  ///
   void fireStream() {} //
 
   ///  ***********************************************************************
@@ -39,7 +47,7 @@ class Store {
   ///  ***********************************************************************
   void demandStream(String caller, var streamData, var streamListen) {
 //  var data = streamData; // some sample data
-    var stream = new Stream.fromIterable(streamData); // Create the stream.
+    Stream stream = Stream.fromIterable(streamData); // Create the stream.
 
     // Subscribe to the streams events.
     stream.listen((value) {
@@ -57,13 +65,13 @@ class Store {
       print("   :demand:stream: #phase:2:value:  $value"); // onData handler
       print('---  :stream: #phase:3:ok  caller: $caller        OK    --- \n');
     });
-  }
+  }     //     -----     demandStream
 
   ///  Another basic stream example, grabbed from dartlang.org
   ///  Not used yet here.
   void demandStreamBroad(String caller, Iterable streamData, var streamListen) {
     //  var data = intList;
-    var stream = new Stream.fromIterable(streamData);
+    Stream stream = Stream.fromIterable(streamData);
     var broadcastStream = stream.asBroadcastStream();
 
     broadcastStream //   Using method cascades...
@@ -75,7 +83,9 @@ class Store {
           (value) => print("SUCCESS_4_:: stream.isEmpty: $value")) // false
       ..length
           .then((value) => print("SUCCESS_5_:: stream.length: $value")); // 5
-  }
-}
+  }     //     -----     demandStreamBroad
 
-Store store = new Store();
+
+}     //     -----     class Store
+
+Store store = Store();

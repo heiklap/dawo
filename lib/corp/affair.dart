@@ -129,4 +129,4 @@ class Affair {
 }
 
 //  Just testing Create instance as affair.
-var affair = new Affair('dawoApp', 'xSender', 'xReceiver', 'betaAssign', 'msg');
+Affair affair = Affair('dawoApp', 'xSender', 'xReceiver', 'betaAssign', 'msg');

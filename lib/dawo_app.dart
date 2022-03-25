@@ -4,7 +4,7 @@
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dawo version:   0.3.0.  23.3.2022.
+/// * dawo version:   0.4.0.  23.3.2022.
 /// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * dawoApp instantiated inside app; it now has access to dawo.version aso.
@@ -40,7 +40,7 @@ import 'src/box_serve.dart';
 num dawoAppReadiness = 95; //  changed: 2.5.2015
 
 ///  Buffer also outside class, for testing and adding visibility.
-var appBuf = new StringBuffer(); //  not used here
+StringBuffer appBuf = StringBuffer(); //  not used here
 
 ///  Class that holds 'soul' of THIS dawo app.
 ///  Controls Mission-Chore system, #App, & dawo-package development, #Pack.
@@ -106,7 +106,7 @@ class DawoApp {
   String indent = '';
   ///  No printing now. use printControl to change it.
   bool _pB = false;
-  StringBuffer buf = new StringBuffer();
+  StringBuffer buf = StringBuffer();
 
   ///  4 Map variables to indicate dawoApp's state / working-condition.
   Map<String, bool> st = {
@@ -418,7 +418,7 @@ class DawoApp {
     boxServe.aBox(21, 6, 10, 38, appBuf.toString().split('\n'));
 
     ///  out. default Buffers and their sizes.
-    Map<String, String> outBufMapShow = new Map();
+    Map<String, String> outBufMapShow = Map();
     outBufMapShow = outBuffersInfoMap('here', 'here again');
     String _s;
     _s = outBufMapShow.length.toString();

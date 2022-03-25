@@ -16,17 +16,17 @@ import 'package:dawo/tools.dart';
 //  creating instances of classes in upper level
 
 ///  Mill is not functional yet
-var mill = new Mill();
+Mill mill = Mill();
 
-var mission = new Mission('mission-class', 'test-in:de-test.dart');
+Mission mission = Mission('mission-class', 'test-in:de-test.dart');
 
 ///  NOTE:  chore #master field must have name of mission-with-say field.
-var ch = new BlanketChore('chore-class', 'appChorePlay', 'Testing in app-chore-play');
+BlanketChore ch = BlanketChore('chore-class', 'appChorePlay', 'Testing in app-chore-play');
 
 ///  Soon (in next version) instance of dawoApp is created inside Dawo
 //  Beginning 23.12.2017 instance of DawoApp is created inside package.
 //  var dawoApp = new DawoApp(':example ', 'Just rumbaTest.dart');
-var rumba = new Rumba();
+Rumba rumba = Rumba();
 
 ///  use and show App, dawoFlag and Chore
 main() {
@@ -122,7 +122,7 @@ void usualChoreStuff() {
 //  classes are not interacting aso.
 void otherStuff() {
   print('==>>==>>====  app_chore_play example otherStuff ==>>==>>====');
-  var dawoHist = new DawoHist(); //  new DawoHist class.
+  DawoHist dawoHist = DawoHist(); //  new DawoHist class.
   aide..line('dawoAppRoll');
   dawoApp.roll();
 

@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## equipment  :  material resources for Mission and Chore.
 ///  * No objects, but:  String-values for simple demo and presentation.
-///  * dawo version:   0.3.0.  23.3.2022.    devState : 30 %
+///  * dawo version:   0.4.0.  25.3.2022.    devState : 30 %
 ///  * Instance as:  equ
 ///
 
@@ -14,7 +14,7 @@ import 'dart:math';
 class Equipment {
   ///
   bool active = false;
-  var random = new Random(27);
+  Random random = Random(27);
 
   ///  Imitating real classes / Just using String-names.
   String area = 'areaR';
@@ -41,7 +41,7 @@ class Equipment {
     if (resL.isEmpty) {
       resL.addAll([area, car, law, machine, money, office, people, time]);
     }
-  }
+  }     //     -----     init
 
   ///  representation on aerial entities
   Map<String, String> areas = {
@@ -138,7 +138,7 @@ class Equipment {
     ///  TODO  use _c variable to control width
     ///  init();  must be done somewhere.
     List<String> _l = [];
-    StringBuffer _sB = new StringBuffer();
+    StringBuffer _sB = StringBuffer();
     _l.add(
         'Days Area:   Car:    Law:    Machine:Money:  Office: People: Time:');
     for (var x = 0; x < _r; x++) {
@@ -164,8 +164,9 @@ class Equipment {
       _sB.clear();
     }
     return _l;
-  }
-}
+  }     //     -----     allocate
+
+}     //     -----     class Equipment
 
 ///  Creating instance with short handy name.
 Equipment equ = Equipment();

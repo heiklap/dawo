@@ -19,10 +19,10 @@ num dawLibStreamReadiness = 90; // readiness for version 0.0.1
 
 ///  TODO  every stream-function adds own message to batonMsg and ++ batonCount
 ///  So we can at the end see, what had happened
-StringBuffer batonMsg = new StringBuffer();
+StringBuffer batonMsg = StringBuffer();
 int batonCount = 0;
 
-StringBuffer streamBuf = new StringBuffer();
+StringBuffer streamBuf = StringBuffer();
 String streamMotto = 'Streams are not my friends :-|  ';
 
 ///  TODO  teamNext   PLAN:    Use futures for outPut
@@ -62,7 +62,7 @@ class LearnStreamSync {
 ///  TODO  aSync stream   is there something special in "superStream"   ??
   void presentSuperStream(var streamData, var streamListen) {
 //  var data = streamData; // some sample data
-    var stream = new Stream.fromIterable(streamData); // create the stream
+    Stream stream = Stream.fromIterable(streamData); // create the stream
 
     // subscribe to the streams events
     stream.listen((value) {
@@ -76,7 +76,7 @@ class LearnStreamSync {
   ///  String?  streamReceiver  "hyperStream"  makes it better
   void presentHyperStream(var sData, var sListen, String sReceiver) {
 //  var data = streamData; // some sample data
-    var stream = new Stream.fromIterable(sData); // create the stream
+    Stream stream = Stream.fromIterable(sData); // create the stream
 
     // subscribe to the streams events
     stream.listen((value) {
@@ -92,7 +92,7 @@ class LearnStreamSync {
   ///    basic stream example...
   void presentStreamBase() {
     var _data = intList; // some sample data
-    var _psbStream = new Stream.fromIterable(_data); // create the stream
+    Stream _psbStream = Stream.fromIterable(_data); // create the stream
 
     // subscribe to the streams events
     _psbStream.listen((value) {
@@ -111,8 +111,8 @@ class LearnStreamSync {
   ///    another basic stream example
   void presentStreamExmpl() {
     var data = intList;
-    var stream = new Stream.fromIterable(data);
-    var broadcastStream = stream.asBroadcastStream();
+    Stream stream = Stream.fromIterable(data);
+    Stream broadcastStream = stream.asBroadcastStream();
 
     broadcastStream //   using   method   cascades...
       //TODO  Test:  can we NOT use shorthand function?
@@ -128,7 +128,7 @@ class LearnStreamSync {
   ///    samples of broadcast stream
   void presentBroadcastStream() {
     var data = intList;
-    var stream = new Stream.fromIterable(data);
+    Stream stream = Stream.fromIterable(data);
     var broadcastStream = stream.asBroadcastStream();
 
     broadcastStream
@@ -163,8 +163,8 @@ class LearnStreamSync {
   void presentStreamTransform() {
     //  TODO  teamHowTo    make roundWay
     //  TODO  goals  error;  make list here
-    var thisEveningStream =
-        new Stream.fromIterable(letterList); // create the stream
+    Stream thisEveningStream =
+        Stream.fromIterable(letterList); // create the stream
 //  var thisEveningStream = new Stream.fromIterable(eveningStream);  // create the stream
 
     //  check properties: Just nime one, and play.
@@ -172,7 +172,7 @@ class LearnStreamSync {
 
     /// define a stream transformer
     var transformer =
-        new StreamTransformer.fromHandlers(handleData: (value, sink) {
+        StreamTransformer.fromHandlers(handleData: (value, sink) {
       // create two new values from the original value
       //  The method "add" is not defined for method void.
       //  sink.add("Message: $value").add("Body: $value");
@@ -210,7 +210,7 @@ class LearnStreamSync {
   ///  ..
   void presentStreamValidate() {
     var data = intList;
-    var stream = new Stream.fromIterable(data);
+    Stream stream = Stream.fromIterable(data);
     var broadcastStream = stream.asBroadcastStream();
 
     broadcastStream.any((value) => value < 5).then((result) => print(
@@ -227,7 +227,7 @@ class LearnStreamSync {
   ///
   void presentSingleValueStream() {
     var data = intList;
-    var stream = new Stream.fromIterable(data);
+    Stream stream = Stream.fromIterable(data);
     var broadcastStream = stream.asBroadcastStream();
 
     broadcastStream
@@ -241,7 +241,7 @@ class LearnStreamSync {
   ///   more stream methods
   void presentUnsubscribeFromStream() {
     var data = intList; // some sample data
-    var stream = new Stream.fromIterable(data); // create the stream
+    Stream stream = Stream.fromIterable(data); // create the stream
 
     var subscription = stream.listen(null);
     subscription.onData((value) {
@@ -256,7 +256,7 @@ class LearnStreamSync {
   void presentGenericStream() {
     var data = intList; // int's, valid
 // var data = ["1","2","3","4","5"]; // strings, not valid
-    var stream = new Stream<int>.fromIterable(data); // Stream<int>
+    Stream stream = Stream<int>.fromIterable(data); // Stream<int>
     stream.listen((value) {
       // value must be an int
       print("listen: $value  \n  ---   OK  --- \n");

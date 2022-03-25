@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// ##  Treaty:  action-field for two missions; to say and bargain
 /// *
-/// * dawo version:   0.3.0.  23.3.2022.  -   devState: 40 %
+/// * dawo version:   0.4.0.  23.3.2022.  -   devState: 40 %
 /// * GitHub:
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
 // * Hist:hkl  27.12.2017
@@ -54,8 +54,8 @@ import 'package:dawo/src/box_serve.dart';
 //  import 'package:dawo/tools.dart';
 
 ///
-StringBuffer treatyBuf = new StringBuffer();
-var treatyRandom = new Random(27);
+StringBuffer treatyBuf = StringBuffer();
+Random treatyRandom = Random(27);
 Map<String, Treaty> treatyM = {};
 
 ///
@@ -97,8 +97,11 @@ List<String> bilateralWeekL = [''];
 ///  and outsider   used:  2 / 3
 class Treaty {
   ///
-  String name = 'DailyTreaty';
-  String msg = 'DailyTreatyMsg';
+  String name = '* DailyTreaty *';
+  ///
+  String msg = '* DailyTreatyMsg *';
+
+  ///
   String day = '';
 
   /// Object that has placardM, say, and clause.
@@ -113,7 +116,7 @@ class Treaty {
   //  Usage:  no.   Missions default chores, that they are using here (PLAN).
   //  constructor:   BlanketChore(this.name, this.master, this.info)
   BlanketChore inChore =
-      new BlanketChore('*nameBChore', '*masterBChore* ', '*infoBChore*');
+      BlanketChore('*nameBChore', '*masterBChore* ', '*infoBChore*');
 
   ///  hkltry error  Constructor has 3fields
   ///   BlanketChore(this.name, this.master, this.info)
@@ -133,9 +136,6 @@ class Treaty {
   Map<String, String> logM = {
     'logM:for': ':daily:Treaty:',
   };
-
-  ///  Constructor, that builds instances of this class.
-  Treaty(this.name, this.msg, this.insider);
 
   ///  IDEA:  Used as playBack.  Message / info carrier.
   ///  Simulating kind-of remote process.
@@ -183,7 +183,7 @@ class Treaty {
     ///  maybe:  call to something like "days job-table".
     _show();
     _done();
-  }
+  }     //     -----     revel
 
   //  Premature to PLAN: #auction.  This is where member-days #say and #bid.
   List<String> shout() {
@@ -232,7 +232,7 @@ class Treaty {
     bilateralWeekL.addAll(retL);
     print(':bilateral:success:    $retL  :count:  $_count');
     return retL;
-  }
+  }     //     -----     bilateral
 
   //  This code is just copied from: equipment.
   //  Using random generator for sample data.
@@ -243,7 +243,7 @@ class Treaty {
     //  TODO  use _c variable to control width
     //  init();  must be done somewhere.
     List<String> _l = [];
-    StringBuffer _sB = new StringBuffer();
+    StringBuffer _sB = StringBuffer();
     _l.add('Say Purp:   Lang:    area:    Prod:Sell:  Buy: Ask: ');
     for (var x = 0; x < _r; x++) {
       String _dS = x.toString();
@@ -268,7 +268,7 @@ class Treaty {
       _sB.clear();
     }
     return _l;
-  }
+  }     //     ------     auction
 
   ///  Using boxServe(),  (boxDay ?)  or devBox for output.
   ///  Has not now much job since revel runs (routine) boxDay.
@@ -280,7 +280,7 @@ class Treaty {
     print('    ---- $name    :dailyTreaty:method:show:');
     //  Run _objects show / .box method
     //  insider.box();
-  }
+  }     //     -----     show
 
   ///  Model layout for basic fields.
   void _dayLayOut() {
@@ -328,7 +328,7 @@ class Treaty {
     boxServe.aBox(12, 4, 1, 68, [':purp:   $_o11']);
 
     boxServe.aBox(7, 70, 8, 32, bilateralL);
-  }
+  }     //     -----     _dayLayOut
 
   ///  Model layout for basic fields.
   void _weekLayOut() {}
@@ -350,7 +350,7 @@ class Treaty {
     boxServe.done(':daily:Treaty:  $name ');
 
     //  TODO  Bids to week - #auction.
-  }
+  }     //     -----     boxDay
 
   ///  PLAN:  ready-shape 16-140 box  just for bargain
   ///  called by::  Nobody
@@ -367,12 +367,17 @@ class Treaty {
     boxServe.show(' :bargain:daily:Treaty:  $name ', 'print', 22);
     boxServe.done(' :bargain:daily:Treaty: buf: $bufLength  $name ');
     //  TODO  Bids to add to week - #auction.
-  }
+  }     //     -----     boxBargain
 
   ///  Usual this-job-is-ready -method. Not setting #st Map yet.
   void _done() {
     logM.putIfAbsent('Done: $name', () => '$msg in :daily:work:');
     // boxServe.done(':dailyTreaty:monday:test:');
     print('    ---- $name     :dailyTreaty:method:done:');
-  }
-} //  -----  Treaty class.
+  }     //     -----     done
+
+
+    ///  Constructor, that builds instances of this class.
+    Treaty(this.name, this.msg, this.insider);
+
+}      //     -----     Treaty class.

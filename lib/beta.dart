@@ -158,7 +158,7 @@ void sPrint(String msg) {
 }
 
 ///  buffer also outside class, for testing and adding visibility
-var betaBuf = new StringBuffer();
+StringBuffer betaBuf = StringBuffer();
 
 ///  setting flow-print now to zero.
 bool printGlobalB = false;

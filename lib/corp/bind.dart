@@ -20,7 +20,7 @@ class Bind {
   int bindC = 0; //  counter for connections.
   bool _pB = true; //  print control.
   String emblem = ':bind:'; //  header for messages.
-  StringBuffer buf = new StringBuffer();
+  StringBuffer buf = StringBuffer();
 
   ///  Map of #LANG and #CLAUSE based String-bindings between objects.
   Map<String, String> bindM = {
@@ -155,4 +155,4 @@ class Bind {
   }
 } //  -----  class Bind
 
-Bind bind = new Bind();
+Bind bind = Bind();

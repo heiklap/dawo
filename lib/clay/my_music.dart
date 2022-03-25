@@ -100,6 +100,6 @@ class MyMusic {
 
 ///  For play and exercise
 void renderWorkingMusic() {
-  var myMusic = new MyMusic();
+  MyMusic myMusic = MyMusic();
   myMusic.myArtistM.forEach((k, v) => print('$k, $v'));
 }

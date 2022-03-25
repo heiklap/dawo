@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  camp lib with camp and scout classes.
-/// * dawo version:   0.3.0.  23.3.2022.  -  devState:  30%
+/// * dawo version:   0.4.0.  25.3.2022.  -  devState:  30%
 /// * GitHub:.
 /// * Missions and Chores can use connector-services, from corporate-side
 /// * to join to Camp-Scout system, whereas corporate side can also use
@@ -28,9 +28,11 @@ class Camp {}
 ///
 class Scout {
   ///
-  String name = 'Scout';
-  String motto = 'Join all together in camp and scout';
-  String clause = ''; //  Combination of #LANG words in sentence.
+  String name = '* Scout *';
+  ///
+  String motto = '* Join all together in camp and scout *';
+  ///
+  String clause = '* Consolidating Strength with others *'; //  Combination of #LANG words in sentence.
 
   /// Language, that scout uses when connecting other objects (in con) .
   Map<String, String> say = {
@@ -53,6 +55,7 @@ class Scout {
     'command': 'scout:com:',
     'msg': ':scout:msg:',
   };
+
   ///  for print
   bool _pB = false;
 
@@ -74,7 +77,7 @@ class Scout {
     bool _initB = false; // _initB used only here.
     //  //TODO unfinished #IDEA: code to initialize variables in system. #WTF
     return _initB;
-  }
+  }     //     -----     init
 
   /// devNote:  method, that OPENS scout things.
   bool open(int openCount, var openThis) {
@@ -84,7 +87,7 @@ class Scout {
     bool __openB = false; //  mark: __  for private-onlyHere.
     //  code to roll -scoutOpen-   - operations
     return __openB;
-  }
+  }     //     -----     open
 
   ///  Start developing scout roll function
   ///  Eventually scoutRoll handles all these others: init-open-close-schedule..
@@ -132,7 +135,7 @@ class Scout {
 
     _flowC('    <---<--  :scout:roll:  Counter: $__counter   * * *', _pB);
     return __counter;
-  } //  -----  scoutRoll
+  }      //     -----     scoutRoll
 
   ///  give report of scout statistics
   void report() {
@@ -148,7 +151,7 @@ class Scout {
         _l2.add(_l[x]);
       }
     }
-  }
+  }     //     -----     report
 
   ///  int opClose(int openCount, Function openThis) {}
   ///  TODO  scout  not used
@@ -164,8 +167,13 @@ class Scout {
     ///  Call flowServe with #LOCAL variables:
     flowServe(':scout:', out.outTMid, msg, p);
   }
+
+  ///  constructor
+  Scout(this.name, this.motto, this.clause);
+
 } //  -----  scout class
 
-Scout scout = Scout();
+///  creating instance
+Scout scout = Scout('Scout in Camp', 'Scout Always Ready', 'Consolidating Strength with others');
 
 

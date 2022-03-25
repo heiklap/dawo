@@ -3,7 +3,7 @@
 ///  ##  Dawo,  learning Dartlang project.
 /// Beginner Dart programmers kickoff to develop a glorious pub package; dawo.
 /// Make it big, complicated; then organize, and make internal systematics.
-/// dawo version:   0.3.0.  23.3.2022.
+/// dawo version:   0.4.0.  25.3.2022.
 /// V:  0.3.0  Modify comments, style and clarity
 ///
 /// Hist: hkl  22.5.2014  0.0.1  dawo/lib, in pub and GitHub
@@ -25,6 +25,6 @@ library dawo;
 export 'package:dawo/dawo_src.dart';
 
 ///  Buffer also outside class, for testing and adding visibility.
-var dawoBuf = new StringBuffer();
+StringBuffer dawoBuf = StringBuffer();
 
 // TODO: Export any libraries intended for clients of this package.
