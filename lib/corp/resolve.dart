@@ -2,10 +2,10 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  bind :  solving literal searches by customer (bind) wishes.
 ///  * find: memberM.placardM/clause / bindItem => response.bing.caller
-///  * dawo version:   0.3.0.  23.3.2022
+///  * dawo version:   0.6.0  26.3.2022
 ///  * GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/resolve.dart
 ///  * devState: schema  5%  -  PLAN: no time.
-///  Hist:hkl  19.11.2017  Moved stuff out from connector.
+///
 
 // * * * *    Start using RegExp in String operations.  * * * *
 /*  #CODE  from:  https://www.dartlang.org/guides/libraries/library-tour
@@ -19,7 +19,8 @@ assert(greeting !=
     greetingTemplate); // greetingTemplate didn't change.
  */
 
-library resolve;
+//  library resolve;
+part of corp;
 
 //  import '../tools.dart';
 

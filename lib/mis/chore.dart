@@ -35,9 +35,7 @@ import '../beta.dart'; //  flowServe() is here.
 import '../tools.dart';
 import '../src/box_serve.dart'; //  boxServe is here
 
-import '../corp/affair.dart';
-import '../corp/connector.dart';
-import '../corp/corporate.dart';
+import '../corp/corp.dart';
 
 import '../dev/dawo_dev.dart';
 import 'missions.dart';
@@ -436,7 +434,10 @@ class BlanketChore extends BaseStruct {
     ///  TODO  operation class instance
     ///  order: #actor #sender #receiver #command #msg
     Affair chPopularClass =
-        Affair(name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
+    ///  TODO  Affair(name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
+    ///  TODO  Affair
+        Affair('chore', 'rec:test', 'all ok');
+
     //  use buffer somewhere
     StringBuffer _retBuf = StringBuffer();
     _retBuf.writeln('_retBuf in chore-popular method is ready...');

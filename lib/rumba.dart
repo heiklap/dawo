@@ -20,7 +20,7 @@ import 'beta.dart';
 import 'shower.dart';
 import 'tools.dart';
 
-import 'corp/connector.dart';
+import 'corp/corp.dart';
 import 'dev/dawo_dev.dart';
 
 ///  Collecting Rumba output.

@@ -26,7 +26,7 @@ import 'chore.dart';
 import '../dev/dawo_dev.dart';
 import '../tools.dart';
 
-import '../corp/connector.dart';
+import '../corp/corp.dart';
 import '../clay/clay_roll.dart';
 
 part 'missions_data.dart';

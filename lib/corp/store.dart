@@ -3,7 +3,7 @@
 /// ## Store is, or simulates: shop, or market place, serving and selling.
 ///  Here it is stream-based.
 ///  * Here are streams, supply and demand, all in store, and they: deliver.
-///  * dawo version:   0.3.0.  23.3.2022.    devState: 3%
+///  * dawo version:   0.6.0  26.3.2022.    devState: 3%
 ///  * NEXT: when main methods are sync, it is hard to find practical usage.
 ///  * NEXT: try box_serve for output-
 ///  * OutPut:  :demand:stream: search gives 15 results in output.
@@ -12,18 +12,19 @@
 // TODO  all methods are:  supplyX and  demandX
 //
 
-library store;
+//  library store;
+part of corp;
 
-import 'dart:async';
-import '../src/box_serve.dart';
-
+///
+class Store extends CorpInterfaceBasis {
   ///
-  class Store {
   String name = '* Store *';
+
   ///
   String motto = '* Store Motto *';
 
-
+  ///
+  String clause = '*Store Clause*';
 
   ///  ***********************************************************************
   ///  #Word 's for stream-like processes. What 3 words to use?
@@ -65,7 +66,7 @@ import '../src/box_serve.dart';
       print("   :demand:stream: #phase:2:value:  $value"); // onData handler
       print('---  :stream: #phase:3:ok  caller: $caller        OK    --- \n');
     });
-  }     //     -----     demandStream
+  } //     -----     demandStream
 
   ///  Another basic stream example, grabbed from dartlang.org
   ///  Not used yet here.
@@ -83,9 +84,11 @@ import '../src/box_serve.dart';
           (value) => print("SUCCESS_4_:: stream.isEmpty: $value")) // false
       ..length
           .then((value) => print("SUCCESS_5_:: stream.length: $value")); // 5
-  }     //     -----     demandStreamBroad
+  } //     -----     demandStreamBroad
 
+  //
+  Store(this.name, this.motto, this.clause);
+} //     -----     class Store
 
-}     //     -----     class Store
-
-Store store = Store();
+///  Create instance of Store
+Store store = Store('', '', '');

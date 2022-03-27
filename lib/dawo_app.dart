@@ -20,8 +20,8 @@ import 'shower.dart';
 import 'mis/chore.dart';
 import 'mis/missions.dart';
 
-import 'corp/connector.dart';
-import 'corp/store.dart';
+import 'corp/corp.dart';
+//  import 'corp/store.dart';
 
 import 'dev/dawo_dev.dart';
 

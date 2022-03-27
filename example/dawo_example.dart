@@ -25,8 +25,7 @@ import 'package:dawo/mis/camp.dart';
 import 'package:dawo/mis/chore.dart';
 import 'package:dawo/mis/missions.dart';
 
-import 'package:dawo/corp/bind.dart';
-import 'package:dawo/corp/connector.dart';
+import 'package:dawo/corp/corp.dart';
 import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/src/glb.dart';
 import 'package:dawo/src/box_serve.dart';

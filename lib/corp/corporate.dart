@@ -2,28 +2,24 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Corporate,  enterprise-like entity.
 ///  * Holds: Affairs, Stores, takes Order's, makes Jobs in phases.
-///  * dawo version:   0.4.0.  25.3.2022
+///  * dawo version:   0.6.0  26.3.2022
 ///  * devState:  10%,   PLAN:  do simple demo / presentation.
 ///
 //
 //  history: 2017.11.13.   development-state: 5%
 
-library corporate;
-
-///  How beta manages so far NOT importing alpha.dart?
-//  import 'alpha.dart';
-//  import 'beta.dart';
-import '../shower.dart'; //  for devBox
-import 'affair.dart';
-import 'store.dart';
+//  library corporate;
+part of corp;
 
 ///  Here objects work together after #connector joins them to system.
 ///  usage:
-class Corporate {
+class Corporate extends CorpInterfaceBasis {
   ///
   String name = '* corporate-united *';
+
   ///
   String motto = '* CorpMotto *';
+
   ///
   String clause = '*CorpClause*';
 
@@ -87,7 +83,7 @@ class Corporate {
 
   ///  Change "Automatic messages" to buf messages.
   String paramToStr(var sender, receiver, op, msg) {
-  //  Or return List.
+    //  Or return List.
     String s = sender.toString();
     String r = receiver.toString();
     String o = op.toString();
@@ -148,7 +144,7 @@ class Corporate {
     // actual command.
     _li3.add('calling command:');
     //  call to function that was get in parameter by caller.
-    //  TODO Make this route more evident in in call,  and returned Strings.
+    //  TODO Make this route more evident in in-call,  and returned Strings.
     String _comStr = _assigned();
     _li3.add(_comStr); //  Returning String, from caller-object.
     _li3.add('  3. part done in :corporate:process. ');
@@ -158,7 +154,8 @@ class Corporate {
     ///  The argument type 'Map<dynamic, dynamic>' can't be assigned to
     ///  the parameter type 'Map<String, String>'
     ///  DONE;  map explicitly: 'Map<String, String>'
-    _affairOp.init(placardM);
+    ///  TODO  _affairOp.init(placardM);
+    _affairOp.init();
 
     List<String> _li4 = [];
     _li4.add('calling: _affairOp.showInfo AND  _affairOp.operation::');
@@ -174,7 +171,7 @@ class Corporate {
     _cpBuf.writeln(':_cpBuf:  <--<<--  :corporate:process done --------\n');
     print('  <--<<--  :corporate:process done cccccccccccccccccccccccccp \n');
     return _cpBuf;
-  }     //     -----     process
+  } //     -----     process
 
   ///  Shaping joint functionality for presentation.
   void show() {
@@ -183,8 +180,7 @@ class Corporate {
 
   ///  constructor
   Corporate(this.name, this.motto, this.clause);
-
-}     //     -----     class Corporate
+} //     -----     class Corporate
 
 ///  Creating instance.
-Corporate corporate = Corporate('corporate-united', 'NorpMotto', 'Corp.Clause');
+Corporate corporate = Corporate('corporate-united', 'CorpMotto', 'Corp.Clause');

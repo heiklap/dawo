@@ -4,22 +4,25 @@
 /// * Bind object to certain state or project or resource.
 /// * Bind to certain event-waiting or information flow.
 /// *  Using #resolve library with #dawolang to solve bind-literal-Strings.
-/// *  dawo version:   0.3.0  23.3.2022
+/// *  dawo version:   0.6.0  26.3.2022
 /// *  GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/bind.dart
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
-// Hist:hkl  18.11.2017  Moved stuff here from connector.
 
-library bind;
+//  library bind;
+part of corp;
 
-import '../beta.dart';
+//  import '../beta.dart';
 //  import 'resolve.dart';
 
 ///  Class Bind keeps and handles message-based bindings between objects.
-class Bind {
-  int bindC = 0; //  counter for connections.
-  bool _pB = true; //  print control.
-  String emblem = ':bind:'; //  header for messages.
+class Bind extends CorpInterfaceBasis {
+  //  counter for connections.
+  int bindC = 0;
+  //  print control.
+  bool _pB = true;
+  //  header for messages.
+  String emblem = ':bind:';
   StringBuffer buf = StringBuffer();
 
   ///  Map of #LANG and #CLAUSE based String-bindings between objects.
@@ -86,11 +89,7 @@ class Bind {
     //  TODO  should both bind and connector have memberM ?
     bindMembM.putIfAbsent(bindNameS, () => comS);
 
-    //  howTo NULL Map putIfAbsent
-    //  The property 'length' can't be unconditionally accessed because the receiver can be 'null'.
-    //  Try making the access conditional (using '?.') or adding a null check to the target ('!').
-    //  hklTry: NULL OK     bindingM['all'].putIfAbsent(senderS, () => receiverS);
-    ///  The argument type 'Map<dynamic, dynamic>' can't be assigned to the parameter type 'Map<String, String>'
+    ///
     bindingM['all']?.putIfAbsent(senderS, () => receiverS);
     // Map<String, Map<String, String>>
 

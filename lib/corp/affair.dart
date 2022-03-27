@@ -1,15 +1,15 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  affair,  handling small jobs inside corporate.
-/// * dawo version:   0.3.0  23.3.2022  -.   devState:  5%
+/// * dawo version:   0.6.0  26.3.2022  -.   devState:  5%
 /// * GitHub:  Yes  -  State:  schema
 /// * PLAN:  0.0.8  small upgrade when common methods are ready.
 //
-// Hist:hkl  19.11.2017
 
-library affair;
+//  library affair;
+part of corp;
 
-import '../alpha.dart';
+//  import '../alpha.dart';
 
 ///  conduct?  affair!!
 ///  Second or third alternative to operations, besides :corporate:
@@ -20,20 +20,32 @@ import '../alpha.dart';
 ///  this extra power and connect to other operations.
 ///  For that, here should be added fields.
 ///  IDEA: Change this name to class CoOp.  So why not:  Coup.
-class Affair {
+class Affair extends CorpInterfaceBasis {
   //  Alpha is known here.  beta-PlacardM is known also.
+  ///
+  String name = '* corporate-united *';
+
+  ///
+  String motto = '* CorpMotto *';
+
+  ///
+  String clause = '*CorpClause*';
 
   ///
   String actor = ':No usage yet:'; //  Too important to be a String.
   ///
   String sender = '';
+
   ///
   String receiver = '';
 
   /// Question:  Can it be a function?
   String cmd = '';
+
+  ///
   String msg = '';
 
+  ///
   var actorState;
 
   ///
@@ -73,20 +85,25 @@ class Affair {
   }
 
   ///  Operation levels.
-  var opLevel; //  Is it changed during operation?
-  var opChange; //  Handle actual change.
+  ///  Is it changed during operation?
+  var opLevel;
+
+  ///  Handle actual change.
+  var opChange;
 
   var decision;
   var decisionChain;
-  var callChain; //  Give objects ability to know route, that called it.
+
+  ///  Give objects ability to know route, that called it.
+  var callChain;
 
   ///  Usage   not used
   ///  NOTE:  it is  MM
   ///  This is called:  placardMM['FirstActor']
-  void init(Map<String, String> _placardM) {
+  void initAffair(Map<String, String> _placardM) {
     print(' ***************  affair class-init  *********');
     _placardM.forEach((k, v) => print('$k, $v'));
-    //  howTo NULL  Map  OK  .toString();
+    //
     actor = _placardM['actor'].toString();
     sender = _placardM['sender'].toString();
     receiver = _placardM['receiver'].toString();
@@ -98,12 +115,9 @@ class Affair {
 
   ///  Save cleared placardM to to placardMM
   void save() {}
+
   ///
   void done() {}
-
-  //  Constructor
-  Affair(this.actor, this.sender, this.receiver, this.cmd, this.msg);
-  //TODO : used in: ?  //  Only in render here.
 
   ///  Usage: for example, :corporate:process:
   List<String> showInfo(String caller) {
@@ -125,8 +139,17 @@ class Affair {
     print('$i ***************  affair class-showInfo  done ************ ');
     print('$i  ***  no code in :affair: Operations yet :)  *** \n');
     return _l;
-  }
-}
+  } //     -----     showInfo
+
+  //  Constructor
+  //  TODO    Affair(this.actor, this.sender, this.receiver, this.cmd, this.msg);
+  //TODO : used in: ?  //  Only in render here.
+
+  ///  constructor
+  Affair(this.name, this.motto, this.clause);
+} //     -----     Affair
 
 //  Just testing Create instance as affair.
-Affair affair = Affair('dawoApp', 'xSender', 'xReceiver', 'betaAssign', 'msg');
+//  Affair affair = Affair('dawoApp', 'xSender', 'xReceiver', 'betaAssign', 'msg');
+
+Affair affair = Affair('affairOne', 'do affair straight', 'Honour matters');

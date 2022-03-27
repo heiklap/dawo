@@ -6,7 +6,7 @@
 ///  using #LANG -specific commands to configure their proceedings.
 ///  using #dawolang package in path dependency
 ///  method String weightString(String _aS) checks #C messages
-///   dawo version:   0.3.0  23.3.2022  * devState : 15 %
+///   dawo version:   0.6.0  26.3.2022  * devState : 18 %
 ///
 /// * devState: 30%
 /// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
@@ -33,27 +33,8 @@
 //  NOTE:
 //  devNote: tracking begins.
 
-library connector;
-
-//  TODO  import 'dart:intl';
-
-///  path dependency
-import 'package:dawolang/dawolang.dart' as d_lang;
-
-import 'affair.dart';
-import 'bind.dart';
-
-import '../mis/missions.dart';
-
-import '../src/box_serve.dart';
-
-import '../alpha.dart';
-import '../beta.dart';
-
-import '../shower.dart';
-import '../tools.dart';
-
-import '../mis/equipment.dart';
+//  library connector;
+part of corp;
 
 ///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = StringBuffer();
@@ -124,8 +105,10 @@ typedef  _conPrint =  void _conPrint(String msg);
 class Connector extends BaseStruct {
   ///  false;   //  To control printing in _flowC method.
   bool _pB = false;
+
   ///
   String name = 'connector class';
+
   ///
   String info = 'App - mission - chore conScout #corporate.process via #LANG';
   //  TODO  #lang  won for connector
@@ -141,6 +124,7 @@ class Connector extends BaseStruct {
     'always': ':MEMBER :MSG :COM',
     'newer': 'con::NO :UGLY'
   };
+
   ///
   String motto = 'Give objects long, powerful extra hand.';
 
@@ -153,6 +137,7 @@ class Connector extends BaseStruct {
   ///  clause walks with objects in process call and carries list of words.
   ///  Combination of #LANG words in sentence.
   String clause = ":DO :HINT :FIND :AREA :JOIN :OPEN :RULE";
+
   ///
   String master = ''; //  Object that owns this. Now only a String.
 
@@ -290,18 +275,16 @@ class Connector extends BaseStruct {
       joinInfoL.forEach(print);
       print(tl.mapToListO(joinM));
       print('------------- info map: -----------------------');
-      //  howTo NULL Map hklTry:  OK
-      //  NO  joinM[caller].say!.forEach((k, v) => print('$k $v'));
+      ///
       joinM[caller]!.say.forEach((k, v) => print('$k $v'));
 
       print('-------- name: motto:  -----------------------');
-      //  howTo NULL   hklTry:
+      ///
       print(joinM[caller]!.name);
       print(joinM[caller]!.motto);
 
       print('------------- report -----------------------');
-      //  no details
-      // howTo NULL   hklTry:
+      ///
       List<String> _l = joinM[caller]!.report(':scoutSolve:', false);
       _l.forEach(print);
       print('--------placardM: ----------------------------');
@@ -343,15 +326,14 @@ class Connector extends BaseStruct {
     //  TODO  Output!!  '..:debug:dawolang:print:.:connector;join:...');
     //  TODO  Stop keeping placard here: get: joinM.find.placardM
     //  Placard here is unnecessary, after scoutSolve has access viu joinM
-    //  howTo NULL String Map
-    //  hklTry: do no null String
+    //
     String actorS = '';
-    actorS = plcM['actor'].toString(); //  hklTry: cast to String
+    actorS = plcM['actor'].toString();
 
-    String senderS = plcM['sender'].toString(); //  hklTry: cast to String
-    String receiverS = plcM['receiver'].toString(); //  hklTry: cast to String
-    String comS = plcM['command'].toString(); //  hklTry: cast to String
-    String msgS = plcM['msg'].toString(); //  hklTry: cast to String
+    String senderS = plcM['sender'].toString();
+    String receiverS = plcM['receiver'].toString();
+    String comS = plcM['command'].toString();
+    String msgS = plcM['msg'].toString();
     String _S = "_plcM:-A: $actorS S: $senderS R: $receiverS C: $comS M: $msgS";
     _flowC(':CN:  $_S', _pB);
 
@@ -560,7 +542,7 @@ class Connector extends BaseStruct {
 
   //  To mark unused local variables in Connector class
   void useUnused() {}
-}
+} //     -----     Connector
 
 ///  Create instance of Connector.
 Connector connector = Connector('DawoAppConnector', 'Connection operations');

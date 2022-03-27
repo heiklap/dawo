@@ -17,7 +17,7 @@ import '../alpha.dart';
 import '../beta.dart';
 
 import '../src/box_serve.dart';
-import '../corp/connector.dart';
+import '../corp/corp.dart';
 
 ///  Scout was ready and easy.. so adopted it for connector.scoutJoin
 ///  Finding later some use of class Camp.

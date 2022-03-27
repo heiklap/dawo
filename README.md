@@ -1,4 +1,4 @@
-# dawo 0.5.0
+# dawo 0.6.0
 
     
 https://pub.dartlang.org/packages/dawo
