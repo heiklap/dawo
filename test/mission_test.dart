@@ -2,8 +2,8 @@
 ///  dawo version:  0.0.5  6.11.2017
 //
 
-import 'package:dawo/mis/camp.dart';
-import 'package:dawo/mis/missions.dart';
+//  import 'package:dawo/mis/camp.dart';
+import 'package:dawo/mis/mis.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/dawo_app.dart';
 

@@ -4,7 +4,7 @@
 
 import 'package:dawo/beta.dart';
 
-import 'package:dawo/mis/chore.dart';
+import 'package:dawo/mis/mis.dart';
 
 
 

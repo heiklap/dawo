@@ -3,22 +3,19 @@
 ///  ##  Effort : data-in / out - working frame for chore user.
 /// * ONLY  chore.dart should import this. 70% of user-activity is here.
 /// * User adds or changes his own data to effort Maps.
-/// * dawo version:   0.4.0.  23.3.2022.
+/// * dawo version:      0.7.0.  27.3.2022.
 /// * NEXT version: Add SplayTreeSet,  and  LinkedHashSet
 /// * devState : 25%  -  PLAN: 008 : 30%
 ///  devNote:  Collecting here habit / human-like objects.
 ///  Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
 //
 
-library effort;
+part of mis;
 
-import '../shower.dart';
-import '../tools.dart';
-import '../clay/user_json.dart';
 
 //  Mediating this value to getter, that counts sum of these.
 num effortReadiness = 10;
-bool _pB = true;
+
 ///
 String typeDefTestS = 'typeDefTestString not used now.';
 
@@ -36,7 +33,7 @@ void effortOperationMapPrint(Map thisMap) {
 ///  Effort class controls resources, that are meant for chore.
 ///  Common resources are in equ with mission.
 ///  Effort is working-screen for user, with in and out-data.
-class Effort {
+class Effort extends MisInterfaceBasis {
   String name = 'Chore-Effort class.';
   ///
   String motto = 'User activity and datain-out functionality in Chore.';
@@ -61,6 +58,9 @@ class Effort {
   Map<String, String> stateM = Map();
   Map<String, String> levelM = Map();
   Map<String, String> moodM = Map();
+
+  ///  for print
+  bool _pB = false;
 
   ///  testing... difference between  .  and ..
   void makeGoalM() {
@@ -174,8 +174,13 @@ class Effort {
   void init() {}
 
   ///  Fill lists in effortLM
-  void build(String caller) {
+  void buildEffort(String caller) {
     effortLM.addAll([goalM, planM, phaseM, teamActM, tempoM]);
+  }
+
+  ///
+  void buildMissions(String caller) {
+
   }
 
   ///  Constructing 6 items 15-20 wide list of HIGH VALUE-EFFORT

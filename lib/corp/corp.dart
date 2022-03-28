@@ -16,11 +16,10 @@ import '../beta.dart';
 ///  path dependency
 import 'package:dawolang/dawolang.dart' as d_lang;
 
-import '../mis/missions.dart';
+import '../mis/mis.dart';
 import '../src/box_serve.dart';
 import '../shower.dart';
 import '../tools.dart';
-import '../mis/equipment.dart';
 
 import 'dart:async';
 

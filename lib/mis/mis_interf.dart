@@ -1,28 +1,28 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// *
-/// *  interface-Base class for corp classes
-/// *  dawo version:   0.6.0    created:  26.3.2022
+/// *  interface-Base class for mis classes
+/// *  dawo version:   0.7.0    created:  27.3.2022
 /// *
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
 
-//  library corp_interf; serving as Base / master class for corp classes
-part of corp;
+//  library mis_interf; serving as Base / master class for mis classes
+part of mis;
 
 ///
-///  interface-Base class for corp classes, serves more like a model to
+///  interface-Base class for mis classes, serves more like a model to
 ///                       further develop more complicated classes.
-///       users:    affair, bind, corp_interf, corporate, store
-class CorpInterfaceBasis {
+///       users:    affair, bind, mis_interf, misorate, store
+class MisInterfaceBasis {
   ///
-  String name = '* corporate-united *';
+  String name = '* misorate-united *';
 
   ///
-  String motto = '* CorpMotto *';
+  String motto = '* MisMotto *';
 
   ///
-  String clause = '*CorpClause*';
+  String clause = '*MisClause*';
 
   ///  changed ab from: * BN * to :hb:
   String ab = '*CIB*';
@@ -38,7 +38,7 @@ class CorpInterfaceBasis {
 
   //  LangLL #language
   List<List<String>> langLL = [
-    [' * * *        :corp:lang:basis:                * * *'],
+    [' * * *        :mis:lang:basis:                * * *'],
     ['    ', '   ', '3    ', '    ', '5    ', '   ', '7   '],
     ['    ', '   ', '3    ', '    ', '5    ', '   ', '7   '],
     ['    ', '   ', '3    ', '    ', '5    ', '   ', '7   '],
@@ -64,11 +64,13 @@ class CorpInterfaceBasis {
 
   ///  Give variables their start values.
   void init() {} //     -----     init
-
-  ///  Give variables their start values.
+  ///  TODO  coming
   void build() {
     _pB;
-  } //     -----     build
+  } //     -----     init
+
+  ///  Give variables their start values.
+  void buildMissions(String caller) {} //     -----     build
 
   ///  Give variables their start values.
   void act() {} //     -----     act
@@ -112,6 +114,6 @@ class CorpInterfaceBasis {
   void sleep() {}
 
   ///  constructor: superclass must have a zeroarguments constructor
-  ///  CorpInterfaceBasis(this.name, this.motto, this.clause);
-  CorpInterfaceBasis();
-} //     -----     CorpInterface
+  ///  MisInterfaceBasis(this.name, this.motto, this.clause);
+  MisInterfaceBasis();
+} //     -----     MisInterface

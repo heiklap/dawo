@@ -56,7 +56,7 @@ class DawoHist implements BaseStruct {
     'devSituation': 'Ready to Publish',
 
     ///  Find, where in my test-folders is THIS  version used?
-    'version': '0.2.0',
+    'version': '0.7.0',
     //  'version': '0.0.3',
     'published': 'Yes, Pub',
 

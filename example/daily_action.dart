@@ -16,10 +16,8 @@ import 'package:dawo/dawo_app.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/tools.dart';
 
-import 'package:dawo/mis/camp.dart';
-import 'package:dawo/mis/chore.dart';
-import 'package:dawo/mis/missions.dart';
-import 'package:dawo/mis/treaty.dart';
+//  import 'package:dawo/mis/camp.dart';
+import 'package:dawo/mis/mis.dart';
 
 import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/corp/corp.dart';
@@ -198,7 +196,8 @@ void monday(Mission _mission) {
   mondayBundle.outsider = _mission;
 
   //  Filling act_map with sample act data from dawo_action_model:
-  _mission.act = {
+  //  hklTry:  should be: actMisM   +MM      _mission.act = {
+  _mission.actMisM = {
     'Goal': {'Unemployment': '- 10 %', 'Production': '+ 8 %', 'Export': '+ 6 %', 'Invests': '+ 8 %'},
     'Enemy': {'Crime': 'MagnitskyAct', 'TaxParadise': 'Dirty money', 'Stupidity': 'x', 'Laziness': 'y', 'Other': 'z'},
     'Friend': {'Friend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},
@@ -289,7 +288,7 @@ void wednesday(Mission _mission) {
   wednesdayBundle.outsider = _mission;
 
   //  Filling act_map with sample act data from dawo_action_model:
-  _mission.act = {
+  _mission.actMisM = {
     'Goal': {'Unemployment': '- 10 %', 'Production': '+ 8 %', 'Export': '+ 6 %', 'Invests': '+ 8 %'},
     'Enemy': {'Crime': 'MagnitskyAct', 'TaxParadise': 'Dirty money', 'Stupidity': 'x', 'Laziness': 'y', 'Other': 'z'},
     'Friend': {'Friend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},

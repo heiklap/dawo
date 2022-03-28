@@ -3,7 +3,7 @@
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  dawo version:   0.4.0.  25.3.2022.
+/// *  dawo version:   0.7.0.  27.3.2022.
 /// *  devState : 27 % / unknown  -  PLAN:  cleaning
 // -  HIST:  hkl  8.9.2017
 // -  devNote: 4 pc.
@@ -12,31 +12,15 @@
 //  chore:  96 / 20 pc
 
 ///  Renamed library to: missions for 0.0.4.
-library missions;
+part of mis;
 
-//  import '../dawo_app.dart';  //  not used
-import '../alpha.dart';
-import '../beta.dart';
 
-import '../src/box_serve.dart';
-
-import 'chore.dart';
-//  import 'equipment.dart';
-
-import '../dev/dawo_dev.dart';
-import '../tools.dart';
-
-import '../corp/corp.dart';
-import '../clay/clay_roll.dart';
-
-part 'missions_data.dart';
 
 ///  #NOTE:  #effort is not visible here.  Only in chore.dart.
 
 ///  Buffer also outside class, for testing and adding visibility.
 //  StringBuffer  missionBuf = StringBuffer();  //  Not used
 
-bool _pB = false; //  true for chore_test.dart;
 
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
@@ -58,7 +42,7 @@ void helloMission() {
 ///  Mission can include many chores. 7 Chores are build by default.
 ///  TODO  Mission has 31 public members !!
 ///  TESTED: when extending BaseStruct: Too many arguments in constructor.
-class Mission {
+class Mission extends MisInterfaceBasis{
 // #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
 
@@ -94,7 +78,8 @@ class Mission {
   /// Equipment equ ..   Effort  eff...
   ///  Actions events plans and so. Added 6.1.2018
   ///  TODO  Check usage  and fill-Map
-  Map<String, Map<String, String>> act = {
+  ///  TODO  rename actMisM
+  Map<String, Map<String, String>> actMisM = {
     'Goal': {},
     'Enemy': {},
     'Friend': {},
@@ -132,6 +117,9 @@ class Mission {
   StringBuffer _buf = out.outTMid; //  reference to used output StringBuffer.
   //  TODO "error: The type of buf can not be inferred, because the use of the
   //    instance-getter outTMid".
+
+  ///  for print
+  bool _pB = false;
 
   ///  Collect all chores in operative entity.
   List<BlanketChore> choreL = [];
@@ -251,7 +239,8 @@ class Mission {
   }     //     -----     init
 
   ///  Building mission with it's chores.
-  void build(String caller) {
+  ///  Callers:   9  chore, chore-test   here 7
+  void buildMissions(String caller) {
     st['work'] = true;
 
     ///  Create default Chore's for everyMission: done in Class!
@@ -363,34 +352,34 @@ class Mission {
     boxServe.aHeader(15, 35, '  Enemy  ');
     //  Coordinates: 16, 35.  8 items 30 width.  Map key: 6, value 24
     //  howTo NULL  13 errors
-    boxServe.aBox(16, 35, 8, 50, tl.mapToFineList(act['Enemy']!, 6, 40));
+    boxServe.aBox(16, 35, 8, 50, tl.mapToFineList(actMisM['Enemy']!, 6, 40));
 
     boxServe.aHeader(23, 35, '  Friend  ');
     //  parameters:  boxServe.aBox(_r, _c, _items, _w, _l)
-    boxServe.aBox(24, 35, 8, 50, tl.mapToFineList(act['Friend']!, 6, 40));
+    boxServe.aBox(24, 35, 8, 50, tl.mapToFineList(actMisM['Friend']!, 6, 40));
 
     boxServe.aHeader(31, 35, '  Project  ');
-    boxServe.aBox(32, 35, 8, 50, tl.mapToFineList(act['Project']!, 6, 40));
+    boxServe.aBox(32, 35, 8, 50, tl.mapToFineList(actMisM['Project']!, 6, 40));
 
     //  --------------
     boxServe.aHeader(6, 87, '  Phase  ');
-    boxServe.aBox(7, 87, 8, 30, tl.mapToFineList(act['Phase']!, 6, 40));
+    boxServe.aBox(7, 87, 8, 30, tl.mapToFineList(actMisM['Phase']!, 6, 40));
 
     boxServe.aHeader(14, 87, '  Mean  ');
-    boxServe.aBox(15, 87, 8, 30, tl.mapToFineList(act['Mean']!, 6, 40));
+    boxServe.aBox(15, 87, 8, 30, tl.mapToFineList(actMisM['Mean']!, 6, 40));
 
     boxServe.aHeader(22, 87, '  Event  ');
-    boxServe.aBox(23, 87, 8, 30, tl.mapToFineList(act['Event']!, 6, 40));
+    boxServe.aBox(23, 87, 8, 30, tl.mapToFineList(actMisM['Event']!, 6, 40));
 
     boxServe.aHeader(30, 87, '  Action ');
-    boxServe.aBox(31, 87, 8, 30, tl.mapToFineList(act['Action']!, 6, 40));
+    boxServe.aBox(31, 87, 8, 30, tl.mapToFineList(actMisM['Action']!, 6, 40));
 
     //  **  top right **
     boxServe.aHeader(7, 160, '  Goals  ');
-    boxServe.aBox(8, 160, 8, 33, tl.mapToFineList(act["Goal"]!, 6, 24));
+    boxServe.aBox(8, 160, 8, 33, tl.mapToFineList(actMisM["Goal"]!, 6, 24));
 
     boxServe.aHeader(16, 160, '  Plan  ');
-    boxServe.aBox(17, 160, 8, 33, tl.mapToFineList(act['Plan']!, 6, 24));
+    boxServe.aBox(17, 160, 8, 33, tl.mapToFineList(actMisM['Plan']!, 6, 24));
 
     boxServe.aHeader(24, 175, ' * *  KnofHow  * * ');
     boxServe.aHeader(34, 175, ' * *  Effort  * * ');
@@ -661,22 +650,22 @@ void buildMissions(String caller) {
 //  for (var x in missionM.keys  ) {   //  NOT NOW !!!
   packDawoMission
     .._init(':M:bms:')
-    ..build(':M:bms:');
+    ..buildMissions(':M:bms:');
   helsinkiMission
     .._init(':M:bms:')
-    ..build(':M:bms:');
+    ..buildMissions(':M:bms:');
   dartlangMission
     .._init(':M:bms:')
-    ..build(':M:bms:');
+    ..buildMissions(':M:bms:');
   myMusicMission
     .._init(':M:bms:')
-    ..build(':M:bms:');
+    ..buildMissions(':M:bms:');
   myTimeMission
     .._init(':M:bms:')
-    ..build(':M:bms:');
+    ..buildMissions(':M:bms:');
   nationalParksMission
     .._init(':M:bms:')
-    ..build(':M:bms:');
+    ..buildMissions(':M:bms:');
 //  };
   _flowC('  <-m--<--  missionM  :all:  build done   <-m--<-- ', _pB);
   //  TODO  make mission-chore report
@@ -707,7 +696,7 @@ void renderMission(String caller) {
 
   //  Methods init and build are obligatory for mission to work.
   missionR._init(':M:render:');
-  missionR.build(':M:render:');
+  missionR.buildMissions(':M:render:');
   missionR._opSt['on'] = true;
 
   missionR._buf.writeln(':renderMission: saving row od data to :m:_buf:');

@@ -9,8 +9,8 @@
 ///
 
 import 'package:dawo/dawo_app.dart';
-import 'package:dawo/mis/chore.dart';
-import 'package:dawo/mis/missions.dart';
+import 'package:dawo/mis/mis.dart';
+
 
 
 //  var dawoApp = new DawoApp();
@@ -73,7 +73,7 @@ void buildFm(){
   };
 
   ///  New, 1/2018 act map, just simulating mostly junk data
-  fm.act = {
+  fm.actMisM = {
       'Goal': {'Unemployment': '- 10 %', 'Production': '+ 8 %', 'Export': '+ 6 %', 'Invests': '+ 8 %'},
       'Enemy': {'Crime': 'MagnitskyAct', 'TaxParadise': 'Dirty money', 'Stupidity': 'x', 'Laziness': 'y', 'Other': 'z'},
       'Friend': {'Friend:Law': 'Finland EU Interpol', 'Wisdom': 'It goes all well', 'Skill': 'we have skill', 'Diligence': 'yes we are ntelligent'},

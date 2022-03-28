@@ -17,8 +17,7 @@ import 'alpha.dart';
 import 'beta.dart';
 import 'shower.dart';
 
-import 'mis/chore.dart';
-import 'mis/missions.dart';
+import 'mis/mis.dart';
 
 import 'corp/corp.dart';
 //  import 'corp/store.dart';
@@ -47,7 +46,7 @@ StringBuffer appBuf = StringBuffer(); //  not used here
 class DawoApp {
   ///
   final String name = 'DawoApp';
-  final String version = '0.2.0';
+  final String version = '0.7.0';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   ///
@@ -123,7 +122,7 @@ class DawoApp {
     // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 :demandStream Listened
     'develop': 'Under development.. from 0.0.8+ to 0.1.0.',
     // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 demandStream Listened
-    'pack: version  ': 'Version: 0.2.0  ',
+    'pack: version  ': 'Version: 0.7.0  ',
     'pub': 'Published 22.3.2022',
   };
 

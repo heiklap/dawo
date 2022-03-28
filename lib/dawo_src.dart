@@ -29,9 +29,8 @@ import 'dawo_app.dart';
 
 import 'dev/dawo_dev.dart';
 
-import 'mis/chore.dart';
-import 'mis/effort.dart';
-import 'mis/missions.dart';
+import 'mis/mis.dart';
+
 
 // #Team teamAdm  'favorite Dev, kill inno :), save money & time'
 //       teamDev  'create fine new complicated things'

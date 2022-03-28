@@ -2,10 +2,10 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
-/// * Mission data.  dawo version:   0.3.0.  23.3.2022.
+/// * Mission data.  dawo version:   0.7.0.  27.3.2022.
 //
 
-part of missions;
+part of mis;
 
 ///  Fill certain fields
 class MissionData {

@@ -6,7 +6,7 @@ import 'package:dawo/dawo.dart';
 
 import 'package:dawo/dawo_app.dart';
 
-import 'package:dawo/mis/missions.dart';
+import 'package:dawo/mis/mis.dart';
 
 //  Used version of Dart 2.0.0 seems now to be incompatible with test.
 //  import 'package:test/test.dart';

@@ -21,9 +21,9 @@ import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
 import 'package:dawo/tools.dart';
 
-import 'package:dawo/mis/camp.dart';
-import 'package:dawo/mis/chore.dart';
-import 'package:dawo/mis/missions.dart';
+//  import 'package:dawo/mis/camp.dart';
+import 'package:dawo/mis/mis.dart';
+
 
 import 'package:dawo/corp/corp.dart';
 import 'package:dawo/dev/dawo_dev.dart';

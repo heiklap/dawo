@@ -1,5 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+//
 ///  ##  Shower  -  presentation info and data screens.
 ///  New box_serve makes this better: makes only frames and keep clients data
 ///  in client side.  This file might eventually fade out.
@@ -20,7 +21,7 @@ import 'tools.dart';
 //  import 'corp/connector.dart';
 //  import 'corp/corporate.dart';
 
-import 'mis/equipment.dart';
+import 'mis/mis.dart';
 
 //  import 'corp/bind.dart';
 import 'dart:math';

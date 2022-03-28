@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Chore for organizing work flow.
-///  dawo version:   0.4.0.  25.3.2022.
+///  dawo version:   0.7.0.  27.3.2022.
 ///  * Sub-ordinate of Mission, with wide operative flow capabilities.
 ///  devState : 27 %  -   In  GitHub:   yes
 ///
@@ -25,23 +25,10 @@
 ///  Automatic-  life-cycle / W O R K / messages and rolling.
 ///  NOTE  chore do not have own named out-buffer
 
-library chore;
+part of mis;
 
-import 'effort.dart';
 //  import 'equipment.dart';  //  mission handles equipment
 
-import '../alpha.dart';
-import '../beta.dart'; //  flowServe() is here.
-import '../tools.dart';
-import '../src/box_serve.dart'; //  boxServe is here
-
-import '../corp/corp.dart';
-
-import '../dev/dawo_dev.dart';
-import 'missions.dart';
-
-import '../src/glb.dart';
-import '../clay/clay_roll.dart';
 
 /*  howTo Map increment
 https://stackoverflow.com/questions/56943363/dart-map-increment-the-value-of-a-key
@@ -91,6 +78,7 @@ void initChoreSystem() {
 } //     -----     initChoreSystem
 
 ///  Many important dawo classes are extending Alpha class.
+///                        alpha class
 class BlanketChore extends BaseStruct {
   String name = 'Blanket Chore class  ';
   String toString() {
@@ -281,6 +269,10 @@ class BlanketChore extends BaseStruct {
     'Slave Functions': 'Connect master _ _ _ _ _',
     'Mil-Loop-say': 'Headers done 5 %_ _ _ _ _ _ _',
   }; //     -----     phase
+
+  ///  for print
+  bool _pB = false;
+
 
   ///  Initialize class for ready-to-use: Method for setting class field values.
   void init() {
@@ -708,7 +700,9 @@ void endChore(BlanketChore chr, var _act) {
 ///  TODO  dd parameters:  BlanketChore chr, var _act
 void choreEffort(String caller) {
   //  Add ability to choose between user-data in effort.
-  eff.build(':chEf:');
+  eff.buildMissions('caller: choreEffort');
+  //  NOTE:  parameter
+  eff.buildEffort(':chEf:');
   eff.makeAllLists(':chEf:');
 
   eff.getDiagonalList(':chEf:');

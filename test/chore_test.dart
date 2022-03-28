@@ -2,10 +2,10 @@
 //  t_common_process.dart  12.9.2017   dawo version:  0.0.5  6.11.2017
 
 
-import 'package:dawo/mis/chore.dart';
+import 'package:dawo/mis/mis.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/dev/dawo_dev.dart';
-import 'package:dawo/mis/missions.dart';
+
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';
 
@@ -44,7 +44,7 @@ void testPackDawoChore() {
   /// for(var x in packDawoMission.choreL) {
 
   ///  Must #build class, to get chores in place.
-  packDawoMission.build(':CHR;test:');
+  packDawoMission.buildMissions(':CHR;test:');
   packDawoMission.choreL[0].roll(); //  roll one, first, chore: packDawo.
 
   // for (var x in packDawoMission.choreL){

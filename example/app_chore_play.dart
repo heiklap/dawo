@@ -7,10 +7,8 @@ import 'package:dawo/dawo_app.dart';
 import 'package:dawo/rumba.dart';
 import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/mill.dart';
-import 'package:dawo/mis/missions.dart';
-import 'package:dawo/mis/camp.dart';
+import 'package:dawo/mis/mis.dart';
 
-import 'package:dawo/mis/chore.dart';
 import 'package:dawo/tools.dart';
 
 //  creating instances of classes in upper level

@@ -2,13 +2,14 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## equipment  :  material resources for Mission and Chore.
 ///  * No objects, but:  String-values for simple demo and presentation.
-///  * dawo version:   0.4.0.  25.3.2022.    devState : 30 %
+///  * dawo version:   0.7.0.  27.3.2022.    devState : 30 %
 ///  * Instance as:  equ
 ///
 
-library equipment;
+part of mis;
 
-import 'dart:math';
+
+
 
 ///  Material and name resources for Missions and Chore.
 class Equipment {

@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// ##  Treaty:  action-field for two missions; to say and bargain
 /// *
-/// * dawo version:   0.4.0.  23.3.2022.  -   devState: 40 %
+/// * dawo version:   0.7.0.  27.3.2022.  -   devState: 40 %
 /// * GitHub:
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
 // * Hist:hkl  27.12.2017
@@ -30,28 +30,8 @@ covenant
 
  */
 
-library treaty;
+part of mis;
 
-import 'dart:math';
-
-/*
-import 'package:dawo/alpha.dart';
-import 'package:dawo/beta.dart';
-import 'package:dawo/dawo_app.dart';
-import 'package:dawo/shower.dart';
-import 'package:dawo/rumba.dart';
-import 'package:dawo/dev/dawo_dev.dart';
-import 'package:dawo/mis/camp.dart';
-*/
-
-import 'package:dawo/mis/equipment.dart';
-import 'package:dawo/mis/missions.dart';
-import 'package:dawo/mis/chore.dart';
-import 'package:dawo/src/box_serve.dart';
-
-//  import 'package:dawo/corp/bind.dart';
-//  import 'package:dawo/corp/connector.dart';
-//  import 'package:dawo/tools.dart';
 
 ///
 StringBuffer treatyBuf = StringBuffer();
@@ -137,6 +117,9 @@ class Treaty {
     'logM:for': ':daily:Treaty:',
   };
 
+  ///  for print
+  bool _pB = false;
+
   ///  IDEA:  Used as playBack.  Message / info carrier.
   ///  Simulating kind-of remote process.
   void dailyCourier() {
@@ -156,6 +139,7 @@ class Treaty {
   void _build() {
     logM.putIfAbsent('Build: $name', () => '$msg in :daily:work:');
     //  more code
+    _pB;
     print('    ---- $name    :dailyTreaty:method:build:');
   }
 
