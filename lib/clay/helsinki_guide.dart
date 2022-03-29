@@ -1,15 +1,15 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///  *
 ///  * #Helsinki, dynamic center of inspiration and innovations.
 ///  * dawo clay helsinki_guide: links and methods for active living.
 ///  * presenting data for Dawo chore-effort system
 ///  * devState: 60%   -  PLAN:
-///  * dawo version:   0.3.0  23.3.2022
+///  * dawo version:    0.8.0.   28.3.2022
 
-library helsinkiGuide;
+//  library helsinkiGuide;
 
-///  for to get actor and buffer
-import 'package:dawo/alpha.dart';
-import 'package:dawo/beta.dart';
+part of 'clay.dart';
+
 
 bool pB = false;
 

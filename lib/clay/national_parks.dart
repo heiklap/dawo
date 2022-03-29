@@ -1,11 +1,13 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///  #
 ///  # dawo clay: Finlands national parks.
 ///  * Presenting data for dawo-Mission and it's chore system.
-///  * dawo version:   0.3.0  23.3.2022 :  27.11.2017
+///  * dawo version:    0.8.0.   28.3.2022 :  27.11.2017
 
 //
-library nationalParksFinland;
+//  library nationalParksFinland;
+part of clay;
 
 ///
 class NationalParks {

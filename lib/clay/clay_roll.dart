@@ -1,18 +1,17 @@
 /// is governed by a BSD-style license that can be found in the LICENSE file.
+///  ##
 ///  ##  dawo clay  main library
 ///  presenting incoming data for dawo-chore / mission system
-///  dawo version:    0.3.0.  clean  23.3.2022
+///  For version 0.8.0 clay, group all 6 in-clays under clay-library.
+///      --  create separate quide-lib to import clays from here
+///  dawo version:    0.8.0.   28.3.2022
 ///  word: clay 79
 
 //
-library clayRoll;
+part of clay;
 
-import 'package:dawo/clay/pack_dawo.dart';
-import 'package:dawo/clay/helsinki_guide.dart';
-import 'package:dawo/clay/learn_dartlang.dart';
-import 'package:dawo/clay/my_time.dart';
-import 'package:dawo/clay/my_music.dart';
-import 'package:dawo/clay/national_parks.dart';
+
+
 
 //  TODO : add all maps in list: List<Map<String,String>>
 List<String> clayMapL = [

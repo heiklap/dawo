@@ -1,18 +1,22 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///  ##
 ///  ##  dawo : data-in : user specific data in JSON format.
 ///  Learning to import JSON decoded / encoded data.
 ///  Eventually these are imported by server-client / DB system.
-///  * dawo version:   0.3.0  23.3.2022 :.    devState: 10%
+///  * dawo version:    0.8.0.   28.3.2022:.    devState: 10%
+///  *
 ///  * NEXT: 0.1.X  Personalize for different missions / search by #clause
 ///  * NEXT: 0.1.X   Data extracted from #chunk by caller name of #search.
 ///  * NEXT: 0.1.X  Object check if JSON / DB data is available.
-//
-//  Hist: hkl  4.11.2017 dawo.0.0.4  dawo/lib/clay user_json.dart
 
-library user_json;
+///  Hist: hkl  4.11.2017 dawo.0.0.4  dawo/lib/clay user_json.dart
+///
 
-import 'dart:convert';
+part of 'clay.dart';
+
+
+
 
 ///  Now only one UserJson data file.
 ///  Eventually every #clay may have it's own user/json-file.

@@ -1,11 +1,14 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///  *
 ///  ## packDawoMission   Data for mission-chore system.
 ///  * Tracking and helping development of dawo package.
-///  * dawo version:   0.3.0  23.3.2022 :  -  devState : 8%
+///  * dawo version:    0.8.0.   28.3.2022:  -  devState : 8%
 ///  * PLAN: ?
 
-library packDawo;
+//  library packDawo;
+
+part of 'clay.dart';
 
 ///  Three classes that are used in JSON play.
 class PackDawoHook {

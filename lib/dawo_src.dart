@@ -16,7 +16,7 @@ library dawo_src; //  naming this to _src...
 
 ///  hklTry::  #export all
 ///  Data ( #clay ) is in clay-folder.
-import 'clay/clay_roll.dart';
+import 'clay/clay.dart';
 
 import 'code_snippets/aldente_func.dart';
 import 'code_snippets/bat_loop.dart';

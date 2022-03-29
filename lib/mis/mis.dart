@@ -12,8 +12,8 @@ library mis;
 
 import 'dart:math';
 
-import '../clay/clay_roll.dart';
-import '../clay/user_json.dart';
+import '../clay/clay.dart';
+
 import '../corp/corp.dart';
 import '../dev/dawo_dev.dart';
 

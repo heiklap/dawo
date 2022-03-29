@@ -46,7 +46,7 @@ StringBuffer appBuf = StringBuffer(); //  not used here
 class DawoApp {
   ///
   final String name = 'DawoApp';
-  final String version = '0.7.0';
+  final String version = '0.8.0';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   ///
