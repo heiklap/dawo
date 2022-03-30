@@ -1,9 +1,11 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+///
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and notes.
 ///  (Team - for many developers working in same project)
-/// * dawo version:   0.3.0.  23.3.2022.  -   devState: 15 %
+/// * dawo version:   0.8.5.  29.3.2022.  -   devState: 16 %
 /// * GitHub: yes  29.11.2014
 //
 // * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
@@ -23,7 +25,7 @@ part 'dawo_hist.dart';
 part 'dev_notes.dart';
 part 'envoy.dart';
 
-//   TODO  name   PROBLEMS, when using too common names:
+//   TODO name   PROBLEMS, when using too common names:
 //   devTest   =   22  times     CHANGE:   test  ! ??
 //   devNote   = 2/16 times
 //   cod*          10 times
@@ -47,11 +49,11 @@ num dawoDevReadiness = 94;
 class Dev {
   ///  small mess with variable names
   int devTestCount = 0;
-  //  TODO  teamInno   devTeam, should be also instance of #team? class ?
+  //  TODO teamInno   devTeam, should be also instance of #team? class ?
   bool devTestPhase = true; // set this false in production. (newer)
 
   ///  two members (persons) of devTest team:
-  //  TODO  teamAdm team_members..  should they be in... team_staff..
+  //  TODO teamAdm team_members..  should they be in... team_staff..
   String coderNight = 'Late Night Coder ';
   String coderMorn = 'Earlymorn Coffeeman ';
 
@@ -115,7 +117,7 @@ class Dev {
         'V:7 E:8 D:0',
     'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ':
         'V:5 E:4 D:0',
-  };
+  };     //     -----     later
 
   ///  Map
   Map<String, String> plugins = {
@@ -131,7 +133,7 @@ class Dev {
     '0.3.0 Simple server, localStorage, DB, maybe Mongo.': 'V:5 E:4 D:0',
     '0.2.0 Demos and Plugins to simulate commercial app.': 'V:4 E:4 D:0',
     '0.1.0 Elementary CL / console app.': 'V:5 E:4 D:0',
-  };
+  };     //     -----     plugins
 
   ///  Changed from List to Map in 0.0.7. version
   ///  V: 1-9 = value, E = effort,  D:  = done
@@ -169,7 +171,7 @@ class Dev {
         'V:3 E:1 D:3',
     '008++ dev class reshape, new Class names: aide, hist and envoy.':
         'V:4 E:3 D:3',
-  };
+  };     //     -----     version008
 
   ///  Minor update, at the end no docs checked, no test, not every file updated.
   Map<String, String> version0075 = {
@@ -200,16 +202,16 @@ class Dev {
     '0075++devBox  Added header and footer rows.             ?': 'V:1 E:1 D:9',
     '0075++ListToMap: dawoDev version008 and later are now Maps.             ?':
         'V:1 E:1 D:9',
-  };
+  };     //     -----     version0075
 
   ///  To add developer notes.
   void addNote(List l, String s) {
     l.add(s);
-  }
+  }     //     -----     addNote
 
   ///  Fill devNote lists with data. dawo_app calls this in it's build-method!
   void buildNotes(String caller, msg) {
-    //  TODO String howTo write many line String.  From dartlang.org
+    //  TODO howTo String   write many line String.  From dartlang.org
     var interpolation = "interpolation";
     var combi = "a string "
         "that goes over multiple lines "
@@ -332,7 +334,7 @@ class Dev {
           ['Name: base-lib?', 'User-action?', 'Print-output-variables-logos.']);
     secN.addAll(
         ['Restrict use of certain methods.', 'Create up-level pass-word.']);
-  }
+  }     //     -----     buildNotes
 
   ///  callers: no usages.
   ///  More demonstrative devBox presentation method.
@@ -351,7 +353,7 @@ class Dev {
         ],
         0);
     print('--<<--<<------------  dev.showNotes  --<<--<<------------ \n  ');
-  }
+  }     //     -----     showNotes
 
   ///  Old-fashioned list print method.
   void listNotes(String caller) {
@@ -368,16 +370,17 @@ class Dev {
     print(' ');
     secN.forEach(print);
     print('--<<--<<------------  dev.listNotes  --<<--<<------------ \n ');
-  }
+  }     //     -----     listNotes
+
 } //  -----  class dev
 
 ///  Create instance of class Dev.
 var dev = Dev();
 
-//  TODO  teamHowTo lists: add:   automatize adding notes to lists?
-//  TODO  teamInno  notes:  automatic roll of createNotes.? no; events..?
+//  TODO teamHowTo lists: add:   automatize adding notes to lists?
+//  TODO teamInno  notes:  automatic roll of createNotes.? no; events..?
 
-//  TODO  teamHowTo stream    define a stream transformer
+//  TODO teamHowTo stream    define a stream transformer
 
 /*
 var transformer = new StreamTransformer.fromHandlers(handleData: (value, sink) {
@@ -389,8 +392,8 @@ sink.add("Message: $value")
 // transform the stream and listen to its output
 stream.transform(transformer).listen((value) => print("listen: $value"));
 
-//  TODO  teamEdu  devNotes..  instead of TO-DO-notes..
-//  TODO  teamEdu  ..for to not spam dawo package with -notes
+//  TODO teamEdu  devNotes..  instead of TO-DO-notes..
+//  TODO teamEdu  ..for to not spam dawo package with -notes
 
 var devTestStreamData = ['devTestStream, for notes and testing',
                          'Next note.. aso'

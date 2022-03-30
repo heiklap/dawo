@@ -1,8 +1,10 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-///  ##  devNotes class
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+///
+///  ##  devNote:s class
 ///  Primary functionality:  Keep dev data.
-/// * dawo version:   0.3.0.  23.3.2022.
+/// * dawo version:   0.8.5.  29.3.2022.
 /// * devState : 25%    in GitHub : yes
 // hist>  9.1.2018  Separated from dawoApp.
 //
@@ -60,4 +62,4 @@ void fillNotes() {
     ..add(':Ar:  #Prevent deleting notes without notice.')
     ..add(':Ar:  Keep #Track of extra iterators in notes.')
     ..add(':Ar:  #encrypt ed notes not allowed.');
-}
+}     //     -----     fillNotes

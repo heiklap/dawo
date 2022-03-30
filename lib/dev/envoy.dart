@@ -1,10 +1,14 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+///
 ///  ##  envoy,  messenger
 ///  PLAN maybe:  Sending permanent active messages between objects
-/// * dawo version:   0.3.0.  23.3.2022.
+///  - Using some outside package, like: punch-hermes, or dch-signal
+///
+/// * dawo version:   0.8.5.  29.3.2022.
 /// * devState : 2%    in GitHub : yes
-// hist>  9.1.2018  Separated from dawoDev.
+/// hist>  9.1.2018  Separated from dawoDev.
 //
 
 part of dawo_dev.dart;

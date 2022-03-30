@@ -1,8 +1,10 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+//  Use of this source code is governed by a BSD-style license
+//  that can be found in the LICENSE file.
+///
 ///  ##  dawoHist class
-///  Primary functionality:  Keep historic dev data.
-/// * dawo version:   0.4.0.  25.3.2022.
+///  * Primary functionality:  Keep historic dev data.
+/// * dawo version:   0.8.5.  29.3.2022.
 /// * devState : 25%    in GitHub : yes
 /// hist>  9.1.2018  Separated from dawoApp.
 //  V:  0.2.0  Only Format - DartFormat
@@ -12,6 +14,7 @@ part of dawo_dev.dart;
 
 ///  Keeping historical aso. info about dawo.
 ///  Just testing: implements, here.
+///  Class DawoHist keeps some hist & dev info and statistics of dawo app.
 class DawoHist implements BaseStruct {
   ///
   String name = 'dawoHist';
@@ -60,14 +63,14 @@ class DawoHist implements BaseStruct {
     //  'version': '0.0.3',
     'published': 'Yes, Pub',
 
-    ///  next-version-info might be useful for my different tests and devNotes
+    ///  next-version-info might be useful for my different tests and devNote:s
     'next version': '0.0.4. ~15.10.2017',
 
     'author': 'Heikki Lappalainen',
     'webPage': 'https://github.com/heiklap/dawo',
     'started': '15.7.2013   hkl  ',
     'purpose': 'Education, Learning  '
-  };
+  };     //     -----     dawo003
 
   /// Models and sample maps ; for later usage and playing.
   Map<String, String> appMap = {
@@ -80,7 +83,7 @@ class DawoHist implements BaseStruct {
     'paused': '0',
     'userChoise': '-',
     'autoChoise': '1'
-  };
+  };     //     -----     appMap
 
   /// TODO  teamInno    this map is for testing work-flow routines
   Map<String, String> appPhaseM = {
@@ -94,10 +97,10 @@ class DawoHist implements BaseStruct {
     'danceQueue: ': 'yes',
     'danceDone:  ': 'no',
     'stopped': '0'
-  };
+  };     //     -----     appPhaseM
 
   ///  Method for setting class field values.
-  ///  TODO  add parameters
+  ///  TODO  ? add parameters ? base class
   void init() {
     buf.writeln(':buf:dawoHist:  init-empty ow-done.');
     print('------------ :dawoHist: init done-------------------------');
@@ -119,7 +122,7 @@ class DawoHist implements BaseStruct {
     buf.writeln(':dawoHist:box:start: C:$caller 123456789-23456789-23456788');
     print('-->>-->>-- :dawoHist:box:start: C:$caller  -->>-->>-- ');
     //  use: boxServe  OR  create own class here
-    //  TODO  set min-max values
+    //  TODO box  set min-max values
     //  :BOX:SW:  was 190
     //  unused::  final int _sw = 200; //  screen width, changed later =>
     final int _rc = 37; //  row count
@@ -156,7 +159,7 @@ class DawoHist implements BaseStruct {
     ///  call flowServe with #LOCAL variables
     ///  :dawoHist:  is too long.
     flowServe(':d:Hist:', buf, msg, p);
-  }
+  }     //     -----     flowC
 
 } //  -----  class DawoHist
 

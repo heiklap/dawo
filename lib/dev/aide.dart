@@ -1,18 +1,22 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+///
 ///  ##  aide,  helper class is a developer tool.
 ///  Primary functionality:  Help in developing.
-/// * dawo version:   0.3.0.  23.3.2022.
-/// * devState : 10%    in GitHub : yes
+///  - Using some outside package, like:  steward,  usher:  23
+///  WORD: aide  OK, 11 -13
+/// * dawo version:   0.8.5.  29.3.2022.
+/// * devState : 12%    in GitHub : yes
 /// * variables tf & rf seems to bee acronyms for: testFunction & runFunction
 ///  hist>  9.1.2018  Separated from dawoApp.
 //
 
-//  TODO  handle tf and rf variables:  10 x
+//  TODO var  handle tf and rf variables:  10 x
 
 part of dawo_dev.dart;
 
-///  Helper class, previous name; devHelp
+///  Helper class in dawo_dev
 class Aide {
   //  TODO  Aide Constructor: add constructor: (String user, String x)
 
@@ -32,10 +36,10 @@ class Aide {
     print(' \n --<<--<<------------ aide norms  --<<--<<------------');
   }
 
-//  TODO  teamDev: PLAN:  make all 6 tests use same name with
+//  TODO teamDev: PLAN:  make all 6 tests use same name with
 //         parameters: Test, Msg, Line, Begin, End, Return
 
-  ///  TODO  teamDev:   Should this be named to devTestInfo ??  devInfo ??
+  ///  TODO teamDev:   Should this be named to devTestInfo ??  devInfo ??
   ///  report testers info
   num devTest(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
@@ -47,14 +51,14 @@ class Aide {
       print('$_s30  dev test ended    Time: $now ');
       print('');
 
-      //  TODO  aSync stream     devTestStream.
+      //  TODO aSync stream     devTestStream.
       //  NOTE: Dubious to use dev-class here?
       dev.devTestCount++;
     }
     return dev.devTestCount;
   }
 
-  ///  NOTE  team-team   developers can send messages to each others in test printings
+  ///  NOTE:  team-team   developers can send messages to each others in test printings
   ///  Simple message to track run and development
   devMsg(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
@@ -74,7 +78,7 @@ class Aide {
     String _s = rf;
     var _sType = rf.runtimeType;
 
-  //  TODO  Function  getter  There is no such getter 'runTimeType' in 'Function'
+  //  TODO Function  getter  There is no such getter 'runTimeType' in 'Function'
   //  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
 
     print('b  b  b  b  b  b  b  b  b  b  b  b  b     Beginning:   $_s');
@@ -84,18 +88,18 @@ class Aide {
     print('');
   }
 
-  //  TODO  teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
+  //  TODO teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
   ///  Dynamic-parameter-function, that is used to run other function in tests.
   ///  It is  called:     tfDyn(testSomething);
-  ///  TODO  Check these String / type errors.
+  ///  TODO Function parameter   Check these String / type errors.
   void tfDyn(String rf()) {
     //A value of type 'toString' cannot be assigned to a variable of type 'String'
     String _s = rf();
 
     //  howTo get runtime type of function rf()?
     //  String _sType = rf.runTimeType();
-    //TODO
+    //TODO Function getter
     //  There is no such getter 'runTimeType' in 'Function'
     //  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
     print('------------>>-->>--    Beginning:   $_s');
@@ -104,7 +108,7 @@ class Aide {
     print('--<<--<<------------    End of test  \n');
   }
 
-  /// TODO  teamDev Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
+  /// TODO teamDev Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
   ///  Present simple message while testing.
   void line(String module) {
