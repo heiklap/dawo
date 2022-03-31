@@ -144,13 +144,13 @@ class Bind extends CorpInterfaceBasis {
     return _s;
   }
 
-  ///  Normal conditional buffer/print-call to wake flowServe.
+  ///  Normal conditional buffer/print-call to wake flow.fServe.
   void _flowC(String msg, bool prnB) {
-    ///  Call flowServe with #LOCAL variables.
-    //  TODO  Why not find beta flowServe() ??
-    //  flowServe(':con:flC:$prnB ', buf, msg, prnB);
+    ///  Call flow.fServe with #LOCAL variables.
+    //  TODO  Why not find beta flow.fServe() ??
+    //  flow.fServe(':con:flC:$prnB ', buf, msg, prnB);
     buf.writeln('Print bool value _pB::  $_pB ');
-    flowServe(':bind:flC: ', buf, msg, true); //  $prnB : when needed.
+    flow.fServe(':bind:flC: ', buf, msg, true); //  $prnB : when needed.
   }
 } //  -----  class Bind
 

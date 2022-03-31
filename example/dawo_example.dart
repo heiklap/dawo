@@ -14,8 +14,8 @@ import 'package:dawo/dawo.dart';
 
 ///
 
-import 'package:dawo/alpha.dart';
-import 'package:dawo/beta.dart';
+import '../lib/alpha/alpha.dart';
+import '../lib/beta/beta.dart';
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/shower.dart';
 import 'package:dawo/rumba.dart';

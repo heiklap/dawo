@@ -9,7 +9,7 @@
 // hist>  9.1.2018  Separated from dawoApp.
 //
 
-part of dawo_dev.dart;
+part of dawo_dev;
 
 ///  Roll, next, calls this.
 void fillNotes() {

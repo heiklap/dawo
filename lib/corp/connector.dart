@@ -531,10 +531,10 @@ class Connector extends BaseStruct {
   ///  if (_pB) print(msg);  }
 
   void _flowC(String msg, bool prnB) {
-    ///  Call flowServe with #LOCAL variables.
-    //  TODO  Why not find beta flowServe() ??
-    //  flowServe(':con:flC:$prnB ', buf, msg, prnB);
-    flowServe(':con:flC: ', buf, msg, true); //  $prnB : when needed.
+    ///  Call flow.fServe with #LOCAL variables.
+    //  TODO  Why not find beta flow.fServe() ??
+    //  flow.fServe(':con:flC:$prnB ', buf, msg, prnB);
+    flow.fServe(':con:flC: ', buf, msg, true); //  $prnB : when needed.
   }
 
   ///  constructor

@@ -14,7 +14,7 @@ import 'dart:math'; //  for min
 import '../dawo_app.dart';
 import '../tools.dart';
 //  import '../shower.dart';
-import '../alpha.dart';
+import '../alpha/alpha.dart';
 import '../src/glb.dart';
 
 ///  Schedule connect, opJoin corporate, bind, binding

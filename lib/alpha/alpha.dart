@@ -1,9 +1,11 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///
 ///  ##  Model structures, base classes, that are used everywhere in dawo:
 /// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
-/// * dawo version:   0.3.0.  23.3.2022.
-//
+/// * dawo version:   0.9.0.  30.3.2022.
+/// *  30.3.2022  new alpha folder
+/// *
 // * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
 //  devNote:  No notes.
 //

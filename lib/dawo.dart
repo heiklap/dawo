@@ -15,7 +15,7 @@
 library dawo;
 
 //  If you are using dawo right here:
-//  import 'dawo_app.dart';Plan something instead
+//  import 'dawo_app';Plan something instead
 
 //  TODO  #coma  Content-marketing, cheatSheet to present functionality
 //  TODO  Build: import build_runner

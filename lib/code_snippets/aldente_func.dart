@@ -9,7 +9,7 @@
 //
 //  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
 
-library aldente_func.dart;
+library aldente_func;
 
 ///  from punch/tools/signal
 ///  simple  sleep method

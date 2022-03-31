@@ -14,8 +14,8 @@ library clay;
 import 'dart:convert';
 
 ///  for to get actor and buffer
-import 'package:dawo/alpha.dart';
-import 'package:dawo/beta.dart';
+import '../alpha/alpha.dart';
+import '../beta/beta.dart';
 
 //  import 'package:dawo/clay/learn_dartlang.dart';
 part 'care_dawo.dart';

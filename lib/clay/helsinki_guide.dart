@@ -140,8 +140,8 @@ class HelsinkiGuide {
 ///  Calling print/print-to-buffer method.
 ///  Getting local variables; Actor and Buffer right,
 void flowC(String msg, bool pB) {
-  ///  call flowServe with #LOCAL variables
-  flowServe(':HELSINKI:', out.outMBot, msg, pB);
+  ///  call flow.fServe with #LOCAL variables
+  flow.fServe(':HELSINKI:', out.outMBot, msg, pB);
 }
 
 ///  instance

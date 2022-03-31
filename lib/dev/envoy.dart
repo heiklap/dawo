@@ -11,7 +11,7 @@
 /// hist>  9.1.2018  Separated from dawoDev.
 //
 
-part of dawo_dev.dart;
+part of dawo_dev;
 
 ///  NOTE: Messages might be something that demand immediately action.
 ///  For more complicated cases of note-message-handling.

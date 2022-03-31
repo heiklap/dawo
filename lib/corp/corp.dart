@@ -9,8 +9,8 @@
 
 library corp;
 
-import '../alpha.dart';
-import '../beta.dart';
+import '../alpha/alpha.dart';
+import '../beta/beta.dart';
 //  TODO  import 'dart:intl';
 
 ///  path dependency

@@ -11,14 +11,14 @@
 // * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
 //
 
-library dawo_dev.dart;
+library dawo_dev;
 
-import '../alpha.dart';
+import '../alpha/alpha.dart';
 import '../shower.dart';
 import '../tools.dart';
 
 import '../src/box_serve.dart';
-import '../beta.dart';
+import '../beta/beta.dart';
 
 part 'aide.dart';
 part 'dawo_hist.dart';
@@ -305,7 +305,7 @@ class Dev {
       ..add(
           '6 Missions specific op-methods, cheduleBox for resource allocating.')
       ..add('dev: doneL added to keep track of fast changes. 10.10.17')
-      ..add('flowserve: added flowI event counter. In beta: flowI. 10.10.17')
+      ..add('flow.fServe: added flowI event counter. In beta: flowI. 10.10.17')
       ..add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.')
       ..add('Info about older notes should apper in lists.');
 

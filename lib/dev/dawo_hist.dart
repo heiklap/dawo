@@ -10,7 +10,7 @@
 //  V:  0.2.0  Only Format - DartFormat
 //  V:  0.3.0  Modify comments, style and clarity
 
-part of dawo_dev.dart;
+part of dawo_dev;
 
 ///  Keeping historical aso. info about dawo.
 ///  Just testing: implements, here.
@@ -156,9 +156,9 @@ class DawoHist implements BaseStruct {
   ///  Calling print/print-to-buffer function from beta.
   ///  Getting local variables; Actor and Buffer right.
   void flowC(String msg, bool p) {
-    ///  call flowServe with #LOCAL variables
+    ///  call flow.fServe with #LOCAL variables
     ///  :dawoHist:  is too long.
-    flowServe(':d:Hist:', buf, msg, p);
+    flow.fServe(':d:Hist:', buf, msg, p);
   }     //     -----     flowC
 
 } //  -----  class DawoHist

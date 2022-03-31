@@ -90,7 +90,7 @@ class GlobalClass {
     ':c:       C: = caller   clay=data  (carry-3) car-33  chat-1   client-12',
     ':d:3    dev    decoded    :demand:   deal-1   devBox-22                ',
     ':e: -  :ex:=example   eye-0/2  #:ERP: Enterprise Resource Planning ',
-    ':f: -  :flowServe:    film-0 fire-0   fury-2   ',
+    ':f: -  :flow.fServe:    film-0 fire-0   fury-2   ',
     ':g: -   ',
     ':h: -  howTo  hklTry= meTryingSomething    human-2',
     ':i: -  *inno* -12 ',
@@ -159,7 +159,7 @@ class GlobalClass {
   ///  states. PLAN: many levels of flow-printing control.
   ///  TODO  howTo mediate these to xPrint?
   Map<String, bool> prSt = {
-    'flow': false, //  false prevents all "flow" printing via flowServe();
+    'flow': false, //  false prevents all "flow" printing via flow.fServe();
     //  Shorten output 2 screens.
     'buf': false, // TODO   controls bufPrint
     'info': false,

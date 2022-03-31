@@ -587,11 +587,11 @@ class BlanketChore extends BaseStruct {
   ///  Location of: _flowC inside OR outside of class?
   ///  Here we record no-important messages to _choreBuf
   void _flowC(String msg, bool p) {
-    ///  Call flowServe with #LOCAL variables.
-    //  Not here, but in flowServe : _flowServeCount ++;
+    ///  Call flow.fServe with #LOCAL variables.
+    //  Not here, but in flow.fServe : _flow.fServeCount ++;
 
-    //change it for testing   flowServe(':CH:', choreBuf, msg, p);
-    flowServe(':CH:', buf, msg, p);
+    //change it for testing   flow.fServe(':CH:', choreBuf, msg, p);
+    flow.fServe(':CH:', buf, msg, p);
   } //     -----     _flowC
 
   ///  constructor; master is mandatory for Chore to use masters fields.
@@ -611,8 +611,8 @@ void _flowCOuter(String msg, bool p) {
   ///  Call flowServe with #LOCAL variables.
   _flowServeCount++;
 
-  //change it for testing   flowServe(':CH:', choreBuf, msg, p);
-  flowServe(':CH:', choreBuf, msg, p);
+  //change it for testing   flow.fServe(':CH:', choreBuf, msg, p);
+  flow.fServe(':CH:', choreBuf, msg, p);
 } //     -----     _flowCOuter
 
 //---------------------------------------------------------------

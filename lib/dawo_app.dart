@@ -11,10 +11,10 @@
 // hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   basic status of dawo
 //
 
-library dawo_app.dart;
+library dawo_app;
 
-import 'alpha.dart';
-import 'beta.dart';
+import 'alpha/alpha.dart';
+import 'beta/beta.dart';
 import 'shower.dart';
 
 import 'mis/mis.dart';
@@ -145,7 +145,7 @@ class DawoApp {
     'outFooter': out.outFooter // m -  nParks
   };
 
-  ///  Value to control console printing in flowC / flowServe.
+  ///  Value to control console printing in flowC / flow.fServe.
   void printControl(bool pc) {
     _pB = pc;
     print('     :dawoApp:printControl: set to:  $pc');
@@ -222,7 +222,7 @@ class DawoApp {
     //
     print('-->>-->>--  :dawoApp: calling :connector:  -->>-->>--');
     String connectorMsg = ':LOAD :QUIDE again :FOR :ALL #MISSION => :ANSWER';
-    connector.join(name, betaPlacardM, connectorMsg, ':D:app:');
+    connector.join(name, beta.betaPlacardM, connectorMsg, ':D:app:');
     connector.roll();
 
     ///  appRollMissions is mandatory for Mission-Chore system to work.
@@ -509,9 +509,9 @@ class DawoApp {
   ///  Getting local variables; Actor and Buffer right.
   ///  Location of: _flowC inside OR outside of class?
   void _flowC(String msg, bool p) {
-    ///  call flowServe with #LOCAL variables
+    ///  call flow.fServe with #LOCAL variables
     ///  :DAWO:APP:  is too long.
-    flowServe(':DA:', out.outTr, msg, p);
+    flow.fServe(':DA:', out.outTr, msg, p);
   }
 }      //     -----     class DawoApp
 

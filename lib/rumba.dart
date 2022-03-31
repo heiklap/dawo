@@ -13,10 +13,10 @@
 //
 ///Visibility:  only dawo_src.dart sees this class
 
-library rumba.dart;
+library rumba;
 
-import 'alpha.dart';
-import 'beta.dart';
+import 'alpha/alpha.dart';
+import 'beta/beta.dart';
 import 'shower.dart';
 import 'tools.dart';
 
@@ -204,9 +204,9 @@ class Rumba {
     ///  Header and footer from out-buffers-
     devBox(':R:D:', ['* header *', '* footer *'], [_ll[0], _ll[9]], 0);
     print('--<<--;R:--<<--<<  outBuffers  done --<<--<<--<<--<<-- \n');
-    //  flowFind(':RUMBA-DANCE:', '->>-', 35);
-    //  flowFind(':RUMBA-DANCE:', 'build', 30);
-    if (_pB) flowFind(':RUMBA-DANCE:', '-->---->--', 35);
+    //  fFind(':RUMBA-DANCE:', '->>-', 35);
+    //  fFind(':RUMBA-DANCE:', 'build', 30);
+    if (_pB) flow.fFind(':RUMBA-DANCE:', '-->---->--', 35);
 
     tl.listShow(dev.doneL, ':R:');
     rumbaBuf.writeln('--<<--<<------------  Rumba.dance  done ----------');
@@ -217,7 +217,7 @@ class Rumba {
   ///  Calling print/print-to-buffer function from beta.
   ///  Getting local variables; Actor and Buffer right.
   void _flowC(String msg, bool prB) {
-    ///  Call flowServe with #LOCAL variables.
-    flowServe(':R:', out.outTl, msg, prB); //  Location:  in beta
+    ///  Call flow.fServe with #LOCAL variables.
+    flow.fServe(':R:', out.outTl, msg, prB); //  Location:  in beta
   }
 } //  --   rumba class

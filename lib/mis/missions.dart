@@ -557,8 +557,8 @@ class Mission extends MisInterfaceBasis{
 ///  Every library / actor has its own flowC function.
 ///  Location of: _flowC inside OR outside of class?
 void _flowC(String msg, bool p) {
-  ///  Call flowServe with #LOCAL variables:
-  flowServe(':M:', out.outTMid, msg, p);
+  ///  Call flow.fServe with #LOCAL variables:
+  flow.fServe(':M:', out.outTMid, msg, p);
 }
 
 ///  Create Mission class instances.

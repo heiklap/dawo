@@ -22,7 +22,7 @@ import 'code_snippets/aldente_func.dart';
 import 'code_snippets/bat_loop.dart';
 import 'code_snippets/learn_stream_sync.dart';
 
-import 'beta.dart';
+import 'beta/beta.dart';
 import 'mill.dart';
 import 'tools.dart';
 import 'dawo_app.dart';

@@ -2,7 +2,7 @@
 //  rumba_test.dart.   6.11.2017    dawo version:  0.0.4  16.10.2017
 //
 
-import 'package:dawo/alpha.dart';
+import '../lib/alpha/alpha.dart';
 import 'package:dawo/dawo_app.dart';
 
 import 'package:dawo/rumba.dart';

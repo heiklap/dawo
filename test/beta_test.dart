@@ -6,13 +6,13 @@
 
 
 //  TODO  import  why this must also be imported
-import 'package:dawo/beta.dart';
+import '../lib/beta/beta.dart';
 
 ///  testing beta class..
 void main() {
   print('---  do some test in beta library  ----');
 
-  print(betaMotto);
+  print(beta.betaMotto);
 
   print('---  do some test in beta library  ----');
 

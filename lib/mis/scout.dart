@@ -153,8 +153,8 @@ class Scout {
 
   ///  Calling print/print-to-buffer function from beta.
   void _flowC(String msg, bool p) {
-    ///  Call flowServe with #LOCAL variables:
-    flowServe(':scout:', out.outTMid, msg, p);
+    ///  Call flow.fServe with #LOCAL variables:
+    flow.fServe(':scout:', out.outTMid, msg, p);
   }
 
   ///  constructor

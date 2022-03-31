@@ -6,7 +6,7 @@
 ///  *      GitHub: yes.
 //
 
-part of shower.dart;
+part of shower;
 
 //  TODO :  21 matches,  add one more to make it even count.
 

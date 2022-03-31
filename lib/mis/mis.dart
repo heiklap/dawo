@@ -20,8 +20,8 @@ import '../dev/dawo_dev.dart';
 import '../src/box_serve.dart'; //  boxServe is here
 import '../src/glb.dart';
 
-import '../alpha.dart';
-import '../beta.dart';
+import '../alpha/alpha.dart';
+import '../beta/beta.dart';
 
 import '../shower.dart';
 import '../tools.dart';

@@ -13,7 +13,7 @@
 /// * PLAN: Split: tools_base, tools_tricks, tools_stamps, tools_coll, tools.
 // Hist:  hkl  2014  0.0.1  dawo/lib
 
-library tools.dart;
+library tools;
 
 import 'dart:math';
 import 'package:intl/intl.dart';

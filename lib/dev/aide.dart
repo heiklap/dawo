@@ -14,7 +14,7 @@
 
 //  TODO var  handle tf and rf variables:  10 x
 
-part of dawo_dev.dart;
+part of dawo_dev;
 
 ///  Helper class in dawo_dev
 class Aide {

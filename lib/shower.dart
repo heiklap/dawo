@@ -12,7 +12,7 @@
 // * Hist:hkl  3.11.2017  0.0.4  presentation tools for dawo
 //
 
-library shower.dart;
+library shower;
 
 //  import 'beta.dart';
 import 'dawo_app.dart';
