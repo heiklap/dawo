@@ -3,7 +3,7 @@
 /// ## Store is, or simulates: shop, or market place, serving and selling.
 ///  Here it is stream-based.
 ///  * Here are streams, supply and demand, all in store, and they: deliver.
-///  * dawo version:   0.6.0  26.3.2022.    devState: 3%
+///  * dwv: version:   0.6.0  26.3.2022.    devState: 3%
 ///  * NEXT: when main methods are sync, it is hard to find practical usage.
 ///  * NEXT: try box_serve for output-
 ///  * OutPut:  :demand:stream: search gives 15 results in output.
@@ -27,7 +27,7 @@ class Store extends CorpInterfaceBasis {
   String clause = '*Store Clause*';
 
   ///  ***********************************************************************
-  ///  #Word 's for stream-like processes. What 3 words to use?
+  ///  #WORD: 's for stream-like processes. What 3 words to use?
   ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   ///  These are upper-level streams, others are inside classes.

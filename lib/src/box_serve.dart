@@ -3,7 +3,7 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dawo version:   0.3.0.  23.3.2022.   devState:  60%
+/// * dwv: version:   0.3.0.  23.3.2022.   devState:  60%
 /// * GitHub: yes
 //
 
@@ -56,7 +56,7 @@ class BoxServe {
   int _fakeRow = 100;
   //  Some extra resource, like: equ/Equipment.
   List<String> _resAllocL = [];
-  ///  Forming vertical separator/note line in screen.
+  ///  Forming vertical separator/mark line in screen.
   ///  max: rc - 2)
   List<String> verticalLineL = [];
 
@@ -128,9 +128,7 @@ class BoxServe {
     _matrix[rc - 1] = bRow;
     //   '---------10--------20--------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
 
-    //  howTo NULL : the method addAll can not unconditionally inwoked, bedause receiver can be null
-    //  hklTry adding ! to the target   logM[boxNumS].addAll([name, 'CTRCT']);
-    //  howTo NULL  OK Watch This if it works
+    //  howTo NULL  OK Watch This if it works  logM[boxNumS].addAll([name, 'CTRCT']);
     logM[boxNumS]!.addAll([name, 'CTRCT']);
   }      //     -----     construct
 
@@ -224,7 +222,6 @@ class BoxServe {
       //  noComprendo    _overLength = (_r + _items) - rc;
       //  _overLength = (_r + _items) - rc;
       //  NO  _overLength = (((_r + _items).toInt) (- rc).toInt;
-      //  hklTry:  do not know, how it is now OK ????
       //  maybe caller:   int _r, int _c, int _items, int _w,
       _overLength = (_r + _items) - rc;
 
@@ -251,7 +248,6 @@ class BoxServe {
       //  NO  List<String> verticalWarningL = new List.generate(_items, 0);
       //  ..
       //  external factory List.filled(int length, E fill, {bool growable = false});
-      //  hklTry:   List<String> verticalWarningL = new List(_items);
       List<String> verticalWarningL = List.filled(_items, '');
 
       verticalWarningL.fillRange(0, _items, _overWidthS);
@@ -336,7 +332,7 @@ class BoxServe {
     //  return _matrix;  //  if type is: List<String>
     ///  Save box-buffer to:   glb.boxServeBuffers Map
     saveToGLB();
-    //  howTo NULL   hklTry    add null check to the target:  !  OK  workds
+    //  howTo NULL  add null check to the target:  !  OK  workds
     //  logM[boxNumS].addAll([_caller, 'SHOW']);
     logM[boxNumS]!.addAll([_caller, 'SHOW']);
   }     //     -----     show

@@ -3,7 +3,7 @@
 ///  *
 ///  ## packDawoMission   Data for mission-chore system.
 ///  * Tracking and helping development of dawo package.
-///  * dawo version:    0.8.0.   28.3.2022:  -  devState : 8%
+///  * dwv: version:    0.8.0.   28.3.2022:  -  devState : 8%
 ///  * PLAN: ?
 
 //  library packDawo;
@@ -62,7 +62,7 @@ class PackDawo {
     '0 D:0 V:3 E:3': '0.0.4  A. Publish version 0.0.4 to Pub  16.10.2017.',
     '1 D:0 V:3 E:3': '0.0.4  * Fill #Word data to buff.',
     '2 D:0 V:3 E:3': '0.0.4  * Seek StringBuffer, for to find certain data.',
-    '3 D:7 V:3 E:3': '0.0.4  DON  Clean rest 7 of files for TODO and Notes.',
+    '3 D:7 V:3 E:3': '0.0.4  DON  Clean rest 7 of files for TODO and Note s.',
     '4 D:9 V:3 E:3': '0.0.4  DONE Four box sided in devBox outPut.',
     '4b D:0 V:3 E:3': '? ?   *  Resolve row-count / height.',
     '5 D:8 V:3 E:3':
@@ -70,7 +70,7 @@ class PackDawo {
     '6 D:0 V:3 E:3': '0.0.4 *  Get flow-output, 20-30 items of app roll.',
     '7 D:7 V:3 E:3': '0.0.4  DON     Mission report, boxed 2x2.',
     '8 D:0 V:3 E:3': '0.0.4  * Fine-Print-Map.',
-    '9 D:5 V:3 E:3': '0.0.4  DO   Dev-Notes, add 30.',
+    '9 D:5 V:3 E:3': '0.0.4  DO   Dev-Memos, add 30.',
     '10 D:0 V:3 E:3': '? ?    Classes: add field: outBuf. Use in flow.',
     '11 D:0 V:3 E:3':
         '0.0.5   Word/ Lang. Create Lang class and methods.To collect words.',

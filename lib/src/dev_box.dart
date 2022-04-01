@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dev_box  -  presentation in 2-3-4 column boxes.
 ///
-///  * dawo version:   0.3.0.  23.3.2022.  devState: 90%
+///  * dwv: version:   0.3.0.  23.3.2022.  devState: 90%
 ///  *      GitHub: yes.
 //
 
@@ -13,7 +13,7 @@ part of shower;
 ///  devBox is an example of a funny way to solve a problem, It works, but:
 ///  it is NotElegant.  It is not best way to solve matrix - addBox problem.
 ///  This should be deprecated; boxServe is much more elegant.
-///  Show Lists, like devNotes in nice column-box in console.
+///  Show Lists, like devMemos in nice column-box in console.
 ///  Can now handle 2, 3 and 4 column cases, and is very useful function.
 ///  TODO  Add better row / height decision.
 ///  #QUEST : Maybe these 2-3-4 devBox functions can be combined to one, and
@@ -58,7 +58,7 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
 
   ///  Carry the actual List building.
   void devBoxBuild() {
-    int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 notes in a row
+    int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 note s in a row
     ///  To get nice little header String in top-left corner.
     //  Widen this later to screen-width.
     String tr1 = '_devBox_C: $caller __';
@@ -131,7 +131,7 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
 
     ///  Build three-column-area List.  -----------   3 columns.
     if (inList.length == 3) {
-      int columnThreeWidth = ((sW ~/ 3) - 10); //  when 3 notes in a row
+      int columnThreeWidth = ((sW ~/ 3) - 10); //  when 3 note s in a row
 
       ///  3-case; Create 3 new List to modify data:
       List<String> cColonList = [];
@@ -175,7 +175,7 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
 
     ///  Build four-column-area List.  -----------   4 columns.
     if (inList.length == 4) {
-      int columnFourWidth = ((sW ~/ 4) - 4); //  when 4 notes in a row
+      int columnFourWidth = ((sW ~/ 4) - 4); //  when 4 note s in a row
       String borderS = '|';
 
       ///  in three List parameter -case:

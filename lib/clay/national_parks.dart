@@ -3,7 +3,7 @@
 ///  #
 ///  # dawo clay: Finlands national parks.
 ///  * Presenting data for dawo-Mission and it's chore system.
-///  * dawo version:    0.8.0.   28.3.2022 :  27.11.2017
+///  * dwv: version:    0.8.0.   28.3.2022 :  27.11.2017
 
 //
 //  library nationalParksFinland;

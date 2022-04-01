@@ -112,7 +112,7 @@ void usualChoreStuff() {
   print('==>>==>>====  dawo app roll by: :app-lib-chore-play: ==>>==>>====');
 
   dawoApp.roll();
-  dev.showNotes(':app-lib-chore-play:');
+  dev.showMemos(':app-lib-chore-play:');
   print('  ==<<==<<====  dawo app rol done :app-lib-chore-play: ==<<==<<===');
 }
 

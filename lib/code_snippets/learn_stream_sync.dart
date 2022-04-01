@@ -2,12 +2,12 @@
 ///  This do not bring any value to dawoApp.  Just sample code-snippets.
 ///  NOTE:  Only some of these streams are executed, when called in row,
 ///  but however, they work.
-/// * dawo version:   0.3.0  23.3.2022  -  in gitHub : yes
+/// * dwv: version:   0.3.0  23.3.2022  -  in gitHub : yes
 /// * READY-STATE:    for 0.0.7 : 0%
 /// *  NEXT:  modify these, connect to classes and lists. use stream_channel pack
 ///   Examples pasted from:   https://www.dartlang.org/docs/tutorials/streams/
 ///   Copyright notice should not concern this file... since it's from dartlang
-// Hist: hkl  4.5.2014  0.0.1  dawo/lib    info with streams to dawo-staff
+///  info with streams to dawo-staff
 //
 
 library learn_stream_sync;
@@ -101,7 +101,7 @@ class LearnStreamSync {
       print("Received: $value"); // onData handler
       print("---         ok            --- \n");
     });
-    //NOTE: using name: stream, gives you too wide amount of values- Study this:
+    //  howTo:Stream: using name: stream, gives you too wide amount of values- Study this:
     // _psbStream.   contrary to using:   stream
   } //     -----     presentStreamBase
 
@@ -159,7 +159,7 @@ class LearnStreamSync {
     // skipWhile: 5
   } //     -----     presentBroadcastStream
 
-  ///   howToNote:   how to add to stream.. with streamController !!
+  ///   howTo:Stream   Note:   how to add to stream.. with streamController !!
   void presentStreamTransform() {
     //  TODO  teamHowTo    make roundWay
     //  TODO  goals  error;  make list here
@@ -194,7 +194,7 @@ class LearnStreamSync {
   } //     -----     presentStreamTransform
 
 
-///  TODO  bin  note   no io-operations allowed in HTML
+///  howTo:html:bin   no io-operations allowed in HTML
   void presentFileStream() {
 /* ERROR   The class 'File' does not have a default constructor
   File file = new File("some_file.txt");

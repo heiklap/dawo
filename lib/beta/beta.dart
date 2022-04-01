@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///
 ///  ## Modeling joint, reusable controls and operations for libraries.
-///  dawo/beta,  dawo version:   0.9.0.  30.3.2022.
+///  dawo/beta,  dwv: version:   0.9.0.  30.3.2022.
 ///  devState   40 %   in GIT  Yes
 ///
 ///  Time to start thinking 6.th floor's machinery, when you are only just
@@ -11,17 +11,12 @@
 ///  All dawo code-constructing should depend on code, that is here, and all
 ///  thinking about dawo should concentrate on collecting reusable code here.
 ///
-
-///
-///  Hist:  hkl  9.10.2013  0.0.1  dawo/lib  daw lib_base.dart > beta.dart
-///  Returned 10.9.2017 to same idea with empty hands.
-
 ///  Open for all ideas, when seeking joint functionality between app / lib /
 ///  classes / process aso.
 ///  NOTE: Problem:  #actor / glbActor; how to handle in sub-processes
 ///  RULE:  #actor  every #actor deletes it's own name when op-done, and
 ///  --- returns previous actor, if it,s operation is not done. #Glorious.
-///  devNote:  No notes.
+//
 
 library beta;
 

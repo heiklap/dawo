@@ -3,12 +3,11 @@
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  dawo version:   0.7.0.  27.3.2022.
+/// *  dwv: version:   0.7.0.  27.3.2022.
 /// *  devState : 27 % / unknown  -  PLAN:  cleaning
-// -  HIST:  hkl  8.9.2017
-// -  devNote: 4 pc.
+// -  devMemo: 4 pc.
 //
-//  word:  build  46 / 33  pc. Is it too much.
+//  WORD:  build  46 / 33  pc. Is it too much.
 //  chore:  96 / 20 pc
 
 ///  Renamed library to: missions for 0.0.4.
@@ -106,7 +105,7 @@ class Mission extends MisInterfaceBasis{
     return (_pRow);
   }
 
-  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  ///  devMemo: PLAN: Two fields for to better shape outPut stuff in console.
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
   ///  like:  ":DAWO-APP:";
   String _emblem = 'M-emblem';
@@ -291,7 +290,7 @@ class Mission extends MisInterfaceBasis{
   Map<String, Map<String, Action>> decisionChainMM = Map();
 
   ///  ***********************************************************************
-  ///  #Word 's for stream-like processes. What 3 words to use?
+  ///  #WORD: 's for stream-like processes. What 3 words to use?
   ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
@@ -577,7 +576,7 @@ var nationalParksMission =
 void missionChoreReport(String caller) {
   print('-->>-->>----:M:  missionChoreReport  caller: $caller');
   for (var x in missionM.keys) {
-    //  howTo NULL check  hklTry
+    //  howTo NULL check
     String nameS = missionM[x]!.name;
     //  Just to name it
     nameS;

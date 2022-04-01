@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ## equipment  :  material resources for Mission and Chore.
 ///  * No objects, but:  String-values for simple demo and presentation.
-///  * dawo version:   0.7.0.  27.3.2022.    devState : 30 %
+///  * dwv: version:   0.7.0.  27.3.2022.    devState : 30 %
 ///  * Instance as:  equ
 ///
 

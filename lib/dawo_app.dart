@@ -4,11 +4,10 @@
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dawo version:   0.4.0.  23.3.2022.
+/// * dwv: version:   0.4.0.  23.3.2022.
 /// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * dawoApp instantiated inside app; it now has access to dawo.version aso.
-// hist>  3.5.2014  0.0.1  dawo/lib  dawo_app.   basic status of dawo
 //
 
 library dawo_app;
@@ -30,10 +29,8 @@ import 'src/glb.dart';
 import 'tools.dart';
 import 'src/box_serve.dart';
 
-//  part 'dev/dawo_hist.dart';
-//  part 'dev/dev_notes.dart';
 
-//  Word: stream  13 / 35  times
+//  WORD: stream  13 / 35  times
 
 ///  Getter practice.
 num dawoAppReadiness = 95; //  changed: 2.5.2015
@@ -46,7 +43,7 @@ StringBuffer appBuf = StringBuffer(); //  not used here
 class DawoApp {
   ///
   final String name = 'DawoApp';
-  final String version = '0.8.5';
+  final String version = '0.9.5';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   ///
@@ -96,7 +93,7 @@ class DawoApp {
     'Corporate-Connect-Store': 'Money.',
   };
 
-  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  ///  devMemo: PLAN: Two fields for to better shape outPut stuff in console.
   ///  like:  ":DAWO:APP:";///  must initialize StringBuffer here
   String seal = '';
   ///  or this emblem.StringBuffer buf = new StringBuffer();
@@ -167,15 +164,16 @@ class DawoApp {
 
   ///  Method for further building app and mission system in working condition.
   void build(String emblem) {
-    ///  NOTE empty parameter now, not used. For chore.build.
+    ///  empty parameter now, not used. For chore.build.
     st['wake'] = true; //  sleep-state ends
     st['work'] = true; //   working state begins
 
-    ///  Build DevNotes.
-    dev.buildNotes('By: :D:-A:', 'In Dawo:App-Build');
-    initChoreSystem(); //  just ome notes to chore...
+    ///  Build devMemos.
+    dev.buildMemos('By: :D:-A:', 'In Dawo:App-Build');
+    //  just ome memos to chore...
+    initChoreSystem();
 
-    //  NOTE:  out must be built!!  for outBufM to get map-buffers.
+    //  out must be built!!  for outBufM to get map-buffers.
     out.build();
 
     /// Write something #WakeUpSleepyHead to all out.out-buffers.
@@ -212,9 +210,9 @@ class DawoApp {
   ///  return:  Map<String, StringBuffer> out.outMapBuffers
   Map<String, StringBuffer> roll() {
     buf.writeln(':da:roll: started  ');
-    //  Calling:  dev/dev_notes.dart
-    fillNotes();
-    //  build already does this::  dev.buildNotes();
+    //  Calling:  dev/dev_memos.dart
+    fillMemos();
+    //  build already does this::  dev.buildMemos();
     _flowC(':da:r: DawoApp::roll    $info   :: roll engaged ', _pB);
 
     // done by user  init(); //  calling init and build methods in this class
@@ -264,11 +262,9 @@ class DawoApp {
         true)); //   = packDawoMission.report('C:dawoApp:rM:', true);
 
     //  NULL   Make it explicitly non nullable
-    List<String> info1 = [];
-    //  hklTry
-    //  List info1 = tl.mapToFineList(packDawoMission.say, 10, 80);
-    info1.addAll(tl.mapToFineList(packDawoMission.say, 10,
-        80)); // = tl.mapToFineList(packDawoMission.say, 10, 80);
+    List<String> info1 = [];  //  TODO ? usage?
+    //
+    info1.addAll(tl.mapToFineList(packDawoMission.say, 10, 80));
 
     devBox(
         'By; :dawoApp:rM:', ['* header *', '* footer *'], [list1, info1], 10);
@@ -361,7 +357,7 @@ class DawoApp {
     ///  Create List, that is used in Stream.
     List<String> _queryL = ['* First _queryL item *'];
 
-    //  TODO  find #Lang #word's function, make it.
+    //  TODO Lang:  find #Lang #word's function, make it.
     for (var x = 0; x < dev.admN.length; x++) {
       //  HealthIssue:  line 340 col 11: Use contains instead of indexOf
       if (dev.admN[x].contains('schedule')) {
@@ -408,7 +404,7 @@ class DawoApp {
 
     String bufSize = buf.length.toString();
     boxServe.aHeader(7, 7, 'Buffer:  size: $bufSize');
-    //  List 10 items, 38 width. Note handy split = toList -method.
+    //  List 10 items, 38 width. howTo:split    handy split = toList -method.
     boxServe.aBox(8, 6, 10, 38, buf.toString().split('\n'));
 
     String appBufSize = appBuf.length.toString();
@@ -422,7 +418,7 @@ class DawoApp {
     String _s;
     _s = outBufMapShow.length.toString();
     boxServe.aHeader(23, 7, 'outBuffer:  size: $_s');
-    //  List 10 items, 38 width. Note handy split = toList -method.
+    //  List 10 items, 38 width. howTo:split  handy split = toList -method.
     boxServe.aBox(24, 6, 10, 38, tl.mapToFineList(outBufMapShow, 20, 12));
 
     boxServe.vertLine(8, 5, 28); //  phases

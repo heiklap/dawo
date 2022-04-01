@@ -6,10 +6,9 @@
 ///  Primary functionality:  Help in developing.
 ///  - Using some outside package, like:  steward,  usher:  23
 ///  WORD: aide  OK, 11 -13
-/// * dawo version:   0.8.5.  29.3.2022.
+/// * dwv: version:   0.8.5.  29.3.2022.
 /// * devState : 12%    in GitHub : yes
 /// * variables tf & rf seems to bee acronyms for: testFunction & runFunction
-///  hist>  9.1.2018  Separated from dawoApp.
 //
 
 //  TODO var  handle tf and rf variables:  10 x

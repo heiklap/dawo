@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///
 ///  ## Modeling joint, reusable controls and operations for libraries.
-///  dawo/beta,  dawo version:   0.9.0.  30.3.2022.
+///  dawo/beta,  dwv: version:   0.9.0.  30.3.2022.
 ///  devState   40 %   in GIT  Yes
 ///  idea:   some basic / flow  functionality, that is too small for packages,
 ///  and too big for tools.dart or dawo_app.

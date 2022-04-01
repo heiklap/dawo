@@ -3,12 +3,10 @@
 // that can be found in the LICENSE file.
 ///
 ///  ##  Dev (& team)
-///  dev, msg classes and some helper stuff for screen prints and notes.
+///  dev, msg classes and some helper stuff for screen prints and memos.
 ///  (Team - for many developers working in same project)
-/// * dawo version:   0.8.5.  29.3.2022.  -   devState: 16 %
+/// * dwv: version:   0.8.5.  29.3.2022.  -   devState: 16 %
 /// * GitHub: yes  29.11.2014
-//
-// * Hist:hkl  19.1.2014  0.0.1  dawo/lib  some elementary  dev-tools for dawo
 //
 
 library dawo_dev;
@@ -22,17 +20,17 @@ import '../beta/beta.dart';
 
 part 'aide.dart';
 part 'dawo_hist.dart';
-part 'dev_notes.dart';
+part 'dev_memos.dart';
 part 'envoy.dart';
 
 //   TODO name   PROBLEMS, when using too common names:
 //   devTest   =   22  times     CHANGE:   test  ! ??
-//   devNote   = 2/16 times
+//   devMemo   = 2/16 times
 //   cod*          10 times
 //   phase          3
-//   note          23 ??         CHANGE:   note  !!!
+//   memo          23 ??         CHANGE:   memo  !!!
 //   test        10/50            CHANGE    test  !!!
-//  #Word  Stream  6
+//  #WORD:  Stream  6
 
 //  New async : plans to make async functions start synchronously.
 //  This change is planned for Dart 2.0.
@@ -85,11 +83,11 @@ class Dev {
   List<String> doneL = [];
 
   ///  First, header values to teamN.
-  List<String> admN = ['* *  Team Admin notes:  * *'];
-  List<String> devN = ['* * Team dev notes: * * '];
-  List<String> innoN = ['* *  Team inno notes: * * '];
-  List<String> howToN = ['* * Team HowTo notes: * * '];
-  List<String> secN = ['* * Team sec notes: * * '];
+  List<String> admN = ['* *  Team Admin memos:  * *'];
+  List<String> devN = ['* * Team dev memos: * * '];
+  List<String> innoN = ['* *  Team inno memos: * * '];
+  List<String> howToN = ['* * Team HowTo memos: * * '];
+  List<String> secN = ['* * Team sec memos: * * '];
 
   ///  Changed from List to Map in 0.0.7. version
   ///  Changes #maybe planned to dawoPackage.
@@ -204,13 +202,13 @@ class Dev {
         'V:1 E:1 D:9',
   };     //     -----     version0075
 
-  ///  To add developer notes.
-  void addNote(List l, String s) {
+  ///  To add developer memos.
+  void addMemo(List l, String s) {
     l.add(s);
-  }     //     -----     addNote
+  }     //     -----     addMemo
 
-  ///  Fill devNote lists with data. dawo_app calls this in it's build-method!
-  void buildNotes(String caller, msg) {
+  ///  Fill devMemo lists with data. dawo_app calls this in it's build-method!
+  void buildMemos(String caller, msg) {
     //  TODO howTo String   write many line String.  From dartlang.org
     var interpolation = "interpolation";
     var combi = "a string "
@@ -296,7 +294,7 @@ class Dev {
       ..add('5  Changed choreL mlists to maps.')
       ..add('5  Splitted cheduleBox functions parts to tools.')
       ..add('5-  Effort class for user-chore-data. And JSON data handling. ')
-      ..add('5-02 Cascades in devNotes and names are now: admN, devN aso.')
+      ..add('5-02 Cascades in devMemos and names are now: admN, devN aso.')
       ..add('5-01 All in tools removed inside a new Tool, tl class.')
       ..add('10 In analyzis options file: analyzer: strong-mode: true.')
       ..add('9 Added copyright notice to every lib/ file.')
@@ -307,7 +305,7 @@ class Dev {
       ..add('dev: doneL added to keep track of fast changes. 10.10.17')
       ..add('flow.fServe: added flowI event counter. In beta: flowI. 10.10.17')
       ..add('Mission: shortened arrows: -->-m--> and  <-m--<--. 10.10.17.')
-      ..add('Info about older notes should apper in lists.');
+      ..add('Info about older memos should apper in lists.');
 
     admN
       ..addAll([
@@ -318,7 +316,7 @@ class Dev {
           ['adm: Must be strict all the time.', 'Keep good care of people.'])
       ..addAll([
         'adm: Week schedule must include total check at least 3 times in a week.',
-        'System cleaning of old log-notes is not necessary every week. 2 times in a month is enough.'
+        'System cleaning of old log-memos is not necessary every week. 2 times in a month is enough.'
       ]);
 
     devN.addAll([
@@ -333,13 +331,13 @@ class Dev {
       ..addAll(
           ['Name: base-lib?', 'User-action?', 'Print-output-variables-logos.']);
     secN.addAll(
-        ['Restrict use of certain methods.', 'Create up-level pass-word.']);
-  }     //     -----     buildNotes
+        ['Restrict use of certain methods.', 'Create up-level password.']);
+  }     //     -----     buildMemos
 
   ///  callers: no usages.
   ///  More demonstrative devBox presentation method.
-  void showNotes(String caller) {
-    print('\n ------->>-->>--  dev.showNotes  by: $caller ------->>-->>--   ');
+  void showMemos(String caller) {
+    print('\n ------->>-->>--  dev.showMemos  by: $caller ------->>-->>--   ');
     devBox('By:dev:', ['* header *', '* footer *'], [dev.admN, dev.devN], 0);
     devBox('By:dev:', ['* header *', '* footer *'],
         [dev.innoN, dev.howToN, dev.secN], 0);
@@ -352,14 +350,14 @@ class Dev {
           tl.mapToFineList(dev.version008, 75, 20)
         ],
         0);
-    print('--<<--<<------------  dev.showNotes  --<<--<<------------ \n  ');
-  }     //     -----     showNotes
+    print('--<<--<<------------  dev.showMemos  --<<--<<------------ \n  ');
+  }     //     -----     showMemos
 
   ///  Old-fashioned list print method.
-  void listNotes(String caller) {
-    print('\n ------->>-->>--  dev.listNotes  by: $caller ------->>-->>--   ');
-    dev.howToN.add('dev-Show-Notes:  How to add 8-indent in show?  ');
-    dev.secN.add('dev-Show-Notes:  howTo keep some notes secret?  Sec? ');
+  void listMemos(String caller) {
+    print('\n ------->>-->>--  dev.listMemos  by: $caller ------->>-->>--   ');
+    dev.howToN.add('dev-Show-Memos:  How to add 8-indent in show?  ');
+    dev.secN.add('dev-Show-Memos:  howTo keep some memos secret?  Sec? ');
     admN.forEach(print);
     print(' ');
     devN.forEach(print);
@@ -369,16 +367,16 @@ class Dev {
     howToN.forEach(print);
     print(' ');
     secN.forEach(print);
-    print('--<<--<<------------  dev.listNotes  --<<--<<------------ \n ');
-  }     //     -----     listNotes
+    print('--<<--<<------------  dev.listMemos  --<<--<<------------ \n ');
+  }     //     -----     listMemos
 
 } //  -----  class dev
 
 ///  Create instance of class Dev.
 var dev = Dev();
 
-//  TODO teamHowTo lists: add:   automatize adding notes to lists?
-//  TODO teamInno  notes:  automatic roll of createNotes.? no; events..?
+//  TODO teamHowTo lists: add:   automatize adding memos to lists?
+//  TODO teamInno  memos:  automatic roll of createMemos.? no; events..?
 
 //  TODO teamHowTo stream    define a stream transformer
 
@@ -392,18 +390,18 @@ sink.add("Message: $value")
 // transform the stream and listen to its output
 stream.transform(transformer).listen((value) => print("listen: $value"));
 
-//  TODO teamEdu  devNotes..  instead of TO-DO-notes..
-//  TODO teamEdu  ..for to not spam dawo package with -notes
+//  TODO teamEdu  devMemos..  instead of TO-DO-memos..
+//  TODO teamEdu  ..for to not spam dawo package with -memos
 
-var devTestStreamData = ['devTestStream, for notes and testing',
-                         'Next note.. aso'
-                         ]; // later more notes to come...
+var devTestStreamData = ['devTestStream, for memos and testing',
+                         'Next memo.. aso'
+                         ]; // later more memos to come...
 var devTestStream = new Stream.fromIterable(devTestStreamData);
 */
 
 ///  #howTo do these?
-void addDawoDevNotes() {
-  print('--  empty addDevNotes function  --');
+void addDawodevMemos() {
+  print('--  empty adddevMemos function  --');
   //  code here.
   print('--  not clear yet, how this must be done  -- \n');
 }

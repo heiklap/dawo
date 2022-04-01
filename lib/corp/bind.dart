@@ -4,7 +4,7 @@
 /// * Bind object to certain state or project or resource.
 /// * Bind to certain event-waiting or information flow.
 /// *  Using #resolve library with #dawolang to solve bind-literal-Strings.
-/// *  dawo version:   0.6.0  26.3.2022
+/// *  dwv: version:   0.6.0  26.3.2022
 /// *  GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/bind.dart
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
@@ -76,7 +76,7 @@ class Bind extends CorpInterfaceBasis {
     _flowC(':bind:-mark-  -->>-->>--  :bind:  C::Chr:  -->>-->>--', true);
     //  Idea: Have some binding-models and types.
     /// Make new bind name,
-    /// NOTE opJoin parameters inMsg  and  caller are available here
+    /// Parameters   opJoin parameters inMsg  and  caller are available here
     bindC++;
     String bindCS = bindC.toString();
     String bindNameS = '$actorS$bindCS';

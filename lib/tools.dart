@@ -5,13 +5,13 @@
 ///  stuff is most valuable to beginner programmers, and developing this has
 ///  taken time. Fixing bugs only when something throws.
 /// * Also some #stamp date-time aso. functions.
-/// * dawo version:   0.3.0.  23.3.2022.    devState : 50 %
+/// * dwv: version:   0.3.0.  23.3.2022.    devState : 50 %
 /// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
 /// * in GIT:  yes.  Blog post:  should b.
 /// * PLAN:  develop some _private inside functions and variables.??
 /// * PLAN: ? Move to own directory, tools.
 /// * PLAN: Split: tools_base, tools_tricks, tools_stamps, tools_coll, tools.
-// Hist:  hkl  2014  0.0.1  dawo/lib
+//
 
 library tools;
 
@@ -116,7 +116,7 @@ class Tools {
         int val_1 = -1;
         int val_2 = -1;
         //  check if we got 2 numbers and act for it
-        //  howTo NULL  hklTry  new String
+        //  howTo NULL  new String
         //  String check = _inlM[x][y].substring(_pos1 + 2, _pos1 + 3);
         //  2 String fields for check
         String check1 = ''; //  make String instance
@@ -248,7 +248,7 @@ class Tools {
     }
   }      //     -----     boxInList
 
-  ///  Just a note, howTo print a map.
+  ///  howTo Map  print a map.
   void operationMapPrint(Map thisMap) {
     thisMap.forEach((k, v) {
       print('$k, $v');
@@ -496,7 +496,7 @@ void main() {
     var start = DateTime.now();
     //  print('Start::  $start ');
     /*
-    //NOTE:  dateFormat is in:   intl  package
+    ///  howTo:dateFormat is in:   intl  package
     var formatterYmd = new DateFormat('yyyy-MM-dd');
 
     String formattedYmd = formatterYmd.format(now);

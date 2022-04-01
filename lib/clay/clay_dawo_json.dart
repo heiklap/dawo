@@ -1,6 +1,6 @@
-///  JSON data for packDawo.  -  dawo version  0.0.6 : 27.11.2017
+///  JSON data for packDawo.  -  dwv: version:  0.0.6 : 27.11.2017
 ///  While waiting for server-client to import json.data
-///  dawo version:    0.8.0.   28.3.2022 :
+///  dwv: version:    0.8.0.   28.3.2022 :
 
 part of 'clay.dart';
 

@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Corporate,  enterprise-like entity.
 ///  * Holds: Affairs, Stores, takes Order's, makes Jobs in phases.
-///  * dawo version:   0.6.0  26.3.2022
+///  * dwv: version:   0.6.0  26.3.2022
 ///  * devState:  10%,   PLAN:  do simple demo / presentation.
 ///
 //
@@ -108,7 +108,7 @@ class Corporate extends CorpInterfaceBasis {
   ///  Map explicitly make it <String, String>
   StringBuffer process(String by, Affair _affairOp,
       Map<String, String> placardM, Function _assigned) {
-    ///  NOTE  callers placardM is here now.
+    ///  Parameter:  callers placardM is here now.
     print(':corporate: process begins:');
     String infoS1 =
         '#Caller have accessed #corporate.process, where it will hava access in all public resources, ';

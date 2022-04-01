@@ -4,8 +4,8 @@
 ///  presenting incoming data for dawo-chore / mission system
 ///  For version 0.8.0 clay, group all 6 in-clays under clay-library.
 ///      --  create separate quide-lib to import clays from here
-///  dawo version:    0.8.0.   28.3.2022
-///  word: clay 79
+///  dwv: version:    0.8.0.   28.3.2022
+///  WORD: clay 79
 
 //
 part of clay;

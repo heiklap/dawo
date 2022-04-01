@@ -1,11 +1,10 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  glb   keeping important everybody-uses variables and constants.
-/// * dawo version:   0.3.0.  23.3.2022.  -  devState:  13%
+/// * dwv: version:   0.3.0.  23.3.2022.  -  devState:  13%
 /// * GitHub: yes.
 /// * State:  schema
 //
-//  Hist:hkl  19.11.2017  Moved stuff out from beta to make clarity.
 
 library glb;
 
@@ -45,7 +44,7 @@ class GlobalClass {
     'prSt controls global printing states in every object'
   ];
 
-  ///  HowTo track dawo important things in screen-output.
+  ///  WORD: HowTo track dawo important things in screen-output.
   List<String> keyWords = [
     '     #dawo objects  -  keywords-1 : find them in :out:put  (=new-idea) ',
     '     IDEA:NEW:   chain - hook - gear  ',
@@ -63,8 +62,8 @@ class GlobalClass {
     ':J: -   JSON    join-18-31     '
         ':K: -',
     ':L: -  LANG~137  learn-19                (lamp-0)  (legend-0) (letter-0)',
-    ':M:64-mission    Mongo-3    ',
-    ':N:         =  NEXT   NOTE-38  ',
+    ':M:64-mission    Mongo-3   memo ',
+    ':N:         =  NEXT   memo-  ',
     ':O: -          (opera-6)          ( oath-0) ',
     ':P: -  PING-13   p e g=screenMark    (plan-24)   pool-0 :promo: PDCA ',
     ':P2: -  POC-proof of concept.    ',
@@ -81,7 +80,7 @@ class GlobalClass {
     '::',
   ];
 
-  ///  HowTo track dawo important things in screen-output.
+  ///  WORD: HowTo track dawo important things in screen-output.
   List<String> keyWordsSmall = [
     '     #dawo objects,   keywords-2   less used & promising. ',
     ':a: -  ::  adm :ad: :advertising: ',

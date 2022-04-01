@@ -3,10 +3,9 @@
 ///  ##  Sample file made by Dart.  "Home of dawo libraries."
 /// * Badly treated and would deserve more love than I have to give.
 /// * Might serve as a collector or central for it's sub-libraries.
-/// * dawo version:   0.4.0.  25.3.2022.  devState : 20 %
+/// * dwv: version:   0.4.0.  25.3.2022.  devState : 20 %
 /// *
-// * Hist: hkl  18.12.2013  0.0.1  dawo/lib  dawo.dart package
-///
+//
 
 //  TODO  teamEdu  ---------   notes are essential part of dawo package ------
 //      so they are left here.. and they show direction and serve as tools here
@@ -14,8 +13,6 @@
 
 library dawo_src; //  naming this to _src...
 
-///  hklTry::  #export all
-///  Data ( #clay ) is in clay-folder.
 import 'clay/clay.dart';
 
 import 'code_snippets/aldente_func.dart';

@@ -4,7 +4,7 @@
 ///  * dawo clay helsinki_guide: links and methods for active living.
 ///  * presenting data for Dawo chore-effort system
 ///  * devState: 60%   -  PLAN:
-///  * dawo version:    0.8.0.   28.3.2022
+///  * dwv: version:    0.8.0.   28.3.2022
 
 //  library helsinkiGuide;
 

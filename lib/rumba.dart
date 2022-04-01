@@ -3,15 +3,14 @@
 ///  ##  Rumba : Loop, that runs dawoApp and some other stuff.
 ///  Runs it's loops forced, only once, without possibility of user action.
 ///  * Primary functionality:  loop, inside it: dawoApp
-///  * dawo version:   0.3.0.  23.3.2022.   functionality: 70%
+///  * dwv: version:   0.3.0.  23.3.2022.   functionality: 70%
 ///  * in GitHub :  yes  NEXT: parameters for output?
 ///  * NEXT: bool values, that stop loops #FromInside dawo-app.
 ///  * If program parts have a certain amount of 'self consciousness' or other
 ///  . upper level activities, they are engaged from here.
-///
-// history:  hkl  14.9.2017  dawo/lib  rumba.dart   main loop of dawoApp
 //
-///Visibility:  only dawo_src.dart sees this class
+
+///  TODO Check:   Visibility:  only dawo_src.dart sees this class
 
 library rumba;
 
@@ -56,7 +55,7 @@ class Rumba {
   void initRumba() {
     print('------------>>-->>--  init Rumba  ------------>>-->>--');
     dev.howToN
-        .add(':initRumba:  howTo : Keep track that ALL notes get marked ');
+        .add(':initRumba:  howTo : Keep track that ALL memos get marked ');
     dev.innoN.add(
         ':init:Rumba: CHECK-IN-NUMBER for every NOTE, that all notes are in count.');
     rumbaBuf.writeln('------------>>-->>--  init Rumba  ------------>>-->>--');

@@ -3,18 +3,15 @@
 ///
 ///  ##  Model structures, base classes, that are used everywhere in dawo:
 /// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
-/// * dawo version:   0.9.0.  30.3.2022.
+/// * dwv: version:   0.9.0.  30.3.2022.
 /// *  30.3.2022  new alpha folder
-/// *
-// * Hist: hkl  8.9.2017  0.0.1  dawo/lib  alpha.dart
-//  devNote:  No notes.
 //
 
 library alpha;
 
 String alphaMotto = 'Basic rules for building classes';
 
-///  NOTE abstract classes cant be created with new keyword.
+///  NOTE abstract classes instances can't be created with keyword: new .
 
 ///  Mess, when trying to extend OutBase.
 ///
@@ -199,9 +196,10 @@ abstract class BaseStruct {
   Map<String, String> say = {};
   String motto = '';
 
-  //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
-  String clause = ''; //  Combination of #LANG words in sentence.
-  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  ///  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
+  ///  Combination of #LANG words in sentence.
+  String clause = '';
+  ///  devMemo: PLAN: Two fields for to better shape outPut stuff in console.
   /// like:  ":DAWO-APP:";
   String seal = '';
   ///  or this emblem.

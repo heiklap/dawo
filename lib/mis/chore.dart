@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Chore for organizing work flow.
-///  dawo version:   0.7.0.  27.3.2022.
+///  dwv: version:   0.7.0.  27.3.2022.
 ///  * Sub-ordinate of Mission, with wide operative flow capabilities.
 ///  devState : 27 %  -   In  GitHub:   yes
 ///
@@ -16,9 +16,7 @@
 ///   ## *chore* became eventually its own, independent package, and it did fly
 ///   out of dawo 1915, with it's own wings. Here will be small version of it.
 ///   Chore is again growing big, but with different means.
-///
-///   hist: hkl  6.5.2014  0.0.1  dawo/lib  "w o r k  flow"  methods for dawo
-///
+///   dawo/lib  "w o r k  flow"  methods for dawo
 //
 
 ///  idea:   Place ALL  W O R K  procedures here.
@@ -61,7 +59,7 @@ int _flowServeCount = 0;
 ///  Chores that operate in common area, outside Mission class.
 List<BlanketChore> choreComL = [];
 
-///  TODO  devNote: ==   #chore, that is always in dawoApp
+///  TODO  devMemo: ==   #chore, that is always in dawoApp
 ///  So dawoApp uses chore to maintain it's work-projects.
 
 ///   Initializing of chore system. Update dev-class.
@@ -69,8 +67,8 @@ List<BlanketChore> choreComL = [];
 void initChoreSystem() {
   dev.devN
     ..add('Make COMMON  init-module to EVERY  lib part. ?')
-    ..add('This could be for NOTES like W O R K s to be done.');
-  //  devNote:
+    ..add('This could be for NOTE S like W O R K s to be done.');
+  //  devMemo:
   dev.admN.add(':INIT-CHORE: NO: for  big   W O R K -lists.');
   dev.innoN.add(':INIT-CHORE: :CHECK-IN: testing.');
   dev.howToN.add(':INIT-CHORE: :CHECK-IN: testing.');
@@ -90,9 +88,10 @@ class BlanketChore extends BaseStruct {
   String motto = 'chore handling small jobs as sub-ordinate of mission.';
 
   ///  Used in function calls to bring-in objects permanent String-values.
-  String clause = ''; //  Combination of #LANG words in sentence.
+  ///  Combination of #LANG words in sentence.
+  String clause = '';
 
-  ///  devNote: PLAN: Three fields for to better shape outPut stuff in console.
+  ///  devMemo: PLAN: Three fields for to better shape outPut stuff in console.
   ///  No usage
   String seal = '';
   ///  or this emblem.  like:  ":DAWO:APP:";
@@ -115,7 +114,7 @@ class BlanketChore extends BaseStruct {
   };
 
   ///  4 var to control connectors state, working-condition-state values.
-  ///  howTo Null  hklTry  static Map  or final
+  ///  howTo Null static Map  or final
   final Map<String, int> extra = {
     //  static Map<String, int> extra = {
     'init': 0,
@@ -390,7 +389,7 @@ class BlanketChore extends BaseStruct {
   Map<String, Map<String, Action>> decisionChainMM = {};
 
   ///  ***********************************************************************
-  ///  #Word 's for stream-like processes. What 3 words to use?
+  ///  #Word: 's for stream-like processes. What 3 words to use?
   ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
@@ -622,7 +621,7 @@ void _flowCOuter(String msg, bool p) {
 ///  Some elementary: "execute-in-every-user-command-if-flagged" ideas.
 ///  Sometimes these 11 functions are executed in EVERY occasion / keystroke..
 ///    * * *   so they ARE outside of Chore class  * * *
-///  PLAN   small checks, updates, msg:s, notes aso.
+///  PLAN   small checks, updates, msg:s, note s aso.
 ///  But only, if marked in   "flow - chart"
 ///  NOTE: ?  _flowCOuter DO NOT HAVE ACCESS TO inside-class-name variable.'
 ///  So it must be given in parameter. lol
@@ -701,7 +700,7 @@ void endChore(BlanketChore chr, var _act) {
 void choreEffort(String caller) {
   //  Add ability to choose between user-data in effort.
   eff.buildMissions('caller: choreEffort');
-  //  NOTE:  parameter
+  //  parameter
   eff.buildEffort(':chEf:');
   eff.makeAllLists(':chEf:');
 

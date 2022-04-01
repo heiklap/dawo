@@ -6,15 +6,14 @@
 ///  PLAN maybe:  Sending permanent active messages between objects
 ///  - Using some outside package, like: punch-hermes, or dch-signal
 ///
-/// * dawo version:   0.8.5.  29.3.2022.
+/// * dwv: version:   0.8.5.  29.3.2022.
 /// * devState : 2%    in GitHub : yes
-/// hist>  9.1.2018  Separated from dawoDev.
 //
 
 part of dawo_dev;
 
-///  NOTE: Messages might be something that demand immediately action.
-///  For more complicated cases of note-message-handling.
+///  NOTE:9 Messages might be something that demand immediately action.
+///  For more complicated cases of sig:  note-message-handling.
 class Envoy {
   ///  PLAN:  envoy should keep record of all "envoys" sent.
   var messageL = ['* * *  envoyMessages   * * *', '', ''];

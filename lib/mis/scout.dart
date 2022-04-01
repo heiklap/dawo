@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  scout lib with scout class.
-/// * dawo version:   0.7.0.  27.3.2022.  -  devState:  30%
+/// * dwv: version:   0.7.0.  27.3.2022.  -  devState:  30%
 /// * GitHub:.
 /// * Missions and Chores can use connector-services, from corporate-side
 /// * to join to Camp-Scout system, whereas corporate side can also use
@@ -20,8 +20,8 @@ class Scout {
   String name = '* Scout *';
   ///
   String motto = '* Join all together in camp and scout *';
-  ///
-  String clause = '* Consolidating Strength with others *'; //  Combination of #LANG words in sentence.
+  ///  Combination of #LANG words in sentence.
+  String clause = '* Consolidating Strength with others *';
 
   /// Language, that scout uses when connecting other objects (in con) .
   Map<String, String> say = {
@@ -50,7 +50,7 @@ class Scout {
 
   ///  Create some scout___ methods, #then: find some job for them.
   ///  Renamed to:  scoutXX
-  ///  devNote:  function, that OPENS way to use outer resources.
+  ///  Function, that OPENS way to use outer resources.
   ///  #scout.. system in 15% devState.  NEXT:
   bool init(int openCount, var openThis) {
     ///  use resource, equ class to get practical usable #things.
@@ -68,7 +68,7 @@ class Scout {
     return _initB;
   }     //     -----     init
 
-  /// devNote:  method, that OPENS scout things.
+  /// Method, that OPENS scout things.
   bool open(int openCount, var openThis) {
     _flowC('  -->-m-->  :scout:$name  scoutOpen  ', _pB);
     _flowC('  :scout:open:-info: Open data-tables & resolve queries.>>', _pB);
@@ -109,8 +109,7 @@ class Scout {
       '1-2 ': '-1:run  2:print-cf--',
       '3:  ': '- print:courier:Func.runtimeType-',
     };
-    //  hklTry:
-    //  List<String> courierL = boxServe.infoBox(courierM, 8, 35, 29);
+    ///
     List<String> courierL = [];
     courierL.addAll(boxServe.infoBox(courierM, 8, 35, 29));
     courierL.forEach(print);

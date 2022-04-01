@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  affair,  handling small jobs inside corporate.
-/// * dawo version:   0.6.0  26.3.2022  -.   devState:  5%
+/// * dwv: version:   0.6.0  26.3.2022  -.   devState:  5%
 /// * GitHub:  Yes  -  State:  schema
 /// * PLAN:  0.0.8  small upgrade when common methods are ready.
 //
@@ -13,7 +13,7 @@ part of corp;
 
 ///  conduct?  affair!!
 ///  Second or third alternative to operations, besides :corporate:
-///  NOTE:  Global operations.  Some dawo #operation could relay on these.
+///  Global operations.  Some dawo #operation could relay on these.
 ///  Order: #actor #sender #receiver #command #msg
 ///  Early development state, idea: 15%
 ///  This can be #sub-process, that normal rollOp uses. #Connector may give
@@ -55,8 +55,7 @@ class Affair extends CorpInterfaceBasis {
   Map<String, Action> actionM = {};
 
   ///  Other alternatives to main #actor.
-  ///
-  ///  NOTE  First record:  'FirstActor'
+  ///  First record:  'FirstActor'
   Map<String, Map<String, String>> placardMM = {
     'FirstActor': {
       'actor': 'first',
@@ -97,8 +96,8 @@ class Affair extends CorpInterfaceBasis {
   ///  Give objects ability to know route, that called it.
   var callChain;
 
-  ///  Usage   not used
-  ///  NOTE:  it is  MM
+  ///  Usage:   not used
+  ///  Parameter:  it is  MM
   ///  This is called:  placardMM['FirstActor']
   void initAffair(Map<String, String> _placardM) {
     print(' ***************  affair class-init  *********');

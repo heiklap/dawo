@@ -4,12 +4,11 @@
 ///  ##  Shower  -  presentation info and data screens.
 ///  New box_serve makes this better: makes only frames and keep clients data
 ///  in client side.  This file might eventually fade out.
-///  * dawo version:   0.3.0.  23.3.2022..  devState: 90%
+///  * dwv: version:   0.3.0.  23.3.2022..  devState: 90%
 ///  *      GitHub: yes.
 ///  * DONE  #deprecated deleted_ rows 300 - 350
 ///  * SCHEDULE might deserve it's own class.
 ///  * SCHEDULE: No hurry, 0.1.X
-// * Hist:hkl  3.11.2017  0.0.4  presentation tools for dawo
 //
 
 library shower;
@@ -68,7 +67,7 @@ class ScheduleBox {
     _matrix[0] =
         '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 0.8.5 -';
 
-    ///  Last row of matrix for range-10 marks; NOTE: _rc - 1
+    ///  Last row of matrix for range-10 marks; row = : _rc - 1
     _matrix[_rc - 1] =
         '---------10---------20---------30---------40---------50---------60---------70---------80---------90---------00---------10---------20---------30---------40---------50---------60---------70';
     //NO   _matrix.forEach(print);

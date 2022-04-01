@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// *
 /// *  Customer model class
-/// *  dawo version:   0.6.0    created:  26.3.2022
+/// *  dwv: version:   0.6.0    created:  26.3.2022
 /// *
 /// *  devState: 5%  PLAN: yes   SCHEDULE:  NO.
 //

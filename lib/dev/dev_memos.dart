@@ -2,17 +2,16 @@
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file.
 ///
-///  ##  devNote:s class
+///  ##  devMemo:class
 ///  Primary functionality:  Keep dev data.
-/// * dawo version:   0.8.5.  29.3.2022.
+/// * dwv: version:   0.9.5  31.3.2022.
 /// * devState : 25%    in GitHub : yes
-// hist>  9.1.2018  Separated from dawoApp.
 //
 
 part of dawo_dev;
 
 ///  Roll, next, calls this.
-void fillNotes() {
+void fillMemos() {
   dev.admN
     ..add('>>ADM:CHECK-IN  dawo_app-roll  >>')
     ..add(':Ar: = in App-Roll. Mark value number: #7: ')
@@ -35,8 +34,8 @@ void fillNotes() {
   ///
   dev.innoN
     ..add('full of extensions, macros, rules, and more.  bazel')
-    ..add(':Ar: Incremented #Number in new notes.')
-    ..add(':Ar: Clean older notes or archive them.')
+    ..add(':Ar: Incremented #Number in new memos.')
+    ..add(':Ar: Clean older memos or archive them.')
     ..add(':Ar: Not allowed messages if at least one Legal word.')
     ..add(':Ar: Words: ')
     ..add(':Ar: Words: ## To mark word for consideration as key.')
@@ -47,10 +46,10 @@ void fillNotes() {
   dev.howToN
     ..add(':Ar: howTo fetch data via HTTP.')
     ..add(':Ar: howTo   getfirst  changeable web pages.')
-    ..add(':Ar: howTo Gather devNotes by type.')
-    ..add(':Ar: howTo Classify devNotes by value.')
-    ..add(':Ar: howTo Add notes last in to list?')
-    ..add(':Ar: howTo Send #ALERT #ALL -note => to every List?');
+    ..add(':Ar: howTo Gather devMemos by type.')
+    ..add(':Ar: howTo Classify devMemos by value.')
+    ..add(':Ar: howTo Add memos last in to list?')
+    ..add(':Ar: howTo Send #ALERT #ALL -memo => to every List?');
   ///
   dev.secN
     ..add(':Ar: #Numbers for #Event:s and #Msg :s. ')
@@ -59,7 +58,7 @@ void fillNotes() {
     ..add(':Ar: #Encrypt :ion.')
     ..add(':Ar: #Force render methods to leave #Stamp or #Logo.')
     ..add(':Ar:  #Force test methods to leave #Stamp or #Logo.')
-    ..add(':Ar:  #Prevent deleting notes without notice.')
-    ..add(':Ar:  Keep #Track of extra iterators in notes.')
-    ..add(':Ar:  #encrypt ed notes not allowed.');
-}     //     -----     fillNotes
+    ..add(':Ar:  #Prevent deleting memos without notice.')
+    ..add(':Ar:  Keep #Track of extra iterators in memos.')
+    ..add(':Ar:  #encrypt ed memos not allowed.');
+}     //     -----     fillMemos

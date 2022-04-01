@@ -3,11 +3,10 @@
 ///  Bunch of simple functions, acting variously, mostly boolean conditions.
 ///  Including some funny logical-naming-errors, where name do not correspond to
 ///  functionality.  Seeking common, reusable functions.
-/// *  dawo version:   0.3.0  23.3.2022
+/// *  dwv: version:   0.3.0  23.3.2022
 /// *  devState:  50%    in gitHub:  YES  22.04.2015
 /// *  PLAN:  Total check for logic.
 //
-//  Hist:    hkl  15.5.2014  dawo/lib  0.0.1
 
 library aldente_func;
 
@@ -224,7 +223,7 @@ bool alDenteOne(var myConditionFunc, var yourConditionFunc, bool condition) {
 }
 
 ///  functions roll until condition is set (but no more than 3 times)
-///  TODO  teamAdm Function :  hkl   too complicated
+///  TODO  teamAdm Function : too complicated
 ///  logic not checked    lol
 bool alDenteThree(var fFunc, var sFunc, bool condition) {
   //  supposing; condition =   false at the beginning.
@@ -292,7 +291,7 @@ void isolateFuncTwo(bool condition) {
 ///  TODO  control:   catch the loops inside both functions
 ///  and make these run parallel / aSync  &   'long'  logic
 void alDenteLong(var firstFunction, var secondFunction, bool conduct) {
-  ///WORD:  conduct:    finish lang:    käytös, menettelytapa, hoito, johto
+  ///  WORD:  conduct:    finish lang:    käytös, menettelytapa, hoito, johto
   bool _conduct = conduct;
   num _rollCount = 0;
   do {

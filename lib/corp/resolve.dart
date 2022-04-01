@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  bind :  solving literal searches by customer (bind) wishes.
 ///  * find: memberM.placardM/clause / bindItem => response.bing.caller
-///  * dawo version:   0.6.0  26.3.2022
+///  * dwv: version:   0.6.0  26.3.2022
 ///  * GitHub:  https://github.com/heiklap/dawo/blob/master/lib/corp/resolve.dart
 ///  * devState: schema  5%  -  PLAN: no time.
 ///
@@ -45,7 +45,7 @@ class Resolve {
   ///  Definition, how Client requests are handled, preferences aso.
   var _rh; //  rule handle.
   var _rhC; //  rule handle, #Client
-  ///  Priority system in word-search.
+  ///  Priority system in word-search, Lang.
   var _phC; //  preference handle, #Client
   ///  Outside library that is used or clients own library.
   var _dl; //  handle to #LANG  maybe #dawolang
@@ -78,7 +78,7 @@ class Resolve {
   ///   to other objects.
   ///  TODO  Name for next 3 fields might be opTouche aso.
   ///  Solve one unambiguous textual find-decide problem.
-  ///  NOTE: might be separate Touche class.
+  ///  Class:touche   might be separate Touche class.
   String touch(String sender, String key, String source) {
     //  TODO problem
     return 'solved:toucheStr: ';
@@ -86,7 +86,7 @@ class Resolve {
 
   ///  Search big amount of #clay data for #customer:s key / order.
   ///  .. solve textual problems based on keywords / search in textual data
-  ///  NOTE: might be separate Solver class.
+  ///  Class:solver   might be separate Solver class.
   String solve(String sender, String key, String source) {
     //  TODO problem
     return 'solved: solveString';
@@ -104,7 +104,7 @@ class Resolve {
 
 } //  -----  Resolve class
 
-///  Instance, although I remember reserving #res word for something else.
+///  Instance, although I remember reserving WORD: #res for something else.
 Resolve resolve = Resolve();
 
 ///

@@ -98,6 +98,6 @@ void testRumba() {
 
   var rumba = new Rumba();
   rumba.dance(dawoApp);
-  dev.showNotes(':chore-test:');
+  dev.showMemos(':chore-test:');
   print('  ==<<==<<==== ch_chore test : testRumba done ==<<==<<==== ');
 }

@@ -4,7 +4,7 @@
 ///  #
 ///  # dawo clay dartlang_guide.
 ///  * presenting data for dawo-chore system, mostly Maps.
-//  dawo version:    0.8.0.   28.3.2022
+//  dwv: version:    0.8.0.   28.3.2022
 
 //  library learnDartlang;
 part of 'clay.dart';

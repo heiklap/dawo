@@ -3,11 +3,10 @@
 ///  ##  Effort : data-in / out - working frame for chore user.
 /// * ONLY  chore.dart should import this. 70% of user-activity is here.
 /// * User adds or changes his own data to effort Maps.
-/// * dawo version:      0.7.0.  27.3.2022.
+/// * dwv: version:      0.7.0.  27.3.2022.
 /// * NEXT version: Add SplayTreeSet,  and  LinkedHashSet
 /// * devState : 25%  -  PLAN: 008 : 30%
-///  devNote:  Collecting here habit / human-like objects.
-///  Hist: hkl  22.5.2014  0.0.1  dawo/lib => effort.dart
+///  devMemo:  Collecting here habit / human-like objects.
 //
 
 part of mis;
@@ -47,11 +46,12 @@ class Effort extends MisInterfaceBasis {
   ///  Initializing some Lists. No. Lists are more simple.
 //  LinkedHashSet<String> goalL = LinkedHashSet.from(['a', 'b', 'c']);
   ///  User-data to control and describe work with chore.
-  Map<String, String> goalM = Map(); //  No.    LinkedHashSet();
+  Map<String, String> goalM = Map();
   Map<String, String> planM = Map();
   Map<String, String> phaseM = Map();
   Map<String, String> teamActM = Map();
-  Map<String, String> tempoM = Map(); // adminNote   not nice name
+  // adminMemo
+  Map<String, String> tempoM = Map();
 
   ///  Om hand-written schema was also:
   Map<String, String> timeM = Map();

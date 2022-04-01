@@ -4,9 +4,9 @@
 ///
 ///  ##  dawoHist class
 ///  * Primary functionality:  Keep historic dev data.
-/// * dawo version:   0.8.5.  29.3.2022.
+/// * dwv: version:   0.8.5.  29.3.2022.
 /// * devState : 25%    in GitHub : yes
-/// hist>  9.1.2018  Separated from dawoApp.
+///
 //  V:  0.2.0  Only Format - DartFormat
 //  V:  0.3.0  Modify comments, style and clarity
 
@@ -24,9 +24,9 @@ class DawoHist implements BaseStruct {
   String motto = 'Keeping this stuff out of dawoApp';
 
   ///  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
-  ///  Combination of #LANG words in sentence.
+  ///  Combination of #LANG words in a sentence.
   String clause = '';
-  ///  devNote: PLAN: Two fields for to better shape outPut stuff in console.
+  ///  devMemo: PLAN: Two fields for to better shape outPut stuff in console.
   ///  like:  ":DAWO:HIST:";
   String seal = '';
   ///  or this emblem.
@@ -63,12 +63,12 @@ class DawoHist implements BaseStruct {
     //  'version': '0.0.3',
     'published': 'Yes, Pub',
 
-    ///  next-version-info might be useful for my different tests and devNote:s
+    ///  next-version-info might be useful for my different tests and devMemo:s
     'next version': '0.0.4. ~15.10.2017',
 
     'author': 'Heikki Lappalainen',
     'webPage': 'https://github.com/heiklap/dawo',
-    'started': '15.7.2013   hkl  ',
+    'started': '15.7.2013 ',
     'purpose': 'Education, Learning  '
   };     //     -----     dawo003
 
@@ -125,9 +125,9 @@ class DawoHist implements BaseStruct {
     //  TODO box  set min-max values
     //  :BOX:SW:  was 190
     //  unused::  final int _sw = 200; //  screen width, changed later =>
-    final int _rc = 37; //  row count
-    //  ???  Keep matrix here on callers side all the time
-    //  unused::  List<String> _dawoHistMatrix = new List(_rc);
+    //  row count
+    final int _rc = 37;
+    ///
     String boxHeader = ':dawoHist:box:';
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
@@ -157,7 +157,6 @@ class DawoHist implements BaseStruct {
   ///  Getting local variables; Actor and Buffer right.
   void flowC(String msg, bool p) {
     ///  call flow.fServe with #LOCAL variables
-    ///  :dawoHist:  is too long.
     flow.fServe(':d:Hist:', buf, msg, p);
   }     //     -----     flowC
 

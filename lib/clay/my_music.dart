@@ -4,7 +4,7 @@
 ///  # dawo clay  myMusic
 ///  * Presenting data for dawo musicMission -chore system in music area.
 ///  * Includes simple Map data, that may be presented by objects box-method.
-///  * dawo version:    0.8.0.   28.3.2022
+///  * dwv: version:    0.8.0.   28.3.2022
 
 //
 //  library myMusic;

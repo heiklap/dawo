@@ -6,10 +6,9 @@
 ///  using #LANG -specific commands to configure their proceedings.
 ///  using #dawolang package in path dependency
 ///  method String weightString(String _aS) checks #C messages
-///   dawo version:   0.6.0  26.3.2022  * devState : 18 %
+///   dwv: version:   0.6.0  26.3.2022  * devState : 18 %
 ///
 /// * devState: 30%
-/// * Hist: hkl  10.9.2017  0.0.1  dawo/lib  connector.dart
 /// #name:  connector ..is not nice. change to: ______ ??
 /// #unite-6  merge-0  mix-0  blend-0  pool-0    unify-0
 /// #name: placard : 1 !!
@@ -30,8 +29,7 @@
 //  * Find common interests, i've been here.. follow-me, give-take
 /// * In roll -> loop should be phase where :con:objects are checked.
 
-//  NOTE:
-//  devNote: tracking begins.
+//  devMemo: tracking begins.
 
 //  library connector;
 part of corp;
@@ -39,7 +37,7 @@ part of corp;
 ///  Buffering out-data ( #clayOut )
 StringBuffer connectorBuf = StringBuffer();
 
-///  This other motto is just for to get more visibility to word: connector.
+///  This other motto is just for to get more visibility to WORD: connector.
 String connectorMotto = 'connecting app, mission, chore; mediating them';
 
 ///  ***********************************************************************
@@ -128,14 +126,14 @@ class Connector extends BaseStruct {
   ///
   String motto = 'Give objects long, powerful extra hand.';
 
-  ///  devNote: IDEA: Fields for to better shape outPut stuff in console.
+  ///  devMemo: IDEA: Fields for to better shape outPut stuff in console.
   String seal = ":CONNECTOR:"; //  like:  ":CONNECTOR:";
   /// .. or this:  emblem can be used in _flowC
   String emblem = ':C:';
 
   //  Like: ":ALLOW X :LOW Y :ROLE Z :GOAL XX :OPEN YY
   ///  clause walks with objects in process call and carries list of words.
-  ///  Combination of #LANG words in sentence.
+  ///  Combination of #LANG WORD: in sentence.
   String clause = ":DO :HINT :FIND :AREA :JOIN :OPEN :RULE";
 
   ///
@@ -229,7 +227,7 @@ class Connector extends BaseStruct {
   }
 
   ///  Connector basic activity, keep list of Members / their operations.
-  ///  devNote: Or should it be something smaller? abstract class ModelPlacard?
+  ///  devMemo: Or should it be something smaller? abstract class ModelPlacard?
   List<Affair> opL = [];
 
   ///  List for #C information. Used for devBox reporting.
@@ -316,7 +314,7 @@ class Connector extends BaseStruct {
     ///  Using Analyzer class from dawolang. TODO: get clause from caller.
     String analyzeS = '';
 
-    ///  NOTE: this returns a String
+    ///  This returns a String
     analyzeS = d_lang.an.analyzeStrS(inMsg, d_lang.lb.wordList);
     List<String> analyzeL =
         boxServe.infoBox({':con:join:dl:an:': '$analyzeS'}, 18, 140, 15);
@@ -551,7 +549,7 @@ Connector connector = Connector('DawoAppConnector', 'Connection operations');
 ///  Would like to extend this from Connector: class, but it do not have
 ///  a none argument constructor.
 ///  ..  but Connector do not have  ..
-///  NOTE  howTo extend class that have constructor with arguments?
+///  howTo:class   extend class that have constructor with arguments?
 class Collector {
   String name;
   String info;

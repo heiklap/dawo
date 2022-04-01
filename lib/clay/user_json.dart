@@ -4,14 +4,12 @@
 ///  ##  dawo : data-in : user specific data in JSON format.
 ///  Learning to import JSON decoded / encoded data.
 ///  Eventually these are imported by server-client / DB system.
-///  * dawo version:    0.8.0.   28.3.2022:.    devState: 10%
+///  * dwv: version:    0.8.0.   28.3.2022:.    devState: 10%
 ///  *
 ///  * NEXT: 0.1.X  Personalize for different missions / search by #clause
 ///  * NEXT: 0.1.X   Data extracted from #chunk by caller name of #search.
 ///  * NEXT: 0.1.X  Object check if JSON / DB data is available.
-
-///  Hist: hkl  4.11.2017 dawo.0.0.4  dawo/lib/clay user_json.dart
-///
+//
 
 part of 'clay.dart';
 

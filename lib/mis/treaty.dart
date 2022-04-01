@@ -2,10 +2,9 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// ##  Treaty:  action-field for two missions; to say and bargain
 /// *
-/// * dawo version:   0.7.0.  27.3.2022.  -   devState: 40 %
+/// * dwv: version:   0.7.0.  27.3.2022.  -   devState: 40 %
 /// * GitHub:
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
-// * Hist:hkl  27.12.2017
 //  NEXT:
 //
 
@@ -87,7 +86,7 @@ class Treaty {
   /// Object that has placardM, say, and clause.
   //  Two Missions act here:
   //  1. Mission that is set in constructor, and is "master" here.
-  //  hklTry use  constructor: Mission(this.name, this.motto);
+  //  use  constructor: Mission(this.name, this.motto);
   Mission insider = Mission(':insider:treaty:Mission:', ':ITM:Motto:');
   //  Mission misInsideClass;
   /// 2. Mission, that is set in "week-day-bundle" functions, and acts like a guest.
@@ -98,8 +97,7 @@ class Treaty {
   BlanketChore inChore =
       BlanketChore('*nameBChore', '*masterBChore* ', '*infoBChore*');
 
-  ///  hkltry error  Constructor has 3fields
-  ///   BlanketChore(this.name, this.master, this.info)
+  ///  Constructor has 3 fields  BlanketChore(this.name, this.master, this.info)
   BlanketChore outChore =
       BlanketChore('*name outChore* ', '*master outChore* ', '* infoOutChore*');
 
@@ -129,7 +127,8 @@ class Treaty {
 
   ///  Init method to set box shapes and one field value.
   void _init(int rows, sw, String pM) {
-    day = msg.substring(0, msg.indexOf(' ')); //  First word.
+    //  Find first word.
+    day = msg.substring(0, msg.indexOf(' '));
     logM.putIfAbsent('Init: $name', () => '$msg in :daily:work:');
     // boxServe.init(16, 125, '_');
     print('    ---- $name    :dailyTreaty:method:init:');
@@ -186,7 +185,6 @@ class Treaty {
     //  Find if objects have same interests in say-map
     for (var x in insider.say.keys) {
       //  howTo NULL data toList from Map
-      //  hklTry:
       List<String> wordL = outsider.say[x]!.split(' ');
 
       print(':outsider:wordL:  $wordL    ');
@@ -283,8 +281,6 @@ class Treaty {
     print(insider.say['lang']);
     print(insider.motto);
     print(insider.clause);
-
-    //  hklTry:
 
     String _s2 = insider.say['lang'].toString();
     boxServe.aBox(2, 32, 1, 68, [':mis:lang:   $_s2']);

@@ -1,6 +1,6 @@
 /// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 /// is governed by a BSD-style license that can be found in the LICENSE file.
-///  dawo version:   0.3.0.  23.3.2022.
+///  dwv: version:   0.3.0.  23.3.2022.
 
 /*  NOTE: Pub
 By convention, implementation code is placed under lib/src. Code under lib/src

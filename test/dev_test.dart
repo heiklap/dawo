@@ -39,7 +39,7 @@ void main() {
 
   //  lol  you can put two commands in same row
   rumba.dance(dawoApp);
-  dev.showNotes(':dev_test.dart:');
+  dev.showMemos(':dev_test.dart:');
 
   print('------  testing dev class and variables::  done --------');
 }

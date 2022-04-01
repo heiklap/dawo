@@ -4,8 +4,8 @@
 /// * State: Just an long developed idea, in very early development state.
 /// * Usability: 1%  IDEA: Clear, but got no time to implement it.
 /// * work-scheduling system, got flag class from dawo_app.
-/// * dawo version:   0.3.0.  23.3.2022.  -  devState 5 %
-// - hist:  hkl  8.9.2017 created
+/// * dwv: version:   0.3.0.  23.3.2022.  -  devState 5 %
+//
 
 //
 library mill;
