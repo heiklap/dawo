@@ -1,14 +1,16 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source codeis governed by a BSD-style license
+// that can be found in the LICENSE file.
+///
 /// # Mill, fine-graded command / event scheduling system.
 /// * State: Just an long developed idea, in very early development state.
 /// * Usability: 1%  IDEA: Clear, but got no time to implement it.
 /// * work-scheduling system, got flag class from dawo_app.
-/// * dwv: version:   0.3.0.  23.3.2022.  -  devState 5 %
+/// * dwv: version:   0.9.6  1.4.2022  -  devState 5 %
 //
 
 //
-library mill;
+part of gear;
 
 ///  Buffer also outside class, for testing and adding visibility.
 StringBuffer millBuf = StringBuffer();
@@ -18,6 +20,7 @@ StringBuffer millBuf = StringBuffer();
 ///  Keeps track of the privileges and performance of the assignments.
 ///  Names might be:  millRoll  and millFlag
 
+///  Control flow structures.
 ///  Event ordering and scheduling system.
 class Mill {
   ///

@@ -14,15 +14,14 @@
 library dailyBundle;
 
 import 'package:dawo/dawo_app.dart';
-import 'package:dawo/shower.dart';
-import 'package:dawo/tools.dart';
 
 //  import 'package:dawo/mis/camp.dart';
 import 'package:dawo/mis/mis.dart';
 
 import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/corp/corp.dart';
-import 'package:dawo/src/box_serve.dart';
+import '../lib/tools/tools.dart';
+import '../lib/venue/venue.dart';
 
 //  Instance is not created here beginning from 12-2017  0.0.7+
 //  DawoApp dawoApp = new DawoApp(':daily:bundle:test:', 'By: :daily:bundle:test:');
@@ -498,7 +497,7 @@ class DailyAction {
 
     ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
     ///  NOTE: boxLayoutX  in boxServe library.
-    boxLayoutDap(dawoHist, ':dawoHist:daily:bundle:friday:');
+    //  TODO  0.9.6.  boxLayoutDap(dawoHist, ':dawoHist:daily:bundle:friday:');
     //  add connector or other stuff  stuff
   } //     -----     history
 

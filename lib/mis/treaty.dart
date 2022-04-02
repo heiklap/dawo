@@ -1,5 +1,6 @@
 // Copyright (c) 2018, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///
 /// ##  Treaty:  action-field for two missions; to say and bargain
 /// *
 /// * dwv: version:   0.7.0.  27.3.2022.  -   devState: 40 %
@@ -239,6 +240,10 @@ class Treaty {
       for (var x = 0; x < 8; x++) {
         if (x == _rand) {
           //  padRight(8, ' ')
+          //  bug: 2022.4.2  vers:  0.9.6.
+         //   RangeError (index): Invalid value: Valid value range is empty: 4
+         //  #0      List.[] (dart:core-patch/growable_array.dart:281:36)
+         //  #1      Treaty.auction (file:///C:/Users/Public/IdeaDart/dw/dawo/lib/mis/treaty.dart:243:32)
           String _sP = equ.resL[x].padRight(8, ' ');
           _sB.write(_sP);
         } else {

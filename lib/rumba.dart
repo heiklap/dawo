@@ -1,9 +1,10 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///
 ///  ##  Rumba : Loop, that runs dawoApp and some other stuff.
 ///  Runs it's loops forced, only once, without possibility of user action.
 ///  * Primary functionality:  loop, inside it: dawoApp
-///  * dwv: version:   0.3.0.  23.3.2022.   functionality: 70%
+///  * dwv: version:   0.9.6  1.4.2022   functionality: 70%
 ///  * in GitHub :  yes  NEXT: parameters for output?
 ///  * NEXT: bool values, that stop loops #FromInside dawo-app.
 ///  * If program parts have a certain amount of 'self consciousness' or other
@@ -16,8 +17,8 @@ library rumba;
 
 import 'alpha/alpha.dart';
 import 'beta/beta.dart';
-import 'shower.dart';
-import 'tools.dart';
+import 'venue/venue.dart';
+import 'tools/tools.dart';
 
 import 'corp/corp.dart';
 import 'dev/dawo_dev.dart';

@@ -5,17 +5,16 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and memos.
 ///  (Team - for many developers working in same project)
-/// * dwv: version:   0.8.5.  29.3.2022.  -   devState: 16 %
-/// * GitHub: yes  29.11.2014
+///  * dwv: version:   0.9.6.  1.4.2022.  -   devState: 16 %
+///  * GitHub: yes  29.11.2014
 //
 
 library dawo_dev;
 
-import '../alpha/alpha.dart';
-import '../shower.dart';
-import '../tools.dart';
+import '../venue/venue.dart';
+import '../tools/tools.dart';
 
-import '../src/box_serve.dart';
+
 import '../beta/beta.dart';
 
 part 'aide.dart';
@@ -121,7 +120,7 @@ class Dev {
   Map<String, String> plugins = {
     'Completed: Maybe feb 2019.': 'No pressure.',
     'Plans for 2018  ': 'Value, Effort, Done',
-    '1.0.0 Complete Web app. Maybe Angular.': 'V:9 E:9 D:0',
+    '0.9.6 Complete Web app. Maybe Angular.': 'V:9 E:9 D:0',
     '0.9.0 Mill, elementary presentaton.': 'V:9 E:8 D:0',
     '0.8.0 Test cleaning, benchmarks, overall celaning': 'V:5 E:4 D:0',
     '0.7.0 Clay data and Chores interconnecting.': 'V:5 E:6 D:0',

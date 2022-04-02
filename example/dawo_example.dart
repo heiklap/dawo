@@ -6,29 +6,34 @@
 ///  * Find:  :con: :connector: :opCom:  :corporate:
 ///  * DONE:  make this inside class
 
-import 'package:dawo/dawo.dart';
+
 
 ///  watch difference, when importing dawo/dawo_src.dart
 ///  dawo_src only #imports all dawo files except dawo.dart
 ///  dawo.dart exports: export 'package:dawo/dawo_src.dart';
 
 ///
+///   hklTry  NOT    import 'package:dawo/dawo.dart';
 
 import '../lib/alpha/alpha.dart';
 import '../lib/beta/beta.dart';
-import 'package:dawo/dawo_app.dart';
-import 'package:dawo/shower.dart';
-import 'package:dawo/rumba.dart';
-import 'package:dawo/tools.dart';
-
-//  import 'package:dawo/mis/camp.dart';
-import 'package:dawo/mis/mis.dart';
 
 
-import 'package:dawo/corp/corp.dart';
-import 'package:dawo/dev/dawo_dev.dart';
-import 'package:dawo/src/glb.dart';
-import 'package:dawo/src/box_serve.dart';
+import '../lib//corp/corp.dart';
+import '../lib//dev/dawo_dev.dart';
+//  import '../lib/mis/camp.dart';
+
+import '../lib//mis/mis.dart';
+import '../lib/tools/tools.dart';
+import '../lib/venue/venue.dart';
+
+
+import '../lib//dawo_app.dart';
+import '../lib/rumba.dart';
+
+import '../lib/dawo_src.dart';
+import '../lib/src/glb.dart';
+
 
 //  Unused package is marked with grey, and #warning.
 //  import 'package:dawo/mill.dart';
@@ -133,7 +138,8 @@ class ExPlay {
     boxServe.construct(':dHst:dAc:tmpl:', ':dawoHist:template:');
 
     ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
-    boxLayoutDap(dawoHist, ':dawoHist:template:');
+    //  TODO  0.9.6.  boxLayoutDap(dawoHist, ':dawoHist:template:');
+
     boxServe.show(':dHst:', 'print', 3);
     boxServe.done(':dHst:');
   } //     -----      boxHistTemplate

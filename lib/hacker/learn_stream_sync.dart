@@ -1,8 +1,12 @@
+// Copyright (c) 2018, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+//
 ///  ##  Dart Streams, example and learning-code.
 ///  This do not bring any value to dawoApp.  Just sample code-snippets.
 ///  NOTE:  Only some of these streams are executed, when called in row,
 ///  but however, they work.
-/// * dwv: version:   0.3.0  23.3.2022  -  in gitHub : yes
+/// * dwv: version:   0.9.6  1.4.2022  -  in gitHub : yes
 /// * READY-STATE:    for 0.0.7 : 0%
 /// *  NEXT:  modify these, connect to classes and lists. use stream_channel pack
 ///   Examples pasted from:   https://www.dartlang.org/docs/tutorials/streams/
@@ -10,9 +14,8 @@
 ///  info with streams to dawo-staff
 //
 
-library learn_stream_sync;
-
-import 'dart:async';
+//  library learn_stream_sync;
+part of hack;
 
 ///  getters..
 num dawLibStreamReadiness = 90; // readiness for version 0.0.1
@@ -34,7 +37,7 @@ Future foo() async {
 }
 */
 
-///  try to make it a class
+///  Made it a class
 class LearnStreamSync {
   ///  ugly hack: list here
   var letterList = ['a', 'b', 'c']; //  used here
@@ -59,7 +62,7 @@ class LearnStreamSync {
   void presentStreamListen() {}
 
   ///  ..
-///  TODO  aSync stream   is there something special in "superStream"   ??
+  ///  TODO  aSync stream   is there something special in "superStream"   ??
   void presentSuperStream(var streamData, var streamListen) {
 //  var data = streamData; // some sample data
     Stream stream = Stream.fromIterable(streamData); // create the stream
@@ -171,8 +174,7 @@ class LearnStreamSync {
     thisEveningStream.toString();
 
     /// define a stream transformer
-    var transformer =
-        StreamTransformer.fromHandlers(handleData: (value, sink) {
+    var transformer = StreamTransformer.fromHandlers(handleData: (value, sink) {
       // create two new values from the original value
       //  The method "add" is not defined for method void.
       //  sink.add("Message: $value").add("Body: $value");
@@ -193,8 +195,7 @@ class LearnStreamSync {
     //** AWAY       .listen((value) => print("listen: $value"));
   } //     -----     presentStreamTransform
 
-
-///  howTo:html:bin   no io-operations allowed in HTML
+  ///  howTo:html:bin   no io-operations allowed in HTML
   void presentFileStream() {
 /* ERROR   The class 'File' does not have a default constructor
   File file = new File("some_file.txt");

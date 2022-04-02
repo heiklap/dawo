@@ -9,8 +9,10 @@
 library glb;
 
 //  for box_serve:
-import 'box_serve.dart';
-import '../tools.dart';
+//  NO  import '../venue/box_serve.dart';
+//  for box-serve
+import '../venue/venue.dart';
+import '../tools/tools.dart';
 
 ///  Global, everybody to use variables and constants.
 class GlobalClass {

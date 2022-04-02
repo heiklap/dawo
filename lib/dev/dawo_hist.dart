@@ -15,7 +15,8 @@ part of dawo_dev;
 ///  Keeping historical aso. info about dawo.
 ///  Just testing: implements, here.
 ///  Class DawoHist keeps some hist & dev info and statistics of dawo app.
-class DawoHist implements BaseStruct {
+// CAN NOT IMPLEMENT  class DawoHist implements BaseStruct {
+class DawoHist {
   ///
   String name = 'dawoHist';
   String info = 'Historical and old stuff of dawo.';

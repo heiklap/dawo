@@ -1,8 +1,12 @@
+// Copyright (c) 2018, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+//
 ///  This lib do not participate to dawoApp: here are only sample code-snippets.
 ///  Some useful copy-paste stuff for learning simple functions.
 ///  GOAL: find common, reusable elements for control-flow, and develop
 ///  names, and ideas.  In GitHub, for to be able to modify while on-The-Road.
-///  * dwv: version:   0.3.0  23.3.2022
+///  * dwv: version:   0.9.6   1.4.2022
 ///  * devState%  60%  -   in gitHub:   yes
 ///  * This serves as example:  What can you develop from these ideas..?
 ///  *  WORD:  batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
@@ -25,127 +29,131 @@ var shouts2 = messages.where((m) {
 }).toList();
   */
 
-library bat_loop;
+//  library bat_loop;
+part of hack;
 
 //  example: howTo use getters to collect values from searate files
 //  xxxReadiness :  getters in dawo_src.dart collects sum of these variables
 final num batLoopReadiness = 90; // for 0.0.1 version
 
-void doLine(String msg) {
-  print('----------------------------------------' + msg);
-}
+//  Test: errors, when BatLoop is a blc class?  _____ x
+//  class BatLoopClass {  }     //     -----     blc BatLoopClass
+class BatLoopClass {
+  void doLine(String msg) {
+    print('----------------------------------------' + msg);
+  }
 
-///
-void doBatLine(String msg) {
-  print('------------------ Batman ----------------------' + msg);
-}
+  ///
+  void doBatLine(String msg) {
+    print('------------------ Batman ----------------------' + msg);
+  }
 
-/// TODO  teamDev  Untested function, NOT-READY
-/// TODO  teamNext  returns, when joker returns false and others are true
-bool batFight(var batman, var robin, var joker, bool condition) {
-  batman();
-  robin();
-  joker();
-  num _loopCount = 0;
-  num _loopMax = 3; //  backdoor
+  /// TODO  teamDev  Untested function, NOT-READY
+  /// TODO  teamNext  returns, when joker returns false and others are true
+  bool batFight(var batman, var robin, var joker, bool condition) {
+    batman();
+    robin();
+    joker();
+    num _loopCount = 0;
+    num _loopMax = 3; //  backdoor
 //TODO  control
-  bool _thisCondition = condition;
-  do {
-    _loopCount++;
-    if (_loopCount == _loopMax) (_thisCondition = true); // backdoor
-    if (batman() == false) {
-      _thisCondition == false;
-    } else if (robin() == false) {
-      _thisCondition == false;
-    } else if (joker() == false) {
-      _thisCondition == true;
-    } else {
-      _thisCondition == true;
-    }
-  } while (!_thisCondition);
-  //TODO  teamNext    isolateFuncOne()     // roll inside isolate
-  //    isolateFuncTwo()
-  return _thisCondition;
-}
+    bool _thisCondition = condition;
+    do {
+      _loopCount++;
+      if (_loopCount == _loopMax) (_thisCondition = true); // backdoor
+      if (batman() == false) {
+        _thisCondition == false;
+      } else if (robin() == false) {
+        _thisCondition == false;
+      } else if (joker() == false) {
+        _thisCondition == true;
+      } else {
+        _thisCondition == true;
+      }
+    } while (!_thisCondition);
+    //TODO  teamNext    isolateFuncOne()     // roll inside isolate
+    //    isolateFuncTwo()
+    return _thisCondition;
+  }
 
-/// TODO  teamNext  PLAN: execute 3 of functions X times.. or X  DISTANCE.
-void batRide(
-    var batman, var robin, var joker, num batNum, num robinNum, numJokerNum) {
-  batman();
-  robin();
-  joker();
-  print('.. coming soon:    batRide gives nr of rides to everyone');
-}
+  /// TODO  teamNext  PLAN: execute 3 of functions X times.. or X  DISTANCE.
+  void batRide(
+      var batman, var robin, var joker, num batNum, num robinNum, numJokerNum) {
+    batman();
+    robin();
+    joker();
+    print('.. coming soon:    batRide gives nr of rides to everyone');
+  }
 
 //TODO  teamDev :  ??... what was this meant to do...??
-///  Maybe some class, which includes these 3 methods.
-///  Mobile must be...   but what would it do ?
-void batMobile(var batman, var robin, var joker) {
-  batman();
-  robin();
-  joker();
-  print('----------  batMobile might say no to 3.  Joker');
-}
+  ///  Maybe some class, which includes these 3 methods.
+  ///  Mobile must be...   but what would it do ?
+  void batMobile(var batman, var robin, var joker) {
+    batman();
+    robin();
+    joker();
+    print('----------  batMobile might say no to 3.  Joker');
+  }
 
-///  :(
-String batMail() {
-  String sender = 'Wayne Enterprise';
-  return 'Greetings from Bstmail!  $sender';
-}
+  ///  :(
+  String batMail() {
+    String sender = 'Wayne Enterprise';
+    return 'Greetings from Bstmail!  $sender';
+  }
 
-///  PLAN:  maybe some base-class.. and these three work inside it
-///  MAYBE:  using dependency injection so plant 3 in one
-void batHome(var batman, var robin, var joker) {
-  batman();
-  robin();
-  joker();
-  print('----------  batHome..  no plans for it now..      ');
-}
+  ///  PLAN:  maybe some base-class.. and these three work inside it
+  ///  MAYBE:  using dependency injection so plant 3 in one
+  void batHome(var batman, var robin, var joker) {
+    batman();
+    robin();
+    joker();
+    print('----------  batHome..  no plans for it now..      ');
+  }
 
-///  PLAN:  exception in output.. joker wins.. maybe..
-void joker(var batman, var robin, var joker) {
-  batman();
-  robin();
-  joker();
-}
+  ///  PLAN:  exception in output.. joker wins.. maybe..
+  void joker(var batman, var robin, var joker) {
+    batman();
+    robin();
+    joker();
+  }
 
-///  Totals sums of 3 functions, WHICH RETURN num values.
-num batCount(var numX, var numY, var numZ) {
-  num _total = 0;
-  num _batReturn = 0;
-  _batReturn = numX();
+  ///  Totals sums of 3 functions, WHICH RETURN num values.
+  num batCount(var numX, var numY, var numZ) {
+    num _total = 0;
+    num _batReturn = 0;
+    _batReturn = numX();
 
-  num _robinReturn = 0;
-  _robinReturn = numY();
+    num _robinReturn = 0;
+    _robinReturn = numY();
 
-  num _jokerReturn = 0;
-  _jokerReturn = numZ();
-  _total = (_total + _batReturn + _robinReturn + _jokerReturn);
-  print(_total.toString());
-  return _total;
-}
+    num _jokerReturn = 0;
+    _jokerReturn = numZ();
+    _total = (_total + _batReturn + _robinReturn + _jokerReturn);
+    print(_total.toString());
+    return _total;
+  }
 
-///  Totals sums of 3 functions, WHICH RETURN num value. (simple)
+  ///  Totals sums of 3 functions, WHICH RETURN num value. (simple)
 // you can not call this with values : print(batTotal(3,4,5));
-num batTotal(var batman, var robin, var joker) {
-  //  num total = 0;        //  Future plans..?
-  //  num batReturn = batman();
-  //  num robinReturn = robin();
-  //  num jokerReturn = joker();
-  //  total = (total + batReturn + robinReturn + jokerReturn);
-  return (batman() + robin() + joker());
-}
+  num batTotal(var batman, var robin, var joker) {
+    //  num total = 0;        //  Future plans..?
+    //  num batReturn = batman();
+    //  num robinReturn = robin();
+    //  num jokerReturn = joker();
+    //  total = (total + batReturn + robinReturn + jokerReturn);
+    return (batman() + robin() + joker());
+  }
 
-///   Roll 3 functions until everyone returns true
+  ///   Roll 3 functions until everyone returns true
 //TODO  teamDev     should be backdoor here.. to avoid deadLock
 //TODO  control     NOT-READY   make necessary loops here
-void rollTrue(var batman, var robin, var joker) {
-  batman(); // roll until everybody is true
-  robin();
-  joker();
-  print(' .. missing necessary loops for now on..      ');
-  print(' should be backdoor here.. to avoid deadLock');
-}
+  void rollTrue(var batman, var robin, var joker) {
+    batman(); // roll until everybody is true
+    robin();
+    joker();
+    print(' .. missing necessary loops for now on..      ');
+    print(' should be backdoor here.. to avoid deadLock');
+  }
 
 /*
   if {
@@ -157,35 +165,41 @@ void rollTrue(var batman, var robin, var joker) {
    */
 
 //TODO  Functions --------       Functions     ----------
-///  three functions are rolled until ALL THREE return true
+  ///  three functions are rolled until ALL THREE return true
 
-/// TODO  Functions ..something clever planned here... suppose, but what?
-bool trueBat(var bat, var robin, var joker, bool condition) {
-  bool _thisCondition = condition;
-  do {
-    if (bat() == false) {
-      condition == false;
-    } else if (robin() == false) {
-      condition == false;
-    } else if (joker() == false) {
-      condition == false;
-    } else {
-      condition == true;
-    }
-  } while (!condition);
-  //    isolateFuncOne()     // roll inside isolate
-  //    isolateFuncTwo()
-  return _thisCondition;
-}
+  /// TODO  Functions ..something clever planned here... suppose, but what?
+  bool trueBat(var bat, var robin, var joker, bool condition) {
+    bool _thisCondition = condition;
+    do {
+      if (bat() == false) {
+        condition == false;
+      } else if (robin() == false) {
+        condition == false;
+      } else if (joker() == false) {
+        condition == false;
+      } else {
+        condition == true;
+      }
+    } while (!condition);
+    //    isolateFuncOne()     // roll inside isolate
+    //    isolateFuncTwo()
+    return _thisCondition;
+  }
 
-///   presents info about batLoop functions: batLoopInfo
-void batLoopInfo() {
-  doLine('info');
-  print('batLoop.dart,  grazy collection of loop structures');
-  print('examples:  https://www.dartlang.org/dart-tips/dart-tips-ep-8.html ');
-  print('USAGE: use this as fast memory cards or templates..');
-  doLine('info end');
-}
+  ///   presents info about batLoop functions: batLoopInfo
+  void batLoopInfo() {
+    doLine('info');
+    print('batLoop.dart,  grazy collection of loop structures');
+    print('examples:  https://www.dartlang.org/dart-tips/dart-tips-ep-8.html ');
+    print('USAGE: use this as fast memory cards or templates..');
+    doLine('info end');
+  }
+
+//  Test: errors, when BatLoop is a blc class?  _____ x
+//  class BatLoopClass {  }     //     -----     blc BatLoopClass
+} //     -----     blc BatLoopClass
+
+BatLoopClass blc = BatLoopClass();
 
 /// TODO  teamNext  class  :  NOT-READY  not much use yet to BatLoop class
 ///  but however...   of course here must be class for this..
@@ -365,19 +379,19 @@ void renderBatLoop() {
 void batLooperTest() {
   BatLooper batLooper = BatLooper();
   // batLooper.rainLoop();
-  doLine('rain loop no exists..  ');
+  blc.doLine('rain loop no exists..  ');
 
 //TODO  Functions   Class   these are not yet inside class.
   // batLooper.isBoolLoop();
   isBoolLoop();
-  doLine('is bool loop');
+  blc.doLine('is bool loop');
 
   //batLooper.oneRowIf();
   oneRowIf();
-  doLine('one row if');
+  blc.doLine('one row if');
 
   batLooper.commandLoop();
-  doLine('command loop');
+  blc.doLine('command loop');
 }
 
 ///  you can test moving all these functions inside a class:

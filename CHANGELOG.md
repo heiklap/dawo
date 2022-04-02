@@ -1,4 +1,6 @@
 # Changelog
+## 1.0.0
+ - New library & class grouping.
 ## 0.1.0
  - Migrating to null safety.
 ## 0.0.8

@@ -1,15 +1,17 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///
 ///  app_chore_play.dart   version:  0.0.6.  27.11.2017
-//  hist:  7.9.2017
+///   hist:  7.9.2017
+//
 
 import 'package:dawo/dawo_app.dart';
 import 'package:dawo/rumba.dart';
 import 'package:dawo/dev/dawo_dev.dart';
-import 'package:dawo/mill.dart';
+import 'package:dawo/gear/gear.dart';
 import 'package:dawo/mis/mis.dart';
 
-import 'package:dawo/tools.dart';
+import '../lib/tools/tools.dart';
 
 //  creating instances of classes in upper level
 

@@ -4,28 +4,14 @@
 ///  ##  Shower  -  presentation info and data screens.
 ///  New box_serve makes this better: makes only frames and keep clients data
 ///  in client side.  This file might eventually fade out.
-///  * dwv: version:   0.3.0.  23.3.2022..  devState: 90%
+///  * dwv: version:   0.9.6.  1.4.2022.  devState: 90%
 ///  *      GitHub: yes.
 ///  * DONE  #deprecated deleted_ rows 300 - 350
 ///  * SCHEDULE might deserve it's own class.
 ///  * SCHEDULE: No hurry, 0.1.X
 //
 
-library shower;
-
-//  import 'beta.dart';
-import 'dawo_app.dart';
-import 'tools.dart';
-
-//  import 'corp/connector.dart';
-//  import 'corp/corporate.dart';
-
-import 'mis/mis.dart';
-
-//  import 'corp/bind.dart';
-import 'dart:math';
-
-part 'src/dev_box.dart';
+part of venue;
 
 ///  Made this to be not a function, but a class 16.11.2017
 ///  Data-table of outside resources grouped in time.  Equipment-class. equ
@@ -42,8 +28,10 @@ class ScheduleBox {
   */
   ///  screen width
   int _sw = 195;
+
   ///  row count
   static int _rc = 40;
+
   ///  Create empty-String list with counted items
   List<String> _matrix = List.filled(_rc, '');
   int _colPos = 100;
@@ -55,6 +43,7 @@ class ScheduleBox {
     equ.init(':M:scheduleBox');
     _resAllocL.addAll(equ.allocate(36, 40)); //  width var not used yet.
   }
+
   ///
   void build(String _caller) {
     for (var z = 1; z < _matrix.length; z++) {
@@ -78,7 +67,7 @@ class ScheduleBox {
     void anchorBox(int _r, int _c, _items, _w, List<String> __l) {
       tl.boxInList(_r, _c, _items, _w, __l, _matrix);
       //NO #print:  print(_matrix);
-    }     //     -----      anchorBox
+    } //     -----      anchorBox
 
     ///  Marks left of console screen to put table in convenient place for to see.
     void eyeMark14() {
@@ -101,14 +90,15 @@ class ScheduleBox {
     //  Usable resources: toolsActiveM, toolsSpeedM,status
     eyeMark14(); //  mark 'peg' to put screen table to screen.
   } //  -----  build
+
   ///
   void roll(String _caller) {
     init();
     build(_caller);
     _matrix.forEach(print);
-  }     //     -----     roll
+  } //     -----     roll
 
-}      //     -----     class ScheduleBox
+} //     -----     class ScheduleBox
 
 ///  Create instance with constructor
 ScheduleBox scheduleBox = ScheduleBox();
@@ -167,7 +157,7 @@ List<String> highValue(List<Map<String, String>> _inlM, int _c, int _w) {
   print('returning list:: n-values:  $_c ');
   _retLTake.forEach(print);
   return _retLTake;
-}     //     -----     highValue
+} //     -----     highValue
 
 ///  Gets some small data from effortLM based on parameters.
 List<String> effortTable(
@@ -249,7 +239,7 @@ List<String> effortTable(
   print(_retL);
   print('------------------------ effortTable done-----------------------');
   return _retL;
-}      //     -----     effortTable
+} //     -----     effortTable
 
 ///  NO!!!  Testing if we can #deprecated this
 ///  Screen-sized matrix pierced with staggered list elements.
@@ -288,7 +278,7 @@ List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
         '.--------------------------------'); //TODO  Make something more visible and useful.
   } //  -----------------    All incoming lists.3
   return _ol;
-}      //     -----     iterableDiagonal
+} //     -----     iterableDiagonal
 
 ///  NO success::  No usages??  Trying to comment this out!!
 ///  List and Map versions of this method
@@ -339,6 +329,6 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
   _ol.add(emptyLine);
   _ol.add(botLine);
   return _ol; //  ---------- return type:   List<String>
-}     //     -----     iterableDiagonalM
+} //     -----     iterableDiagonalM
 
 //

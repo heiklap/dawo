@@ -209,7 +209,8 @@ abstract class BaseStruct {
   String indent = '';
   ///  Object that owns this.
   String master = '';
-
+  //  yes / no   ..  printing now.
+  bool _pB = true;
   StringBuffer buf = StringBuffer();
 
   ///  4 var to control connectors state, working-condition-state values.
@@ -227,7 +228,10 @@ abstract class BaseStruct {
 
   ///  Method for setting class field values.
   ///  TODO  add parameters
-  void init();
+  void init(){
+    //  to mark print-state used
+    _pB;
+  }
 
   ///  Method for setting class in working condition.
   void build(String _emblem, String _master);

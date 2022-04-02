@@ -1,9 +1,10 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///
 ///  ##  Sample file made by Dart.  "Home of dawo libraries."
 /// * Badly treated and would deserve more love than I have to give.
 /// * Might serve as a collector or central for it's sub-libraries.
-/// * dwv: version:   0.4.0.  25.3.2022.  devState : 20 %
+/// * dwv: version:   0.9.6  1.4.2022  devState : 20 %
 /// *
 //
 
@@ -15,13 +16,14 @@ library dawo_src; //  naming this to _src...
 
 import 'clay/clay.dart';
 
-import 'code_snippets/aldente_func.dart';
-import 'code_snippets/bat_loop.dart';
-import 'code_snippets/learn_stream_sync.dart';
+import 'package:dawo/hacker/hack.dart';
+//  import 'code_snippets/aldente_func.dart';
+//  import 'code_snippets/bat_loop.dart';
+//  import 'code_snippets/learn_stream_sync.dart';
 
 import 'beta/beta.dart';
-import 'mill.dart';
-import 'tools.dart';
+import 'gear/gear.dart';
+import 'tools/tools.dart';
 import 'dawo_app.dart';
 
 import 'dev/dawo_dev.dart';
@@ -51,7 +53,8 @@ String missionError = 'Yes there is mission error';
 
 //  Using getters to collect sums of variables from dawo-part files.
 num get dawoReadiness =>
-    (aldenteFuncReadiness +
+    ///  adf  in hack library
+    (    adf.aldenteFuncReadiness +
         batLoopReadiness +
         betaReadiness +
         effortReadiness +
@@ -65,7 +68,7 @@ num get dawoReadiness =>
 
 ///  ---------------------     initialization at the beginning
 //  TODO  teamInno: Can it be done?:  special initialization process at the beginning
-num get dawoInit => aldenteFuncInit();
+num get dawoInit => adf.aldenteFuncInit();
 
 ///  High-level function to get Map data.
 Map getClay(String _mapS) {

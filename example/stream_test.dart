@@ -6,7 +6,8 @@
 /// simple code example using them by; Gitter Jacob MacDonald
 /// https://gist.github.com/jakemac53/68d006b31dd1d62e0109fbe04bab226b
 
-import 'package:dawo/code_snippets/learn_stream_sync.dart';
+//  import 'package:dawo/code_snippets/learn_stream_sync.dart';
+import'package:dawo/hacker/hack.dart';
 import 'package:dawo/dev/dawo_dev.dart';
 
 ///  create instance of DevTest class

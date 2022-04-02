@@ -2,11 +2,11 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dev_box  -  presentation in 2-3-4 column boxes.
 ///
-///  * dwv: version:   0.3.0.  23.3.2022.  devState: 90%
+///  * dwv: version:   0.9.6.  1.4.2022.  devState: 90%
 ///  *      GitHub: yes.
 //
 
-part of shower;
+part of venue;
 
 //  TODO :  21 matches,  add one more to make it even count.
 
@@ -224,4 +224,4 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
 
   devBoxBuild(); //  Call build-function.
   return _retBuf;
-}      //     -----     devBox
+} //     -----     devBox

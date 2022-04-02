@@ -1,5 +1,6 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.

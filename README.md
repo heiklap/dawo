@@ -1,43 +1,38 @@
-# dawo 0.9.5
+# dawo 0.9.6
 
-    
 https://pub.dartlang.org/packages/dawo
 
-Fixed health suggestions and formatting issues and some small changes. 
-Dawo is beginner Dart programmers project to learn Dart by developing a glorious package.
+Beginner Dart programmers project to learn Dart by developing a glorious package.
 - Complicated and copious  spectrum of classes, functions and methods sets creator and user to situation where must 
 take challenging effort to manage and exploit all the features. Here is plenty of room for imagination and ideas. For
 beginner programmes this is one way to simulate real-world development stress.
 - Latest code in GitHub: https://github.com/heiklap/dawo
 - Read: /doc/hist_versions.txt in gitHub to see full changes to this, and coming versions.
 - Blog: http://dawopack.blogspot.fi/search/label/dawo 
-- Dependencies:  Dawo is using my other package: dawolang: 0.0.1, for word recognition in connector.
+- Dep: Dawo uses my other pack: dawolang: 1.0.0, for word recognition in connector.
 ## Usage
     // Mission Class has wide access to data, since they have instances of
     // Chore classes inside them, in choresL : List<CommmonChore>   
     // Example files here rolls only once, without loops, and output their data in console.
-    // To run dawoApp in rumba demands two imports:
     import 'package:dawo/rumba.dart';
     import 'package:dawo/dawo_app.dart';
-    ///  Instance of dawoApp is already created inside package.
-    dawoApp.name = 'Play-rumba:dawoApp';
-    dawoApp.motto = 'By: dawo_example: dawoApp rolls missioms');
     //  or using init:
     dawoApp.init(':dawpApp:daily:bundle:', 'By: :daily:bundle:test:');
-  
     var rumba = new Rumba();
-
     // This returns in addition a StringBuffer, that is not used here.
     rumba.dance(dawoApp);
-    // Example apps presents output-data on windows console in flow, or in two kind of boxes. 
-    
+    // Example apps presents output-data on windows console in flow, or in two kind of boxes.
+
+     ///  Instance of dawoApp is already created inside package.
+     dawoApp.name = 'Play-rumba:dawoApp';
+     dawoApp.motto = 'By: dawo_example: dawoApp rolls missioms');
+
 ### Packages shape
     Purpose and direction of this package: do one clearly restricted thing and do it well.
     Not commercial program; using promos, demos to imitate realWorld functionality.
     Extra functionality is done by plugins that connect to other packages.
 
 ### Brainstorming
-
  Get people together, let they present ideas, collect best ideas to libraries and 
  group them meaningfully.
  Start building first new classes, but keep your mind open for intuitive solutions. 
@@ -71,6 +66,7 @@ beginner programmes this is one way to simulate real-world development stress.
  0.0.8  Fixed health suggestions and additional 21 files with analysis or formatting issues.
  0.1.0  Migrating to null safety.
  0.2.0 - 0.9.0  Series of cleaning, saved in gitHub
+ 0.9.6  New library & class grouping.
 
 ## Files;
 ### code_snippets, learn / copy-paste stuff:

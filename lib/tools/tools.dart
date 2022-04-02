@@ -1,16 +1,18 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///
 ///  ##  Helper tools, like: longestItemInList() and  changeLetter(String..)
 ///  Mostly String and list manipulation and Map printing aso. This kind of
 ///  stuff is most valuable to beginner programmers, and developing this has
 ///  taken time. Fixing bugs only when something throws.
 /// * Also some #stamp date-time aso. functions.
-/// * dwv: version:   0.3.0.  23.3.2022.    devState : 50 %
+/// * dwv: version:   0.9.6  1.4.2022    devState : 51 %
 /// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
 /// * in GIT:  yes.  Blog post:  should b.
 /// * PLAN:  develop some _private inside functions and variables.??
-/// * PLAN: ? Move to own directory, tools.
-/// * PLAN: Split: tools_base, tools_tricks, tools_stamps, tools_coll, tools.
+///  * PLAN: Split: tools_base, tools_tricks, tools_stamps, tools_coll, tools.
+///  * DONE:  moved to own directory, tools.
+///
 //
 
 library tools;
@@ -576,5 +578,5 @@ void main() {
   ///
 }      //     -----     class Tools
 
-///  Making instance with construcgtor
+///  Making instance with constructor
 Tools tl = Tools();

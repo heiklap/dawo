@@ -3,59 +3,63 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dwv: version:   0.3.0.  23.3.2022.   devState:  60%
+/// * dwv: version:   0.9.6.  1.4.2022.   devState:  60%
 /// * GitHub: yes
+///  NOTE:  box_serve has been invisible in doc, it is only imported
+///  TODO:  check:  box_serve
 //
 
-library box_serve;
-
-import 'dart:math'; //  for min
-
-import '../dawo_app.dart';
-import '../tools.dart';
-//  import '../shower.dart';
-import '../alpha/alpha.dart';
-import '../src/glb.dart';
+part of venue;
 
 ///  Schedule connect, opJoin corporate, bind, binding
 ///  Present callers List, Map, text data in row,col in boxes inside a matrix.
 class BoxServe {
   ///
   int boxNum = 0;
+
   ///
   String boxNumS = '';
+
   ///  default:  box-in-screen width
   int sw = 195;
+
   ///  default:  box-row-count
   int rc = 47;
 
   ///  default pad-mark for to fill empty matrix cells
   String pm = '-';
+
   ///  (rc);  lets not decide here lists length
   ///  title,   rubric
   ///  should be upper level TODO
   String title = ' **  boxServe Title  **';
+
   ///  should be upper level TODO
   String footer = ' **  boxServe Footer  **';
+
   ///  should be upper level TODO
   String caller = '';
 
   ///  Will be combination of '$caller $boxNum.toString()'
   ///
   String name = '';
+
   ///  TODO  null  List can here be NULL  ??
   Map<String, List<String>> logM = {};
   List<String> _matrix = [];
+
   ///  To save matrix AND mediate it to glb.
   StringBuffer _buf = StringBuffer();
 
   ///  Form nice name for glb.buffers.X
   String _bufName = '';
+
   ///  #QUEST:  can this be made with #generator function?
   ///  Get nice  100 - 147 numbers
   int _fakeRow = 100;
   //  Some extra resource, like: equ/Equipment.
   List<String> _resAllocL = [];
+
   ///  Forming vertical separator/mark line in screen.
   ///  max: rc - 2)
   List<String> verticalLineL = [];
@@ -89,7 +93,7 @@ class BoxServe {
       _matrix.add(rowS);
     }
     logM.putIfAbsent(boxNumS, () => ['$boxNumS INIT']);
-  }     //     -----     init
+  } //     -----     init
 
   ///  Build matrix with top, left, bot
   ///  Too bad that users have to call both init and construct and...
@@ -130,7 +134,7 @@ class BoxServe {
 
     //  howTo NULL  OK Watch This if it works  logM[boxNumS].addAll([name, 'CTRCT']);
     logM[boxNumS]!.addAll([name, 'CTRCT']);
-  }      //     -----     construct
+  } //     -----     construct
 
   ///  Marks left of console screen to put table in convenient place for to see.
   void eyeMark14() {
@@ -194,7 +198,7 @@ class BoxServe {
 
     /// Returned list includes possible margin.
     return infoL2;
-  }     //     -----     infoBox
+  } //     -----     infoBox
 
   ///  Fill list-data in matrix in r, _c coordinates.
   ///  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
@@ -261,7 +265,7 @@ class BoxServe {
       print('error done::');
       //  lay horizontal #VARNING line
     } //  -----  error
-  }      //     -----     aBox
+  } //     -----     aBox
 
   ///   Lay String in a certain place in matrix.
   ///   :QUEST:  This is too complicated, lol.
@@ -295,7 +299,7 @@ class BoxServe {
       _newS = tl.changeLetter(_matrix[x], _y, _s);
       _matrix[x] = _newS;
     }
-  }     //     -----     vertWarning
+  } //     -----     vertWarning
 
   ///  Set horizontal Warning-line to screen matrix
   void horizWarning(int _x, _y, _width, String _extraS) {
@@ -308,7 +312,7 @@ class BoxServe {
 
     ///  Fill it to the matrix
     aHeader(_x, _y, _b.toString());
-  }     //     -----      horizWarning
+  } //     -----      horizWarning
 
   ///  Called by:   User!!  Not from this class.
   ///  To show matrix AND mediate it to glb.buf
@@ -335,7 +339,7 @@ class BoxServe {
     //  howTo NULL  add null check to the target:  !  OK  workds
     //  logM[boxNumS].addAll([_caller, 'SHOW']);
     logM[boxNumS]!.addAll([_caller, 'SHOW']);
-  }     //     -----     show
+  } //     -----     show
 
   ///  Called by:  next method, saveToGLB
   ///  title + _matrix + footer saved to buf.
@@ -347,7 +351,7 @@ class BoxServe {
     }
     boo.writeln(footer);
     return boo;
-  }     //     -----      toBuffer
+  } //     -----      toBuffer
 
   ///  Called by:  show()
   ///  toGLB-Buffer.  Save boxServe matrix to glb-buffers
@@ -366,7 +370,7 @@ class BoxServe {
     print('-<<---saveToGLB  done    ----<<-----  ');
     // OK     howTo NULL   add null check ! to the tarrget
     logM[boxNumS]!.add('svGLB');
-  }     //     -----     saveToGLB
+  } //     -----     saveToGLB
 
   ///  Lets see, if this will eventually be List<String>
   ///  TODO  #deprecated  split in:  show and #done
@@ -380,7 +384,7 @@ class BoxServe {
     _fakeRow = 100;
     //  howTo NULL   add ! to target
     logM[boxNumS]!.add('DONE');
-  }     //     -----     done
+  } //     -----     done
 
   ///  TODO : Constructor, to give shapes and measures
 
@@ -437,7 +441,7 @@ void boxLayoutDap(BaseStruct _model, String _rubric) {
   //  Lay "screen-watch-peg"to set box to fill the screen.
   //  To allow use of < 14 boxes: (boxServe.rc - 2)
   boxServe.aHeader(min((boxServe.rc - 2), 14), 0, 'peg');
-}      //     -----     boxLayoutDab
+} //     -----     boxLayoutDab
 
 ///  UsingBaseStruct (connector) fields to set usual fields in boxServe
 void boxLayOutConnector() {}

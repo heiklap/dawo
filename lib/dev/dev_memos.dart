@@ -4,7 +4,7 @@
 ///
 ///  ##  devMemo:class
 ///  Primary functionality:  Keep dev data.
-/// * dwv: version:   0.9.5  31.3.2022.
+/// * dwv: version:   0.9.6   1.4.2022.
 /// * devState : 25%    in GitHub : yes
 //
 

@@ -1,10 +1,11 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+///
 ///  ##  dawoApp class
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dwv: version:   0.4.0.  23.3.2022.
+/// * dwv: version:   0.9.6  1.4.2022
 /// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * dawoApp instantiated inside app; it now has access to dawo.version aso.
@@ -14,7 +15,7 @@ library dawo_app;
 
 import 'alpha/alpha.dart';
 import 'beta/beta.dart';
-import 'shower.dart';
+import 'venue/venue.dart';
 
 import 'mis/mis.dart';
 
@@ -26,8 +27,7 @@ import 'dev/dawo_dev.dart';
 import 'src/glb.dart';
 
 //  for box_serve:
-import 'tools.dart';
-import 'src/box_serve.dart';
+import 'tools/tools.dart';
 
 
 //  WORD: stream  13 / 35  times
@@ -43,7 +43,7 @@ StringBuffer appBuf = StringBuffer(); //  not used here
 class DawoApp {
   ///
   final String name = 'DawoApp';
-  final String version = '0.9.5';
+  final String version = '0.9.6';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   ///

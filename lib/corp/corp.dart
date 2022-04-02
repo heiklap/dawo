@@ -17,9 +17,8 @@ import '../beta/beta.dart';
 import 'package:dawolang/dawolang.dart' as d_lang;
 
 import '../mis/mis.dart';
-import '../src/box_serve.dart';
-import '../shower.dart';
-import '../tools.dart';
+import '../venue/venue.dart';
+import '../tools/tools.dart';
 
 import 'dart:async';
 
