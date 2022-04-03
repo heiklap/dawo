@@ -1,10 +1,11 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
 //
 ///  ##  Shower  -  presentation info and data screens.
 ///  New box_serve makes this better: makes only frames and keep clients data
 ///  in client side.  This file might eventually fade out.
-///  * dwv: version:   0.9.6.  1.4.2022.  devState: 90%
+///  * dwv: version:   0.9.7.  3.4.2022.  devState: 90%
 ///  *      GitHub: yes.
 ///  * DONE  #deprecated deleted_ rows 300 - 350
 ///  * SCHEDULE might deserve it's own class.

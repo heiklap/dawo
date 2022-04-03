@@ -6,7 +6,7 @@
 ///  stuff is most valuable to beginner programmers, and developing this has
 ///  taken time. Fixing bugs only when something throws.
 /// * Also some #stamp date-time aso. functions.
-/// * dwv: version:   0.9.6  1.4.2022    devState : 51 %
+/// * dwv: version:   0.9.7.  3.4.2022.    devState : 51 %
 /// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
 /// * in GIT:  yes.  Blog post:  should b.
 /// * PLAN:  develop some _private inside functions and variables.??
@@ -137,7 +137,7 @@ class Tools {
       } //  --  for (var y in _inlM[x].keys)
     }
     return _retL; //  [1,3 ], [5,4], [6,4], [3,8], [9,5] ....
-  }     //     -----     valuesInStr
+  } //     -----     valuesInStr
 
   ///  Return List of items, where #String exist. from dawo-tools.
   List<String> StrInList(List<String> _l, String _s) {
@@ -165,7 +165,7 @@ class Tools {
     print('<< -----------------------------------  <<');
     s = sBuf.toString();
     return s;
-  }     //     -----     listToString
+  } //     -----     listToString
 
   ///
   List<String> listListIntToListString(List<List<int>> inL) {
@@ -176,7 +176,7 @@ class Tools {
     }
 
     return retL;
-  }     //     -----     listListIntToListString
+  } //     -----     listListIntToListString
 
   ///  Add padLeft & padRight Strings to make this more useful.
   ///  Pad List right and left with: _leS, _raS and make all even length
@@ -194,7 +194,7 @@ class Tools {
       _l[x] = _ss;
       //  Pad every item right with _leS, _raS to length of the longest item.
     }
-  }     //     -----     padListRL
+  } //     -----     padListRL
 
   //  Want to get List items to max certain length.
   void shortenItemsInList(List<String> _l, int _w) {
@@ -248,7 +248,7 @@ class Tools {
       masterL[_r] = '$_s1$_s2$_s3';
       _r++;
     }
-  }      //     -----     boxInList
+  } //     -----     boxInList
 
   ///  howTo Map  print a map.
   void operationMapPrint(Map thisMap) {
@@ -325,7 +325,7 @@ void main() {
     } // --  thisMap
         ); //  --  forEach k v
     return _l;
-  }      //     -----     mapToFineList
+  } //     -----     mapToFineList
 
   /*
 
@@ -411,7 +411,7 @@ void main() {
       //  howTo NULL Map  ! OK
       _map[name]!.forEach((k, v) => print('$k, $v'));
     }
-  }     //     -----     printStringMapMap
+  } //     -----     printStringMapMap
 
   ///  TODO  did it go right? No.
   ///  print Map<String, Map<String, String>>  map nicely
@@ -429,7 +429,7 @@ void main() {
       }
       print(_map[x]);
     }
-  }     //     -----     printStringMapMapFail
+  } //     -----     printStringMapMapFail
 
   ///  QUEST:  sure you can do better?
   ///  is it number?
@@ -474,7 +474,7 @@ void main() {
 
     print(' ');
     print(' ');
-  }     //     -----     printClass
+  } //     -----     printClass
 
 //   dawoMapApps.forEach((k,v) => print('Key:  $k  Value:  $v  '));
 
@@ -527,14 +527,13 @@ void main() {
     String formattedHms = formatterHms.format(now);
     var dateTimeStampNow = (' $formattedYmd  $formattedHms ');
     return dateTimeStampNow;
-  }     //     -----     stampDateTimePlain
+  } //     -----     stampDateTimePlain
 
   ///  Small sleep-methods, to get time, to see, what is happening in tests.
   void sleepSimple(int waitingTime) {
     //  1000 =  one second
     //var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
-    var goalTime =
-        DateTime.now().add(new Duration(milliseconds: waitingTime));
+    var goalTime = DateTime.now().add(new Duration(milliseconds: waitingTime));
     do {} while (new DateTime.now().compareTo(goalTime) < 0);
   }
 
@@ -545,17 +544,20 @@ void main() {
   ///  OK Done
   ///  void sleepMS(int waitingTime, [bool infoB]) {
   ///  callers:  No usages found
+  ///  BUG:  warning: unresolved doc reference [bool infoB]
   void sleepMS(int waitingTime, [bool infoB = false]) {
     //  var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
-    var goalTime =
-        DateTime.now().add(new Duration(milliseconds: waitingTime));
-    bool _infoB = infoB;
+    var goalTime = DateTime.now().add(new Duration(milliseconds: waitingTime));
+    //  bug: warning:  hklTry to create explicit variable with value
+    //  bug problem: parameter is not obligatory, so= []
+    bool _infoB = false;
+    _infoB = infoB;
     if (_infoB) (print('Waiting for  $waitingTime'));
     do {
       //  var timeNow = new DateTime.now();
     } while (new DateTime.now().compareTo(goalTime) < 0);
     if (_infoB) (print('waiting time over over'));
-  }     //     -----     sleepMS
+  } //     -----     sleepMS
 
 //  Some sample maps for #teamNext use.
   Map<String, bool> toolsActive = {
@@ -576,7 +578,7 @@ void main() {
   };
 
   ///
-}      //     -----     class Tools
+} //     -----     class Tools
 
 ///  Making instance with constructor
 Tools tl = Tools();

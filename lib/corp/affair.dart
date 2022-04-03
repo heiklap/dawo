@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  affair,  handling small jobs inside corporate.
-/// * dwv: version:   0.6.0  26.3.2022  -.   devState:  5%
+/// * dwv: version:   0.9.7.  3.4.2022. -.   devState:  5%
 /// * GitHub:  Yes  -  State:  schema
 /// * PLAN:  0.0.8  small upgrade when common methods are ready.
 //
@@ -99,6 +99,7 @@ class Affair extends CorpInterfaceBasis {
   ///  Usage:   not used
   ///  Parameter:  it is  MM
   ///  This is called:  placardMM['FirstActor']
+  ///  BUG: warning: unresolved doc reference ['FirstActor']
   void initAffair(Map<String, String> _placardM) {
     print(' ***************  affair class-init  *********');
     _placardM.forEach((k, v) => print('$k, $v'));

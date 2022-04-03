@@ -5,7 +5,7 @@
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dwv: version:   0.9.6  1.4.2022
+/// * dwv: version:   0.9.7  3.4.2022
 /// * devState : 25%    in GitHub : yes
 /// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * dawoApp instantiated inside app; it now has access to dawo.version aso.
@@ -43,7 +43,7 @@ StringBuffer appBuf = StringBuffer(); //  not used here
 class DawoApp {
   ///
   final String name = 'DawoApp';
-  final String version = '0.9.6';
+  final String version = '0.9.7';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   ///
@@ -119,7 +119,7 @@ class DawoApp {
     // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 :demandStream Listened
     'develop': 'Under development.. from 0.0.8+ to 0.1.0.',
     // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 demandStream Listened
-    'pack: version  ': 'Version: 0.7.0  ',
+    'pack: version  ': 'Version: 0.9.7  ',
     'pub': 'Published 22.3.2022',
   };
 

@@ -1,10 +1,11 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
 ///
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  dwv: version:   0.7.0.  27.3.2022.
+/// *  dwv: version:   0.9.7.  3.4.2022.
 /// *  devState : 27 % / unknown  -  PLAN:  cleaning
 // -  devMemo: 4 pc.
 //
@@ -14,13 +15,10 @@
 ///  Renamed library to: missions for 0.0.4.
 part of mis;
 
-
-
 ///  #NOTE:  #effort is not visible here.  Only in chore.dart.
 
 ///  Buffer also outside class, for testing and adding visibility.
 //  StringBuffer  missionBuf = StringBuffer();  //  Not used
-
 
 ///  Generic list to keep all missions.
 ///  In case for handling other, super- or sub-missions; code something more.
@@ -42,7 +40,7 @@ void helloMission() {
 ///  Mission can include many chores. 7 Chores are build by default.
 ///  TODO  Mission has 31 public members !!
 ///  TESTED: when extending BaseStruct: Too many arguments in constructor.
-class Mission extends MisInterfaceBasis{
+class Mission extends MisInterfaceBasis {
 // #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
 
@@ -53,8 +51,10 @@ class Mission extends MisInterfaceBasis{
   String toString() {
     return name;
   }
+
   ///
   String motto = '* Mission Motto *';
+
   ///  Combination of #LANG words in sentence.
   String clause = '';
 
@@ -110,6 +110,7 @@ class Mission extends MisInterfaceBasis{
   //  Not yet  String seal = ':M-seal:'; //  like:  ":DAWO-APP:";
   ///  like:  ":DAWO-APP:";
   String _emblem = 'M-emblem';
+
   /// like:  "      ";  3-5-7 empty marks or something visible.
   String _indent = '';
 
@@ -130,16 +131,14 @@ class Mission extends MisInterfaceBasis{
       BlanketChore('LearnChr', ':masterName:', 'Yes, I learn');
   BlanketChore joyChr =
       BlanketChore('JoyChr', ':masterName:', 'Yes, I have Joy');
-  BlanketChore actChr =
-      BlanketChore('ActChr', ':masterName:', 'Yes, I act');
+  BlanketChore actChr = BlanketChore('ActChr', ':masterName:', 'Yes, I act');
   BlanketChore peopleChr =
       BlanketChore('PeopleChr', ':masterName:', 'Get social!');
   BlanketChore placeChr =
       BlanketChore('PlaceChr', ':masterName:', 'Places I go places');
   BlanketChore seasonChr =
       BlanketChore('SeasonChr', ':masterName:', 'Seasons differ!');
-  BlanketChore showChr =
-      BlanketChore('ShowChr', ':masterName:', 'Yes, I show');
+  BlanketChore showChr = BlanketChore('ShowChr', ':masterName:', 'Yes, I show');
 
   /// Store all data-maps of this mission-instance:
   Map<String, Map<String, String>> clayMap = {};
@@ -181,9 +180,11 @@ class Mission extends MisInterfaceBasis{
   ///  #Idea? -roll  and  -op : are different level of operations.
   ///  For loop control variables.
   bool _rollDone = false;
+
   ///  Used in testing and to escape bugs.
   bool _rollEscape = false;
   int _rollCount = 0;
+
   ///  Emergency exit from loops.
   int _rollMax = 3;
 
@@ -193,7 +194,7 @@ class Mission extends MisInterfaceBasis{
     print('----------------  rollHandle/ unUsed  -------');
     print(_rollEscape);
     print(_rollMax);
-  }     //     -----     rollHandle
+  } //     -----     rollHandle
 
   /// #IDEA?  chore map to give names to  W O R K  phases.
   /// #Name: Phase?  #BTW: Do not want to use "work". Instead: #job.
@@ -204,8 +205,6 @@ class Mission extends MisInterfaceBasis{
     4: 'Normal',
     5: 'Delayed'
   };
-
-
 
   ///  Usage: No now.  Name: #Mill !!
   ///  Mission loops all it's Chores in #Mill like system. Rumba calls this.
@@ -236,7 +235,7 @@ class Mission extends MisInterfaceBasis{
     st['wake'] = true;
     _rollMax = 3;
     //  TODO  placardM['command'] =
-  }     //     -----     init
+  } //     -----     init
 
   ///  Building mission with it's chores.
   ///  Callers:   9  chore, chore-test   here 7
@@ -278,7 +277,7 @@ class Mission extends MisInterfaceBasis{
         [learnChr, joyChr, actChr, peopleChr, placeChr, seasonChr, showChr]);
     //  CODE
     _flowC('   <-m--<--       :M:b:        done  $name     ', _pB);
-  }      //     -----     build
+  } //     -----     build
 
   ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission   * * *
@@ -297,8 +296,10 @@ class Mission extends MisInterfaceBasis{
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.
   ///  real stream, slow answer.
   void chainStream() {}
+
   ///
   void fireStream() {}
+
   ///  ***********************************************************************
 
   //  -------------------------    show  aso. methods   --------------------
@@ -398,7 +399,7 @@ class Mission extends MisInterfaceBasis{
     boxServe.show(':mis:box:act:', 'print', 2);
     boxServe.done(':mis:box:act:');
     print('--<<--<<  :mis:box:act: boxServe  done  --<<--<<--  ');
-  }     //     -----     boxAct
+  } //     -----     boxAct
 
   ///  Mission box-info.
   void box(String caller) {
@@ -457,7 +458,7 @@ class Mission extends MisInterfaceBasis{
     boxServe.show(':mis:box:', 'print', 2);
     boxServe.done(':mis:box:');
     print('--<<--<<  :mis:box: boxServe  done  --<<--<<--  ');
-  }     //     -----     box
+  } //     -----     box
 
   ///  For report: To get Chore class names in String.
   String getChoreNamesS() {
@@ -467,7 +468,7 @@ class Mission extends MisInterfaceBasis{
       nBuf.write(' ');
     }
     return nBuf.toString();
-  }     //     -----     getChoreNamesS
+  } //     -----     getChoreNamesS
 
   ///  Report of mission data used by: devBox_C: By; dawoApp-:rM:
   List<String> report(String caller, bool detailsB) {
@@ -526,7 +527,7 @@ class Mission extends MisInterfaceBasis{
       print('************************ :M: report details done   ******** \n ');
     }
     return _l;
-  }      //     -----     report
+  } //     -----     report
 
   ///  all done-methods should rename to:  terminate
   void done() {
@@ -548,9 +549,7 @@ class Mission extends MisInterfaceBasis{
   ///  Add #later map to constructor to get big chunk of data:
   ///  Mission(this.name, this.motto, Map<String,String> _clayM);
   Mission(this.name, this.motto);
-
-}        //     -----     end class Mission
-
+} //     -----     end class Mission
 
 ///  Calling print/print-to-buffer function from beta.
 ///  Getting local variables; Actor and Buffer right;
@@ -566,8 +565,7 @@ var packDawoMission = Mission('PackDawoMission', 'Build Dawo package.');
 var helsinkiMission = Mission('HelsinkiMission', 'Presenting Helsinki.');
 var dartlangMission = Mission('DartlangMission', 'Learn dartlang.');
 
-var myMusicMission =
-    Mission('MyMusicMission', 'Play and share good music.');
+var myMusicMission = Mission('MyMusicMission', 'Play and share good music.');
 var myTimeMission = Mission(
     'MyTimeMission', 'Spend at least one hour in a week with reasonable way.');
 var nationalParksMission =
@@ -586,7 +584,7 @@ void missionChoreReport(String caller) {
     print(missionM[x]!.choreL);
   }
   print('--<<--<<----  missionChoreReport done caller: $caller');
-}     //     -----     missionChoreReport
+} //     -----     missionChoreReport
 
 ///  Add clay ( data ) maps to missions.
 ///  TODO  Messy function buildMissions.  Clean, organize it.
@@ -681,7 +679,7 @@ void buildMissions(String caller) {
     }
   }
   _flowC('  <-m--<--  missionM forEach print-choreL done AGAIN <----<-- ', _pB);
-}      //     -----     buildMissions
+} //     -----     buildMissions
 
 ///  Creating instance of Mission and using it's methods.
 ///  All render_X functions are for test and presentation.
@@ -712,4 +710,4 @@ void renderMission(String caller) {
   print(missionR._rollCount);
   print(':M:render: <<--<<--   renderMission done  C: $caller --<<--<<-- ');
   _flowC('--  mission: $missionR.name : render done  --', _pB);
-}     //     -----     renderMission
+} //     -----     renderMission

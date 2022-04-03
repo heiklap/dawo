@@ -3,7 +3,7 @@
 ///
 /// ##  Treaty:  action-field for two missions; to say and bargain
 /// *
-/// * dwv: version:   0.7.0.  27.3.2022.  -   devState: 40 %
+/// * dwv: version:   0.9.7.  3.4.2022.  -   devState: 40 %
 /// * GitHub:
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
 //  NEXT:
@@ -31,7 +31,6 @@ covenant
  */
 
 part of mis;
-
 
 ///
 StringBuffer treatyBuf = StringBuffer();
@@ -78,6 +77,7 @@ List<String> bilateralWeekL = [''];
 class Treaty {
   ///
   String name = '* DailyTreaty *';
+
   ///
   String msg = '* DailyTreatyMsg *';
 
@@ -167,7 +167,7 @@ class Treaty {
     ///  maybe:  call to something like "days job-table".
     _show();
     _done();
-  }     //     -----     revel
+  } //     -----     revel
 
   //  Premature to PLAN: #auction.  This is where member-days #say and #bid.
   List<String> shout() {
@@ -215,14 +215,17 @@ class Treaty {
     bilateralWeekL.addAll(retL);
     print(':bilateral:success:    $retL  :count:  $_count');
     return retL;
-  }     //     -----     bilateral
+  } //     -----     bilateral
 
   //  This code is just copied from: equipment.
   //  Using random generator for sample data.
   ///  "We are all gathered here in holy ceremony of auction, to make some deals.."
   ///  usage:  in example daily_action.dart weekBox
   ///  simulation: Produce nice-looking allocation-list of resources.
-  List<String> auction(int _r, int _c) {
+  ///  TODO DONE hklTry   addparameter: callerS
+  ///  TODO BUG  daily_action  commented out callhere
+  List<String> auction(String callerS, int _r, int _c) {
+    callerS;
     //  TODO  use _c variable to control width
     //  init();  must be done somewhere.
     List<String> _l = [];
@@ -241,9 +244,9 @@ class Treaty {
         if (x == _rand) {
           //  padRight(8, ' ')
           //  bug: 2022.4.2  vers:  0.9.6.
-         //   RangeError (index): Invalid value: Valid value range is empty: 4
-         //  #0      List.[] (dart:core-patch/growable_array.dart:281:36)
-         //  #1      Treaty.auction (file:///C:/Users/Public/IdeaDart/dw/dawo/lib/mis/treaty.dart:243:32)
+          //   RangeError (index): Invalid value: Valid value range is empty: 4
+          //  #0      List.[] (dart:core-patch/growable_array.dart:281:36)
+          //  #1      Treaty.auction (file:///C:/Users/Public/IdeaDart/dw/dawo/lib/mis/treaty.dart:243:32)
           String _sP = equ.resL[x].padRight(8, ' ');
           _sB.write(_sP);
         } else {
@@ -255,7 +258,7 @@ class Treaty {
       _sB.clear();
     }
     return _l;
-  }     //     ------     auction
+  } //     ------     auction
 
   ///  Using boxServe(),  (boxDay ?)  or devBox for output.
   ///  Has not now much job since revel runs (routine) boxDay.
@@ -267,7 +270,7 @@ class Treaty {
     print('    ---- $name    :dailyTreaty:method:show:');
     //  Run _objects show / .box method
     //  insider.box();
-  }     //     -----     show
+  } //     -----     show
 
   ///  Model layout for basic fields.
   void _dayLayOut() {
@@ -313,7 +316,7 @@ class Treaty {
     boxServe.aBox(12, 4, 1, 68, [':purp:   $_o11']);
 
     boxServe.aBox(7, 70, 8, 32, bilateralL);
-  }     //     -----     _dayLayOut
+  } //     -----     _dayLayOut
 
   ///  Model layout for basic fields.
   void _weekLayOut() {}
@@ -335,7 +338,7 @@ class Treaty {
     boxServe.done(':daily:Treaty:  $name ');
 
     //  TODO  Bids to week - #auction.
-  }     //     -----     boxDay
+  } //     -----     boxDay
 
   ///  PLAN:  ready-shape 16-140 box  just for bargain
   ///  called by::  Nobody
@@ -352,17 +355,15 @@ class Treaty {
     boxServe.show(' :bargain:daily:Treaty:  $name ', 'print', 22);
     boxServe.done(' :bargain:daily:Treaty: buf: $bufLength  $name ');
     //  TODO  Bids to add to week - #auction.
-  }     //     -----     boxBargain
+  } //     -----     boxBargain
 
   ///  Usual this-job-is-ready -method. Not setting #st Map yet.
   void _done() {
     logM.putIfAbsent('Done: $name', () => '$msg in :daily:work:');
     // boxServe.done(':dailyTreaty:monday:test:');
     print('    ---- $name     :dailyTreaty:method:done:');
-  }     //     -----     done
+  } //     -----     done
 
-
-    ///  Constructor, that builds instances of this class.
-    Treaty(this.name, this.msg, this.insider);
-
-}      //     -----     Treaty class.
+  ///  Constructor, that builds instances of this class.
+  Treaty(this.name, this.msg, this.insider);
+} //     -----     Treaty class.

@@ -3,7 +3,7 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dwv: version:   0.9.6.  1.4.2022.   devState:  60%
+/// * dwv: version:   0.9.7.  3.4.2022.   devState:  60%
 /// * GitHub: yes
 ///  NOTE:  box_serve has been invisible in doc, it is only imported
 ///  TODO:  check:  box_serve
@@ -116,12 +116,12 @@ class BoxServe {
     String m0ro = ':boxServe:nr: $boxNumS  :cib: $_caller   ';
     //  no used  int m0roI = m0ro.length;
     String m0row = m0ro.padRight(sw, pm);
-    //  TODO  should produce String:  'DAWO 0.0.7'
+    //  TODO  should produce String:  'DAWO 0.9.7'
     //  String logoS = '$dawoApp.name $dawoApp.version';
     _matrix[0] = m0row;
     String _timeNow = tl.stampDateTimePlain();
     aHeader(0, sw - 57, 'time: $_timeNow');
-    String _version = dawoApp.version; //  0.0.7+
+    String _version = dawoApp.version; //  0.9.7+
     aHeader(0, sw - 27, 'Dartlang app  DAWO $_version ');
     //  TODO  StampLeft ' '  // there is pm ! = ' '
     ///  Last row of matrix for range-10 marks; NOTE: rc - 1
@@ -210,6 +210,9 @@ class BoxServe {
   ///  howTo NULL  int give default value
   ///  NO  void aBox([int _r = 0], [int  _c = 0], [_items = 0], _w, List<String> _l) {
   ///  NO  void aBox([int _r = 0, int  _c = 0, _items = 0]  _w, List<String> _l) {
+  //
+
+  //  bug:doc    warning: 7x     unresolved doc reference [int _r = 0]
   void aBox(int _r, int _c, int _items, int _w, List<String> _l) {
     //  If not know list length / wanted items and width, try 100. lol
     //  TODO  Truncate items and length, if List outOfMatrix borders

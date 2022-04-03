@@ -5,7 +5,7 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and memos.
 ///  (Team - for many developers working in same project)
-///  * dwv: version:   0.9.6.  1.4.2022.  -   devState: 16 %
+///  * dwv: version:   0.9.7.  3.4.2022.  -   devState: 16 %
 ///  * GitHub: yes  29.11.2014
 //
 
@@ -13,7 +13,6 @@ library dawo_dev;
 
 import '../venue/venue.dart';
 import '../tools/tools.dart';
-
 
 import '../beta/beta.dart';
 
@@ -114,7 +113,7 @@ class Dev {
         'V:7 E:8 D:0',
     'LATER: Example new mission: useful, chore: #FoodFinder, #pundit  ':
         'V:5 E:4 D:0',
-  };     //     -----     later
+  }; //     -----     later
 
   ///  Map
   Map<String, String> plugins = {
@@ -130,7 +129,7 @@ class Dev {
     '0.3.0 Simple server, localStorage, DB, maybe Mongo.': 'V:5 E:4 D:0',
     '0.2.0 Demos and Plugins to simulate commercial app.': 'V:4 E:4 D:0',
     '0.1.0 Elementary CL / console app.': 'V:5 E:4 D:0',
-  };     //     -----     plugins
+  }; //     -----     plugins
 
   ///  Changed from List to Map in 0.0.7. version
   ///  V: 1-9 = value, E = effort,  D:  = done
@@ -168,7 +167,7 @@ class Dev {
         'V:3 E:1 D:3',
     '008++ dev class reshape, new Class names: aide, hist and envoy.':
         'V:4 E:3 D:3',
-  };     //     -----     version008
+  }; //     -----     version008
 
   ///  Minor update, at the end no docs checked, no test, not every file updated.
   Map<String, String> version0075 = {
@@ -199,12 +198,12 @@ class Dev {
     '0075++devBox  Added header and footer rows.             ?': 'V:1 E:1 D:9',
     '0075++ListToMap: dawoDev version008 and later are now Maps.             ?':
         'V:1 E:1 D:9',
-  };     //     -----     version0075
+  }; //     -----     version0075
 
   ///  To add developer memos.
   void addMemo(List l, String s) {
     l.add(s);
-  }     //     -----     addMemo
+  } //     -----     addMemo
 
   ///  Fill devMemo lists with data. dawo_app calls this in it's build-method!
   void buildMemos(String caller, msg) {
@@ -331,12 +330,13 @@ class Dev {
           ['Name: base-lib?', 'User-action?', 'Print-output-variables-logos.']);
     secN.addAll(
         ['Restrict use of certain methods.', 'Create up-level password.']);
-  }     //     -----     buildMemos
+  } //     -----     buildMemos
 
   ///  callers: no usages.
   ///  More demonstrative devBox presentation method.
   void showMemos(String caller) {
     print('\n ------->>-->>--  dev.showMemos  by: $caller ------->>-->>--   ');
+    //  call:  venue - devBox
     devBox('By:dev:', ['* header *', '* footer *'], [dev.admN, dev.devN], 0);
     devBox('By:dev:', ['* header *', '* footer *'],
         [dev.innoN, dev.howToN, dev.secN], 0);
@@ -350,7 +350,7 @@ class Dev {
         ],
         0);
     print('--<<--<<------------  dev.showMemos  --<<--<<------------ \n  ');
-  }     //     -----     showMemos
+  } //     -----     showMemos
 
   ///  Old-fashioned list print method.
   void listMemos(String caller) {
@@ -367,7 +367,7 @@ class Dev {
     print(' ');
     secN.forEach(print);
     print('--<<--<<------------  dev.listMemos  --<<--<<------------ \n ');
-  }     //     -----     listMemos
+  } //     -----     listMemos
 
 } //  -----  class dev
 

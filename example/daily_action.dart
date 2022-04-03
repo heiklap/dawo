@@ -1,9 +1,11 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+//
 /// ##  Daily:Bundle:  presentation and simulation of dawo events
 /// *
 /// * HINT:  Run this for one day, by commenting days out;  like  //  friday()
-/// * dawo version:   0.8.5.  29.3.2022.  -   devState: 40 %
+/// * dawo version:   0.9.7.  3.4.2022.  -   devState: 40 %
 /// * GitHub:    rows:  550
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
 /// * Hist:hkl  27.11.2017  -  0.0.6
@@ -118,9 +120,8 @@ class DailyAction {
       Treaty('ThursdayBundle', 'Thursday running', helsinkiMission);
 
   ///  dawoHist, box, layOut
+  ///  ///  Using treaty-class where missions-chores co-operate.
   Treaty fridayBundle =
-
-      ///  Using treaty-class where missions-chores co-operate.
       Treaty('FridayBundle', 'Friday running', nationalParksMission);
 
   ///  PLAN:  5 days collected auction-bilateral data in a box.
@@ -139,7 +140,11 @@ class DailyAction {
     ///  Calling from mis/equipment list-table.
     //  not   boxServe.aBox(2,2, 45, 70, equ.allocate(45, 70));
     //  In treaty-class   to run / get    List<String> auction
-    boxServe.aBox(2, 2, 45, 70, fridayBundle.auction(45, 70));
+    //  hklTry BUG:AWAY_1.0.0
+    boxServe.aHeader(1, 2, ' *  :BUG:fridayBundle.auction  * ');
+    //  :BUG:  treaty.auction   random generator do not play well?
+    //  :BUG:1.0.0 hklTry:away    boxServe.aBox(2, 2, 45, 70, fridayBundle.auction('DailyAction:weekBox', 45, 70));
+
     int wRow = 2;
     int wCol = 75;
     //  TODO  This is not material that we want to see in #auction.
@@ -492,6 +497,7 @@ class DailyAction {
     print('--------- :dawo:hist:build: :day:friday: -------------------');
     dawoHist.build('_emblemString', '_masterString');
     dawoHist.roll();
+    dawoHist.box(':dailyExample');
     dawoHist.buf.writeln(':daily:bundle:friday:');
     print('--------- :dawo:hist:build: :day:friday: done -------------------');
 
@@ -527,12 +533,16 @@ void main() {
 
   ///  Insider = dartlangMission - connector - scout -
   da.monday(packDawoMission);
+
   ///  insider = packDawoMission.   scout - packDawoMission, short
   da.tuesday(dartlangMission);
+
   /// Insider = myTimeMission,  one screen
   da.wednesday(nationalParksMission);
+
   ///  insider =  helsinkiMission     Empty;  myMusicMission
   da.thursday(myMusicMission);
+
   ///  nationalParksMission  dawoHist, box, layOut  change it to:
   da.friday(helsinkiMission);
   print('------------- :daily:bundle: done   -----------------------');

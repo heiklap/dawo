@@ -1,12 +1,11 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
-///  *  dawo_example   dawo version   0.5.0. - 26.3.2022
+//
+///  *  dawo_example   dawo version   0.9.7. - 2.4.2022
 ///  *  dawo_example creates 53 screens of console output data presentation.
 ///  *               28 was previous output, so may be some repetition.
 ///  * Find:  :con: :connector: :opCom:  :corporate:
 ///  * DONE:  make this inside class
-
-
 
 ///  watch difference, when importing dawo/dawo_src.dart
 ///  dawo_src only #imports all dawo files except dawo.dart
@@ -18,7 +17,6 @@
 import '../lib/alpha/alpha.dart';
 import '../lib/beta/beta.dart';
 
-
 import '../lib//corp/corp.dart';
 import '../lib//dev/dawo_dev.dart';
 //  import '../lib/mis/camp.dart';
@@ -27,13 +25,11 @@ import '../lib//mis/mis.dart';
 import '../lib/tools/tools.dart';
 import '../lib/venue/venue.dart';
 
-
 import '../lib//dawo_app.dart';
 import '../lib/rumba.dart';
 
 import '../lib/dawo_src.dart';
 import '../lib/src/glb.dart';
-
 
 //  Unused package is marked with grey, and #warning.
 //  import 'package:dawo/mill.dart';
@@ -136,9 +132,11 @@ class ExPlay {
 
     ///  Table name and glb.buffer name
     boxServe.construct(':dHst:dAc:tmpl:', ':dawoHist:template:');
-
+    //  hklTry  2022.4.2.
+    //  boxServe.aBox(_r, _c, _items, _w, _l)
     ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
     //  TODO  0.9.6.  boxLayoutDap(dawoHist, ':dawoHist:template:');
+    dawoHist.box('dawo:example'); //  2022.4.2.
 
     boxServe.show(':dHst:', 'print', 3);
     boxServe.done(':dHst:');
