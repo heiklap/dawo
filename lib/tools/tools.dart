@@ -1,15 +1,15 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///
+///  * dwv: version:   0.9.7.  3.4.2022.    devState : 51 %
 ///  ##  Helper tools, like: longestItemInList() and  changeLetter(String..)
 ///  Mostly String and list manipulation and Map printing aso. This kind of
 ///  stuff is most valuable to beginner programmers, and developing this has
 ///  taken time. Fixing bugs only when something throws.
-/// * Also some #stamp date-time aso. functions.
-/// * dwv: version:   0.9.7.  3.4.2022.    devState : 51 %
-/// * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
-/// * in GIT:  yes.  Blog post:  should b.
-/// * PLAN:  develop some _private inside functions and variables.??
+///  * Also some #stamp date-time aso. functions.
+///  * Includes certainly some mistakes, miss-namings and You-Can-Do-It-Better #QUEST
+///  * in GIT:  yes.  Blog post:  should b.
+///  * PLAN:  develop some _private inside functions and variables.??
 ///  * PLAN: Split: tools_base, tools_tricks, tools_stamps, tools_coll, tools.
 ///  * DONE:  moved to own directory, tools.
 ///
@@ -376,7 +376,7 @@ void main() {
     return _rM;
   }
 
-  ///  TODO Trying to handle String, Mission with this for connector
+  ///  DO9: Trying to handle String, Mission with this for connector
   ///  Is #Object enough?
   ///  Return list<String> from map<String, Bool>.
   List<String> mapToListO(Map<String, Object> thisMap) {
@@ -390,7 +390,7 @@ void main() {
       _l.add(_s);
     });
     return _l;
-  }
+  }     //     -----     mapToListO
 
   ///  print Map<String, Map<String, String>>  map nicely
   void printStringMapMap(Map<String, Map<String, String>> _map) {
@@ -407,13 +407,12 @@ void main() {
       _l = _map[name]!.length.toInt();
 
       print('\n mapName: $name -------------- length: $_l -----------------');
-      //  TODO  Return map in sort-order: value.
-      //  howTo NULL Map  ! OK
+      //  DO:9 Return map in sort-order: value.
       _map[name]!.forEach((k, v) => print('$k, $v'));
     }
   } //     -----     printStringMapMap
 
-  ///  TODO  did it go right? No.
+  ///  DO:FAIL   did it go right? No.
   ///  print Map<String, Map<String, String>>  map nicely
   void printStringMapMapFail(Map<String, Map<String, String>> _map) {
     int _length = _map.length;
@@ -493,7 +492,7 @@ void main() {
     print(n.toString);
   }
 
-  //
+  ///  DateTime
   String stampDateTime() {
     var start = DateTime.now();
     //  print('Start::  $start ');
@@ -513,9 +512,9 @@ void main() {
     */
     //  testDateSlug();
     //  return dateTimeStampNow;
-    //  TODO  Handle 'Start::' aso. with String parameter.
+    //  DO:9  Handle 'Start::' aso. with String parameter.
     return 'Start::  $start ';
-  }
+  }     //     -----     stampDateTime
 
   ///  Look at the comments in previous function.
   ///  Output like:  2017-12-23  08:47:27

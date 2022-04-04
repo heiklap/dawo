@@ -21,7 +21,7 @@ part 'dawo_hist.dart';
 part 'dev_memos.dart';
 part 'envoy.dart';
 
-//   TODO name   PROBLEMS, when using too common names:
+//   devl:DEV name   PROBLEMS, when using too common names:
 //   devTest   =   22  times     CHANGE:   test  ! ??
 //   devMemo   = 2/16 times
 //   cod*          10 times
@@ -32,8 +32,8 @@ part 'envoy.dart';
 
 //  New async : plans to make async functions start synchronously.
 //  This change is planned for Dart 2.0.
-//  TODO  Future foo() async { await null; doSomething(); }
-//  TODO  Future bar() async { await null; return doSomething(); }
+//  devl:DEV  Future foo() async { await null; doSomething(); }
+//  devl:DEV  Future bar() async { await null; return doSomething(); }
 
 ///  Not working now; to track readiness
 num dawoDevReadiness = 94;
@@ -45,11 +45,11 @@ num dawoDevReadiness = 94;
 class Dev {
   ///  small mess with variable names
   int devTestCount = 0;
-  //  TODO teamInno   devTeam, should be also instance of #team? class ?
+  //  devl:DEV teamInno   devTeam, should be also instance of #team? class ?
   bool devTestPhase = true; // set this false in production. (newer)
 
   ///  two members (persons) of devTest team:
-  //  TODO teamAdm team_members..  should they be in... team_staff..
+  //  devl:DEV teamAdm team_members..  should they be in... team_staff..
   String coderNight = 'Late Night Coder ';
   String coderMorn = 'Earlymorn Coffeeman ';
 
@@ -207,7 +207,7 @@ class Dev {
 
   ///  Fill devMemo lists with data. dawo_app calls this in it's build-method!
   void buildMemos(String caller, msg) {
-    //  TODO howTo String   write many line String.  From dartlang.org
+    //  devl:DEV howTo String   write many line String.  From dartlang.org
     var interpolation = "interpolation";
     var combi = "a string "
         "that goes over multiple lines "
@@ -374,10 +374,10 @@ class Dev {
 ///  Create instance of class Dev.
 var dev = Dev();
 
-//  TODO teamHowTo lists: add:   automatize adding memos to lists?
-//  TODO teamInno  memos:  automatic roll of createMemos.? no; events..?
+//  devl:DEV teamHowTo lists: add:   automatize adding memos to lists?
+//  devl:DEV teamInno  memos:  automatic roll of createMemos.? no; events..?
 
-//  TODO teamHowTo stream    define a stream transformer
+//  devl:DEV teamHowTo stream    define a stream transformer
 
 /*
 var transformer = new StreamTransformer.fromHandlers(handleData: (value, sink) {
@@ -389,8 +389,8 @@ sink.add("Message: $value")
 // transform the stream and listen to its output
 stream.transform(transformer).listen((value) => print("listen: $value"));
 
-//  TODO teamEdu  devMemos..  instead of TO-DO-memos..
-//  TODO teamEdu  ..for to not spam dawo package with -memos
+//  devl:DEV teamEdu  devMemos..  instead of TO-DO-memos..
+//  devl:DEV teamEdu  ..for to not spam dawo package with -memos
 
 var devTestStreamData = ['devTestStream, for memos and testing',
                          'Next memo.. aso'

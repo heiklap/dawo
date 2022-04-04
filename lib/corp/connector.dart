@@ -109,7 +109,7 @@ class Connector extends BaseStruct {
 
   ///
   String info = 'App - mission - chore conScout #corporate.process via #LANG';
-  //  TODO  #lang  won for connector
+  //  devl:CORP  #lang  won for connector
   ///  Connector might be a technical thing, not needing a say map. Or?
   Map<String, String> say = {
     'purpose': 'con: technical',
@@ -253,7 +253,7 @@ class Connector extends BaseStruct {
     // 'cM-2': 'Second :con:Member:test:',
   };
 
-  //TODO  joinLatest  iterator  for to get say-map aso.
+  // devl:CORP  joinLatest  iterator  for to get say-map aso.
   String joinLast = 'NoneJoinedYet';
 
   ///  Direct reach via joinM to clients placardM and clause data-
@@ -301,17 +301,17 @@ class Connector extends BaseStruct {
   ///  Join "clients" / Members to scoutList OR affair. placardM mediates necessary info.
   ///  Usage: mission, dawoApp, rumba, chore, dawo_example
   ///  You can join scout OR affair OR x
-  ///  TODO parameter for to join  scout R affair OR x
-  ///  TODO parameter to get mission.name  for  lastJoin:ed
+  ///  devl:CORP parameter for to join  scout R affair OR x
+  ///  devl:CORP parameter to get mission.name  for  lastJoin:ed
   void join(String name, Map<String, String> plcM, String inMsg, caller) {
     ///  Save caller-objects name for box aso.
     joinLast = name;
     buf.writeln('con:join: starting by:$caller  ');
-    //  TODO : if #caller is in joinM
+    //  devl:CORP : if #caller is in joinM
     //  else:  caller is Rumba, Chore or example
     ///  Operations register to Connector with placardM.
 
-    ///  Using Analyzer class from dawolang. TODO: get clause from caller.
+    ///  Using Analyzer class from dawolang. devl:CORP: get clause from caller.
     String analyzeS = '';
 
     ///  This returns a String
@@ -321,8 +321,8 @@ class Connector extends BaseStruct {
     //  analyzeL.addAll(boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 8, 100, 15));
     analyzeL.forEach(print);
     print(':con:join:Call > :dawolang:analyze:watch:check: in ');
-    //  TODO  Output!!  '..:debug:dawolang:print:.:connector;join:...');
-    //  TODO  Stop keeping placard here: get: joinM.find.placardM
+    //  devl:CORP  Output!!  '..:debug:dawolang:print:.:connector;join:...');
+    //  devl:CORP  Stop keeping placard here: get: joinM.find.placardM
     //  Placard here is unnecessary, after scoutSolve has access viu joinM
     //
     String actorS = '';
@@ -357,7 +357,7 @@ class Connector extends BaseStruct {
       //  tl.operationMapPrint(plcM);
       tl.shortMapPrint(plcM);
       print('--<<-------- plcM  ------------------------');
-      //  TODO  connector  add joinM    add  BindingM
+      //  devl:CORP  connector  add joinM    add  BindingM
     }
     _flowC(':CN: --<<--<<:connector:join: done  C:$caller  <<--<<--', _pB);
   } //  -----  join
@@ -368,7 +368,7 @@ class Connector extends BaseStruct {
   void init() {
     buf.writeln('$_bm ---  Connector buffer output initialized  ---');
 
-    ///  TODO  Move this row to dawoApp? Using LexiconBase class from dawolang.
+    ///  devl:CORP  Move this row to dawoApp? Using LexiconBase class from dawolang.
     d_lang.lb.build(':call:WG:-:dawolang:  :by:dawo-:connector:');
     //  Set fields values, mostly lists and maps.
     buf.writeln('$_bm init done');
@@ -386,7 +386,7 @@ class Connector extends BaseStruct {
   void roll() {
     buf.writeln('$_bm Connector::    $info   $emblem roll engaged ');
     init(); //  calling init and build methods in this class.
-    //  TODO  connector Build parameters.
+    //  devl:CORP  connector Build parameters.
     build('*CONNECTOR:', 'CONNENCTORS-MASTER:');
     //  code for roll
     //  ***   code missing, see on top of this file
@@ -423,7 +423,7 @@ class Connector extends BaseStruct {
       'Every :con:Scout:ed object comes with a #LANG info like: #say and placardM, and has access to :bind:bing:',
     ];
 
-    //  TODO  if change to: 150, it should be visible variable
+    //  devl:CORP  if change to: 150, it should be visible variable
     ///:BOX:WAS:  190, now  205
     boxServe.init(42, 198, '_'); //  rows, width or: 0 = use default 47, 195
     boxServe.construct(':con:box:', ':con:box: $caller');
@@ -461,25 +461,24 @@ class Connector extends BaseStruct {
     //boxServe.aBox(r2 + 1, m4 + 1, 6, 21, tl.mapToListO(joinM));
     boxServe.aBox(r3 - 6, m2, 12, 50, tl.mapToListO(joinM));
 
-    //boxServe.aBox(r3 - 7, m2, 12, 50, joinLog);
-    //TODO  Error ??
+    //  boxServe.aBox(r3 - 7, m2, 12, 50, joinLog);
     boxServe.aBox(2, 150, 18, 38, joinLog);
 
     boxServe.aBox(r3 - 3, m4 - 5, 12, 50, inMsgL);
 
-    //  TODO  resource / samples add something
+    //  devl:CORP  resource / samples add something
 
     boxServe.aHeader(30, 100, '*: con:say Map *');
     boxServe.aBox(31, 100, 9, 42, tl.mapToFineList(say, 8, 34));
 
-    ///  TODO  Get from joinM Just-joined-say map
+    ///  devl:CORP  Get from joinM Just-joined-say map
     ///  Now using new #name field and parameter via con.join
     //  if (name  notIn joinM) blaa blaa blaa
     //  howTo NULL  Map OK
     Map<String, String> sayLatest = joinM['DartlangMission']!.say;
     //  Error:bug:  every object to not have say-map
     // Map<String, String> sayLatest = joinM[name].say;
-    //  TODO  use map joinM directly without copying it here
+    //  devl:CORP  use map joinM directly without copying it here
 
     boxServe.aHeader(30, 144, '*: Now: $name :say *');
     boxServe.aBox(31, 142, 9, 42, tl.mapToFineList(sayLatest, 8, 34));
@@ -499,11 +498,11 @@ class Connector extends BaseStruct {
     boxServe.done(':con:');
   }
 
-  ///  TODO  :BUG:Funny:error:
+  ///  devl:CORP  :BUG:Funny:error:
   ///  Presentation method. Trying list as a parameter.
   ///  action like: 'print, buf, pause, hello-World!, info:Watch, act:dim'
   void show(String action) {
-    //  TODO  Make forced print
+    //  devl:CORP  Make forced print
     bool _clB = false;
     if (_pB && action.contains('buf')) {
       //  no good: no-buf !!buf+ ?
@@ -522,7 +521,7 @@ class Connector extends BaseStruct {
     // Do  not, only when whole system closes.  buf.clear(); //  empty buffer
   }
 
-  ///  TODO  typedef  print function
+  ///  devl:CORP  typedef  print function
   ///  typedef int Compare<T>(T a, T b);
   ///  typedef _conPrint(String msg);
   ///  typedef  _conPrint =  void _conPrint(String msg){
@@ -530,7 +529,7 @@ class Connector extends BaseStruct {
 
   void _flowC(String msg, bool prnB) {
     ///  Call flow.fServe with #LOCAL variables.
-    //  TODO  Why not find beta flow.fServe() ??
+    //  devl:CORP  Why not find beta flow.fServe() ??
     //  flow.fServe(':con:flC:$prnB ', buf, msg, prnB);
     flow.fServe(':con:flC: ', buf, msg, true); //  $prnB : when needed.
   }

@@ -53,14 +53,14 @@ num dawLibWorkReadiness = 94; // for version  0.0.1
 StringBuffer choreBuf = StringBuffer();
 ///
 bool _pB = false; //  Not printing now.
-///  TODO  Temporary hack.
+///  devl:MIS  Temporary hack.
 bool pBNotNow = false; //  Not printing now.
 int _flowServeCount = 0;
 
 ///  Chores that operate in common area, outside Mission class.
 List<BlanketChore> choreComL = [];
 
-///  TODO  devMemo: ==   #chore, that is always in dawoApp
+///  devl:MIS  devMemo: ==   #chore, that is always in dawoApp
 ///  So dawoApp uses chore to maintain it's work-projects.
 
 ///   Initializing of chore system. Update dev-class.
@@ -142,8 +142,8 @@ class BlanketChore extends BaseStruct {
   ///  Row data describing work-flow and life-cycle events.
   StringBuffer buf = StringBuffer();
 
-  ///  TODO  deliberated error to find error in build usage.
-  bool errorInBX = false; // TODO  temporary, to find error
+  ///  devl:MIS  deliberated error to find error in build usage.
+  bool errorInBX = false; // devl:MIS  temporary, to find error
 
   ///  Serializing objects msg's dawo uses placardM
   ///  Present info for outer process calls.
@@ -284,11 +284,11 @@ class BlanketChore extends BaseStruct {
     //  NO  extra!['init'] ++?;
     //  Map<String, int> extra  'init': 0,
     //  howTo Map:  only 4 properties usable   extra.['init'].
-    //  TODO  hkl:  find in tour dartlang
+    //  devl:MIS  hkl:  find in tour dartlang
     //  https://stackoverflow.com/questions/56943363/dart-map-increment-the-value-of-a-key
     //  from Punch::
     if (extra.containsKey('init')) {
-      //  TODO howToMap increment
+      //  devl:MIS howToMap increment
       int _i = 0;
       //  howTo Null Map
       _i = extra['init']!;
@@ -310,17 +310,17 @@ class BlanketChore extends BaseStruct {
     _flowC('<-- ch init done  $name --<----<--', _pB);
   } //     -----     init
 
-  ///  TODO  Chore gets emblem and master from mission in build. Are they right
+  ///  devl:MIS  Chore gets emblem and master from mission in build. Are they right
   ///  Method for setting class in working condition.
   ///  Usage:  Caller added:
   void build(String _emblem, String _master) {
     _flowC('--> chore $name build  -->---->--', _pB);
     //  print(':BUG:DEBUG:build:chore:build: $name'); ? build 2X?
     //  howTo NULL Map
-    //  TODO  away  extra['build']++;
+    //  devl:MIS  away  extra['build']++;
     emblem = _emblem; //  set master and emblem fields.
     master = _master;
-    //  TODO  Initialized 2X?  Where?
+    //  devl:MIS  Initialized 2X?  Where?
     if (st['on'] == true) print('\n ALREADY INITIALIZED BUILD CHORE  \n');
     //  print(onB);
     buf.writeln(':ch:buf: chore buid done for: $name  ');
@@ -335,7 +335,7 @@ class BlanketChore extends BaseStruct {
   void roll() {
     _flowC('--> :ch:roll:  $name -->---->--', _pB);
     //  howTo NULL Map++
-    //  TODO  Away   extra['roll' ++;
+    //  devl:MIS  Away   extra['roll' ++;
     _flowC(':ch:roll:  $info   :: roll engaged ', _pB);
     print(':ch:roll:  $info   :: roll engaged :TEST:DEBUG:');
 
@@ -343,7 +343,7 @@ class BlanketChore extends BaseStruct {
     //  NOTE  Mission also calls this build.
     //  How to get mission emblem here??  out now.  build();
     //  code for roll
-    //  TODO  testing clay map. Scope;  where to lay:: getClay() - function??
+    //  devl:MIS  testing clay map. Scope;  where to lay:: getClay() - function??
     //  print('------------ chore  clay maps -------------------------------');
     //  print(clayMapL);
     //  [helsinkiGuide, packDawo, learnDartlang, myMusic, myTime, nationalParks]
@@ -361,7 +361,7 @@ class BlanketChore extends BaseStruct {
     ///  Connector: normal procedure when acting with it.
     ///  Connector: join.  placardM mediates necessary info.
     /// This works, even if analyzer is not finding Connector.
-    /// TODO  Connector, analyzer do not find, or handle #var dynamic.
+    /// devl:MIS  Connector, analyzer do not find, or handle #var dynamic.
     //  Join "clients" / Members to opList. placardM mediates necessary info.
     _flowC('-->>-->>--  :ch:roll: calling :connector:  -->>-->>--', _pB);
     String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
@@ -380,7 +380,7 @@ class BlanketChore extends BaseStruct {
     _flowC('<-- :ch:roll: $name  done --<----<--', _pB);
   } //     -----     roll
 
-  ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
+  ///  devl:MIS  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission  * * *
   ///  Action class from alpha; name, sayM, reasonM.
   ///  Might serve #LANG phrase to reason for made decisions.
@@ -413,7 +413,7 @@ class BlanketChore extends BaseStruct {
   String popular(Map<String, String> _pcM) {
     _flowC('-->  ch roll=>:popular:  $name -->---->', _pB);
 
-    ///  NOTE  placardM is not used.  TODO
+    ///  NOTE  placardM is not used.  devl:MIS
     String _retStr = '';
     print('-->>-->>--  :Ch:popular: calling :connector:  -->>-->>--');
     String connectorMsg = ':EVERY chore :MAY :COME :TO :JOIN :TOMORROW :8clock';
@@ -423,18 +423,18 @@ class BlanketChore extends BaseStruct {
     connector.roll();
 
     ///  Make placard in shape.
-    ///  TODO  operation class instance
+    ///  devl:MIS  operation class instance
     ///  order: #actor #sender #receiver #command #msg
     Affair chPopularClass =
-    ///  TODO  Affair(name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
-    ///  TODO  Affair
+    ///  devl:MIS  Affair(name, 'chore', 'rec:test', 'assignComProChore', 'all ok');
+    ///  devl:MIS  Affair
         Affair('chore', 'rec:test', 'all ok');
 
     //  use buffer somewhere
     StringBuffer _retBuf = StringBuffer();
     _retBuf.writeln('_retBuf in chore-popular method is ready...');
 
-    ///  TODO  Mediate clay-stuff itemL to Process
+    ///  devl:MIS  Mediate clay-stuff itemL to Process
     ///  With actual command:
     ///  Add placardM to parameters
     _retBuf.write(corporate.process(
@@ -502,7 +502,7 @@ class BlanketChore extends BaseStruct {
 
     boxServe.aHeader(4, 5, '* chore$name  buf  *');
     //  boxServe.aBox(4, 5, 39, 33, tl.bufToList(buf));
-    //  TODO  We have 2 buffers!!
+    //  devl:MIS  We have 2 buffers!!
     //  boxServe.aBox(4, 5, 39, 33, buf.toString().split('\n'));
     boxServe.aBox(5, 5, 39, 33, buf.toString().split('\n'));
 
@@ -575,7 +575,7 @@ class BlanketChore extends BaseStruct {
 
   ///  PLAN: For to share stuff with  :affair: command in #operations
   ///  :connector:  to mediate to :affair: and do :bind:
-  ///  TODO  Name: #Assign  This should have same name in all libraries?
+  ///  devl:MIS  Name: #Assign  This should have same name in all libraries?
   String assignComProChore() {
     _flowC('   **  resource sharer assignChore > Process    ***', _pB);
     buf.writeln(':ch:buf:  :assign:comPro called for $name  ');
@@ -633,7 +633,7 @@ void _flowCOuter(String msg, bool p) {
 ///  =>  Map<String, String> operations value-field.
 ///  To be seen: How complicated is to handle stuff outside class.
 void handler(String _key, _inS, BlanketChore chr, var _act) {
-  ///  TODO  no idea what this is doing, so just change it.
+  ///  devl:MIS  no idea what this is doing, so just change it.
   //  announce value field changed.
   //  so: ':tGR:_ _ _ _ _ _ _ _ ' changed to:  ':tGR: OK _ _ _ _ _ '
   //  chr.operations[_key].padRight(7, '  $_inS');     //= 'Changed:  $_inS';
@@ -697,7 +697,7 @@ void endChore(BlanketChore chr, var _act) {
 
 ///  Quick hack to run effort from test aso files.
 ///  This is only access to effort.
-///  TODO  dd parameters:  BlanketChore chr, var _act
+///  devl:MIS  dd parameters:  BlanketChore chr, var _act
 void choreEffort(String caller) {
   //  Add ability to choose between user-data in effort.
   eff.buildMissions('caller: choreEffort');
@@ -708,12 +708,12 @@ void choreEffort(String caller) {
   eff.getDiagonalList(':chEf:');
   eff.showUserDiagonal(':chEf:');
 
-  //  TODO  New
+  //  devl:MIS  New
   eff.getRecommendation(':choreEffort:');
 }
 
 ///  QuickHack
-///  TODO  add parameters:  BlanketChore chr, var _act
+///  devl:MIS  add parameters:  BlanketChore chr, var _act
 void choreToEffortUserJson(String caller) {
   effortCallingUserJson(':chore::callRenderUserJson:');
 }
@@ -723,7 +723,7 @@ void choreToEffortUserJson(String caller) {
 StringBuffer renderChore() {
   print('-->-->--  renderChore  :roll:box:  -->-->--');
   StringBuffer _retBuf = StringBuffer();
-//TODO  temporary variables for to get this to work
+//  devl:MIS  temporary variables for to get this to work
   String _actS = 'Action String';
   var _roller;
   var _aLog;
@@ -755,7 +755,7 @@ StringBuffer renderChore() {
   print('-->-->--  joyChore;roll:box: myTimeMission   -->-->--');
   print(myTimeMission.joyChr.master);
 
-  /// TODO   Should get init and build bool values right
+  /// devl:MIS   Should get init and build bool values right
   myTimeMission.joyChr.init(); //  NO!!  Must it be master??
   myTimeMission.joyChr.roll();
   myTimeMission.joyChr.master = 'MyTimeMission';

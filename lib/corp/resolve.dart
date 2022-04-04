@@ -76,11 +76,11 @@ class Resolve {
 
   /// 3 #LANG specific commands, that configure objects behaviour in relation
   ///   to other objects.
-  ///  TODO  Name for next 3 fields might be opTouche aso.
+  ///  devl:CORP  Name for next 3 fields might be opTouche aso.
   ///  Solve one unambiguous textual find-decide problem.
   ///  Class:touche   might be separate Touche class.
   String touch(String sender, String key, String source) {
-    //  TODO problem
+    //  devl:CORP problem
     return 'solved:toucheStr: ';
   }
 
@@ -88,15 +88,15 @@ class Resolve {
   ///  .. solve textual problems based on keywords / search in textual data
   ///  Class:solver   might be separate Solver class.
   String solve(String sender, String key, String source) {
-    //  TODO problem
+    //  devl:CORP problem
     return 'solved: solveString';
   }
 
-  ///  TODO:  connector one-time calls must have parameters;
+  ///  devl:CORP:  connector one-time calls must have parameters;
   ///  Sketching one-time commands, coming from clients.
   String obey(String sender, receiver, baton, msg) {
     /// #baton  to carry only-one-can-have-at-a-same-time magic thing
-    //  TODO  code, badly missing
+    //  code, badly missing
     //  handle command / message
     return 'done';
   }

@@ -43,7 +43,7 @@ StringBuffer appBuf = StringBuffer(); //  not used here
 class DawoApp {
   ///
   final String name = 'DawoApp';
-  final String version = '0.9.7';
+  final String version = '0.9.8';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   ///
@@ -119,7 +119,7 @@ class DawoApp {
     // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 :demandStream Listened
     'develop': 'Under development.. from 0.0.8+ to 0.1.0.',
     // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 demandStream Listened
-    'pack: version  ': 'Version: 0.9.7  ',
+    'pack: version  ': 'Version: 0.9.8  ',
     'pub': 'Published 22.3.2022',
   };
 
@@ -150,7 +150,7 @@ class DawoApp {
 
   ///  set class values to beginning state.?
   void init(String _user, _motto) {
-    //  TODO  Actor:  only one actor for now... But class Actor in alpha.dart
+    //  devl:LIB  Actor:  only one actor for now... But class Actor in alpha.dart
     //  #Actor is longTimeProject / idea to mark active object. Not used 007.
     glb.changeActor(':DAWO:APP:');
     user = _user;
@@ -252,7 +252,7 @@ class DawoApp {
     ///  Calling method in missions.dart
     buildMissions('Caller:dawoApp:');
 
-    ///  TODO Detail printing set false / true or by _pB;
+    ///  devl:LIB Detail printing set false / true or by _pB;
     ///  NOTE: packDawo gets map printed here: true!
     print(packDawoMission.placardM);
 
@@ -262,7 +262,7 @@ class DawoApp {
         true)); //   = packDawoMission.report('C:dawoApp:rM:', true);
 
     //  NULL   Make it explicitly non nullable
-    List<String> info1 = [];  //  TODO ? usage?
+    List<String> info1 = [];  //  devl:LIB ? usage?
     //
     info1.addAll(tl.mapToFineList(packDawoMission.say, 10, 80));
 
@@ -320,7 +320,7 @@ class DawoApp {
     // roll all chores, that are in mission
   }      //     -----     appRollMissions
 
-  ///  TODO devStream  building stream for dev, using elementary Stream example
+  ///  devl:LIB devStream  building stream for dev, using elementary Stream example
   ///  NAME:  Change to:  fix** ?
   ///  Stream experiment.  Caller: ?  roll method above.
   void devStream(String caller) {
@@ -339,8 +339,8 @@ class DawoApp {
   }     //     -----     devStream
 
   ///  calling beta demandStream, elementary Stream example
-  ///  TODO  Make usage of this async and somebody to wait it.
-  ///  #TODO  make this use #iterable parameter; dev.admN / where #ALL
+  ///  devl:LIB  Make usage of this async and somebody to wait it.
+  ///  devl:LIB  make this use #iterable parameter; dev.admN / where #ALL
   ///  Usage:  roll-method above.
   void rollStream(String _cl) {
     _flowC('--- :stream:beg dawoApp rollStream started by: $_cl    ---', _pB);
@@ -357,7 +357,7 @@ class DawoApp {
     ///  Create List, that is used in Stream.
     List<String> _queryL = ['* First _queryL item *'];
 
-    //  TODO Lang:  find #Lang #word's function, make it.
+    //  devl:LIB Lang:  find #Lang #word's function, make it.
     for (var x = 0; x < dev.admN.length; x++) {
       //  HealthIssue:  line 340 col 11: Use contains instead of indexOf
       if (dev.admN[x].contains('schedule')) {
@@ -368,7 +368,7 @@ class DawoApp {
     //  _queryL.addAll(tl.StrInList(dev.admN, 'schedule'));
     //  store demandStream acts nicely with 0-length list
     store.demandStream(':dawoApp:river:ADM:', _queryL, 'appListener');
-    //  TODO Stream: meaningful : streams from doneL / devN important
+    //  devl:LIB Stream: meaningful : streams from doneL / devN important
     _flowC('--- :stream:end dawoApp rollStream done  by: $_cl    ---', _pB);
   }     //     -----     rollStream
 
@@ -377,7 +377,7 @@ class DawoApp {
     buf.writeln(':da:box:start: C:$caller 123456789-23456789-23456789');
     print('-->>-->>-- :da:box:start: C:$caller  -->>-->>-- ');
     //  use: boxServe  OR  create own class here
-    //  TODO  set min-max values for row / width.
+    //  devl:LIB  set min-max values for row / width.
     final int _sw = 198; //  screen width.
     final int _rc = 37; //  row count.
 
@@ -398,7 +398,7 @@ class DawoApp {
     boxServe.aBox(2, 22, 4, 7, ['name:', 'Version:', 'By:', 'User:']);
     boxServe.aBox(2, 30, 4, 48, ['$name', '$version', '$by', '$user']);
 
-    ///  TODO  Bring real data.
+    ///  devl:LIB  Bring real data.
     boxServe.aBox(2, 48, 4, 60, ['Info', 'Motto:']);
     boxServe.aBox(2, 48, 5, 60, [info, motto]);
 
@@ -516,7 +516,7 @@ DawoApp dawoApp = DawoApp();
 
 ///  To print outPutBuffers.  //  not called
 ///  Using new outBufM Map
-///  TODO  Make this show in proper screen areas with devBox.
+///  devl:LIB  Make this show in proper screen areas with devBox.
 void outBuffersPrint(String caller, String notCalled) {
   print(' -->>-->>----  :DA:   out.outBuffers  by: $caller  -->>-->>-- ');
   int i = 0;

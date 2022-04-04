@@ -1,7 +1,9 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+//  Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+//  Use of this source code is governed by a BSD-style license
+//  that can be found in the LICENSE file.
+//
 ///  ##  glb   keeping important everybody-uses variables and constants.
-/// * dwv: version:   0.3.0.  23.3.2022.  -  devState:  13%
+/// * dwv: version:   0.9.8.  23.3.2022.  -  devState:  13%
 /// * GitHub: yes.
 /// * State:  schema
 //
@@ -152,17 +154,19 @@ class GlobalClass {
   ///  Method saveToGLB from box_serve fills this map.
   Map<String, StringBuffer> boxServeBuffers = {};
 
-  var register; //  register of objects that participate in Dawo / glb.
-  //  Actor: String actor;  //  too important to be a String
+  //  register of objects that participate in Dawo / glb.
+  var register;
+  //  Actor: String actor;
+  //  too important to be a String
   //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
   String actor = ':UNKNOWN: - :UNUSED:';
 
   ///  states. PLAN: many levels of flow-printing control.
-  ///  TODO  howTo mediate these to xPrint?
+  ///  DO:print  howTo mediate these to xPrint?
   Map<String, bool> prSt = {
     'flow': false, //  false prevents all "flow" printing via flow.fServe();
     //  Shorten output 2 screens.
-    'buf': false, // TODO   controls bufPrint
+    'buf': false, // DO:print   controls bufPrint
     'info': false,
     'help': false,
     'bug': false,
@@ -244,7 +248,7 @@ class GlobalClass {
     print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
   }
 
-  //  code
+  //  code:5
   void showInfo() {
     print('\n ***  no code in :glb:  GlobalClass yet :)  *** \n');
   }

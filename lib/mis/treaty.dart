@@ -69,7 +69,7 @@ Map<String, String> bilateralWeekM = {
 List<String> bilateralWeekL = [''];
 
 ///  QUEST:  HowTo efficiently use this DailyTreaty class to run dawo-roll?
-///  TODO  Tie equ.week and month to get #TimeSchedule
+///  devl:MIS  Tie equ.week and month to get #TimeSchedule
 ///  - effect, impact,   doing!!   deed  !!
 ///  Meant to give frames / road-map to daily-objects.
 ///  2 Mission objects inside; insider , used:  11 / 16
@@ -222,18 +222,18 @@ class Treaty {
   ///  "We are all gathered here in holy ceremony of auction, to make some deals.."
   ///  usage:  in example daily_action.dart weekBox
   ///  simulation: Produce nice-looking allocation-list of resources.
-  ///  TODO DONE hklTry   addparameter: callerS
-  ///  TODO BUG  daily_action  commented out callhere
+  ///  devl:MIS DONE hklTry   addparameter: callerS
+  ///  devl:MIS BUG  daily_action  commented out callhere
   List<String> auction(String callerS, int _r, int _c) {
     callerS;
-    //  TODO  use _c variable to control width
+    //  devl:MIS  use _c variable to control width
     //  init();  must be done somewhere.
     List<String> _l = [];
     StringBuffer _sB = StringBuffer();
     _l.add('Say Purp:   Lang:    area:    Prod:Sell:  Buy: Ask: ');
     for (var x = 0; x < _r; x++) {
       String _dS = x.toString();
-      //TODO  padRight(5, ' ')
+      // devl:MIS  padRight(5, ' ')
       String _sbW = 'D:$_dS ';
       _sB.write(_sbW.padRight(5, ' '));
 
@@ -337,7 +337,7 @@ class Treaty {
     boxServe.show(':daily:Treaty: buf: $bufLength  $name ', 'print', 8);
     boxServe.done(':daily:Treaty:  $name ');
 
-    //  TODO  Bids to week - #auction.
+    //  devl:MIS  Bids to week - #auction.
   } //     -----     boxDay
 
   ///  PLAN:  ready-shape 16-140 box  just for bargain
@@ -354,7 +354,7 @@ class Treaty {
     //  _bargainLayout();  //  when it is ready
     boxServe.show(' :bargain:daily:Treaty:  $name ', 'print', 22);
     boxServe.done(' :bargain:daily:Treaty: buf: $bufLength  $name ');
-    //  TODO  Bids to add to week - #auction.
+    //  devl:MIS  Bids to add to week - #auction.
   } //     -----     boxBargain
 
   ///  Usual this-job-is-ready -method. Not setting #st Map yet.

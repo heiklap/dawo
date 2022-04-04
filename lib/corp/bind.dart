@@ -81,12 +81,12 @@ class Bind extends CorpInterfaceBasis {
     String bindCS = bindC.toString();
     String bindNameS = '$actorS$bindCS';
 
-    /// TODO  :bind: _inMsg string to binding system
+    /// devl:CORP  :bind: _inMsg string to binding system
     /// GET:   C:PING:all: C:BIND:all  from inMsg to catch :first:all:name:
-    /// TODO  Just a throw:  actorS, _inMsg
+    /// devl:CORP  Just a throw:  actorS, _inMsg
     bindM.putIfAbsent(actorS, _inMsg);
     //  Map<String, Member>
-    //  TODO  should both bind and connector have memberM ?
+    //  devl:CORP  should both bind and connector have memberM ?
     bindMembM.putIfAbsent(bindNameS, () => comS);
 
     ///
@@ -147,7 +147,7 @@ class Bind extends CorpInterfaceBasis {
   ///  Normal conditional buffer/print-call to wake flow.fServe.
   void _flowC(String msg, bool prnB) {
     ///  Call flow.fServe with #LOCAL variables.
-    //  TODO  Why not find beta flow.fServe() ??
+    //  devl:CORP  Why not find beta flow.fServe() ??
     //  flow.fServe(':con:flC:$prnB ', buf, msg, prnB);
     buf.writeln('Print bool value _pB::  $_pB ');
     flow.fServe(':bind:flC: ', buf, msg, true); //  $prnB : when needed.

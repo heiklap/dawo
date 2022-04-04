@@ -18,8 +18,8 @@ num effortReadiness = 10;
 ///
 String typeDefTestS = 'typeDefTestString not used now.';
 
-//  TODO  typedef _effPrint  Deleted 15.11.
-//  TODO  typeDefSuccess
+//  devl:MIS  typedef _effPrint  Deleted 15.11.
+//  devl:MIS  typeDefSuccess
 // typedef void _EffPrint(String msg);
 
 ///  howTo: howToMap:  Method to print a map.  HowToPrintMap:
@@ -157,7 +157,7 @@ class Effort extends MisInterfaceBasis {
   ///  Get diagonal presentation of all user-data Lists
   List<Map<String, String>> effortLM = [];
 
-  ///  TODO  typedef _effPrint
+  ///  devl:MIS  typedef _effPrint
   ///  announced outside class:  typedef void _effPrint(String msg);
   ///  typedef _effPrint(String msg);
   ///  _EffPrint _effPrint(String msg) {
@@ -186,7 +186,7 @@ class Effort extends MisInterfaceBasis {
   ///  Constructing 6 items 15-20 wide list of HIGH VALUE-EFFORT
   List<String> getRecommendation(String caller) {
     print('-->>-->>--  getRecommendation in effort C: $caller  -->>-->>-- ');
-    //  TODO  Add schema for Value-Effort high valuation. V:N - E:N >
+    //  devl:MIS  Add schema for Value-Effort high valuation. V:N - E:N >
 
     List<String> _getRecL = [];
 
@@ -309,7 +309,7 @@ class Effort extends MisInterfaceBasis {
     tl.boxInList(18, 39, 100, 100, _l4, diagonalL);
     tl.boxInList(18, 1, 100, 100, _l5, diagonalL);
 
-    ///  TODO  new  phaseIntLStr List with 5, 7 ..  3, 6  aso values
+    ///  devl:MIS  new  phaseIntLStr List with 5, 7 ..  3, 6  aso values
     tl.boxInList(26, 166, 100, 100, phaseIntLStr, diagonalL);
 
     ///  Adding json-to-List data to diagonalL matrix.

@@ -20,13 +20,7 @@ part of venue;
 ///  in parameters. #Plan  Resource, Equipment, Time
 ///  Big amount of data relative to the code : multipurpose is unprofitable.
 class ScheduleBox {
-  /*
-  //  TODO  Stop crunching original Lists and Maps.
-  //  TODO  should create and use _pB and flowC class here?
-  flowC('--<----<-  :M:op:  scheduleBox --<----<-', _pB);
-  flowC(':M:op: scheduleBox-info: Report for to check data lists. >>', _pB);
-  flowC('>> :M:op: scheduleBox: **Not needed when scheduleBox is on.**.', _pB);
-  */
+
   ///  screen width
   int _sw = 195;
 
@@ -50,7 +44,6 @@ class ScheduleBox {
     for (var z = 1; z < _matrix.length; z++) {
       //  do not handle first row.
       _colPos++;
-      //  TODO  choose nice background mark for matrix.
       //  pad with low-density mark.
       _matrix[z] = '$_colPos '.padRight(_sw, '-');
     }
@@ -197,7 +190,7 @@ List<String> effortTable(
         }
         ;
 
-        //  TODO  check for: not to be out of range.
+        //  TODO range    check for: not to be out of range.
         //  print(_ilM[x][y].substring(iSub ,iSub+3));
         _foundS = _ilM[x][y]!.substring(iSub, iSub + 3);
 
@@ -206,7 +199,6 @@ List<String> effortTable(
         String tempS1 = y; //  key
         String tempS2 = tempS1; //
 
-        //  TODO  force all items to tl.longestItemInList, or...
         //  force Strings to width:  _w
         if (tempS1.length < _w + 2) {
           tempS2 = tempS1.padRight(_w, ' ');
@@ -242,9 +234,7 @@ List<String> effortTable(
   return _retL;
 } //     -----     effortTable
 
-///  NO!!!  Testing if we can #deprecated this
 ///  Screen-sized matrix pierced with staggered list elements.
-///  TODO  change all box-methods to use Map<String,String>
 ///  Usage: Who is calling this:  Effort-ShowUserDiagonal
 List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
   int _sw = sw; //  screen width.
@@ -281,11 +271,9 @@ List<String> iterableDiagonal(List<List<String>> _il, int sw, String caller) {
   return _ol;
 } //     -----     iterableDiagonal
 
-///  NO success::  No usages??  Trying to comment this out!!
 ///  List and Map versions of this method
 ///  Version, that uses Map in incoming data.  ******************** map ***
 ///  Screen-sized matrix pierced with staggered list elements.
-///  TODO  change all box-methods to use Map<String,String>
 ///  #Users:       Caller:  effort  getDiagonalList
 List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
   int _sw = sw; //  screen width.
@@ -325,7 +313,8 @@ List<String> iterableDiagonalM(List<Map<String, String>> _ilM, int sw) {
     //  pad String to _sw, screen width.
     String _nlS = '.'.padRight(sw - 2, ' ');
     String _nlS2 = _nlS + '.';
-    _ol.add(_nlS2); //TODO  Make something more visible and useful.
+    //  TODO  Make something more visible and useful.
+    _ol.add(_nlS2);
   } //  -----------------    All incoming lists.3
   _ol.add(emptyLine);
   _ol.add(botLine);

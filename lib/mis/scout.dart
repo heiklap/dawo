@@ -64,7 +64,7 @@ class Scout {
     //  scoutCount;
 
     bool _initB = false; // _initB used only here.
-    //  //TODO unfinished #IDEA: code to initialize variables in system. #WTF
+    //  devl:MIS unfinished #IDEA: code to initialize variables in system. #WTF
     return _initB;
   }     //     -----     init
 
@@ -88,7 +88,7 @@ class Scout {
     int __counter = 0;
     _flowC('-->>-->>--  :scoutR: calling :connector:  -->>-->>--', _pB);
 
-    ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
+    ///  devl:MIS  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
     ///  Eventually close this connector act inside below loop.
     String connectorMsg =
         ':scout:R: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
@@ -142,7 +142,7 @@ class Scout {
   }     //     -----     report
 
   ///  int opClose(int openCount, Function openThis) {}
-  ///  TODO  scout  not used
+  ///  devl:MIS  scout  not used
   void close() {
     equ.active = false;
     _flowC('--<----<-  scout:$name  scoutClose --<----<-', _pB);

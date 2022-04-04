@@ -9,7 +9,7 @@
 ///  * OutPut:  :demand:stream: search gives 15 results in output.
 ///  history: 2017.11.13.   development-state: 5%
 //
-// TODO  all methods are:  supplyX and  demandX
+// devl:CORP  all methods are:  supplyX and  demandX
 //
 
 //  library store;
@@ -42,7 +42,7 @@ class Store extends CorpInterfaceBasis {
   ///  dawoApp.roll drives this.  When thinking about #stream / #order / #chain
   ///  better name, we think for different nature of them, One is quick, one is
   ///  slow, and one: we-do-not-mind: wait, but not synchronously: like queue.
-  ///  So: "joint"Order, ...""Chain, ""Queue  #TODO  Name
+  ///  So: "joint"Order, ...""Chain, ""Queue  # devl:CORP  Name
   ///  USAGE:  dawoApp uses this 4 times.
   ///  :demand:stream search gives 15 results in output
   ///  ***********************************************************************
@@ -76,7 +76,7 @@ class Store extends CorpInterfaceBasis {
     var broadcastStream = stream.asBroadcastStream();
 
     broadcastStream //   Using method cascades...
-      //  TODO  Test:  Can we NOT use shorthand function?
+      //  devl:CORP  Test:  Can we NOT use shorthand function?
       ..listen((value) => print("SUCCESS_1_:: stream.listen: $value"))
       ..first.then((value) => print("SUCCESS_2_:: stream.first: $value")) // 1
       ..last.then((value) => print("SUCCESS_3_:: stream.last: $value")) // 5

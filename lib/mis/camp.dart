@@ -62,7 +62,7 @@ class Camp extends MisInterfaceBasis{
     //  campCount;
 
     bool _initB = false; // _initB used only here.
-    //  //TODO unfinished #IDEA: code to initialize variables in system. #WTF
+    //  devl:MIS unfinished #IDEA: code to initialize variables in system. #WTF
     return _initB;
   }     //     -----     initCamp
 
@@ -86,7 +86,7 @@ class Camp extends MisInterfaceBasis{
     int __counter = 0;
     _flowC('-->>-->>--  :campR: calling :connector:  -->>-->>--', _pB);
 
-    ///  TODO  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
+    ///  devl:MIS  C:PING:all: C:BIND:all  re :command:s :bind: :bing:
     ///  Eventually close this connector act inside below loop.
     String connectorMsg =
         ':camp:R: C:PING:all: C:BIND:all :CLIENT :GRANT :N:47345 :VALID 3day';
@@ -140,7 +140,7 @@ class Camp extends MisInterfaceBasis{
   }     //     -----     report
 
   ///  int opClose(int openCount, Function openThis) {}
-  ///  TODO  camp  not used
+  ///  devl:MIS  camp  not used
   void close() {
     equ.active = false;
     _flowC('--<----<-  camp:$name  campClose --<----<-', _pB);

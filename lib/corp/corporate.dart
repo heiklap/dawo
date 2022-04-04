@@ -73,7 +73,7 @@ class Corporate extends CorpInterfaceBasis {
     'msg': 'New season coming.',
   };
 
-  ///  TODO Automatic messages to buf, in operations.
+  ///  devl:CORP Automatic messages to buf, in operations.
   ///  Formulate String for buffer message.
   String bufMsg(String sender, receiver, op, msg) {
     String _s = "s: $sender  r: $receiver oop: $op msg: $msg";
@@ -129,8 +129,8 @@ class Corporate extends CorpInterfaceBasis {
       ..add('   -----  corporate.show-------');
     _cpBuf.writeln(
         ':_cpBuf: -->>-->  corporate.process  #caller: $by  -------- \n');
-    //  TODO  Start info and statistics.
-    //  TODO  Make all these Lists for:  devBox
+    //  devl:CORP  Start info and statistics.
+    //  devl:CORP  Make all these Lists for:  devBox
     //  code here
     List<String> _li2 = [];
     _li2.add('placardMap: ');
@@ -144,7 +144,7 @@ class Corporate extends CorpInterfaceBasis {
     // actual command.
     _li3.add('calling command:');
     //  call to function that was get in parameter by caller.
-    //  TODO Make this route more evident in in-call,  and returned Strings.
+    //  devl:CORP Make this route more evident in in-call,  and returned Strings.
     String _comStr = _assigned();
     _li3.add(_comStr); //  Returning String, from caller-object.
     _li3.add('  3. part done in :corporate:process. ');
@@ -154,7 +154,7 @@ class Corporate extends CorpInterfaceBasis {
     ///  The argument type 'Map<dynamic, dynamic>' can't be assigned to
     ///  the parameter type 'Map<String, String>'
     ///  DONE;  map explicitly: 'Map<String, String>'
-    ///  TODO  _affairOp.init(placardM);
+    ///  devl:CORP  _affairOp.init(placardM);
     _affairOp.init();
 
     List<String> _li4 = [];
@@ -167,7 +167,7 @@ class Corporate extends CorpInterfaceBasis {
 
     devBox(':bl:comProc:', ['* header *', '* footer *'], [_li3, _li4], 10);
 
-    //  TODO  :corporate:process: end info and statistics.
+    //  devl:CORP  :corporate:process: end info and statistics.
     _cpBuf.writeln(':_cpBuf:  <--<<--  :corporate:process done --------\n');
     print('  <--<<--  :corporate:process done cccccccccccccccccccccccccp \n');
     return _cpBuf;

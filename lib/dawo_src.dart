@@ -8,9 +8,9 @@
 /// *
 //
 
-//  TODO  teamEdu  ---------   notes are essential part of dawo package ------
+//  devl:LIB  teamEdu  ---------   notes are essential part of dawo package ------
 //      so they are left here.. and they show direction and serve as tools here
-//  TODO  myOwn    Remember this & myOwn-special hashtag & special-projects
+//  devl:LIB  myOwn    Remember this & myOwn-special hashtag & special-projects
 
 library dawo_src; //  naming this to _src...
 
@@ -38,11 +38,11 @@ import 'mis/mis.dart';
 //       teamInno  'crazy' ideas  (..that  adm often crushes :)
 // #NOT  teamNext  for  next dawo versions
 
-//  TODO  teamAdm  package  Not yet:  import 'package:game_loop/game_loop_html.dart';
-//  TODO  teamAdm  pack     to avoid complications, better not to use too many packages
+//  devl:LIB  teamAdm  package  Not yet:  import 'package:game_loop/game_loop_html.dart';
+//  devl:LIB  teamAdm  pack     to avoid complications, better not to use too many packages
 ///
-//  TODO  teamDev   NOT using collection package anymore
-//  TODO  Should make alphabetical .txt  list of suggestions & not-used things.
+//  devl:LIB  teamDev   NOT using collection package anymore
+//  devl:LIB  Should make alphabetical .txt  list of suggestions & not-used things.
 
 part 'src/awesome.dart';
 
@@ -67,7 +67,7 @@ num get dawoReadiness =>
     11;
 
 ///  ---------------------     initialization at the beginning
-//  TODO  teamInno: Can it be done?:  special initialization process at the beginning
+//  devl:LIB  teamInno: Can it be done?:  special initialization process at the beginning
 num get dawoInit => adf.aldenteFuncInit();
 
 ///  High-level function to get Map data.

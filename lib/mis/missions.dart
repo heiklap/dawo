@@ -33,12 +33,12 @@ void helloMission() {
   _flowC('-- Somebody call: hello this is mission file and library  ---', _pB);
 }
 
-///  TODO  Use some private methods, for not to spam scope.
+///  devl:MIS  Use some private methods, for not to spam scope.
 ///  Mission avoids consciously using clear and handy structure of Chore class,
 ///  for to leave space for innovation and to find different solutions for ops.
 ///  Mission handles acts below -app level, but above chore.
 ///  Mission can include many chores. 7 Chores are build by default.
-///  TODO  Mission has 31 public members !!
+///  devl:MIS  Mission has 31 public members !!
 ///  TESTED: when extending BaseStruct: Too many arguments in constructor.
 class Mission extends MisInterfaceBasis {
 // #TIP: When class properties begins with certain letter combination, like-bl..
@@ -46,7 +46,7 @@ class Mission extends MisInterfaceBasis {
 
   String name = '* Mission Name *';
 
-  //  TODO  ? To what object is referenced?
+  //  devl:MIS  ? To what object is referenced?
   //  should be  this.Mission
   String toString() {
     return name;
@@ -77,8 +77,8 @@ class Mission extends MisInterfaceBasis {
   /// Equipment and Effort classes can also be used for this:
   /// Equipment equ ..   Effort  eff...
   ///  Actions events plans and so. Added 6.1.2018
-  ///  TODO  Check usage  and fill-Map
-  ///  TODO  rename actMisM
+  ///  devl:MIS  Check usage  and fill-Map
+  ///  devl:MIS  rename actMisM
   Map<String, Map<String, String>> actMisM = {
     'Goal': {},
     'Enemy': {},
@@ -100,7 +100,7 @@ class Mission extends MisInterfaceBasis {
     'msg': 'SampleMis-msg:',
   };
 
-  ///  TODO  Handy one-row info of placardM
+  ///  devl:MIS  Handy one-row info of placardM
   String placardRow() {
     String _pRow = 'Act:   Send:    Rec:  Com:  msg:   ';
     return (_pRow);
@@ -116,7 +116,7 @@ class Mission extends MisInterfaceBasis {
 
   ///  Reference to outPut-buffer, no high-value: used only in _flowC(
   StringBuffer _buf = out.outTMid; //  reference to used output StringBuffer.
-  //  TODO "error: The type of buf can not be inferred, because the use of the
+  //  devl:MIS "error: The type of buf can not be inferred, because the use of the
   //    instance-getter outTMid".
 
   ///  for print
@@ -188,7 +188,7 @@ class Mission extends MisInterfaceBasis {
   ///  Emergency exit from loops.
   int _rollMax = 3;
 
-  ///  TODO  To mark / handle #unUsed variables
+  ///  devl:MIS  To mark / handle #unUsed variables
   void rollHandle() {
     _rollEscape = true;
     print('----------------  rollHandle/ unUsed  -------');
@@ -214,7 +214,7 @@ class Mission extends MisInterfaceBasis {
     //  Handle user-actions until: done or excape.
   }
 
-  //   TODO  teamDev *chore*, if is toChore.. should there be outChore, lonChore ?
+  //   devl:MIS  teamDev *chore*, if is toChore.. should there be outChore, lonChore ?
   ///  beta's connection to chore (package) (?)
   ///  *chore* is separate library, which controls *job* :s
   ///  Mediating calls to outside executor process. (?)
@@ -234,7 +234,7 @@ class Mission extends MisInterfaceBasis {
     placardM['sender'] = name.substring(0, 8);
     st['wake'] = true;
     _rollMax = 3;
-    //  TODO  placardM['command'] =
+    //  devl:MIS  placardM['command'] =
   } //     -----     init
 
   ///  Building mission with it's chores.
@@ -263,14 +263,14 @@ class Mission extends MisInterfaceBasis {
     String _nS = name.substring(0, 7);
     String connectorMsg = ':INFO :ALL M: $_nS :are :READY :FOR :DAY :EVENT ';
 
-    //  TODO  scout  ? connector.scoutJoin(placardM
+    //  devl:MIS  scout  ? connector.scoutJoin(placardM
     //  instead of ':M:build:' putting name to join-call.
     connector.join(name, placardM, connectorMsg, name);
 
     connector.roll();
     st['con'] = true;
 
-    ///  add default chores to choreL and #TODO  forEach.build
+    ///  add default chores to choreL and   devl:MIS  forEach.build
     //  Short way:   choreL.forEach(build);
     _flowC('-->-m-->    choreL add-all:  $name       ', _pB);
     choreL.addAll(
@@ -279,14 +279,14 @@ class Mission extends MisInterfaceBasis {
     _flowC('   <-m--<--       :M:b:        done  $name     ', _pB);
   } //     -----     build
 
-  ///  TODO  Some idea: s. to adopt stream-like thinking everywhere.
+  ///  devl:MIS  Some idea: s. to adopt stream-like thinking everywhere.
   ///  * * *    in beta, chore and mission   * * *
   ///  :TEST:  change some variables to private.
   ///  Action is small class in #alpha (name, 2 Maps: say, reason)
   Action decision = Action(); //  Change it to public::  _decision
 
   ///  Collecting all decisions.
-  ///  TODO  Map _decisionChainMM  Change it to public !!
+  ///  devl:MIS  Map _decisionChainMM  Change it to public !!
   Map<String, Map<String, Action>> decisionChainMM = Map();
 
   ///  ***********************************************************************
@@ -492,7 +492,7 @@ class Mission extends MisInterfaceBasis {
     //var _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
     List<String> _l = [ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9, ps10];
 
-    /* TODO  howTo mapToList
+    /*  devl:MIS  howTo mapToList
     print('----------say Map in mission   ----');
     List<String> _infoL = [];
     //  Get say Map Map to list
@@ -539,12 +539,12 @@ class Mission extends MisInterfaceBasis {
     _indent; //  use it.  Meant to style output margin.
   }
 
-//  TODO  teamNext   coming?:   returning some finnish day names aso.
+//  devl:MIS  teamNext   coming?:   returning some finnish day names aso.
   /// Should include some international values from other languages.
 
-//  TODO  teamNext    coming:    Elementary Isolate example
-//  TODO  teamNext    Simple future  sample
-//  TODO  teamNext    Elementary Mixin   sample
+//  devl:MIS  teamNext    coming:    Elementary Isolate example
+//  devl:MIS  teamNext    Simple future  sample
+//  devl:MIS  teamNext    Elementary Mixin   sample
 
   ///  Add #later map to constructor to get big chunk of data:
   ///  Mission(this.name, this.motto, Map<String,String> _clayM);
@@ -587,7 +587,7 @@ void missionChoreReport(String caller) {
 } //     -----     missionChoreReport
 
 ///  Add clay ( data ) maps to missions.
-///  TODO  Messy function buildMissions.  Clean, organize it.
+///  devl:MIS  Messy function buildMissions.  Clean, organize it.
 void buildMissions(String caller) {
   _flowC('-->-m--> build Missions, caller: $caller   ', _pB);
   dev.admN.add('>>ADM:CHECK-IN  build-Missions  >>');
@@ -666,7 +666,7 @@ void buildMissions(String caller) {
     ..buildMissions(':M:bms:');
 //  };
   _flowC('  <-m--<--  missionM  :all:  build done   <-m--<-- ', _pB);
-  //  TODO  make mission-chore report
+  //  devl:MIS  make mission-chore report
   if (_pB) {
     for (var x in missionM.keys) {
       String _misName = x;
@@ -684,7 +684,7 @@ void buildMissions(String caller) {
 ///  Creating instance of Mission and using it's methods.
 ///  All render_X functions are for test and presentation.
 void renderMission(String caller) {
-  //  TODO:  too much of:  Instance of 'BlanketChore'
+  //  devl:MIS:  too much of:  Instance of 'BlanketChore'
   //  helsinkiMission.  //  NOTE    #analyzer  is slow
   //  Testing some imaginary mission.
   var missionR = Mission('MissionRender', 'Testing<<inRender<<Lib');

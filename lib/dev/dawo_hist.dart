@@ -55,7 +55,7 @@ class DawoHist {
   Map<String, String> mottoM = {
     '1': 'Do slow steady work and document it',
     '2': 'Keep pack small, use outside resources',
-    '3': 'Clean note TODO Bug try stuff'
+    '3': 'Clean note devl:DEV Bug try stuff'
   };
 
   ///  agenda
@@ -127,7 +127,7 @@ class DawoHist {
     'devSituation': 'Soon to Publish',
 
     ///  Find, where in my test-folders is THIS  version used?
-    'version': '0.9.7',
+    'version': '0.9.8',
     //  'version': '0.0.3',
     'published': 'Yes, Pub',
 
@@ -145,7 +145,7 @@ class DawoHist {
     'name': 'dawo App',
     'info': 'dartang pub package for education',
     'creator': 'me',
-    'version': '0.9.7',
+    'version': '0.9.8',
     'active': '0',
     'stopped': '0',
     'paused': '0',
@@ -154,7 +154,7 @@ class DawoHist {
     'autoChoise': '1'
   }; //     -----     appMap
 
-  /// TODO  teamInno    this map is for testing work-flow routines
+  /// devl:DEV  teamInno    this map is for testing work-flow routines
   Map<String, String> appPhaseM = {
     'act': 'super:act',
     'dance': 'galop',
@@ -211,7 +211,7 @@ class DawoHist {
   ];
 
   ///  Method for setting class field values.
-  ///  TODO  ? add parameters ? base class
+  ///  devl:DEV  ? add parameters ? base class
   void init() {
     buf.writeln(':buf:dawoHist:  init-empty ow-done.');
     print('------------ :dawoHist: init done-------------------------');
@@ -233,7 +233,7 @@ class DawoHist {
     buf.writeln(':dawoHist:box:start: C:$caller 123456789-23456789-23456788');
     print('-->>-->>-- :dawoHist:box:start: C:$caller  -->>-->>-- ');
     //  use: boxServe  OR  create own class here
-    //  TODO box  set min-max values
+    //  devl:DEV box  set min-max values
     //  :BOX:SW:  was 190
     //  unused::  final int _sw = 200; //  screen width, changed later =>
     //  row count, was 37,  added to 45
@@ -261,15 +261,15 @@ class DawoHist {
     boxServe.aHeader(0, 60, ' :layout:dawoApp: ');
     boxServe.aHeader(1, 60, ' *  $_rubric  *  by :layout:baseStruct:dawoApp:');
 
-    boxServe.aHeader(2, 52, '  *  Motto:  *  ');
-    boxServe.aBox(3, 50, 3, 48, tl.mapToFineList(mottoM, 4, 30));
+    boxServe.aHeader(2, 52, '    *        Motto:        *  ');
+    boxServe.aBox(3, 50, 3, 45, tl.mapToFineList(mottoM, 4, 45));
 
     boxServe.aHeader(7, 52, '    *       agendaM:                     *   ');
-    boxServe.aBox(8, 50, 8, 42, tl.mapToFineList(agendaM, 8, 42));
+    boxServe.aBox(8, 50, 3, 52, tl.mapToFineList(agendaM, 8, 44));
 
     //  boxServe.aBox(2, 7, 6, 16, tl.mapToListB(_model.st));
 
-    //  TODO  also buffer must catch to inner buf.
+    //  devl:DEV  also buffer must catch to inner buf.
     List<String> _bufList = [];
     _bufList.addAll(buf.toString().split('\n'));
     boxServe.aHeader(r9 - 2, 7, '   *   Buffer:   *  ');

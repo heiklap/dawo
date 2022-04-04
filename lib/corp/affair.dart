@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  affair,  handling small jobs inside corporate.
-/// * dwv: version:   0.9.7.  3.4.2022. -.   devState:  5%
+/// * dwv: version:   0.9.8.  4.4.2022. -.   devState:  5%
 /// * GitHub:  Yes  -  State:  schema
 /// * PLAN:  0.0.8  small upgrade when common methods are ready.
 //
@@ -122,16 +122,16 @@ class Affair extends CorpInterfaceBasis {
   ///  Usage: for example, :corporate:process:
   List<String> showInfo(String caller) {
     //  add parameter: placardM _pM
-    // TODO  like:  : placardM.forEach((k, v) => _li2.add('$k, $v'));
+    // devl:CORP  like:  : placardM.forEach((k, v) => _li2.add('$k, $v'));
     List<String> _l = [];
     String i = '          ';
     print('$i ***************  affair class-showInfo C: $caller *********');
-    //  TODO : give actor aso values to this form.
+    //  devl:CORP : give actor aso values to this form.
     _l.add('$i ** actor: $actor      C:  $caller');
     _l.add('$i ** sender: $sender   receiver: $receiver ');
     String _cmdS = cmd.toString();
     _l.add('$i ** cmd: $_cmdS ');
-    //  TODO  resolve this for List
+    //  devl:CORP  resolve this for List
     print(':beta:affair:showInfo:  cmd is only a String:$cmd');
     _l.add('$i ** msg:   $msg');
     _l.add('$i ** ');
@@ -142,8 +142,8 @@ class Affair extends CorpInterfaceBasis {
   } //     -----     showInfo
 
   //  Constructor
-  //  TODO    Affair(this.actor, this.sender, this.receiver, this.cmd, this.msg);
-  //TODO : used in: ?  //  Only in render here.
+  //  devl:CORP    Affair(this.actor, this.sender, this.receiver, this.cmd, this.msg);
+  //  devl:CORP : used in: ?  //  Only in render here.
 
   ///  constructor
   Affair(this.name, this.motto, this.clause);

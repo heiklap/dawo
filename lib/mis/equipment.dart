@@ -136,7 +136,7 @@ class Equipment {
 
   ///  simulation: Produce nice-looking allocation-list of resources.
   List<String> allocate(int _r, int _c) {
-    ///  TODO  use _c variable to control width
+    ///  devl:MIS  use _c variable to control width
     ///  init();  must be done somewhere.
     List<String> _l = [];
     StringBuffer _sB = StringBuffer();
@@ -144,7 +144,7 @@ class Equipment {
         'Days Area:   Car:    Law:    Machine:Money:  Office: People: Time:');
     for (var x = 0; x < _r; x++) {
       String _dS = x.toString();
-      //TODO  padRight(5, ' ')
+      //  devl:MIS  padRight(5, ' ')
       String _sbW = 'D:$_dS ';
       _sB.write(_sbW.padRight(5, ' '));
 

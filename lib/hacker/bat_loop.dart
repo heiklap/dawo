@@ -56,7 +56,7 @@ class BatLoopClass {
     joker();
     num _loopCount = 0;
     num _loopMax = 3; //  backdoor
-//TODO  control
+// TODO  control
     bool _thisCondition = condition;
     do {
       _loopCount++;
@@ -71,7 +71,7 @@ class BatLoopClass {
         _thisCondition == true;
       }
     } while (!_thisCondition);
-    //TODO  teamNext    isolateFuncOne()     // roll inside isolate
+    //  TODO  teamNext    isolateFuncOne()     // roll inside isolate
     //    isolateFuncTwo()
     return _thisCondition;
   }
@@ -85,7 +85,7 @@ class BatLoopClass {
     print('.. coming soon:    batRide gives nr of rides to everyone');
   }
 
-//TODO  teamDev :  ??... what was this meant to do...??
+//  TODO  teamDev :  ??... what was this meant to do...??
   ///  Maybe some class, which includes these 3 methods.
   ///  Mobile must be...   but what would it do ?
   void batMobile(var batman, var robin, var joker) {
@@ -145,8 +145,8 @@ class BatLoopClass {
   }
 
   ///   Roll 3 functions until everyone returns true
-//TODO  teamDev     should be backdoor here.. to avoid deadLock
-//TODO  control     NOT-READY   make necessary loops here
+// TODO  teamDev     should be backdoor here.. to avoid deadLock
+//  TODO  control     NOT-READY   make necessary loops here
   void rollTrue(var batman, var robin, var joker) {
     batman(); // roll until everybody is true
     robin();
@@ -164,7 +164,7 @@ class BatLoopClass {
   else (condition == true);
    */
 
-//TODO  Functions --------       Functions     ----------
+//  TODO  Functions --------       Functions     ----------
   ///  three functions are rolled until ALL THREE return true
 
   /// TODO  Functions ..something clever planned here... suppose, but what?
@@ -211,7 +211,7 @@ class BatLooper {
 
 /*
 void rainLoop() {
-  /*TODO  control      coded in string
+  /*  TODO  control      coded in string
   String myCode = 'void rainLoop() {
   bool isRaining() => true;
   bool isSnowing() => false;
@@ -381,7 +381,7 @@ void batLooperTest() {
   // batLooper.rainLoop();
   blc.doLine('rain loop no exists..  ');
 
-//TODO  Functions   Class   these are not yet inside class.
+//  TODO  Functions   Class   these are not yet inside class.
   // batLooper.isBoolLoop();
   isBoolLoop();
   blc.doLine('is bool loop');

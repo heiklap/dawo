@@ -58,7 +58,7 @@ class PackDawo {
   ///  Map tracking dawo 0.0.4 version changes.
   Map<String, String> vers004 = {
     //   D:0 V:3 E:3  for Done, value, effort
-    //  TODO  This kind of data might better be List<List<String>>
+    //  TODO List  This kind of data might better be List<List<String>>
     '0 D:0 V:3 E:3': '0.0.4  A. Publish version 0.0.4 to Pub  16.10.2017.',
     '1 D:0 V:3 E:3': '0.0.4  * Fill #Word data to buff.',
     '2 D:0 V:3 E:3': '0.0.4  * Seek StringBuffer, for to find certain data.',
@@ -166,7 +166,7 @@ var responseJSON = {
 
 ///  model from #Wikipedia
 /*
-//TODO  quest: howTo do JSON.decode when String is in many rows?
+//TODO JSON   quest: howTo do JSON.decode when String is in many rows?
 var dawoMenu = JSON.decode('[
   "menu" : {
     "id": "file",

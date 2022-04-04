@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// *
 /// *  interface-Base class for corp classes
-/// *  dwv: version:   0.6.0  26.3.2022      created:  26.3.2022
+/// *  dwv: version:   0.9.8   4.4.2022      created:  26.3.2022
 /// *
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
@@ -11,7 +11,7 @@ library corp;
 
 import '../alpha/alpha.dart';
 import '../beta/beta.dart';
-//  TODO  import 'dart:intl';
+//  import 'dart:intl';
 
 ///  path dependency
 import 'package:dawolang/dawolang.dart' as d_lang;

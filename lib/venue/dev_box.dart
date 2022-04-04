@@ -2,20 +2,18 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dev_box  -  presentation in 2-3-4 column boxes.
 ///
-///  * dwv: version:   0.9.7.  3.4.2022.  devState: 90%
+///  * dwv: version:   0.9.8.  3.4.2022.  devState: 90%
 ///  *      GitHub: yes.
 //
 
 part of venue;
-
-//  TODO :  21 matches,  add one more to make it even count.
 
 ///  devBox is an example of a funny way to solve a problem, It works, but:
 ///  it is NotElegant.  It is not best way to solve matrix - addBox problem.
 ///  This should be deprecated; boxServe is much more elegant.
 ///  Show Lists, like devMemos in nice column-box in console.
 ///  Can now handle 2, 3 and 4 column cases, and is very useful function.
-///  TODO  Add better row / height decision.
+///  TODO box  Add better row / height decision.
 ///  #QUEST : Maybe these 2-3-4 devBox functions can be combined to one, and
 ///  handle 2-3-4 with parameters. Did it once, but was ugly.
 ///  TODO  Make this a class.  Add: Dartlang app  DAWO 0.9.7 to row[o]end

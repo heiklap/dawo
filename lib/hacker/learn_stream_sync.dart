@@ -118,7 +118,7 @@ class LearnStreamSync {
     Stream broadcastStream = stream.asBroadcastStream();
 
     broadcastStream //   using   method   cascades...
-      //TODO  Test:  can we NOT use shorthand function?
+      // TODO  Test:  can we NOT use shorthand function?
       ..listen((value) => print("SUCCESS_1_:: stream.listen: $value"))
       ..first.then((value) => print("SUCCESS_2_:: stream.first: $value")) // 1
       ..last.then((value) => print("SUCCESS_3_:: stream.last: $value")) // 5

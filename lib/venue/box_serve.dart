@@ -31,13 +31,13 @@ class BoxServe {
 
   ///  (rc);  lets not decide here lists length
   ///  title,   rubric
-  ///  should be upper level TODO
+  ///
   String title = ' **  boxServe Title  **';
 
-  ///  should be upper level TODO
+  ///
   String footer = ' **  boxServe Footer  **';
 
-  ///  should be upper level TODO
+  ///
   String caller = '';
 
   ///  Will be combination of '$caller $boxNum.toString()'
@@ -46,6 +46,7 @@ class BoxServe {
 
   ///  TODO  null  List can here be NULL  ??
   Map<String, List<String>> logM = {};
+  ///
   List<String> _matrix = [];
 
   ///  To save matrix AND mediate it to glb.
@@ -106,19 +107,21 @@ class BoxServe {
       //  do not handle first row.
       _fakeRow++;
       String _fakeRowS = _fakeRow.toString().substring(1, 3);
-      //  TODO  choose nice background mark for matrix.
+      ///  choose nice background mark for matrix.
       //  pad with low-density mark.   NO: '-'
       _matrix[z] = '$_fakeRowS '.padRight(sw, pm);
     }
     ; //  <=  ;  dartFormatter is sometimes funny
-    //  TODO  should  get #name in the middle of first line,
+    ///  should  get #name in the middle of first line,
     boxNumS = boxNum.toString();
+    ///
     String m0ro = ':boxServe:nr: $boxNumS  :cib: $_caller   ';
     //  no used  int m0roI = m0ro.length;
     String m0row = m0ro.padRight(sw, pm);
-    //  TODO  should produce String:  'DAWO 0.9.7'
+    ///  should produce String:  'DAWO 0.9.7'
     //  String logoS = '$dawoApp.name $dawoApp.version';
     _matrix[0] = m0row;
+    ///
     String _timeNow = tl.stampDateTimePlain();
     aHeader(0, sw - 57, 'time: $_timeNow');
     String _version = dawoApp.version; //  0.9.7+
@@ -215,7 +218,7 @@ class BoxServe {
   //  bug:doc    warning: 7x     unresolved doc reference [int _r = 0]
   void aBox(int _r, int _c, int _items, int _w, List<String> _l) {
     //  If not know list length / wanted items and width, try 100. lol
-    //  TODO  Truncate items and length, if List outOfMatrix borders
+    //  TODO box   Truncate items and length, if List outOfMatrix borders
     int _overWidth = 0;
     int _overLength = 0;
     bool error = false;
@@ -329,7 +332,7 @@ class BoxServe {
     print(' $_s  dawo-boxServe-show matrixLength.');
 
     ///  if.. is awkward
-    ///  TODO  Parameter int _indent, for to set column / left margin in print.
+    ///  TODO print    Parameter int _indent, for to set column / left margin in print.
     if (action == 'print') {
       for (var x in _matrix) {
         print('$_margin$x');
@@ -399,7 +402,7 @@ BoxServe boxServe = BoxServe();
 ///  Using BaseStruct (dawoApp) fields to set usual fields in boxServe
 ///  _model is reference to BASE-class BaseStruct in alpha.dart.
 ///  Fields placement is copied from DawoApp.dart.
-///  This template for BaseStruct fields is used in example/daily_work
+///  This template for BaseStruct fields  CAN NOT BE   used in example/daily_work
 void boxLayoutDap(BaseStruct _model, String _rubric) {
   int r9 = 9;
   //  TODO  BaseStruct class usage in boxServeModel

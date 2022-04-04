@@ -11,13 +11,13 @@
 /// * variables tf & rf seems to bee acronyms for: testFunction & runFunction
 //
 
-//  TODO var  handle tf and rf variables:  10 x
+//  devl:DEV var  handle tf and rf variables:  10 x
 
 part of dawo_dev;
 
 ///  Helper class in dawo_dev
 class Aide {
-  //  TODO  Aide Constructor: add constructor: (String user, String x)
+  //  devl:DEV  Aide Constructor: add constructor: (String user, String x)
 
   /// For future use:  map for testing  dev. #NotUsed
   Map<String, String> normMap = {
@@ -35,10 +35,10 @@ class Aide {
     print(' \n --<<--<<------------ aide norms  --<<--<<------------');
   }
 
-//  TODO teamDev: PLAN:  make all 6 tests use same name with
+//  devl:DEV teamDev: PLAN:  make all 6 tests use same name with
 //         parameters: Test, Msg, Line, Begin, End, Return
 
-  ///  TODO teamDev:   Should this be named to devTestInfo ??  devInfo ??
+  ///  devl:DEV teamDev:   Should this be named to devTestInfo ??  devInfo ??
   ///  report testers info
   num devTest(String unit, String whoDoneThis) {
     if (dev.devTestPhase) {
@@ -50,7 +50,7 @@ class Aide {
       print('$_s30  dev test ended    Time: $now ');
       print('');
 
-      //  TODO aSync stream     devTestStream.
+      //  devl:DEV aSync stream     devTestStream.
       //  NOTE: Dubious to use dev-class here?
       dev.devTestCount++;
     }
@@ -77,7 +77,7 @@ class Aide {
     String _s = rf;
     var _sType = rf.runtimeType;
 
-  //  TODO Function  getter  There is no such getter 'runTimeType' in 'Function'
+  //  devl:DEV Function  getter  There is no such getter 'runTimeType' in 'Function'
   //  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
 
     print('b  b  b  b  b  b  b  b  b  b  b  b  b     Beginning:   $_s');
@@ -87,18 +87,18 @@ class Aide {
     print('');
   }
 
-  //  TODO teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
+  //  devl:DEV teamDev  Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
   ///  Dynamic-parameter-function, that is used to run other function in tests.
   ///  It is  called:     tfDyn(testSomething);
-  ///  TODO Function parameter   Check these String / type errors.
+  ///  devl:DEV Function parameter   Check these String / type errors.
   void tfDyn(String rf()) {
     //A value of type 'toString' cannot be assigned to a variable of type 'String'
     String _s = rf();
 
     //  howTo get runtime type of function rf()?
     //  String _sType = rf.runTimeType();
-    //TODO Function getter
+    //  devl:DEV Function getter
     //  There is no such getter 'runTimeType' in 'Function'
     //  String _sRunTimeType = rf..runTimeType;    //.runTimeType;
     print('------------>>-->>--    Beginning:   $_s');
@@ -107,7 +107,7 @@ class Aide {
     print('--<<--<<------------    End of test  \n');
   }
 
-  /// TODO teamDev Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
+  /// devl:DEV teamDev Function   make  rbFunc, rnFunc, rsFunc (runStringFunc returns String)
 
   ///  Present simple message while testing.
   void line(String module) {

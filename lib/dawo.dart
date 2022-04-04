@@ -18,8 +18,8 @@ library dawo;
 //  If you are using dawo right here:
 //  import 'dawo_app';Plan something instead
 
-//  TODO  #coma  Content-marketing, cheatSheet to present functionality
-//  TODO  Build: import build_runner
+//  devl:LIB  #coma  Content-marketing, cheatSheet to present functionality
+//  devl:LIB  Build: import build_runner
 //  import 'package:build_runner/build_runner.dart';
 
 ///  now, 14.4.20188 dawo_src exports all / many files
@@ -28,4 +28,4 @@ export 'package:dawo/dawo_src.dart';
 ///  Buffer also outside class, for testing and adding visibility.
 StringBuffer dawoBuf = StringBuffer();
 
-// TODO: Export any libraries intended for clients of this package.
+// devl:LIB: Export any libraries intended for clients of this package.

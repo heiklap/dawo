@@ -38,7 +38,7 @@ class AdfBase {
   }
 
   ///  ------------------   3 return true-false functions
-  ///TODO  teamDev Function return : add some logic to return values (no-bool)
+  ///  TODO  teamDev Function return : add some logic to return values (no-bool)
   bool aFunc() {
     print('dawo alDente true/false  aFunc');
     return true;
@@ -136,13 +136,13 @@ class AdfBase {
     _bb = bbFunc();
     _cc = cbFunc();
     print('----- -----  $_aa $_bb $_cc  end  dawo alDente abcSetBFunc');
-//TODO  teamDev  Function return : make code to return something meaningful
+//  TODO  teamDev  Function return : make code to return something meaningful
     return false;
   }
 
   ///-------   Using team Lists, or something useful...listHandler.. Great Name..
   ///  ..
-//TODO  teamDev  List    include some list here..?
+//  TODO  teamDev  List    include some list here..?
   void listHandler(var thisCom, var thisOp, String msg) {
     //    some plan here..
     //    if (thisOp == ('print')) (thisList.forEach.print());
@@ -163,7 +163,7 @@ class AdfBase {
   }
 
   /// PLAN:  common method for "meddling" between different functions (maybe)
-  ///TODO  teamAdm  not-ready,  Untested..  ..use-cases for this ?
+  ///  TODO  teamAdm  not-ready,  Untested..  ..use-cases for this ?
   void commandHandler(var thisCommand, var thisOp, var msg) {
     //  if (operation == ('print')) (thisList.forEach.print());
     //    else (thisList.add(operation));
@@ -234,7 +234,7 @@ class AdfBase {
   ///  logic not checked    lol
   bool alDenteThree(var fFunc, var sFunc, bool condition) {
     //  supposing; condition =   false at the beginning.
-//TODO  teamDev  stupid name /  condition makes .. troubles
+//  TODO  teamDev  stupid name /  condition makes .. troubles
     num _x = 0;
     bool _f = false;
     bool _s = false;
@@ -273,7 +273,7 @@ class AdfBase {
         }
       }
 
-      ///TODO  DartFormat    funny lonely ; here..   no effect to code :)
+      ///  TODO  DartFormat    funny lonely ; here..   no effect to code :)
       ;
       if (_x == 3) (condition = true);
     } while (condition);

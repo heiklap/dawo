@@ -11,7 +11,7 @@
 ///  . upper level activities, they are engaged from here.
 //
 
-///  TODO Check:   Visibility:  only dawo_src.dart sees this class
+///  devl:LIB Check:   Visibility:  only dawo_src.dart sees this class
 
 library rumba;
 
@@ -81,15 +81,15 @@ class Rumba {
 
   ///  Is class better than function?  Better looking/finding in editor?
   ///  Class prevents polluting nameSpace with variable names.
-  ///  TODO #QUEST howTo and where bring #dawoApp to rumba's scope?
+  ///  devl:LIB #QUEST howTo and where bring #dawoApp to rumba's scope?
   ///  Now it is just a methods parameter.
-  ///  TODO  Add all other buffers to rumbaBuf.
+  ///  devl:LIB  Add all other buffers to rumbaBuf.
   StringBuffer dance(var dawoApp) {
-    //  TODO  Parameters for screen-output wanted.
+    //  devl:LIB  Parameters for screen-output wanted.
     _flowC('-->---->--  rumba-dance', true);
     dev.admN.add('>>ADM:CHECK-IN  rumba-dance  >>');
 
-    ///  TODO  rumbaLoop is executed for now only 1-3 times
+    ///  devl:LIB  rumbaLoop is executed for now only 1-3 times
     ///  primary rumba Loops, over / outside it is: usher loop
     ///  --  rumba loop
     initRumba();
@@ -97,13 +97,13 @@ class Rumba {
     //  test #word ; is clay here?
     //  Clay  clay ??  packDawo?
 
-    //  TODO  Add 2 pcs. of Stream / async / wait / then
+    //  devl:LIB  Add 2 pcs. of Stream / async / wait / then
     ///  --  rumbaLoop
     _flowC('  -->---->--  rumba-loop', true);
     do {
       /// -----------------------  rumbaB loop code   -------------------
       /// some loopS variables to test visibility, and carry msg.
-      /// TODO  add some functionality to rumbaLoop____  messages.
+      /// devl:LIB  add some functionality to rumbaLoop____  messages.
       String connectorMsg = '';
       String rumbaLoopRumbaS = '**  rumbaLoop is rolling  **';
       _flowC('   -->---->--  rumba-loop-usher', true);
@@ -137,7 +137,7 @@ class Rumba {
           connector.roll();
           connector.box(':R:.do:');
 
-          ///  TODO  dawoApp returns: Map<String, StringBuffer> 10 maps
+          ///  devl:LIB  dawoApp returns: Map<String, StringBuffer> 10 maps
           ///  Running base activity of dawo.
           dawoApp.roll();
 
@@ -188,7 +188,7 @@ class Rumba {
     rumbaBuf.write(devBox('By:RUMBA-DANCE:', ['* header *', '* footer *'],
         [dev.innoN, dev.howToN, dev.secN], 0));
     print('--:R:----  one more funny list test   ------');
-    //  TODO  add all boxes to rumbaBuf.
+    //  devl:LIB  add all boxes to rumbaBuf.
     devBox(':R:D:', ['* header *', '* footer *'],
         [dev.innoN, dev.admN, dev.devN, dev.secN], 0);
 
