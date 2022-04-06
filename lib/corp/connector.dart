@@ -6,7 +6,7 @@
 ///  using #LANG -specific commands to configure their proceedings.
 ///  using #dawolang package in path dependency
 ///  method String weightString(String _aS) checks #C messages
-///   dwv: version:   0.6.0  26.3.2022  * devState : 18 %
+///   dwv: version:   0.9.9.   6.4.2022  * devState : 18 %
 ///
 /// * devState: 30%
 /// #name:  connector ..is not nice. change to: ______ ??

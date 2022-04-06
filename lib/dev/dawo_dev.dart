@@ -28,7 +28,7 @@ part 'envoy.dart';
 //   phase          3
 //   memo          23 ??         CHANGE:   memo  !!!
 //   test        10/50            CHANGE    test  !!!
-//  #WORD:  Stream  6
+//  #WORD: Stream  6
 
 //  New async : plans to make async functions start synchronously.
 //  This change is planned for Dart 2.0.

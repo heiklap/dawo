@@ -118,13 +118,13 @@ class BoxServe {
     String m0ro = ':boxServe:nr: $boxNumS  :cib: $_caller   ';
     //  no used  int m0roI = m0ro.length;
     String m0row = m0ro.padRight(sw, pm);
-    ///  should produce String:  'DAWO 0.9.7'
+    ///  should produce String:  'DAWO 0.9.9'
     //  String logoS = '$dawoApp.name $dawoApp.version';
     _matrix[0] = m0row;
     ///
     String _timeNow = tl.stampDateTimePlain();
     aHeader(0, sw - 57, 'time: $_timeNow');
-    String _version = dawoApp.version; //  0.9.7+
+    String _version = dawoApp.version; //  0.9.9
     aHeader(0, sw - 27, 'Dartlang app  DAWO $_version ');
     //  TODO  StampLeft ' '  // there is pm ! = ' '
     ///  Last row of matrix for range-10 marks; NOTE: rc - 1

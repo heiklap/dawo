@@ -3,7 +3,7 @@
 // can be found in the LICENSE file.
 //
 /// *  interface-Base class for mis classes
-/// *  dwv: version:   0.7.0    created:  27.3.2022
+/// *  dwv: version:   0.9.9.   6.4.2022    created:  27.3.2022
 /// *
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //
@@ -21,7 +21,7 @@ import '../corp/corp.dart';
 import '../dev/dawo_dev.dart';
 
 
-import '../src/glb.dart';
+import '../gear/gear.dart';
 import '../tools/tools.dart';
 import '../venue/venue.dart'; //  boxServe is here
 

@@ -1,11 +1,12 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
 ///
+///  * dwv: version:   0.9.9.   6.4.2022  devState : 20 %
 ///  ##  Sample file made by Dart.  "Home of dawo libraries."
 /// * Badly treated and would deserve more love than I have to give.
 /// * Might serve as a collector or central for it's sub-libraries.
-/// * dwv: version:   0.9.6  1.4.2022  devState : 20 %
-/// *
+///
 //
 
 //  devl:LIB  teamEdu  ---------   notes are essential part of dawo package ------
@@ -14,22 +15,18 @@
 
 library dawo_src; //  naming this to _src...
 
-import 'clay/clay.dart';
 
-import 'package:dawo/hacker/hack.dart';
-//  import 'code_snippets/aldente_func.dart';
-//  import 'code_snippets/bat_loop.dart';
-//  import 'code_snippets/learn_stream_sync.dart';
-
-import 'beta/beta.dart';
-import 'gear/gear.dart';
-import 'tools/tools.dart';
 import 'dawo_app.dart';
-
+import 'beta/beta.dart';
+import 'clay/clay.dart';
 import 'dev/dawo_dev.dart';
-
+import 'gear/gear.dart';
+import 'hacker/hack.dart';
 import 'mis/mis.dart';
+import 'tools/tools.dart';
 
+
+part 'src/awesome.dart';
 
 // #Team teamAdm  'favorite Dev, kill inno :), save money & time'
 //       teamDev  'create fine new complicated things'
@@ -43,8 +40,6 @@ import 'mis/mis.dart';
 ///
 //  devl:LIB  teamDev   NOT using collection package anymore
 //  devl:LIB  Should make alphabetical .txt  list of suggestions & not-used things.
-
-part 'src/awesome.dart';
 
 ///---------------------  count how long way to 0.0.1 version
 num dawoDartReadiness = 92;

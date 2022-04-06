@@ -298,7 +298,7 @@ class AdfBase {
   ///  TODO  control:   catch the loops inside both functions
   ///  and make these run parallel / aSync  &   'long'  logic
   void alDenteLong(var firstFunction, var secondFunction, bool conduct) {
-    ///  WORD:  conduct:    finish lang:    käytös, menettelytapa, hoito, johto
+    ///  WORD: conduct:    finish lang:    käytös, menettelytapa, hoito, johto
     bool _conduct = conduct;
     num _rollCount = 0;
     do {

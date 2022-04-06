@@ -1,36 +1,31 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
 ///
-///  ##  dawoApp class
+///  ##  dawoApp library and class
+/// * dwv: version:   0.9.9.   6.4.2022
+/// * devState : 25%    in GitHub : yes
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
 ///  Program might have a certain amount of 'self consciousness'. This is start.
-/// * dwv: version:   0.9.7  3.4.2022
-/// * devState : 25%    in GitHub : yes
-/// * NEXT:  Reconstruct class.  Separate hist to own class.
 /// * dawoApp instantiated inside app; it now has access to dawo.version aso.
+///  WORD: stream  13 / 35  times
 //
 
 library dawo_app;
 
 import 'alpha/alpha.dart';
 import 'beta/beta.dart';
+import 'corp/corp.dart';
+////  import 'corp/store.dart';
+import 'dev/dawo_dev.dart';
+import 'gear/gear.dart';
+import 'mis/mis.dart';
+import 'tools/tools.dart';
 import 'venue/venue.dart';
 
-import 'mis/mis.dart';
-
-import 'corp/corp.dart';
-//  import 'corp/store.dart';
-
-import 'dev/dawo_dev.dart';
-
-import 'src/glb.dart';
-
-//  for box_serve:
-import 'tools/tools.dart';
 
 
-//  WORD: stream  13 / 35  times
 
 ///  Getter practice.
 num dawoAppReadiness = 95; //  changed: 2.5.2015
@@ -496,9 +491,6 @@ class DawoApp {
     //  buf.clea--<-da-<  DawoApp.done  done  --<<--<<---- ', _pB);
   }     //     -----     done
 
-  //  Changed using new fields user and purpose.
-  //  Stop using constructor
-  //  DawoApp(this.user, this.motto);
 
   ///  Every important library has it's own flowC function. #Library #Privacy!!
   ///  Calling print/print-to-buffer function from beta.

@@ -6,10 +6,10 @@
 ///  Some useful copy-paste stuff for learning simple functions.
 ///  GOAL: find common, reusable elements for control-flow, and develop
 ///  names, and ideas.  In GitHub, for to be able to modify while on-The-Road.
-///  * dwv: version:   0.9.6   1.4.2022
+///  * dwv: version:   0.9.9.   6.4.2022
 ///  * devState%  60%  -   in gitHub:   yes
 ///  * This serves as example:  What can you develop from these ideas..?
-///  *  WORD:  batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
+///  *  WORD: batLoop: 11 / 21, batman : 18, robin : 27, joker : 31 times.
 //
 
 //   howTo:Function:anonymous

@@ -104,7 +104,7 @@ class DawoHist {
   List<String> gitL = [
     '2022-04-02  0.9.7 hist, hist.box, dev.box  week:BUG:friday.box=>Treaty.auction',
     '2022-04-02  0.9.6  clean, folder: tools, gear :venue:= mill, shower box_serve: Lib:hacker',
-    'Fixed: WORD:,hkl, hklTry, dev-note TO MEMO -79x, lib_dev_memos, / NOTE 51x',
+    'Fixed: WORD: hkl, hklTry, dev-note TO MEMO -79x, lib_dev_memos, / NOTE 51x',
     'DO:31.3. => vers 0.9.0 to GH - folder-lib alpha. Folder-lib beta - flow - stock',
     'vers. 0.8.5 to GH  dev renew:aide, envoy  ex/daily_action to class',
     '2022-03-29  vers 0.8.0 in GH  clay lib: 11 class, 16 libs overall now',

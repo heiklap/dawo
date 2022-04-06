@@ -1,8 +1,9 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
 //
-///  *  dawo_example   dawo version   0.9.7. - 2.4.2022
-///  *  dawo_example creates 53 screens of console output data presentation.
+///  *  dawo_example   dawo version:   0.9.9.   6.4.2022
+///  *  dawo_example creates 45 screens of console output data presentation.
 ///  *               28 was previous output, so may be some repetition.
 ///  * Find:  :con: :connector: :opCom:  :corporate:
 ///  * DONE:  make this inside class
@@ -21,6 +22,8 @@ import '../lib//corp/corp.dart';
 import '../lib//dev/dawo_dev.dart';
 //  import '../lib/mis/camp.dart';
 
+import '../lib/gear/gear.dart';
+
 import '../lib//mis/mis.dart';
 import '../lib/tools/tools.dart';
 import '../lib/venue/venue.dart';
@@ -29,7 +32,7 @@ import '../lib//dawo_app.dart';
 import '../lib/rumba.dart';
 
 import '../lib/dawo_src.dart';
-import '../lib/src/glb.dart';
+
 
 //  Unused package is marked with grey, and #warning.
 //  import 'package:dawo/mill.dart';
@@ -319,7 +322,7 @@ main() {
   ///  Call function that adds #actor and #count to this String and prints it.
   exInfo('==>>==>>==   dawo_example rumba.dance-dawoApp   ==>>==>>==');
   // This method also returns a StringBuffer, that is not used here.
-  rumba.dance(dawoApp); //  15 screens of output.
+  rumba.dance(dawoApp); //  23 screens of output.
 
   exPlay.exampleMethodsPlay(); //  Add more 13 screens output.
   //  Class Bind keeps and handles message-based bindings between objects.

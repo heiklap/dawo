@@ -200,7 +200,7 @@ class Treaty {
 
           String _sb = bilateralM[x].toString();
 
-          ///  Update map value with new word
+          ///  Update map value with new word.
           bilateralM[x] = ('$_sb$_nb  ');
           print(':bilateral:success: :name: $_nb::   $_word');
           _count++;

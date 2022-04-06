@@ -2,10 +2,10 @@
 /// Use of this source code is governed by a BSD-style license that
 /// can be found in the LICENSE file.
 ///
-///  ##  Dawo, 0.9.6.  learning Dartlang project.
+///  ##  Dawo, 0.9.9.  learning Dartlang project.
 /// Beginner Dart programmers kickoff to develop a glorious pub package; dawo.
 /// Make it big, complicated; then organize, and make internal systematics.
-/// dwv: version:   0.9.6  1.4.2022
+/// dwv: version:   0.9.9.   6.4.2022 1.4.2022
 /// V:  0.3.0  Modify comments, style and clarity
 ///
 //  devMemo: Dawo, started dev,  nothing special.

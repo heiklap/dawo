@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  dev_box  -  presentation in 2-3-4 column boxes.
 ///
-///  * dwv: version:   0.9.8.  3.4.2022.  devState: 90%
+///  * dwv: version:   0.9.9.  6.4.2022.  devState: 90%
 ///  *      GitHub: yes.
 //
 
@@ -16,7 +16,7 @@ part of venue;
 ///  TODO box  Add better row / height decision.
 ///  #QUEST : Maybe these 2-3-4 devBox functions can be combined to one, and
 ///  handle 2-3-4 with parameters. Did it once, but was ugly.
-///  TODO  Make this a class.  Add: Dartlang app  DAWO 0.9.7 to row[o]end
+///  TODO  Make this a class.  Add: Dartlang app  DAWO 0.9.9 to row[o]end
 ///  190 rows.  Add header and footer in List<String> _hfL
 StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
     int forceHeight) {
@@ -65,9 +65,9 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
     ///  for to trim rows items nicely
     //  notUsed:   int tr1Length = tr1.length;
 
-    ///  To get: time:  2017-12-23  09:02:16     _Dartlang app  DAWO 0.9.7
+    ///  To get: time:  2017-12-23  09:02:16     _Dartlang app  DAWO 0.9.9
     String _timeNow = tl.stampDateTimePlain();
-    String _version = dawoApp.version; //  0.9.7+
+    String _version = dawoApp.version; //  0.9.9
     String dawoLogoS = 'time: $_timeNow    _Dartlang app  DAWO $_version ';
     int dawoLogoLength = dawoLogoS.length;
     //  :BUG: makes about 6 wide column error in box

@@ -3,18 +3,15 @@
 //  that can be found in the LICENSE file.
 //
 ///  ##  glb   keeping important everybody-uses variables and constants.
-/// * dwv: version:   0.9.8.  23.3.2022.  -  devState:  13%
+/// * dwv: version:   0.9.9.   6.4.2022.  -  devState:  13%
 /// * GitHub: yes.
 /// * State:  schema
 //
 
-library glb;
+//  library glb;
+part of 'gear.dart';
 
-//  for box_serve:
-//  NO  import '../venue/box_serve.dart';
-//  for box-serve
-import '../venue/venue.dart';
-import '../tools/tools.dart';
+
 
 ///  Global, everybody to use variables and constants.
 class GlobalClass {

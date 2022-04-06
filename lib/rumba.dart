@@ -4,7 +4,7 @@
 ///  ##  Rumba : Loop, that runs dawoApp and some other stuff.
 ///  Runs it's loops forced, only once, without possibility of user action.
 ///  * Primary functionality:  loop, inside it: dawoApp
-///  * dwv: version:   0.9.6  1.4.2022   functionality: 70%
+///  * dwv: version:   0.9.9.   6.4.2022   functionality: 70%
 ///  * in GitHub :  yes  NEXT: parameters for output?
 ///  * NEXT: bool values, that stop loops #FromInside dawo-app.
 ///  * If program parts have a certain amount of 'self consciousness' or other
@@ -38,7 +38,7 @@ class Rumba {
   bool missionB = false;
 
   ///  control for printing.
-  bool _pB = false;
+  bool _pB = true;   //  false;
 
   ///  Loop counter.
   int rumbaCount = 0;
@@ -94,7 +94,7 @@ class Rumba {
     ///  --  rumba loop
     initRumba();
 
-    //  test #word ; is clay here?
+    //  test #word: ; is clay here?
     //  Clay  clay ??  packDawo?
 
     //  devl:LIB  Add 2 pcs. of Stream / async / wait / then

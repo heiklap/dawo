@@ -9,7 +9,7 @@
 /// *  devState : 27 % / unknown  -  PLAN:  cleaning
 // -  devMemo: 4 pc.
 //
-//  WORD:  build  46 / 33  pc. Is it too much.
+//  WORD: build  46 / 33  pc. Is it too much.
 //  chore:  96 / 20 pc
 
 ///  Renamed library to: missions for 0.0.4.
@@ -290,7 +290,7 @@ class Mission extends MisInterfaceBasis {
   Map<String, Map<String, Action>> decisionChainMM = Map();
 
   ///  ***********************************************************************
-  ///  #WORD: 's for stream-like processes. What 3 words to use?
+  ///  #WORD:? 's for stream-like processes. What 3 words to use?
   ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   void orderStream() {} //  is not async, just normal wait-a-little-in-queue.

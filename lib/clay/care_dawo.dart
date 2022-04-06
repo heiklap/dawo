@@ -73,7 +73,7 @@ class PackDawo {
     '9 D:5 V:3 E:3': '0.0.4  DO   Dev-Memos, add 30.',
     '10 D:0 V:3 E:3': '? ?    Classes: add field: outBuf. Use in flow.',
     '11 D:0 V:3 E:3':
-        '0.0.5   Word/ Lang. Create Lang class and methods.To collect words.',
+        '0.0.5   Word: Lang. Create Lang class and methods.To collect words.',
     '12 D:0 V:3 E:3': '0.0.6   Use set, queue, enum, typedef aso.',
     '13 D:0 V:3 E:3': '0.0.5  * Stamp time, duration.',
     '14 D:0 V:3 E:3': '0.0.5  JSON, indexedDB.',

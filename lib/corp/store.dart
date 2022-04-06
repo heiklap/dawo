@@ -27,7 +27,7 @@ class Store extends CorpInterfaceBasis {
   String clause = '*Store Clause*';
 
   ///  ***********************************************************************
-  ///  #WORD: 's for stream-like processes. What 3 words to use?
+  ///  #WORD:? 's for stream-like processes. What 3 words to use?
   ///  chain, procession, queue, order, request, stream, river, flow, rune
   ///  19.10.2017  adapt this structure everywhere, until find better.
   ///  These are upper-level streams, others are inside classes.
