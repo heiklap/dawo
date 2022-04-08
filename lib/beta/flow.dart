@@ -80,6 +80,12 @@ class FlowBase {
       ///  change buffer to String.
       String s = x.toString();
       int current = 0;
+      //  RangeError (end): Invalid value: Not in inclusive range 6..12: 42
+      //#0      RangeError.checkValidRange (dart:core/errors.dart:355:9)
+      //#1      _StringBase.substring (dart:core-patch/string_patch.dart:400:27)
+      //#2      FlowBase.fFind (package:dawo/beta/flow.dart:83:22)
+      //#3      Rumba.dance (package:dawo/rumba.dart:209:19)
+      //  :BUG:001: Error: when to:  1.0.0
       flowList.add(s.substring(6, 42));
       //  while(current < s.length){
       //  Do we have find here?

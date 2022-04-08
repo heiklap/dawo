@@ -38,7 +38,8 @@ class Rumba {
   bool missionB = false;
 
   ///  control for printing.
-  bool _pB = true;   //  false;
+  ///  _//  :BUG:001: Error: when to:  1.0.0
+  bool _pB = false;   // bug  when true
 
   ///  Loop counter.
   int rumbaCount = 0;
@@ -206,6 +207,7 @@ class Rumba {
     print('--<<--;R:--<<--<<  outBuffers  done --<<--<<--<<--<<-- \n');
     //  fFind(':RUMBA-DANCE:', '->>-', 35);
     //  fFind(':RUMBA-DANCE:', 'build', 30);
+    //  :BUG:001: Error: when to:  1.0.0
     if (_pB) flow.fFind(':RUMBA-DANCE:', '-->---->--', 35);
 
     tl.listShow(dev.doneL, ':R:');

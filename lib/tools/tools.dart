@@ -211,7 +211,7 @@ class Tools {
   ///  Fill list-box-data in big matrix List, in r, _c coordinates.
   ///  change to bool!
   boxInList(
-      //:BUG:DEBUG:  if field-length <_w  => rangeError in called functions.
+      //  :BUG:DEBUG:  if field-length <_w  => rangeError in called functions.
       int _r,
       int _c,
       _asked,
@@ -543,12 +543,11 @@ void main() {
   ///  OK Done
   ///  void sleepMS(int waitingTime, [bool infoB]) {
   ///  callers:  No usages found
-  ///  BUG:  warning: unresolved doc reference [bool infoB]
+  ///  :BUG: dart doc  warning: unresolved doc reference [bool infoB]
   void sleepMS(int waitingTime, [bool infoB = false]) {
     //  var testSleepTime = new Duration(hours:0, minutes:0, seconds:0, microseconds:500);
     var goalTime = DateTime.now().add(new Duration(milliseconds: waitingTime));
-    //  bug: warning:  hklTry to create explicit variable with value
-    //  bug problem: parameter is not obligatory, so= []
+    ///  Mjust explicitly set
     bool _infoB = false;
     _infoB = infoB;
     if (_infoB) (print('Waiting for  $waitingTime'));

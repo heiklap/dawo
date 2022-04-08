@@ -5,12 +5,13 @@
 ///  ##  Dev (& team)
 ///  dev, msg classes and some helper stuff for screen prints and memos.
 ///  (Team - for many developers working in same project)
-///  * dwv: version:   0.9.7.  3.4.2022.  -   devState: 16 %
+///  * dwv: version:   0.9.9.  8.4.2022.  -   devState: 16 %
 ///  * GitHub: yes  29.11.2014
 //
 
 library dawo_dev;
 
+import '../gear/gear.dart';
 import '../venue/venue.dart';
 import '../tools/tools.dart';
 
@@ -19,6 +20,7 @@ import '../beta/beta.dart';
 part 'aide.dart';
 part 'dawo_hist.dart';
 part 'dev_memos.dart';
+part 'dg_box.dart';
 part 'envoy.dart';
 
 //   devl:DEV name   PROBLEMS, when using too common names:

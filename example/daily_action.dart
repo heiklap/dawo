@@ -22,8 +22,8 @@ import 'package:dawo/mis/mis.dart';
 
 import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/corp/corp.dart';
-import '../lib/tools/tools.dart';
-import '../lib/venue/venue.dart';
+import 'package:dawo/tools/tools.dart';
+import 'package:dawo/venue/venue.dart';
 
 //  Instance is not created here beginning from 12-2017  0.0.7+
 //  DawoApp dawoApp = new DawoApp(':daily:bundle:test:', 'By: :daily:bundle:test:');
@@ -465,8 +465,8 @@ class DailyAction {
 
     boxServe.init(36, 185, '_');
     boxServe.construct(':connector:day:friday:', ':daily:bundle:Friday:');
-    history();
 
+    //  :BUG:  DailyAction.friday (file:///C:/Users/Public/IdeaDart/dw/dawo/example/daily_action.dart:470:14)
     boxServe.aHeader(16, 20, '* connector joinLog * ');
     boxServe.aBox(17, 20, 18, 50, connector.joinLog);
     boxServe.aHeader(16, 90, '* connector inMsgLog * ');
@@ -481,6 +481,9 @@ class DailyAction {
     boxServe.show(':daily:bundle:test:', 'print', 6);
     boxServe.done(':daily:bundle:test:');
 
+    ///  This can not be in middle of other box presentation
+    dawoHistory();
+
     fridayBundle.logM
         .putIfAbsent('Day friday done', () => 'msg: in :daily:work:');
 
@@ -489,7 +492,7 @@ class DailyAction {
   } //     -----     friday
 
   ///  Used on:  friday
-  void history() {
+  void dawoHistory() {
     ///  Using dawoHist in this presentation, so put data to buffer
     //TODO  ??  dawoHist.init();
     //  ALREADY INITIALIZED BUILD CHORE  in  ChoreBuild

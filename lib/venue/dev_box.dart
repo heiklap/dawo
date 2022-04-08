@@ -1,5 +1,7 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+//
 ///  ##  dev_box  -  presentation in 2-3-4 column boxes.
 ///
 ///  * dwv: version:   0.9.9.  6.4.2022.  devState: 90%

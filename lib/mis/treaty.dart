@@ -3,7 +3,7 @@
 ///
 /// ##  Treaty:  action-field for two missions; to say and bargain
 /// *
-/// * dwv: version:   0.9.7.  3.4.2022.  -   devState: 40 %
+/// * dwv: version:   0.9.9.  8.4.2022.  -   devState: 40 %
 /// * GitHub:
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
 //  NEXT:
@@ -223,7 +223,7 @@ class Treaty {
   ///  usage:  in example daily_action.dart weekBox
   ///  simulation: Produce nice-looking allocation-list of resources.
   ///  devl:MIS DONE hklTry   addparameter: callerS
-  ///  devl:MIS BUG  daily_action  commented out callhere
+  ///  devl:MIS :BUG:  daily_action  commented out call here
   List<String> auction(String callerS, int _r, int _c) {
     callerS;
     //  devl:MIS  use _c variable to control width
@@ -243,7 +243,7 @@ class Treaty {
       for (var x = 0; x < 8; x++) {
         if (x == _rand) {
           //  padRight(8, ' ')
-          //  bug: 2022.4.2  vers:  0.9.6.
+          //  :bug: 2022.4.2  vers:  0.9.6.
           //   RangeError (index): Invalid value: Valid value range is empty: 4
           //  #0      List.[] (dart:core-patch/growable_array.dart:281:36)
           //  #1      Treaty.auction (file:///C:/Users/Public/IdeaDart/dw/dawo/lib/mis/treaty.dart:243:32)

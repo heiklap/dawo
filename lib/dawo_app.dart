@@ -3,7 +3,7 @@
 // that can be found in the LICENSE file.
 ///
 ///  ##  dawoApp library and class
-/// * dwv: version:   0.9.9.   6.4.2022
+/// * dwv: version:   0.9.9.   8.4.2022
 /// * devState : 25%    in GitHub : yes
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
@@ -38,7 +38,7 @@ StringBuffer appBuf = StringBuffer(); //  not used here
 class DawoApp {
   ///
   final String name = 'DawoApp';
-  final String version = '0.9.8';
+  final String version = '0.9.9';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   ///
@@ -108,14 +108,14 @@ class DawoApp {
   };
 
   ///  Package information.
-  Map<String, String> package = {
+  Map<String, String> packageM = {
     'agenda': 'Data-handling app package',
     'msg': 'This is a process for learning.',
     // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 :demandStream Listened
     'develop': 'Under development.. from 0.0.8+ to 0.1.0.',
     // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 demandStream Listened
-    'pack: version  ': 'Version: 0.9.8  ',
-    'pub': 'Published 22.3.2022',
+    'pack: version  ': 'Version: 0.9.9  ',
+    'pub': 'Published 8.4.2022',
   };
 
   ///  Organize out.out-buffers to Map for return to package users.
@@ -326,7 +326,7 @@ class DawoApp {
     store.demandStream(
         //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
         ':dawoApp:river:',
-        tl.mapToList(package),
+        tl.mapToList(packageM),
         'appListener');
     store.demandStream(':dawoApp:river:',
         ['First Book', 'My Book', 'Third Book'], 'appListener');
@@ -344,7 +344,7 @@ class DawoApp {
     store.demandStream(
         //  [agenda, msg, develop, version] don't work anymore: hklTry: pack
         ':dawoApp:river:',
-        tl.mapToList(package),
+        tl.mapToList(packageM),
         'appListener');
 
     ///  calling stream on dev.admN list certain items:

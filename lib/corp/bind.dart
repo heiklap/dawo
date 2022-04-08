@@ -20,7 +20,11 @@ class Bind extends CorpInterfaceBasis {
   //  counter for connections.
   int bindC = 0;
   //  print control.
+  //  :BUG:001 to 1.0.0 version       bool _pB = true;
   bool _pB = true;
+
+
+
   //  header for messages.
   String emblem = ':bind:';
   StringBuffer buf = StringBuffer();

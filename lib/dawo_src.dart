@@ -81,7 +81,7 @@ StringBuffer renderDawo() {
   renderBuffer.writeln('\n ------ renderBuffer starting  ------------ \n');
 
   dawoApp.init('dawoTestApp', 'in void renderDawo ');
-  dawoApp.package['agenda']; //  Just naming it.
+  dawoApp.packageM['agenda']; //  Just naming it.
 
   /// Just another instance, shorter, for testing.
   DawoApp da = DawoApp();

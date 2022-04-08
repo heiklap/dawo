@@ -4,7 +4,7 @@
 ///
 ///  ##  dawoHist class
 ///  * Primary functionality:  Keep historic dev data.
-/// * dwv: version:   0.9.7.  3.4.2022.
+/// * dwv: version:   0.9.9.  8.4.2022.
 /// * devState : 25%    in GitHub : yes
 ///
 //  V:  0.2.0  Only Format - DartFormat
@@ -33,7 +33,7 @@ class DawoHist {
   //area List
   List<String> areaL = ['Adm', 'Resource', 'Staff', 'QRW-QRP', 'Sec'];
 
-  ///  Bugs from gitHub heiklap:dawo
+  ///  :BUG:s from gitHub heiklap:dawo
   List<String> bugL = [
     'Control console print for every or certain objects; howTo implement?',
     'ALREADY INITIALIZED BUILD CHORE", in app_chore_play.dart ',
@@ -81,6 +81,8 @@ class DawoHist {
   ///  Object that owns this.
   String master = ':dawoApp:';
   //  yes / no   ..  printing now.
+
+  //  :BUG:001 to 1.0.0 version       bool _pB = true;
   bool _pB = true;
 
   ///
@@ -102,6 +104,7 @@ class DawoHist {
 
   ///  git messages list
   List<String> gitL = [
+    '2022-04-06  0.9.9 GLB to Gear. Clean: WORD: NEXT: Changed up-level file headers.',
     '2022-04-02  0.9.7 hist, hist.box, dev.box  week:BUG:friday.box=>Treaty.auction',
     '2022-04-02  0.9.6  clean, folder: tools, gear :venue:= mill, shower box_serve: Lib:hacker',
     'Fixed: WORD: hkl, hklTry, dev-note TO MEMO -79x, lib_dev_memos, / NOTE 51x',
@@ -127,12 +130,12 @@ class DawoHist {
     'devSituation': 'Soon to Publish',
 
     ///  Find, where in my test-folders is THIS  version used?
-    'version': '0.9.8',
+    'version': '0.9.9',
     //  'version': '0.0.3',
     'published': 'Yes, Pub',
 
     ///  next-version-info might be useful for my different tests and devMemo:s
-    'next version': '0.9.8. ~4.4.2022',
+    'next version': '1.0.0. ~9.4.2022',
     'author': 'Heikki Lappalainen',
     'devOp': 'Heikki Lappalainen',
     'webPage': 'https://github.com/heiklap/dawo',
@@ -145,11 +148,11 @@ class DawoHist {
     'name': 'dawo App',
     'info': 'dartang pub package for education',
     'creator': 'me',
-    'version': '0.9.8',
+    'version': '0.9.9',
     'active': '0',
     'stopped': '0',
     'paused': '0',
-    'userChoise': '-',
+    'userAudit': '-',
     'userChoise': '-',
     'autoChoise': '1'
   }; //     -----     appMap
@@ -243,23 +246,20 @@ class DawoHist {
     String boxHeader = ':dawoHist:box:';
 
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
-    //  :BUG:  Clear old lists first. ??
-    //  :BOX:SW:  was 190
-    boxServe.init(_rc, 200, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':dhst:box: ', ':dHst:'); //  :BUG: C: $caller');
-    print(':BUG:DEBUG: dawoHist:box is not called * * * ');
+    //  rows, width or: 0 = use default 47, 195
+    boxServe.init(_rc, 200, '_');
+    boxServe.construct(':dhst:box: ', ':dHst:');
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    //  DONE: 2.4.2022  copy layOutDap code for box here
     //  hklTry: NOT USE:  boxLayOutDep
     int r9 = 9;
     int r28 = 28;
-    String _rubric = 'layout:rubric';
+    String _rubric = ':rubric:  _ NO _';
     boxServe.aHeader(1, 4, '* *  info L * * ');
     boxServe.aBox(2, 4, 3, 30, infoL);
 
     ///  rubric like: DAWO HIST INFO
-    boxServe.aHeader(0, 60, ' :layout:dawoApp: ');
-    boxServe.aHeader(1, 60, ' *  $_rubric  *  by :layout:baseStruct:dawoApp:');
+    boxServe.aHeader(0, 60, ' :layout:_NO_: ');
+    boxServe.aHeader(1, 60, ' *  $_rubric  *  by :layout:_  NO  _:');
 
     boxServe.aHeader(2, 52, '    *        Motto:        *  ');
     boxServe.aBox(3, 50, 3, 45, tl.mapToFineList(mottoM, 4, 45));
@@ -334,5 +334,7 @@ class DawoHist {
   } //     -----     flowC
 
 } //  -----  class DawoHist
+
+  //  instance dawoHist created in user-side or examples
 
 //

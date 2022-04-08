@@ -15,23 +15,23 @@
 ///
 ///   hklTry  NOT    import 'package:dawo/dawo.dart';
 
-import '../lib/alpha/alpha.dart';
-import '../lib/beta/beta.dart';
+import 'package:dawo/alpha/alpha.dart';
+import 'package:dawo/beta/beta.dart';
 
-import '../lib//corp/corp.dart';
-import '../lib//dev/dawo_dev.dart';
-//  import '../lib/mis/camp.dart';
+import 'package:dawo/corp/corp.dart';
+import 'package:dawo/dev/dawo_dev.dart';
+//  import 'package:dawo/mis/camp.dart';
 
-import '../lib/gear/gear.dart';
+import 'package:dawo/gear/gear.dart';
 
-import '../lib//mis/mis.dart';
-import '../lib/tools/tools.dart';
-import '../lib/venue/venue.dart';
+import 'package:dawo/mis/mis.dart';
+import 'package:dawo/tools/tools.dart';
+import 'package:dawo/venue/venue.dart';
 
-import '../lib//dawo_app.dart';
-import '../lib/rumba.dart';
+import 'package:dawo/dawo_app.dart';
+import 'package:dawo/rumba.dart';
 
-import '../lib/dawo_src.dart';
+import 'package:dawo/dawo_src.dart';
 
 
 //  Unused package is marked with grey, and #warning.
@@ -93,7 +93,7 @@ class ExPlay {
     'msg': 'D-ex-msg:',
   };
 
-  //
+  ///  copied to dawo-dev_box.dart
   void glbAndDevBox() {
     glb.dawoLogo.forEach(print);
     devBox(':d:ex:main:', ['* header *', '* footer *'],
@@ -131,18 +131,12 @@ class ExPlay {
     dawoHist.buf.writeln(':dawoHist:template:');
 
     ///  TODO  hosTo handle:  in boxServe there are:  title and footer.
-    boxServe.init(36, 175, '_');
-
     ///  Table name and glb.buffer name
-    boxServe.construct(':dHst:dAc:tmpl:', ':dawoHist:template:');
-    //  hklTry  2022.4.2.
-    //  boxServe.aBox(_r, _c, _items, _w, _l)
+    //  boxServe.construct(':dHst:dAc:tmpl:', ':dawoHist:template:');
     ///  BaseStruct fields:  boxLayoutDap(BaseStruct _model, String _rubric)
     //  TODO  0.9.6.  boxLayoutDap(dawoHist, ':dawoHist:template:');
     dawoHist.box('dawo:example'); //  2022.4.2.
 
-    boxServe.show(':dHst:', 'print', 3);
-    boxServe.done(':dHst:');
   } //     -----      boxHistTemplate
 
   ///

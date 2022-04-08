@@ -3,7 +3,7 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dwv: version:   0.9.7.  3.4.2022.   devState:  60%
+/// * dwv: version:   0.9.9.  8.4.2022.   devState:  60%
 /// * GitHub: yes
 ///  NOTE:  box_serve has been invisible in doc, it is only imported
 ///  TODO:  check:  box_serve
@@ -78,7 +78,7 @@ class BoxServe {
     //  if boxes forgot to run DONE !!
     //  line 60 col 9: Use isNotEmpty instead of length
     if (_matrix.isNotEmpty) {
-      print('* * * *  :DEBUG:BUG  _matrix length > 0  * * * * * * * * * * *  ');
+      print('* * * *  :DEBUG:BUG:  _matrix length > 0  * * * * * * * * * * *  ');
     }
 
     pm = _pm; //  padMark
@@ -215,7 +215,7 @@ class BoxServe {
   ///  NO  void aBox([int _r = 0, int  _c = 0, _items = 0]  _w, List<String> _l) {
   //
 
-  //  bug:doc    warning: 7x     unresolved doc reference [int _r = 0]
+  //  :bug:  dart doc    warning: 7x     unresolved doc reference [int _r = 0]
   void aBox(int _r, int _c, int _items, int _w, List<String> _l) {
     //  If not know list length / wanted items and width, try 100. lol
     //  TODO box   Truncate items and length, if List outOfMatrix borders
