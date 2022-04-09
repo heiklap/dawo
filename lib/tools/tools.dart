@@ -56,6 +56,14 @@ class Tools {
     print('      --:ls:--<<--<<--<<    done    --<<--<<--<<--<< \n');
   }
 
+  ///  Method for informative list-printing.
+  void listShowNeat(List _l, String _lName, String caller) {
+    String l = _l.length.toString();
+    print('\n :L: $_lName  -->  caller:: $caller  length:: $l -->');
+    _l.forEach(print);
+    print(' -- - - - - -    done - - - - - - - -  \n');
+  }
+
   ///  Counts items in inner list
   int countInnerList(List<List<String>> _l) {
     int i = 0;

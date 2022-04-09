@@ -138,7 +138,7 @@ class Corporate extends CorpInterfaceBasis {
     placardM.forEach((k, v) => _li2.add('$k, $v'));
     _li2.add('_______ placardM ___________________________');
 
-    devBox(':bl:comProc:', ['* header *', '* footer *'], [_li1, _li2], 10);
+    devBox(':bl:comProc:', ['* h:corporate *', '* f:corporate *'], [_li1, _li2], 10);
 
     List<String> _li3 = [];
     // actual command.
@@ -165,7 +165,7 @@ class Corporate extends CorpInterfaceBasis {
     _affairOp.operation; //  no operation, just show info now.
     _affairOp.showInfo(':corporate:process:');
 
-    devBox(':bl:comProc:', ['* header *', '* footer *'], [_li3, _li4], 10);
+    devBox(':bl:comProc:', ['* h:corporate *', '* f:corporate *'], [_li3, _li4], 10);
 
     //  devl:CORP  :corporate:process: end info and statistics.
     _cpBuf.writeln(':_cpBuf:  <--<<--  :corporate:process done --------\n');

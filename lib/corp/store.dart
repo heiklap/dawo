@@ -59,7 +59,7 @@ class Store extends CorpInterfaceBasis {
         '2. ': '   :demand:stream: #phase:2:value:  $value',
         '3. ': '---  :stream: #phase:3:ok  caller: $caller        OK    ---',
       };
-      List<String> infoTwo = boxServe.infoBox(_answerM, 8, 65, 49);
+      List<String> infoTwo = infoBox(_answerM, 8, 65, 49);
       infoTwo.forEach(print);
 
       print('\n--- :stream: #phase:1 store:demandStream Listened     ---');

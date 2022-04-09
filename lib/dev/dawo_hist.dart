@@ -104,7 +104,9 @@ class DawoHist {
 
   ///  git messages list
   List<String> gitL = [
+    '2022-04-08  Clean:BUG, :BUG:001, dev/dg_box, File:alpha:action.dart, base_struct.dart.',
     '2022-04-06  0.9.9 GLB to Gear. Clean: WORD: NEXT: Changed up-level file headers.',
+    '2022-04-04  v 0.9.8  TODO:s 170 => clean: to:84 left. devl:LIB notes:166.  +DO: 10',
     '2022-04-02  0.9.7 hist, hist.box, dev.box  week:BUG:friday.box=>Treaty.auction',
     '2022-04-02  0.9.6  clean, folder: tools, gear :venue:= mill, shower box_serve: Lib:hacker',
     'Fixed: WORD: hkl, hklTry, dev-note TO MEMO -79x, lib_dev_memos, / NOTE 51x',
@@ -248,7 +250,7 @@ class DawoHist {
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
     //  rows, width or: 0 = use default 47, 195
     boxServe.init(_rc, 200, '_');
-    boxServe.construct(':dhst:box: ', ':dHst:');
+    boxServe.construct(':dhst:box: ', ':dHst:      ');
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     //  hklTry: NOT USE:  boxLayOutDep
     int r9 = 9;

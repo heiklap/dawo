@@ -10,6 +10,10 @@
 
 part of venue;
 
+
+int devBoxCount = 0;
+List<String> devBoxStatL = [];
+
 ///  devBox is an example of a funny way to solve a problem, It works, but:
 ///  it is NotElegant.  It is not best way to solve matrix - addBox problem.
 ///  This should be deprecated; boxServe is much more elegant.
@@ -59,21 +63,24 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
 
   ///  Carry the actual List building.
   void devBoxBuild() {
+    devBoxCount ++;
     int columnTwoWidth = ((sW ~/ 2) - 10); //  when 2 note s in a row
     ///  To get nice little header String in top-left corner.
     //  Widen this later to screen-width.
-    String tr1 = '_devBox_C: $caller __';
-
+    String dbcS = devBoxCount.toString();
+    ///  top-row-left-String
+    String tr1S = '_devBox_NB: $dbcS  C: $caller __';
+    devBoxStatL.add('$tr1S');
     ///  for to trim rows items nicely
-    //  notUsed:   int tr1Length = tr1.length;
+    //  notUsed:   int tr1SLength = tr1S.length;
 
     ///  To get: time:  2017-12-23  09:02:16     _Dartlang app  DAWO 0.9.9
     String _timeNow = tl.stampDateTimePlain();
     String _version = dawoApp.version; //  0.9.9
-    String dawoLogoS = 'time: $_timeNow    _Dartlang app  DAWO $_version ';
+    String dawoLogoS = 'time: $_timeNow  Dartlang app DAWO $_version ';
     int dawoLogoLength = dawoLogoS.length;
     //  :BUG: makes about 6 wide column error in box
-    String padTopRim = tr1.padRight(sW - (dawoLogoLength + 6), '_');
+    String padTopRim = tr1S.padRight(sW - (dawoLogoLength + 8), '_');
     String topRim = padTopRim + dawoLogoS;
 
     String botRim = '____'; //  Widen this later to screen-width.
@@ -225,4 +232,4 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
 
   devBoxBuild(); //  Call build-function.
   return _retBuf;
-} //     -----     devBox
+}      //     -----     devBox

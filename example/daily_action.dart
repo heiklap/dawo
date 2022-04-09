@@ -22,6 +22,7 @@ import 'package:dawo/mis/mis.dart';
 
 import 'package:dawo/dev/dawo_dev.dart';
 import 'package:dawo/corp/corp.dart';
+import 'package:dawo/gear/gear.dart';
 import 'package:dawo/tools/tools.dart';
 import 'package:dawo/venue/venue.dart';
 
@@ -71,7 +72,7 @@ class DailyAction {
   }; //     -----     daInfo1
 
   ///  List from outside map
-  List<String> daInfo1L = boxServe.infoBox(daInfo1, 6, 65, 30);
+  List<String> daInfo1L = infoBox(daInfo1, 6, 65, 30);
 
   //  Inside class: this can not be accessed in an initializer
   Map<String, String> daInfo2_Inner = {
@@ -85,7 +86,7 @@ class DailyAction {
   }; //     -----     daInfo2
 
   ///  List from outside map
-  List<String> daInfo2L = boxServe.infoBox(daInfo2, 6, 70, 40);
+  List<String> daInfo2L = infoBox(daInfo2, 6, 70, 40);
 
   ///  Choose one existing mission from missionM, like: 'PackDawoMission'
   ///  Just in case.  Used by vMission,  but  nobody uses it.
@@ -559,6 +560,8 @@ void main() {
   print('--------  bilateralM  --------------------');
   List<String> _l = tl.mapToFineList(bilateralM, 15, 40);
   _l.forEach(print);
+  glb.boxStatsShow(':by:daily:action:');
+  glb.devBoxStatsShow(':by:daily:action:');
 } //     -----     main
 
 //

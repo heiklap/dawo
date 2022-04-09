@@ -114,7 +114,7 @@ class GlobalClass {
     '::',
   ];
 
-  ///
+  ///  usage:  not used
   List<String> dawoTextOutput = [
     'String rumbaS = rumbaBuf.toString',
     'String dawoAppS = dawoBuf.toString',
@@ -142,17 +142,18 @@ class GlobalClass {
 
    */
 
-  ///  Records changes to states
+  ///  Records changes to states, usage:  not used
   List<String> actionL = [];
 
   ///  For glb:s inner data
   StringBuffer buf = StringBuffer();
 
-  ///  Method saveToGLB from box_serve fills this map.
+  ///  :box:statistics: Method saveToGLB from box_serve fills this map.
   Map<String, StringBuffer> boxServeBuffers = {};
 
-  //  register of objects that participate in Dawo / glb.
+  //  register of objects that participate in Dawo / glb. usage:  not used
   var register;
+
   //  Actor: String actor;
   //  too important to be a String
   //  Not used anymore, everybody uses flowC() and local :ACTOR :buf:
@@ -175,6 +176,55 @@ class GlobalClass {
     'state': false, //  state
   };
 
+  ///  :box:statistics: in glb
+  void boxStatsShow(String caller) {
+    //  target is:    Map<String, StringBuffer>
+    List<String> _lL = [];
+
+    print('> > >  :box:statistics:  :glb:boxServe:buf: length and names  > >');
+    int bLength = glb.boxServeBuffers.length;
+    String _bLS  = bLength.toString();
+    print('caller: $caller    :box:count:   $_bLS ');
+    print(glb.boxServeBuffers.length);
+    for (var _zStr in glb.boxServeBuffers.keys) {
+      //
+      String _orderNS = '';
+      String _lengthS = '';
+      print(glb.boxServeBuffers[_zStr]?.length);
+      int i = 0;
+      i = glb.boxServeBuffers[_zStr]!.length;
+      _lengthS = i.toString();
+      //  :BUG:  howTo   i = glb.boxServeBuffers[_zStr]?.length;
+      _orderNS = _zStr.toString();
+      //  :BUG:   howTo   _lengthS = glb.boxServeBuffers[_zStr]?.length.toString();
+      print(_zStr);
+      _lL.add(':buf:N: $_orderNS   Length: $_lengthS ');
+    }  //  for
+    _lL.forEach(print);
+    tl.listShowNeat(_lL, ':box:tatistics:', ':glb:box:stats:Show:');
+    /*    Output like:
+    :buf:No: :glb:box: C: :d:ex:1   Lnegth: 2171
+:buf:No: :con:box: :R:.do:2   Lnegth: 8414
+:buf:No: :da:box:3   Lnegth: 7419
+:buf:No: :da:box:4   Lnegth: 7419
+:buf:No: :chr:box:5   Lnegth: 8525
+:buf:No: :con:box: :d:ex:6   Lnegth: 8414
+:buf:No: :dHst:7   Lnegth: 8699
+:buf:No: :chr:box:8   Lnegth: 8525
+:buf:No: :da:box:9   Lnegth: 7419
+< < <   :box:statistics:  :glb:boxServe:buf: length and names < <
+
+     */
+
+    print('< < <   :box:statistics:  :glb:boxServe:buf: length and names < <');
+    //  glb.boxServeBuffers.keys.forEach(print);
+  }      //     -----     boxStatsShow
+
+  ///
+  void devBoxStatsShow(String _caller) {
+    tl.listShowNeat(devBoxStatL, ':devBoxStats', _caller);
+  }
+
   ///  User dan set print variables like this.
   void setGlbPrint(bool tOrF) {
     for (var x in prSt.keys) {
@@ -187,7 +237,7 @@ class GlobalClass {
     actor = _actor;
   }
 
-  ///  Minimize / stop console-flow printing.
+  ///  Minimize / stop console-flow printing.  usage:  not used
   void printControl() {}
 
   ///  Calling boxServe-class for info.
@@ -243,7 +293,7 @@ class GlobalClass {
     boxServe.show(boxHeader, 'print', 28);
     boxServe.done(boxHeader);
     print('--<<--<<  boxHeader boxServe  done  --<<--<<--  ');
-  }
+  }     //     -----     box
 
   //  code:5
   void showInfo() {

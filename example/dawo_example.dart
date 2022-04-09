@@ -139,10 +139,10 @@ class ExPlay {
 
   } //     -----      boxHistTemplate
 
-  ///
+  ///  :box:statistics: in glb
   void glbBoxShow() {
     packDawoMission.joyChr.box(':dawoExample:call:joyChr:box:');
-    print('.......... :glb:boxServe:buf: length and names  ................');
+    print('> > >  :box:statistics:     :glb:boxServe:buf: length and names  > > >');
     print(glb.boxServeBuffers.length);
     for (var z in glb.boxServeBuffers.keys) {
       //  howTo NULL
@@ -153,9 +153,10 @@ class ExPlay {
       //  hklTry: NULL  OK  with .?
       print(glb.boxServeBuffers[z]?.length);
       print(z);
-    }
+    }  //  for
+    print('< < <    :box:statistics:     :glb:boxServe:buf: length and names < < < ');
     //  glb.boxServeBuffers.keys.forEach(print);
-  } //     -----     glbBoxShow
+  }      //     -----     glbBoxShow
 
   //
   void infoBoxPlay() {
@@ -167,12 +168,12 @@ class ExPlay {
     ///
     List<String> infoOne = [];
     //  List<String> infoOne = boxServe.infoBox(dawoApp.say, 8, 57, 9);
-    infoOne.addAll(boxServe.infoBox(dawoApp.say, 8, 57, 9)); //  ;
+    infoOne.addAll(infoBox(dawoApp.say, 8, 57, 9)); //  ;
 
     infoOne.forEach(print);
     //   packDawoMission.say
     print('----  second info box  ----');
-    List<String> infoTwo = boxServe.infoBox(packDawoMission.say, 8, 40, 19);
+    List<String> infoTwo = infoBox(packDawoMission.say, 8, 40, 19);
     infoTwo.forEach(print);
     //  TODO  out.done
   } //     -----     infoBoxPlay
@@ -338,7 +339,8 @@ main() {
   print(' \nStopTime::  $stop');
   print(stop.difference(start));
   print('FlowServe calls::   $flowI ');
-
+  glb.boxStatsShow(':by:dawoExample');
+  glb.devBoxStatsShow(':by:dawoExample');
   //print buffer: print(glb.boxServeBuffers[':dawoHist:dailyAction:friday:6']);
   print('---- main done   ');
 } //     -----     end of main.

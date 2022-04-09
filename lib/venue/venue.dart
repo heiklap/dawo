@@ -30,4 +30,5 @@ import '../mis/mis.dart';
 
 part 'box_serve.dart';
 part 'dev_box.dart';
+part 'informer.dart';
 part 'shower.dart';

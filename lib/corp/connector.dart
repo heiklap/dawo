@@ -317,8 +317,8 @@ class Connector extends BaseStruct {
     ///  This returns a String
     analyzeS = d_lang.an.analyzeStrS(inMsg, d_lang.lb.wordList);
     List<String> analyzeL =
-        boxServe.infoBox({':con:join:dl:an:': '$analyzeS'}, 18, 140, 15);
-    //  analyzeL.addAll(boxServe.infoBox({':con:join:dl:an:': '$analyzeS'} , 8, 100, 15));
+        infoBox({':con:join:dl:an:': '$analyzeS'}, 18, 140, 15);
+    //  analyzeL.addAll(infoBox({':con:join:dl:an:': '$analyzeS'} , 8, 100, 15));
     analyzeL.forEach(print);
     print(':con:join:Call > :dawolang:analyze:watch:check: in ');
     //  devl:CORP  Output!!  '..:debug:dawolang:print:.:connector;join:...');

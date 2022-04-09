@@ -1,5 +1,7 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+//
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
@@ -94,14 +96,17 @@ class BoxServe {
       _matrix.add(rowS);
     }
     logM.putIfAbsent(boxNumS, () => ['$boxNumS INIT']);
-  } //     -----     init
+  }      //     -----     init
 
   ///  Build matrix with top, left, bot
   ///  Too bad that users have to call both init and construct and...
-  void construct(String _caller, _GlbBufName) {
+  ///  Find all calls, to quarantee name q12 length
+  void construct(String _caller, String _GlbBufName) {
     caller = _caller; //  save it to upper level variable.
     name = _caller; //  and to name.
-    _bufName = _GlbBufName;
+    //&  TODO bufName ??  Quarantee to 12 width
+    String _s20 = _GlbBufName.padRight(20, ' ');
+    _bufName = _s20;
 
     for (var z = 1; z < _matrix.length - 1; z++) {
       //  do not handle first row.
@@ -164,7 +169,7 @@ class BoxServe {
   ///  First: shaping map in tools, tl, library for k, v, widths.
   ///  If the parameter can’t be null, then either provide a default value:
   ///  howTo NULL       void f([int x = 1]) {}
-  List<String> infoBox(Map<String, String> inM, int _k, _v, [int margin = 0]) {
+  List<String> infoBoxOutNow(Map<String, String> inM, int _k, _v, [int margin = 0]) {
     List<String> infoL = tl.mapToFineList(inM, _k, _v);
     String _sideMark = '|';
 
@@ -201,7 +206,7 @@ class BoxServe {
 
     /// Returned list includes possible margin.
     return infoL2;
-  } //     -----     infoBox
+  }      //     -----     infoBox
 
   ///  Fill list-data in matrix in r, _c coordinates.
   ///  parameters now::  int _r, int _c, List<String> boxL, List<String> _mL)
@@ -363,7 +368,7 @@ class BoxServe {
   ///  toGLB-Buffer.  Save boxServe matrix to glb-buffers
   void saveToGLB() {
     String boxNumS = boxNum.toString();
-    _bufName = '$_bufName$boxNumS';
+    _bufName = '$_bufName $boxNumS';
     StringBuffer saveBuffer = toBuffer();
     String sbl = saveBuffer.length.toString();
     //  spamming,  away:  Name:::  $name
@@ -394,7 +399,7 @@ class BoxServe {
 
   ///  TODO : Constructor, to give shapes and measures
 
-} //  -----  class BoxServe
+}      //     -----     class BoxServe
 
 BoxServe boxServe = BoxServe();
 
@@ -402,7 +407,7 @@ BoxServe boxServe = BoxServe();
 ///  Using BaseStruct (dawoApp) fields to set usual fields in boxServe
 ///  _model is reference to BASE-class BaseStruct in alpha.dart.
 ///  Fields placement is copied from DawoApp.dart.
-///  This template for BaseStruct fields  CAN NOT BE   used in example/daily_work
+///  This template for BaseStruct fields  CAN NOT BE  used in example/daily_work
 void boxLayoutDap(BaseStruct _model, String _rubric) {
   int r9 = 9;
   //  TODO  BaseStruct class usage in boxServeModel

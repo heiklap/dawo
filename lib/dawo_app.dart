@@ -380,7 +380,7 @@ class DawoApp {
     print('-->>-->>  $boxHeader boxServe  start  -->>-->>--  ');
 
     boxServe.init(_rc, _sw, '_'); //  rows, width or: 0 = use default 47, 195
-    boxServe.construct(':da:box: ', ':da:box:');
+    boxServe.construct(':da:box: ', ':da:box:    ');
 
     ///  Method cascades would make this look nicer.
     boxServe.aHeader(1, 4, '* *  States * * ');

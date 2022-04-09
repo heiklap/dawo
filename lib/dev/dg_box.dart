@@ -18,11 +18,12 @@ class DevGlbBox {
   ///  copied to dawo-dev_box.dart
   void glbAndDevBox() {
     glb.dawoLogo.forEach(print);
-    devBox(':d:ex:main:', ['* header *', '* footer *'],
+    //
+    devBox(':d:ex:main:', ['* keyWords *', '* keywords *'],
         [glb.keyWords, glb.keyWordsSmall], 28);
     devBox(
         'By:dev:versions:',
-        ['* header *', '* footer *'],
+        ['*  -  later  -  version   - *', '*  -  later  -  version   -*'],
         [
           tl.mapToFineList(dev.later, 75, 20),
           tl.mapToFineList(dev.version008, 75, 20)
@@ -30,7 +31,7 @@ class DevGlbBox {
         24);
     devBox(
         'By:dev:versions:',
-        ['* header *', '* footer *'],
+        ['*   plugins   dev-version   *', '**   plugins   dev-version   **'],
         [
           tl.mapToFineList(dev.plugins, 75, 20),
           tl.mapToFineList(dev.version0075, 75, 20)

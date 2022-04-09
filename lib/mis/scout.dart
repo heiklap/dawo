@@ -111,7 +111,7 @@ class Scout {
     };
     ///
     List<String> courierL = [];
-    courierL.addAll(boxServe.infoBox(courierM, 8, 35, 29));
+    courierL.addAll(infoBox(courierM, 8, 35, 29));
     courierL.forEach(print);
 
     ///  #LEARN:  courier function output:
