@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 //
-///  *  dawo_example   dawo version:   0.9.9.   6.4.2022
+///  *  dawo_example   dawo version:   1.0.0.  10.4.2022.
 ///  *  dawo_example creates 45 screens of console output data presentation.
 ///  *               28 was previous output, so may be some repetition.
 ///  * Find:  :con: :connector: :opCom:  :corporate:

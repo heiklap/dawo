@@ -3,7 +3,7 @@
 //  that can be found in the LICENSE file.
 //
 ///  ##  glb   keeping important everybody-uses variables and constants.
-/// * dwv: version:   0.9.9.   6.4.2022.  -  devState:  13%
+/// * dwv: version:   1.0.0.  10.4.2022.  -  devState:  13%
 /// * GitHub: yes.
 /// * State:  schema
 //

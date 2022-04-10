@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///
 ///  ## Modeling joint, reusable controls and operations for libraries.
-///  dawo/beta,  dwv: version:   0.9.9.   6.4.2022.
+///  dawo/beta,  dwv: version:   1.0.0.  10.4.2022.
 ///  devState   40 %   in GIT  Yes
 ///
 ///  Time to start thinking 6.th floor's machinery, when you are only just

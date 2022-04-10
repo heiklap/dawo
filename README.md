@@ -1,8 +1,8 @@
-# dawo 0.9.9
+# dawo 1.0.0
 
 https://pub.dartlang.org/packages/dawo
 
-Beginner Dart programmers project to learn Dart by developing a glorious package.
+Devoted Dart programmers project to learn Dart by developing a glorious package.
 - Complicated and copious  spectrum of classes, functions and methods sets creator and user to situation where must 
 take challenging effort to manage and exploit all the features. Here is plenty of room for imagination and ideas. For
 beginner programmes this is one way to simulate real-world development stress.
@@ -38,6 +38,24 @@ beginner programmes this is one way to simulate real-world development stress.
  Start building first new classes, but keep your mind open for intuitive solutions. 
  
  Practise to use Dawo by finding it's properties in editor, and think their importance in app.
+
+ ### Version 1.0.0  Dated:  10.4.2022
+
+ 1. Thrust to conduct something useful, nearing Real-World app, small, simple,but sophisticated.
+ 2. Leave out many important areas, that should be realized in other packages, like
+ resources, money, areas, labor, cost aso.
+ 3. Ready to be plugged, and plug other packages.
+ 4. Collect IDEA, WORD, aso.stuff, be big and complicated, make a mess, that real-life sometimes is.
+ 5. Mark the learning road of hesitations, errors, learning and success.
+ 6. Be educational, make FAQ and howTo-stuff. Love logic and learning.
+ 7. Search and find inspirational Happy-Findings-Road: FIN: #Oivallus.. deep, sudden understanding.
+ 8. Be very careful when using other outside packages. Atleast in core of dawo.
+ 9. Show vision and develop plugins to inside / outside world of dawo sphere.
+ 10. LANG idea, Dawolang and other own packages to come live.
+ 11. Caveat: author do not have experience in developing Full-Stack, Web and server apps,
+ or big real-world business apps.
+ 12.  Dawo version 1.0.0. is World of base-level simple objects static data.
+ Wide range of of dartlang properties are left aside, not used here, or come in next versions.
  
  ### Versions
  
@@ -67,6 +85,7 @@ beginner programmes this is one way to simulate real-world development stress.
  0.1.0  Migrating to null safety.
  0.2.0 - 0.9.0  Series of cleaning, saved in gitHub
  0.9.6  New library & class grouping.
+ 1.0.0  Steady developing and clarity.
 
 ## Files;
 ### code_snippets, learn / copy-paste stuff:
@@ -74,38 +93,41 @@ beginner programmes this is one way to simulate real-world development stress.
 - bat_loop :  Control flow structure samples.
 - learn_stream_sync : Examples of simple Streams. So. async stuff.
 
-### app files
-- alpha : Structuring base classes. These two libraries do not depend other dawo files.
-- beta : Develop common properties, that other libraries should depend on.
-- dawo.dart : main file, exports : dawo_src.dart.
-- dawo_app : DawoApp class, handles Missions and keeps out-put-buffers in Map.
-- dawo_src : File created by stagehand plugin app.
-- mill : Plan: processing commands orderly, all they in row, by given priorities.
-- rumba.dart : Rumba classes .dance method runs here dawo's control-flow (once)
-- shower.dart : presentations on console, mostly box-shaped. src/box_serve.dart makes it better!
-- tools : Helper tools, sleep, stamps, lists aso.Helper functions for cl (command line)and screen output.
-
+### dawo app library files
+- alpha : Structuring base classes. No dependency downwards.
+- beta : Develop common properties, that work on alpha rerources.
+- clay : is synonym for data.  -folder has static data class elements
+- corp-folder has corporate, affair, resolve and store classes.
+- corp/connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them.
+  Seeking deep, inner connections of objects.
+- dev : Classes and data, that help in developing this package. And history data.
+- fake : separate, irrational inspirational idea, that will have a great, bright future.
+- gear : dashboard-like stuff, global glb file, mill - loop and control flow coming,
+  +  mill : Plan: processing commands orderly, all they in row, by given priorities.
+- hacker : not used in dawo-app, separate extra learning and study stuff.
 - mis/missions : Chunk of command-processing between app and chore. Caring Chores.
   Missions keep and process data ( #clay) of their favorite area.
 - mis/chore : Start of bigger "job" / "chore" for real-world-work. Imitating functionality
       of other, bigger, same kind of library.
 - mis/effort.dart : Human activities, chores sub, main user-activity and presentation.
-- mis/equipment.dart : Controlling material resources for Mission and Chore. 
-- mis/camp : Scout class has connected objects stuff.     
-      
-- corp-folder has corporate, affair, resolve and store classes.      
-- corp/connector.dart Connecting  ( as #client's) app - mission - chore together,  mediating them. 
-  Seeking deep, inner connections of objects. 
-  
-- clay-folder has data  
-- (? dawlib_coll : Resources. Examples and hacking material of Dart collections. Missing / todo)
+- mis/equipment.dart : Controlling material resources for Mission and Chore.
+- mis/camp : Scout class has connected objects stuff.
+- src : Folder and File created by stagehand plugin app. Hiding data from end-user.
+- tools : Helper tools, sleep, stamps, lists aso.Helper functions for cl (command line)and screen output.
+  used via instance: tl.  that is really glorious and useful.
+- venue : output, show and box stuff.
+  + shower.dart : con-presentations, box-shaped. box_serve is command!
+  + shower / box_serve gives frames for box_shaped cl screen outputs.
 
-- dawo_dev : Classes and data, that help in developing this package. 
-- src/box_serve gives frames for box_shaped cl outputs.
-- src/glb keeps global variables.    
+- dawo.dart : main package file, library dawo, that exports : dawo_src.dart.
+- dawo_app.dart  : DawoApp class, handles Missions and keeps out-put-buffers in Map.
+- dawo_src.dart : Back door or dead end, maybe a genius workshop? Some accumulated stuff.
+   Maybe looking for a different way to approach the package.
+- rumba.dart : Rumba classes .dance method runs here dawo's control-flow (once)
+
+- (? coll_lib : Resources. Examples and hacking material of Dart collections. Missing / todo)
 
 
-    
 Creating Dawo variables in new file:
 
     // play with them in IDE:
@@ -124,7 +146,7 @@ Creating Dawo variables in new file:
     
     Add to your pubspec.yaml:
     dependencies:
-      dawo: 0.0.7
+      dawo: 1.0.0
       
     dev_dependencies:
       browser: ^0.10.0

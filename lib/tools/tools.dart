@@ -1,7 +1,7 @@
 // Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///
-///  * dwv: version:   0.9.7.  3.4.2022.    devState : 51 %
+///  * dwv: version:   1.0.0.  10.4.2022.    devState : 51 %
 ///  ##  Helper tools, like: longestItemInList() and  changeLetter(String..)
 ///  Mostly String and list manipulation and Map printing aso. This kind of
 ///  stuff is most valuable to beginner programmers, and developing this has

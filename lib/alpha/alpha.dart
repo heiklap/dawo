@@ -3,7 +3,7 @@
 ///
 ///  ##  Model structures, base classes, that are used everywhere in dawo:
 /// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
-/// * dwv: version:   0.9.0.  30.3.2022.
+/// * dwv: version:   1.0.0.  10.4.2022.
 /// *  30.3.2022  new alpha folder
 //
 

@@ -5,7 +5,7 @@
 /// ##  Daily:Bundle:  presentation and simulation of dawo events
 /// *
 /// * HINT:  Run this for one day, by commenting days out;  like  //  friday()
-/// * dawo version:   0.9.7.  3.4.2022.  -   devState: 40 %
+/// * dawo version:   1.0.0.  10.4.2022.  -   devState: 40 %
 /// * GitHub:    rows:  550
 /// * Connect:  #effort  #Schedule  #Week  #Month  from:  #equ
 /// * Hist:hkl  27.11.2017  -  0.0.6

@@ -4,7 +4,7 @@
 ///  ##  Rumba : Loop, that runs dawoApp and some other stuff.
 ///  Runs it's loops forced, only once, without possibility of user action.
 ///  * Primary functionality:  loop, inside it: dawoApp
-///  * dwv: version:   0.9.9.   6.4.2022   functionality: 70%
+///  * dwv: version:   1.0.0.  10.4.2022.   functionality: 70%
 ///  * in GitHub :  yes  NEXT: parameters for output?
 ///  * NEXT: bool values, that stop loops #FromInside dawo-app.
 ///  * If program parts have a certain amount of 'self consciousness' or other

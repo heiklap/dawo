@@ -4,7 +4,7 @@
 ///
 ///  ##  dawoHist class
 ///  * Primary functionality:  Keep historic dev data.
-/// * dwv: version:   0.9.9.  8.4.2022.
+/// * dwv: version:   1.0.0.  10.4.2022.
 /// * devState : 25%    in GitHub : yes
 ///
 //  V:  0.2.0  Only Format - DartFormat
@@ -102,8 +102,10 @@ class DawoHist {
   ///
   String latestChange = '23.3.2017. th.12.15';
 
-  ///  git messages list
+  ///  Updated to GH GitHub   git messages list
   List<String> gitL = [
+    '2022-04-10  Version 1.0.0  README.md updated',
+    '2022-04-09  to>: 1.0.0 GH, venue informer, devBoxStatsL, boxStatsL, glb boxStatsShow',
     '2022-04-08  Clean:BUG, :BUG:001, dev/dg_box, File:alpha:action.dart, base_struct.dart.',
     '2022-04-06  0.9.9 GLB to Gear. Clean: WORD: NEXT: Changed up-level file headers.',
     '2022-04-04  v 0.9.8  TODO:s 170 => clean: to:84 left. devl:LIB notes:166.  +DO: 10',

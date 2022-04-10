@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 ///
-///  * dwv: version:   0.9.9.   6.4.2022  devState : 20 %
+///  * dwv: version:   1.0.0.   10.4.2022  devState : 20 %
 ///  ##  Sample file made by Dart.  "Home of dawo libraries."
 /// * Badly treated and would deserve more love than I have to give.
 /// * Might serve as a collector or central for it's sub-libraries.
