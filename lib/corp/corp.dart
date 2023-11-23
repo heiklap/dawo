@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 /// *
 /// *  interface-Base class for corp classes
-/// *  dwv: version:   1.0.0.  10.4.2022.      created:  26.3.2022
+/// *  dwv: version:   1.1.0.  23.11.2023.      created:  26.3.2022
 /// *
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //

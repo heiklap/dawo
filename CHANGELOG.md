@@ -1,4 +1,6 @@
 # Changelog
+## 1.1.0
+ - Dart SDK version:  3.1.5 
 ## 1.0.0
  - Steady developing and clarity.
 ## 0.1.0

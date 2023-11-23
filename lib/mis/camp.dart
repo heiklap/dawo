@@ -1,7 +1,9 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can
+// be found in the LICENSE file.
+///
 ///  ##  camp lib with camp class.
-/// * dwv: version:   0.7.0.  27.3.2022.  -  devState:  30%
+/// * dwv: version:   1.1.0.  23.11.23.  -  devState:  30%
 /// * GitHub:.
 /// * Missions and Chores can use connector-services, from corporate-side
 /// * to join to Camp-Scout system, whereas corporate side can also use
@@ -13,7 +15,7 @@ part of mis;
 
 
 ///
-class Camp extends MisInterfaceBasis{
+class Camp extends MisInterfaceBasis with RllMxx, ParcelMxx{
   ///
   String name = '* Camp *';
   ///
@@ -122,6 +124,26 @@ class Camp extends MisInterfaceBasis{
     _flowC('    <---<--  :camp:roll:  Counter: $__counter   * * *', _pB);
     return __counter;
   }      //     -----     rollCamp
+
+  ///  for mixin call
+  ///  To test mixin op. here are:   RllMxx, ParcelMxx
+  void callMxx(String _msg) {
+    String mxChainSSample = ':97531mx13579:';
+    String mxChainS = ':97531 mx13 579:';
+    String _mS = ' $mxC.mxLOGO  $_msg ';
+    mxC.mxLogL.add(' $_mS  :camp:calling:mixin: start');
+
+    //  class in mixin-file
+    //  mxBoss.mxActMsg(':camp:mx:Boss:act:msg: ', '_msg: $_msg');
+
+    //  msgHandle(':camp:mx:act:Msg: ', 'msg camp callMxx call to: :mx:parcel:mxx: :msgHandle:');
+    //  howTo:mixin RollMix :  ra
+    rllAct();  //  empty
+
+    //  mxBoss.mxActMsg(_caller, _msg)
+    mxC.mxSigL.add(' $_mS   :camp:calling:mixin:  operation');
+    mxC.mxLogL.add(' $_mS   :camp:calling:mixin: done ');
+  }     //     -----     callMxx
 
   ///  give report of camp statistics
   void report() {

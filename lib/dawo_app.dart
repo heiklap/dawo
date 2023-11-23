@@ -3,7 +3,7 @@
 // that can be found in the LICENSE file.
 ///
 ///  ##  dawoApp library and class
-/// * dwv: version:   1.0.0.  10.4.2022.
+/// * dwv: version:   1.1.0.  23.11.2023.
 /// * devState : 25%    in GitHub : yes
 ///  Primary functionality:  build, roll and rollMissions.
 ///  Information about app, hist, and little controls.
@@ -38,7 +38,7 @@ StringBuffer appBuf = StringBuffer(); //  not used here
 class DawoApp {
   ///
   final String name = 'DawoApp';
-  final String version = '1.0.0';
+  final String version = '1.1.0';
   final String by = 'HKL';
   final String actor = ':DAWO:APP:';
   ///
@@ -112,9 +112,9 @@ class DawoApp {
     'agenda': 'Data-handling app package',
     'msg': 'This is a process for learning.',
     // :DEBUG:TEST:   Who uses this??  --- :stream: #phase:1 :demandStream Listened
-    'develop': 'Under development.. from 1.0.0  to 2.0.0.',
+    'develop': 'Under development.. from 1.1.0  to 2.0.0.',
     // :DEBUG:TEST:   Who uses this??  :  :stream: #phase:1 demandStream Listened
-    'pack: version  ': 'Version: 1.0.0  ',
+    'pack: version  ': 'Version: 1.1.0  ',
     'pub': 'Published 8.4.2022',
   };
 

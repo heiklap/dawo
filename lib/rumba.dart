@@ -1,10 +1,11 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
 ///
 ///  ##  Rumba : Loop, that runs dawoApp and some other stuff.
 ///  Runs it's loops forced, only once, without possibility of user action.
 ///  * Primary functionality:  loop, inside it: dawoApp
-///  * dwv: version:   1.0.0.  10.4.2022.   functionality: 70%
+///  * dwv: version:   1.1.0.  23.11.23.   functionality: 70%
 ///  * in GitHub :  yes  NEXT: parameters for output?
 ///  * NEXT: bool values, that stop loops #FromInside dawo-app.
 ///  * If program parts have a certain amount of 'self consciousness' or other
@@ -26,7 +27,7 @@ import 'dev/dawo_dev.dart';
 ///  Collecting Rumba output.
 StringBuffer rumbaBuf = StringBuffer();
 
-///
+///  Usage:   8 here and in example
 class Rumba {
   ///  boolean values for controlling loop; run now only once.
   ///  Eventually these values are triggered to false-state by sub-programs,
@@ -85,6 +86,7 @@ class Rumba {
   ///  devl:LIB #QUEST howTo and where bring #dawoApp to rumba's scope?
   ///  Now it is just a methods parameter.
   ///  devl:LIB  Add all other buffers to rumbaBuf.
+  ///  PLAN:  Do Dance a separate class
   StringBuffer dance(var dawoApp) {
     //  devl:LIB  Parameters for screen-output wanted.
     _flowC('-->---->--  rumba-dance', true);
@@ -221,5 +223,6 @@ class Rumba {
   void _flowC(String msg, bool prB) {
     ///  Call flow.fServe with #LOCAL variables.
     flow.fServe(':R:', out.outTl, msg, prB); //  Location:  in beta
-  }
+  }     //     -----     _flowC
+
 } //  --   rumba class

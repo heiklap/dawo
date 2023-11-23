@@ -4,7 +4,7 @@
 ///
 ///  ##  Model structure, base class, that is used everywhere in dawo:
 /// * BaseStruct,
-/// * dwv: version:   0.9.9.  7.4.2022.
+/// * dwv: version:   1.1.0  23.11.2023
 /// *
 //
 
@@ -34,8 +34,9 @@ abstract class BaseStruct {
   ///  Object that owns this.
   String master = '';
   //  yes / no   ..  printing now.
-  //  :BUG:001 to 1.0.0 version       bool _pB = true;
+  //  :BUG:001 to 1.1.0 version       bool _pB = true;
   bool _pB = false;
+  ///
   StringBuffer buf = StringBuffer();
 
   ///  4 var to control connectors state, working-condition-state values.

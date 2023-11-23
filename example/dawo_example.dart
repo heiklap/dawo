@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 //
-///  *  dawo_example   dawo version:   1.0.0.  10.4.2022.
+///  *  dawo_example   dawo version:   1.1.0.  23.11.2023.
 ///  *  dawo_example creates 45 screens of console output data presentation.
 ///  *               28 was previous output, so may be some repetition.
 ///  * Find:  :con: :connector: :opCom:  :corporate:
@@ -302,6 +302,25 @@ class ExPlay {
 
 ExPlay exPlay = ExPlay();
 
+///  caller: main here     usage:
+///  Last method in main
+void mxxPlay() {
+  String mxChainSSample = ':97531mx13579:';
+  String mxChainS = ':97531 mx1 3579:';
+  store.callMxx('dawo:ex:');
+
+  camp.callMxx('dawo:ex:');
+
+  affair.actMxx('dawo:ex:');
+
+  corporate.actMxx('from:dawo:ex:');
+  ///  Show all mixin data
+  //  previous out:   mxC.mxBossBox('from:dawo_example:');
+  //  call to venue mixin_box   function
+  mxBossBox('from:dawo_example:');
+}
+
+
 ///  For version: 0.5.0, class ExPlay keeps methods in easy, visual form.
 ///  In dawo package there is no main-function. Only in example files.
 ///  Every dart program starts it's execution from main method.
@@ -342,6 +361,7 @@ main() {
   glb.boxStatsShow(':by:dawoExample');
   glb.devBoxStatsShow(':by:dawoExample');
   //print buffer: print(glb.boxServeBuffers[':dawoHist:dailyAction:friday:6']);
+  mxxPlay();
   print('---- main done   ');
 } //     -----     end of main.
 

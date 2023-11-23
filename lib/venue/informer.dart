@@ -5,7 +5,7 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dwv: version:   1.0.0.  10.4.2022.   devState:  60%
+/// * dwv: version:   1.1.0.  23.11.2023.   devState:  60%
 /// * GitHub: yes
 ///  NOTE:  box_serve has been invisible in doc, it is only imported
 ///  TODO:  check:  box_serve

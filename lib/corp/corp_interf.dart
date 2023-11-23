@@ -1,8 +1,9 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
 /// *
 /// *  interface-Base class for corp classes
-/// *  dwv: version:   0.9.9.   6.4.2022    created:  26.3.2022
+/// *  dwv: version:   1.1.0.   23.11.23    created:  26.3.2022
 /// *
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //

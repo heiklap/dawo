@@ -1,9 +1,10 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
 ///
 ///  ##  Model structures, base classes, that are used everywhere in dawo:
 /// * Out, BaseStruct, BasePlacard, Group, Member, Actor, Action.
-/// * dwv: version:   1.0.0.  10.4.2022.
+/// * dwv: version:   1.1.0.  23.11.2023
 /// *  30.3.2022  new alpha folder
 //
 
@@ -11,6 +12,7 @@ library alpha;
 
 part 'action.dart';
 part 'base_struct.dart';
+part 'mixin.dart';
 
 String alphaMotto = 'Basic rules for building classes';
 

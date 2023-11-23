@@ -5,7 +5,7 @@
 /// *  missions: primary Dawo workPlatforms, they have chores that do the job.
 /// *  dawoApp builds all the missions and their chores.
 /// *  Primary functionality: engage chores.
-/// *  dwv: version:   0.9.7.  3.4.2022.
+/// *  dwv: version:   1.1.0.  23.11.23.
 /// *  devState : 27 % / unknown  -  PLAN:  cleaning
 // -  devMemo: 4 pc.
 //
@@ -40,7 +40,9 @@ void helloMission() {
 ///  Mission can include many chores. 7 Chores are build by default.
 ///  devl:MIS  Mission has 31 public members !!
 ///  TESTED: when extending BaseStruct: Too many arguments in constructor.
-class Mission extends MisInterfaceBasis {
+//  away Mxxclass Mission extends MisInterfaceBasis with JoinMxx, SayMxx {
+//  TODO no mixin mx here
+class Mission extends MisInterfaceBasis{
 // #TIP: When class properties begins with certain letter combination, like-bl..
 // you avoid mess, that occurs, when class is used in mixin's.
 

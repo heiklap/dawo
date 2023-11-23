@@ -1,9 +1,11 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+///
 ///  ##  affair,  handling small jobs inside corporate.
-/// * dwv: version:   0.9.9.  4.4.2022. -.   devState:  5%
+/// * dwv: version:   1.0.1.  11.4.2022. -.   devState:  5%
 /// * GitHub:  Yes  -  State:  schema
-/// * PLAN:  0.0.8  small upgrade when common methods are ready.
+/// * PLAN:  >>  small upgrade when common methods are ready.
 //
 
 //  library affair;
@@ -20,7 +22,7 @@ part of corp;
 ///  this extra power and connect to other operations.
 ///  For that, here should be added fields.
 ///  IDEA: Change this name to class CoOp.  So why not:  Coup.
-class Affair extends CorpInterfaceBasis {
+class Affair extends CorpInterfaceBasis with JoinMxx, RllMxx {
   //  Alpha is known here.  beta-PlacardM is known also.
   ///
   String name = '* corporate-united *';
@@ -65,6 +67,21 @@ class Affair extends CorpInterfaceBasis {
       'msg': 'fMsg'
     }
   };
+
+  //  Mixin play :nrg:   JoinMxx, RlllMxx
+  void mixinPlay() {
+    String mxChainSSample = ':97531mx13579:';
+    String mxChainS = ':97531 mx13 579:affair:';
+    //  ---  NameReg  nrg
+
+    jnRegStM['nrgDoB']!;
+    jnRegStM['nrgIsB']!;
+    jnMembL.length;
+    jnJoinMe(':affair:misinPlay:', '');
+    //  ---  RollAble
+    rllInit();
+    rllDone();
+  }
 
   ///  handling #glb #actor
   ///  Who is in "charge" of operation, when it is routed through subroutines?
@@ -113,11 +130,30 @@ class Affair extends CorpInterfaceBasis {
 
   var operation; //  Collecting grate ideas.
 
+  ///  for mixin call
+  ///  To test mixin op
+  void actMxx(String _msg) {
+    String _mS = ' $mxC.mxLOGO  $_msg ';
+    mxC.mxLogL.add('$_mS  :affair:calling:mixin: start');
+
+    String mxChainSSample = ':97531mx13579:';
+    String mxChainS = ':97531 mx13 579 affair:';
+    //  no other mixin
+    //  :BUG:2.0.0   mxBoss.mxActMsg(':camp:mx:Boss:act:msg: ', '_msg: $_msg');
+    //  :BUG:2.0.0   actMxx(':affair: :act:mxx: call :act:Mxx:');
+    //  mxBoss.mxActMsg(_caller, _msg)
+    mxC.mxSigL.add(' $_mS   :affair:calling:mixin:  operation');
+    mxC.mxLogL.add(' $_mS   :affair:calling:mixin: done ');
+  }     //     -----     actMxx
+
   ///  Save cleared placardM to to placardMM
   void save() {}
 
   ///
-  void done() {}
+  void done() {
+    ///  invoke mixin method
+    rllDone();
+  }
 
   ///  Usage: for example, :corporate:process:
   List<String> showInfo(String caller) {

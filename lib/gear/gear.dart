@@ -3,7 +3,7 @@
 ///
 /// # Gear, dashboard system for dawo.
 ///
-/// * dwv: version:   1.0.0.  10.4.2022.  -  devState 5 %
+/// * dwv: version:   1.1.0.  23.11.2023.  -  devState 5 %
 //
 
 //

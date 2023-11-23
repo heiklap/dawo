@@ -3,7 +3,7 @@
 //  that can be found in the LICENSE file.
 //
 ///  ##  glb   keeping important everybody-uses variables and constants.
-/// * dwv: version:   1.0.0.  10.4.2022.  -  devState:  13%
+/// * dwv: version:   1.1.0.  23.11.23.  -  devState:  13%
 /// * GitHub: yes.
 /// * State:  schema
 //
@@ -257,7 +257,7 @@ class GlobalClass {
     boxServe.aHeader(1, 4, '* *  Print-State * * ');
     boxServe.aBox(2, 7, 12, 20, tl.mapToListB(prSt));
 
-    boxServe.aHeader(0, 60, ' *  GLOBAP VARIABLE STATES  *');
+    boxServe.aHeader(0, 60, ' *  GLOBAL VARIABLE STATES  *');
 
     boxServe.aHeader(2, 42, 'Info:');
     boxServe.aBox(2, 50, 2, 70, infoL);
@@ -301,4 +301,5 @@ class GlobalClass {
   }
 }     //     -----     class GlobalClass
 
+///  instance glb
 GlobalClass glb = GlobalClass();

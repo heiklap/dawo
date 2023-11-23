@@ -3,7 +3,7 @@
 // can be found in the LICENSE file.
 //
 /// *  interface-Base class for mis classes
-/// *  dwv: version:   1.0.0.  10.4.2022.    created:  27.3.2022
+/// *  dwv: version:   1.1.0.  23.11.2023.    created:  27.3.2022
 /// *
 /// *  devState: 8%  PLAN: yes   SCHEDULE:  NO.
 //

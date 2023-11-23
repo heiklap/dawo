@@ -5,7 +5,7 @@
 ///  ##  Shower  -  presentation info and data screens.
 ///  New box_serve makes this better: makes only frames and keep clients data
 ///  in client side.  This file might eventually fade out.
-///  * dwv: version:   1.0.0.  10.4.2022.  devState: 90%
+///  * dwv: version:   1.1.0.  23.11.2023.  devState: 90%
 ///  *      GitHub: yes.
 ///  * DONE  #deprecated deleted_ rows 300 - 350
 ///  * SCHEDULE might deserve it's own class.
@@ -48,7 +48,7 @@ class ScheduleBox {
       _matrix[z] = '$_colPos '.padRight(_sw, '-');
     }
     _matrix[0] =
-        '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 1.0.0 -';
+        '--m-schedule--$_caller-----------------------------------------------------------------------------------------------------------------------------------------------------dartlang app  Dawo 1.1.0 -';
 
     ///  Last row of matrix for range-10 marks; row = : _rc - 1
     _matrix[_rc - 1] =

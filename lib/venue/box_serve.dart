@@ -5,7 +5,7 @@
 ///  ##  box_serve presenting objects in cl in box-shaped form .
 /// * Structuring-logic, elements order, is in callers side
 /// * PLAN:  Automatic ordering of elements, if client do not give it.
-/// * dwv: version:   1.0.0.  10.4.2022.   devState:  60%
+/// * dwv: version:   1.1.0.  23.11.23.   devState:  60%
 /// * GitHub: yes
 ///  NOTE:  box_serve has been invisible in doc, it is only imported
 ///  TODO:  check:  box_serve
@@ -129,7 +129,7 @@ class BoxServe {
     ///
     String _timeNow = tl.stampDateTimePlain();
     aHeader(0, sw - 57, 'time: $_timeNow');
-    String _version = dawoApp.version; //  0.9.9
+    String _version = dawoApp.version; //  1.1.0
     aHeader(0, sw - 27, 'Dartlang app  DAWO $_version ');
     //  TODO  StampLeft ' '  // there is pm ! = ' '
     ///  Last row of matrix for range-10 marks; NOTE: rc - 1
@@ -400,7 +400,7 @@ class BoxServe {
   ///  TODO : Constructor, to give shapes and measures
 
 }      //     -----     class BoxServe
-
+///  instance:
 BoxServe boxServe = BoxServe();
 
 ///  TODO  Scope?  Can this reach called fields.

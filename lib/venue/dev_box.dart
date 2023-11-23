@@ -4,14 +4,15 @@
 //
 ///  ##  dev_box  -  presentation in 2-3-4 column boxes.
 ///
-///  * dwv: version:   1.0.0.  10.4.2022.  devState: 90%
+///  * dwv: version:   1.1.0.  23.11.23.  devState: 90%
 ///  *      GitHub: yes.
 //
 
 part of venue;
 
-
+///
 int devBoxCount = 0;
+///
 List<String> devBoxStatL = [];
 
 ///  devBox is an example of a funny way to solve a problem, It works, but:
@@ -76,7 +77,7 @@ StringBuffer devBox(String caller, List<String> _hfL, List<List<String>> inList,
 
     ///  To get: time:  2017-12-23  09:02:16     _Dartlang app  DAWO 0.9.9
     String _timeNow = tl.stampDateTimePlain();
-    String _version = dawoApp.version; //  0.9.9
+    String _version = dawoApp.version; //  1.1.0
     String dawoLogoS = 'time: $_timeNow  Dartlang app DAWO $_version ';
     int dawoLogoLength = dawoLogoS.length;
     //  :BUG: makes about 6 wide column error in box

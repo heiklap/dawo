@@ -1,6 +1,7 @@
-// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved. Use of this
-// source code is governed by a BSD-style license that can be found in the
-// LICENSE file.
+// Copyright (c) 2017, Heikki K Lappalainen. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+///
 ///  ##  connecting  ( as #client's) app - mission - chore together,
 ///  mediating them. separate objects work together in outer processes,
 ///  using #LANG -specific commands to configure their proceedings.
@@ -299,7 +300,7 @@ class Connector extends BaseStruct {
   } //  -----  joinSolve
 
   ///  Join "clients" / Members to scoutList OR affair. placardM mediates necessary info.
-  ///  Usage: mission, dawoApp, rumba, chore, dawo_example
+  ///  Usage: 32x  :  mission, dawoApp, rumba, chore, dawo_example
   ///  You can join scout OR affair OR x
   ///  devl:CORP parameter for to join  scout R affair OR x
   ///  devl:CORP parameter to get mission.name  for  lastJoin:ed

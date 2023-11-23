@@ -516,6 +516,20 @@ class DailyAction {
 ///  instance
 DailyAction da = DailyAction();
 
+///  caller: main here     usage:
+///
+void mxxPlay() {
+  String mxChainSSample = ':97531mx13579:';
+  String mxChainS = ':97531 mx1 3579:';
+  store.callMxx('dawo:ex:');
+
+  camp.callMxx('dawo:ex:');
+
+  affair.actMxx('dawo:ex:');
+
+  corporate.actMxx(':dawo:ex::');
+}
+
 ///  Main method is starting-point of every Dart application-
 void main() {
   dawoApp.init(':dawpApp:daily:bundle:', 'By: :daily:bundle:test:');
@@ -562,6 +576,8 @@ void main() {
   _l.forEach(print);
   glb.boxStatsShow(':by:daily:action:');
   glb.devBoxStatsShow(':by:daily:action:');
+  /// mixin   String mxChainS = ':97531 mx1 3579:';
+  mxxPlay();
 } //     -----     main
 
 //

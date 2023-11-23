@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 ///  ##  Corporate,  enterprise-like entity.
 ///  * Holds: Affairs, Stores, takes Order's, makes Jobs in phases.
-///  * dwv: version:   0.6.0  26.3.2022
+///  * dwv: version:   1.1.0    23.11.23.
 ///  * devState:  10%,   PLAN:  do simple demo / presentation.
 ///
 //
@@ -13,7 +13,9 @@ part of corp;
 
 ///  Here objects work together after #connector joins them to system.
 ///  usage:
-class Corporate extends CorpInterfaceBasis {
+///  howTo:mixin   hkl:  extended class should not have mixins inside
+///                only extenders have mixin
+class Corporate extends CorpInterfaceBasis with ParcelMxx, TellMxx{
   ///
   String name = '* corporate-united *';
 
@@ -89,7 +91,26 @@ class Corporate extends CorpInterfaceBasis {
     String o = op.toString();
     String _rStr = "$s $r $o $msg";
     return _rStr;
-  }
+  }     //     -----     paramToStr
+
+
+  ///  for mixin call
+  ///  To test mixin op
+  void actMxx(String _msg) {
+    String mxChainSSample = ':97531mx13579:';
+    String mxChainS = ':97531 mx13 579:corporate:';
+    String _mS = ' $mxC.mxLOGO  $_msg ';
+    mxC.mxLogL.add(' $_mS  :store:calling:mixin: start');
+    mxC.mxActMsg(':corporate:mx:Boss:act:msg: CORP  ', '_msg: $_msg');
+
+    //  :BUG:2.0.0    mxBoss.mxActMsg(':corporate:mx:Boss:act:msg: ', '_msg: $_msg');
+    //  mx...
+    tellCall(':corporate:mx:say:Call:', ':msg: actMxx in corporate');
+    //  mxBoss.mxActMsg(_caller, _msg)
+    mxC.mxSigL.add(' $_mS   :corporate:calling:mixin:  operation');
+    mxC.mxLogL.add(' $_mS   :corporate:calling:mixin: done ');
+  }     //     -----     actMxx
+
 
   ///  Shaping everybody-to-use functionality for series of commands.
   void roll() {

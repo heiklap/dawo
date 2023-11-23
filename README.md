@@ -1,4 +1,4 @@
-# dawo 1.0.0
+# dawo 1.1.0
 
 https://pub.dartlang.org/packages/dawo
 
@@ -86,6 +86,7 @@ beginner programmes this is one way to simulate real-world development stress.
  0.2.0 - 0.9.0  Series of cleaning, saved in gitHub
  0.9.6  New library & class grouping.
  1.0.0  Steady developing and clarity.
+ 1.1.0  Dart SDK   3.1.5 
 
 ## Files;
 ### code_snippets, learn / copy-paste stuff:
